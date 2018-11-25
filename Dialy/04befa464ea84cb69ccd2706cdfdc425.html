@@ -6,14 +6,14 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="naver-site-verification" content="32aa8ce7d767e05669cb5b31f2579de56cc15359" />
     <meta name="keywords" content="명월 일기, 프로그램 개발, 프로젝트 구축, 개발 노하우" />
-    <meta name="description" content="어두운 밤길을 비추는 달빛처럼.. 어둡고 외로운 개발의 길을 걷는 이들의 밝은 달빛이 되길 바라는 개발자... 프로그램 개발 간의 고민, 문제점을 해결하는 방법 등의 노하우를 공유하는 블로그." />
+    <meta name="description" content="어둡고 외로운 길을 걷는 개발자들의 밝은 달빛이 되길 바라는 개발자, 개발 간의 고민, 문제점을 해결하는 방법 등의 노하우를 공유하는 블로그." />
     <meta name="Author" content="nowonbun@gmail.com" />
     <meta name="distribution" content="nowonbun@gmail.com" />
     <meta name="copyright" content="nowonbun@gmail.com" />
     <meta name="title" content="명월의 개발 일기 : [개발일기] : [블로그 구축 5일차] 중간 버그 수정(IE 대응, Image, 매타태그 에러, 추가사항)" />
     <meta name="robots" content="ALL">
     <meta property="og:title" content="명월의 개발 일기 : [개발일기] : [블로그 구축 5일차] 중간 버그 수정(IE 대응, Image, 매타태그 에러, 추가사항)" />
-    <meta property="og:description" content="원래는 블로그 최적화를 끝내고 나서 버그 수정을 하려고 했는데 너무 눈에 거슬려서 버그 수정을 하고 다음을 진행하겠습니다.지금 파악한 부분은 IE 대응 부분입니다.저 같은 경우는 Chrome을 주요 디버그 툴로 이용하기 때문에 화면이 Chrome에 최적화가 되어있습니다.Chrome을 디버그 툴로 이용하는 이유는 Chrome 사용자가 예전보다 늘었고 한국의 경우는 아직 IE를 사용하는 경우가 많은데..IE의 경우는 디버그 툴로 이용하기에는 너무 느리고 Firefox보다는 많이 사용하는 Chrome을 선택했습니다.그러나 Chrome을 최적화라고 생각한다고 해서 safari나 IE를 무시할 수 없기 때문에 중간중간 생각과 다른 디자인이 되지 않나 살펴봐야 합니다.그러다 IE에서 테스트를 하던 중 밑의 최신 글 항목에서 Chrome과 다른 형태의 디자인을 발견했습니다.원인은 Bootstrap의 row class 때문인데. 이게 li 태그 안에서 Chrome과 IE에서 동작하는 형태가 다르네요... 확인했으니 수정하겠습니다.그다음은 Image인데..현재 블로그 안에서 모든 Image는 680 X 340의 형태로 고정이 되어있습니다. 모바일에서는 확대 축소가 PC보다는 쉽기 때문에 확대해서 보기 쉽지만, PC의 경우는 그게 쉽지가 않기 때문에 조금도 보기 쉽게 수정해야겠습니다.w3school 사이트에 가보니 bootstrap으로 된 예제 소스가 있네요..https://www.w3schools.com/howto/howto_css_modal_images.asp이걸 그대로 쓰기에는 저와 환경이 다르기 때문에 자바스크립트를 수정했습니다.위 이미지를 클릭해보면 이미지가 확대되어서 보이는 것을 확인 할 수 있습니다.그리고 전 포스트에서 제가 메타태그를 붙였는데..네이버 웹 마스터에서 에러가 나는 것을 확인 했습니다.이게 제가 메타태그를 잘못 인지해서 발생한 에러이네요.Description 태그에 본문 내용을 전부 넣으면 좀 더 검색엔진에 좋을 것 같다는 생각이 들어서 입력한 것인데 오히려 에러가 발생했네요.리스트에서는 컴파일러에서 정한 데이터를 넣었는데...수정내용은 포스트 태그에도 리스트와 같이 정한 데이터를 넣으면 문제가 해결될 것 같습니다.홈페이지는 수정은 완료했지만, 웹 마스터의 재등록은 아마 시간이 걸릴 것입니다.블로그를 시작하고 첫 버그 수정이었습니다. 워낙 간단한 버그 수정이라 어떻게 해결하는 방법이 너무 단순하게 나와버렸네요.그냥 문제점 파악, 해결 식으로.. 좀 너무 간단하네요... 복잡한 버그가 나오면 안 되겠지만...그래도 포스트를 쓰기 위해 좀 복잡한 버그가 필요하긴 하네요... 고민해봐야겠습니다..." />
+    <meta property="og:description" content="어둡고 외로운 길을 걷는 개발자들의 밝은 달빛이 되길 바라는 개발자, 개발 간의 고민, 문제점을 해결하는 방법 등의 노하우를 공유하는 블로그." />
     <meta property="og:url" content="http://www.nowonbun.com/Dialy/04befa464ea84cb69ccd2706cdfdc425.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="명월 일기, 프로그램 개발, 프로젝트 구축, 개발 노하우" />
