@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="naver-site-verification" content="32aa8ce7d767e05669cb5b31f2579de56cc15359" />
+    <meta name="keywords" content="명월 일기, 프로그램 개발, 프로젝트 구축, 개발 노하우" />
+    <meta name="description" content="어둡고 외로운 길을 걷는 개발자들의 밝은 달빛이 되길 바라는 개발자, 개발 간의 고민, 문제점을 해결하는 방법 등의 노하우를 공유하는 블로그." />
+    <meta name="Author" content="nowonbun@gmail.com" />
+    <meta name="distribution" content="nowonbun@gmail.com" />
+    <meta name="copyright" content="nowonbun@gmail.com" />
+    <meta name="title" content="명월의 개발 일기 : [개발일기] : [블로그 구축 13일차] 블로그 댓글 시스템 달기 - 4 (서버 구축)" />
+    <meta name="robots" content="ALL">
+    <meta property="og:title" content="명월의 개발 일기" />
+    <meta property="og:description" content="어둡고 외로운 길을 걷는 개발자들의 밝은 달빛이 되길 바라는 개발자, 개발 간의 고민, 문제점을 해결하는 방법 등의 노하우를 공유하는 블로그." />
+    <meta property="og:url" content="http://www.nowonbun.com/Dialy/32d7d7135654429faf3cbdfe618bae00.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="명월 일기, 프로그램 개발, 프로젝트 구축, 개발 노하우" />
+
+    <meta property="og:image" content="http://www.nowonbun.com/img/ogimage.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    <meta property="og:image:alt" content="명월 일기 타이포 그래피" />
+    <meta name="google-signin-client_id" content="220458850151-75q8c5ids3m5krr49qj4tif6t84liubj.apps.googleusercontent.com">
+
+    <title>명월의 개발 일기 : [개발일기] : [블로그 구축 13일차] 블로그 댓글 시스템 달기 - 4 (서버 구축)</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="/css/compiled-4.5.9.min.css" rel="stylesheet">
+    <link href="/css/style.min.css" rel="stylesheet">
+    <link href="/css/common.css" rel="stylesheet">
+    <link href="/css/post.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css" rel="stylesheet">
+    <link href="/css/highlight.init.css" rel="stylesheet">
+    <link href="/css/comment.css" rel="stylesheet">
+
+    <link rel="icon" type="favicon.ico" href="/img/favicon.ico">
+    <link rel="canonical" href="http://www.nowonbun.com" />
+    <link rel="alternate" type="application/rss+xml" title="명월의 개발 일기" href="http://www.nowonbun.com/rss" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58360998-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-58360998-4');
+    </script>
+    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">
+        if (!wcs_add) var wcs_add = {};
+        wcs_add["wa"] = "c2a9ed02f53908";
+        wcs_do();
+    </script>
+</head>
+<body lang="ko">
+    <div id="bodyMain" class="container wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+        <header class="mt-5">
+            <section class="card my-blog-header">
+                <div class="background"></div>
+                <div class="card-body text-center py-3 px-3 my-3">
+                    <h1 class="mb-4" style="margin:0px!important;">
+                        <strong>명월의 개발 일기</strong>
+                    </h1>
+                </div>
+                <nav class="navbar navbar-expand-lg navbar-light white menu-nav-tool-blog">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="menuToggler">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/'>홈</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog  active ' href='/DialyList.html'>개발일기</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/ExperienceList.html'>개발경험</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/JapanLifeList.html'>일본생활</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/KoreanLifeList.html'>한국생활</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/CodingNoteList.html'>코딩노트</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/FavoritesList.html'>즐겨찾기</a></li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </section>
+        </header>
+        <main class="mt-5">
+            <div class="row mb-3">
+                <div class="col-12 d-flex align-items-stretch">
+                    <div class="card my-blog-post">
+                        <div class="card-body">
+                            <h1 class="card-title">
+                                [블로그 구축 13일차] 블로그 댓글 시스템 달기 - 4 (서버 구축)
+                            </h1>
+                            <div class="row justify-content-end mb-3 date-items">
+                                <div class="col-12" style="line-height:10px;text-align:right;">
+                                    <div class="date-type-1">
+                                        <span class="my-list-date font-7">작성일시 : 2018년 12월 01일 23시 02분</span><br />
+                                        <span class="my-list-date font-7">최종수정일시 : 2018년 12월 01일 23시 05분</span>
+                                    </div>
+                                    <div class="date-type-2">
+                                        <span class="my-list-date font-7">작성: 2018-12-01 23:02</span><br />
+                                        <span class="my-list-date font-7">최종수정: 2018-12-01 23:05</span>
+                                    </div>
+                                    <div style="display:inline-block">
+                                        <img src="/img/copyrightmark.png" style="height: 25px;margin-top: -13px;margin-left: 11px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-text pt-3 pb-3">
+                                <div class='view overlay rounded z-depth-1 post-image-area'>
+                                    <img class='article-image img-fluid' src='data:image/jpeg;base64,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' />
+                                    <div class='mask rgba-white-slight'></div>
+                                </div>
+                                <p class="image-comment">common.pjp 설계</p>
+                                <article>
+                                    <div>데이버베이스 설계도 완료가 되었으니 이제 본격적인 코딩을 해야겠네요. 예전에 무료 호스팅 우비에서 사용하기로 했으니 언어는 php가 되겠네요.</div><div><br></div><div>개인적으로 좋아하는 언어는 java와 C#같은 OOP(Object-Oriented Programming: 객체지향 프로그래밍)가 좋은데 무료 호스팅에서는 지원하지 않습니다. java도 무료 언어인데.. 왜 무료 호스팅이 없을까요jQuery33107034686571912736_1543672430408 있으면 좋은데...</div><div>그렇다고 php가 나쁜 언어는 아닙니다. 가볍고 빠르고 꽤 직관적인 언어라 코딩이 매우 빠릅니다. 그에 비해 메모리 릭도 거의 없더라고요.. 좋은 언어입니다. 단점은 java처럼 메모리를 직접 관리를 할 수 있는 게 아니여서 그렇다 보니 디자인 패턴 적용이 쉽지가 않습니다. 그리고 스레드를 직접 컨트롤할 수 있는 것도 아닙니다.</div><div>그러나 우리는 그렇게 복잡한 프로그램을 하는 게 아니고 블로그 댓글 시스템을 만들 겁니다. 단순히 글쓰기, 수정하기, 삭제하기 그리고 검색하기를 ajax로 값을 가져올 수 있으면 됩니다. php로 충분한 것 같습니다.</div><div><br></div><div>구성은 다음과 같이 생각하고 있습니다.</div><div>common.php - 공통 부분 (comment entity, abstract controller, db connection)</div><div>add.php - 입력 부분</div><div>modify.php - 수정 부분</div><div>delete.php - 삭제 부분</div><div>select.php - 검색 부분</div><div><br></div><div>먼저 common.php를 만들겠습니다.</div><div><br></div>
+<pre><code class="PHP" data-type="Entity">class Comment{
+	private $idx;
+	private $id;
+	private $email;
+	private $parent;
+	private $createdate;
+	private $lastupdated;
+	private $comment;
+	private $child;
+	
+	public function setIdx($idx){
+		$this-&gt;idx = $idx;
+	}
+	public function getIdx(){
+		return $this-&gt;idx;
+	}
+	public function setId($id){
+		$this-&gt;id = $id;
+	}
+	public function getId(){
+		return $this-&gt;id;
+	}
+	public function setEmail($email){
+		$this-&gt;email = $email;
+	}
+	public function getEmail(){
+		return $this-&gt;email;
+	}
+	public function setParent($parent){
+		$this-&gt;parent = $parent;
+	}
+	public function getParent(){
+		return $this-&gt;parent;
+	}
+	public function setCreatedate($createdate){
+		$this-&gt;createdate = $createdate;
+	}
+	public function getCreatedate(){
+		return $this-&gt;createdate;
+	}
+	public function setLastupdated($lastupdated){
+		$this-&gt;lastupdated = $lastupdated;
+	}
+	public function getLastupdated(){
+		return $this-&gt;lastupdated;
+	}
+	public function setComment($comment){
+		$this-&gt;comment = $comment;
+	}
+	public function getComment(){
+		return $this-&gt;comment;
+	}
+	public function setChild($child){
+		$this-&gt;child = $child;
+	}
+	public function getChild(){
+		return $this-&gt;child;
+	}
+}</code></pre>
+<div>사실 db는 isdeleted도 있고 ip도 더 있는데 그 정보는 굳이 표시할 필요가 없어서 뺏습니다. child는 리플 댓글이 있으면 list형식으로 comment 클래스를 넣을 생각입니다.</div><div><br></div>
+<pre><code class="javascript" data-type="common.php">error_reporting ( E_ALL ^ E_NOTICE || E_WARNING );
+class DBConn {
+	private $hostname = "";
+	private $username = "";
+	private $password = "";
+	private $dbname = "";
+	public function get() {
+		return new mysqli ( $this-&gt;hostname, $this-&gt;username, $this-&gt;password, $this-&gt;dbname ); 
+	}
+}
+abstract class AbstractDao {
+	private $db;
+	private $mysqli;
+
+	protected function getStmt($qy) {
+		$this-&gt;db = new DBConn ();
+		$this-&gt;mysqli = $this-&gt;db-&gt;get ();
+		$stmt = $this-&gt;mysqli-&gt;prepare ( $qy );
+		return $stmt;
+	}
+	protected function close() {
+		$this-&gt;mysqli-&gt;close ();
+	}
+	
+	public function execute(){
+		header("content-type: application/json; charset=utf-8");
+		header("Access-Control-Allow-Origin:*");
+		return json_encode($this-&gt;run());
+	}
+	protected abstract function run();
+}</code></pre>
+<div><div>위는 상위 abstract 클래스입니다. 하위 클래스에서 db statement를 취득할 함수를 만들었습니다. 그 함수 안에서는 db를 접속하고 statement를 취득해 옵니다. db 객체는 abstract 클래스의 private로 있기 때문에 하위 클래스에서 close를 할 수 있는 함수를 생성했습니다.</div><div><br></div><div>외부에서 execute를 실행하면 추상 함수 run을 호출하고 run은 리턴값을 json으로 인코딩해서 화면에 표시합니다. 모든 add.php, modify.php, delete.php, select.php는 ajax이기 때문에 공통적인 헤더에 json를 선언했습니다.</div><div>그리고 플랫폼이 같은 서버에 있는 것이 아니기에 closs platform이 허용하는 header 선언했습니다.</div><div><br></div><div>그냥 추상 설계만으로는 프로그램 흐림이 딱 보이지는 않네요... 다음은 댓글을 추가할 수 있는 클래스를 추가하겠습니다.</div></div>
+                                </article>
+                            </div>
+                            <div class="row justify-content-end mb-3 date-items">
+                                <div class="col-12 font-7 text-align-right gray-font">
+                                    <p class="mb-0"><span class="text-align-left" style="display:inline-block;">블로그의 글은 모두 개인 경험과 지식으로 나온 글이기에 정확하지 않을 수 있습니다. 표준 또는 사실과 다른 글이 있으면 댓글 또는 메일 보내주세요.</span></p>
+                                    <p class="mb-0">Mail: <a href="mailto:nowonbun@gmail.com">nowonbun@gmail.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='row mt-3 mb-3'><div class='col-12 d-flex align-items-stretch'><div class='card my-style-custom'><div class='my-pre-post-nav'><div class='row'>  <div class='col-12 mt-1'><p class='my-pre-list-title' style='margin-bottom:0px;'><a href='/Dialy/commentDatabase20171130.html'> <span class='my-pre-next-icon'><i class='fa fa-chevron-down'></i>다음글</span>[블로그 구축 12일차] 블로그 댓글 시스템 달기 - 3 (DB 설계)</a><span class='my-list-date float-right date-type-1 font-7'>2018년 12월 01일 13시 30분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-01 13:30 작성</span></p></div></div></div></div></div></div>
+            <fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom">
+                <legend class="box-shadow-0 blog-legend px-3 blog-radius mb-0">
+                    <label>최신글</label>
+                </legend>
+                <ul class="pl-3">
+                    <li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/commentDatabase20171130.html'>[개발일기] [블로그 구축 12일차] 블로그 댓글 시스템 달기 - 3 (DB 설계)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 01일 13시 30분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-01 13:30 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/oAuth20181130.html'>[개발일기] [블로그 구축 11일차] 블로그 댓글 시스템 달기 - 2 (구글의 oauth)<span class='my-list-date float-right date-type-1 font-7'>2018년 11월 30일 01시 09분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-11-30 01:09 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/highlight20181128.html'>[개발일기] [블로그 구축 10일차] 소스 코드 보기 Grid 부착하기 highlight.js<span class='my-list-date float-right date-type-1 font-7'>2018년 11월 28일 23시 20분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-11-28 23:20 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/CommentSystem20181127.html'>[개발일기] [블로그 구축 9일차] 블로그 댓글 시스템 달기 - 1 (요구분석)<span class='my-list-date float-right date-type-1 font-7'>2018년 11월 27일 23시 04분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-11-27 23:04 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/Opengraph20181126.html'>[개발일기] [블로그 구축 8일차] 블로그 최적화 2 (Open graph)<span class='my-list-date float-right date-type-1 font-7'>2018년 11월 26일 23시 01분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-11-26 23:01 작성</span></a></div></li>
+                </ul>
+            </fieldset>
+            <fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom">
+                <legend class="box-shadow-0 blog-legend px-3 blog-radius">
+                    <label>댓글 달기</label>
+                </legend>
+                <div id="commentSystem">
+					<div id="googleSigninButton"></div>
+                    <div id="commentInsertForm" class="comment-form-border" style="display:none;">
+						<div style="text-align:right;">
+							<button type="button" class="btn btn-sm btn-outline-success waves-effect" id="createComment">작성하기</button>
+						</div>
+						<div class="md-form comment-form">
+						  <textarea id="commentText" class="form-control md-textarea comment-textarea" maxlength="300" length="300" rows="3"></textarea>
+						  <label for="commentText" class="comment-textarea-label">댓글 작성하기</label>
+						</div>
+					</div>
+					<div id="commentList" class="comment-list"></div>
+                </div>
+            </fieldset>
+        </main>
+        <footer class="page-footer text-center font-small mdb-color mt-4 wow fadeIn my-blog-footer">
+            <div class="footer-copyright py-1">
+                2018 Copyright: <a href="#" target="_blank">www.nowonbun.com </a>
+            </div>
+        </footer>
+        <div id="ImgModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content">
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/compiled-4.5.9.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script type="text/javascript" src="/js/post.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script src="/js/highlightjs-line-numbers.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>hljs.initLineNumbersOnLoad();</script>
+    <script>
+        $("code").each(function () {
+            $(this).before($("<div class='code-title'></div>").text($(this).data("type")));
+        });
+    </script>
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    <script type="text/javascript" src="/js/comment.min.js"></script>
+</body>
+</html>
