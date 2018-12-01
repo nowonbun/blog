@@ -1,4 +1,96 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:activity="http://activitystrea.ms/spec/1.0/" ><channel><title>명월의 개발 일기</title><link>http://www.nowonbun.com</link><description>어두운 밤길을 비추는 달빛처럼.. 어둡고 외로운 개발의 길을 걷는 이들의 밝은 달빛이 되길 바라는 개발자... 프로그램 개발 간의 고민, 문제점을 해결하는 방법 등의 노하우를 일기 형식으로 공유하는 블로그.</description><language>ko</language><pubDate>Sat, 01 Dec 2018 08:10:29 GMT</pubDate><generator>nowonbun blog editor</generator><managingEditor>nowonbun@gmail.com</managingEditor><webMaster>nowonbun@gmail.com</webMaster><item><title>[블로그 구축 12일차] 블로그 댓글 시스템 달기 - 2 (DB 설계)</title><link>http://www.nowonbun.com/Dialy/commentDatabase20171130.html</link><description>기본적인 자료조사는 끝난 거 같고, 이제 프로그래밍을 위한 첫 단계인 데이터베이스 설계를 하겠습니다. 데이터베이스는 처음 설계를 구축하면 후에 운영 중에는 바꾸기가 매우 어려운 영역입니다. 그러기 때문에 최초 설계가 매우 중요하다고 할 수 있습니다.설계 방식에 대해서는 사람마다 방식이 다 다릅니다. 그리고 데이터베이스 정규화가 있기는 합니다만, 가끔 요구사항과 차이가 있는 경우도 많습니다.설계는 방법이 없는 거 같습니다. 많이 만들어보고 많이 운영해보고 이상하면 다음부터는 보안을 다시 설계하고... 많이 구축해보고 많이 운영해 보는 경험만 최고인 영역이라고 생각됩니다.그럼 저는 어떻게 설계할지 다음과 같이 구상했습니다.
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:activity="http://activitystrea.ms/spec/1.0/" ><channel><title>명월의 개발 일기</title><link>http://www.nowonbun.com</link><description>어두운 밤길을 비추는 달빛처럼.. 어둡고 외로운 개발의 길을 걷는 이들의 밝은 달빛이 되길 바라는 개발자... 프로그램 개발 간의 고민, 문제점을 해결하는 방법 등의 노하우를 일기 형식으로 공유하는 블로그.</description><language>ko</language><pubDate>Sat, 01 Dec 2018 14:05:48 GMT</pubDate><generator>nowonbun blog editor</generator><managingEditor>nowonbun@gmail.com</managingEditor><webMaster>nowonbun@gmail.com</webMaster><item><title>[블로그 구축 13일차] 블로그 댓글 시스템 달기 - 4 (서버 구축)</title><link>http://www.nowonbun.com/Dialy/32d7d7135654429faf3cbdfe618bae00.html</link><description>데이버베이스 설계도 완료가 되었으니 이제 본격적인 코딩을 해야겠네요. 예전에 무료 호스팅 우비에서 사용하기로 했으니 언어는 php가 되겠네요.개인적으로 좋아하는 언어는 java와 C#같은 OOP(Object-Oriented Programming: 객체지향 프로그래밍)가 좋은데 무료 호스팅에서는 지원하지 않습니다. java도 무료 언어인데.. 왜 무료 호스팅이 없을까요jQuery33107034686571912736_1543672430408 있으면 좋은데...그렇다고 php가 나쁜 언어는 아닙니다. 가볍고 빠르고 꽤 직관적인 언어라 코딩이 매우 빠릅니다. 그에 비해 메모리 릭도 거의 없더라고요.. 좋은 언어입니다. 단점은 java처럼 메모리를 직접 관리를 할 수 있는 게 아니여서 그렇다 보니 디자인 패턴 적용이 쉽지가 않습니다. 그리고 스레드를 직접 컨트롤할 수 있는 것도 아닙니다.그러나 우리는 그렇게 복잡한 프로그램을 하는 게 아니고 블로그 댓글 시스템을 만들 겁니다. 단순히 글쓰기, 수정하기, 삭제하기 그리고 검색하기를 ajax로 값을 가져올 수 있으면 됩니다. php로 충분한 것 같습니다.구성은 다음과 같이 생각하고 있습니다.common.php - 공통 부분 (comment entity, abstract controller, db connection)add.php - 입력 부분modify.php - 수정 부분delete.php - 삭제 부분select.php - 검색 부분먼저 common.php를 만들겠습니다.
+class Comment{
+	private $idx;
+	private $id;
+	private $email;
+	private $parent;
+	private $createdate;
+	private $lastupdated;
+	private $comment;
+	private $child;
+	
+	public function setIdx($idx){
+		$this-&gt;idx = $idx;
+	}
+	public function getIdx(){
+		return $this-&gt;idx;
+	}
+	public function setId($id){
+		$this-&gt;id = $id;
+	}
+	public function getId(){
+		return $this-&gt;id;
+	}
+	public function setEmail($email){
+		$this-&gt;email = $email;
+	}
+	public function getEmail(){
+		return $this-&gt;email;
+	}
+	public function setParent($parent){
+		$this-&gt;parent = $parent;
+	}
+	public function getParent(){
+		return $this-&gt;parent;
+	}
+	public function setCreatedate($createdate){
+		$this-&gt;createdate = $createdate;
+	}
+	public function getCreatedate(){
+		return $this-&gt;createdate;
+	}
+	public function setLastupdated($lastupdated){
+		$this-&gt;lastupdated = $lastupdated;
+	}
+	public function getLastupdated(){
+		return $this-&gt;lastupdated;
+	}
+	public function setComment($comment){
+		$this-&gt;comment = $comment;
+	}
+	public function getComment(){
+		return $this-&gt;comment;
+	}
+	public function setChild($child){
+		$this-&gt;child = $child;
+	}
+	public function getChild(){
+		return $this-&gt;child;
+	}
+}
+사실 db는 isdeleted도 있고 ip도 더 있는데 그 정보는 굳이 표시할 필요가 없어서 뺏습니다. child는 리플 댓글이 있으면 list형식으로 comment 클래스를 넣을 생각입니다.
+error_reporting ( E_ALL ^ E_NOTICE || E_WARNING );
+class DBConn {
+	private $hostname = "";
+	private $username = "";
+	private $password = "";
+	private $dbname = "";
+	public function get() {
+		return new mysqli ( $this-&gt;hostname, $this-&gt;username, $this-&gt;password, $this-&gt;dbname ); 
+	}
+}
+abstract class AbstractDao {
+	private $db;
+	private $mysqli;
+
+	protected function getStmt($qy) {
+		$this-&gt;db = new DBConn ();
+		$this-&gt;mysqli = $this-&gt;db-&gt;get ();
+		$stmt = $this-&gt;mysqli-&gt;prepare ( $qy );
+		return $stmt;
+	}
+	protected function close() {
+		$this-&gt;mysqli-&gt;close ();
+	}
+	
+	public function execute(){
+		header("content-type: application/json; charset=utf-8");
+		header("Access-Control-Allow-Origin:*");
+		return json_encode($this-&gt;run());
+	}
+	protected abstract function run();
+}
+위는 상위 abstract 클래스입니다. 하위 클래스에서 db statement를 취득할 함수를 만들었습니다. 그 함수 안에서는 db를 접속하고 statement를 취득해 옵니다. db 객체는 abstract 클래스의 private로 있기 때문에 하위 클래스에서 close를 할 수 있는 함수를 생성했습니다.외부에서 execute를 실행하면 추상 함수 run을 호출하고 run은 리턴값을 json으로 인코딩해서 화면에 표시합니다. 모든 add.php, modify.php, delete.php, select.php는 ajax이기 때문에 공통적인 헤더에 json를 선언했습니다.그리고 플랫폼이 같은 서버에 있는 것이 아니기에 closs platform이 허용하는 header 선언했습니다.그냥 추상 설계만으로는 프로그램 흐림이 딱 보이지는 않네요... 다음은 댓글을 추가할 수 있는 클래스를 추가하겠습니다.</description><category>개발일기</category><author>nowonbun@gmail.com</author><guid>http://www.nowonbun.com/Dialy/32d7d7135654429faf3cbdfe618bae00.html</guid><pubDate>Sat, 01 Dec 2018 23:02:57 GMT</pubDate></item><item><title>[블로그 구축 12일차] 블로그 댓글 시스템 달기 - 3 (DB 설계)</title><link>http://www.nowonbun.com/Dialy/commentDatabase20171130.html</link><description>기본적인 자료조사는 끝난 거 같고, 이제 프로그래밍을 위한 첫 단계인 데이터베이스 설계를 하겠습니다. 데이터베이스는 처음 설계를 구축하면 후에 운영 중에는 바꾸기가 매우 어려운 영역입니다. 그러기 때문에 최초 설계가 매우 중요하다고 할 수 있습니다.설계 방식에 대해서는 사람마다 방식이 다 다릅니다. 그리고 데이터베이스 정규화가 있기는 합니다만, 가끔 요구사항과 차이가 있는 경우도 많습니다.설계는 방법이 없는 거 같습니다. 많이 만들어보고 많이 운영해보고 이상하면 다음부터는 보안을 다시 설계하고... 많이 구축해보고 많이 운영해 보는 경험만 최고인 영역이라고 생각됩니다.그럼 저는 어떻게 설계할지 다음과 같이 구상했습니다.
 CREATE TABLE COMMENT(
 	IDX INT NOT NULL AUTO_INCREMENT,
 	URL NVARCHAR(255) NOT NULL,
@@ -8,8 +100,8 @@ CREATE TABLE COMMENT(
 	COMMENT NVARCHAR(4000) NULL,
 	PARENT INT NULL,
 	ISDELETED BIT DEFAULT 0 NOT NULL,
-	CREATEDDATE DATETIME DEFAULT NOW() NOT NULL,
-	LASTUPDATED DATETIME DEFAULT NOW() NOT NULL,
+	CREATEDDATE DATETIME NOT NULL,
+	LASTUPDATED DATETIME NOT NULL,
 
 	PRIMARY KEY(IDX),
 	FOREIGN KEY (PARENT) REFERENCES COMMENT(IDX)
