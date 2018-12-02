@@ -1,4 +1,193 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:activity="http://activitystrea.ms/spec/1.0/" ><channel><title>명월의 개발 일기</title><link>http://www.nowonbun.com</link><description>어두운 밤길을 비추는 달빛처럼.. 어둡고 외로운 개발의 길을 걷는 이들의 밝은 달빛이 되길 바라는 개발자... 프로그램 개발 간의 고민, 문제점을 해결하는 방법 등의 노하우를 일기 형식으로 공유하는 블로그.</description><language>ko</language><pubDate>Sat, 01 Dec 2018 14:16:50 GMT</pubDate><generator>nowonbun blog editor</generator><managingEditor>nowonbun@gmail.com</managingEditor><webMaster>nowonbun@gmail.com</webMaster><item><title>[블로그 구축 13일차] 블로그 댓글 시스템 달기 - 4 (서버 구축)</title><link>http://www.nowonbun.com/Dialy/32d7d7135654429faf3cbdfe618bae00.html</link><description>데이버베이스 설계도 완료가 되었으니 이제 본격적인 코딩을 해야겠네요. 예전에 무료 호스팅 우비에서 사용하기로 했으니 언어는 php가 되겠네요.개인적으로 좋아하는 언어는 java와 C#같은 OOP(Object-Oriented Programming: 객체지향 프로그래밍)가 좋은데 무료 호스팅에서는 지원하지 않습니다. java도 무료 언어인데.. 왜 무료 호스팅이 없을까요jQuery33107034686571912736_1543672430408 있으면 좋은데...그렇다고 php가 나쁜 언어는 아닙니다. 가볍고 빠르고 꽤 직관적인 언어라 코딩이 매우 빠릅니다. 그에 비해 메모리 릭도 거의 없더라고요.. 좋은 언어입니다. 단점은 java처럼 메모리를 직접 관리를 할 수 있는 게 아니여서 그렇다 보니 디자인 패턴 적용이 쉽지가 않습니다. 그리고 스레드를 직접 컨트롤할 수 있는 것도 아닙니다.그러나 우리는 그렇게 복잡한 프로그램을 하는 게 아니고 블로그 댓글 시스템을 만들 겁니다. 단순히 글쓰기, 수정하기, 삭제하기 그리고 검색하기를 ajax로 값을 가져올 수 있으면 됩니다. php로 충분한 것 같습니다.구성은 다음과 같이 생각하고 있습니다.common.php - 공통 부분 (comment entity, abstract controller, db connection)add.php - 입력 부분modify.php - 수정 부분delete.php - 삭제 부분select.php - 검색 부분먼저 common.php를 만들겠습니다.
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:activity="http://activitystrea.ms/spec/1.0/" ><channel><title>명월의 개발 일기</title><link>http://www.nowonbun.com</link><description>어두운 밤길을 비추는 달빛처럼.. 어둡고 외로운 개발의 길을 걷는 이들의 밝은 달빛이 되길 바라는 개발자... 프로그램 개발 간의 고민, 문제점을 해결하는 방법 등의 노하우를 일기 형식으로 공유하는 블로그.</description><language>ko</language><pubDate>Sun, 02 Dec 2018 08:20:40 GMT</pubDate><generator>nowonbun blog editor</generator><managingEditor>nowonbun@gmail.com</managingEditor><webMaster>nowonbun@gmail.com</webMaster><item><title>[블로그 구축 14일차] 블로그 댓글 시스템 달기 -5</title><link>http://www.nowonbun.com/Dialy/22c4b209f70d4f4b95b2bc822da6fc69.html</link><description>common 함수는 만들었으니 본격적인 add와 select를 만들겠습니다.먼저 댓글 시스템의 소스는 아래의 github에 push했으니 필요하신 분들은 fork해서 쓰셔도 됩니다.https://github.com/nowonbun/BlogComment
+&lt;?php
+include_once $_SERVER ['DOCUMENT_ROOT'] . '/common.php';
+class Controller extends AbstractDao{
+	protected function run(){
+		if(strtoupper ( $_SERVER ['REQUEST_METHOD'] ) == 'POST'){
+			$url = $_REQUEST["url"];
+			$ip = $_SERVER["REMOTE_ADDR"];
+			$id = $_REQUEST["id"];
+			$email = $_REQUEST["email"];
+			$comment = $_REQUEST["comment"];
+			$parent = (int)$_REQUEST["parent"];
+			if($parent &lt; 1){
+				$parent = null;
+			}
+			parent::validateUrl($url);
+			parent::validate($ip);
+			parent::validate($id);
+			parent::validate($email);
+			parent::validate($comment);
+			$stmt = parent::getStmt ( "INSERT INTO COMMENT_T (URL, IP ,ID, EMAIL, COMMENT, PARENT, CREATEDDATE, LASTUPDATED) VALUES (?, ?, ?, ?, ?, ?, now(), now())" );
+			$stmt-&gt;bind_param ( "sssssi", $url, $ip, $id, $email, base64_encode  ($comment), $parent);
+			if ($stmt-&gt;execute ()) {
+				parent::close();
+				return array ("result" =&gt; "OK");
+			} else {
+				parent::close();
+				return array ("result" =&gt; "NG");
+			}
+		} else {
+			header ( "HTTP/1.1 401 Unauthorized"  );
+			http_response_code ( 401 );
+			die ();
+		}
+	}
+}
+$obj = new Controller();
+?&gt;
+&lt;?=$obj-&gt;execute()?&gt;
+
+먼저 어제 만들었던 common.php를 include하고 AbstractDao 클래스를 상속받았습니다. AbstractDao는 외부에서 execute()로 실행하고 내부에서는 run을 상속받아 실행되는 형태였습니다. 그리고 header의 메소드는 POST형태로 받습니다. POST가 아닌 값으로 올 경우는 401에러를 발생시킵니다.그리고 받을 수 있는 파라미터는 url, id, email, comment, parent입니다. 그중 parent를 제외하곤 전부 필수로 받습니다.url은 댓글을 사용하는 url주소이고 id, email은 구글 oauth로 받는 id와 email주소 값입니다. comment는 당연하지만 댓글 내용입니다. 그리고 parent는 리플이면 상위 댓글 idx가 있을 것이고 그게 아니면 null 값이 들어옵니다. 그러니 필수 값은 아닙니다.그리고 데이터베이스에 insert해서 문제없으면 ok값을 return 하고 문제가 발생하면 NG의 값을 보냅니다. 소스가 매우 심플하고 한눈에 들어오네요.
+	&lt;?php
+include_once $_SERVER ['DOCUMENT_ROOT'] . '/common.php';
+class Controller extends AbstractDao{
+	protected function run(){
+		if(strtoupper ( $_SERVER ['REQUEST_METHOD'] ) == 'POST'){
+			$url = $_REQUEST["url"];
+			$pid = $_REQUEST["id"];
+			$pEmail = $_REQUEST["email"];
+			parent::validateUrl($url);
+			$stmt = parent::getStmt ( "SELECT IDX, ID, EMAIL, PARENT, CREATEDDATE, LASTUPDATED, COMMENT from COMMENT_T WHERE URL=? AND ISDELETED=0 ORDER BY IDX DESC" );
+			$stmt -&gt; bind_param ( "s", $url );
+			$stmt-&gt;execute ();
+			$stmt-&gt;bind_result ( $idx, $id, $email, $parent, $createdate ,$lastupdated, $comment );
+			$rslt = array ();
+			while ( $stmt-&gt;fetch () ) {
+				$clz = new Comment ();
+				$clz-&gt;setIdx ( $idx );
+				$clz-&gt;setId ( $id );
+				$clz-&gt;setEmail ( $email );
+				$clz-&gt;setParent ( $parent );
+				$clz-&gt;setCreatedate ( $createdate );
+				$clz-&gt;setLastupdated ( $lastupdated );
+				$clz-&gt;setComment ( base64_decode  ($comment) );
+				array_push ( $rslt, $clz );
+			}
+			parent::close();
+			
+			$ret = array ();
+			for($i=0;$i&lt;count($rslt);$i++){
+				if($rslt[$i]-&gt;getParent() == null){
+					$rslt[$i]-&gt;setChild($this-&gt;getChild($rslt, $rslt[$i]-&gt;getIdx(),$pid, $pEmail));
+					array_push ( $ret, $this-&gt;createJsonArray($rslt[$i],$pid, $pEmail) );
+				}
+			}
+			return $ret;
+		} else {
+			header ( "HTTP/1.1 401 Unauthorized"  );
+			http_response_code ( 401 );
+			die ();
+		}
+	}
+	
+	private function getChild($list, $idx, $pid, $pEmail){
+		$ret = array();
+		for($i=count($list)-1;$i&gt;=0;$i--){
+			if($idx == $list[$i]-&gt;getParent()){
+				$list[$i]-&gt;setChild($this-&gt;getChild($list, $list[$i]-&gt;getIdx(),$pid, $pEmail));
+				array_push ( $ret, $this-&gt;createJsonArray($list[$i],$pid, $pEmail) );
+			}
+		}
+		return $ret;
+	}
+	
+	private function createJsonArray($node, $id, $email){
+		$pos = strpos($node-&gt;getEmail(),"@");
+		if($pos &gt; 1){
+			$emailb = substr($node-&gt;getEmail(),0, $pos);
+		} else {
+			$emailb = $node-&gt;getEmail();
+		}
+		$emailb = substr($emailb,0,3)."******";
+		return array (
+			"idx" =&gt; $node-&gt;getIdx(),
+			"email" =&gt; parent::isSuperUser($node-&gt;getId(), $node-&gt;getEmail())?"admin":$emailb,
+			"parent" =&gt; $node-&gt;getParent(),
+			"createdate" =&gt; $node-&gt;getCreatedate(),
+			"lastupdated" =&gt; $node-&gt;getLastupdated(),
+			"comment" =&gt; $node-&gt;getComment(),
+			"ismodify" =&gt; trim($node-&gt;getId()) == trim($id) &amp;&amp; trim($node-&gt;getEmail()) == trim($email) || parent::isSuperUser($id, $email),
+			"child" =&gt; $node-&gt;getChild() != null? $node-&gt;getChild():null
+		);
+	}
+}
+$obj = new Controller();
+?&gt;
+&lt;?=$obj-&gt;execute()?&gt;
+
+
+	abstract class AbstractDao {
+	private $db;
+	private $mysqli;
+	
+	private $sui = "";
+	private $sue = "";
+	private $host = "";
+	
+	protected function getStmt($qy) {
+		$this-&gt;db = new DBConn ();
+		$this-&gt;mysqli = $this-&gt;db-&gt;get ();
+		$stmt = $this-&gt;mysqli-&gt;prepare ( $qy );
+		return $stmt;
+	}
+	protected function close() {
+		$this-&gt;mysqli-&gt;close ();
+	}
+	public function validateIdx($val){
+		if($val == null){
+			header ( "HTTP/1.1 401 Unauthorized"  );
+			http_response_code ( 401 );
+			die ();
+		}
+		if($val &lt; 1){
+			header ( "HTTP/1.1 401 Unauthorized"  );
+			http_response_code ( 401 );
+			die ();
+		}
+	}
+	public function validateUrl($val){
+		if($val == null || trim($val) == ""){
+			header ( "HTTP/1.1 401 Unauthorized"  );
+			http_response_code ( 401 );
+			die ();
+		}
+		if(preg_match("/".$this-&gt;host."/i", $val) == 0){
+			header ( "HTTP/1.1 401 Unauthorized"  );
+			http_response_code ( 401 );
+			die ();
+		}
+	}
+	public function validate($val){
+		if($val == null || trim($val) == ""){
+			header ( "HTTP/1.1 401 Unauthorized"  );
+			http_response_code ( 401 );
+			die ();
+		}
+	}
+	public function execute(){
+		header("content-type: application/json; charset=utf-8");
+		//header("Access-Control-Allow-Origin:*");
+		header("Access-Control-Allow-Origin:http://".$this-&gt;host);
+		return json_encode($this-&gt;run());
+	}
+	protected abstract function run();
+	protected function getSuperId(){
+		return $this-&gt;sui;
+	}
+	protected function getSuperEmail(){
+		return $this-&gt;sue;
+	}
+	protected function getHost(){
+		return $this-&gt;host;
+	}
+	protected function isSuperUser($id, $email){
+		return trim($this-&gt;sui) == trim($id) &amp;&amp; trim($this-&gt;sue) == trim($email);
+	}
+}
+
+
+이번에는 검색하는 페이지입니다. 기본적인 구성은 add와 같습니다. abstractdao를 상속하고 execute함수를 실행하면 내부적으로 run()이 호출됩니다.검색은 가장 최근 댓글이 가장 위에 보이는 형태이고 리플 같은 경우는 가장 최근이 아래에 위치하는 형태이네요. 그리고 id와 email 정보는 서버 단계에서 변환시켜서 표시하기 때문에 개인정보 유출사태는 일어나지 않습니다. 그리고 common 함수에 super user id와 email를 정해서 super유저의 경우는 모든 데이터를 수정, 삭제 권한을 부여합니다.super유저가 아닌 경우는 자기 자신이 쓴 댓글만 수정할 수 있는 플러그를 보냅니다. 그 외는 소스대로 돌아갑니다.여기까지 add와 select 함수를 만들었습니다. 다음은 수정, 삭제 함수를 만들면 시스템이 완성되겠네요..</description><category>개발일기</category><author>nowonbun@gmail.com</author><guid>http://www.nowonbun.com/Dialy/22c4b209f70d4f4b95b2bc822da6fc69.html</guid><pubDate>Sun, 02 Dec 2018 17:12:05 GMT</pubDate></item><item><title>[블로그 구축 13일차] 블로그 댓글 시스템 달기 - 4 (서버 구축)</title><link>http://www.nowonbun.com/Dialy/32d7d7135654429faf3cbdfe618bae00.html</link><description>데이버베이스 설계도 완료가 되었으니 이제 본격적인 코딩을 해야겠네요. 예전에 무료 호스팅 우비에서 사용하기로 했으니 언어는 php가 되겠네요.개인적으로 좋아하는 언어는 java와 C#같은 OOP(Object-Oriented Programming: 객체지향 프로그래밍)가 좋은데 무료 호스팅에서는 지원하지 않습니다. java도 무료 언어인데.. 왜 무료 호스팅이 없을까요jQuery33107034686571912736_1543672430408 있으면 좋은데...그렇다고 php가 나쁜 언어는 아닙니다. 가볍고 빠르고 꽤 직관적인 언어라 코딩이 매우 빠릅니다. 그에 비해 메모리 릭도 거의 없더라고요.. 좋은 언어입니다. 단점은 java처럼 메모리를 직접 관리를 할 수 있는 게 아니여서 그렇다 보니 디자인 패턴 적용이 쉽지가 않습니다. 그리고 스레드를 직접 컨트롤할 수 있는 것도 아닙니다.그러나 우리는 그렇게 복잡한 프로그램을 하는 게 아니고 블로그 댓글 시스템을 만들 겁니다. 단순히 글쓰기, 수정하기, 삭제하기 그리고 검색하기를 ajax로 값을 가져올 수 있으면 됩니다. php로 충분한 것 같습니다.구성은 다음과 같이 생각하고 있습니다.common.php - 공통 부분 (comment entity, abstract controller, db connection)add.php - 입력 부분modify.php - 수정 부분delete.php - 삭제 부분select.php - 검색 부분먼저 common.php를 만들겠습니다.
 class Comment{
 	private $idx;
 	private $id;
