@@ -10,11 +10,11 @@
     <meta name="Author" content="nowonbun@gmail.com" />
     <meta name="distribution" content="nowonbun@gmail.com" />
     <meta name="copyright" content="nowonbun@gmail.com" />
-    <meta name="title" content="명월의 개발 일기 : [개발일기] : [블로그 구축 14일차] 블로그 댓글 시스템 달기 -5" />
+    <meta name="title" content="명월의 개발 일기 : [개발일기] : [블로그 구축 15일차] 블로그 댓글 시스템 달기 -6" />
     <meta name="robots" content="ALL">
     <meta property="og:title" content="명월의 개발 일기" />
     <meta property="og:description" content="어둡고 외로운 길을 걷는 개발자들의 밝은 달빛이 되길 바라는 개발자, 개발 간의 고민, 문제점을 해결하는 방법 등의 노하우를 공유하는 블로그." />
-    <meta property="og:url" content="http://www.nowonbun.com/Dialy/22c4b209f70d4f4b95b2bc822da6fc69.html" />
+    <meta property="og:url" content="http://www.nowonbun.com/Dialy/comment_delete_modify20181204.html" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="명월 일기, 프로그램 개발, 프로젝트 구축, 개발 노하우" />
 
@@ -25,7 +25,7 @@
     <meta property="og:image:alt" content="명월 일기 타이포 그래피" />
     <meta name="google-signin-client_id" content="220458850151-75q8c5ids3m5krr49qj4tif6t84liubj.apps.googleusercontent.com">
 
-    <title>명월의 개발 일기 : [개발일기] : [블로그 구축 14일차] 블로그 댓글 시스템 달기 -5</title>
+    <title>명월의 개발 일기 : [개발일기] : [블로그 구축 15일차] 블로그 댓글 시스템 달기 -6</title>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="/css/compiled-4.5.9.min.css" rel="stylesheet">
@@ -89,17 +89,17 @@
                     <div class="card my-blog-post">
                         <div class="card-body">
                             <h2 class="card-title">
-                                [블로그 구축 14일차] 블로그 댓글 시스템 달기 -5
+                                [블로그 구축 15일차] 블로그 댓글 시스템 달기 -6
                             </h2>
                             <div class="row justify-content-end mb-3 date-items">
                                 <div class="col-12" style="line-height:10px;text-align:right;">
                                     <div class="date-type-1">
-                                        <span class="my-list-date font-7">작성일시 : 2018년 12월 02일 17시 12분</span><br />
-                                        <span class="my-list-date font-7">최종수정일시 : 2018년 12월 02일 17시 20분</span>
+                                        <span class="my-list-date font-7">작성일시 : 2018년 12월 04일 01시 47분</span><br />
+                                        <span class="my-list-date font-7">최종수정일시 : 2018년 12월 04일 01시 50분</span>
                                     </div>
                                     <div class="date-type-2">
-                                        <span class="my-list-date font-7">작성: 2018-12-02 17:12</span><br />
-                                        <span class="my-list-date font-7">최종수정: 2018-12-02 17:20</span>
+                                        <span class="my-list-date font-7">작성: 2018-12-04 01:47</span><br />
+                                        <span class="my-list-date font-7">최종수정: 2018-12-04 01:50</span>
                                     </div>
                                     <div style="display:inline-block">
                                         <img src="/img/copyrightmark.png" style="height: 25px;margin-top: -13px;margin-left: 11px;">
@@ -113,28 +113,29 @@
                                 </div>
                                 <p class="image-comment">Programming</p>
                                 <article>
-                                    <div>common 함수는 만들었으니 본격적인 add와 select를 만들겠습니다.</div><div><br></div><div>먼저 댓글 시스템의 소스는 아래의 github에 push했으니 필요하신 분들은 fork해서 쓰셔도 됩니다.</div><div><a href="https://github.com/nowonbun/BlogComment" target="_blank">https://github.com/nowonbun/BlogComment</a><br></div><div><br></div>
-<pre><code class="PHP" data-type="add.php 댓글 추가 페이지">&lt;?php
+                                    <div>&nbsp; 사람마다 프로그램을 개발하는 방식이 틀리지만 저는 보통 개발을 할 때 데이터를 입력하는 곳, 검색하는 곳, 삭제하는 곳, 마지막으로 수정하는 곳 순으로 개발을 합니다. 이게 저는 조금 보기가 편한 것도 있고 순서가 검색하려면 데이터가 있어야 하고 수정을 만들려면 삭제와 입력 기능이 있어야 합니다. 이런 순으로 하는 게 저는 가장 중복작업을 피하더라고요. 저는 그렇습니다.</div><div><br></div><div>&nbsp; 그래서 add와 select가 완료되었으니 이번에는 삭제와 수정을 작성하겠습니다.</div><div>먼저 전체 소스는 git에 올려놨으니 쓰실 분은 퍼가셔도 됩니다.</div><div><br></div><div><a href="https://github.com/nowonbun/BlogComment" target="_blank">https://github.com/nowonbun/BlogComment</a><a href="https://github.com/nowonbun/BlogComment" target="_blank"></a></div><div><br></div>
+<pre>	<code class="PHP" data-type="delete.php 댓글 삭제 페이지">&lt;?php
 include_once $_SERVER ['DOCUMENT_ROOT'] . '/common.php';
 class Controller extends AbstractDao{
 	protected function run(){
 		if(strtoupper ( $_SERVER ['REQUEST_METHOD'] ) == 'POST'){
 			$url = $_REQUEST["url"];
-			$ip = $_SERVER["REMOTE_ADDR"];
+			$idx = (int)trim($_REQUEST["idx"]);
 			$id = $_REQUEST["id"];
 			$email = $_REQUEST["email"];
-			$comment = $_REQUEST["comment"];
-			$parent = (int)$_REQUEST["parent"];
-			if($parent &lt; 1){
-				$parent = null;
-			}
 			parent::validateUrl($url);
-			parent::validate($ip);
+			parent::validateIdx($idx);
 			parent::validate($id);
 			parent::validate($email);
-			parent::validate($comment);
-			$stmt = parent::getStmt ( "INSERT INTO COMMENT_T (URL, IP ,ID, EMAIL, COMMENT, PARENT, CREATEDDATE, LASTUPDATED) VALUES (?, ?, ?, ?, ?, ?, now(), now())" );
-			$stmt-&gt;bind_param ( "sssssi", $url, $ip, $id, $email, base64_encode  ($comment), $parent);
+			
+			$stmt = null;
+			if(parent::isSuperUser($id, $email)){
+				$stmt = parent::getStmt ( "UPDATE COMMENT_T SET ISDELETED=1, LASTUPDATED=now() WHERE IDX=? AND URL=?" );
+				$stmt-&gt;bind_param ( "is", $idx, $url);
+			} else {
+				$stmt = parent::getStmt ( "UPDATE COMMENT_T SET ISDELETED=1, LASTUPDATED=now() WHERE IDX=? AND URL=? AND ID=? AND EMAIL=?" );
+				$stmt-&gt;bind_param ( "isss", $idx, $url, $id, $email);
+			}
 			if ($stmt-&gt;execute ()) {
 				parent::close();
 				return array ("result" =&gt; "OK");
@@ -153,156 +154,69 @@ $obj = new Controller();
 ?&gt;
 &lt;?=$obj-&gt;execute()?&gt;</code>
 </pre>
-<div>먼저 어제 만들었던 common.php를 include하고 AbstractDao 클래스를 상속받았습니다. AbstractDao는 외부에서 execute()로 실행하고 내부에서는 run을 상속받아 실행되는 형태였습니다. 그리고 header의 메소드는 POST형태로 받습니다. POST가 아닌 값으로 올 경우는 401에러를 발생시킵니다.<br></div><div><div>그리고 받을 수 있는 파라미터는 url, id, email, comment, parent입니다. 그중 parent를 제외하곤 전부 필수로 받습니다.</div><div>url은 댓글을 사용하는 url주소이고 id, email은 구글 oauth로 받는 id와 email주소 값입니다. comment는 당연하지만 댓글 내용입니다. 그리고 parent는 리플이면 상위 댓글 idx가 있을 것이고 그게 아니면 null 값이 들어옵니다. 그러니 필수 값은 아닙니다.</div><div><br></div><div>그리고 데이터베이스에 insert해서 문제없으면 ok값을 return 하고 문제가 발생하면 NG의 값을 보냅니다. 소스가 매우 심플하고 한눈에 들어오네요.</div><div><br></div>
-<pre>	<code class="PHP" data-type="select.php 댓글 검색 페이지">&lt;?php
+<div>&nbsp; 삭제는 많은 파라미터가 필요 없습니다. 주요 키가 되는 url, idx와 그리고 사용자 id와 email을 받겠습니다. 사용자 id와 email은 작성자 본인이 맞는지 확인하고 부정한 접속으로 데이터를 삭제시키지 않게 하기 위함입니다. 그리고 그 유저가 슈퍼유저이면 id, email관계없이 삭제할 수 있고, 그렇지 않으면 url, idx, id, email이 일치하여만 삭제가 되게 만들었습니다.<br></div><div><br></div>
+<pre>	<code class="PHP" data-type="modify.php 댓글 수정 페이지">&lt;?php
 include_once $_SERVER ['DOCUMENT_ROOT'] . '/common.php';
 class Controller extends AbstractDao{
 	protected function run(){
 		if(strtoupper ( $_SERVER ['REQUEST_METHOD'] ) == 'POST'){
 			$url = $_REQUEST["url"];
-			$pid = $_REQUEST["id"];
-			$pEmail = $_REQUEST["email"];
+			$idx = (int)trim($_REQUEST["idx"]);
+			$ip = $_SERVER["REMOTE_ADDR"];
+			$id = $_REQUEST["id"];
+			$email = $_REQUEST["email"];
+			$comment = $_REQUEST["comment"];
 			parent::validateUrl($url);
-			$stmt = parent::getStmt ( "SELECT IDX, ID, EMAIL, PARENT, CREATEDDATE, LASTUPDATED, COMMENT from COMMENT_T WHERE URL=? AND ISDELETED=0 ORDER BY IDX DESC" );
-			$stmt -&gt; bind_param ( "s", $url );
-			$stmt-&gt;execute ();
-			$stmt-&gt;bind_result ( $idx, $id, $email, $parent, $createdate ,$lastupdated, $comment );
-			$rslt = array ();
-			while ( $stmt-&gt;fetch () ) {
-				$clz = new Comment ();
-				$clz-&gt;setIdx ( $idx );
-				$clz-&gt;setId ( $id );
-				$clz-&gt;setEmail ( $email );
-				$clz-&gt;setParent ( $parent );
-				$clz-&gt;setCreatedate ( $createdate );
-				$clz-&gt;setLastupdated ( $lastupdated );
-				$clz-&gt;setComment ( base64_decode  ($comment) );
-				array_push ( $rslt, $clz );
+			parent::validateIdx($idx);
+			parent::validate($ip);
+			parent::validate($id);
+			parent::validate($email);
+			parent::validate($comment);
+			$stmt = null;
+			if(parent::isSuperUser($id, $email)){
+				$stmt = parent::getStmt ( "INSERT INTO COMMENT_H (oIDX,URL,ID,IP,EMAIL,COMMENT,PARENT,ISDELETED,CREATEDDATE,LASTUPDATED,HISTORYDATE) 
+											SELECT IDX,URL,ID,IP,EMAIL,COMMENT,PARENT,ISDELETED,CREATEDDATE,LASTUPDATED,now() FROM COMMENT_T 
+												WHERE IDX=? AND URL=? AND ISDELETED=0" );
+				$stmt-&gt;bind_param ( "is", $idx, $url);
+			} else {
+				$stmt = parent::getStmt ( "INSERT INTO COMMENT_H (oIDX,URL,ID,IP,EMAIL,COMMENT,PARENT,ISDELETED,CREATEDDATE,LASTUPDATED,HISTORYDATE) 
+											SELECT IDX,URL,ID,IP,EMAIL,COMMENT,PARENT,ISDELETED,CREATEDDATE,LASTUPDATED,now() FROM COMMENT_T 
+												WHERE IDX=? AND URL=? AND ID=? AND EMAIL=? AND ISDELETED=0" );
+				$stmt-&gt;bind_param ( "isss", $idx, $url, $id, $email);
 			}
-			parent::close();
-			
-			$ret = array ();
-			for($i=0;$i&lt;count($rslt);$i++){
-				if($rslt[$i]-&gt;getParent() == null){
-					$rslt[$i]-&gt;setChild($this-&gt;getChild($rslt, $rslt[$i]-&gt;getIdx(),$pid, $pEmail));
-					array_push ( $ret, $this-&gt;createJsonArray($rslt[$i],$pid, $pEmail) );
-				}
+			if ($stmt-&gt;execute ()) {
+				parent::close();
+			} else {
+				parent::close();
+				return "NG";
 			}
-			return $ret;
+			$stmt = null;
+			if(parent::isSuperUser($id, $email)){
+				$stmt = parent::getStmt ( "UPDATE COMMENT_T SET COMMENT=?, IP=?, LASTUPDATED=now() WHERE IDX=? AND URL=? AND ISDELETED=0" );
+				$stmt-&gt;bind_param ( "ssis", base64_encode ($comment), $ip, $idx, $url);
+			} else {
+				$stmt = parent::getStmt ( "UPDATE COMMENT_T SET COMMENT=?, IP=?, LASTUPDATED=now() WHERE IDX=? AND URL=? AND ID=? AND EMAIL=? AND ISDELETED=0" );
+				$stmt-&gt;bind_param ( "ssisss", base64_encode ($comment), $ip, $idx, $url, $id, $email);
+			}
+			if ($stmt-&gt;execute ()) {
+				parent::close();
+				return array ("result" =&gt; "OK");
+			} else {
+				parent::close();
+				return array ("result" =&gt; "NG");
+			}
 		} else {
 			header ( "HTTP/1.1 401 Unauthorized"  );
 			http_response_code ( 401 );
 			die ();
 		}
-	}
-	
-	private function getChild($list, $idx, $pid, $pEmail){
-		$ret = array();
-		for($i=count($list)-1;$i&gt;=0;$i--){
-			if($idx == $list[$i]-&gt;getParent()){
-				$list[$i]-&gt;setChild($this-&gt;getChild($list, $list[$i]-&gt;getIdx(),$pid, $pEmail));
-				array_push ( $ret, $this-&gt;createJsonArray($list[$i],$pid, $pEmail) );
-			}
-		}
-		return $ret;
-	}
-	
-	private function createJsonArray($node, $id, $email){
-		$pos = strpos($node-&gt;getEmail(),"@");
-		if($pos &gt; 1){
-			$emailb = substr($node-&gt;getEmail(),0, $pos);
-		} else {
-			$emailb = $node-&gt;getEmail();
-		}
-		$emailb = substr($emailb,0,3)."******";
-		return array (
-			"idx" =&gt; $node-&gt;getIdx(),
-			"email" =&gt; parent::isSuperUser($node-&gt;getId(), $node-&gt;getEmail())?"admin":$emailb,
-			"parent" =&gt; $node-&gt;getParent(),
-			"createdate" =&gt; $node-&gt;getCreatedate(),
-			"lastupdated" =&gt; $node-&gt;getLastupdated(),
-			"comment" =&gt; $node-&gt;getComment(),
-			"ismodify" =&gt; trim($node-&gt;getId()) == trim($id) &amp;&amp; trim($node-&gt;getEmail()) == trim($email) || parent::isSuperUser($id, $email),
-			"child" =&gt; $node-&gt;getChild() != null? $node-&gt;getChild():null
-		);
 	}
 }
 $obj = new Controller();
 ?&gt;
 &lt;?=$obj-&gt;execute()?&gt;</code>
 </pre>
-
-<pre>	<code class="PHP" data-type="common.php 공통 페이지(수정)">abstract class AbstractDao {
-	private $db;
-	private $mysqli;
-	
-	private $sui = "";
-	private $sue = "";
-	private $host = "";
-	
-	protected function getStmt($qy) {
-		$this-&gt;db = new DBConn ();
-		$this-&gt;mysqli = $this-&gt;db-&gt;get ();
-		$stmt = $this-&gt;mysqli-&gt;prepare ( $qy );
-		return $stmt;
-	}
-	protected function close() {
-		$this-&gt;mysqli-&gt;close ();
-	}
-	public function validateIdx($val){
-		if($val == null){
-			header ( "HTTP/1.1 401 Unauthorized"  );
-			http_response_code ( 401 );
-			die ();
-		}
-		if($val &lt; 1){
-			header ( "HTTP/1.1 401 Unauthorized"  );
-			http_response_code ( 401 );
-			die ();
-		}
-	}
-	public function validateUrl($val){
-		if($val == null || trim($val) == ""){
-			header ( "HTTP/1.1 401 Unauthorized"  );
-			http_response_code ( 401 );
-			die ();
-		}
-		if(preg_match("/".$this-&gt;host."/i", $val) == 0){
-			header ( "HTTP/1.1 401 Unauthorized"  );
-			http_response_code ( 401 );
-			die ();
-		}
-	}
-	public function validate($val){
-		if($val == null || trim($val) == ""){
-			header ( "HTTP/1.1 401 Unauthorized"  );
-			http_response_code ( 401 );
-			die ();
-		}
-	}
-	public function execute(){
-		header("content-type: application/json; charset=utf-8");
-		//header("Access-Control-Allow-Origin:*");
-		header("Access-Control-Allow-Origin:http://".$this-&gt;host);
-		return json_encode($this-&gt;run());
-	}
-	protected abstract function run();
-	protected function getSuperId(){
-		return $this-&gt;sui;
-	}
-	protected function getSuperEmail(){
-		return $this-&gt;sue;
-	}
-	protected function getHost(){
-		return $this-&gt;host;
-	}
-	protected function isSuperUser($id, $email){
-		return trim($this-&gt;sui) == trim($id) &amp;&amp; trim($this-&gt;sue) == trim($email);
-	}
-}</code>
-</pre>
-
-<div>이번에는 검색하는 페이지입니다. 기본적인 구성은 add와 같습니다. abstractdao를 상속하고 execute함수를 실행하면 내부적으로 run()이 호출됩니다.<br></div><div><div>검색은 가장 최근 댓글이 가장 위에 보이는 형태이고 리플 같은 경우는 가장 최근이 아래에 위치하는 형태이네요. 그리고 id와 email 정보는 서버 단계에서 변환시켜서 표시하기 때문에 개인정보 유출사태는 일어나지 않습니다. 그리고 common 함수에 super user id와 email를 정해서 super유저의 경우는 모든 데이터를 수정, 삭제 권한을 부여합니다.</div><div>super유저가 아닌 경우는 자기 자신이 쓴 댓글만 수정할 수 있는 플러그를 보냅니다. 그 외는 소스대로 돌아갑니다.</div><div><br></div><div>여기까지 add와 select 함수를 만들었습니다. 다음은 수정, 삭제 함수를 만들면 시스템이 완성되겠네요..</div></div></div>
+<div>&nbsp; 이제 우리 시스템에서 가장 복잡한 수정 페이지입니다. 수정페이지는 먼저 이전 데이터를 백업도 해야 하고 delete처럼 사용자 url, idx, id, email의 일치 여부를 확인하고 그런 다음 update로 수정을 합니다. 간단히 보면 delete와 insert기능이 같이 있는 것 같네요.<br></div><div><div><br></div><div>여기까지 입력, 검색, 삭제, 수정까지 작성하였습니다. 좀 더 추가해야 할 내용으로는 email 발송과 관리자가 모든 댓글을 한눈에 볼 수 있는 페이지도 만들어야겠네요. 이건 다 완성되고 추가 사항에서 만들고 일단은 ajax의 값을 받는 client html을 만들어야겠습니다.</div><div><br></div><div><br></div></div><div class="view overlay rounded z-depth-1 post-image-area"><img src="data:image/png;base64,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" data-filename="flow.png" class="article-image img-fluid" style=""><div class="mask rgba-white-slight"></div></div><div><div><br></div><br></div>
                                 </article>
                             </div>
                             <div class="row justify-content-end mb-3 date-items">
@@ -315,13 +229,13 @@ $obj = new Controller();
                     </div>
                 </div>
             </div>
-            <div class='row mt-3 mb-3'><div class='col-12 d-flex align-items-stretch'><div class='card my-style-custom'><div class='my-pre-post-nav'><div class='row'><div class='col-12 mb-1'><p class='my-pre-list-title' style='margin-bottom:0px;'><a href='/Dialy/comment_delete_modify20181204.html'> <span class='my-pre-next-icon'><i class='fa fa-chevron-up'></i>이전글</span>[블로그 구축 15일차] 블로그 댓글 시스템 달기 -6</a><span class='my-list-date float-right date-type-1 font-7'>2018년 12월 04일 01시 47분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-04 01:47 작성</span></p></div> <div class='col-12 my-blog-line'></div> <div class='col-12 mt-1'><p class='my-pre-list-title' style='margin-bottom:0px;'><a href='/Dialy/32d7d7135654429faf3cbdfe618bae00.html'> <span class='my-pre-next-icon'><i class='fa fa-chevron-down'></i>다음글</span>[블로그 구축 13일차] 블로그 댓글 시스템 달기 - 4 (서버 구축)</a><span class='my-list-date float-right date-type-1 font-7'>2018년 12월 01일 23시 02분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-01 23:02 작성</span></p></div></div></div></div></div></div>
+            <div class='row mt-3 mb-3'><div class='col-12 d-flex align-items-stretch'><div class='card my-style-custom'><div class='my-pre-post-nav'><div class='row'>  <div class='col-12 mt-1'><p class='my-pre-list-title' style='margin-bottom:0px;'><a href='/Dialy/22c4b209f70d4f4b95b2bc822da6fc69.html'> <span class='my-pre-next-icon'><i class='fa fa-chevron-down'></i>다음글</span>[블로그 구축 14일차] 블로그 댓글 시스템 달기 -5</a><span class='my-list-date float-right date-type-1 font-7'>2018년 12월 02일 17시 12분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-02 17:12 작성</span></p></div></div></div></div></div></div>
             <fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom">
                 <legend class="box-shadow-0 blog-legend px-3 blog-radius mb-0">
                     <label>최신글</label>
                 </legend>
                 <ul class="pl-3">
-                    <li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/comment_delete_modify20181204.html'>[개발일기] [블로그 구축 15일차] 블로그 댓글 시스템 달기 -6<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 04일 01시 47분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-04 01:47 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/32d7d7135654429faf3cbdfe618bae00.html'>[개발일기] [블로그 구축 13일차] 블로그 댓글 시스템 달기 - 4 (서버 구축)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 01일 23시 02분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-01 23:02 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/commentDatabase20171130.html'>[개발일기] [블로그 구축 12일차] 블로그 댓글 시스템 달기 - 3 (DB 설계)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 01일 13시 30분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-01 13:30 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/oAuth20181130.html'>[개발일기] [블로그 구축 11일차] 블로그 댓글 시스템 달기 - 2 (구글의 oauth)<span class='my-list-date float-right date-type-1 font-7'>2018년 11월 30일 01시 09분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-11-30 01:09 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/highlight20181128.html'>[개발일기] [블로그 구축 10일차] 소스 코드 보기 Grid 부착하기 highlight.js<span class='my-list-date float-right date-type-1 font-7'>2018년 11월 28일 23시 20분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-11-28 23:20 작성</span></a></div></li>
+                    <li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/22c4b209f70d4f4b95b2bc822da6fc69.html'>[개발일기] [블로그 구축 14일차] 블로그 댓글 시스템 달기 -5<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 02일 17시 12분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-02 17:12 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/32d7d7135654429faf3cbdfe618bae00.html'>[개발일기] [블로그 구축 13일차] 블로그 댓글 시스템 달기 - 4 (서버 구축)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 01일 23시 02분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-01 23:02 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/commentDatabase20171130.html'>[개발일기] [블로그 구축 12일차] 블로그 댓글 시스템 달기 - 3 (DB 설계)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 01일 13시 30분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-01 13:30 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/oAuth20181130.html'>[개발일기] [블로그 구축 11일차] 블로그 댓글 시스템 달기 - 2 (구글의 oauth)<span class='my-list-date float-right date-type-1 font-7'>2018년 11월 30일 01시 09분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-11-30 01:09 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/highlight20181128.html'>[개발일기] [블로그 구축 10일차] 소스 코드 보기 Grid 부착하기 highlight.js<span class='my-list-date float-right date-type-1 font-7'>2018년 11월 28일 23시 20분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-11-28 23:20 작성</span></a></div></li>
                 </ul>
             </fieldset>
             <fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom">
