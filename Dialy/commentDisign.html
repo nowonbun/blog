@@ -10,7 +10,7 @@
     <meta name="Author" content="nowonbun@gmail.com" />
     <meta name="distribution" content="nowonbun@gmail.com" />
     <meta name="copyright" content="nowonbun@gmail.com" />
-    <meta name="title" content="명월의 개발 일기 : [개발일기] : [블로그 구축 16일차] 블로그 댓글 시스템 달기 -7" />
+    <meta name="title" content="명월의 개발 일기 : [개발일기] : [블로그 구축 16일차] 블로그 댓글 시스템 달기 -7(server 작성)" />
     <meta name="robots" content="ALL">
     <meta property="og:title" content="명월의 개발 일기" />
     <meta property="og:description" content="어둡고 외로운 길을 걷는 개발자들의 밝은 달빛이 되길 바라는 개발자, 개발 간의 고민, 문제점을 해결하는 방법 등의 노하우를 공유하는 블로그." />
@@ -25,7 +25,7 @@
     <meta property="og:image:alt" content="명월 일기 타이포 그래피" />
     <meta name="google-signin-client_id" content="220458850151-75q8c5ids3m5krr49qj4tif6t84liubj.apps.googleusercontent.com">
 
-    <title>명월의 개발 일기 : [개발일기] : [블로그 구축 16일차] 블로그 댓글 시스템 달기 -7</title>
+    <title>명월의 개발 일기 : [개발일기] : [블로그 구축 16일차] 블로그 댓글 시스템 달기 -7(server 작성)</title>
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="/css/compiled-4.5.9.min.css" rel="stylesheet">
@@ -89,17 +89,17 @@
                     <div class="card my-blog-post">
                         <div class="card-body">
                             <h2 class="card-title">
-                                [블로그 구축 16일차] 블로그 댓글 시스템 달기 -7
+                                [블로그 구축 16일차] 블로그 댓글 시스템 달기 -7(server 작성)
                             </h2>
                             <div class="row justify-content-end mb-3 date-items">
                                 <div class="col-12" style="line-height:10px;text-align:right;">
                                     <div class="date-type-1">
                                         <span class="my-list-date font-7">작성일시 : 2018년 12월 04일 23시 13분</span><br />
-                                        <span class="my-list-date font-7">최종수정일시 : 2018년 12월 04일 23시 20분</span>
+                                        <span class="my-list-date font-7">최종수정일시 : 2018년 12월 05일 22시 51분</span>
                                     </div>
                                     <div class="date-type-2">
                                         <span class="my-list-date font-7">작성: 2018-12-04 23:13</span><br />
-                                        <span class="my-list-date font-7">최종수정: 2018-12-04 23:20</span>
+                                        <span class="my-list-date font-7">최종수정: 2018-12-05 22:51</span>
                                     </div>
                                     <div style="display:inline-block">
                                         <img src="/img/copyrightmark.png" style="height: 25px;margin-top: -13px;margin-left: 11px;">
@@ -113,107 +113,107 @@
                                 </div>
                                 <p class="image-comment">Programming</p>
                                 <article>
-                                    <div>&nbsp; 벌써 블로그 구축을 시작한 지 보름이 지나 16일 차네요. 아직 할 건 많은데 생각처럼 진척이 팍팍 나가지 않는 게 조금 답답합니다. 그래도 목표는 30일 차 안으로 완료하는 거지 열심히 하겠습니다.</div><div>&nbsp;&nbsp;</div><div>&nbsp; 댓글 기능의 서버 쪽 소스는 약 70% 구현이 된 것 같습니다. 아직 테스트를 제대로 하지 않아서 어떻게 버그가 생길지는 모르겠지만요.. 서버의 남은 영역은 댓글을 전체 관리하는 관리페이지와 댓글 남기고, 리플이 달리면 알림 기능을 하는 메일 기능이 아직 추가 되지 않았습니다. 중요도는 매우 낮으니 일단 완료되고 나서 한꺼번에 정리해서 마무리하겠습니다.</div><div><br></div><div>&nbsp; 이번에는 Client, 즉 이 블로그에서 사용된 jquery 영역을 만들겠습니다.</div><div>&nbsp; 먼저 전체 소스는 git에 등록되어 있으니 사용하실 분들은 fork 해서 가져가셔도 괜찮습니다.</div><div><br></div><div><a href="https://github.com/nowonbun/BlogComment" target="_blank">https://github.com/nowonbun/BlogComment</a><br></div><div><br></div><div>먼저 페이지에서 사용할 댓글 기능의 디자인을 먼저 하겠습니다.</div><div><br></div>
+                                    <div><div>&nbsp; &nbsp;벌써 블로그 구축 프로젝트를 시작한 지 보름이 지났습니다. 그러나 아직　생각처럼 진척이 팍팍 나가지 않네요. 조금 답답합니다. 그래도 올해 말에 꼭 하고 싶은 프로젝트가 있기 때문에 최대한 30일 차 이전에 끝내는게 목표입니다.</div><div>&nbsp;</div><div>&nbsp; 댓글 기능의 서버 쪽 구현은 약 70% 정도 완료가 되었습니다. 아직 테스트도 제대로 되지 않아서 버그가 있을 거 같긴 하지만, 주요 부분은 일단 구현이 되었습니다. client까지 빨리 만들고 서버 쪽 관리 페이지와 메일 기능을 추가해서 빨리 완성해야 겠습니다. 블로그를 한 2~3주간 사용해보니 이곳저곳에서 버그도 조금씩 보이고 할 게 많네요.. 아직 방문자가 없어서 다행입니다. ㅎㅎ 이게 진짜 다행인지...</div><div><br></div><div>&nbsp; 이번에는 client쪽을 구현해 볼까 합니다. client 쪽이라고 하면 브라우저, 즉 제 블로그에서 javascript(jquery)를 통해 서버로 접속해서 댓글 추가, 검색, 수정, 삭제 부분을 말합니다.</div><div>&nbsp; 서버 쪽은 화면 디자인은 필요 없지만 client 영역은 화면 디자인이 필요하니 우선 디자인을 먼저 해야겠네요.</div></div><div><br></div>
 <pre><code class="HTML" data-type="화면 디자인">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
-	&lt;head&gt;
-	&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
-	&lt;meta name="google-signin-client_id" content=""&gt; &lt;!-- 구글 인증 client_id 넣는 란 --&gt;
-
-    &lt;title&gt;&lt;/title&gt;
-    &lt;link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"&gt;
-    &lt;link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"&gt;
-	&lt;link href="http://www.nowonbun.com/css/compiled-4.5.9.min.css" rel="stylesheet"&gt;
-    &lt;link href="http://www.nowonbun.com/css/style.min.css" rel="stylesheet"&gt;
-    &lt;link href="http://www.nowonbun.com/css/common.css" rel="stylesheet"&gt;
+  &lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"&gt;
+  &lt;meta name="google-signin-client_id" content=""&gt; &lt;!-- 구글 인증 client_id 넣는 란 --&gt;
+ 
+  &lt;title&gt;&lt;/title&gt;
+  &lt;link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"&gt;
+  &lt;link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"&gt;
+  &lt;link href="http://www.nowonbun.com/css/compiled-4.5.9.min.css" rel="stylesheet"&gt;
+  &lt;link href="http://www.nowonbun.com/css/style.min.css" rel="stylesheet"&gt;
+  &lt;link href="http://www.nowonbun.com/css/common.css" rel="stylesheet"&gt;
 &lt;/head&gt;
 &lt;body lang="ko" aria-busy="true"&gt;
-    &lt;div id="bodyMain" class="container wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;"&gt;
-        &lt;main class="mt-5"&gt;
-            &lt;fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom"&gt;
-                &lt;legend class="box-shadow-0 blog-legend px-3 blog-radius"&gt;
-                    &lt;label&gt;댓글 달기&lt;/label&gt;
-                &lt;/legend&gt;
-                &lt;div id="commentSystem"&gt;
-					&lt;div id="googleSigninButton"&gt;&lt;/div&gt; &lt;!-- g-signin2 DIV 컬럼 --&gt;
-                    &lt;div id="commentInsertForm" class="comment-form-border"&gt;
-						&lt;div style="text-align:right;"&gt;
-							&lt;button type="button" class="btn btn-sm btn-outline-success waves-effect" id="createComment"&gt;작성하기&lt;/button&gt;
-						&lt;/div&gt;
-						&lt;div class="md-form comment-form"&gt;
-						  &lt;textarea id="commentText" class="form-control md-textarea comment-textarea" maxlength="300" length="300" rows="3"&gt;&lt;/textarea&gt;
-						  &lt;label for="commentText" class="comment-textarea-label"&gt;댓글 작성하기&lt;/label&gt;
-						&lt;/div&gt;
-					&lt;/div&gt;
-					&lt;div id="commentList" class="comment-list"&gt;&lt;/div&gt;
-                &lt;/div&gt;
-            &lt;/fieldset&gt;
-        &lt;/main&gt;
-    &lt;/div&gt;
-    &lt;script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"&gt;&lt;/script&gt;
-	&lt;script type="text/javascript" src="http://www.nowonbun.com/js/compiled-4.5.9.min.js"&gt;&lt;/script&gt;
-	&lt;script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"&gt;&lt;/script&gt;
-	&lt;script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer&gt;&lt;/script&gt;
-	&lt;script&gt;
-	var auth = {
-		id: null,
-		email: null
-	};
-	function onSignIn(googleUser) {
-		$("#commentInsertForm").show(); // 댓글 작성 폼 뷰
-		$("#googleSigninButton").hide(); // 구글 로그인 뷰
-
-		var profile = googleUser.getBasicProfile(); // 구글 oAuth2 정보 취득
-		auth.id = profile.getId();
-		auth.email = profile.getEmail();
-		getCommentList();
-		//console.log(profile);
-		//__proto__
-
-		//var id_token = googleUser.getAuthResponse().id_token;
-		//console.log("ID Token: " + id_token);
-	}
-	function onFailure(error){
-		console.log(error);
-	}
-	function onLoad() {
-		gapi.load('auth2,signin2', function() {
-			var auth2 = gapi.auth2.init();
-			auth2.then(function() {
-				// Current values
-				var isSignedIn = auth2.isSignedIn.get();
-				var currentUser = auth2.currentUser.get();
-
-				gapi.signin2.render('googleSigninButton', {
-					'onsuccess': 'onSignIn',
-					'onfailure': 'onFailure',
-					'longtitle': true,
-					'theme': 'dark',
-					'width': '0'
-				});
-				/*auth2.signOut().then(function () {
-				debugger;
-				$('.userContent').html('');
-				$('#gSignIn').slideDown('slow');
-				}); */
-				//console.log(currentUser);
-				if (!isSignedIn) {
-					$("#commentInsertForm").hide();
-					$("#googleSigninButton").show();
-					getCommentList();
-				} else {
-					$("#commentInsertForm").show();
-					$("#googleSigninButton").hide();
-				}
-			});
-		});
-	}
-	&lt;/script&gt;
+  &lt;div id="bodyMain" class="container wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;"&gt;
+    &lt;main class="mt-5"&gt;
+      &lt;fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom"&gt;
+        &lt;legend class="box-shadow-0 blog-legend px-3 blog-radius"&gt;
+          &lt;label&gt;댓글 달기&lt;/label&gt;
+        &lt;/legend&gt;
+        &lt;div id="commentSystem"&gt;
+          &lt;div id="googleSigninButton"&gt;&lt;/div&gt; &lt;!-- g-signin2 DIV 컬럼 --&gt;
+          &lt;div id="commentInsertForm" class="comment-form-border"&gt;
+            &lt;div style="text-align:right;"&gt;
+              &lt;button type="button" class="btn btn-sm btn-outline-success waves-effect" id="createComment"&gt;작성하기&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class="md-form comment-form"&gt;
+              &lt;textarea id="commentText" class="form-control md-textarea comment-textarea" maxlength="300" length="300" rows="3"&gt;&lt;/textarea&gt;
+              &lt;label for="commentText" class="comment-textarea-label"&gt;댓글 작성하기&lt;/label&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div id="commentList" class="comment-list"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/fieldset&gt;
+    &lt;/main&gt;
+  &lt;/div&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript" src="http://www.nowonbun.com/js/compiled-4.5.9.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"&gt;&lt;/script&gt;
+  &lt;script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer&gt;&lt;/script&gt;
+  &lt;script&gt;
+  var auth = {
+    id: null,
+    email: null
+  };
+  function onSignIn(googleUser) {
+    $("#commentInsertForm").show(); // 댓글 작성 폼 뷰
+    $("#googleSigninButton").hide(); // 구글 로그인 뷰
+ 
+    var profile = googleUser.getBasicProfile(); // 구글 oAuth2 정보 취득
+    auth.id = profile.getId();
+    auth.email = profile.getEmail();
+    getCommentList();
+    //console.log(profile);
+    //__proto__
+ 
+    //var id_token = googleUser.getAuthResponse().id_token;
+    //console.log("ID Token: " + id_token);
+  }
+  function onFailure(error){
+    console.log(error);
+  }
+  function onLoad() {
+    gapi.load('auth2,signin2', function() {
+      var auth2 = gapi.auth2.init();
+      auth2.then(function() {
+        // Current values
+        var isSignedIn = auth2.isSignedIn.get();
+        var currentUser = auth2.currentUser.get();
+ 
+        gapi.signin2.render('googleSigninButton', {
+          'onsuccess': 'onSignIn',
+          'onfailure': 'onFailure',
+          'longtitle': true,
+          'theme': 'dark',
+          'width': '0'
+        });
+        /*auth2.signOut().then(function () {
+        debugger;
+        $('.userContent').html('');
+        $('#gSignIn').slideDown('slow');
+        }); */
+        //console.log(currentUser);
+        if (!isSignedIn) {
+          $("#commentInsertForm").hide();
+          $("#googleSigninButton").show();
+          getCommentList();
+        } else {
+          $("#commentInsertForm").show();
+          $("#googleSigninButton").hide();
+        }
+      });
+    });
+  }
+  &lt;/script&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
 
-<div><div>기본적인 css와 js는 현재 블로그에 맞추어서 link를 걸었습니다. 그리고 실제 댓글 달기의 legend 태그 안에 텍스트 area를 넣고 작성하기 버튼을 넣었습니다.</div><div>&nbsp;&nbsp;</div></div><div class="view overlay rounded z-depth-1 post-image-area"><img src="data:image/png;base64,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" data-filename="commentok.png" class="article-image img-fluid" style=""><div class="mask rgba-white-slight"></div></div><div><div><br></div><div>&nbsp;&nbsp;여기까지 만들어졌으면 기본적인 디자인은 완성이 되었습니다.</div><div>&nbsp;&nbsp;이제 google의 oAuth를 구현해야겠네요.</div><div>&nbsp;&nbsp;</div><div><a href="https://developers.google.com/identity/sign-in/web/" target="_blank">&nbsp; https://developers.google.com/identity/sign-in/web/</a></div><div>&nbsp;&nbsp;</div><div>&nbsp; 위 가이드에서 나온 설명대로 g-sign2 태그를 만들고 google-signin-client_id 태그를 만들고 로그인이 가능한 자바스크립트를 만들었습니다.</div><div>&nbsp;&nbsp;</div><div>&nbsp; 아래는 로그아웃이 되었을 때 이미지입니다.</div><div><br></div></div><div class="view overlay rounded z-depth-1 post-image-area"><img src="data:image/png;base64,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" data-filename="commentng.png" class="article-image img-fluid" style=""><div class="mask rgba-white-slight"></div></div><div><div><br></div><div>&nbsp;&nbsp;이건 로그인이 되었을 때 이미지 입니다.</div><div><br></div></div><div class="view overlay rounded z-depth-1 post-image-area"><img src="data:image/png;base64,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" data-filename="commentok.png" class="article-image img-fluid" style=""><div class="mask rgba-white-slight"></div></div><div><div><br></div><div>&nbsp;&nbsp;여기까지 google oAuth2로 로그인 로그아웃까지 구현했습니다.</div></div>
+<div><div>&nbsp; 이 댓글 기능은 우선, 제 블로그에서 사용할 것이기 때문에 최대한 css와 js를 블로그와 일치시켜서 비슷한 환경으로 구성했습니다. 그리고 그 외의 포스트 내용과 최신글 내용은 현재 필요가 없기 때문에 다 삭제하고 댓글 영역만 복사해서 기본 개발 환경을 설정했습니다. 개발 환경은 가능하면 실제 사용하는 곳과 최대한 비슷하게 구성을 해야 나중에 릴리즈할 때 어려움이 없습니다.</div><div>&nbsp;&nbsp;</div></div><div class="view overlay rounded z-depth-1 post-image-area"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABG4AAAEyCAMAAACcZ2ZzAAABC1BMVEX////DoOr9/f3o6Oj4+PjJycm7u7vO1NoAyFH7+/v5+fn09PTr6+vg4OAhJSl1dXX39/fV1dXLy8ukpKSojMrw8PDh4eHS0tK1ltr6+vq8muHv7+9QSGGEcJ9jV3jc+Ofs7OycnJyGhoaVlZX19fXT09NsXoLm5ubPz8+bgbq38M3Jquxi3ZNv4JxH14FDQFPt+/NaT21946cl0Gnf39+b6rv3/vnq6urDpuXCwsLHxsiU5rR9fX01NEH69/3x6Prj4+PB8tXUvuzZ2dnAq9m+vMBR2ogSzF1d3JA01HTk+uzj3unBnujNuOPU9uLPyNd14qDCucyrq6vXzeLb1uDY096m6MCZf7i2trZscvKqAAAK4UlEQVR42uzdX0sqQRiAcWfUA/sHORcm29p25a6KF8uCkArpQfTKIqKgvv8nOXhqm2iqWT0Fs9PzuwmCunx4d3TebQAAAAAAAAAAAAAAAAAAAAAAAFhAWqgBwD1Sep7v+y1r+L7veQQHcI+Unh/0w6ZFwn7g0xvAOVKeBuHdTFhldhcGp/QGcIz0guG1sM71MPDIDeAU6fkXN8JCNxc+vQGcIr1gatmT1JPZlPEGcIv0+6mduUn7PrkBXCL9cCQOko1F9zwWe93LTimPxDvi8654KzrriipGIbkBnCL9ZltUEOVlVVRuXokKlZuk86SI/ys37Sa5AZxiyo0eCXNuEm26KcegPCI3wI8lW9+dG2X/d4fkpkVuAJd8UW66Z+/npvj3TFUaZ4LcAD/WEbnpPCdEm1uM002WkBvgZ5GveIPh4qjppjw8VjJTbqIiOiA3i+HAkwBqoOIF8MFJb35Ubj6WvPTnTW6STP0ns3nvZNACYDe1wMF8AXzYSx+FkZplMpUbM5Ubdb5TOTePaW/YBGA5tcDh/Qvgu/VEPLuKo4ev+JpfEZuDNRaH5OYhiq8EAMtN1ju1wEG/AL6brJYHHRUrcTEuD4YV7TdJp3TZVbVJhBAcFQOOWa4mu3KBg34B/H5y+CdTWjT03Hz+MNW9TAS5AZw0uS8XOGgXwNer43MzztUXbIwPUyo3cdEZC3IDuGm1Lhc4aBfAJ8ujc9M9i5IiNs00+sNUlkeC3ACOWk7KBQ76BfDGsblJ9vVI8siYm0RoyA3gLLXAQbuReWRuxp0ifvqZR+QGwAvRbn5pbqI8j1R4MnV282ysP0ztZeQGcJ7KjVYXrT/fiX03gPPUdGDMjZ3LQ8kNUBeVcxOONsJCG5aHAnVROTf99NbCywJXt6xGB+qiam68YLqwcLzZtHnxC1AXlXPjh+l8u7Hq/Ga22c7TkNfaATVhzI0ab/6MFvPtL4ts54sRL+0FasOcG7WRojlNR22LjNJpMziV5AaoB3Nu1L6t3/t9WxYJ+8Fvj9oAdWHKjb5N1Br7bYTUBqgPc24UaaEGgLr4LDcAQG4A1A+5AfABcgOgpsgNgA+QGwA1RW4A/GXvfloTB+I4jA+/U5IxkF1QkBz0YLEEI2IwHnJRAv7pQTz1/b+UnVGzLizRQzOHMM+ntND20NvDN0nJtCA3AHqK3ABoQW4A9BS5AdCC3ADoKXIDoAW5AdBT5AZAC3IDoKfIDYAW5AZAT5EbAC3IDYCfE6fIDYBnapTTD4PcAN5rSuPS/Q+QG8Bvf0MTOtMUR8gN4DUbgtAYG5EDYyM0hHUDeE5E2V0TJbOZdmQ2S6LHxiE3gMdEiY3NdxE4VHzb4HAxBfjtdimV6CJwqtBJGLJuAL/ZdRPpNAiUQ0GQ6ojcAH4TI0yGW9e52Q6TUAxyA3hLlMh4ls5d52aezsasG8BrdtyY3Oxc52ZnchOybgCfiTK50dOR69yMpprcAH4TITcAnHs+mJrGrnMTT3VEbgCviZAbAM49183gZW7ywNhka2VMFvYHG/NltZzcPo3mF69yMyA3gOdE3ubm0Zd7bi6n/3KzMTE6TsgNgJ+uG+uwbnKTHS9LM3VMY6zqsW5WixW5AdDBusnO54sJzXGiytPiPLHr5q65mNovuJgC0MG6yYqsOl9u6ybP1Wa5srnZF0Gxb3KTZ+QGQAfrJq+UWlc2N9mpfNzKKZeZ2h++zkFuvq+u3CoG0MW6sZp7N1+HIDheyyY3dt3I9VCSGwCd3LvJAytXxmldqtWi+vdiap2XPAgH0PW6eebG4v9uAHS0btovpsgNAGfr5j1yA+AVEXIDoAXrBkAvsW4AtGLdAOgl3ncD4A3e5gegZ3hXMYA3OIkBQM8050y5PiOcc6YA7zWnaFZOe1NUnKIJeK85IzyuPz5/O/L5UcecEQ7g/mgqncd1/cuRuo7nqY5C1g3gN7tuwkSn2/luNIodGI12822qk5DcAJ4TJRJGiR6m6dQYdGxqpOlQJ5HNjSI3wB/26xiHgRAGgCByR/KC6+//b4xJ0rpIQSSLGUvQUa7MwSLNmcG57+cm971iM8N2A4eLnJmu9NjgSjNFDNsNnC3S+5jbxIfPFJwuRix57TTWyA0cL9Zs8319DLkBUuycGElugD+QG+A3cgM0JTdAQW6ApuQGKMgN0JTcAAW5AZqSG6AgN0BTcgMU5AZoSm6AgtwATckNUJAboCm5AQpyAzQlN0BBboCm5AZe7NtLboMwEIBhVrPF0gjPOvganCL3P0yp5YGQxk2M1ErA/y3y4LH9ZRuDCnID4KDIDYAKcgPgoMgNgApyA+CgyA2ACnID4KDIDYAKcgPgoMgNgApyA+CgyA2ACnID4KD25GbQEG+he0Psx11dZpq/9MV5ACfWkpuQ+tk4rLnRvkihNGP0/2tuTH/JjfWZkBvg9Jpyc4uV0c3mr0g3+yg3TozcAKf3B7lR3eZGUlhyY32hm9zcI7kBTm9XbkafPbl4f/itOuTK9L3ku9IUc2a2t5TceL/IDXB6u0c3tdwMY7QUHkY3qpJCaYovANk2NyIsFQPntz83ZVnYjUM+Z9N8jUxxyY3OrZEUPCfDKN8fVnLjUzFyA5xf65OpmZTcvBLHmKMzx0fM65IPl5yIeGDUp1fzSR6EAxfwv/tu/OiQhmV0Y1Nk3w1wBY258SnV874b7T6xHd2YLySzzQ+4hObc5IWXZ6brz97ZcoPv5HuxdqPKrmLgItpzo7eyKvxmdCM+WSqXS1qeTE2RlxiA62nOjaoHZJOMem7U1klYwTtTwBU15kbynChOKXycG18K1hTIDb7YuUMjBAIgCIIpYAAPaZB/XKgXL0a83PruIKbqTix3dik3z8/3cWTnfTqmfq/Izel3IzdwZ/ZugCA3wCi5AYLcAKPkBghyA4ySGyDIDTBKboAgN8AouQGC3ACj5AYIcgOMkhsgyA0wSm6AIDfAKLkBgtwAo+QGCHIDjJIbIMgNMEpugCA3wCi5AYLcAKPkBghyA4ySGyDIDTBKboAgN8AouQGC3ACj5AYIcgOMkhsgyA0wSm6AIDfAKLkBgtwAo+QGCHIDjJIbIMgNMEpugCA3wCi5AYLcAKPk5s9+HZsAAAMwDBv7/8e9INCOBukIkwCD3ABRcgMMcgNEyQ0wyA0QJTfAIDdAlNwAg9wAUXIDDHIDRMkNMMgNECU3wCA3QJTcAIPcAFFyAwxyA0TJDTDIDRAlN8AgN0CU3ACD3ABRcgMMcgNEyQ0wyA0QJTfAIDdAlNwAg9wAUXIDDHIDRMkNMMgNEPWRmwPwwboBnjlTQJLcAIPcAFFyAwxyA0TJDTDIDRAlN8AgN0CU3ACD3ABRcgMMcgNEyQ1w269j1QahAArD1jQFrw5Zg7NUuKuLDloCGUPokPd/ldKs9U69BC5830P8nJMgN0Ch5AZIkBugUHIDJMgNUCi5ARLkBiiU3AAJcgMUSm6ABLkBCiU3QILcAIWSGyBBboBCyQ2QIDdAoeQGSJAboFByAyS8KDdBboD8uQn7uYlrBZDNGhO56cbLVgFks13Gbjc3/XCPFUA28T70e7lp2ml5xM2fArJYt/g4Tm2zl5vQDfP3Lb4BZBBvyzx0oamrvXnzNS7z9QMgg+u8jJ/PcfNHXZ/bwzSMR4AMxmE6tOe6rnZ705zavjsAZND17an5rU2iN00I4R3g30IIzbM2CTVARhUAAAAAAAC83g/xoOUZnROPQwAAAABJRU5ErkJggg==" data-filename="commentok.png" class="article-image img-fluid" style=""><div class="mask rgba-white-slight"></div></div><div><div><br></div><div><div>&nbsp; client의 개발 구성은 먼저 로그인, 예전에 조사했던 google oauth2로 로그인 화면을 만들고, 그다음에는 입력, 검색, 삭제, 수정순으로 기능을 추가할까 생각하고 있습니다.</div><div>로그인 기능은 google의 가이드를 보고 참고했습니다.</div><div><br></div><div><a href="https://developers.google.com/identity/sign-in/web/" target="_blank">https://developers.google.com/identity/sign-in/web/</a></div><div><br></div><div>&nbsp; 가이드에서는 로그인박스를 넣은 div를 선언하고 meta태그에 google client id를 넣고 구글에서 제공하는 js를 링크하고 onSignIn함수를 넣으라고 설명이 되어있네요. 그대로 쓰기에는 제 사양과 다르기 때문에 조금 수정했습니다.</div><div><br></div><div><a href="https://stackoverflow.com/questions/31331428/how-to-call-getbasicprofile-of-google-to-google-signin-on-only-button-click" target="_blank">https://stackoverflow.com/questions/31331428/how-to-call-getbasicprofile-of-google-to-google-signin-on-only-button-click</a></div><div><br></div><div>&nbsp; 예전에 조사한 스택 오버플로우에 올린 글입니다만 여기에는 div영역의 id를 바꿀 수 있고 이벤트 명도 수정할 수 있네요. 저는 아래의 링크를 참고하여 위의 소스처럼 작성했습니다. 구글의 oAuth의 경우는 로그아웃이 되어있으면 자동으로 구글 로그인 버튼이 나옵니다.</div></div><div><br></div></div><div class="view overlay rounded z-depth-1 post-image-area"><img src="data:image/png;base64,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" data-filename="commentng.png" class="article-image img-fluid" style=""><div class="mask rgba-white-slight"></div></div><div><div><br></div><div>&nbsp; 로그인이 되어있지 않으면 자동으로 로그인 버튼이 hide됩니다. 저는 로그인이 되어있으면 댓글을 입력할 수 있는 text-box와 입력 버튼이 보이게끔 작성했습니다.</div><div><br></div></div><div class="view overlay rounded z-depth-1 post-image-area"><img src="data:image/png;base64,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" data-filename="commentok.png" class="article-image img-fluid" style=""><div class="mask rgba-white-slight"></div></div><div><div><br></div><div><div>&nbsp; 뭐 여기까지 일반적인 로그인 방법과 댓글 작성하는 디자인입니다. 딱히 여기에 대해서 제가 더 글을 쓸 내용이 없네요..ㅠㅠ</div><div>&nbsp; 하고자 한다면 우리가 UI를 구성할 때면 자신만의 특별한 기능, 특별한 디자인으로 구성하는 사람도 있지만 저는 가장 보편적인 디자인과 기능을 선호하는 편입니다. 왜냐하면 프로그램을 설계하다 보면 유저의 사용자 학습 부분도 검토해야 합니다. 만약에 지금은 단순히 댓글 기능이라 생각할 것도 별로 없지만 간단하게 생각하면 윈도우 메뉴바는 하단, 시작 버튼은 왼쪽 아래, 맥은 상단에 있네요..</div><div>&nbsp; 이렇게 있는데 나는 독특한 기능이라고 마우스 왼쪽 오른쪽 동시에 누르면 메뉴가 나오게끔 설계를 하면 사람들이 아마 메뉴가 어디 갔지? 메뉴를 찾는 데 시간을 많이 소비할 것입니다. 그리고 방법을 알고 있더라도 아직 사람들이 익숙하지 않기 때문에 많이 헤멜수도 있고요. 그럼 아무리 좋은 기능, 혁신적인 기능이라도 사용자 학습이 되지 않은 기능들은 그냥 불편한 기능일 뿐입니다.&nbsp;그런 면에서 보면 스티브 잡스가 대단한 것입니다. 새로운 시스템, 기능이 나와도 사람들이 많은 어려움 없이 쉽게 흡수가 되는 그런 설계를 하는 것. 이건 쉽지만 매우 어려운 일입니다.</div><div>&nbsp; 여기까지 이야기 하다 보니 사용자 학습에 대한 것도 참 할말이 많네요. 다음에 기회 있으면 포스팅을 해야겠습니다.</div><div><br /></div><div>&nbsp; 댓글 기능의 소스는 제 github에 등록되어있습니다. 혹시 사용하실 분들은 fork해서 가져가서 편히 쓰시면 됩니다.<br></div><div>github -&nbsp; <a href="https://github.com/nowonbun/BlogComment" target="_blank">https://github.com/nowonbun/BlogComment</a></div></div></div>
                                 </article>
                             </div>
                             <div class="row justify-content-end mb-3 date-items">
@@ -226,13 +226,13 @@
                     </div>
                 </div>
             </div>
-            <div class='row mt-3 mb-3'><div class='col-12 d-flex align-items-stretch'><div class='card my-style-custom'><div class='my-pre-post-nav'><div class='row'>  <div class='col-12 mt-1'><p class='my-pre-list-title' style='margin-bottom:0px;'><a href='/Dialy/comment_delete_modify20181204.html'> <span class='my-pre-next-icon'><i class='fa fa-chevron-down'></i>다음글</span>[블로그 구축 15일차] 블로그 댓글 기능 달기 - 6</a><span class='my-list-date float-right date-type-1 font-7'>2018년 12월 04일 01시 47분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-04 01:47 작성</span></p></div></div></div></div></div></div>
+            <div class='row mt-3 mb-3'><div class='col-12 d-flex align-items-stretch'><div class='card my-style-custom'><div class='my-pre-post-nav'><div class='row'><div class='col-12 mb-1'><p class='my-pre-list-title' style='margin-bottom:0px;'><a href='/Dialy/c4097e40237147c696ba6c0af47a8718.html'> <span class='my-pre-next-icon'><i class='fa fa-chevron-up'></i>이전글</span>[블로그 구축 17일차] 블로그 댓글 시스템 달기 -8 (client 작성)</a><span class='my-list-date float-right date-type-1 font-7'>2018년 12월 05일 22시 28분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-05 22:28 작성</span></p></div> <div class='col-12 my-blog-line'></div> <div class='col-12 mt-1'><p class='my-pre-list-title' style='margin-bottom:0px;'><a href='/Dialy/comment_delete_modify20181204.html'> <span class='my-pre-next-icon'><i class='fa fa-chevron-down'></i>다음글</span>[블로그 구축 15일차] 블로그 댓글 기능 달기 -6(server 작성)</a><span class='my-list-date float-right date-type-1 font-7'>2018년 12월 04일 01시 47분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-04 01:47 작성</span></p></div></div></div></div></div></div>
             <fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom">
                 <legend class="box-shadow-0 blog-legend px-3 blog-radius mb-0">
                     <label>최신글</label>
                 </legend>
                 <ul class="pl-3">
-                    <li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/comment_delete_modify20181204.html'>[개발일기] [블로그 구축 15일차] 블로그 댓글 기능 달기 - 6<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 04일 01시 47분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-04 01:47 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/22c4b209f70d4f4b95b2bc822da6fc69.html'>[개발일기] [블로그 구축 14일차] 블로그 댓글 기능 달기 -5<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 02일 17시 12분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-02 17:12 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/32d7d7135654429faf3cbdfe618bae00.html'>[개발일기] [블로그 구축 13일차] 블로그 댓글 기능 달기 - 4 (서버 구축)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 01일 23시 02분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-01 23:02 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/commentDatabase20171130.html'>[개발일기] [블로그 구축 12일차] 블로그 댓글 기능 달기 - 3 (DB 설계)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 01일 13시 30분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-01 13:30 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/oAuth20181130.html'>[개발일기] [블로그 구축 11일차] 블로그 댓글 기능 달기 - 2 (구글의 oauth)<span class='my-list-date float-right date-type-1 font-7'>2018년 11월 30일 01시 09분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-11-30 01:09 작성</span></a></div></li>
+                    <li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/c4097e40237147c696ba6c0af47a8718.html'>[개발일기] [블로그 구축 17일차] 블로그 댓글 시스템 달기 -8 (client 작성)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 05일 22시 28분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-05 22:28 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/comment_delete_modify20181204.html'>[개발일기] [블로그 구축 15일차] 블로그 댓글 기능 달기 -6(server 작성)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 04일 01시 47분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-04 01:47 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/22c4b209f70d4f4b95b2bc822da6fc69.html'>[개발일기] [블로그 구축 14일차] 블로그 댓글 기능 달기 -5(server 작성)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 02일 17시 12분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-02 17:12 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/32d7d7135654429faf3cbdfe618bae00.html'>[개발일기] [블로그 구축 13일차] 블로그 댓글 기능 달기 -4(서버 구축)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 01일 23시 02분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-01 23:02 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/commentDatabase20171130.html'>[개발일기] [블로그 구축 12일차] 블로그 댓글 기능 달기 - 3 (DB 설계)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 01일 13시 30분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-01 13:30 작성</span></a></div></li>
                 </ul>
             </fieldset>
             <fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom">
