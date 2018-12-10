@@ -1,4 +1,449 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:activity="http://activitystrea.ms/spec/1.0/" ><channel><title>명월의 개발 일기</title><link>http://www.nowonbun.com</link><description>어두운 밤길을 비추는 달빛처럼.. 어둡고 외로운 개발의 길을 걷는 이들의 밝은 달빛이 되길 바라는 개발자... 프로그램 개발 간의 고민, 문제점을 해결하는 방법 등의 노하우를 일기 형식으로 공유하는 블로그.</description><language>ko</language><pubDate>Sat, 08 Dec 2018 16:57:15 GMT</pubDate><generator>nowonbun blog editor</generator><managingEditor>nowonbun@gmail.com</managingEditor><webMaster>nowonbun@gmail.com</webMaster><item><title>[블로그 구축 19일차] 블로그 댓글 시스템 달기 -10 (client 작성)</title><link>http://www.nowonbun.com/Dialy/a5bdfd0a09ad4e53a355c5009726220a.html</link><description> 이번에는 댓글 수정과 리플을 작성하겠습니다. 추가와 삭제의 경우는 버튼을 누름과 동시에 추가 또는 삭제의 이벤트가 발생했습니다. 그러나 수정과 리플의 경우는 수정 버튼을 누르면 일단 댓글이 있는 부분에 텍스트박스로 변환을 해서 다시 수정 버튼을 눌렀을 경우 댓글의 수정이 발생하도록 만들 예정입니다.$(document).on("click", ".comment-modify", function(){
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:activity="http://activitystrea.ms/spec/1.0/" ><channel><title>명월의 개발 일기</title><link>http://www.nowonbun.com</link><description>어두운 밤길을 비추는 달빛처럼.. 어둡고 외로운 개발의 길을 걷는 이들의 밝은 달빛이 되길 바라는 개발자... 프로그램 개발 간의 고민, 문제점을 해결하는 방법 등의 노하우를 일기 형식으로 공유하는 블로그.</description><language>ko</language><pubDate>Mon, 10 Dec 2018 14:10:32 GMT</pubDate><generator>nowonbun blog editor</generator><managingEditor>nowonbun@gmail.com</managingEditor><webMaster>nowonbun@gmail.com</webMaster><item><title>해야 할 일 정리하기</title><link>http://www.nowonbun.com/Dialy/86c439ae1577450cbbd871632b09d3d9.html</link><description> 댓글 기능 추가하기 20 일차까지 해서 일단은 블로그에 댓글 기능 추가하는 것을 마무리했습니다. 아직 제가 생각하기에는 IE에서 제대로 작동 안 하는 문제 등이 있고 메일 기능 추가(댓글을 작성할 때 메일로 댓글 감사합니다(?) 메일과 리플이 달릴 때마다 리플이 달렸다는 메일 보내는 기능도 일단 생각은 했었는데 거기까지는 작업을 하지 않았습니다. 그리고 애드센스(광고)도 붙여야 합니다. 애드센스로 블로그를 하면서 돈을 많이 벌고 싶다는 의미는 아니고 앞으로 제가 해야 하면서 서버를 렌탈할 일이 생기기 때문에 그것에 대한 운영비로 사용할 예정입니다. 결론으로는 아직 남아 있는 기능에 대해서는 좀 댓글 기능을 사용해보고 사양 추가 또는 수정할 생각입니다. 연속해서 20일 포스팅을 쓰니 지루한 면도 없지 않아 있네요. 이 글을 작성하는 기능은 12월 10일입니다만 제가 연말까지 꼭 하고 싶은 작업이 있기에 서둘러 댓글 기능을 마무리한 경향도 없지 않아 있습니다. 일단 현재 제가 생각하고 해야 할 일에 대해서는 아래 항목과 같네요.1. 명월일지 개편-&gt; 이건 원래 제 블로그입니다만, 가장 시급한 일이기도 합니다. 디자인도 엉망이 되었고 포스팅 내용도 틀린 부분이 많고 보기 어려워진 부분도 많습니다.(highlight 소스 있는 부분이 이상하게 표시됩니다.) 이런 저런 요건을 보건데 가~~장 우선순위가 높지 않을까 생각되네요.2. 서버 OS 교체-&gt; 제가 집에서 노트북을 하나 개조(?) 해서 집 NAS 서버로 사용하고 있습니다. 이 서버는 텔레비전과 연결하여 가족들이 영화나 티비 재방송을 볼 수 있도록 했고, 가계부 등 여러 웹 프로그램들을 사용하는 서버가 하나 있습니다. 현재 이 서버의 버전은 윈도 2008입니다만 서비스 기간은 아직 1년 정도 남았네요.. 제가 알기에는 2020년에 서비스 종료입니다.그러나 그전에 이 서버가 너~~~~무 느려서 centos로 바꿀 생각입니다. 왜 느려진 것에 대해서는 나중에 서버 교체 시에 설명하곘습니다.3. 그래서 그 안의 dlna 미디어 서버(현 LG SMART)를 이전 또는 새로 설치 해야 합니다. 지금은 LG Smart라는 프로그램을 사용하고 있습니다만 Plex라는 프로그램으로 교체할까 생각합니다.나중에 서버 이전할 때 또 설명하겠지만 LG SMART 프로그램은 버그가 너무 많네요... 적어도 제가 느끼기엔 그렇습니다.4. 개인 웹 프로그램 이전.-&gt; 그리고 메인 프로그램으로는 가계부가 운영 중에 있습니다. 여러 프로그램이 있습니다만 그냥 삭제해도 괜찮을 거 같으나, 가계부는 가족이 사용하는 데이터라 백업, 복구를 하던 새로 만들어서 데이터 이행을 해서 새로 구축을 해야합니다.5. 그 밖에.-&gt; blogediter를 로컬용이 아닌 서버용으로 작성하고 싶네요. 그리고 또 git에 아직 미완 프로그램이 있는데 가능하면 완료하고 싶네요.여기서 제가 우선순위는 역시 명월 일지 개편이　먼저라고 생각합니다만, 서비스 블로그이기도 하고 정말 심하게 엉망진창입니다. 그러나 저는 서버 OS를 먼저 교체할까 생각하고 있습니다. 솔직히 이건 우리 가족만 사용하는 서버라 천천히 해도 크게 영향은 없지만, 명월 일지 블로그 editor와 일기 블로그 editor를 개발해서 내무 서버에서 운영할까 생각하고 있기 때문입니다.현재 일기 블로그 editor를 로컬에서 사용하고 있습니다만, 로컬이다 보니 제가 외부에서 작업할 수가 없습니다. 즉, 집에 늦게 가거나 못 가게 되면 그날 블로그 포스팅은 없어지네요..ㅜㅜ그래서 계획이 요번 달까지 서버 OS 변경을 할까 생각하고 있습니다.서버 OS 변경 전에 해야할 일은 결국에는 가계부 프로그램을 다시 만들어야 합니다. 가계부 프로그램을 제가 C#으로 만들었는데.. C#이 centos에서 안되는 건 아니지만. 최적은 아니기에 java로 바꾸어서 개발해야 곘네요. 그럼 우선순위는 가계부 만들기입니다!!!</description><category>개발일기</category><author>nowonbun@gmail.com</author><guid>http://www.nowonbun.com/Dialy/86c439ae1577450cbbd871632b09d3d9.html</guid><pubDate>Mon, 10 Dec 2018 23:07:21 GMT</pubDate></item><item><title>[블로그 구축 20일차] 블로그 댓글 기능 달기 - 11(admin)</title><link>http://www.nowonbun.com/Dialy/59fc0910cbdb4d8f9a045f5cbe9e5b5f.html</link><description> 저번 포스팅까지 블로그 댓글 기능의 메인 부분은 전부 만들어졌습니다. 클라이언트(브라우저)에서 유저가 구글 아이디로 로그인하고 댓글을 작성하면 서버로 json 형태로 ajax 통신을 한다. 그리고 서버에서는 그 데이터를 받으면 데이터베이스에 저장한다. 클라이언트(브라우저)에서 유저가 해당 페이지의 댓글 리스트를 요청한다. 서버에서는 json형태로 작성하여 클라이언트로 댓글 정보를 준다. 이런 식으로 프로그램이 작성되었습니다. 아직 조그마한 버그가 눈에 띕니다만 그 부분은 포스팅 없이 수정했습니다.앞으로 조금 더 사용하면서 불편한 점이 있으면 기능을 더욱 추가할 예정입니다만 먼저 추가 기능으로는 admin기능을 추가하려고 합니다. admin기능은 해당 댓글을 본 블로그 서비스(www.nowonbun.com)에서 관리하는 것이 아니고 서버 단에서 admin 페이지를 만들어서 관리할 예정입니다. 물론 딱히 관리페이지 없이 데이터베이스에서 직접 sql로 관리해도 상관은 없지만 불편하니 간단하게 로그인 기능 select, modify, 삭제 기능을 만들겠습니다.&lt;?php
+session_start();
+//https://codeseven.github.io/toastr/demo.html
+//https://blackrockdigital.github.io/startbootstrap-sb-admin/tables.html
+include_once $_SERVER ['DOCUMENT_ROOT'] . '/common.php';
+class Controller extends AbstractDao{
+  private $sui = "xx";
+  private $sup = "xx";
+  private $pid;
+  private $pwd;
+  private $type;
+  private $error;
+  private $login = false;
+  private $ajax = false;
+  protected function run(){
+    $this-&gt;pid = $_POST["pid"];
+    $this-&gt;pwd = $_POST["pwd"];
+    $this-&gt;type = $_REQUEST["type"];
+    if ($this-&gt;type == "SELECT" &amp;&amp; strtoupper ( $_SERVER ['REQUEST_METHOD'] ) == 'POST' &amp;&amp; $_SESSION["LOGIN"]){
+      $this-&gt;ajax = true;
+      $stmt = parent::getStmt ( "SELECT IDX, URL, ID, IP, EMAIL, COMMENT, PARENT, ISDELETED, CREATEDDATE, LASTUPDATED from COMMENT_T ORDER BY IDX DESC" );
+      $stmt-&gt;execute ();
+      $stmt-&gt;bind_result ( $idx, $url, $id, $ip, $email, $comment, $parent, $isdeleted ,$createddate ,$lastupdated );
+      $rslt = array ();
+      while ( $stmt-&gt;fetch () ) {
+        $clz = new Comment ();
+        $clz-&gt;setIdx ( $idx );
+        $clz-&gt;setUrl ( $url );
+        $clz-&gt;setId ( $id );
+        $clz-&gt;setIp ( $ip );
+        $clz-&gt;setEmail ( $email );
+        $clz-&gt;setComment ( base64_decode  ($comment) );
+        $clz-&gt;setParent ( $parent );
+        $clz-&gt;setDeleted ( $isdeleted );
+        $clz-&gt;setCreatedate ( $createddate );
+        $clz-&gt;setLastupdated ( $lastupdated );
+        array_push ( $rslt, $clz );
+      }
+      parent::close();
+      
+      $list = array();
+      for($i=0;$i&lt;count($rslt);$i++){
+        if($rslt[$i]-&gt;getParent() == null){
+          array_push ( $list, $this-&gt;createJsonArray($rslt[$i]) );
+          $list = $this-&gt;getChild($rslt, $rslt[$i]-&gt;getIdx(), $list);
+        }
+      }
+      return array ( "data" =&gt; $list);
+    } else if ($this-&gt;type == "MODIFY" &amp;&amp; strtoupper ( $_SERVER ['REQUEST_METHOD'] ) == 'POST' &amp;&amp; $_SESSION["LOGIN"]){
+      $idx = (int)trim($_REQUEST["idx"]);
+      $comment = $_REQUEST["comment"];
+      parent::validateIdx($idx);
+      parent::validate($comment);
+      $comment = str_replace("\r\n", " ", $comment);
+      $comment = str_replace("\r", " ", $comment);
+      $comment = str_replace("\n", " ", $comment);
+      
+      $stmt = null;
+      $stmt = parent::getStmt ( "INSERT INTO COMMENT_H (oIDX,URL,ID,IP,EMAIL,COMMENT,PARENT,ISDELETED,CREATEDDATE,LASTUPDATED,HISTORYDATE) 
+                    SELECT IDX,URL,ID,IP,EMAIL,COMMENT,PARENT,ISDELETED,CREATEDDATE,LASTUPDATED,now() FROM COMMENT_T 
+                      WHERE IDX=?" );
+      $stmt-&gt;bind_param ( "i", $idx);
+      if ($stmt-&gt;execute ()) {
+        parent::close();
+      } else {
+        parent::close();
+        return array ("result" =&gt; "NG");
+      }
+      $stmt = null;
+      $stmt = parent::getStmt ( "UPDATE COMMENT_T SET COMMENT=?, LASTUPDATED=now() WHERE IDX=?" );
+      $stmt-&gt;bind_param ( "si", base64_encode ($comment), $idx);
+      if ($stmt-&gt;execute ()) {
+        parent::close();
+        return array ("result" =&gt; "OK");
+      } else {
+        parent::close();
+        return array ("result" =&gt; "NG");
+      }
+    } else if ($this-&gt;type == "DELETE" &amp;&amp; strtoupper ( $_SERVER ['REQUEST_METHOD'] ) == 'POST' &amp;&amp; $_SESSION["LOGIN"]){
+      $idx = (int)trim($_REQUEST["idx"]);
+      parent::validateIdx($idx);
+      $stmt = null;
+      $stmt = parent::getStmt ( "UPDATE COMMENT_T SET ISDELETED=1, LASTUPDATED=now() WHERE IDX=?" );
+      $stmt-&gt;bind_param ( "i", $idx);
+      if ($stmt-&gt;execute ()) {
+        parent::close();
+        return array ("result" =&gt; "OK");
+      } else {
+        parent::close();
+        return array ("result" =&gt; "NG");
+      }
+    } else if ($this-&gt;type == "ACTIVE" &amp;&amp; strtoupper ( $_SERVER ['REQUEST_METHOD'] ) == 'POST' &amp;&amp; $_SESSION["LOGIN"]){
+      $idx = (int)trim($_REQUEST["idx"]);
+      parent::validateIdx($idx);
+      $stmt = null;
+      $stmt = parent::getStmt ( "UPDATE COMMENT_T SET ISDELETED=0, LASTUPDATED=now() WHERE IDX=?" );
+      $stmt-&gt;bind_param ( "i", $idx);
+      if ($stmt-&gt;execute ()) {
+        parent::close();
+        return array ("result" =&gt; "OK");
+      } else {
+        parent::close();
+        return array ("result" =&gt; "NG");
+      }
+    } else if(strtoupper ( $_SERVER ['REQUEST_METHOD'] ) == 'POST'){
+      if(($this-&gt;pid == $this-&gt;sui &amp;&amp; $this-&gt;pwd == $this-&gt;sup) || $_SESSION["LOGIN"]){
+        $_SESSION["LOGIN"] = true;
+        $this-&gt;login = true;
+      } else {
+        $this-&gt;error = "아이디, 패스워드를 확인해 주세요.";
+      }
+    } else {
+      $_SESSION["LOGIN"] = null;
+    }
+  }
+  private function getChild($list, $idx, $datalist){
+    for($i=count($list)-1;$i&gt;=0;$i--){
+      if($idx == $list[$i]-&gt;getParent()){
+        array_push ( $datalist, $this-&gt;createJsonArray($list[$i]) );
+      }
+    }
+    return $datalist;
+  }
+  private function createJsonArray($node){
+    return array (
+      "idx" =&gt; $node-&gt;getIdx(),
+      "url" =&gt; $node-&gt;getUrl(),
+      "id" =&gt; $node-&gt;getId(),
+      "ip" =&gt; $node-&gt;getIp(),
+      "email" =&gt; $node-&gt;getEmail(),
+      "comment" =&gt; $node-&gt;getComment(),
+      "createdate" =&gt; $node-&gt;getCreatedate(),
+      "lastupdated" =&gt; $node-&gt;getLastupdated(),
+      "deleted" =&gt; $node-&gt;IsDeleted(),
+      "parent" =&gt; $node-&gt;getParent()
+    );
+  }
+  public function getId(){
+    return $this-&gt;pid;
+  }
+  public function getPwd(){
+    return $this-&gt;pwd;
+  }
+  public function getError(){
+    return $this-&gt;error;
+  }
+  public function isLogin(){
+    return $this-&gt;login;
+  }
+  public function getAjax() {
+    return $this-&gt;ajax;
+  }
+}
+$obj = new Controller();
+$data = $obj-&gt;execute();
+if(trim($data) == "null"){
+  header("content-type: text/html; charset=utf-8");
+} else {
+  echo $data;
+  die();
+}
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+  &lt;meta name="description" content=""&gt;
+  &lt;meta name="author" content=""&gt;
+  &lt;title&gt;SB Admin 2 - Bootstrap Admin Theme&lt;/title&gt;
+  &lt;link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"&gt;
+  &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+  &lt;link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"&gt;
+  &lt;link href="https://cdn.jsdelivr.net/npm/startbootstrap-sb-admin@5.0.2/css/sb-admin.min.css" rel="stylesheet"&gt;
+  &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet"&gt;
+  &lt;link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"&gt;
+  &lt;style&gt;
+    .custom-table td{
+      white-space: normal;
+    }
+    .custom-table td, .custom-table th, .custom-table textarea {
+      padding:5px;
+      font-size: 10pt;
+      width: 500px;
+    }
+    .custom-table td:nth-child(7), .custom-table th:nth-child(7) {
+      min-width: 500px;
+    }
+    .custom-table .control{
+      max-width: 20px!important;
+      width: 20px!important;
+      min-width: 20px!important;
+    }
+    .custom-table th.control:before{
+      display:none!important;
+    }
+    .custom-table th.control:after{
+      display:none!important;
+    }
+    .custom-table th.control{
+      cursor: default!important;
+    }
+    .dtr-data{
+      white-space: normal;
+    }
+    .custom-table-wrapper div.row:nth-child(2){
+      overflow-x: auto;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;?php if(!$obj-&gt;isLogin()) {?&gt;
+&lt;body class="bg-dark"&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="card card-login mx-auto mt-5"&gt;
+      &lt;div class="card-header"&gt;Login&lt;/div&gt;
+      &lt;div class="card-body"&gt;
+        &lt;form method="POST"&gt;
+          &lt;div class="form-group"&gt;
+            &lt;div class="form-label-group"&gt;
+              &lt;input type="text" name="pid" id="pid" class="form-control" placeholder="ID" required="required" autofocus="autofocus" autocomplete="false" value="&lt;?=$obj-&gt;getId()?&gt;"&gt;
+              &lt;label for="pid"&gt;ID&lt;/label&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class="form-group"&gt;
+            &lt;div class="form-label-group"&gt;
+              &lt;input type="password" name="pwd" id="pwd" class="form-control" placeholder="Password" required="required"&gt;
+              &lt;label for="pwd"&gt;Password&lt;/label&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;input type="submit" class="btn btn-primary btn-block" value="Login"&gt;
+        &lt;/form&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;?php } else { ?&gt;
+  &lt;body id="page-top"&gt;
+  &lt;nav class="navbar navbar-expand navbar-dark bg-dark static-top"&gt;
+    &lt;a class="navbar-brand mr-1" href="index.html"&gt;명월 개발일기 관리화면&lt;/a&gt;
+    &lt;!-- Navbar --&gt;
+    &lt;ul class="navbar-nav ml-auto mr-0 mr-md-3 my-2 my-md-0"&gt;
+    &lt;li class="nav-item dropdown no-arrow"&gt;
+      &lt;a class="nav-link dropdown-toggle" href="javascript:void(0);" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"&gt;
+      &lt;i class="fas fa-user-circle fa-fw"&gt;&lt;/i&gt;
+      &lt;/a&gt;
+      &lt;div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown"&gt;
+      &lt;a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal"&gt;Logout&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+  &lt;div id="wrapper"&gt;
+    &lt;div id="content-wrapper"&gt;
+    &lt;div class="container-fluid"&gt;
+      &lt;ol class="breadcrumb"&gt;
+      &lt;li class="breadcrumb-item active"&gt;댓글 관리 시스템&lt;/li&gt;
+      &lt;/ol&gt;
+      &lt;!-- DataTables Example --&gt;
+      &lt;div class="card mb-3"&gt;
+      &lt;div class="card-header"&gt;
+        &lt;i class="fas fa-table"&gt;&lt;/i&gt;
+        Comment&lt;/div&gt;
+      &lt;div class="card-body"&gt;
+        &lt;div class="custom-table-wrapper"&gt;
+        &lt;table class="table table-bordered custom-table" id="dataTable" width="100%" cellspacing="0"&gt;
+          &lt;thead&gt;
+          &lt;tr&gt;
+            &lt;th&gt;I&lt;/th&gt;
+            &lt;th&gt;P&lt;/th&gt;
+            &lt;th&gt;URL&lt;/th&gt;
+            &lt;th&gt;ID&lt;/th&gt;
+            &lt;th&gt;IP&lt;/th&gt;
+            &lt;th&gt;EMAIL&lt;/th&gt;
+            &lt;th&gt;COMMENT&lt;/th&gt;
+            &lt;th&gt;&lt;/th&gt;
+            &lt;th&gt;&lt;/th&gt;
+            &lt;th&gt;CREATEDDATE&lt;/th&gt;
+            &lt;th&gt;LASTUPDATED&lt;/th&gt;
+          &lt;/tr&gt;
+          &lt;/thead&gt;
+        &lt;/table&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;footer class="sticky-footer" style="width: 100%;"&gt;
+      &lt;div class="container my-auto"&gt;
+      &lt;div class="copyright text-center my-auto"&gt;
+        &lt;span&gt;Copyright www.nowonbun.com 2018&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/footer&gt;
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;a class="scroll-to-top rounded" href="#page-top"&gt;
+    &lt;i class="fas fa-angle-up"&gt;&lt;/i&gt;
+  &lt;/a&gt;
+  &lt;div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"&gt;
+    &lt;div class="modal-dialog" role="document"&gt;
+    &lt;div class="modal-content"&gt;
+      &lt;div class="modal-header"&gt;
+      &lt;h5 class="modal-title" id="exampleModalLabel"&gt;Ready to Leave?&lt;/h5&gt;
+      &lt;button class="close" type="button" data-dismiss="modal" aria-label="Close"&gt;
+        &lt;span aria-hidden="true"&gt;×&lt;/span&gt;
+      &lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-body"&gt;Select "Logout" below if you are ready to end your current session.&lt;/div&gt;
+      &lt;div class="modal-footer"&gt;
+      &lt;button class="btn btn-secondary" type="button" data-dismiss="modal"&gt;Cancel&lt;/button&gt;
+      &lt;a class="btn btn-primary" href="/admin.php"&gt;Logout&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+&lt;?php }?&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"&gt;&lt;/script&gt;
+  &lt;script src="https://blackrockdigital.github.io/startbootstrap-sb-admin/vendor/bootstrap/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://cdn.jsdelivr.net/npm/startbootstrap-sb-admin@5.0.2/js/sb-admin.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/jquery.dataTables.min.js"&gt;&lt;/script&gt;
+  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/dataTables.bootstrap4.min.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    function commentAjax(data,cb){
+      $.ajax({
+        url: location.origin + location.pathname+"?"+data,
+        type: "POST",
+        dataType: "json",
+        success: function (data, textStatus, jqXHR) {
+          cb.call(this, data);
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+          console.log(jqXHR);
+          toastr.success("시스템 에러입니다.");
+        },
+        complete: function (jqXHR, textStatus) { }
+      });
+    }
+    function convert(){
+      $(".custom-table tbody&gt;tr").each(function(){
+        if($(this).data("load") !== 'ok'){
+          var $col = $(this).find("td:nth-child(7)");
+          var data = $.trim($col.text());
+          $col.html("");
+          $col.append($("&lt;textarea&gt;&lt;/textarea&gt;").addClass("form-control").val(data));
+          $col = $(this).find("td:nth-child(8)");
+          $col.html("");
+          $col.append($("&lt;a href='javascript:void(0);' class='modify-link'&gt;수정&lt;/a&gt;"));
+          $col = $(this).find("td:nth-child(9)");
+          var data = $.trim($col.text());
+          $col.html("");
+          if(data === '0'){
+            $col.append($("&lt;a href='javascript:void(0);' class='delete-link'&gt;삭제&lt;/a&gt;"));
+          } else {
+            $col.append($("&lt;a href='javascript:void(0);' class='active-link'&gt;활성&lt;/a&gt;"));
+          }
+          $(this).data("load","ok");
+        }
+      });
+    }
+    $(document).ready(function() {
+      var table = $('#dataTable').DataTable({
+        ajax : {
+          url : "admin.php?type=SELECT",
+          type : "POST",
+          complete : function() {
+            var $info = $(".custom-table-wrapper div.row:nth-child(3) .dataTables_info");
+            var text = $info.text();
+            $info.html("");
+            $info.append("&lt;a href='javascript:void(0)' class='refresh-link'&gt;&lt;i class='fa fa-refresh' style='margin-right:5px;'&gt;&lt;/i&gt;&lt;/a&gt;"+text);
+            
+            convert();
+          },
+          error : function(xhr, error, thrown) { }
+        },
+        columns: [
+          {
+            data: "idx",
+            className : 'idx'
+          },
+          {data: "parent"},
+          {data: "url"},
+          {data: "id"},
+          {data: "ip"},
+          {data: "email"},
+          {data: "comment"},
+          {data: null, defaultContent : ' '},
+          {data: "deleted"},
+          {data: "createdate"},
+          {data: "lastupdated"},
+        ],
+        autoWidth: false,
+        ordering: false,
+      });
+      $(document).on("click",".pagination a", function(){
+        convert();
+      });
+      $(document).on("change",".dataTables_wrapper input[type=search]", function(){
+        convert();
+      });
+      $(document).on("change",".dataTables_wrapper select", function(){
+        convert();
+      });
+      $(document).on("click",".delete-link", function(){
+        $parent = $(this).parent();
+        var tr = $(this).parent().parent();
+        var data = "idx="+tr.find(".idx").text()+"&amp;type=DELETE";
+        commentAjax(data, function(){
+          toastr.success("삭제되었습니다.");
+          $parent.html("");
+          $parent.append($("&lt;a href='javascript:void(0);' class='active-link'&gt;활성&lt;/a&gt;"));
+        });
+      });
+      $(document).on("click",".active-link", function(){
+        $parent = $(this).parent();
+        var tr = $(this).parent().parent();
+        var data = "idx="+tr.find(".idx").text()+"&amp;type=ACTIVE";
+        commentAjax(data, function(){
+          toastr.success("활성되었습니다.");
+          $parent.html("");
+          $parent.append($("&lt;a href='javascript:void(0);' class='delete-link'&gt;삭제&lt;/a&gt;"));
+        });
+      });
+      $(document).on("click",".modify-link", function(){
+        var tr = $(this).parent().parent();
+        var data = "idx="+tr.find(".idx").text() + "&amp;" +
+               "comment="+tr.find("textarea").val() + "&amp;" +
+               "type=MODIFY";
+        commentAjax(data, function(){
+          toastr.success("수정되었습니다.");
+        });
+      });
+      $(document).on("click",".refresh-link", function(){
+        table.ajax.reload();
+      });
+    });
+  &lt;/script&gt;
+&lt;?php if($obj-&gt;getError() != NULL &amp;&amp; trim($obj-&gt;getError()) != ""){?&gt;
+  &lt;script&gt;
+    toastr.error('&lt;?=$obj-&gt;getError()?&gt;');
+  &lt;/script&gt;
+&lt;?php }?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+ 전체적인 설명을 하면 저는 페이지 소스(로그인, 리스트화면)와 ajax 소스(검색 데이터, 추가, 삭제)를 한 페이지에 담았습니다. 여러 페이지로 만들 수도 있겠지만, 관리페이지는 저만 사용한 것이고 딱히 여러페이지를 만들면 오히려 따로 소스를 관리해야 하지 않을까 하는 염려때문에 한페이지로 만들었습니다.페이지 소스는 헤더를 「content-type: text/html;」로 설정하고 html 영역을 표시하는 방식으로 만들었고 ajax는 이전 상위 클래스 「AbstractDao」를 상속받아서 ajax형태를 그대로 유지하고 결과가 나오면 html영역은 die 함수를 써서 표시되지 않게 하였습니다. 검색의 경우는 url별로 검색하는 것이 아니고 전체 댓글이 보일 수 있도록 수정하였습니다. 소스는 기존 등록, 검색, 삭제, 수정기능을 조금씩 수정해서 구현하였습니다. 이로써 관리자 페이지도 완성했습니다. 특히 관리자 영역은 설명 없이 전반적인 설명과 소스를 나열하는 것도 포스팅을 작성했습니다.이유는 댓글 기능의 포스팅 내용이 너무 길어지지 않나 생각도 되고, 연말연시까지 포스팅하면서 꼭 하고 싶은 작업이 있기 때문에 서둘러서 마무리했습니다. 아직 버그도 많고 또 추가하고 싶은 기능도 많이 있습니다만 그 부분에 대해서는 당장 작업하지는 않고 일단 사용하면서 불편한 점이나 추가하고 싶은 게 어느정도 쌓이면 한 번에 모아서 작업할 예정입니다. 댓글 기능의 소스는 제 github에 등록되어있습니다. 혹시 사용하실 분들은 fork해서 가져가서 편히 쓰시면 됩니다.github - https://github.com/nowonbun/BlogComment</description><category>개발일기</category><author>nowonbun@gmail.com</author><guid>http://www.nowonbun.com/Dialy/59fc0910cbdb4d8f9a045f5cbe9e5b5f.html</guid><pubDate>Mon, 10 Dec 2018 22:50:54 GMT</pubDate></item><item><title>[블로그 구축 19일차] 블로그 댓글 시스템 달기 -10 (client 작성)</title><link>http://www.nowonbun.com/Dialy/a5bdfd0a09ad4e53a355c5009726220a.html</link><description> 이번에는 댓글 수정과 리플을 작성하겠습니다. 추가와 삭제의 경우는 버튼을 누름과 동시에 추가 또는 삭제의 이벤트가 발생했습니다. 그러나 수정과 리플의 경우는 수정 버튼을 누르면 일단 댓글이 있는 부분에 텍스트박스로 변환을 해서 다시 수정 버튼을 눌렀을 경우 댓글의 수정이 발생하도록 만들 예정입니다.$(document).on("click", ".comment-modify", function(){
   if(!checkLogin()) return;
   var $this = $(this);
   var box = $this.parent().parent().parent().find(".comment-box");
