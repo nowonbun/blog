@@ -95,11 +95,11 @@
                                 <div class="col-12" style="line-height:10px;text-align:right;">
                                     <div class="date-type-1">
                                         <span class="my-list-date font-7">작성일시 : 2018년 12월 13일 23시 00분</span><br />
-                                        <span class="my-list-date font-7">최종수정일시 : 2018년 12월 15일 23시 38분</span>
+                                        <span class="my-list-date font-7">최종수정일시 : 2018년 12월 17일 22시 43분</span>
                                     </div>
                                     <div class="date-type-2">
                                         <span class="my-list-date font-7">작성: 2018-12-13 23:00</span><br />
-                                        <span class="my-list-date font-7">최종수정: 2018-12-15 23:38</span>
+                                        <span class="my-list-date font-7">최종수정: 2018-12-17 22:43</span>
                                     </div>
                                     <div style="display:inline-block">
                                         <img src="/img/copyrightmark.png" style="height: 25px;margin-top: -13px;margin-left: 11px;">
@@ -113,7 +113,7 @@
                                 </div>
                                 <p class="image-comment">데이터베이스 설계</p>
                                 <article>
-                                    <p>이제 가계부의 데이터까지 설계까지 완료되면 데이터베이스 설계는 완료된다. 프로그램상에서 데이터베이스 설계를 어떻게 하는가에 따라 프로그램이 어떻게 바뀌는지 매우 중요한 부분이다. 그래서 처음에 가능하면 앞으로 더 수정 없이 설계하는 게 최고입니다. 하지만 현실적으로는 실제 프로그램 코딩이 들어가면 미처 생각지도 못한 부분이 많이 나온다. 또 여러 가지 추가사항에 의해서도 테이블을 수정할 수도 있다. 그러므로 나중에 alter table로 바꾸는 경우도 많이 생기는데 이 부분은 어쩔 수 없다고 생각된다. 그러나 가능하면 최대한 데이터베이스 설계를 잘해서 alter가 없도록 해야 한다.</p><pre><code class="SQL" data-type="가계부 설계">CREATE TABLE MST_LOW_CATEGORY(
+                                    <p>&nbsp;이제 가계부의 데이터까지 설계까지 완료되면 데이터베이스 설계는 완료된다. 프로그램상에서 데이터베이스 설계를 어떻게 하는가에 따라 프로그램이 어떻게 바뀌는지 매우 중요한 부분이다. 그래서 처음에 가능하면 앞으로 더 수정 없이 설계하는 게 최고이다. 하지만 현실적으로는 실제 프로그램 코딩이 들어가면 미처 생각지도 못한 부분이 많이 나온다. 또 여러 가지 추가사항에 의해서도 테이블을 수정할 수도 있다. 그러므로 나중에 alter table로 바꾸는 경우도 많이 생기는데 이 부분은 어쩔 수 없다고 생각된다. 그러나 가능하면 최대한 데이터베이스 설계를 잘해서 alter가 없도록 해야 한다.</p><pre><code class="SQL" data-type="가계부 설계">CREATE TABLE MST_LOW_CATEGORY(
   CODE CHAR(1) NOT NULL,
   NAME NVARCHAR(255) NOT NULL,
   ISACTIVE BIT DEFAULT 1 NOT NULL,
@@ -162,7 +162,7 @@ INSERT INTO MST_LOCALIZATION (`KEY`, `TYPE`, `VALUE`, ISACTIVE) VALUES(N'Expendi
 INSERT INTO MST_LOCALIZATION (`KEY`, `TYPE`, `VALUE`, ISACTIVE) VALUES(N'Expenditure','2',N'支出',1);
 INSERT INTO MST_LOCALIZATION (`KEY`, `TYPE`, `VALUE`, ISACTIVE) VALUES(N'Saving','0',N'저축',1);
 INSERT INTO MST_LOCALIZATION (`KEY`, `TYPE`, `VALUE`, ISACTIVE) VALUES(N'Saving','1',N'Saving',1);
-INSERT INTO MST_LOCALIZATION (`KEY`, `TYPE`, `VALUE`, ISACTIVE) VALUES(N'Saving','2',N'貯蓄',1);</code></pre><p>마지막은 Localization의 지역화입니다.</p><p><br></p><p>여기까지 내가 구상하고 있는 가계부 프로그램의 데이터베이스 설계가 완성되었다. 더 필요한게 있나.. 아직은 딱히 생각나는 부분이 없다.</p>
+INSERT INTO MST_LOCALIZATION (`KEY`, `TYPE`, `VALUE`, ISACTIVE) VALUES(N'Saving','2',N'貯蓄',1);</code></pre><p>&nbsp;마지막은 Localization의 지역화이다.</p><p><br></p><p>&nbsp;여기까지 내가 구상하고 있는 가계부 프로그램의 데이터베이스 설계가 완성되었다. 더 필요한게 있나.. 아직은 딱히 생각나는 부분이 없다.</p>
                                 </article>
                             </div>
                             <div class="row justify-content-end mb-3 date-items">
@@ -181,7 +181,7 @@ INSERT INTO MST_LOCALIZATION (`KEY`, `TYPE`, `VALUE`, ISACTIVE) VALUES(N'Saving'
                     <label>최신글</label>
                 </legend>
                 <ul class="pl-3">
-                    <li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/bc17c18a6f714544b1058062a255c7f8.html'>[개발일기] [Cenos 개발 서버 설치] 삼바(Samba) 설치하기<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 17일 01시 50분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-17 01:50 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/eb99142190b5471fbd44b75251fec78b.html'>[개발일기] [Cenos 개발 서버 설치] Centos 설치하기.<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 17일 01시 33분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-17 01:33 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/eb81c65f55b74569aa703d879f5ec907.html'>[개발일기] [가계부 프로젝트 3일 차] 데이터베이스 설계-2 (회원관리, 권한관리)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 12일 22시 53분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-12 22:53 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/f814f1762de44dce8281d9e16abc39b5.html'>[개발일기] [가계부 프로젝트 2일 차] 데이터베이스 설계-1 (지역화(Localization))<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 11일 23시 44분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-11 23:44 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/f3de672576d04ff4bb9179ec61e5861a.html'>[개발일기] [가계부 프로젝트 1일 차] 개요<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 11일 23시 32분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-11 23:32 작성</span></a></div></li>
+                    <li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/49d601fe0e4f47d4aa239d54b4fdfba3.html'>[개발일기] [가계부 프로젝트 6일차] 프레임워크 설정하기 -2(ORM - JPA설정)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 17일 23시 42분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-17 23:42 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/1cb972bac45f49e8ad95a702a5036541.html'>[개발일기] [가계부 프로젝트 5일 차] 프레임워크 설정하기 -1(Spring)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 17일 23시 27분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-17 23:27 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/bc17c18a6f714544b1058062a255c7f8.html'>[개발일기] [Cenos 개발 서버 설치] 삼바(Samba) 설치하기<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 17일 01시 50분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-17 01:50 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/eb99142190b5471fbd44b75251fec78b.html'>[개발일기] [Cenos 개발 서버 설치] Centos 설치하기.<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 17일 01시 33분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-17 01:33 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/eb81c65f55b74569aa703d879f5ec907.html'>[개발일기] [가계부 프로젝트 3일 차] 데이터베이스 설계-2 (회원관리, 권한관리)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 12일 22시 53분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-12 22:53 작성</span></a></div></li>
                 </ul>
             </fieldset>
             <fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom">

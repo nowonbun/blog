@@ -15,7 +15,7 @@ var post = function (obj) {
         });
         $("#ImgModal .close").on("click", function () {
             $("body").css("position", "");
-            //$("#ImgModal").hide();
+            $("#ImgModal").hide();
         });
     }
 });
