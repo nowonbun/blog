@@ -1,0 +1,388 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="naver-site-verification" content="32aa8ce7d767e05669cb5b31f2579de56cc15359" />
+    <meta name="keywords" content="명월 일기, 프로그램 개발, 프로젝트 구축, 개발 노하우" />
+    <meta name="description" content="jpa로 생성되는 부분은 데이터베이스 테이블의 형태에 맞는 entity클래스 뿐이다. 따로 jpa에서는 dao라던가 service등을 생성해.." />
+    <meta name="Author" content="nowonbun@gmail.com" />
+    <meta name="distribution" content="nowonbun@gmail.com" />
+    <meta name="copyright" content="nowonbun@gmail.com" />
+    <meta name="title" content="명월의 개발 일기 : [개발일기] : [가계부 프로젝트 7일 차] 프레임워크 설정하기 -3(ORM - DAO만들기)" />
+    <meta name="robots" content="ALL">
+    <meta property="og:title" content="명월의 개발 일기" />
+    <meta property="og:description" content="jpa로 생성되는 부분은 데이터베이스 테이블의 형태에 맞는 entity클래스 뿐이다. 따로 jpa에서는 dao라던가 service등을 생성해.." />
+    <meta property="og:url" content="http://www.nowonbun.com/Dialy/f4ded5e5104f42e58e3016b6ab455da1.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="명월 일기, 프로그램 개발, 프로젝트 구축, 개발 노하우" />
+
+    <meta property="og:image" content="http://www.nowonbun.com/img/ogimage.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    <meta property="og:image:alt" content="명월 일기 타이포 그래피" />
+    <meta name="google-signin-client_id" content="220458850151-75q8c5ids3m5krr49qj4tif6t84liubj.apps.googleusercontent.com">
+
+    <title>명월의 개발 일기 : [개발일기] : [가계부 프로젝트 7일 차] 프레임워크 설정하기 -3(ORM - DAO만들기)</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="/css/compiled-4.5.9.min.css" rel="stylesheet">
+    <link href="/css/style.min.css" rel="stylesheet">
+    <link href="/css/common.css" rel="stylesheet">
+    <link href="/css/post.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css" rel="stylesheet">
+    <link href="/css/highlight.init.css" rel="stylesheet">
+    <link href="/css/comment.css" rel="stylesheet">
+
+    <link rel="icon" type="favicon.ico" href="/img/favicon.ico">
+    <link rel="canonical" href="http://www.nowonbun.com" />
+    <link rel="alternate" type="application/rss+xml" title="명월의 개발 일기" href="http://www.nowonbun.com/rss" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58360998-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-58360998-4');
+    </script>
+    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">
+        if (!wcs_add) var wcs_add = {};
+        wcs_add["wa"] = "c2a9ed02f53908";
+        wcs_do();
+    </script>
+</head>
+<body lang="ko">
+    <div id="bodyMain" class="container wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+        <header class="mt-5">
+            <section class="card my-blog-header">
+                <div class="background"></div>
+                <div class="card-body text-center py-3 px-3 my-3">
+                    <h1 class="mb-4" style="margin:0px!important;">
+                        <strong>명월의 개발 일기</strong>
+                    </h1>
+                </div>
+                <nav class="navbar navbar-expand-lg navbar-light white menu-nav-tool-blog">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="menuToggler">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/'>홈</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog  active ' href='/DialyList.html'>개발일기</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/ExperienceList.html'>개발경험</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/JapanLifeList.html'>일본생활</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/KoreanLifeList.html'>한국생활</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/CodingNoteList.html'>코딩노트</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/FavoritesList.html'>즐겨찾기</a></li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </section>
+        </header>
+        <main class="mt-5">
+            <div class="row mb-3">
+                <div class="col-12 d-flex align-items-stretch">
+                    <div class="card my-blog-post">
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                [가계부 프로젝트 7일 차] 프레임워크 설정하기 -3(ORM - DAO만들기)
+                            </h2>
+                            <div class="row justify-content-end mb-3 date-items">
+                                <div class="col-12" style="line-height:10px;text-align:right;">
+                                    <div class="date-type-1">
+                                        <span class="my-list-date font-7">작성일시 : 2018년 12월 18일 23시 43분</span><br />
+                                        <span class="my-list-date font-7">최종수정일시 : 2018년 12월 18일 23시 43분</span>
+                                    </div>
+                                    <div class="date-type-2">
+                                        <span class="my-list-date font-7">작성: 2018-12-18 23:43</span><br />
+                                        <span class="my-list-date font-7">최종수정: 2018-12-18 23:43</span>
+                                    </div>
+                                    <div style="display:inline-block">
+                                        <img src="/img/copyrightmark.png" style="height: 25px;margin-top: -13px;margin-left: 11px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-text pt-3 pb-3">
+                                <!--<div class='view overlay rounded z-depth-1 post-image-area'>
+                                    <img class='article-image img-fluid' src='#####IMAGE#####' />
+                                    <div class='mask rgba-white-slight'></div>
+                                </div>
+                                <p class="image-comment">#####IMAGECOMMNET#####</p>-->
+                                <article>
+                                    <p>&nbsp;JPA로 생성되는 부분은 데이터베이스 테이블의 형태에 맞는 entity클래스 뿐이다. 따로 JPA에서는 DAO라던가 Service등을 생성해 주지 않는다. 그래서 DAO(Database access object)를 만들어야 한다. JPA 사이트를 가면 DAO를 만드는 방법에 대해 나와 있다. 예전에는 사이트의 가이드를 보고 만들었지만 이제는 나만의 DAO 패턴이 생겼다. 그래서 그냥 사이트 참조없이 바로 만들었다.</p><p>&nbsp;구조는 먼저 최상위 클래스 AbstractDao와 그 밑에 MasterDao와 TransactionDao를 만든다. AbstractDao는 데이터베이스 접속하는 "EntityManagerFactory"을 관리하고 데이터베이스 트랜잭션(테이블 트랜잭션이 아닌)을 관리하는 클래스이다. 그리고 MasterDao는 마스터 테이블을 접속하는 오브젝트인데, Master는 특성상 프로그램 내에서 오로지 select만 있기 때문에 모두 singleton + flyweight 패턴으로 관리할 생각이다. 그러나 관리자가 직접 데이터베이스를 Insert하게 되면 프로그램에 적용되지 않기 때문에 클래스 초기화하는 옵션이 들어간다. Transaction 테이블은 생각하기에 특별히 선언되는 함수는 없다. 그냥 MasterDao와 구분하기 위한 클래스이다.</p><p>&nbsp;</p><p>&nbsp;그리고 FactoryDao를 만들어서 각 Dao클래스를 관리할 생각이다. Dao클래스들은 데이터베이스 정보와 커넥션 정보 이외에는 데이터가 없는 실행만 하는 클래스이다. 그래서 여러 번 new선언으로 할당할 필요없이 FactoryDao에서 처음 할당이 되면 List를 singleton화 시켜서 두 번 할당이 되지 않게 한다. 이렇게 하면 흔히 이야기하는 DI의존성 패턴 형태로 구성이 된다.</p><pre><code class="java" data-type="AbstractDao.java">package Common;
+
+import java.io.Serializable;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import Common.IF.EntityManagerCallable;
+import Common.IF.EntityManagerRunable;
+
+public abstract class AbstractDao&lt;T extends Serializable&gt; {
+
+  private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("PrivateFinence");
+  private Class&lt;T&gt; clazz;
+
+  protected AbstractDao(Class&lt;T&gt; clazz) {
+    this.clazz = clazz;
+  }
+
+  protected final void setClass(Class&lt;T&gt; clazz) {
+    this.clazz = clazz;
+  }
+
+  protected final Class&lt;T&gt; getClazz() {
+    return clazz;
+  }
+
+  public T findOne(Object id) {
+    return transaction((em) -&gt; {
+      return em.find(clazz, id);
+    });
+  }
+
+  public void create(T entity) {
+    transaction((em) -&gt; {
+      em.persist(entity);
+      // Manager.get().flush();
+    });
+  }
+
+  public T update(T entity) {
+    return transaction((em) -&gt; {
+      T ret = em.merge(entity);
+      // Manager.get().flush();
+      return ret;
+    });
+  }
+
+  public void delete(T entity) {
+    transaction((em) -&gt; {
+      em.remove(entity);
+      // Manager.get().flush();
+    });
+  }
+
+  protected &lt;V&gt; V transaction(EntityManagerCallable&lt;V&gt; callable) {
+    return transaction(callable, false);
+  }
+  
+  protected &lt;V&gt; V transaction(EntityManagerCallable&lt;V&gt; callable, boolean readonly) {
+    EntityManager em = emf.createEntityManager();
+    EntityTransaction transaction = em.getTransaction();
+    transaction.begin();
+    try {
+      V ret = callable.run(em);
+      if (readonly) {
+        transaction.rollback();
+      } else {
+        transaction.commit();
+      }
+      return ret;
+    } catch (Throwable e) {
+      if (transaction.isActive()) {
+        transaction.rollback();
+      }
+      throw new RuntimeException(e);
+    } finally {
+      em.clear();
+      em.close();
+    }
+  }
+
+  protected void transaction(EntityManagerRunable runnable) {
+    transaction(runnable, false);
+  }
+
+  protected void transaction(EntityManagerRunable runnable, boolean readonly) {
+    EntityManager em = emf.createEntityManager();
+    EntityTransaction transaction = em.getTransaction();
+    transaction.begin();
+    try {
+      runnable.run(em);
+      if (readonly) {
+        transaction.rollback();
+      } else {
+        transaction.commit();
+      }
+    } catch (Throwable e) {
+      if (transaction.isActive()) {
+        transaction.rollback();
+      }
+      throw new RuntimeException(e);
+    } finally {
+      em.clear();
+      em.close();
+    }
+  }
+}</code></pre><pre><code class="java" data-type="MasterDao.java">package Common;
+
+import java.io.Serializable;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public abstract class MasterDao&lt;T extends Serializable&gt; extends AbstractDao&lt;T&gt; {
+  private List&lt;T&gt; flyweight = null;
+
+  protected MasterDao(Class&lt;T&gt; clazz) {
+    super(clazz);
+    initialize();
+  }
+
+  protected abstract List&lt;T&gt; getDataList();
+
+  public MasterDao&lt;T&gt; initialize() {
+    if (flyweight == null) {
+      reset();
+    }
+    return this;
+  }
+
+  public MasterDao&lt;T&gt; reset() {
+    flyweight = getDataList();
+    return this;
+  }
+
+  public List&lt;T&gt; getData() {
+    initialize();
+    return flyweight.stream().collect(Collectors.toList());
+  }
+}
+</code></pre><pre><code class="java" data-type="TransactionDao.java">package Common;
+
+import java.io.Serializable;
+
+public class TransactionDao&lt;T extends Serializable&gt; extends AbstractDao&lt;T&gt; {
+
+  protected TransactionDao(Class&lt;T&gt; clazz) {
+    super(clazz);
+  }
+}</code></pre><pre><code class="java" data-type="FactoryDao.java">package Common;
+
+import java.lang.reflect.Constructor;
+import java.util.HashMap;
+import java.util.Map;
+import Dao.ActionroleDao;
+import Dao.GroupDao;
+import Dao.LanguageTypeDao;
+import Dao.LocalizationDao;
+import Dao.LowCategoryDao;
+import Dao.ViewroleDao;
+
+public class FactoryDao {
+  private static FactoryDao instance = null;
+  private Map&lt;Class&lt;?&gt;, AbstractDao&lt;?&gt;&gt; flyweight = null;
+
+  @SuppressWarnings("unchecked")
+  public static &lt;T&gt; T getDao(Class&lt;T&gt; clz) {
+    try {
+      if (instance == null) {
+        instance = new FactoryDao();
+      }
+      if (instance.flyweight == null) {
+        instance.flyweight = new HashMap&lt;Class&lt;?&gt;, AbstractDao&lt;?&gt;&gt;();
+      }
+      if (!instance.flyweight.containsKey(clz)) {
+        Constructor&lt;T&gt; constructor = clz.getDeclaredConstructor();
+        constructor.setAccessible(true);
+        instance.flyweight.put(clz, (AbstractDao&lt;?&gt;) constructor.newInstance());
+      }
+      return (T) instance.flyweight.get(clz);
+    } catch (Throwable e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  public static void initializeMaster() {
+    resetMaster();
+  }
+
+  public static void resetMaster() {
+    FactoryDao.getDao(ActionroleDao.class).reset();
+    FactoryDao.getDao(GroupDao.class).reset();
+    FactoryDao.getDao(LanguageTypeDao.class).reset();
+    FactoryDao.getDao(LocalizationDao.class).reset();
+    FactoryDao.getDao(LowCategoryDao.class).reset();
+    FactoryDao.getDao(ViewroleDao.class).reset();
+  }
+}</code></pre><p>&nbsp;Dao 구성은 완료되었으니 테스트 클래스 하나 만들어서 데이터를 가져오는지 확인했다.</p><p>&nbsp;</p><pre><code class="java" data-type="DaoTest.java">import java.util.List;
+import Common.FactoryDao;
+import Dao.LowCategoryDao;
+import Model.LowCategory;
+
+public class DaoTest {
+  public static void main(String... arg) {
+    List&lt;LowCategory&gt; list = FactoryDao.getDao(LowCategoryDao.class).getData();
+    for (LowCategory item : list) {
+      System.out.println(item.getName());
+    }
+  }
+}</code></pre><div><img src="data:image/png;base64,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" data-filename="c1.png" class="article-image img-fluid img-contents" style=""><div class="mask rgba-white-slight"></div></div><p>&nbsp;결과가 나왔다. 이제 controller에서는 FactoryDao를 통해 Dao를 취득하면 singleton패턴과 flyweight패턴으로 인해 최초 한 번만 할당(new)가 되고 계속 같은 클래스를 사용할 수 있다.</p>
+                                </article>
+                            </div>
+                            <div class="row justify-content-end mb-3 date-items">
+                                <div class="col-12 font-7 text-align-right gray-font">
+                                    <p class="mb-0"><span class="text-align-left" style="display:inline-block;">블로그의 글은 모두 개인 경험과 지식으로 나온 글이기에 정확하지 않을 수 있습니다. 표준 또는 사실과 다른 글이 있으면 댓글 또는 메일 보내주세요.</span></p>
+                                    <p class="mb-0">Mail: <a href="mailto:nowonbun@gmail.com">nowonbun@gmail.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='row mt-3 mb-3'><div class='col-12 d-flex align-items-stretch'><div class='card my-style-custom'><div class='my-pre-post-nav'><div class='row'><div class='col-12 mb-1'><p class='my-pre-list-title' style='margin-bottom:0px;'><a class='prenext-link' href='/Dialy/49d601fe0e4f47d4aa239d54b4fdfba3.html'> <span class='my-pre-next-icon'><i class='fa fa-chevron-up'></i>이전글</span>[가계부 프로젝트 6일차] 프레임워크 설정하기 -2(ORM - JPA설정)</a><span class='my-list-date float-right date-type-1 font-7'>2018년 12월 17일 23시 42분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-17 23:42 작성</span></p></div>  </div></div></div></div></div>
+            <fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom">
+                <legend class="box-shadow-0 blog-legend px-3 blog-radius mb-0">
+                    <label>최신글</label>
+                </legend>
+                <ul class="pl-3">
+                    <li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/49d601fe0e4f47d4aa239d54b4fdfba3.html'>[개발일기] [가계부 프로젝트 6일차] 프레임워크 설정하기 -2(ORM - JPA설정)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 17일 23시 42분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-17 23:42 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/1cb972bac45f49e8ad95a702a5036541.html'>[개발일기] [가계부 프로젝트 5일 차] 프레임워크 설정하기 -1(Spring)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 17일 23시 27분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-17 23:27 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/bc17c18a6f714544b1058062a255c7f8.html'>[개발일기] [Cenos 개발 서버 설치] 삼바(Samba) 설치하기<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 17일 01시 50분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-17 01:50 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/eb99142190b5471fbd44b75251fec78b.html'>[개발일기] [Cenos 개발 서버 설치] Centos 설치하기.<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 17일 01시 33분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-17 01:33 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/4259d3eae19b432ebd108599e92bb0c2.html'>[개발일기] [가계부 프로젝트 4일 차] 데이터베이스 설계-3 (가계부 설계)<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 13일 23시 00분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-13 23:00 작성</span></a></div></li>
+                </ul>
+            </fieldset>
+            <fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom">
+                <legend class="box-shadow-0 blog-legend px-3 blog-radius">
+                    <label>댓글 달기</label>
+                </legend>
+                <div id="commentSystem">
+					<div id="googleSigninButton"></div>
+                    <div id="commentInsertForm" class="comment-form-border"  style="display:none;">
+						<div style="text-align:right;">
+							<button type="button" class="btn btn-sm btn-outline-success waves-effect" id="createComment">작성하기</button>
+						</div>
+						<div class="md-form comment-form">
+						  <textarea id="commentText" class="form-control md-textarea comment-textarea" maxlength="300" length="300" rows="3"></textarea>
+						  <label for="commentText" class="comment-textarea-label">댓글 작성하기</label>
+						</div>
+					</div>
+					<div id="commentList" class="comment-list"></div>
+                </div>
+            </fieldset>
+        </main>
+        <footer class="page-footer text-center font-small mdb-color mt-4 wow fadeIn my-blog-footer">
+            <div class="footer-copyright py-1">
+                2018 Copyright: <a href="#" target="_blank">www.nowonbun.com </a>
+            </div>
+        </footer>
+        <div id="ImgModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content">
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/compiled-4.5.9.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script src="/js/highlightjs-line-numbers.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>hljs.initLineNumbersOnLoad();</script>
+    <script type="text/javascript" src="/js/post.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    <script type="text/javascript" src="/js/comment.min.js"></script>
+</body>
+</html>

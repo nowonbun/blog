@@ -18,13 +18,13 @@ code {
 
 .hljs-ln-code .hljs-ln-line {
     margin-left: 10px;
-	font-size: 10pt;
+    font-size: 10pt;
     white-space: pre-wrap;
 }
 
 .hljs-ln-numbers .hljs-ln-line {
     margin-right: 10px;
-	font-size: 10pt;
+    font-size: 10pt;
 }
 
 .code-title {
@@ -36,11 +36,11 @@ code {
 }
 
 @media screen and (max-width: 767px) {
-	.hljs-ln-code .hljs-ln-line {
-		font-size: 7pt;
-	}
+    .hljs-ln-code .hljs-ln-line {
+        font-size: 7pt;
+    }
 
-	.hljs-ln-numbers .hljs-ln-line {
-		font-size: 7pt;
-	}
+    .hljs-ln-numbers .hljs-ln-line {
+        font-size: 7pt;
+    }
 }
