@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="naver-site-verification" content="32aa8ce7d767e05669cb5b31f2579de56cc15359" />
+    <meta name="keywords" content="명월 일기, 프로그램 개발, 프로젝트 구축, 개발 노하우" />
+    <meta name="description" content="현재 구상하고 있는 메뉴 항목은 dashboard, 가계, 카테고리 그리고 admin 메뉴이다. 각 메뉴는 viewrole 체크를 해서 권한.." />
+    <meta name="Author" content="nowonbun@gmail.com" />
+    <meta name="distribution" content="nowonbun@gmail.com" />
+    <meta name="copyright" content="nowonbun@gmail.com" />
+    <meta name="title" content="명월의 개발 일기 : [개발일기] : [가계부 프로젝트 11일 차] 메뉴 만들기" />
+    <meta name="robots" content="ALL">
+    <meta property="og:title" content="명월의 개발 일기" />
+    <meta property="og:description" content="현재 구상하고 있는 메뉴 항목은 dashboard, 가계, 카테고리 그리고 admin 메뉴이다. 각 메뉴는 viewrole 체크를 해서 권한.." />
+    <meta property="og:url" content="http://www.nowonbun.com/Dialy/6e7786aceb3c4029a70982b83fe9734f.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="명월 일기, 프로그램 개발, 프로젝트 구축, 개발 노하우" />
+
+    <meta property="og:image" content="http://www.nowonbun.com/img/ogimage.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    <meta property="og:image:alt" content="명월 일기 타이포 그래피" />
+    <meta name="google-signin-client_id" content="220458850151-75q8c5ids3m5krr49qj4tif6t84liubj.apps.googleusercontent.com">
+
+    <title>명월의 개발 일기 : [개발일기] : [가계부 프로젝트 11일 차] 메뉴 만들기</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="/css/compiled-4.5.9.min.css" rel="stylesheet">
+    <link href="/css/style.min.css" rel="stylesheet">
+    <link href="/css/common.css" rel="stylesheet">
+    <link href="/css/post.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css" rel="stylesheet">
+    <link href="/css/highlight.init.css" rel="stylesheet">
+    <link href="/css/comment.css" rel="stylesheet">
+
+    <link rel="icon" type="favicon.ico" href="/img/favicon.ico">
+    <link rel="canonical" href="http://www.nowonbun.com" />
+    <link rel="alternate" type="application/rss+xml" title="명월의 개발 일기" href="http://www.nowonbun.com/rss" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58360998-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-58360998-4');
+    </script>
+    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">
+        if (!wcs_add) var wcs_add = {};
+        wcs_add["wa"] = "c2a9ed02f53908";
+        wcs_do();
+    </script>
+</head>
+<body lang="ko">
+    <div id="bodyMain" class="container wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+        <header class="mt-5">
+            <section class="card my-blog-header">
+                <div class="background"></div>
+                <div class="card-body text-center py-3 px-3 my-3">
+                    <h1 class="mb-4" style="margin:0px!important;">
+                        <strong>명월의 개발 일기</strong>
+                    </h1>
+                </div>
+                <nav class="navbar navbar-expand-lg navbar-light white menu-nav-tool-blog">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="menuToggler">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/'>홈</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog  active ' href='/DialyList.html'>개발일기</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/ExperienceList.html'>개발경험</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/JapanLifeList.html'>일본생활</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/KoreanLifeList.html'>한국생활</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/CodingNoteList.html'>코딩노트</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/FavoritesList.html'>즐겨찾기</a></li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </section>
+        </header>
+        <main class="mt-5">
+            <div class="row mb-3">
+                <div class="col-12 d-flex align-items-stretch">
+                    <div class="card my-blog-post">
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                [가계부 프로젝트 11일 차] 메뉴 만들기
+                            </h2>
+                            <div class="row justify-content-end mb-3 date-items">
+                                <div class="col-12" style="line-height:10px;text-align:right;">
+                                    <div class="date-type-1">
+                                        <span class="my-list-date font-7">작성일시 : 2018년 12월 24일 23시 45분</span><br />
+                                        <span class="my-list-date font-7">최종수정일시 : 2018년 12월 24일 23시 45분</span>
+                                    </div>
+                                    <div class="date-type-2">
+                                        <span class="my-list-date font-7">작성: 2018-12-24 23:45</span><br />
+                                        <span class="my-list-date font-7">최종수정: 2018-12-24 23:45</span>
+                                    </div>
+                                    <div style="display:inline-block">
+                                        <img src="/img/copyrightmark.png" style="height: 25px;margin-top: -13px;margin-left: 11px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-text pt-3 pb-3">
+                                <!--<div class='view overlay rounded z-depth-1 post-image-area'>
+                                    <img class='article-image img-fluid' src='#####IMAGE#####' />
+                                    <div class='mask rgba-white-slight'></div>
+                                </div>
+                                <p class="image-comment">#####IMAGECOMMNET#####</p>-->
+                                <article>
+                                    <p>&nbsp;현재 구상하고 있는 메뉴 항목은 Dashboard, 가계, 카테고리 그리고 admin 메뉴이다. 각 메뉴는 viewrole 체크를 해서 권한 별로 보일 것인지 안보일 것인지 결정하게 된다. 메뉴 항목은 로그인 항목을 제외한 모든 페이지에서 공통이므로 공통 클래스에서 만들기로 했다.</p><pre><code class="java" data-type="공통 서블릿 - AbstractServletController.java">package Common;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+import javax.servlet.http.HttpSession;
+import org.springframework.ui.ModelMap;
+import Bean.MenuBean;
+import Dao.MenuDao;
+import Model.Group;
+import Model.Menu;
+import Model.User;
+import Model.Viewrole;
+
+public abstract class AbstractServletController {
+
+	protected boolean isViewRole(HttpSession session, Viewrole role) {
+		User user = (User) session.getAttribute(Define.USER_SESSION_NAME);
+		if (role == null) {
+			return true;
+		}
+		for (Group rolegroup : role.getGroups()) {
+			for (Group usergroup : user.getGroups()) {
+				if (Util.StringEquals(rolegroup.getCode(), usergroup.getCode())) {
+					return true;
+				}
+			}
+		}
+		for (User roleuser : role.getUsers()) {
+			if (Util.StringEquals(roleuser.getId(), user.getId())) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	protected void initMenu(ModelMap modelmap, HttpSession session) {
+		User user = (User) session.getAttribute(Define.USER_SESSION_NAME);
+		List&lt;Menu&gt; menuList = FactoryDao.getDao(MenuDao.class).getData();
+		List&lt;MenuBean&gt; menuBeanList = new ArrayList&lt;&gt;();
+		for (Menu item : menuList.stream().sorted((x, y) -&gt; Integer.compare(x.getSequence(), y.getSequence())).collect(Collectors.toList())) {
+			if (!isViewRole(session, item.getViewrole())) {
+				continue;
+			}
+			MenuBean bean = new MenuBean();
+			bean.setIcon(item.getIcon());
+			bean.setLink(item.getLink());
+			bean.setName(Util.localization(item.getName(), user.getLanguaueType().getCode()));
+			menuBeanList.add(bean);
+		}
+		modelmap.addAttribute("menu", menuBeanList);
+	}
+}</code></pre><p>&nbsp;initMenu 함수를 호출하게되면 메뉴를 만들게 되는 것이다. 먼저 메뉴를 마스터로 부터 불러와서 시퀀스 컬럼의 순서대로 나열하게 된다. 예를 들면 시퀀스가 1이면 가장 상단, 99면 가장 하단에 배치된다. 그리고 각 메뉴는 isViewrole함수를 통해 권한 체크를 한다. 먼저 메뉴에 role이 null이면 권한에 상관없이 보이게 되고 group롤이 속하게 되면 보인다. 또 유저별 권한 체크도 확인해서 개별 유저 권한이 있으면 메뉴가 보이게 된다.</p><p>&nbsp;중간에 지역화(Localization)를 통해 메뉴 Name을 검색해서 User가 사용 언어에 따라 한글, 일본어, 영어로 표시된다. 이 데이터를 최종적으로 modelmap의 menu이름에 데이터를 넣었다. 현재 메뉴는 각 컨트롤의 시작하는 지점에 initMenu를 호출해서 선언한다.</p><pre><code class="java" data-type="mainController.java">package Controller.Servlet;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import Common.AbstractServletController;
+
+@Controller
+public class MainController extends AbstractServletController {
+	@RequestMapping(value = "/main.html")
+	public String index(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+		super.initMenu(modelmap, session);
+
+		return "main";
+	}
+}</code></pre><p>&nbsp;컨트롤 부분은 코딩이 완료가 되었다. 이제 view 부분의 html를 수정하겠다.</p><p>&nbsp;메뉴의 부분은 main.html만 보이는게 아니고 전부 공통으로 보이는 부분이기 때문에 jsp파일도 나누어서 include를 통해 공통화하였다.</p><pre><code class="jsp" data-type="main.jsp">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+...
+&lt;/head&gt;
+&lt;body id="page-top" class="sidebar-toggled"&gt;
+	...
+		&lt;jsp:include page="./particle/menu.jsp"&gt;&lt;/jsp:include&gt;
+	...
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p>&nbsp;공통화 된 소스에서는 컨트롤에서 넘겨준 modelmap의 menu이름으로 데이터를 받는다.</p><pre><code class="jsp" data-type="menu.jsp">&lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%&gt;
+&lt;%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%&gt;
+&lt;ul class="sidebar navbar-nav" style="width: inherit !important;"&gt;
+	&lt;c:forEach items="${menu}" var="item"&gt;
+	    &lt;li class="nav-item"&gt;
+	    	&lt;a class="nav-link" href="${item.link}"&gt; 
+				&lt;i class="${item.icon}"&gt;&lt;/i&gt; &lt;span&gt;${item.name}&lt;/span&gt;
+			&lt;/a&gt;
+		&lt;/li&gt;
+	&lt;/c:forEach&gt;
+&lt;/ul&gt;</code></pre><p>&nbsp;메뉴를 만들고 최종 디버그를 통해 확인했다.</p><div><img src="data:image/png;base64,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" data-filename="c1.png" class="article-image img-fluid img-contents" style=""><div class="mask rgba-white-slight"></div></div>
+                                </article>
+                            </div>
+                            <div class="row justify-content-end mb-3 date-items">
+                                <div class="col-12 font-7 text-align-right gray-font">
+                                    <p class="mb-0"><span class="text-align-left" style="display:inline-block;">블로그의 글은 모두 개인 경험과 지식으로 나온 글이기에 정확하지 않을 수 있습니다. 표준 또는 사실과 다른 글이 있으면 댓글 또는 메일 보내주세요.</span></p>
+                                    <p class="mb-0">Mail: <a href="mailto:nowonbun@gmail.com">nowonbun@gmail.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='row mt-3 mb-3'><div class='col-12 d-flex align-items-stretch'><div class='card my-style-custom'><div class='my-pre-post-nav'><div class='row'><div class='col-12 mb-1'><p class='my-pre-list-title' style='margin-bottom:0px;'><a class='prenext-link' href='/Dialy/af750c7dde634806afb0a834aff6afc1.html'> <span class='my-pre-next-icon'><i class='fa fa-chevron-up'></i>이전글</span>[Centos 개발 서버 설치] Maria DB 설치하기</a><span class='my-list-date float-right date-type-1 font-7'>2018년 12월 23일 22시 33분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-23 22:33 작성</span></p></div>  </div></div></div></div></div>
+            <fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom">
+                <legend class="box-shadow-0 blog-legend px-3 blog-radius mb-0">
+                    <label>최신글</label>
+                </legend>
+                <ul class="pl-3">
+                    <li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/af750c7dde634806afb0a834aff6afc1.html'>[개발일기] [Centos 개발 서버 설치] Maria DB 설치하기<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 23일 22시 33분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-23 22:33 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/2ee6c45189ec4feaa7e1ef306500728f.html'>[개발일기] [Centos 개발 서버 설치] Plex Media 서버 설치하기<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 23일 22시 14분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-23 22:14 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/05aeea7c3d2d414aa6d2a56e4a7a8b46.html'>[개발일기]  [가계부 프로젝트 10일 차] 로그아웃 기능과 메뉴 설계<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 22일 01시 24분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-22 01:24 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/9b33bfad04354d189e291a00d9aada40.html'>[개발일기] [가계부 프로젝트 9일 차] Bootstrap 화면 디자인과 설정.<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 20일 23시 44분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-20 23:44 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/29b6376cd9724bc68e601a9e705b70d4.html'>[개발일기] [가계부 프로젝트 8일 차] Startup페이지와 로그인 페이지 만들기.<span class='my-list-date float-right date-type-1 font-7'>2018년 12월 19일 23시 16분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2018-12-19 23:16 작성</span></a></div></li>
+                </ul>
+            </fieldset>
+            <fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom">
+                <legend class="box-shadow-0 blog-legend px-3 blog-radius">
+                    <label>댓글 달기</label>
+                </legend>
+                <div id="commentSystem">
+					<div id="googleSigninButton"></div>
+                    <div id="commentInsertForm" class="comment-form-border"  style="display:none;">
+						<div style="text-align:right;">
+							<button type="button" class="btn btn-sm btn-outline-success waves-effect" id="createComment">작성하기</button>
+						</div>
+						<div class="md-form comment-form">
+						  <textarea id="commentText" class="form-control md-textarea comment-textarea" maxlength="300" length="300" rows="3"></textarea>
+						  <label for="commentText" class="comment-textarea-label">댓글 작성하기</label>
+						</div>
+					</div>
+					<div id="commentList" class="comment-list"></div>
+                </div>
+            </fieldset>
+        </main>
+        <footer class="page-footer text-center font-small mdb-color mt-4 wow fadeIn my-blog-footer">
+            <div class="footer-copyright py-1">
+                2018 Copyright: <a href="#" target="_blank">www.nowonbun.com </a>
+            </div>
+        </footer>
+        <div id="ImgModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content">
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/compiled-4.5.9.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script src="/js/highlightjs-line-numbers.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>hljs.initLineNumbersOnLoad();</script>
+    <script type="text/javascript" src="/js/post.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    <script type="text/javascript" src="/js/comment.min.js"></script>
+</body>
+</html>
