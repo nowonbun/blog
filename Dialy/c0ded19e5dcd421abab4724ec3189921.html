@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="naver-site-verification" content="32aa8ce7d767e05669cb5b31f2579de56cc15359" />
+    <meta name="keywords" content="명월 일기, 프로그램 개발, 프로젝트 구축, 개발 노하우" />
+    <meta name="description" content="가계부를 실제 작업한 기간은 하루에 한 두 시간씩 작업해서 약 한 달 정도 걸린 듯하다. 가계부 프로그램 자체는 꽤 단순한 프로그램인데 화면.." />
+    <meta name="Author" content="nowonbun@gmail.com" />
+    <meta name="distribution" content="nowonbun@gmail.com" />
+    <meta name="copyright" content="nowonbun@gmail.com" />
+    <meta name="title" content="명월의 개발 일기 : [개발일기] : [가계부 프로젝트 18일차] 로그인 기능 - 쿠키 설정기능 추가하기" />
+    <meta name="robots" content="ALL">
+    <meta property="og:title" content="명월의 개발 일기" />
+    <meta property="og:description" content="가계부를 실제 작업한 기간은 하루에 한 두 시간씩 작업해서 약 한 달 정도 걸린 듯하다. 가계부 프로그램 자체는 꽤 단순한 프로그램인데 화면.." />
+    <meta property="og:url" content="http://www.nowonbun.com/Dialy/c0ded19e5dcd421abab4724ec3189921.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="명월 일기, 프로그램 개발, 프로젝트 구축, 개발 노하우" />
+
+    <meta property="og:image" content="http://www.nowonbun.com/img/ogimage.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    <meta property="og:image:alt" content="명월 일기 타이포 그래피" />
+    <meta name="google-signin-client_id" content="220458850151-75q8c5ids3m5krr49qj4tif6t84liubj.apps.googleusercontent.com">
+
+    <title>명월의 개발 일기 : [개발일기] : [가계부 프로젝트 18일차] 로그인 기능 - 쿠키 설정기능 추가하기</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="/css/compiled-4.5.9.min.css" rel="stylesheet">
+    <link href="/css/style.min.css" rel="stylesheet">
+    <link href="/css/common.css" rel="stylesheet">
+    <link href="/css/post.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css" rel="stylesheet">
+    <link href="/css/highlight.init.css" rel="stylesheet">
+    <link href="/css/comment.css" rel="stylesheet">
+
+    <link rel="icon" type="favicon.ico" href="/img/favicon.ico">
+    <link rel="canonical" href="http://www.nowonbun.com" />
+    <link rel="alternate" type="application/rss+xml" title="명월의 개발 일기" href="http://www.nowonbun.com/rss" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58360998-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-58360998-4');
+    </script>
+    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">
+        if (!wcs_add) var wcs_add = {};
+        wcs_add["wa"] = "c2a9ed02f53908";
+        wcs_do();
+    </script>
+</head>
+<body lang="ko">
+    <div id="bodyMain" class="container wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+        <header class="mt-5">
+            <section class="card my-blog-header">
+                <div class="background"></div>
+                <div class="card-body text-center py-3 px-3 my-3">
+                    <h1 class="mb-4" style="margin:0px!important;">
+                        <strong>명월의 개발 일기</strong>
+                    </h1>
+                </div>
+                <nav class="navbar navbar-expand-lg navbar-light white menu-nav-tool-blog">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="menuToggler">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/'>홈</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog  active ' href='/DialyList.html'>개발일기</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/ExperienceList.html'>개발경험</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/JapanLifeList.html'>일본생활</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/KoreanLifeList.html'>한국생활</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/CodingNoteList.html'>코딩노트</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/FavoritesList.html'>즐겨찾기</a></li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </section>
+        </header>
+        <main class="mt-5">
+            <div class="row mb-3">
+                <div class="col-12 d-flex align-items-stretch">
+                    <div class="card my-blog-post">
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                [가계부 프로젝트 18일차] 로그인 기능 - 쿠키 설정기능 추가하기
+                            </h2>
+                            <div class="row justify-content-end mb-3 date-items">
+                                <div class="col-12" style="line-height:10px;text-align:right;">
+                                    <div class="date-type-1">
+                                        <span class="my-list-date font-7">작성일시 : 2019년 02월 05일 23시 53분</span><br />
+                                        <span class="my-list-date font-7">최종수정일시 : 2019년 02월 05일 23시 55분</span>
+                                    </div>
+                                    <div class="date-type-2">
+                                        <span class="my-list-date font-7">작성: 2019-02-05 23:53</span><br />
+                                        <span class="my-list-date font-7">최종수정: 2019-02-05 23:55</span>
+                                    </div>
+                                    <div style="display:inline-block">
+                                        <img src="/img/copyrightmark.png" style="height: 25px;margin-top: -13px;margin-left: 11px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-text pt-3 pb-3">
+                                <!--<div class='view overlay rounded z-depth-1 post-image-area'>
+                                    <img class='article-image img-fluid' src='#####IMAGE#####' />
+                                    <div class='mask rgba-white-slight'></div>
+                                </div>
+                                <p class="image-comment">#####IMAGECOMMNET#####</p>-->
+                                <article>
+                                    <p>&nbsp;가계부를 실제 작업한 기간은 하루에 한 두 시간씩 작업해서 약 한 달 정도 걸린 듯하다. 가계부 프로그램 자체는 꽤 단순한 프로그램인데 화면 디자인에서 시간이 너무 많이 걸렸다. 아직 css를 통한 디자인이 베테랑처럼 숙달되지 않아서 이리저리 시행착오가 많아서 시간이 오래 걸린다.</p><p>가계부를 완성하고 남은 보강 숙제는 로그인 세션을 쿠키로 연장하는 것을 만들려고 한다. 로그인 세션을 쿠키로 연장하는 것이 무엇이냐 하면 로그인을 할 때 현재는 구글의 oAuth를 접속해서 로그인되어 있는 것을 확인한 후 가계부 프로그램에 접속한다. 이게 생각보다 느리다. 일단 구글로부터 인증시간이 약 0.5초 정도 그리고 가계부 서버의 로그인 이 0.1~2 초정도 걸리는데 유저가 느끼기에는 접속할 때 로그인 화면이 꽤 상당히 오랫동안 정지한 듯한 느낌이 든다. 그래서 최초 로그인은 어쩔 수 없이 인증절차가 필요하지만 한번 로그인이 되면 그 세션 정보를 쿠키 + 데이터베이스에 넣어두고 두번째 부터는 쿠키로 디비 검색을 해서 구글 인증을 생략하고 로그인하는 기능을 추가할 생각이다.</p><p><br></p><pre><code class="java" data-type="LoginController.java:79 line, method name: login">	...
+	session.setAttribute(Define.USER_SESSION_NAME, user);
+	String key = Util.createCookieKey();
+	FactoryDao.getDao(LoginCookieDao.class).clearLoginCookie(user);
+	LoginCookie logincookie = new LoginCookie();
+	logincookie.setUser(user);
+	logincookie.setCookiekey(key);
+	logincookie.setCreateddate(new Date());
+	logincookie.setIsdeleted(false);
+	FactoryDao.getDao(LoginCookieDao.class).update(logincookie);
+
+	Cookie cookie = new Cookie(Util.COOKIE_KEY, key);
+	cookie.setMaxAge(Util.getCookieExpire());
+	cookie.setPath(Util.getCookiePath());
+	res.addCookie(cookie);
+	...</code></pre><p>&nbsp; 위의 로직은 로그인을 할 때 쿠키 키를 만들고 그 키를 데이터베이스에 넣고 쿠키에 등록시키는 내용이다. 그런 다음 두 번째부터 로그인할 때는 쿠키에서 키를 가져와서 데이터베이스와 비교하여 키값이 맞으면 로그인하도록 만들 생각이다. 이 뜻은 다른 디바이스 즉, 다른 기기에서 접속할 경우 최후에 접속한 기기만이 쿠키가 살아있는 뜻이 된다.</p><pre><code class="java" data-type="LoginController.java:30 line, method name: index">	...
+	Cookie cookie = getCookie(req, Util.COOKIE_KEY);
+	if (cookie != null) {
+		String key = cookie.getValue();
+		LoginCookie loginCookie = FactoryDao.getDao(LoginCookieDao.class).getLoginCookieByKey(key);
+		if (loginCookie != null) {
+			session.setAttribute(Define.USER_SESSION_NAME, loginCookie.getUser());
+			return "redirect:main.html";
+		}
+		cookie.setPath(Util.getCookiePath());
+		cookie.setMaxAge(0);
+		res.addCookie(cookie);
+	}
+	...</code></pre><p>&nbsp;아까 이야기한 것처럼 처음 index 페이지에 접속이 되면 먼저 쿠키를 확인하고 쿠키가 null이 아니면 키를 취득해 데이 베이스에서 검색을 한다. 해당 키가 없으면 null이 리턴이 되므로 기존처럼 구글 oauth 인증을 하고 로그인을 한다.</p><p><br></p><div><img src="data:image/png;base64,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" data-filename="z1.png" class="article-image img-fluid img-contents" style=""><div class="mask rgba-white-slight"></div></div><p>확실히 로그인 속도가 이전보다 빨라졌다.</p><p><br></p><p>여기까지 가계부 프로젝트는 완료할 생각이다. 이제 프로젝트는 완료되었는데 이전 가계부에서 새로운 가계부로 데이터를 이동시킬 마이그레이션 작업해야 한다. 마이그레이션 작업은 분명 예전 데이터베이스 구조와 현재 새로 만든 데이터베이스 구조는 다르다. 그렇기 때문에 값의 오차가 최대한 없는 한도 내서 데이터를 새로운 데이터베이스로 이전하는 게 마이그레이션이다. 이걸 프로그램을 만들어서 이행을 시킬까? 매크로나 배츠를 만들까? 아니면 스크립트로 처리가 가능할까는 좀더 생각을 해야봐야곘다.</p>
+                                </article>
+                            </div>
+                            <div class="row justify-content-end mb-3 date-items">
+                                <div class="col-12 font-7 text-align-right gray-font">
+                                    <p class="mb-0"><span class="text-align-left" style="display:inline-block;">블로그의 글은 모두 개인 경험과 지식으로 나온 글이기에 정확하지 않을 수 있습니다. 표준 또는 사실과 다른 글이 있으면 댓글 또는 메일 보내주세요.</span></p>
+                                    <p class="mb-0">Mail: <a href="mailto:nowonbun@gmail.com">nowonbun@gmail.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='row mt-3 mb-3'><div class='col-12 d-flex align-items-stretch'><div class='card my-style-custom'><div class='my-pre-post-nav'><div class='row'><div class='col-12 mb-1'><p class='my-pre-list-title' style='margin-bottom:0px;'><a class='prenext-link' href='/Dialy/f67cf69e47224b09aeb7528ae9883a8a.html'> <span class='my-pre-next-icon'><i class='fa fa-chevron-up'></i>이전글</span>[가계부 프로젝트 17일차] 가계부 페이지 작성하기 - 3</a><span class='my-list-date float-right date-type-1 font-7'>2019년 02월 04일 23시 51분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2019-02-04 23:51 작성</span></p></div>  </div></div></div></div></div>
+            <fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom">
+                <legend class="box-shadow-0 blog-legend px-3 blog-radius mb-0">
+                    <label>최신글</label>
+                </legend>
+                <ul class="pl-3">
+                    <li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/f67cf69e47224b09aeb7528ae9883a8a.html'>[개발일기] [가계부 프로젝트 17일차] 가계부 페이지 작성하기 - 3<span class='my-list-date float-right date-type-1 font-7'>2019년 02월 04일 23시 51분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2019-02-04 23:51 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/2823d2335fbb437ebb28611863765f82.html'>[개발일기] [가계부 프로젝트 16일차] 가계부 페이지 작성하기 - 2<span class='my-list-date float-right date-type-1 font-7'>2019년 01월 31일 23시 10분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2019-01-31 23:10 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/08d939a6ca44405ca7cf17f1c94afa5c.html'>[개발일기] [가계부 프로젝트 15일차] 가계부 페이지 작성하기 - 1<span class='my-list-date float-right date-type-1 font-7'>2019년 01월 30일 22시 51분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2019-01-30 22:51 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/0c24762406544076b6a0288a1601c3b8.html'>[개발일기] [가계부 프로젝트 14일차] 카테고리 페이지 작성하기<span class='my-list-date float-right date-type-1 font-7'>2019년 01월 29일 23시 04분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2019-01-29 23:04 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Experience/f2b7848827664a14acda2bf72f18a6e1.html'>[개발경험] UI(화면 디자인)의 중요성<span class='my-list-date float-right date-type-1 font-7'>2019년 01월 28일 22시 43분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2019-01-28 22:43 작성</span></a></div></li>
+                </ul>
+            </fieldset>
+            <fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom">
+                <legend class="box-shadow-0 blog-legend px-3 blog-radius">
+                    <label>댓글 달기</label>
+                </legend>
+                <div id="commentSystem">
+					<div id="googleSigninButton"></div>
+                    <div id="commentInsertForm" class="comment-form-border"  style="display:none;">
+						<div style="text-align:right;">
+							<button type="button" class="btn btn-sm btn-outline-success waves-effect" id="createComment">작성하기</button>
+						</div>
+						<div class="md-form comment-form">
+						  <textarea id="commentText" class="form-control md-textarea comment-textarea" maxlength="300" length="300" rows="3"></textarea>
+						  <label for="commentText" class="comment-textarea-label">댓글 작성하기</label>
+						</div>
+					</div>
+					<div id="commentList" class="comment-list"></div>
+                </div>
+            </fieldset>
+        </main>
+        <footer class="page-footer text-center font-small mdb-color mt-4 wow fadeIn my-blog-footer">
+            <div class="footer-copyright py-1">
+                2018 Copyright: <a href="#" target="_blank">www.nowonbun.com </a>
+            </div>
+        </footer>
+        <div id="ImgModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content">
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/compiled-4.5.9.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script src="/js/highlightjs-line-numbers.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>hljs.initLineNumbersOnLoad();</script>
+    <script type="text/javascript" src="/js/post.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    <script type="text/javascript" src="/js/comment.min.js"></script>
+</body>
+</html>
