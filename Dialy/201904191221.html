@@ -1,0 +1,398 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="naver-site-verification" content="32aa8ce7d767e05669cb5b31f2579de56cc15359" />
+    <meta name="keywords" content="명월 일기, 프로그램 개발, 프로젝트 구축, 개발 노하우" />
+    <meta name="description" content="동기화 기능 설계와 화면 디자인이 되었으면 이제부터는 코딩이다. 먼저 동기화 전용 패키지를 만들고 응답받는 서블릿과 상태 타입과 프로세스 모.." />
+    <meta name="Author" content="nowonbun@gmail.com" />
+    <meta name="distribution" content="nowonbun@gmail.com" />
+    <meta name="copyright" content="nowonbun@gmail.com" />
+    <meta name="title" content="명월의 개발 일기 : [개발일기] : [Tistory Blog Editor -8] 관리 페이지 - 동기화(2)" />
+    <meta name="robots" content="ALL">
+    <meta property="og:title" content="명월의 개발 일기" />
+    <meta property="og:description" content="동기화 기능 설계와 화면 디자인이 되었으면 이제부터는 코딩이다. 먼저 동기화 전용 패키지를 만들고 응답받는 서블릿과 상태 타입과 프로세스 모.." />
+    <meta property="og:url" content="http://www.nowonbun.com/Dialy/201904191221.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="명월 일기, 프로그램 개발, 프로젝트 구축, 개발 노하우" />
+
+    <meta property="og:image" content="http://www.nowonbun.com/img/ogimage.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    <meta property="og:image:alt" content="명월 일기 타이포 그래피" />
+    <meta name="google-signin-client_id" content="220458850151-75q8c5ids3m5krr49qj4tif6t84liubj.apps.googleusercontent.com">
+
+    <title>명월의 개발 일기 : [개발일기] : [Tistory Blog Editor -8] 관리 페이지 - 동기화(2)</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="/css/compiled-4.5.9.min.css" rel="stylesheet">
+    <link href="/css/style.min.css" rel="stylesheet">
+    <link href="/css/common.css" rel="stylesheet">
+    <link href="/css/post.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css" rel="stylesheet">
+    <link href="/css/highlight.init.css" rel="stylesheet">
+    <link href="/css/comment.css" rel="stylesheet">
+
+    <link rel="icon" type="favicon.ico" href="/img/favicon.ico">
+    <link rel="canonical" href="http://www.nowonbun.com" />
+    <link rel="alternate" type="application/rss+xml" title="명월의 개발 일기" href="http://www.nowonbun.com/rss" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58360998-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-58360998-4');
+    </script>
+    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">
+        if (!wcs_add) var wcs_add = {};
+        wcs_add["wa"] = "c2a9ed02f53908";
+        wcs_do();
+    </script>
+</head>
+<body lang="ko">
+    <div id="bodyMain" class="container wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+        <header class="mt-5">
+            <section class="card my-blog-header">
+                <div class="background"></div>
+                <div class="card-body text-center py-3 px-3 my-3">
+                    <h1 class="mb-4" style="margin:0px!important;">
+                        <strong>명월의 개발 일기</strong>
+                    </h1>
+                </div>
+                <nav class="navbar navbar-expand-lg navbar-light white menu-nav-tool-blog">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="menuToggler">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/'>홈</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog  active ' href='/DialyList.html'>개발일기</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/ExperienceList.html'>개발경험</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/JapanLifeList.html'>일본생활</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/KoreanLifeList.html'>한국생활</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/CodingNoteList.html'>코딩노트</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/FavoritesList.html'>즐겨찾기</a></li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </section>
+        </header>
+        <main class="mt-5">
+            <div class="row mb-3">
+                <div class="col-12 d-flex align-items-stretch">
+                    <div class="card my-blog-post">
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                [Tistory Blog Editor -8] 관리 페이지 - 동기화(2)
+                            </h2>
+                            <div class="row justify-content-end mb-3 date-items">
+                                <div class="col-12" style="line-height:10px;text-align:right;">
+                                    <div class="date-type-1">
+                                        <span class="my-list-date font-7">작성일시 : 2019년 04월 19일 00시 21분</span><br />
+                                        <span class="my-list-date font-7">최종수정일시 : 2019년 04월 19일 00시 21분</span>
+                                    </div>
+                                    <div class="date-type-2">
+                                        <span class="my-list-date font-7">작성: 2019-04-19 00:21</span><br />
+                                        <span class="my-list-date font-7">최종수정: 2019-04-19 00:21</span>
+                                    </div>
+                                    <div style="display:inline-block">
+                                        <img src="/img/copyrightmark.png" style="height: 25px;margin-top: -13px;margin-left: 11px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-text pt-3 pb-3">
+                                <!--<div class='view overlay rounded z-depth-1 post-image-area'>
+                                    <img class='article-image img-fluid' src='#####IMAGE#####' />
+                                    <div class='mask rgba-white-slight'></div>
+                                </div>
+                                <p class="image-comment">#####IMAGECOMMNET#####</p>-->
+                                <article>
+                                    <p>&nbsp;동기화 기능 설계와 화면 디자인이 되었으면 이제부터는 코딩이다. 먼저 동기화 전용 패키지를 만들고 응답받는 서블릿과 상태 타입과 프로세스 모듈은 아래와 같이 구성했다.</p><div><img src="data:image/png;base64,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" data-filename="d1 (1).png" class="article-image img-fluid img-contents" style=""><div class="mask rgba-white-slight"></div></div><p>&nbsp;먼저 BlogApiCOnnection.java 파일은 Tistory와 HttpConnection을 위한 클래스이다. 형태는 클래스 내부에 HttpConnection를 선언하여 어댑터 패턴처럼 구현하였다. 이 BlogApiConnection 클래스는 BlogApiConnectionBuilder로 의해 클래스 할당 및 생성되고 Builder에 의해 커낵션 접속이 완료되면 응답받은 값은 BlogApiConnection 안에 가지고 있는 형태가 된다. BlogApiConnectionBuilder는 Builder 패턴의 Node 생성 클래스이고 url과 파라미터를 받으면 BlogApiConnection을 생성, url에 접속까지 이루어 진다.&nbsp;</p><pre><code class="cs" data-type="BlogApiConnection.java">package BlogApi;
+//import 생략
+
+public class BlogApiConnection {
+	private String response = null;
+	private String error = null;
+
+	public BlogApiConnection(String url, String parameter, HttpMethod method) {
+		try {
+			if (Util.StringIsEmptyOrNull(parameter)) {
+				parameter = "";
+			}
+			HttpsURLConnection connection;
+			if (method == HttpMethod.GET) {
+				url = url + "?" + parameter;
+				connection = getConnection(url);
+				connection.setRequestMethod(HttpMethod.GET.toString());
+				connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+				connection.setUseCaches(false);
+				connection.setDoInput(true);
+				connection.setDoOutput(false);
+			} else if (method == HttpMethod.POST) {
+				connection = getConnection(url);
+				connection.setRequestMethod(HttpMethod.POST.toString());
+				connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+				connection.setUseCaches(false);
+				connection.setDoInput(true);
+				connection.setDoOutput(true);
+				try (DataOutputStream wr = new DataOutputStream(connection.getOutputStream())) {
+					wr.writeBytes(parameter);
+					wr.flush();
+				}
+			} else {
+				throw new UnsupportedOperationException();
+			}
+			this.run(connection);
+		} catch (Throwable e) {
+			throw new RuntimeException(e);
+		}
+	}
+	private HttpsURLConnection getConnection(String url) throws IOException {
+		URL obj = new URL(url);
+		String proxy = PropertyMap.getInstance().getProperty("config", "proxy");
+		int port = PropertyMap.getInstance().getPropertyInt("config", "proxy_port");
+		if (Util.StringIsEmptyOrNull(proxy)) {
+			return (HttpsURLConnection) obj.openConnection();
+		}
+		return (HttpsURLConnection) obj.openConnection(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxy, port)));
+	}
+	private void run(HttpsURLConnection connection) {
+		try {
+			int resCode = connection.getResponseCode();
+			InputStream is = null;
+			try {
+				if (resCode == 200) {
+					is = connection.getInputStream();
+				} else {
+					is = connection.getErrorStream();
+				}
+				try (InputStreamReader rd = new InputStreamReader(is)) {
+					try (BufferedReader br = new BufferedReader(rd)) {
+						String line;
+						StringBuffer response = new StringBuffer();
+						while ((line = br.readLine()) != null) {
+							response.append(line);
+							response.append('\r');
+						}
+						if (resCode == 200) {
+							this.response = response.toString();
+						} else {
+							this.error = response.toString();
+						}
+					}
+				}
+			} finally {
+				if (is != null) {
+					is.close();
+				}
+			}
+		} catch (Throwable e) {	}
+	}
+	public String getResponse() {
+		return this.response;
+	}
+	public String getError() {
+		return this.error;
+	}
+}</code></pre><pre><code class="cs" data-type="BlogApiConnectionBuilder.java">package BlogApi;
+//import 생략
+
+public class BlogApiConnectionBuilder {
+	private static BlogApiConnectionBuilder singleton = null;
+
+	public static BlogApiConnectionBuilder instance() {
+		if (singleton == null) {
+			singleton = new BlogApiConnectionBuilder();
+		}
+		return singleton;
+	}
+	private BlogApiConnectionBuilder() { }
+
+	public BlogApiConnection build(String url, Map<string, string=""> parameter, HttpMethod method) {
+		String param = null;
+		for (String key : parameter.keySet()) {
+			if (param == null) {
+				param = "";
+			} else {
+				param += "&amp;";
+			}
+			param += key + "=" + parameter.get(key);
+		}
+
+		try {
+			return new BlogApiConnection(url, param, method);
+		} catch (Throwable e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+}
+</string,></code></pre><p>&nbsp;Servlet의 경우는 Editer에서 최초 pull 또는 push 요청이 왔을 때 syncstart.auth를 요청하게 되고 페이지에서는 tistory oauth화면으로 redirect를 한다. redirect되고 난 tistory 화면에서 인증이 완료되면 tistory.auth화면으로 돌아오는데 이때 정상적인 return이 되었으면 BlogApiThread를 요청한다.</p><pre><code class="cs" data-type="BlogApiServlet.java">package BlogApi;
+//import 생략
+
+@Controller
+public class BlogApiServlet {
+	@RequestMapping(value = "/syncstart.auth")
+	public String syncstart(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+		String redirectUrl = "redirect:https://www.tistory.com/oauth/authorize?" + 
+							 "client_id=" + PropertyMap.getInstance().getProperty("config", "client_id") + "&amp;" + 
+							 "redirect_uri=" + PropertyMap.getInstance().getProperty("config", "redirect_uri") + "&amp;" + 
+							 "response_type=code&amp;" + 
+							 "state=" + req.getParameter("type");
+		return redirectUrl;
+	}
+
+	@RequestMapping(value = "/tistory.auth")
+	public String tistory(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+		String code = req.getParameter("code");
+		String state = req.getParameter("state");
+		if ("pull".equals(state)) {
+			BlogApiThread.start(code, BlogSyncType.pull);
+		} else if ("push".equals(state)) {
+			BlogApiThread.start(code, BlogSyncType.push);
+		}
+		return "redirect:admin.html";
+	}
+}</code></pre><p>&nbsp;BlogApiThread에서는 State 패턴으로 BlogStatus 열거형으로 가지고 있다</p><pre><code class="cs" data-type="BlogStatus.java">package BlogApi;
+
+public enum BlogStatus {
+	wait,
+	init,
+	start,
+	token,
+	blog,
+	category,
+	postlist,
+	post,
+	complate,
+	error,
+	push
+}</code></pre><p>&nbsp;여기서 Thread 상태가 wait이 아니면 아무런 실행없이 리턴한다. 이 상태값은 BlogApiThread안의 값을 확인하는 것으로 상태를 조회할 수 있다.</p><pre><code class="cs" data-type="BlogApiThread.java">package BlogApi;
+//import 생략
+
+public class BlogApiThread implements Runnable {
+	private static BlogApiThread singleton = null;
+	private BlogStatus status = BlogStatus.wait;
+	private BlogSyncType type = null;
+	private String code;
+
+	private BlogApiThread() {
+	}
+
+	public static BlogApiThread instance() {
+		if (singleton == null) {
+			singleton = new BlogApiThread();
+		}
+		return singleton;
+	}
+
+	public static void start(String code, BlogSyncType type) {
+		if (BlogApiThread.instance().status == BlogStatus.wait &amp;&amp; code != null &amp;&amp; type != null) {
+			BlogApiThread.instance().code = code;
+			BlogApiThread.instance().type = type;
+			BlogApiThread.instance().run();
+		}
+	}
+
+	@Override
+	public void run() {
+		if (status == BlogStatus.wait &amp;&amp; code != null &amp;&amp; type != null) {
+			status = BlogStatus.start;
+			Executors.newSingleThreadExecutor().execute(() -&gt; {
+				try {
+					
+					/* 토큰 취득 */
+					status = BlogStatus.token;
+					if (type == BlogSyncType.pull) {
+						pull();
+					} else if (type == BlogSyncType.push) {
+						push();
+					}
+				} catch (Throwable e) {
+					status = BlogStatus.error;
+				} finally {
+					status = BlogStatus.wait;
+				}
+			});
+		}
+	}
+
+	private void pull(String token) {
+		status = BlogStatus.init;
+		/* 취득 */
+	}
+
+	private void push(String token) {
+		status = BlogStatus.push;
+		/* 등록 */
+	}
+}</code></pre><p>&nbsp;여기까지 기본 동기화 모듈의 프로그램 구조는 만들어졌다. 특히 BlogApiThread의 SingleTon 패턴에다가 쓰레드 풀을 통한 독립적인 쓰레드로 운영되어야 하는 게 중요하다.</p>
+                                </article>
+                            </div>
+                            <div class="row justify-content-end mb-3 date-items">
+                                <div class="col-12 font-7 text-align-right gray-font">
+                                    <p class="mb-0"><span class="text-align-left" style="display:inline-block;">블로그의 글은 모두 개인 경험과 지식으로 나온 글이기에 정확하지 않을 수 있습니다. 표준 또는 사실과 다른 글이 있으면 댓글 또는 메일 보내주세요.</span></p>
+                                    <p class="mb-0">Mail: <a href="mailto:nowonbun@gmail.com">nowonbun@gmail.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='row mt-3 mb-3'><div class='col-12 d-flex align-items-stretch'><div class='card my-style-custom'><div class='my-pre-post-nav'><div class='row'><div class='col-12 mb-1'><p class='my-pre-list-title' style='margin-bottom:0px;'><a class='prenext-link' href='/Dialy/a4167b57525249dfac5518f344631b87.html'> <span class='my-pre-next-icon'><i class='fa fa-chevron-up'></i>이전글</span>[Tistory Blog Editor -7] 관리 페이지 - 동기화(1)</a><span class='my-list-date float-right date-type-1 font-7'>2019년 04월 17일 23시 29분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2019-04-17 23:29 작성</span></p></div>  </div></div></div></div></div>
+            <fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom">
+                <legend class="box-shadow-0 blog-legend px-3 blog-radius mb-0">
+                    <label>최신글</label>
+                </legend>
+                <ul class="pl-3">
+                    <li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/a4167b57525249dfac5518f344631b87.html'>[개발일기] [Tistory Blog Editor -7] 관리 페이지 - 동기화(1)<span class='my-list-date float-right date-type-1 font-7'>2019년 04월 17일 23시 29분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2019-04-17 23:29 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/2c3df1eae14548359f9f3372617a46d5.html'>[개발일기] [Tistory Blog Editor -6] 전체 디자인 설정<span class='my-list-date float-right date-type-1 font-7'>2019년 04월 17일 00시 29분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2019-04-17 00:29 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/6991b4b84ecd43eaae454b1b22b116ed.html'>[개발일기] [Tistory Blog Editor -5] 데이터 베이스 설계 변경과 기본 로그인 화면<span class='my-list-date float-right date-type-1 font-7'>2019년 04월 16일 00시 20분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2019-04-16 00:20 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/e59659777b2444f48113c69dffb6c1d8.html'>[개발일기] [Tistory Blog Editor -4] 시스템 사양 설계 및 구축<span class='my-list-date float-right date-type-1 font-7'>2019년 04월 11일 00시 53분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2019-04-11 00:53 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/f37373ceab90456f89e281a0380662ae.html'>[개발일기] [Tistory Blog Editor -3] 데이터 베이스 설계<span class='my-list-date float-right date-type-1 font-7'>2019년 04월 10일 00시 29분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2019-04-10 00:29 작성</span></a></div></li>
+                </ul>
+            </fieldset>
+            <fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom">
+                <legend class="box-shadow-0 blog-legend px-3 blog-radius">
+                    <label>댓글 달기</label>
+                </legend>
+                <div id="commentSystem">
+					<div id="googleSigninButton"></div>
+                    <div id="commentInsertForm" class="comment-form-border"  style="display:none;">
+						<div style="text-align:right;">
+							<button type="button" class="btn btn-sm btn-outline-success waves-effect" id="createComment">작성하기</button>
+						</div>
+						<div class="md-form comment-form">
+						  <textarea id="commentText" class="form-control md-textarea comment-textarea" maxlength="300" length="300" rows="3"></textarea>
+						  <label for="commentText" class="comment-textarea-label">댓글 작성하기</label>
+						</div>
+					</div>
+					<div id="commentList" class="comment-list"></div>
+                </div>
+            </fieldset>
+        </main>
+        <footer class="page-footer text-center font-small mdb-color mt-4 wow fadeIn my-blog-footer">
+            <div class="footer-copyright py-1">
+                2018 Copyright: <a href="#" target="_blank">www.nowonbun.com </a>
+            </div>
+        </footer>
+        <div id="ImgModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content">
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/compiled-4.5.9.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script src="/js/highlightjs-line-numbers.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>hljs.initLineNumbersOnLoad();</script>
+    <script type="text/javascript" src="/js/post.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    <script type="text/javascript" src="/js/comment.min.js"></script>
+</body>
+</html>
