@@ -95,11 +95,11 @@
                                 <div class="col-12" style="line-height:10px;text-align:right;">
                                     <div class="date-type-1">
                                         <span class="my-list-date font-7">작성일시 : 2019년 04월 19일 00시 21분</span><br />
-                                        <span class="my-list-date font-7">최종수정일시 : 2019년 04월 19일 00시 21분</span>
+                                        <span class="my-list-date font-7">최종수정일시 : 2019년 04월 19일 00시 32분</span>
                                     </div>
                                     <div class="date-type-2">
                                         <span class="my-list-date font-7">작성: 2019-04-19 00:21</span><br />
-                                        <span class="my-list-date font-7">최종수정: 2019-04-19 00:21</span>
+                                        <span class="my-list-date font-7">최종수정: 2019-04-19 00:32</span>
                                     </div>
                                     <div style="display:inline-block">
                                         <img src="/img/copyrightmark.png" style="height: 25px;margin-top: -13px;margin-left: 11px;">
@@ -117,221 +117,221 @@
 //import 생략
 
 public class BlogApiConnection {
-	private String response = null;
-	private String error = null;
+    private String response = null;
+    private String error = null;
 
-	public BlogApiConnection(String url, String parameter, HttpMethod method) {
-		try {
-			if (Util.StringIsEmptyOrNull(parameter)) {
-				parameter = "";
-			}
-			HttpsURLConnection connection;
-			if (method == HttpMethod.GET) {
-				url = url + "?" + parameter;
-				connection = getConnection(url);
-				connection.setRequestMethod(HttpMethod.GET.toString());
-				connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-				connection.setUseCaches(false);
-				connection.setDoInput(true);
-				connection.setDoOutput(false);
-			} else if (method == HttpMethod.POST) {
-				connection = getConnection(url);
-				connection.setRequestMethod(HttpMethod.POST.toString());
-				connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-				connection.setUseCaches(false);
-				connection.setDoInput(true);
-				connection.setDoOutput(true);
-				try (DataOutputStream wr = new DataOutputStream(connection.getOutputStream())) {
-					wr.writeBytes(parameter);
-					wr.flush();
-				}
-			} else {
-				throw new UnsupportedOperationException();
-			}
-			this.run(connection);
-		} catch (Throwable e) {
-			throw new RuntimeException(e);
-		}
-	}
-	private HttpsURLConnection getConnection(String url) throws IOException {
-		URL obj = new URL(url);
-		String proxy = PropertyMap.getInstance().getProperty("config", "proxy");
-		int port = PropertyMap.getInstance().getPropertyInt("config", "proxy_port");
-		if (Util.StringIsEmptyOrNull(proxy)) {
-			return (HttpsURLConnection) obj.openConnection();
-		}
-		return (HttpsURLConnection) obj.openConnection(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxy, port)));
-	}
-	private void run(HttpsURLConnection connection) {
-		try {
-			int resCode = connection.getResponseCode();
-			InputStream is = null;
-			try {
-				if (resCode == 200) {
-					is = connection.getInputStream();
-				} else {
-					is = connection.getErrorStream();
-				}
-				try (InputStreamReader rd = new InputStreamReader(is)) {
-					try (BufferedReader br = new BufferedReader(rd)) {
-						String line;
-						StringBuffer response = new StringBuffer();
-						while ((line = br.readLine()) != null) {
-							response.append(line);
-							response.append('\r');
-						}
-						if (resCode == 200) {
-							this.response = response.toString();
-						} else {
-							this.error = response.toString();
-						}
-					}
-				}
-			} finally {
-				if (is != null) {
-					is.close();
-				}
-			}
-		} catch (Throwable e) {	}
-	}
-	public String getResponse() {
-		return this.response;
-	}
-	public String getError() {
-		return this.error;
-	}
+    public BlogApiConnection(String url, String parameter, HttpMethod method) {
+        try {
+            if (Util.StringIsEmptyOrNull(parameter)) {
+                parameter = "";
+            }
+            HttpsURLConnection connection;
+            if (method == HttpMethod.GET) {
+                url = url + "?" + parameter;
+                connection = getConnection(url);
+                connection.setRequestMethod(HttpMethod.GET.toString());
+                connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                connection.setUseCaches(false);
+                connection.setDoInput(true);
+                connection.setDoOutput(false);
+            } else if (method == HttpMethod.POST) {
+                connection = getConnection(url);
+                connection.setRequestMethod(HttpMethod.POST.toString());
+                connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                connection.setUseCaches(false);
+                connection.setDoInput(true);
+                connection.setDoOutput(true);
+                try (DataOutputStream wr = new DataOutputStream(connection.getOutputStream())) {
+                    wr.writeBytes(parameter);
+                    wr.flush();
+                }
+            } else {
+                throw new UnsupportedOperationException();
+            }
+            this.run(connection);
+        } catch (Throwable e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private HttpsURLConnection getConnection(String url) throws IOException {
+        URL obj = new URL(url);
+        String proxy = PropertyMap.getInstance().getProperty("config", "proxy");
+        int port = PropertyMap.getInstance().getPropertyInt("config", "proxy_port");
+        if (Util.StringIsEmptyOrNull(proxy)) {
+            return (HttpsURLConnection) obj.openConnection();
+        }
+        return (HttpsURLConnection) obj.openConnection(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxy, port)));
+    }
+    private void run(HttpsURLConnection connection) {
+        try {
+            int resCode = connection.getResponseCode();
+            InputStream is = null;
+            try {
+                if (resCode == 200) {
+                    is = connection.getInputStream();
+                } else {
+                    is = connection.getErrorStream();
+                }
+                try (InputStreamReader rd = new InputStreamReader(is)) {
+                    try (BufferedReader br = new BufferedReader(rd)) {
+                        String line;
+                        StringBuffer response = new StringBuffer();
+                        while ((line = br.readLine()) != null) {
+                            response.append(line);
+                            response.append('\r');
+                        }
+                        if (resCode == 200) {
+                            this.response = response.toString();
+                        } else {
+                            this.error = response.toString();
+                        }
+                    }
+                }
+            } finally {
+                if (is != null) {
+                    is.close();
+                }
+            }
+        } catch (Throwable e) {    }
+    }
+    public String getResponse() {
+        return this.response;
+    }
+    public String getError() {
+        return this.error;
+    }
 }</code></pre><pre><code class="cs" data-type="BlogApiConnectionBuilder.java">package BlogApi;
 //import 생략
 
 public class BlogApiConnectionBuilder {
-	private static BlogApiConnectionBuilder singleton = null;
+    private static BlogApiConnectionBuilder singleton = null;
 
-	public static BlogApiConnectionBuilder instance() {
-		if (singleton == null) {
-			singleton = new BlogApiConnectionBuilder();
-		}
-		return singleton;
-	}
-	private BlogApiConnectionBuilder() { }
+    public static BlogApiConnectionBuilder instance() {
+        if (singleton == null) {
+            singleton = new BlogApiConnectionBuilder();
+        }
+        return singleton;
+    }
+    private BlogApiConnectionBuilder() { }
 
-	public BlogApiConnection build(String url, Map<string, string=""> parameter, HttpMethod method) {
-		String param = null;
-		for (String key : parameter.keySet()) {
-			if (param == null) {
-				param = "";
-			} else {
-				param += "&amp;";
-			}
-			param += key + "=" + parameter.get(key);
-		}
+    public BlogApiConnection build(String url, Map<string, string=""> parameter, HttpMethod method) {
+        String param = null;
+        for (String key : parameter.keySet()) {
+            if (param == null) {
+                param = "";
+            } else {
+                param += "&amp;";
+            }
+            param += key + "=" + parameter.get(key);
+        }
 
-		try {
-			return new BlogApiConnection(url, param, method);
-		} catch (Throwable e) {
-			e.printStackTrace();
-			return null;
-		}
-	}
+        try {
+            return new BlogApiConnection(url, param, method);
+        } catch (Throwable e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 }
 </string,></code></pre><p>&nbsp;Servlet의 경우는 Editer에서 최초 pull 또는 push 요청이 왔을 때 syncstart.auth를 요청하게 되고 페이지에서는 tistory oauth화면으로 redirect를 한다. redirect되고 난 tistory 화면에서 인증이 완료되면 tistory.auth화면으로 돌아오는데 이때 정상적인 return이 되었으면 BlogApiThread를 요청한다.</p><pre><code class="cs" data-type="BlogApiServlet.java">package BlogApi;
 //import 생략
 
 @Controller
 public class BlogApiServlet {
-	@RequestMapping(value = "/syncstart.auth")
-	public String syncstart(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
-		String redirectUrl = "redirect:https://www.tistory.com/oauth/authorize?" + 
-							 "client_id=" + PropertyMap.getInstance().getProperty("config", "client_id") + "&amp;" + 
-							 "redirect_uri=" + PropertyMap.getInstance().getProperty("config", "redirect_uri") + "&amp;" + 
-							 "response_type=code&amp;" + 
-							 "state=" + req.getParameter("type");
-		return redirectUrl;
-	}
+    @RequestMapping(value = "/syncstart.auth")
+    public String syncstart(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+        String redirectUrl = "redirect:https://www.tistory.com/oauth/authorize?" + 
+                             "client_id=" + PropertyMap.getInstance().getProperty("config", "client_id") + "&amp;" + 
+                             "redirect_uri=" + PropertyMap.getInstance().getProperty("config", "redirect_uri") + "&amp;" + 
+                             "response_type=code&amp;" + 
+                             "state=" + req.getParameter("type");
+        return redirectUrl;
+    }
 
-	@RequestMapping(value = "/tistory.auth")
-	public String tistory(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
-		String code = req.getParameter("code");
-		String state = req.getParameter("state");
-		if ("pull".equals(state)) {
-			BlogApiThread.start(code, BlogSyncType.pull);
-		} else if ("push".equals(state)) {
-			BlogApiThread.start(code, BlogSyncType.push);
-		}
-		return "redirect:admin.html";
-	}
+    @RequestMapping(value = "/tistory.auth")
+    public String tistory(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+        String code = req.getParameter("code");
+        String state = req.getParameter("state");
+        if ("pull".equals(state)) {
+            BlogApiThread.start(code, BlogSyncType.pull);
+        } else if ("push".equals(state)) {
+            BlogApiThread.start(code, BlogSyncType.push);
+        }
+        return "redirect:admin.html";
+    }
 }</code></pre><p>&nbsp;BlogApiThread에서는 State 패턴으로 BlogStatus 열거형으로 가지고 있다</p><pre><code class="cs" data-type="BlogStatus.java">package BlogApi;
 
 public enum BlogStatus {
-	wait,
-	init,
-	start,
-	token,
-	blog,
-	category,
-	postlist,
-	post,
-	complate,
-	error,
-	push
+    wait,
+    init,
+    start,
+    token,
+    blog,
+    category,
+    postlist,
+    post,
+    complate,
+    error,
+    push
 }</code></pre><p>&nbsp;여기서 Thread 상태가 wait이 아니면 아무런 실행없이 리턴한다. 이 상태값은 BlogApiThread안의 값을 확인하는 것으로 상태를 조회할 수 있다.</p><pre><code class="cs" data-type="BlogApiThread.java">package BlogApi;
 //import 생략
 
 public class BlogApiThread implements Runnable {
-	private static BlogApiThread singleton = null;
-	private BlogStatus status = BlogStatus.wait;
-	private BlogSyncType type = null;
-	private String code;
+    private static BlogApiThread singleton = null;
+    private BlogStatus status = BlogStatus.wait;
+    private BlogSyncType type = null;
+    private String code;
 
-	private BlogApiThread() {
-	}
+    private BlogApiThread() {
+    }
 
-	public static BlogApiThread instance() {
-		if (singleton == null) {
-			singleton = new BlogApiThread();
-		}
-		return singleton;
-	}
+    public static BlogApiThread instance() {
+        if (singleton == null) {
+            singleton = new BlogApiThread();
+        }
+        return singleton;
+    }
 
-	public static void start(String code, BlogSyncType type) {
-		if (BlogApiThread.instance().status == BlogStatus.wait &amp;&amp; code != null &amp;&amp; type != null) {
-			BlogApiThread.instance().code = code;
-			BlogApiThread.instance().type = type;
-			BlogApiThread.instance().run();
-		}
-	}
+    public static void start(String code, BlogSyncType type) {
+        if (BlogApiThread.instance().status == BlogStatus.wait &amp;&amp; code != null &amp;&amp; type != null) {
+            BlogApiThread.instance().code = code;
+            BlogApiThread.instance().type = type;
+            BlogApiThread.instance().run();
+        }
+    }
 
-	@Override
-	public void run() {
-		if (status == BlogStatus.wait &amp;&amp; code != null &amp;&amp; type != null) {
-			status = BlogStatus.start;
-			Executors.newSingleThreadExecutor().execute(() -&gt; {
-				try {
-					
-					/* 토큰 취득 */
-					status = BlogStatus.token;
-					if (type == BlogSyncType.pull) {
-						pull();
-					} else if (type == BlogSyncType.push) {
-						push();
-					}
-				} catch (Throwable e) {
-					status = BlogStatus.error;
-				} finally {
-					status = BlogStatus.wait;
-				}
-			});
-		}
-	}
+    @Override
+    public void run() {
+        if (status == BlogStatus.wait &amp;&amp; code != null &amp;&amp; type != null) {
+            status = BlogStatus.start;
+            Executors.newSingleThreadExecutor().execute(() -&gt; {
+                try {
+                    
+                    /* 토큰 취득 */
+                    status = BlogStatus.token;
+                    if (type == BlogSyncType.pull) {
+                        pull();
+                    } else if (type == BlogSyncType.push) {
+                        push();
+                    }
+                } catch (Throwable e) {
+                    status = BlogStatus.error;
+                } finally {
+                    status = BlogStatus.wait;
+                }
+            });
+        }
+    }
 
-	private void pull(String token) {
-		status = BlogStatus.init;
-		/* 취득 */
-	}
+    private void pull(String token) {
+        status = BlogStatus.init;
+        /* 취득 */
+    }
 
-	private void push(String token) {
-		status = BlogStatus.push;
-		/* 등록 */
-	}
+    private void push(String token) {
+        status = BlogStatus.push;
+        /* 등록 */
+    }
 }</code></pre><p>&nbsp;여기까지 기본 동기화 모듈의 프로그램 구조는 만들어졌다. 특히 BlogApiThread의 SingleTon 패턴에다가 쓰레드 풀을 통한 독립적인 쓰레드로 운영되어야 하는 게 중요하다.</p>
                                 </article>
                             </div>
