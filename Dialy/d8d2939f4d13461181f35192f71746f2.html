@@ -1,0 +1,428 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="naver-site-verification" content="32aa8ce7d767e05669cb5b31f2579de56cc15359" />
+    <meta name="keywords" content="명월 일기, 프로그램 개발, 프로젝트 구축, 개발 노하우" />
+    <meta name="description" content="저번 포스팅에서 tistory api를 이용해 데이터를 취득했다. 아직은 완벽한 편은 아니지만 예상대로 데이터가 취득되는 편이다. 나중에 l.." />
+    <meta name="Author" content="nowonbun@gmail.com" />
+    <meta name="distribution" content="nowonbun@gmail.com" />
+    <meta name="copyright" content="nowonbun@gmail.com" />
+    <meta name="title" content="명월의 개발 일기 : [개발일기] : [Tistory Blog Editor -10] 메뉴 만들기" />
+    <meta name="robots" content="ALL">
+    <meta property="og:title" content="명월의 개발 일기" />
+    <meta property="og:description" content="저번 포스팅에서 tistory api를 이용해 데이터를 취득했다. 아직은 완벽한 편은 아니지만 예상대로 데이터가 취득되는 편이다. 나중에 l.." />
+    <meta property="og:url" content="http://www.nowonbun.com/Dialy/d8d2939f4d13461181f35192f71746f2.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="명월 일기, 프로그램 개발, 프로젝트 구축, 개발 노하우" />
+
+    <meta property="og:image" content="http://www.nowonbun.com/img/ogimage.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="200" />
+    <meta property="og:image:height" content="200" />
+    <meta property="og:image:alt" content="명월 일기 타이포 그래피" />
+    <meta name="google-signin-client_id" content="220458850151-75q8c5ids3m5krr49qj4tif6t84liubj.apps.googleusercontent.com">
+
+    <title>명월의 개발 일기 : [개발일기] : [Tistory Blog Editor -10] 메뉴 만들기</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="/css/compiled-4.5.9.min.css" rel="stylesheet">
+    <link href="/css/style.min.css" rel="stylesheet">
+    <link href="/css/common.css" rel="stylesheet">
+    <link href="/css/post.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css" rel="stylesheet">
+    <link href="/css/highlight.init.css" rel="stylesheet">
+    <link href="/css/comment.css" rel="stylesheet">
+
+    <link rel="icon" type="favicon.ico" href="/img/favicon.ico">
+    <link rel="canonical" href="http://www.nowonbun.com" />
+    <link rel="alternate" type="application/rss+xml" title="명월의 개발 일기" href="http://www.nowonbun.com/rss" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-58360998-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-58360998-4');
+    </script>
+    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">
+        if (!wcs_add) var wcs_add = {};
+        wcs_add["wa"] = "c2a9ed02f53908";
+        wcs_do();
+    </script>
+</head>
+<body lang="ko">
+    <div id="bodyMain" class="container wow fadeIn animated" style="visibility: visible; animation-name: fadeIn;">
+        <header class="mt-5">
+            <section class="card my-blog-header">
+                <div class="background"></div>
+                <div class="card-body text-center py-3 px-3 my-3">
+                    <h1 class="mb-4" style="margin:0px!important;">
+                        <strong>명월의 개발 일기</strong>
+                    </h1>
+                </div>
+                <nav class="navbar navbar-expand-lg navbar-light white menu-nav-tool-blog">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="menuToggler">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/'>홈</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog  active ' href='/DialyList.html'>개발일기</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/ExperienceList.html'>개발경험</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/JapanLifeList.html'>일본생활</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/KoreanLifeList.html'>한국생활</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/CodingNoteList.html'>코딩노트</a></li>
+<li class='nav-item'><a class='nav-link text-uppercase waves-effect waves-light menu-nav-blog ' href='/FavoritesList.html'>즐겨찾기</a></li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </section>
+        </header>
+        <main class="mt-5">
+            <div class="row mb-3">
+                <div class="col-12 d-flex align-items-stretch">
+                    <div class="card my-blog-post">
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                [Tistory Blog Editor -10] 메뉴 만들기
+                            </h2>
+                            <div class="row justify-content-end mb-3 date-items">
+                                <div class="col-12" style="line-height:10px;text-align:right;">
+                                    <div class="date-type-1">
+                                        <span class="my-list-date font-7">작성일시 : 2019년 04월 23일 00시 04분</span><br />
+                                        <span class="my-list-date font-7">최종수정일시 : 2019년 04월 23일 00시 04분</span>
+                                    </div>
+                                    <div class="date-type-2">
+                                        <span class="my-list-date font-7">작성: 2019-04-23 00:04</span><br />
+                                        <span class="my-list-date font-7">최종수정: 2019-04-23 00:04</span>
+                                    </div>
+                                    <div style="display:inline-block">
+                                        <img src="/img/copyrightmark.png" style="height: 25px;margin-top: -13px;margin-left: 11px;">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-text pt-3 pb-3">
+                                <!--<div class='view overlay rounded z-depth-1 post-image-area'>
+                                    <img class='article-image img-fluid' src='#####IMAGE#####' />
+                                    <div class='mask rgba-white-slight'></div>
+                                </div>
+                                <p class="image-comment">#####IMAGECOMMNET#####</p>-->
+                                <article>
+                                    <p>&nbsp;저번 포스팅에서 Tistory API를 이용해 데이터를 취득했다. 아직은 완벽한 편은 아니지만 예상대로 데이터가 취득되는 편이다. 나중에 log를 붙히고 좀 더 화면에 대한 progress bar 데이터와 메시지만 맞추면 취득 Thread에 관한 것은 문제없이 구동될 듯하다.</p><p>오늘은 취득된 데이터를 왼쪽 메뉴에서 관리 이외의 메뉴를 생성하게 만들 예정이다. 이 메뉴는 정적이 아닌 동적으로 구현되기 때문에 Ajax로 취득해서 dom를 생성하는 방식으로 메뉴를 만들 생각이다.</p><p><br></p><p>&nbsp;메뉴는 특정 화면에만 나오는 것이 아니고 모든 화면에 나오는 영역이라 master 페이지에 작성을 했다. 참고로 마스터 페이지는 top과 bottom, bottom2로 구성되었는데 top은 head와 css link, bottom에는 javascript link, bottom2에는 공통 javascript로 구성했다. 메뉴는 top 페이지에 dom를 작성하고 bottom에 동적 취득 함수등 javascript를 작성했다.</p>
+<pre><code class="HTML" data-type="top.jsp">&lt;body&gt;
+	&lt;header&gt;
+		&lt;nav class="navbar navbar-inverse"&gt;
+			&lt;div class="navbar-header"&gt;
+				&lt;a class="navbar-brand menu-click" data-menu-type="open" href="javascript:void(0);"&gt; &lt;span class="menuSpan"&gt;MENU&lt;/span&gt;&lt;/a&gt; &lt;a class="navbar-brand title" href="./"&gt; &lt;span&gt;Tistory editor&lt;/span&gt;
+				&lt;/a&gt;
+			&lt;/div&gt;
+		&lt;/nav&gt;
+	&lt;/header&gt;
+	&lt;aside id="leftside"&gt;
+		&lt;h2 class="side-header"&gt;Menu&lt;/h2&gt;
+		&lt;div class="side-menu bs-glyphicons"&gt;
+			&lt;ul class="bs-glyphicons-list"&gt;
+				&lt;li onclick="location.href='./';"&gt;&lt;span class="glyphicon glyphicon-home" aria-hidden="true" title="홈으로"&gt;&lt;/span&gt; &lt;span&gt;홈으로&lt;/span&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;span class="glyphicon glyphicon-envelope" aria-hidden="true" title="메일보내기"&gt;&lt;/span&gt; &lt;span&gt;-----&lt;/span&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;span class="glyphicon glyphicon-star-empty" aria-hidden="true" title="즐겨찾기"&gt;&lt;/span&gt; &lt;span&gt;----&lt;/span&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;span class="glyphicon glyphicon-pencil" aria-hidden="true" title="방명록"&gt;&lt;/span&gt; &lt;span&gt;----&lt;/span&gt;&lt;/li&gt;
+				&lt;li class="menu-click" data-menu-type="close"&gt;&lt;span class="glyphicon glyphicon-remove" aria-hidden="true" title="메뉴닫기"&gt;&lt;/span&gt; &lt;span&gt;메뉴닫기&lt;/span&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+		&lt;div class="side-list"&gt;
+			&lt;ul class="side-nav side-menu-list"&gt;&lt;/ul&gt;
+		&lt;/div&gt;
+	&lt;/aside&gt;
+	&lt;section class="backgroundLayout menu-click" data-menu-type="open"&gt;&lt;/section&gt;
+	&lt;div class="loader off"&gt;&lt;/div&gt;
+	&lt;section class="loader-layout off"&gt;&lt;/section&gt;
+	&lt;main role="main"&gt; &lt;!-- start:main --&gt; &lt;!-- main-container	 --&gt;
+		&lt;div id="main" class="main-container container"&gt;
+		&lt;!-- 메인 --&gt;
+</code></pre>
+<pre><code class="JavaScript" data-type="bottom2.jsp">var _common$ = (function(obj) {
+	obj.init();
+	$(obj.onLoad);
+	return obj;
+})({
+	init : function() {
+		this.loading.on();
+	},
+	onLoad : function() {
+		_common$.loading.on();
+		_common$.getMenu();
+		_common$.getQueueMessage();
+	},
+	loading : {
+		on : function() {
+			$(".loader").removeClass("off");
+			$(".loader-layout").removeClass("off");
+		},
+		off : function() {
+			$(".loader").addClass("off");
+			$(".loader-layout").addClass("off");
+		}
+	},
+	setQueueMessage : function(type, message) {
+		$.cookie('TistoryEditorMessage', JSON.stringify({
+			type : type,
+			message : message
+		}), {
+			expires : 1
+		});
+	},
+	getQueueMessage : function() {
+		var data = $.cookie('TistoryEditorMessage');
+		$.cookie('TistoryEditorMessage', null);
+		if(data !== "null"){
+			data = JSON.parse(data);
+			toastr[data.type](data.message);	
+		}
+	},
+	getMenu : function() {
+		_common$.loading.on();
+		$.ajax({
+			url : "./menu.ajax",
+			type : "POST",
+			dataType : "json",
+			success : function(data, textStatus, jqXHR) {
+				var $side_menu = $(".side-menu-list");
+				$side_menu.html("");
+				for (var i = 0; i &lt; data.length; i++) {
+					var blog = data[i];
+					var $blog = $("&lt;li&gt;&lt;/li&gt;");
+					if (blog.child != null &amp;&amp; blog.child.length &gt; 0) {
+						$blog.append($("&lt;a class='link_item list_drop_item' href='javascript:void(0)'&gt;&lt;i class='glyphicon glyphicon-triangle-bottom pull-right menu-toggle'&gt;&lt;/i&gt;&lt;/a&gt;").attr(
+								"data-id", blog.id).append(blog.name));
+						var $category_ul = $("&lt;ul class='sub_category_list off'&gt;&lt;/ul&gt;");
+						for (var j = 0; j &lt; blog.child.length; j++) {
+							var category = blog.child[j];
+							var $category_li = $("&lt;li class=''&gt;&lt;/li&gt;");
+							var $category_anchor = $("&lt;a class='link_sub_item'&gt;&lt;/a&gt;");
+							$category_anchor.attr("data-id", category.id);
+							if (category.child != null &amp;&amp; category.child.length &gt; 0) {
+								$category_anchor.addClass("list_drop_item");
+								$category_anchor.prop("href", "javascript:void(0)");
+								$category_anchor.append("&lt;i class='glyphicon glyphicon-triangle-bottom pull-right menu-toggle'&gt;&lt;/i&gt;")
+								$category_anchor.append(category.name);
+								$category_li.append($category_anchor);
+								var $sub_ul = $("&lt;ul class='sub_category_list off'&gt;&lt;/ul&gt;");
+								for (var z = 0; z &lt; category.child.length; z++) {
+									var sub = category.child[z];
+									var $sub_li = $("&lt;li class=''&gt;&lt;/li&gt;");
+									var $sub_anchor = $("&lt;a class='link_sub_item'&gt;&lt;/a&gt;").prop("href", "./list.html?type=category&amp;id=" + sub.id).append(sub.name);
+									$sub_anchor.attr("data-id", sub.id);
+									$sub_li.append($sub_anchor);
+									$sub_ul.append($sub_li);
+								}
+								$category_li.append($sub_ul);
+							} else {
+								$category_anchor.prop("href", "./list.html?type=category&amp;id=" + category.id);
+								$category_anchor.append(category.name);
+								$category_li.append($category_anchor);
+							}
+							$category_ul.append($category_li);
+						}
+						$blog.append($category_ul);
+					} else {
+						$blog.append($("&lt;a class='link_item list_drop_item'&gt;&lt;i class='glyphicon glyphicon-triangle-bottom pull-right menu-toggle'&gt;&lt;/i&gt;&lt;/a&gt;").prop("href",
+								"./list.html?type=blog&amp;id=" + blog.id).append(blog.name));
+					}
+					$side_menu.append($blog);
+				}
+				
+				var $admin_menu = $("&lt;a class='link_item list_drop_item' href='javascript:void(0)'&gt;&lt;i class='glyphicon pull-right menu-toggle glyphicon-triangle-bottom'&gt;&lt;/i&gt;관리&lt;/a&gt;");
+				var $admin_sub_ul = $("&lt;ul class='sub_category_list off'&gt;&lt;/ul&gt;");
+				$admin_sub_ul.append($("&lt;li&gt;&lt;a class='link_sub_item' href='./admin.html'&gt;동기화&lt;/a&gt;&lt;/li&gt;"));
+				$admin_sub_ul.append($("&lt;li&gt;&lt;a class='link_sub_item' href='./attachmentFile.html'&gt;첨부 파일&lt;/a&gt;&lt;/li&gt;"));
+				$admin_sub_ul.append($("&lt;li&gt;&lt;a class='link_sub_item' href='./deleteList.html'&gt;삭제 파일 리스트&lt;/a&gt;&lt;/li&gt;"));
+				$side_menu.append($("&lt;li&gt;&lt;/li&gt;").append($admin_menu).append($admin_sub_ul));
+				_common$.loading.off();
+			},
+			error : function(jqXHR, textStatus, errorThrown) {
+				console.log(jqXHR);
+				console.log(errorThrown);
+				toastr.error("예상치 못한 에러가 발생했습니다. 로그를 확인해 주십시오.");
+			},
+			complete : function(jqXHR, textStatus) {
+				_common$.loading.off();
+			}
+		});
+	}
+});
+</code></pre><p>&nbsp;먼저 위 구성을 보면 함수가 실행될 때 init를 document.ready가 완료 되면 onLoad를 요청한다. onLoad에는 getMenu 함수를 호출하고 getMenu는 ajax 함수로 구성되어 있는데 menu.ajax 페이지를 요청한다.</p>
+<pre><code class="Java" data-type="menu.ajax">@RequestMapping(value = "/menu.ajax")
+public void menu(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+	getLogger().info("[menu] request!");
+	List&lt;MenuBean&gt; list = MenuBuilder.get().getMenu();
+	returnJson(res, list);
+}</code></pre>
+<p>&nbsp;서버 측 menu.ajax에서는 Menubuilder라는 클래스를 요청한다.</p>
+<pre><code class="Java" data-type="MenuBuilder.java">....
+
+public class MenuBuilder {
+	private static MenuBuilder singleton = null;
+
+	public static MenuBuilder get() {
+		if (singleton == null) {
+			singleton = new MenuBuilder();
+		}
+		return singleton;
+	}
+
+	private MenuBuilder() {
+
+	}
+
+	private List&lt;MenuBean&gt; menulist = null;
+
+	public List&lt;MenuBean&gt; getMenu() {
+		if (menulist == null) {
+			return init();
+		}
+		return menulist;
+	}
+
+	public List&lt;MenuBean&gt; init() {
+		List&lt;Blog&gt; list = FactoryDao.getDao(BlogDao.class).selectAll();
+		if (menulist == null) {
+			menulist = new ArrayList&lt;&gt;();
+		} else {
+			menulist.clear();
+		}
+		for (Blog blog : list) {
+			MenuBean bean = new MenuBean();
+			bean.setType(Define.MENU_TYPE_PARANT);
+			// bean.setName(blog.getName());
+			bean.setName(blog.getTitle());
+			bean.setId(blog.getBlogid());
+			List&lt;MenuBean&gt; childbuffer = new ArrayList&lt;&gt;();
+			for (Category category : blog.getCategories()) {
+				if (bean.getChild() == null) {
+					bean.setChild(new ArrayList&lt;&gt;());
+				}
+				MenuBean child = new MenuBean();
+				childbuffer.add(child);
+				if (Util.StringIsEmptyOrNull(category.getParent())) {
+					child.setParent(bean.getId());
+					child.setType(Define.MENU_TYPE_BLOG_SUB);
+					bean.getChild().add(child);
+					child.setChild(
+							childbuffer.stream().filter(x -&gt; Util.StringEquals(x.getParent(), category.getCategoryId()) &amp;&amp; x.getType() == Define.MENU_TYPE_CATEGORY_SUB).collect(Collectors.toList()));
+				} else {
+					Optional&lt;MenuBean&gt; search = childbuffer.stream().filter(x -&gt; Util.StringEquals(x.getId(), category.getParent()) &amp;&amp; x.getType() == Define.MENU_TYPE_BLOG_SUB).findFirst();
+					if (search.isPresent()) {
+						MenuBean parent = search.get();
+						if (parent.getChild() == null) {
+							parent.setChild(new ArrayList&lt;&gt;());
+						}
+						parent.getChild().add(child);
+					}
+					child.setType(Define.MENU_TYPE_CATEGORY_SUB);
+					child.setParent(category.getParent());
+				}
+				child.setName(category.getName());
+				child.setId(category.getCategoryId());
+			}
+			menulist.add(bean);
+		}
+		return sort(menulist);
+	}
+
+	private List&lt;MenuBean&gt; sort(List&lt;MenuBean&gt; list) {
+		if (list != null) {
+			list.sort(new Comparator&lt;MenuBean&gt;() {
+				@Override
+				public int compare(MenuBean o1, MenuBean o2) {
+					int pre = 0;
+					int next = 0;
+					try {
+						pre = Integer.parseInt(o1.getId());
+					} catch (NumberFormatException e) {
+						pre = 0;
+					}
+					try {
+						next = Integer.parseInt(o2.getId());
+					} catch (NumberFormatException e) {
+						next = 0;
+					}
+
+					return pre - next;
+				}
+			});
+			for (MenuBean item : list) {
+				sort(item.getChild());
+			}
+		}
+		return list;
+	}
+}</code></pre>
+<p>&nbsp;menubuilder는 singleton으로 이루어져 있는데 데이터베이스에서 blog 테이블에서 데이터를 취득하고 다시 reference로 category 테이블에서 데이트를 취득하는 것을 확인할 수 있다. 다시 javascript로 돌아와서 data를 취득하면 조금 복잡하지만 dom를 작성하는 구문을 확인할 수 있다.</p><div><img src="data:image/png;base64,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" data-filename="1-20190422235100000.png" class="article-image img-fluid img-contents" style=""><div class="mask rgba-white-slight"></div></div>
+                                </article>
+                            </div>
+                            <div class="row justify-content-end mb-3 date-items">
+                                <div class="col-12 font-7 text-align-right gray-font">
+                                    <p class="mb-0"><span class="text-align-left" style="display:inline-block;">블로그의 글은 모두 개인 경험과 지식으로 나온 글이기에 정확하지 않을 수 있습니다. 표준 또는 사실과 다른 글이 있으면 댓글 또는 메일 보내주세요.</span></p>
+                                    <p class="mb-0">Mail: <a href="mailto:nowonbun@gmail.com">nowonbun@gmail.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='row mt-3 mb-3'><div class='col-12 d-flex align-items-stretch'><div class='card my-style-custom'><div class='my-pre-post-nav'><div class='row'><div class='col-12 mb-1'><p class='my-pre-list-title' style='margin-bottom:0px;'><a class='prenext-link' href='/Dialy/3631cbafedab48e69da20b7155cd8f3f.html'> <span class='my-pre-next-icon'><i class='fa fa-chevron-up'></i>이전글</span>[Tistory Blog Editor -9] 관리 페이지 - 동기화(3)</a><span class='my-list-date float-right date-type-1 font-7'>2019년 04월 21일 23시 56분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2019-04-21 23:56 작성</span></p></div>  </div></div></div></div></div>
+            <fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom">
+                <legend class="box-shadow-0 blog-legend px-3 blog-radius mb-0">
+                    <label>최신글</label>
+                </legend>
+                <ul class="pl-3">
+                    <li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/3631cbafedab48e69da20b7155cd8f3f.html'>[개발일기] [Tistory Blog Editor -9] 관리 페이지 - 동기화(3)<span class='my-list-date float-right date-type-1 font-7'>2019년 04월 21일 23시 56분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2019-04-21 23:56 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/201904191221.html'>[개발일기] [Tistory Blog Editor -8] 관리 페이지 - 동기화(2)<span class='my-list-date float-right date-type-1 font-7'>2019년 04월 19일 00시 21분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2019-04-19 00:21 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/a4167b57525249dfac5518f344631b87.html'>[개발일기] [Tistory Blog Editor -7] 관리 페이지 - 동기화(1)<span class='my-list-date float-right date-type-1 font-7'>2019년 04월 17일 23시 29분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2019-04-17 23:29 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/2c3df1eae14548359f9f3372617a46d5.html'>[개발일기] [Tistory Blog Editor -6] 전체 디자인 설정<span class='my-list-date float-right date-type-1 font-7'>2019년 04월 17일 00시 29분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2019-04-17 00:29 작성</span></a></div></li><li class='row'><div class='col-12 mb-0'><i class='fa fa-caret-right mr-2'></i><a href='/Dialy/6991b4b84ecd43eaae454b1b22b116ed.html'>[개발일기] [Tistory Blog Editor -5] 데이터 베이스 설계 변경과 기본 로그인 화면<span class='my-list-date float-right date-type-1 font-7'>2019년 04월 16일 00시 20분에 작성된 글...</span><span class='my-list-date float-right date-type-2 font-7'>2019-04-16 00:20 작성</span></a></div></li>
+                </ul>
+            </fieldset>
+            <fieldset class="box-shadow-0 px-3 py-3 blog-radius mb-3 my-style-custom">
+                <legend class="box-shadow-0 blog-legend px-3 blog-radius">
+                    <label>댓글 달기</label>
+                </legend>
+                <div id="commentSystem">
+					<div id="googleSigninButton"></div>
+                    <div id="commentInsertForm" class="comment-form-border"  style="display:none;">
+						<div style="text-align:right;">
+							<button type="button" class="btn btn-sm btn-outline-success waves-effect" id="createComment">작성하기</button>
+						</div>
+						<div class="md-form comment-form">
+						  <textarea id="commentText" class="form-control md-textarea comment-textarea" maxlength="300" length="300" rows="3"></textarea>
+						  <label for="commentText" class="comment-textarea-label">댓글 작성하기</label>
+						</div>
+					</div>
+					<div id="commentList" class="comment-list"></div>
+                </div>
+            </fieldset>
+        </main>
+        <footer class="page-footer text-center font-small mdb-color mt-4 wow fadeIn my-blog-footer">
+            <div class="footer-copyright py-1">
+                2018 Copyright: <a href="#" target="_blank">www.nowonbun.com </a>
+            </div>
+        </footer>
+        <div id="ImgModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content">
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/compiled-4.5.9.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script src="/js/highlightjs-line-numbers.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script>hljs.initLineNumbersOnLoad();</script>
+    <script type="text/javascript" src="/js/post.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+    <script type="text/javascript" src="/js/comment.min.js"></script>
+</body>
+</html>
