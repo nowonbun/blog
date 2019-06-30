@@ -1,129 +1,205 @@
-﻿@charset "UTF-8";
+@charset "UTF-8";
+
+/*post*/
+#title_txt {
+	font-size: 25px;
+	height: 40px;
+}
+
+#tag_txt {
+	font-size: 18px;
+	height: 34px;
+}
+
+div.titleArea {
+	margin-bottom: 15px;
+}
+
+select#category_sel {
+	height: 34px;
+}
+
+article.entry.post {
+	/* font-size: 18px; */
+	font-size: 1rem;
+	/* overflow-wrap: break-word; */
+	word-wrap: break-word;
+	word-break: break-all;
+}
+
+article.entry.post p {
+	margin-bottom: 0px;
+	font-size: 1rem;
+	line-height: 25px;
+}
+
+article.entry.post #article_contents {
+	min-height: calc(100vh - 300px);
+	/*min-height:300px;*/
+	/*height: calc(100vh - 300px);*/
+}
+
+.categoryArea {
+	font-size: 0.7rem;
+}
+
+#searchResultCount {
+	margin-left: 10px;
+	margin-right: 5px;
+}
+
+#category-column {
+	font-size: 0.8rem;
+}
 
 img {
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
+	max-width: 100%;
+	border-radius: 5px;
+	cursor: pointer;
+	box-shadow: 1px 2px 4px;
 }
 
-    img:hover {
-        opacity: 0.7;
-    }
-/* The Modal (background) */
+img:hover {
+	opacity: 0.7;
+}
+
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+	padding-top: 100px;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.9);
 }
 
-/* Modal Content (Image) */
-.modal-content {
-    margin: auto;
-    display: block;
-	width: initial;
-    /*max-width: 80%;*/
-	max-height:80%;
-    /*max-width: 700px;*/
+.close.img-type {
+	position: absolute;
+	top: 15px;
+	right: 35px;
+	color: #f1f1f1;
+	font-size: 40px;
+	font-weight: bold;
+	transition: 0.3s;
 }
 
-/* Caption of Modal Image (Image Text) - Same Width as the Image */
-#caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-    height: 150px;
+.close
+.img-type
+:not
+ 
+(
+:disabled
+ 
+)
+:not
+ 
+(
+.disabled
+ 
+)
+{
+cursor
+:
+ 
+pointer
+;
+
+
+}
+.close
+.img-type
+:not
+ 
+(
+:disabled
+ 
+)
+:not
+ 
+(
+.disabled
+ 
+)
+{
+cursor
+:
+ 
+pointer
+;
+
+
+}
+.titleArea h1 {
+	border: 1px solid silver;
+	background-color: rgba(192, 192, 192, 0.38);
+	padding: 10px;
+	font-weight: bold;
+	font-size: 30px;
+	margin: 20px 0px;
+	text-align: left;
 }
 
-/* Add Animation - Zoom in the Modal */
-.modal-content, #caption {
-    animation-name: zoom;
-    animation-duration: 0.6s;
+article h2>b {
+	border: 1px solid silver;
+	display: block;
+	padding: 10px;
+	font-size: 20px;
+	background: #f5f5f5;
 }
 
-@keyframes zoom {
-    from {
-        transform: scale(0)
-    }
-
-    to {
-        transform: scale(1)
-    }
+article h2>b>span {
+	border-left: 5px solid black;
+	padding-left: 10px;
 }
 
-.img-contents{
-	max-height: inherit;
-	margin-left: 10px;
-	margin-top: 10px;
-	margin-bottom: 10px;
+.hljs-ln-numbers .hljs-ln-line, .hljs-ln-code .hljs-ln-line {
+	font-size: 11px;
+	line-height: 12px;
 }
 
-/* The Close Button */
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    transition: 0.3s;
+.hljs {
+	padding: 3px;
 }
 
-    .close:hover,
-    .close:focus {
-        color: #bbb;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-pre{
-	margin-top: 10px;
+/*기존 소스뷰 삭제*/
+div textarea[name=code]{
+	display:none;
 }
 
-.code-title,
-.image-title {
-    cursor: pointer;
-}
-
-.image-title {
-    margin-left: 10px;
-    margin-top: 10px;
-    margin-bottom: -10px;
-    background-color: #80a3ff;
-    color: #fff;
-    transition: height 2s;
-    -webkit-transition: height 2s; /* Safari 3.1 to 6.0 */
-}
-
-div.image-view-disabled .image-title {
-    margin-bottom: 10px;
-}
-
-pre.code-view-disabled code,
-div.image-view-disabled img {
-    display: none;
-    height: 0px;
-}
-
-pre.code-view code,
-div.image-view img {
-    transition: height 2s;
-}
-
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px) {
-    .modal-content {
-        width: 100%;
-    }
+@media screen and (max-width: 768px) {
+	main div.article {
+		/* font-size: 1.5rem; */
+		font-size: 1.2rem;
+	}
+	article.entry.post p {
+		font-size: 0.7rem;
+		line-height: 20px;
+	}
+	.titleArea h1 {
+		padding: 10px;
+		font-size: 1.2rem;
+		margin: 10px 0px;
+	}
+	.categoryArea {
+		font-size: 0.6rem;
+	}
+	article h2>b {
+		padding: 5px;
+		font-size: 20px;
+	}
+	.code-title {
+		font-size: 0.6rem;
+	}
+	.hljs-ln-numbers .hljs-ln-line, .hljs-ln-code .hljs-ln-line {
+		font-size: 0.55rem;
+		line-height: 15px;
+	}
+	.hljs-ln-code .hljs-ln-line {
+		margin-left: 5px;
+	}
+	.hljs-ln-numbers .hljs-ln-line {
+		margin-right: 5px;
+	}
+	.data-column-label, .date-column, .tag-column {
+		font-size: 0.60rem;
+	}
 }
