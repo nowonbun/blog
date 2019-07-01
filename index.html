@@ -67,7 +67,67 @@
 				</p>
 			</div>
 			<div class="list-area">
-				<article class="list-item" data-category-code="0600"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><a class="list-link" href="./1.html"><h5 class="list-head ie-nanum ci-link">Welcome</h5><p class="list-summary">準備中</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0600" class="p-category ci-color">Other</a></p><p><span class="timeago ff-h dt-published tag-column"></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2019/07/01 01:42:41</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2019/07/01 01:42:41</span></p></div></div></div></div></article>
+				<article class="list-item" data-category-code="0202"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><a class="list-link" href="./3.html"><h5 class="list-head ie-nanum ci-link">[C#] IDE(統合開発環境)のインストール</h5><p class="list-summary">こんにちは。明月です。
+
+今日はc#開発環境を構築します。c#を開発するようにはmicrosoftのvisual studioが必要です。
+visual studioは昔には高いツールだったんでしたが、最近はcommunityバージョンで無料で提供しています。
+
+url - visual studio download
+
+現在(2019年7月)は上のurlで接続して下記の形のホームページが出ます。実際にホームページを見ると様々なダウンロードボタンがありますが我々は「community」バージョンをダウンロードして勉強します。
+
+さて、インストールファイルをダウンロードが完了し実行するとインストールが始まりますね。
+
+
+インストールが完了したらvisualstudioを実行してみましょう。
+始めに実行すると「初期のemailアドレスを入力して登録してください。」という意味のメッセージが出ます。既存にmicrosoftのホームページに接続してログインしたemailのアドレスを入力してemailから認証番号をもらいます。
+もし、登録してないならmicrosoftホームページに行って登録してください。(私の場合は既存に登録したので手続きは省略します。)
+認証番号登録が完了すると下記のとおりにメッセージが出て次の段階に超えます。
+
+最終に上の画面が出ますとインストールが成功です。
+ここまでc#の開発準備を完了しました。次の投稿ではc#のプログラム基本構造を勉強し、「helloworld」を出力しましょう。</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0202" class="p-category ci-color">Study / C#</a></p><p><span class="timeago ff-h dt-published tag-column">C#</span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2019/07/01 23:58:20</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2019/07/02 00:00:15</span></p></div></div></div></div></article><article class="list-item" data-category-code="0202"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><a class="list-link" href="./2.html"><h5 class="list-head ie-nanum ci-link">[C# スタディ - 1] C#とは？</h5><p class="list-summary">こんにちは。明月です。
+今日はc#を勉強する前にc#について説明します。
+
+プログラム言語はc、c++、java、c#など様々な言語があります。
+言語の誕生時期はc言語が一番早いし、次はmicrosoftからウィンドウ開発をしやすくするc++（mfc）、プログラムについて少しでも勉強したら聞いたかも知らない言語のjava、その次がこれから勉強しようと思うc#の順になります。
+
+誕生時期を見るとc#は上の4つの言語の中で最後になりますが、最後に誕生したから一番いい言語では思わられませんね。プログラム言語は各特徴があり、開発状況のたびに使う方法が違うと思います。
+
+各言語について簡単に説明するとc言語の場合はハードウェア系とos系(カーネル)、ドライバー系で主に使うし、c++(mfc)はグラフィック系またはc#で実装が大変な部分、c#よりメモリ管理が厳しい環境で使いますね。
+javaの場合はネットワークのウェブ系、アンドロイドモバイル系で使うし、c#はネットワークサーバクライアントウィンドウ（cs)系でよく使います。機能として使うところはそのとおりですが、プロジェクトの予算、環境などの影響でウィンドウプログラムをjavaで開発するし、c++とc#を混在して使う時もあります。
+
+c#は.net frameworkの上で動いています。.netframeworkはウィンドウosしかないのでlinuxやウィンドウ以外の環境では開発ができません。
+現在(2016年5月).netframeworkのバージョンは4.6まで発表してc#のバージョンは6.0まで発表しています。
+
+c#のバージョン別で説明すると下記のとおりになります。
+
+ 
+  
+   
+    c# バージョン
+    重要機能
+   
+  
+  
+   
+    c# 2.0
+    
+     
+      c# generics
+      anonymous method (匿名メソッド)
+      nullable type
+      partial type
+      c# yieldキーワード
+      delegateについてcovariance/contravariance
+     
+    
+   
+   
+    c# 3.0
+    
+     
+      lambda expression (ラムダ)
+      ano</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0202" class="p-category ci-color">Study / C#</a></p><p><span class="timeago ff-h dt-published tag-column">C#</span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2019/07/01 23:32:22</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2019/07/01 23:33:10</span></p></div></div></div></div></article><article class="list-item" data-category-code="0600"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><a class="list-link" href="./1.html"><h5 class="list-head ie-nanum ci-link">Welcome</h5><p class="list-summary">準備中</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0600" class="p-category ci-color">Other</a></p><p><span class="timeago ff-h dt-published tag-column"></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2019/07/01 01:42:41</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2019/07/01 01:42:41</span></p></div></div></div></div></article>
 			</div>
 		</div>
 		<script type="text/javascript" src="./js/searchscreen.js"></script>
