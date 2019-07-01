@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:activity="http://activitystrea.ms/spec/1.0/" ><channel><title>明月の開発ストーリ</title><link>https://www.nowonbun.com</link><description>Test</description><language>ja</language><pubDate>Tue, 2 Jul 2019 00:34:20 +0900</pubDate><generator>nowonbun@gmail.com</generator><managingEditor>nowonbun@gmail.com</managingEditor><webMaster>nowonbun@gmail.com</webMaster><item><title>[C#] IDE(統合開発環境)のインストール</title><link>https://www.nowonbun.com/3.html</link><description>こんにちは。明月です。
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:taxo="http://purl.org/rss/1.0/modules/taxonomy/" xmlns:activity="http://activitystrea.ms/spec/1.0/" ><channel><title>明月の開発ストーリ</title><link>https://www.nowonbun.com</link><description>Test</description><language>ja</language><pubDate>Tue, 2 Jul 2019 00:53:45 +0900</pubDate><generator>nowonbun@gmail.com</generator><managingEditor>nowonbun@gmail.com</managingEditor><webMaster>nowonbun@gmail.com</webMaster><item><title>[C#] IDE(統合開発環境)のインストール</title><link>https://www.nowonbun.com/3.html</link><description><![CDATA[こんにちは。明月です。
 
 今日はc#開発環境を構築します。c#を開発するようにはmicrosoftのvisual studioが必要です。
 visual studioは昔には高いツールだったんでしたが、最近はcommunityバージョンで無料で提供しています。
@@ -16,7 +16,7 @@ url - visual studio download
 認証番号登録が完了すると下記のとおりにメッセージが出て次の段階に超えます。
 
 最終に上の画面が出ますとインストールが成功です。
-ここまでc#の開発準備を完了しました。次の投稿ではc#のプログラム基本構造を勉強し、「helloworld」を出力しましょう。</description><category>Study / C#</category><author>nowonbun@gmail.com</author><guid>https://www.nowonbun.com/3.html</guid><pubDate>Tue, 2 Jul 2019 00:00:15 +0900</pubDate></item><item><title>[C# スタディ - 1] C#とは？</title><link>https://www.nowonbun.com/2.html</link><description>こんにちは。明月です。
+ここまでc#の開発準備を完了しました。次の投稿ではc#のプログラム基本構造を勉強し、「helloworld」を出力しましょう。]]></description><category>Study / C#</category><author>nowonbun@gmail.com</author><guid>https://www.nowonbun.com/3.html</guid><pubDate>Tue, 2 Jul 2019 00:00:15 +0900</pubDate></item><item><title>[C# スタディ - 1] C#とは？</title><link>https://www.nowonbun.com/2.html</link><description><![CDATA[こんにちは。明月です。
 今日はc#を勉強する前にc#について説明します。
 
 プログラム言語はc、c++、java、c#など様々な言語があります。
@@ -58,4 +58,4 @@ c#のバージョン別で説明すると下記のとおりになります。
     
      
       lambda expression (ラムダ)
-      ano</description><category>Study / C#</category><author>nowonbun@gmail.com</author><guid>https://www.nowonbun.com/2.html</guid><pubDate>Mon, 1 Jul 2019 23:33:10 +0900</pubDate></item><item><title>Welcome</title><link>https://www.nowonbun.com/1.html</link><description>準備中</description><category>Other</category><author>nowonbun@gmail.com</author><guid>https://www.nowonbun.com/1.html</guid><pubDate>Mon, 1 Jul 2019 01:42:41 +0900</pubDate></item></channel></rss>
+      ano]]></description><category>Study / C#</category><author>nowonbun@gmail.com</author><guid>https://www.nowonbun.com/2.html</guid><pubDate>Mon, 1 Jul 2019 23:33:10 +0900</pubDate></item><item><title>Welcome</title><link>https://www.nowonbun.com/1.html</link><description><![CDATA[準備中]]></description><category>Other</category><author>nowonbun@gmail.com</author><guid>https://www.nowonbun.com/1.html</guid><pubDate>Mon, 1 Jul 2019 01:42:41 +0900</pubDate></item></channel></rss>
