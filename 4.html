@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta name="theme-color" content="#29343a">
-<title>明月の開発ストーリ :: [C# スタディ - 2] IDE(統合開発環境)のインストール</title>
+<title>明月の開発ストーリ :: [C# スタディ - 3]  基本構造と「Hello world」</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -70,11 +70,11 @@
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[C# スタディ - 2] IDE(統合開発環境)のインストール</h1>
+					<h1 id="titleTxt">[C# スタディ - 3]  基本構造と「Hello world」</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/01 23:58:20 &nbsp;&nbsp;修正日付 : 2019/07/03 00:00:32
+					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/02 23:46:49 &nbsp;&nbsp;修正日付 : 2019/07/03 00:00:53
 				</div>
 			</div>
 			<div class="article">
@@ -82,24 +82,49 @@
  <head></head>
  <body>
   <p>こんにちは。明月です。</p> 
+  <p>今日からC#の基本文法について勉強します。</p> 
   <p><br></p> 
-  <p>今日はC#開発環境を構築します。C#を開発するようにはMicrosoftのVisual studioが必要です。</p> 
-  <p>Visual studioは昔には高いツールだったんでしたが、最近はCommunityバージョンで無料で提供しています。</p> 
+  <p>それならVisualstudioを起動して新しいプロジェクト(Ctrl+Shift+N)を生成しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/4/8_001.jpg" data-filename="001.jpg" style="width: 700px;"></p> 
+  <p>そうすれば下記とおりに画面が出ますね。</p> 
+  <p style="text-align:left;"><img src="./contents/4/7_002.jpg" data-filename="002.jpg" style="width: 795px;"></p> 
+  <p>テンプレート項目で「コンソールアプリケーション」というリストを選択します。その後で「名前」項目にプロジェクト名を書き込みます。(私の場合はHelloWorldということに書き込みました。)</p> 
+  <p>そして「OK」ボタンを押下して新しいプロジェクトを生成します。</p> 
+  <p style="text-align:left;"><img src="./contents/4/6_003.jpg" data-filename="003.jpg" style="width: 795px;"></p> 
+  <p>新しいプロジェクトが開けると基本的なプログラムの構造は準備しています。次の投稿から具体的に勉強するので、今日は一旦「namespace」の中で「class」の中で「Main」のメソッドにコードを書き込んで作業します。</p> 
+  <p>これから「Helloworld」を出力しましょう。</p> 
+  <p>C#でコンソール関連クラスは「Console」のクラスです。その中で出力するメソッドは「Write」あるいは「WriteLine」のメソッドを利用します。</p> 
+  <p>その通りにコーディングをすると下記みたいになります。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HelloWorld
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Console.WriteLine("Hello world");
+
+      Console.WriteLine("Press any key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p>ソースコーディングが作成できたら「F5」キーを押下してデバックをしましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/4/5_004.jpg" data-filename="004.jpg" style="width: 676px;"><br></p> 
+  <p>結果は予想とおりに得ました。</p> 
   <p><br></p> 
-  <p>URL - <a href="https://visualstudio.microsoft.com/ja/vs/" target="_blank">Visual Studio Download</a></p> 
+  <p>ちなみにコーディングについて説明します。コーディング内容を見ると行の最後にセミコロン(;)があります。それはブロックを開閉表示(｛、｝)以外にソース命令語が終了する時にセミコロンをつけることでコーディング約束が決めています。初心者の場合はセミコロンの漏れでコンパイルエラーが発生する時があるのでご注意してください。</p> 
+  <p>また、上のソースを見ると最後に「Console.WriteLine(“Press Any key…”); Consolre.ReadList();」の部分があります。</p> 
+  <p>その部分を消して実行(F5)するとあっというまで結果コンソールが開いて閉じます。それならソース実行結果を確認できないのでしばらくにはソースを組む時にその2行ソースを追加しましょう。</p> 
   <p><br></p> 
-  <p>現在(2019年7月)は上のURLで接続して下記の形のホームページが出ます。実際にホームページを見ると様々なダウンロードボタンがありますが我々は「Community」バージョンをダウンロードして勉強します。</p> 
-  <p style="text-align: left; clear: none; float: none;"><img src="./contents/3/4_001.png" data-filename="001.png" style="width: 818px;"></p> 
-  <p>さて、インストールファイルをダウンロードが完了し実行するとインストールが始まりますね。</p> 
-  <p style="text-align: left; clear: none; float: none;"><img src="./contents/3/3_002.png" data-filename="002.png" style="width: 818px;"></p> 
-  <p style="text-align: left; clear: none; float: none;"><img src="./contents/3/2_003.jpg" data-filename="003.jpg" style="width: 818px;"></p> 
-  <p>インストールが完了したらVisualStudioを実行してみましょう。</p> 
-  <p>始めに実行すると「初期のEmailアドレスを入力して登録してください。」という意味のメッセージが出ます。既存にMicrosoftのホームページに接続してログインしたEmailのアドレスを入力してEmailから認証番号をもらいます。</p> 
-  <p>もし、登録してないならMicrosoftホームページに行って登録してください。(私の場合は既存に登録したので手続きは省略します。)</p> 
-  <p>認証番号登録が完了すると下記のとおりにメッセージが出て次の段階に超えます。</p> 
-  <p style="text-align: left; clear: none; float: none;"><img src="./contents/3/1_004.png" data-filename="004.png" style="width: 770px;"></p> 
-  <p>最終に上の画面が出ますとインストールが成功です。</p> 
-  <p>ここまでC#の開発準備を完了しました。次の投稿ではC#のプログラム基本構造を勉強し、「HelloWorld」を出力しましょう。</p>
+  <p>ここまで「HelloWorld」を出力しましたが、考えよりプログラムが簡単に作成できましたよね。C#の利点は初心者も簡単にしやすくプログラムを作成できるし開発進入壁が低いことです。</p> 
+  <p>でもどんな言語でも開発が複雑になると言語の特徴を100％に活かせる必要がありますので勉強が必要です。</p>
  </body>
 </html></div>
 				<hr />

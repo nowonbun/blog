@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta name="theme-color" content="#29343a">
-<title>明月の開発ストーリ :: [C# スタディ - 2] IDE(統合開発環境)のインストール</title>
+<title>明月の開発ストーリ :: [C# スタディ - 4] コメント</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -70,11 +70,11 @@
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[C# スタディ - 2] IDE(統合開発環境)のインストール</h1>
+					<h1 id="titleTxt">[C# スタディ - 4] コメント</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/01 23:58:20 &nbsp;&nbsp;修正日付 : 2019/07/03 00:00:32
+					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/02 23:58:43 &nbsp;&nbsp;修正日付 : 2019/07/03 00:01:13
 				</div>
 			</div>
 			<div class="article">
@@ -82,24 +82,125 @@
  <head></head>
  <body>
   <p>こんにちは。明月です。</p> 
+  <p>前の投稿でプログラムの基本構造について勉強しました。そう見るとアセンブラーよりは読みやすいですが、人間が読みやすいには言えません。</p> 
+  <p>簡単なプログラムなら解読するのが大変ではないけど、複雑度が上がるとコードを読むのがだんだん大変になると思いますね。</p> 
   <p><br></p> 
-  <p>今日はC#開発環境を構築します。C#を開発するようにはMicrosoftのVisual studioが必要です。</p> 
-  <p>Visual studioは昔には高いツールだったんでしたが、最近はCommunityバージョンで無料で提供しています。</p> 
+  <p>それでプログラムをコーディング式ではなく、人が読みやすい方法でコメントがあります。</p> 
+  <p>プログラム中でコメントを付ける方法は３つがあります。</p> 
   <p><br></p> 
-  <p>URL - <a href="https://visualstudio.microsoft.com/ja/vs/" target="_blank">Visual Studio Download</a></p> 
+  <p>改行タイプのコメントです。使用方法は改行頭に「//」を付けて使います。</p> 
+  <pre><code class="cs" data-type=""> //コメント例です。
+</code></pre> 
+  <p>次はブロックタイプのコメントがあります。使用方法は下記とおりです。</p> 
+  <pre><code class="cs" data-type="">/*
+  コメント例です。
+  これはブロックタイプでございます。
+*/
+</code></pre> 
+  <p>ブロックタイプのコメントは重複処理ができないので、使用するときに注意が必要です。</p> 
   <p><br></p> 
-  <p>現在(2019年7月)は上のURLで接続して下記の形のホームページが出ます。実際にホームページを見ると様々なダウンロードボタンがありますが我々は「Community」バージョンをダウンロードして勉強します。</p> 
-  <p style="text-align: left; clear: none; float: none;"><img src="./contents/3/4_001.png" data-filename="001.png" style="width: 818px;"></p> 
-  <p>さて、インストールファイルをダウンロードが完了し実行するとインストールが始まりますね。</p> 
-  <p style="text-align: left; clear: none; float: none;"><img src="./contents/3/3_002.png" data-filename="002.png" style="width: 818px;"></p> 
-  <p style="text-align: left; clear: none; float: none;"><img src="./contents/3/2_003.jpg" data-filename="003.jpg" style="width: 818px;"></p> 
-  <p>インストールが完了したらVisualStudioを実行してみましょう。</p> 
-  <p>始めに実行すると「初期のEmailアドレスを入力して登録してください。」という意味のメッセージが出ます。既存にMicrosoftのホームページに接続してログインしたEmailのアドレスを入力してEmailから認証番号をもらいます。</p> 
-  <p>もし、登録してないならMicrosoftホームページに行って登録してください。(私の場合は既存に登録したので手続きは省略します。)</p> 
-  <p>認証番号登録が完了すると下記のとおりにメッセージが出て次の段階に超えます。</p> 
-  <p style="text-align: left; clear: none; float: none;"><img src="./contents/3/1_004.png" data-filename="004.png" style="width: 770px;"></p> 
-  <p>最終に上の画面が出ますとインストールが成功です。</p> 
-  <p>ここまでC#の開発準備を完了しました。次の投稿ではC#のプログラム基本構造を勉強し、「HelloWorld」を出力しましょう。</p>
+  <pre><code class="cs" data-type="">/*
+  コメント例です。
+  これはブロックタイプでございます。
+  /* コメント重複*/
+  //エラーになります。
+  */
+</code></pre> 
+  <p>最後にXMLコメントがあります。XMLコメントはプロジェクトが終了する時にXMLコメントでマニュアルを生成できるコメントです。Javaの場合はJavadocと同じコメントです。</p> 
+  <p>(でも実際にXMLコメントでマニュアルまで生成しません。機能としてはありますが…)</p> 
+  <p><br></p> 
+  <p>使用方法はClass頭あるいはMethod頭で「///」を付けて使います。</p> 
+  <pre><code class="cs" data-type="">namespace commentEx
+{
+  ///&lt;summary&gt;
+  /// XMLコメント
+  /// &lt;/summary&gt;
+  class Program
+  {
+    /// &lt;summary&gt;
+    /// Mainメソッド
+    /// &lt;/summary&gt;
+    /// &lt;param name="args"&gt;パラメータ&lt;/param&gt;
+    static void Main(string[] args)
+    {
+    }
+  }
+}
+</code></pre> 
+  <p>XMLコメントの場合各タグがあって、タグ別で説明する区切りがあります。下記の表を参考してください。</p> 
+  <div class="table-responsive"> 
+   <table class="table table-striped table-bordered table-condensed"> 
+    <thead> 
+     <tr> 
+      <th>XMLコメントタグ</th> 
+      <th>説明</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td>summary</td> 
+      <td>形式あるいは形式メンバ設定</td> 
+     </tr> 
+     <tr> 
+      <td>remarks</td> 
+      <td>詳細な説明</td> 
+     </tr> 
+     <tr> 
+      <td>para</td> 
+      <td>remarksの追加説明</td> 
+     </tr> 
+     <tr> 
+      <td>value</td> 
+      <td>プロパティの説明</td> 
+     </tr> 
+     <tr> 
+      <td>example</td> 
+      <td>使用例</td> 
+     </tr> 
+     <tr> 
+      <td>list</td> 
+      <td>リストとテーブル生成</td> 
+     </tr> 
+     <tr> 
+      <td>code</td> 
+      <td>何行目のコードで表示する時に使用</td> 
+     </tr> 
+     <tr> 
+      <td>see</td> 
+      <td>テキスト内部のリンク指定</td> 
+     </tr> 
+     <tr> 
+      <td>seealso</td> 
+      <td>参考部分に表せるテキスト指定</td> 
+     </tr> 
+     <tr> 
+      <td>exception</td> 
+      <td>例外説明</td> 
+     </tr> 
+     <tr> 
+      <td>permision</td> 
+      <td>接近権限説明</td> 
+     </tr> 
+     <tr> 
+      <td>param</td> 
+      <td>メソッドのパラメター説明</td> 
+     </tr> 
+     <tr> 
+      <td>return</td> 
+      <td>返却値を説明</td> 
+     </tr> 
+     <tr> 
+      <td>c</td> 
+      <td>説明中で含めているコード</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <p>プロジェクトを進める時に簡単なプログラムは一人で作成できますが、普通のプロジェクトならチームを組んで進めると思います。その時にメンバ間にコミュニケーションが合わないとプロジェクトがうまく進めると思わないですね。</p> 
+  <p>また、プロジェクトが完了できて、数月を過ぎて後にバージョンアップがあることやバグが発生してメンテが必要な時にソース内容を覚えると問題がないですが、逆に仕様を忘れてしまうケースがありますね。</p> 
+  <p>そのためにXMLコメントを利用してプロジェクトあるいはクラス、メソッドの説明を書いておいて、コミュニケーション、メンテ、仕様整理する時に利用すると良いと思います。</p> 
+  <p style="text-align:left;"><img src="./contents/5/9_005.jpg" data-filename="005.jpg" style="width: 660px;"></p> 
+  <p>XMLコメント以外に改行コメント、ブロックコメントはC#ではなく、C言語、Javaにも同じ形式で使えますね。コメントはプログラムの勉強を始まる時に学ぶ重要な部分なのでちゃんと覚えていきましょう。</p>
  </body>
 </html></div>
 				<hr />
