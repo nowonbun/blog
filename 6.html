@@ -96,7 +96,7 @@
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/04 00:01:12 &nbsp;&nbsp;修正日付 : 2019/07/04 00:10:52
+					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/04 00:01:12 &nbsp;&nbsp;修正日付 : 2019/07/04 00:20:32
 				</div>
 			</div>
 			<div class="article">
@@ -211,47 +211,49 @@
   <p style="text-align: left;"><img src="./contents/6/10_002.jpg" data-filename="002.jpg" style="width: 818px;"></p> 
   <p>コードで「0.0」は「double」系に認識するので、データタイプが合わないエラーが発生します。</p> 
   <p>そうすると、「flaot」系の宣言はどうふうに使うかと見ると「0.0」の語尾に「f」を付けます。それをリテラル(literal)と言います。</p> 
-  <table class="table table-striped table-bordered table-condensed"> 
-   <thead> 
-    <tr> 
-     <th>C#リテラルデータタイプ</th> 
-     <th>Suffix</th> 
-     <th>例</th> 
-    </tr> 
-   </thead> 
-   <tbody> 
-    <tr> 
-     <td>long</td> 
-     <td>L</td> 
-     <td>1024L</td> 
-    </tr> 
-    <tr> 
-     <td>uint</td> 
-     <td>U</td> 
-     <td>1024U</td> 
-    </tr> 
-    <tr> 
-     <td>ulong</td> 
-     <td>UL</td> 
-     <td>1024UL</td> 
-    </tr> 
-    <tr> 
-     <td>float</td> 
-     <td>F</td> 
-     <td>10.24F</td> 
-    </tr> 
-    <tr> 
-     <td>double</td> 
-     <td>D</td> 
-     <td>10.24Dまたは10.24</td> 
-    </tr> 
-    <tr> 
-     <td>decimal</td> 
-     <td>M</td> 
-     <td>10.24M</td> 
-    </tr> 
-   </tbody> 
-  </table> 
+  <div class="table-responsive"> 
+   <table class="table table-striped table-bordered table-condensed"> 
+    <thead> 
+     <tr> 
+      <th>C#リテラルデータタイプ</th> 
+      <th>Suffix</th> 
+      <th>例</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td>long</td> 
+      <td>L</td> 
+      <td>1024L</td> 
+     </tr> 
+     <tr> 
+      <td>uint</td> 
+      <td>U</td> 
+      <td>1024U</td> 
+     </tr> 
+     <tr> 
+      <td>ulong</td> 
+      <td>UL</td> 
+      <td>1024UL</td> 
+     </tr> 
+     <tr> 
+      <td>float</td> 
+      <td>F</td> 
+      <td>10.24F</td> 
+     </tr> 
+     <tr> 
+      <td>double</td> 
+      <td>D</td> 
+      <td>10.24Dまたは10.24</td> 
+     </tr> 
+     <tr> 
+      <td>decimal</td> 
+      <td>M</td> 
+      <td>10.24M</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
   <p>メモリには基本的にデータがアリ、ナシが存在します。そのことでデータがなしという意味はプログラム的に「null」(ヌル)と呼びます。</p> 
   <p><br></p> 
   <p>でもC#は基本データタイプにはnullを許しません。int(整数データタイプ)の場合は「int a;」に宣言すると基本値「0」が設定します。でもこの基本設定値が問題になるケースがあります。</p> 
