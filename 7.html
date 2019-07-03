@@ -5,29 +5,29 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
 <meta name="theme-color" content="#29343a">
-<meta name="keywords" content="Other">
-<meta name="description" content="<![CDATA[準備中]]>">
+<meta name="keywords" content="Study / C#">
+<meta name="description" content="<![CDATA[こんにちは。明月です。今日は変数と定数、すなわちメモリにデータを格納する場所について勉強します。プログラムを作成して、様々な数を計算すると結果の値を何処か格納して保管する必要があります。そのため、プログラムを下記の形式で作成しなければならないです。上のことを見ると変数はメモリに格納する場所になることは分かりました。それならプログラムの設計によってデータが変わらないデータもある可能性がありますね。その時に変数宣言する仕方で「const」をつけると変わらない変数、すなわち定数になります。変数の場合は宣言する場所によって変数の使用方法が変わります。メンバ変数の場合はクラスが生成する時に生成されてクラスが解除する時に解除します。ローカルの場合はローカルブロックが閉じる時に解除します。この変数のcycleはクラスを勉強する時に詳しく勉強するので、今は使う仕方だけちゃんと覚えて行きましょう。]]>">
 <meta name="author" content="nowonbun@gmail.com">
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: Welcome">
+<meta name="title" content="明月の開発ストーリ :: [C# スタディ - 6] 変数と定数">
 <link rel="canonical" href="https://www.nowonbun.com">
 <meta name="robots" content="ALL">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="明月の開発ストーリ :: Welcome">
-<meta property="og:description" content="<![CDATA[準備中]]>">
+<meta property="og:title" content="明月の開発ストーリ :: [C# スタディ - 6] 変数と定数">
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。今日は変数と定数、すなわちメモリにデータを格納する場所について勉強します。プログラムを作成して、様々な数を計算すると結果の値を何処か格納して保管する必要があります。そのため、プログラムを下記の形式で作成しなければならないです。上のことを見ると変数はメモリに格納する場所になることは分かりました。それならプログラムの設計によってデータが変わらないデータもある可能性がありますね。その時に変数宣言する仕方で「const」をつけると変わらない変数、すなわち定数になります。変数の場合は宣言する場所によって変数の使用方法が変わります。メンバ変数の場合はクラスが生成する時に生成されてクラスが解除する時に解除します。ローカルの場合はローカルブロックが閉じる時に解除します。この変数のcycleはクラスを勉強する時に詳しく勉強するので、今は使う仕方だけちゃんと覚えて行きましょう。]]>">
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png">
 <meta property="og:url" content="https://www.nowonbun.com">
 <meta property="og:site_name" content="明月の開発ストーリ" >
 
 <!-- <meta name="twitter:card" content="">
 <meta name="twitter:site" content="">-->
-<meta name="twitter:title" content="明月の開発ストーリ :: Welcome" >
-<meta name="twitter:description" content="<![CDATA[準備中]]>" >
+<meta name="twitter:title" content="明月の開発ストーリ :: [C# スタディ - 6] 変数と定数" >
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今日は変数と定数、すなわちメモリにデータを格納する場所について勉強します。プログラムを作成して、様々な数を計算すると結果の値を何処か格納して保管する必要があります。そのため、プログラムを下記の形式で作成しなければならないです。上のことを見ると変数はメモリに格納する場所になることは分かりました。それならプログラムの設計によってデータが変わらないデータもある可能性がありますね。その時に変数宣言する仕方で「const」をつけると変わらない変数、すなわち定数になります。変数の場合は宣言する場所によって変数の使用方法が変わります。メンバ変数の場合はクラスが生成する時に生成されてクラスが解除する時に解除します。ローカルの場合はローカルブロックが閉じる時に解除します。この変数のcycleはクラスを勉強する時に詳しく勉強するので、今は使う仕方だけちゃんと覚えて行きましょう。]]>" >
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" >
 
-<title>明月の開発ストーリ :: Welcome</title>
+<title>明月の開発ストーリ :: [C# スタディ - 6] 変数と定数</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -92,23 +92,57 @@
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">Welcome</h1>
+					<h1 id="titleTxt">[C# スタディ - 6] 変数と定数</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0600">Other</a> &nbsp;&nbsp; 作成日付 : 2019/07/01 01:42:41 &nbsp;&nbsp;修正日付 : 2019/07/01 01:42:41
+					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/04 00:09:43 &nbsp;&nbsp;修正日付 : 2019/07/04 00:13:06
 				</div>
 			</div>
 			<div class="article">
 				<div class="tt_article_useless_p_margin" id="article_contents"><html>
  <head></head>
  <body>
-  準備中
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>今日は変数と定数、すなわちメモリにデータを格納する場所について勉強します。</p> 
+  <p><br></p> 
+  <p>プログラムを作成して、様々な数を計算すると結果の値を何処か格納して保管する必要があります。</p> 
+  <p>そのため、プログラムを下記の形式で作成しなければならないです。</p> 
+  <pre><code class="cs" data-type="">データタイプ　変数名;
+クラス 変数名 = new クラス();
+</code></pre> 
+  <p style="text-align: left;"><img style="width: 600px;" src="./contents/7/14_001.jpg" data-filename="001.jpg"></p> 
+  <p>上のことを見ると変数はメモリに格納する場所になることは分かりました。</p> 
+  <p><br></p> 
+  <p>それならプログラムの設計によってデータが変わらないデータもある可能性がありますね。</p> 
+  <p>その時に変数宣言する仕方で「const」をつけると変わらない変数、すなわち定数になります。</p> 
+  <pre><code class="cs" data-type="">const データタイプ　変数名;
+const クラス 変数名 = new クラス();
+</code></pre> 
+  <p style="text-align: left;"><img style="width: 600px;" src="./contents/7/17_002.jpg" data-filename="002.jpg"></p> 
+  <p>変数の場合は宣言する場所によって変数の使用方法が変わります。</p> 
+  <pre><code class="cs" data-type="">class クラス名
+{
+  //メンバ変数
+  データタイプ 変数名;
+  クラス 変数名 = new クラス();
+ 
+  void method()
+  {
+    //ロカール変数
+    データタイプ 変数名;
+    クラス 変数名 = new クラス();
+  }
+}
+</code></pre> 
+  <p>メンバ変数の場合はクラスが生成する時に生成されてクラスが解除する時に解除します。ローカルの場合はローカルブロックが閉じる時に解除します。</p> 
+  <p>この変数のCycleはクラスを勉強する時に詳しく勉強するので、今は使う仕方だけちゃんと覚えて行きましょう。</p>
  </body>
 </html></div>
 				<hr />
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag">  </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=C%23>#C#</a> </span>
 				</div>
 			</div>
 		</article>
