@@ -97,7 +97,7 @@
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/06 00:53:17 &nbsp;&nbsp;修正日付 : 2019/07/06 00:54:52
+					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/06 00:53:17 &nbsp;&nbsp;修正日付 : 2019/07/06 00:58:52
 				</div>
 			</div>
 			<div class="article">
@@ -111,7 +111,6 @@
   <p>ループは単語のいみとおりに繰り返す処理ということです。ループの種類は「for」、「while」、「do〜while」、「foreach」の４つがあります。</p> 
   <p><br></p> 
   <h2><b><span>for 文</span></b></h2> 
-  <p><br></p> 
   <p>「for」文は初期化より終了条件が偽になるまで増減値を変換しながら繰り返す制御文です。</p> 
   <pre><code class="cs" data-type="">for(初期化式;条件式;増減式)
 {
@@ -145,8 +144,8 @@ namespace Operation
   <p>例を見ると「i」の変数に「0」の値を初期して「i &lt; 10」の条件をチェックします。結果が「真」になるので「Console.WriteLine(i);」を実行します。文の処理が終わって増減式に行って「i」の値を増加(i = 1)します。</p> 
   <p>また「i &lt; 10」の条件をチェックしてまた「真」になるので「Console.WriteList(i);」を実行します。そのままに「i」の値が「10」になるまで繰り返します。</p> 
   <p style="text-align:left;"><img src="./contents/11/30_002.jpg" data-filename="002.jpg" style="width: 600px;"></p> 
-  <h2><b><span>while 文</span></b></h2> 
   <p><br></p> 
+  <h2><b><span>while 文</span></b></h2> 
   <p>「while」文は条件式が真になる間に繰り返す制御文です。</p> 
   <pre><code class="cs" data-type="">while(条件式)
 {
@@ -181,8 +180,8 @@ namespace Operation
 </code></pre> 
   <p>「while」文は「for」文の初期式と増減式が除いてるものです。上の例をみると「while」文には別に増減式がないので「i++」を除いたら無限ループ(ループが終わらない状態)になる可能性があるので気をつけてください。</p> 
   <p style="text-align:left;"><img src="./contents/11/31_004.jpg" data-filename="004.jpg" style="width: 600px;"></p> 
-  <h2><b><span>do〜while 文</span></b></h2> 
   <p><br></p> 
+  <h2><b><span>do〜while 文</span></b></h2> 
   <p>「do〜while」文は「while」と似ています。でも「while」は初めから条件式をチェックして繰り返しますが「do〜while」文は１回実行した後から条件式をチェックします。</p> 
   <pre><code class="cs" data-type="">do
 {
@@ -231,7 +230,6 @@ namespace Operation
   <p>実際にプロジェクトする時に「do〜while」文は一般ループと流れが違うから判断がつかないことが多く発生します。それで「do〜while」文を使うのはお勧めしません。</p> 
   <p><br></p> 
   <h2><b><span>foreach 文</span></b></h2> 
-  <p><br></p> 
   <p>配列またはリストの個数のほどに繰り返します。</p> 
   <pre><code class="cs" data-type="">foreach(配列又はリストの変数 in 配列又はリスト)
 {
