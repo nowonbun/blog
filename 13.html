@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="theme-color" content="#29343a">
+<meta name="keywords" content="Study / C#">
+<meta name="description" content="<![CDATA[こんにちは。明月です。今日はc#のメソッドに関して勉強します。メソッドあるいは関数と呼ばれる機能は数学の関数(function)と同じ意味です。すなわち、関数に任意の数を入れると関数の式によって計算をされる数の値がでることになります。それなら、プログラムの関数の使用方法は下記のとおりです。上の例で「static」のキーワードはとりあえず無視しましょう。例を説明すると「exammethod」、「exammethod」の関数があります。「exammethod」の場合は「10」のデータを入れると「10」倍になって「100」の値が返却すると思います。「exammethod2」の場合は「10」、「20」のデータを入れると２つのデータが足すので「30」のデータが返却すると思いますね。メソッド(関数)は上の形態が基本ですが返却値が１つではなく２つ以上になるあるいはパラメタの個数が動的になる場合もあります。上の関数の場合はパラメタ「b」は「a」の値の商、「c」には「a」の値の余のデータが返却し、メソッド(関数)は余が「0」の場合は「true」、その以外は「false」を返却します。パラメタ個数が可変の場合は下記とおりです。上の例はパラメタで受け取ったデータをすべて合計する関数です。void今まで我々は関数の返却値があるように作成しました。でも逆に返却値が必要ではない場合もありますね。例えも上の返却値が２つ以上の例を見ると関数返却値は余が「0」かどうかの値を返却しました。でも、「0」かどうかの値は要らずに商と余だけ返却したい時があると思いますね。その場合は返却値に「void」のキーワードを書いて「返却をしない」というを明示します。今までメソッド(関数)の方法にかんして勉強しました。メソッド(関数)のことは数学のファンクションみたいに結果値に置換ができます。それなら数学の数列という数の並びがあります。たとえば「1」から「10」の合計はどうすればいうと数式に変換すると「1+2+3+4+5+6+7+8+9+10」になります。「10」の「1」を足すの等差数列を分析すると「9」の「1」を足すの等差数列+「10」に表現ができますね。すなわち「n」の「1」を足すの等差数列は(n-1)の「1」を足すの等差数列に表現ができます。そのとおりに「1」の等差数列は「1」になりますね。それをプログラムで実装すると下記とおりです。上の例を見ると「su]]>">
+<meta name="author" content="nowonbun@gmail.com">
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [C# スタディ - 12] メソッド(関数)とvoid型">
+<link rel="canonical" href="https://www.nowonbun.com">
+<meta name="robots" content="ALL">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="明月の開発ストーリ :: [C# スタディ - 12] メソッド(関数)とvoid型">
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。今日はc#のメソッドに関して勉強します。メソッドあるいは関数と呼ばれる機能は数学の関数(function)と同じ意味です。すなわち、関数に任意の数を入れると関数の式によって計算をされる数の値がでることになります。それなら、プログラムの関数の使用方法は下記のとおりです。上の例で「static」のキーワードはとりあえず無視しましょう。例を説明すると「exammethod」、「exammethod」の関数があります。「exammethod」の場合は「10」のデータを入れると「10」倍になって「100」の値が返却すると思います。「exammethod2」の場合は「10」、「20」のデータを入れると２つのデータが足すので「30」のデータが返却すると思いますね。メソッド(関数)は上の形態が基本ですが返却値が１つではなく２つ以上になるあるいはパラメタの個数が動的になる場合もあります。上の関数の場合はパラメタ「b」は「a」の値の商、「c」には「a」の値の余のデータが返却し、メソッド(関数)は余が「0」の場合は「true」、その以外は「false」を返却します。パラメタ個数が可変の場合は下記とおりです。上の例はパラメタで受け取ったデータをすべて合計する関数です。void今まで我々は関数の返却値があるように作成しました。でも逆に返却値が必要ではない場合もありますね。例えも上の返却値が２つ以上の例を見ると関数返却値は余が「0」かどうかの値を返却しました。でも、「0」かどうかの値は要らずに商と余だけ返却したい時があると思いますね。その場合は返却値に「void」のキーワードを書いて「返却をしない」というを明示します。今までメソッド(関数)の方法にかんして勉強しました。メソッド(関数)のことは数学のファンクションみたいに結果値に置換ができます。それなら数学の数列という数の並びがあります。たとえば「1」から「10」の合計はどうすればいうと数式に変換すると「1+2+3+4+5+6+7+8+9+10」になります。「10」の「1」を足すの等差数列を分析すると「9」の「1」を足すの等差数列+「10」に表現ができますね。すなわち「n」の「1」を足すの等差数列は(n-1)の「1」を足すの等差数列に表現ができます。そのとおりに「1」の等差数列は「1」になりますね。それをプログラムで実装すると下記とおりです。上の例を見ると「su]]>">
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png">
+<meta property="og:url" content="https://www.nowonbun.com">
+<meta property="og:site_name" content="明月の開発ストーリ" >
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@nowonbun">
+<meta name="twitter:creator" content="@nowonbun">
+<meta name="twitter:title" content="明月の開発ストーリ :: [C# スタディ - 12] メソッド(関数)とvoid型" >
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今日はc#のメソッドに関して勉強します。メソッドあるいは関数と呼ばれる機能は数学の関数(function)と同じ意味です。すなわち、関数に任意の数を入れると関数の式によって計算をされる数の値がでることになります。それなら、プログラムの関数の使用方法は下記のとおりです。上の例で「static」のキーワードはとりあえず無視しましょう。例を説明すると「exammethod」、「exammethod」の関数があります。「exammethod」の場合は「10」のデータを入れると「10」倍になって「100」の値が返却すると思います。「exammethod2」の場合は「10」、「20」のデータを入れると２つのデータが足すので「30」のデータが返却すると思いますね。メソッド(関数)は上の形態が基本ですが返却値が１つではなく２つ以上になるあるいはパラメタの個数が動的になる場合もあります。上の関数の場合はパラメタ「b」は「a」の値の商、「c」には「a」の値の余のデータが返却し、メソッド(関数)は余が「0」の場合は「true」、その以外は「false」を返却します。パラメタ個数が可変の場合は下記とおりです。上の例はパラメタで受け取ったデータをすべて合計する関数です。void今まで我々は関数の返却値があるように作成しました。でも逆に返却値が必要ではない場合もありますね。例えも上の返却値が２つ以上の例を見ると関数返却値は余が「0」かどうかの値を返却しました。でも、「0」かどうかの値は要らずに商と余だけ返却したい時があると思いますね。その場合は返却値に「void」のキーワードを書いて「返却をしない」というを明示します。今までメソッド(関数)の方法にかんして勉強しました。メソッド(関数)のことは数学のファンクションみたいに結果値に置換ができます。それなら数学の数列という数の並びがあります。たとえば「1」から「10」の合計はどうすればいうと数式に変換すると「1+2+3+4+5+6+7+8+9+10」になります。「10」の「1」を足すの等差数列を分析すると「9」の「1」を足すの等差数列+「10」に表現ができますね。すなわち「n」の「1」を足すの等差数列は(n-1)の「1」を足すの等差数列に表現ができます。そのとおりに「1」の等差数列は「1」になりますね。それをプログラムで実装すると下記とおりです。上の例を見ると「su]]>" >
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" >
+
+<title>明月の開発ストーリ :: [C# スタディ - 12] メソッド(関数)とvoid型</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css">
+<link rel="stylesheet" type="text/css" href="./css/loader.css">
+<link rel="stylesheet" type="text/css" href="./css/common.css">
+<link rel="stylesheet" type="text/css" href="./css/post.css">
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
+</head>
+<body>
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="./?category=0101">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="./?category=0102">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="./?category=0103">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="./?category=0104">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="./?category=0105">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="./?category=0106">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="./?category=0107">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="./?category=0201">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="./?category=0202">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="./?category=0203">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="./?category=0204">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="./?category=0205">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="./?category=0206">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="./?category=0207">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="./?category=0208">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="./?category=0209">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="./?category=0300">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="./?category=0400">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="./?category=0500">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="./?category=0600">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[C# スタディ - 12] メソッド(関数)とvoid型</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/07 23:12:30 &nbsp;&nbsp;修正日付 : 2019/07/07 23:14:29
+				</div>
+			</div>
+			<div class="article">
+				<div class="tt_article_useless_p_margin" id="article_contents"><html>
+ <head></head>
+ <body>
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>今日はC#のメソッドに関して勉強します。メソッドあるいは関数と呼ばれる機能は数学の関数(function)と同じ意味です。すなわち、関数に任意の数を入れると関数の式によって計算をされる数の値がでることになります。</p> 
+  <p style="text-align:left;"><img src="./contents/13/40_001.png" data-filename="001.png" style="width: 466px;"></p> 
+  <p>それなら、プログラムの関数の使用方法は下記のとおりです。</p> 
+  <pre><code class="cs" data-type="">返却データタイプ メソッド名(パラメタ1データタイプ パラメタ1変数名,パラメタ2データタイプ パラメタ2変数名,...)
+{
+  計算式
+  return 返却データ;
+}
+</code></pre> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace function
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int a = ExamMethod(10);
+      int b = ExamMethod2(10, 20);
+
+      Console.WriteLine(a);
+      Console.WriteLine(b);
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+    static int ExamMethod(int a)
+    {
+      int ret = a * 10;
+      return ret;
+    }
+    static int ExamMethod2(int a,int b)
+    {
+      int ret = a + b;
+      return ret;
+    }
+  }
+}
+</code></pre> 
+  <p>上の例で「static」のキーワードはとりあえず無視しましょう。例を説明すると「ExamMethod」、「ExamMethod」の関数があります。「ExamMethod」の場合は「10」のデータを入れると「10」倍になって「100」の値が返却すると思います。</p> 
+  <p>「ExamMethod2」の場合は「10」、「20」のデータを入れると２つのデータが足すので「30」のデータが返却すると思いますね。</p> 
+  <p style="text-align:left;"><img src="./contents/13/41_002.jpg" data-filename="002.jpg" style="width: 600px;"></p> 
+  <p>メソッド(関数)は上の形態が基本ですが返却値が１つではなく２つ以上になるあるいはパラメタの個数が動的になる場合もあります。</p> 
+  <pre><code class="cs" data-type="">返却データタイプ メソッド名(ref パラメタ1データタイプ パラメタ1変数名,out パラメタ2データタイプ パラメタ2変数名,...)
+{
+  計算式
+  return 返却データ;
+}
+</code></pre> 
+  <pre><code class="cs" data-type="">﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace function
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int a = 15;
+      int ret1;
+      int ret2;
+      bool b = ExamMethod(ref a,out ret1,out ret2);
+
+      Console.WriteLine(ret1);
+      Console.WriteLine(ret2);
+      Console.WriteLine(b);
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+    static bool ExamMethod(ref int a,out int b,out int c)
+    {
+      b = a / 10;
+      c = a % 10;
+      return c == 0;
+    }
+  }
+}
+</code></pre> 
+  <p>上の関数の場合はパラメタ「b」は「a」の値の商、「c」には「a」の値の余のデータが返却し、メソッド(関数)は余が「0」の場合は「true」、その以外は「false」を返却します。</p> 
+  <p style="text-align:left;"><img src="./contents/13/42_003.jpg" data-filename="003.jpg" style="width: 600px;"></p> 
+  <p>パラメタ個数が可変の場合は下記とおりです。</p> 
+  <pre><code class="cs" data-type="">返却データタイプ メソッド名(params パラメタ1データタイプ[] パラメタ1変数名)
+{
+  計算式
+  return 返却データ;
+}
+</code></pre> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace function
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int ret = ExamMethod(10, 20);
+      Console.WriteLine(ret);
+
+      ret = ExamMethod(10, 20, 30, 40);
+      Console.WriteLine(ret);
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+    static int ExamMethod(params int[] value)
+    {
+      int ret = 0;
+      foreach(int data in value)
+      {
+        ret += data;
+      }
+      return ret;
+    }
+  }
+}
+</code></pre> 
+  <p>上の例はパラメタで受け取ったデータをすべて合計する関数です。</p> 
+  <p style="text-align:left;"><img src="./contents/13/43_004.jpg" data-filename="004.jpg" style="width: 600px;"></p> 
+  <p><br></p> 
+  <h2><b><span>void</span></b></h2> 
+  <p>今まで我々は関数の返却値があるように作成しました。でも逆に返却値が必要ではない場合もありますね。例えも上の返却値が２つ以上の例を見ると関数返却値は余が「0」かどうかの値を返却しました。</p> 
+  <p>でも、「0」かどうかの値は要らずに商と余だけ返却したい時があると思いますね。その場合は返却値に「void」のキーワードを書いて「返却をしない」というを明示します。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace function
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int a = 15;
+      int ret1;
+      int ret2;
+      ExamMethod(ref a,out ret1,out ret2);
+
+      Console.WriteLine(ret1);
+      Console.WriteLine(ret2);
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+    static void ExamMethod(ref int a,out int b,out int c)
+    {
+      b = a / 10;
+      c = a % 10;
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/13/44_005.jpg" data-filename="005.jpg" style="width: 600px;"></p> 
+  <p>今までメソッド(関数)の方法にかんして勉強しました。メソッド(関数)のことは数学のファンクションみたいに結果値に置換ができます。それなら数学の数列という数の並びがあります。</p> 
+  <p><br></p> 
+  <p>たとえば「1」から「10」の合計はどうすればいうと数式に変換すると「1+2+3+4+5+6+7+8+9+10」になります。「10」の「1」を足すの等差数列を分析すると「9」の「1」を足すの等差数列+「10」に表現ができますね。</p> 
+  <p><br></p> 
+  <p>すなわち「n」の「1」を足すの等差数列は(n-1)の「1」を足すの等差数列に表現ができます。</p> 
+  <p>そのとおりに「1」の等差数列は「1」になりますね。それをプログラムで実装すると下記とおりです。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Operation
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int sum = SumList(10);
+
+      Console.WriteLine(sum);
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+    static int SumList(int value)
+    {
+      if(value == 1)
+      {
+        return 1;
+      }
+      //自分の関数を呼び出す
+      return SumList(value - 1) + value;
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/13/45_006.jpg" data-filename="006.jpg" style="width: 600px;"></p> 
+  <p>上の例を見ると「SumList」の関数の中で「SumList」を呼び出しています。そのように自分が自分を呼び出すことをプログラムには「再帰関数」と呼びます。</p> 
+  <p>でも実際にプログラムを作る時に再帰関数はよく使えません。性能問題もあるしStackOverflowが発生する可能性があるからです。できれば「for」文で実装できれば、「for」文のほうで作成するほうが良いと思います。</p> 
+  <p>逆に再帰関数はアルゴリズム的に使う場合があるので、状況をみてループがよいか再帰関数がよいかを判断して使ってください。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Operation
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      int sum = 0;
+      //ループ
+      for (int i = 0; i &lt; 100000; i++)
+      {
+        sum += i;
+      }
+      Console.WriteLine(sum);
+      //再帰
+      sum = SumList(100000);
+
+      Console.WriteLine(sum);
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+    static int SumList(int value)
+    {
+      if(value == 1)
+      {
+        return 1;
+      }
+      return SumList(value - 1) + value;
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/13/46_007.jpg" data-filename="007.jpg" style="width: 555px;"></p>
+ </body>
+</html></div>
+				<hr />
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=C%23>#C#</a> </span>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
