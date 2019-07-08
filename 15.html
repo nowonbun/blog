@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<meta name="theme-color" content="#29343a">
+<meta name="keywords" content="Study / C#">
+<meta name="description" content="<![CDATA[こんにちは。明月です。今日はプロパティについて勉強します。前の投稿に「変数」について勉強しましたが、その中でメンバ変数が今日勉強するプロパティと関係があります。[c#] 変数と定数oop(オブジェクト指向プログラム)の特徴でカプセルがあります。クラスを宣言して使う立場ではクラスの変数とメソッドを参照制限にすることをカプセルと言います。この制限はプログラム的で実装禁止ではありませんが、コーディングの規約(プログラム実装の方法として決められた約束)によって決められています。その規約の一つがクラスの「メンバ変数は「private」にする」、すなわち外部から参照禁止になっています。そうするとメンバ変数の値は外部で取得をどうするかといえばプロパティを通って取得します。上の例の「name」が基本的に使うプロパティの構造です。変数名が小文字で書いてるものをプロパティの変数名から語頭１桁を大文字に変換して書きます。「name」のデータは外部で直接に参照できなくて、「name」のプロパティを通って取得できます。読み専用プロパティの場合は「set」部分を省略して作成します。それで「comp」プロパティは「comp」変数からデータを取得できますが、格納ができない状況になっています。応用プロパティの場合は「string」タイプのデータを受け取ります。そして文字分け関数で文字列のデータを分けます。各「year」、「month」、「day」の変数に「int」型にて変換して格納します。また、逆に外部から取得する時は「year」、「month」、「day」データを合わせて「string」タイプに変換して返却しています。外部で見るとプロパティは「birth」タイプしか見えない構造になっています。実際にプログラム実装する時はほとんど基本プロパティ型を使います。それで「.net framework 3.0」からはメンバ変数も省略が可能な形式があります。今までプロパティについて勉強しました。でも、これだけではなぜプロパティを使うかを確かに認識ができません。プロパティの場合はただカプセルの理由だけではなく、継承、抽象等oopの特徴の部分と密接な関係があります。今はインタフェースや抽象クラスの概念がない状況では説明が難しいですね。とりあえず、上の形式で使い進んで、またインタフェース、抽象クラスチャプターで詳しく勉強しましょう。]]>">
+<meta name="author" content="nowonbun@gmail.com">
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [C# スタディ - 14] プロパティ(property)">
+<link rel="canonical" href="https://www.nowonbun.com">
+<meta name="robots" content="ALL">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="明月の開発ストーリ :: [C# スタディ - 14] プロパティ(property)">
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。今日はプロパティについて勉強します。前の投稿に「変数」について勉強しましたが、その中でメンバ変数が今日勉強するプロパティと関係があります。[c#] 変数と定数oop(オブジェクト指向プログラム)の特徴でカプセルがあります。クラスを宣言して使う立場ではクラスの変数とメソッドを参照制限にすることをカプセルと言います。この制限はプログラム的で実装禁止ではありませんが、コーディングの規約(プログラム実装の方法として決められた約束)によって決められています。その規約の一つがクラスの「メンバ変数は「private」にする」、すなわち外部から参照禁止になっています。そうするとメンバ変数の値は外部で取得をどうするかといえばプロパティを通って取得します。上の例の「name」が基本的に使うプロパティの構造です。変数名が小文字で書いてるものをプロパティの変数名から語頭１桁を大文字に変換して書きます。「name」のデータは外部で直接に参照できなくて、「name」のプロパティを通って取得できます。読み専用プロパティの場合は「set」部分を省略して作成します。それで「comp」プロパティは「comp」変数からデータを取得できますが、格納ができない状況になっています。応用プロパティの場合は「string」タイプのデータを受け取ります。そして文字分け関数で文字列のデータを分けます。各「year」、「month」、「day」の変数に「int」型にて変換して格納します。また、逆に外部から取得する時は「year」、「month」、「day」データを合わせて「string」タイプに変換して返却しています。外部で見るとプロパティは「birth」タイプしか見えない構造になっています。実際にプログラム実装する時はほとんど基本プロパティ型を使います。それで「.net framework 3.0」からはメンバ変数も省略が可能な形式があります。今までプロパティについて勉強しました。でも、これだけではなぜプロパティを使うかを確かに認識ができません。プロパティの場合はただカプセルの理由だけではなく、継承、抽象等oopの特徴の部分と密接な関係があります。今はインタフェースや抽象クラスの概念がない状況では説明が難しいですね。とりあえず、上の形式で使い進んで、またインタフェース、抽象クラスチャプターで詳しく勉強しましょう。]]>">
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png">
+<meta property="og:url" content="https://www.nowonbun.com">
+<meta property="og:site_name" content="明月の開発ストーリ" >
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@nowonbun">
+<meta name="twitter:creator" content="@nowonbun">
+<meta name="twitter:title" content="明月の開発ストーリ :: [C# スタディ - 14] プロパティ(property)" >
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今日はプロパティについて勉強します。前の投稿に「変数」について勉強しましたが、その中でメンバ変数が今日勉強するプロパティと関係があります。[c#] 変数と定数oop(オブジェクト指向プログラム)の特徴でカプセルがあります。クラスを宣言して使う立場ではクラスの変数とメソッドを参照制限にすることをカプセルと言います。この制限はプログラム的で実装禁止ではありませんが、コーディングの規約(プログラム実装の方法として決められた約束)によって決められています。その規約の一つがクラスの「メンバ変数は「private」にする」、すなわち外部から参照禁止になっています。そうするとメンバ変数の値は外部で取得をどうするかといえばプロパティを通って取得します。上の例の「name」が基本的に使うプロパティの構造です。変数名が小文字で書いてるものをプロパティの変数名から語頭１桁を大文字に変換して書きます。「name」のデータは外部で直接に参照できなくて、「name」のプロパティを通って取得できます。読み専用プロパティの場合は「set」部分を省略して作成します。それで「comp」プロパティは「comp」変数からデータを取得できますが、格納ができない状況になっています。応用プロパティの場合は「string」タイプのデータを受け取ります。そして文字分け関数で文字列のデータを分けます。各「year」、「month」、「day」の変数に「int」型にて変換して格納します。また、逆に外部から取得する時は「year」、「month」、「day」データを合わせて「string」タイプに変換して返却しています。外部で見るとプロパティは「birth」タイプしか見えない構造になっています。実際にプログラム実装する時はほとんど基本プロパティ型を使います。それで「.net framework 3.0」からはメンバ変数も省略が可能な形式があります。今までプロパティについて勉強しました。でも、これだけではなぜプロパティを使うかを確かに認識ができません。プロパティの場合はただカプセルの理由だけではなく、継承、抽象等oopの特徴の部分と密接な関係があります。今はインタフェースや抽象クラスの概念がない状況では説明が難しいですね。とりあえず、上の形式で使い進んで、またインタフェース、抽象クラスチャプターで詳しく勉強しましょう。]]>" >
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" >
+
+<title>明月の開発ストーリ :: [C# スタディ - 14] プロパティ(property)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css">
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css">
+<link rel="stylesheet" type="text/css" href="./css/loader.css">
+<link rel="stylesheet" type="text/css" href="./css/common.css">
+<link rel="stylesheet" type="text/css" href="./css/post.css">
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
+</head>
+<body>
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="./?category=0101">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="./?category=0102">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="./?category=0103">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="./?category=0104">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="./?category=0105">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="./?category=0106">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="./?category=0107">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="./?category=0201">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="./?category=0202">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="./?category=0203">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="./?category=0204">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="./?category=0205">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="./?category=0206">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="./?category=0207">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="./?category=0208">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="./?category=0209">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="./?category=0300">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="./?category=0400">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="./?category=0500">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="./?category=0600">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[C# スタディ - 14] プロパティ(property)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/08 23:04:09 &nbsp;&nbsp;修正日付 : 2019/07/08 23:04:37
+				</div>
+			</div>
+			<div class="article">
+				<div class="tt_article_useless_p_margin" id="article_contents"><html>
+ <head></head>
+ <body>
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>今日はプロパティについて勉強します。前の投稿に「変数」について勉強しましたが、その中でメンバ変数が今日勉強するプロパティと関係があります。</p> 
+  <p><br></p> 
+  <p><a href="//www.nowonbun.com/2016/05/c_15.html" target="_blank">[C#] 変数と定数</a></p> 
+  <p><br></p> 
+  <p>OOP(オブジェクト指向プログラム)の特徴でカプセルがあります。クラスを宣言して使う立場ではクラスの変数とメソッドを参照制限にすることをカプセルと言います。この制限はプログラム的で実装禁止ではありませんが、コーディングの規約(プログラム実装の方法として決められた約束)によって決められています。</p> 
+  <p>その規約の一つがクラスの「メンバ変数は「private」にする」、すなわち外部から参照禁止になっています。そうするとメンバ変数の値は外部で取得をどうするかといえばプロパティを通って取得します。</p> 
+  <pre><code class="cs" data-type="">class クラス名
+{
+  private 変数データタイプ 変数名;
+
+  public 変数データタイプ プロパティ名
+  {
+    get
+    {
+      return 変数名;
+    }
+    set
+    {
+      変数名 = value;
+    }
+  }
+}
+</code></pre> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace property
+{
+  class Humen
+  {
+    private String name;
+    private String comp = "TEST Company";
+    private int year;
+    private int month;
+    private int day;
+
+    /// &lt;summary&gt;
+    /// 基本プロパティ
+    /// &lt;/summary&gt;
+    public String Name
+    {
+      get
+      {
+        return name;
+      }
+      set
+      {
+        name = value;
+      }
+    }
+    /// &lt;summary&gt;
+    /// 読み専用
+    /// &lt;/summary&gt;
+    public String Comp
+    {
+      get
+      {
+        return comp;
+      }
+    }
+    
+    /// &lt;summary&gt;
+    /// 応用パラメタ
+    /// &lt;/summary&gt;
+    public String Birthday
+    {
+      get
+      {
+        return String.Format("{0:0000}-{1:00}-{2:00}", year, month, day);
+      }
+      set
+      {
+        year = Convert.ToInt32(value.Substring(0, 4));
+        month = Convert.ToInt32(value.Substring(4, 2));
+        day = Convert.ToInt32(value.Substring(6, 2));
+      }
+    }
+  }
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Humen h = new Humen();
+      h.Name = "My";
+      //できません。
+      //h.Comp = "Comp";
+      h.Birthday = "20011001";
+
+      Console.WriteLine(h.Name);
+      Console.WriteLine(h.Comp);
+      Console.WriteLine(h.Birthday);
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/15/48_001.jpg" data-filename="001.jpg" style="width: 600px;"></p> 
+  <p>上の例の「Name」が基本的に使うプロパティの構造です。変数名が小文字で書いてるものをプロパティの変数名から語頭１桁を大文字に変換して書きます。</p> 
+  <p>「name」のデータは外部で直接に参照できなくて、「Name」のプロパティを通って取得できます。</p> 
+  <p><br></p> 
+  <p>読み専用プロパティの場合は「set」部分を省略して作成します。それで「Comp」プロパティは「comp」変数からデータを取得できますが、格納ができない状況になっています。</p> 
+  <p><br></p> 
+  <p>応用プロパティの場合は「String」タイプのデータを受け取ります。そして文字分け関数で文字列のデータを分けます。各「year」、「month」、「day」の変数に「Int」型にて変換して格納します。</p> 
+  <p>また、逆に外部から取得する時は「year」、「month」、「day」データを合わせて「String」タイプに変換して返却しています。外部で見るとプロパティは「Birth」タイプしか見えない構造になっています。</p> 
+  <p><br></p> 
+  <p>実際にプログラム実装する時はほとんど基本プロパティ型を使います。それで「.Net Framework 3.0」からはメンバ変数も省略が可能な形式があります。</p> 
+  <pre><code class="cs" data-type="">﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace property
+{
+  class Humen
+  {
+  /*
+    private String name;
+    public String Name
+    {
+      get 
+      {
+        return name; 
+      }     
+      set
+      {
+        name = value;
+      }
+    }
+  */
+    /// <summary>
+    /// 基本プロパティ
+    /// </summary>
+    public String Name
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      Humen h = new Humen();
+      h.Name = "My";
+
+      Console.WriteLine(h.Name);
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p>今までプロパティについて勉強しました。でも、これだけではなぜプロパティを使うかを確かに認識ができません。プロパティの場合はただカプセルの理由だけではなく、継承、抽象等OOPの特徴の部分と密接な関係があります。今はインタフェースや抽象クラスの概念がない状況では説明が難しいですね。とりあえず、上の形式で使い進んで、またインタフェース、抽象クラスチャプターで詳しく勉強しましょう。</p>
+ </body>
+</html></div>
+				<hr />
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=C%23>#C#</a> </span>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
