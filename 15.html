@@ -11,14 +11,14 @@
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
 <meta name="title" content="明月の開発ストーリ :: [C# スタディ - 14] プロパティ(property)">
-<link rel="canonical" href="https://www.nowonbun.com">
+<link rel="canonical" href="https://www.nowonbun.com/15.html">
 <meta name="robots" content="ALL">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="明月の開発ストーリ :: [C# スタディ - 14] プロパティ(property)">
 <meta property="og:description" content="<![CDATA[こんにちは。明月です。今日はプロパティについて勉強します。前の投稿に「変数」について勉強しましたが、その中でメンバ変数が今日勉強するプロパティと関係があります。[c#] 変数と定数oop(オブジェクト指向プログラム)の特徴でカプセルがあります。クラスを宣言して使う立場ではクラスの変数とメソッドを参照制限にすることをカプセルと言います。この制限はプログラム的で実装禁止ではありませんが、コーディングの規約(プログラム実装の方法として決められた約束)によって決められています。その規約の一つがクラスの「メンバ変数は「private」にする」、すなわち外部から参照禁止になっています。そうするとメンバ変数の値は外部で取得をどうするかといえばプロパティを通って取得します。上の例の「name」が基本的に使うプロパティの構造です。変数名が小文字で書いてるものをプロパティの変数名から語頭１桁を大文字に変換して書きます。「name」のデータは外部で直接に参照できなくて、「name」のプロパティを通って取得できます。読み専用プロパティの場合は「set」部分を省略して作成します。それで「comp」プロパティは「comp」変数からデータを取得できますが、格納ができない状況になっています。応用プロパティの場合は「string」タイプのデータを受け取ります。そして文字分け関数で文字列のデータを分けます。各「year」、「month」、「day」の変数に「int」型にて変換して格納します。また、逆に外部から取得する時は「year」、「month」、「day」データを合わせて「string」タイプに変換して返却しています。外部で見るとプロパティは「birth」タイプしか見えない構造になっています。実際にプログラム実装する時はほとんど基本プロパティ型を使います。それで「.net framework 3.0」からはメンバ変数も省略が可能な形式があります。今までプロパティについて勉強しました。でも、これだけではなぜプロパティを使うかを確かに認識ができません。プロパティの場合はただカプセルの理由だけではなく、継承、抽象等oopの特徴の部分と密接な関係があります。今はインタフェースや抽象クラスの概念がない状況では説明が難しいですね。とりあえず、上の形式で使い進んで、またインタフェース、抽象クラスチャプターで詳しく勉強しましょう。]]>">
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png">
-<meta property="og:url" content="https://www.nowonbun.com">
+<meta property="og:url" content="https://www.nowonbun.com/15.html">
 <meta property="og:site_name" content="明月の開発ストーリ" >
 
 <meta name="twitter:card" content="summary_large_image">

@@ -11,14 +11,14 @@
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
 <meta name="title" content="明月の開発ストーリ :: [C# スタディ - 9] 制御文 - 分岐 (if, switch〜case, goto)">
-<link rel="canonical" href="https://www.nowonbun.com">
+<link rel="canonical" href="https://www.nowonbun.com/10.html">
 <meta name="robots" content="ALL">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="明月の開発ストーリ :: [C# スタディ - 9] 制御文 - 分岐 (if, switch〜case, goto)">
 <meta property="og:description" content="<![CDATA[こんにちは。明月です。今日からは制御文を勉強します。プログラムの制御文はc#だけではなく、c言語やjavaと同じです。そしてその中で制御文は大きく３つの形で分けます。プログラムの流れで何の項目を選んで流すかを決める分岐制御、特定ブロックの流れを繰り返すループ、ループの流れを分岐するループ分岐があります。その中で今日は分岐(if, switch〜case, goto)を勉強します。if〜else if〜else文if〜else if〜else文は真、偽によって処理する制御文です。上の例を説明すると変数「a」の値は「5」なので一つ目の分岐では「else if(a &amp;gt; 0)」を通って「console.writeline(&quot;文２&quot;);」になります。次の変数「b」の場合は「true」だから「if」の条件を満たします。それで「console.writeline(&quot;文４&quot;);」に実行されます。最後も「if」条件を満たすので「console.writeline(&quot;文６&quot;);」を実行します。switch文「switch」は制御条件値が間に合うところを処理するマルチ制御文です。上の例を見ると変数「a」は「5」の値が格納されています。それで「switch」の「case 5」を通って「console.writeline(&quot;文１&quot;);」を実行します。c#の「switch」文は他の言語と違うところがあります。それはc++、javaの場合は「switch〜case」に行って「break」を付けないことができます。「break」がなければ次の文に実行する処理になるがc#の場合はこの「case」の後に「break」が必須キーワードなので「break」を利用して次の段階に行く処理がありません。goto文「goto」文はラベルの部分に強制的に移動する制御文です。そして「goto」文はプログラムの中で使わない制御文です。なぜならプログラムの中で「goto」文が多いなら性能(パフォーマンス)が悪くなるし、後でソース管理が大変になるからです。参考してください。上の例を見ると実行中で「goto test」文にあうと「test」ラベルに移動ます。今日は制御文の分岐に関して勉強しました。その中で「if」の場合はプログラムで一番多く使う制御なのでよく覚えて行きまし]]>">
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png">
-<meta property="og:url" content="https://www.nowonbun.com">
+<meta property="og:url" content="https://www.nowonbun.com/10.html">
 <meta property="og:site_name" content="明月の開発ストーリ" >
 
 <meta name="twitter:card" content="summary_large_image">

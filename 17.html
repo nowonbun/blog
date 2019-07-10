@@ -11,14 +11,14 @@
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
 <meta name="title" content="明月の開発ストーリ :: [C# スタディ - 16] static">
-<link rel="canonical" href="https://www.nowonbun.com">
+<link rel="canonical" href="https://www.nowonbun.com/17.html">
 <meta name="robots" content="ALL">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="明月の開発ストーリ :: [C# スタディ - 16] static">
 <meta property="og:description" content="<![CDATA[こんにちは。明月です。今日は「static」について勉強します。「static」は俗に静的キーワードと言います。「static」の種類は「staticメソッド」、「static変数」、「staticクラス」があります。staticメソッド今まで勉強したとおりならメソッドを使うためにはクラスを割り当てなければならないです。なぜなら、oopの最小単位はクラスだし、メソッドはクラスの内部に存在しているからです。でもクラスとは関係なく、計算だけするメソッドが必要な時もあります。例えば、パラメタで「int」タイプデータを２つを受け取って、パラメタの数を足す計算だけするメソッドがあると思いましょう。そしてそのメソッドを使うためにクラスを割り当てる(new)ことはメモリが惜しい感じがしますね。その時に「static」メソッドに実装すればクラスを割り当てずにメソッドを使うことができます。上の例を見ると「new」(割り当て)をしなくてメソッドを使います。そうすれば、staticメソッドからクラス内部のメンバ変数を使えるかと疑問になりますね。上をみるとエラーが発生しますね。なぜなら「static」メソッドの場合はクラスを割り当てて使うものではなく静的領域なので、動的なクラスの部分に直接に参照ができないです。でも、メソッドの中でクラスを割り当てたら使えます。static変数static変数は消されない変数だといいます。すなわち、クラスの変数はクラスが割り当てる時に変数の値が生成してクラスが解除する時に変数の値が無くなります。でも、プロジェクトの中で唯一に宣言するし、解除が行わない変数も必要だと思いますね。その時に使う変数を「static」変数と言います。staticクラス「staticクラス」はクラスの構成メンバがすべて構成が「static」になります。そしてstaticクラスの場合はコンストラクタをもってられません。なぜなら、「staticクラス」は割り当て(new)られないので、コンストラクタが存在できません。]]>">
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png">
-<meta property="og:url" content="https://www.nowonbun.com">
+<meta property="og:url" content="https://www.nowonbun.com/17.html">
 <meta property="og:site_name" content="明月の開発ストーリ" >
 
 <meta name="twitter:card" content="summary_large_image">

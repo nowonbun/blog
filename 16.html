@@ -11,14 +11,14 @@
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
 <meta name="title" content="明月の開発ストーリ :: [C# スタディ - 15] クラス(class)とコンストラクタ、そしてnew(割り当て)">
-<link rel="canonical" href="https://www.nowonbun.com">
+<link rel="canonical" href="https://www.nowonbun.com/16.html">
 <meta name="robots" content="ALL">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="明月の開発ストーリ :: [C# スタディ - 15] クラス(class)とコンストラクタ、そしてnew(割り当て)">
 <meta property="og:description" content="<![CDATA[こんにちは。明月です。今日はクラスについて勉強します。プログラムを少しでも扱ったことがある方なら「クラス」について聞いたことがあると思います。クラス(class)クラスはoop(オブジェクト指向プログラム)の最小単位です。構成要素はメンバ変数、プロパティ、メソッド、イベントがあります。その中で我々は変数、プロパティ、メソッドについて勉強しました。イベントはデリゲートと関係がありまして少し後で勉強します。[c#] 変数と定数[c#] プロパティ(property)[c#] メソッド(関数)とvoid型クラスの構成は上のとおりです。使用方法では「new」キーワードを使ってメモリに割り当て使います。new「new」キーワードは配列を宣言する時に使ったことがあります。配列を宣言する時と同様にクラスの「new」もメモリに「割り当てをします」という意味です。上の例を見ると割り当て演算子の区切りで「testclass test」「new testclass」に分けて考えて見ましょう。前の「testclass test」は変数と同様の意味でメモリアドレス(整数)が入ります。「new testclass」の場合はメモリ(heap)に「testclass」を割り当てます。上のイメージとおりにクラスが宣言し割り当てたと思われます。すなわち、「test」変数は「heap」に「testclass」が割り当てたメモリアドレスがあると意味です。そして割り当てた「testclass」のデータを取得することはコンマ「.」の区切りで取得できます。「test」変数名は「testclass」が割り当ててメモリアドレスが格納されたことは理解しました。そうすると「test」で割り当てたクラスの「data」変数にデータを格納して見ましょう。上のソースを見るとクラスの構造の中で「data」のプロパティがありますが、読み専用になっています。でも,「setdata」のメソッドを見ると「&quot;test&quot;」の文字列を合成して「data」に格納するところがあります。そうするとメソッドを通って「data」に「data」の値を格納します。(合成されて「testdata」になる。)そして「data」プロパティを通って「data」の値を出力して結果を確認しましょう。予想とおりに結果を得られました。次からクラス参照について詳しく勉強してみましょう。今回の例]]>">
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png">
-<meta property="og:url" content="https://www.nowonbun.com">
+<meta property="og:url" content="https://www.nowonbun.com/16.html">
 <meta property="og:site_name" content="明月の開発ストーリ" >
 
 <meta name="twitter:card" content="summary_large_image">

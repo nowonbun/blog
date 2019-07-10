@@ -11,14 +11,14 @@
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
 <meta name="title" content="明月の開発ストーリ :: [C# スタディ - 13] アクセス修飾子(public, private, protected)">
-<link rel="canonical" href="https://www.nowonbun.com">
+<link rel="canonical" href="https://www.nowonbun.com/14.html">
 <meta name="robots" content="ALL">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="明月の開発ストーリ :: [C# スタディ - 13] アクセス修飾子(public, private, protected)">
 <meta property="og:description" content="<![CDATA[こんにちは。明月です。今日はアクセス修飾子について勉強します。アクセス修飾子アクセス修飾子はoopの基本特性のカプセル化と関係があります。次の投稿のクラスについて勉強する時に詳しく説明すると思いますが、「c#」プログラミングはoop(オブジェクト指向プログラム)と呼びます。そしてoopの最小の単位のオブジェクトはクラスです。そしてクラスの中には様々なデータがあります。データを定義する時は見せても良いデータがありますが、隠さなければならないデータもあります。それを区別しながら作成する方をカプセル化と言います。そうすると、アクセス修飾子の種類は下記とおりです。          アクセス修飾子    内部クラス    外部クラス    派生クラス    プロジェクト              public    ○    ○    ○    ○          private    ○                      protected    ○        ○              internal    ○    ○    ○              protected internal    ○        ○          上の例は実際にそのように実装するとダメですが、アクセス修飾子の説明ために作成しました。とにかく、例を見ると「public」は変数「name」、「birth」、「year」、メソッド「setdata」が外部から見えます。逆に変数「year_birth」、「month_birth」、「day_birth」、メソッド「yearcalc」は「humen」クラスの構成より「year」を計算するためのデータなので外部から見せる必要がありません。逆に考えてすべての変数、メソッドが「public」になって外部に見せることになるとクラスの処理には問題がないですが、プロジェクト管理するためには深刻な問題が発生する可能性があります。なぜなら、ただ「name」、「birth」、「year」だけ見える時はクラスを知らない方が見てもユーザと関係があるクラスだと思いますが、すべてのデータが開けると意味がわからなくなります。また、上の例は簡単なので処理問題では発生しないけれども複雑のプログラムなら処理中で計算データを変更させると結果データが可笑しく出る可能性があることです。]]>">
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png">
-<meta property="og:url" content="https://www.nowonbun.com">
+<meta property="og:url" content="https://www.nowonbun.com/14.html">
 <meta property="og:site_name" content="明月の開発ストーリ" >
 
 <meta name="twitter:card" content="summary_large_image">
