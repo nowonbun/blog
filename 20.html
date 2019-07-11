@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<meta name="keywords" content="Study / C#" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。今日は継承とsealedクラスについて勉強します。oopの特徴は抽象化、継承、多型、カプセル化があります。カプセルの場合はアクセス修飾子を勉強する時に説明したことがあります。[c# スタディ - 13] アクセス修飾子(public, private, protected)今日はoopの特徴の中の継承について勉強しましょう。継承この間にクラス、メソッド、プロパティ、変数の使用方法について勉強しました。正直にプログラムはその４つだけを知っても実装ができます。でも、プロジェクトが大きくなればなるほどその４つだけで実装が大変だし、出来上がった後を考えるとメンテおよびソース管理がすごく大変になると思います。その理由で継承は実装と管理のために使うと思っても結構です。継承の意味は親クラスから機能を引継いでもらい子クラスを生成することです。上の例をみると「successionbclass」を割り当てて「data1」のプロパティを呼び出します。でも「successionbclass」クラス内部には「data1」のプロパティがありません。しかし例の結果を見ると「successionbclass」に「data1」のデータが格納されるし、結果としても出力されます。なぜなら、「successionbclass」クラスは「successionaclass」クラスから機能をすべて継承したからのです。すなわち、「successionbclass」クラスは「successionaclass」クラスの機能をすべて使われると意味ですね。上の例を見ると「successionbclass」クラスの場合は「successionaclass」、「successioncclass」クラスと「successiondclass」クラスの場合は「successionbclass」を継承しています。もし、「successioncclass」のクラスと「successiondclass」のクラスが継承しなくてクラス内部で「data1」、「data2」を実装すると考えてみましょう。プロジェクト中で「data1」のデータタイプが「int」から「string」に修正することが発生すると継承しない場合は「successioncclass」のクラスと「successiondclass」のクラスを両方修正しなければならないのです。 しかし、継承してい]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [C# スタディ - 19]  継承とSealedクラス" />
+<link rel="canonical" href="https://www.nowonbun.com/20.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [C# スタディ - 19]  継承とSealedクラス" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。今日は継承とsealedクラスについて勉強します。oopの特徴は抽象化、継承、多型、カプセル化があります。カプセルの場合はアクセス修飾子を勉強する時に説明したことがあります。[c# スタディ - 13] アクセス修飾子(public, private, protected)今日はoopの特徴の中の継承について勉強しましょう。継承この間にクラス、メソッド、プロパティ、変数の使用方法について勉強しました。正直にプログラムはその４つだけを知っても実装ができます。でも、プロジェクトが大きくなればなるほどその４つだけで実装が大変だし、出来上がった後を考えるとメンテおよびソース管理がすごく大変になると思います。その理由で継承は実装と管理のために使うと思っても結構です。継承の意味は親クラスから機能を引継いでもらい子クラスを生成することです。上の例をみると「successionbclass」を割り当てて「data1」のプロパティを呼び出します。でも「successionbclass」クラス内部には「data1」のプロパティがありません。しかし例の結果を見ると「successionbclass」に「data1」のデータが格納されるし、結果としても出力されます。なぜなら、「successionbclass」クラスは「successionaclass」クラスから機能をすべて継承したからのです。すなわち、「successionbclass」クラスは「successionaclass」クラスの機能をすべて使われると意味ですね。上の例を見ると「successionbclass」クラスの場合は「successionaclass」、「successioncclass」クラスと「successiondclass」クラスの場合は「successionbclass」を継承しています。もし、「successioncclass」のクラスと「successiondclass」のクラスが継承しなくてクラス内部で「data1」、「data2」を実装すると考えてみましょう。プロジェクト中で「data1」のデータタイプが「int」から「string」に修正することが発生すると継承しない場合は「successioncclass」のクラスと「successiondclass」のクラスを両方修正しなければならないのです。 しかし、継承してい]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/20.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" / >
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [C# スタディ - 19]  継承とSealedクラス" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今日は継承とsealedクラスについて勉強します。oopの特徴は抽象化、継承、多型、カプセル化があります。カプセルの場合はアクセス修飾子を勉強する時に説明したことがあります。[c# スタディ - 13] アクセス修飾子(public, private, protected)今日はoopの特徴の中の継承について勉強しましょう。継承この間にクラス、メソッド、プロパティ、変数の使用方法について勉強しました。正直にプログラムはその４つだけを知っても実装ができます。でも、プロジェクトが大きくなればなるほどその４つだけで実装が大変だし、出来上がった後を考えるとメンテおよびソース管理がすごく大変になると思います。その理由で継承は実装と管理のために使うと思っても結構です。継承の意味は親クラスから機能を引継いでもらい子クラスを生成することです。上の例をみると「successionbclass」を割り当てて「data1」のプロパティを呼び出します。でも「successionbclass」クラス内部には「data1」のプロパティがありません。しかし例の結果を見ると「successionbclass」に「data1」のデータが格納されるし、結果としても出力されます。なぜなら、「successionbclass」クラスは「successionaclass」クラスから機能をすべて継承したからのです。すなわち、「successionbclass」クラスは「successionaclass」クラスの機能をすべて使われると意味ですね。上の例を見ると「successionbclass」クラスの場合は「successionaclass」、「successioncclass」クラスと「successiondclass」クラスの場合は「successionbclass」を継承しています。もし、「successioncclass」のクラスと「successiondclass」のクラスが継承しなくてクラス内部で「data1」、「data2」を実装すると考えてみましょう。プロジェクト中で「data1」のデータタイプが「int」から「string」に修正することが発生すると継承しない場合は「successioncclass」のクラスと「successiondclass」のクラスを両方修正しなければならないのです。 しかし、継承してい]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+
+<title>明月の開発ストーリ :: [C# スタディ - 19]  継承とSealedクラス</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
+</head>
+<body>
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[C# スタディ - 19]  継承とSealedクラス</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/11 23:13:25 &nbsp;&nbsp;修正日付 : 2019/07/11 23:16:00
+				</div>
+			</div>
+			<div class="article">
+				<div class="tt_article_useless_p_margin" id="article_contents"><html>
+ <head></head>
+ <body>
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>今日は継承とSealedクラスについて勉強します。OOPの特徴は抽象化、継承、多型、カプセル化があります。カプセルの場合はアクセス修飾子を勉強する時に説明したことがあります。</p> 
+  <p><br></p> 
+  <p><a href="./14.html" target="_blank">[C# スタディ - 13] アクセス修飾子(public, private, protected)</a></p> 
+  <p><br></p> 
+  <p>今日はOOPの特徴の中の継承について勉強しましょう。</p> 
+  <p><br></p> 
+  <h2><b><span>継承</span></b></h2> 
+  <p>この間にクラス、メソッド、プロパティ、変数の使用方法について勉強しました。正直にプログラムはその４つだけを知っても実装ができます。</p> 
+  <p>でも、プロジェクトが大きくなればなるほどその４つだけで実装が大変だし、出来上がった後を考えるとメンテおよびソース管理がすごく大変になると思います。</p> 
+  <p>その理由で継承は実装と管理のために使うと思っても結構です。</p> 
+  <p><br></p> 
+  <p>継承の意味は親クラスから機能を引継いでもらい子クラスを生成することです。</p> 
+  <pre><code class="cs" data-type="">class 継承親クラス名
+{
+ 
+}
+class 継承された子クラス名
+{
+ 
+}
+</code></pre> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace successionAclass
+{
+  /// &lt;summary&gt;
+  ///　親クラス
+  /// &lt;/summary&gt;
+  class successionAClass
+  {
+    private int data1;
+    public int Data1
+    {
+      get
+      {
+        return data1;
+      }
+      set
+      {
+        data1 = value;
+      }
+    }
+  }
+  /// &lt;summary&gt;
+  /// successionAClassから継承された派生クラス
+  /// &lt;/summary&gt;
+  class successionBClass : successionAClass
+  {
+    private int data2;
+    public int Data2
+    {
+      get
+      {
+        return data2;
+      }
+      set
+      {
+        data2 = value;
+      }
+    }
+  }
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      successionBClass test = new successionBClass();
+      //親クラスのプロパティ
+      test.Data1 = 10;
+      //派生クラスのプロパティ
+      test.Data2 = 20;
+
+      Console.WriteLine(test.Data1);
+      Console.WriteLine(test.Data2);
+
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/20/66_001.jpg" data-filename="001.jpg" style="width: 600px;"></p> 
+  <p>上の例をみると「successionBClass」を割り当てて「Data1」のプロパティを呼び出します。でも「successionBClass」クラス内部には「Data1」のプロパティがありません。</p> 
+  <p>しかし例の結果を見ると「successionBClass」に「Data1」のデータが格納されるし、結果としても出力されます。</p> 
+  <p>なぜなら、「successionBClass」クラスは「successionAClass」クラスから機能をすべて継承したからのです。すなわち、「successionBClass」クラスは「successionAClass」クラスの機能をすべて使われると意味ですね。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace successionAclass
+{
+  /// &lt;summary&gt;
+  ///　親クラス
+  /// &lt;/summary&gt;
+  class successionAClass
+  {
+    private int data1;
+    public int Data1
+    {
+      get
+      {
+        return data1;
+      }
+      set
+      {
+        data1 = value;
+      }
+    }
+  }
+  /// &lt;summary&gt;
+  /// successionAClassから継承された派生クラス
+  /// &lt;/summary&gt;
+  class successionBClass : successionAClass
+  {
+    private int data2;
+    public int Data2
+    {
+      get
+      {
+        return data2;
+      }
+      set
+      {
+        data2 = value;
+      }
+    }
+  }
+  class successionCClass : successionBClass
+  {
+    private int data3;
+    public int Data3
+    {
+      get
+      {
+        return data3;
+      }
+      set
+      {
+        data3 = value;
+      }
+    }
+  }
+  class successionDClass : successionBClass
+  {
+    private int data4;
+    public int Data4
+    {
+      get
+      {
+        return data4;
+      }
+      set
+      {
+        data4 = value;
+      }
+    }
+  }
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      successionCClass test = new successionCClass();
+      successionDClass test1 = new successionDClass();
+
+      test.Data1 = test1.Data1 = 10;
+      test.Data2 = test1.Data2 = 20;
+      test.Data3 = 30;
+      test1.Data4 = 40;
+
+      Console.WriteLine(test.Data1);
+      Console.WriteLine(test.Data2);
+      Console.WriteLine(test.Data3);
+
+      Console.WriteLine(test1.Data1);
+      Console.WriteLine(test1.Data2);
+      Console.WriteLine(test1.Data4);
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p>上の例を見ると「successionBClass」クラスの場合は「successionAClass」、「successionCClass」クラスと「successionDClass」クラスの場合は「successionBClass」を継承しています。</p> 
+  <p>もし、「successionCClass」のクラスと「successionDClass」のクラスが継承しなくてクラス内部で「data1」、「data2」を実装すると考えてみましょう。</p> 
+  <p>プロジェクト中で「data1」のデータタイプが「int」から「String」に修正することが発生すると継承しない場合は「successionCClass」のクラスと「successionDClass」のクラスを両方修正しなければならないのです。 しかし、継承していると思うと「successionAClass」だけ修正するので、修正工数も縮まるし、バグのリスク、管理的にも良いです。</p> 
+  <p><br></p> 
+  <h2><b><span>Sealedクラス</span></b></h2> 
+  <p>継承はコード管理と生産性のために使いますが、「.Net Framwork」から提供するクラスを利用するためにも使います。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace @sealed
+{
+  /// &lt;summary&gt;
+  /// .Net Frameworkのリストを継承する。
+  /// &lt;/summary&gt;
+  class StringList : List&lt;String&gt;
+  {
+    public StringList(params String[] parameter)
+    {
+      foreach(String param in parameter)
+      {
+        Add(param);
+      }
+    }
+    public String ToString()
+    {
+      String ret = "";
+      foreach(String data in this)
+      {
+        ret += data + " ";
+      }
+      return ret;
+    }
+  }
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      StringList list = new StringList("Hello", "World", "ListTest");
+      Console.WriteLine(list.ToString());
+
+      Console.WriteLine("Press Any Key");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/20/65_002.jpg" data-filename="002.jpg" style="width: 600px;"></p> 
+  <p>でも、継承がいいことだけあるものではありません。例えば、C#のデータタイプ型のオブジェクトを継承すると思うと逆に性能が落ちる時もありますね。</p> 
+  <p>また、市販ソースコードを開発する時はモジュールは公開しなければならないけど、ソースコードは公開したくないやクラスの継承もできないようにやりたい時もあります。 （継承すると内部処理が大体に見えます。）その時に「sealed」キーワードを付けて継承防止がする方法があります。</p> 
+  <p style="text-align:left;"><img src="./contents/20/67_003.jpg" data-filename="003.jpg" style="width: 600px;"></p> 
+  <p style="text-align:left;"><img src="./contents/20/68_004.jpg" data-filename="004.jpg" style="width: 600px;"></p>
+ </body>
+</html></div>
+				<hr />
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=C%23>#C#</a> </span>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
