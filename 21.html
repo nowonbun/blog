@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<meta name="keywords" content="Study / C#" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。今日は抽象クラス、抽象メソッド、仮想メソッドについて勉強します。抽象クラス前の投稿で親クラスから継承すると親クラスの機能を引継いでもらって機能拡張をできることを勉強しました。でも、プロジェクトによって親クラス段階で仕様が決めておらず、派生クラス段階で仕様が決められる場合があります。例えば、各クラスの変数の初期値は違うけれど、変数、メソッドの構造が同様で作りたい場合があります。その時に親クラスからすべて一緒の変数、メソッドを作成して派生クラスからデータを取得するように作成します。その時に親クラスから取得メソッドの実装が決めておらず、派生クラス(子クラス)で実装させ、親クラスは派生クラスの実装させたことを呼び出すことです。すなわち、親クラスはそのメソッドを実装予約(抽象メソッド)して継承すれば実装することになっているクラスを抽象クラスといいます。抽象クラスと一般クラスの構造は同じですが、一般クラスは継承しなくてそのままクラスとして使えるけど抽象クラスの場合は継承しなくて使えません。抽象メソッド抽象メソッドの場合は必ず抽象クラス内だけ使えます。すなわち、抽象メソッドがあれば必ずクラスを抽象クラスに変換しなければならないという意味です。上の例を見ると「abstractclass」クラス内で抽象メソッド「getdate()」を宣言「abstract」しています。そのことを「childbclass」、「childcclass」クラスが継承して抽象メソッド「getdate()」を再実装「override」しています。そして親クラスのコンストラクタで派生メソッドを呼び出して変数「data」を設定しています。派生クラスの抽象メソッドを当該データから返却しています。結果を見ると各クラスの変数「data」の値を出力しています。そして結果は派生メソッドで返却したデータを「data」に格納して示させています。仮想メソッド抽象メソッドは親クラスで実装しておらず、派生クラスに実装を引継ぎます。でも、親クラスで全然実装しないことではなく、一部実装して派生クラス(子クラス)にも引き継いで再実装(override)する場合もあると思いますね。あるいは再実装しなく、親クラスのデフォルトに実装してメソッドを使われる時もあります。そのメソッドを仮想メソッドといいます。仮想メソッドは返却タイプ前に「virtual」とキーワード]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [C# スタディ - 20] 抽象クラス、抽象メソッド、仮想メソッド" />
+<link rel="canonical" href="https://www.nowonbun.com/21.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [C# スタディ - 20] 抽象クラス、抽象メソッド、仮想メソッド" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。今日は抽象クラス、抽象メソッド、仮想メソッドについて勉強します。抽象クラス前の投稿で親クラスから継承すると親クラスの機能を引継いでもらって機能拡張をできることを勉強しました。でも、プロジェクトによって親クラス段階で仕様が決めておらず、派生クラス段階で仕様が決められる場合があります。例えば、各クラスの変数の初期値は違うけれど、変数、メソッドの構造が同様で作りたい場合があります。その時に親クラスからすべて一緒の変数、メソッドを作成して派生クラスからデータを取得するように作成します。その時に親クラスから取得メソッドの実装が決めておらず、派生クラス(子クラス)で実装させ、親クラスは派生クラスの実装させたことを呼び出すことです。すなわち、親クラスはそのメソッドを実装予約(抽象メソッド)して継承すれば実装することになっているクラスを抽象クラスといいます。抽象クラスと一般クラスの構造は同じですが、一般クラスは継承しなくてそのままクラスとして使えるけど抽象クラスの場合は継承しなくて使えません。抽象メソッド抽象メソッドの場合は必ず抽象クラス内だけ使えます。すなわち、抽象メソッドがあれば必ずクラスを抽象クラスに変換しなければならないという意味です。上の例を見ると「abstractclass」クラス内で抽象メソッド「getdate()」を宣言「abstract」しています。そのことを「childbclass」、「childcclass」クラスが継承して抽象メソッド「getdate()」を再実装「override」しています。そして親クラスのコンストラクタで派生メソッドを呼び出して変数「data」を設定しています。派生クラスの抽象メソッドを当該データから返却しています。結果を見ると各クラスの変数「data」の値を出力しています。そして結果は派生メソッドで返却したデータを「data」に格納して示させています。仮想メソッド抽象メソッドは親クラスで実装しておらず、派生クラスに実装を引継ぎます。でも、親クラスで全然実装しないことではなく、一部実装して派生クラス(子クラス)にも引き継いで再実装(override)する場合もあると思いますね。あるいは再実装しなく、親クラスのデフォルトに実装してメソッドを使われる時もあります。そのメソッドを仮想メソッドといいます。仮想メソッドは返却タイプ前に「virtual」とキーワード]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/21.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" / >
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [C# スタディ - 20] 抽象クラス、抽象メソッド、仮想メソッド" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今日は抽象クラス、抽象メソッド、仮想メソッドについて勉強します。抽象クラス前の投稿で親クラスから継承すると親クラスの機能を引継いでもらって機能拡張をできることを勉強しました。でも、プロジェクトによって親クラス段階で仕様が決めておらず、派生クラス段階で仕様が決められる場合があります。例えば、各クラスの変数の初期値は違うけれど、変数、メソッドの構造が同様で作りたい場合があります。その時に親クラスからすべて一緒の変数、メソッドを作成して派生クラスからデータを取得するように作成します。その時に親クラスから取得メソッドの実装が決めておらず、派生クラス(子クラス)で実装させ、親クラスは派生クラスの実装させたことを呼び出すことです。すなわち、親クラスはそのメソッドを実装予約(抽象メソッド)して継承すれば実装することになっているクラスを抽象クラスといいます。抽象クラスと一般クラスの構造は同じですが、一般クラスは継承しなくてそのままクラスとして使えるけど抽象クラスの場合は継承しなくて使えません。抽象メソッド抽象メソッドの場合は必ず抽象クラス内だけ使えます。すなわち、抽象メソッドがあれば必ずクラスを抽象クラスに変換しなければならないという意味です。上の例を見ると「abstractclass」クラス内で抽象メソッド「getdate()」を宣言「abstract」しています。そのことを「childbclass」、「childcclass」クラスが継承して抽象メソッド「getdate()」を再実装「override」しています。そして親クラスのコンストラクタで派生メソッドを呼び出して変数「data」を設定しています。派生クラスの抽象メソッドを当該データから返却しています。結果を見ると各クラスの変数「data」の値を出力しています。そして結果は派生メソッドで返却したデータを「data」に格納して示させています。仮想メソッド抽象メソッドは親クラスで実装しておらず、派生クラスに実装を引継ぎます。でも、親クラスで全然実装しないことではなく、一部実装して派生クラス(子クラス)にも引き継いで再実装(override)する場合もあると思いますね。あるいは再実装しなく、親クラスのデフォルトに実装してメソッドを使われる時もあります。そのメソッドを仮想メソッドといいます。仮想メソッドは返却タイプ前に「virtual」とキーワード]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+
+<title>明月の開発ストーリ :: [C# スタディ - 20] 抽象クラス、抽象メソッド、仮想メソッド</title>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" />
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
+</head>
+<body>
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[C# スタディ - 20] 抽象クラス、抽象メソッド、仮想メソッド</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/12 00:17:35 &nbsp;&nbsp;修正日付 : 2019/07/12 00:18:43
+				</div>
+			</div>
+			<div class="article">
+				<div class="tt_article_useless_p_margin" id="article_contents"><html>
+ <head></head>
+ <body>
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>今日は抽象クラス、抽象メソッド、仮想メソッドについて勉強します。</p> 
+  <p><br></p> 
+  <h2><b><span>抽象クラス</span></b></h2> 
+  <p>前の投稿で親クラスから継承すると親クラスの機能を引継いでもらって機能拡張をできることを勉強しました。</p> 
+  <p>でも、プロジェクトによって親クラス段階で仕様が決めておらず、派生クラス段階で仕様が決められる場合があります。</p> 
+  <p>例えば、各クラスの変数の初期値は違うけれど、変数、メソッドの構造が同様で作りたい場合があります。その時に親クラスからすべて一緒の変数、メソッドを作成して派生クラスからデータを取得するように作成します。その時に親クラスから取得メソッドの実装が決めておらず、派生クラス(子クラス)で実装させ、親クラスは派生クラスの実装させたことを呼び出すことです。</p> 
+  <p>すなわち、親クラスはそのメソッドを実装予約(抽象メソッド)して継承すれば実装することになっているクラスを抽象クラスといいます。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AbstractClass
+{
+  //抽象クラス
+  public abstract class parentAClass
+  {
+    private int data;
+    public int Data
+    {
+      get
+      {
+        return data;
+      }
+    }
+
+    public parentAClass()
+    {
+      data = init();
+    }
+    
+    //抽象メソッド(親クラスは実装を決めておらず、派生クラス(子クラスに引き継ぐ.) 
+    public abstract int init();
+  }
+  public class childBClass : parentAClass
+  {
+    //継承すると必ず抽象メソッドは実装しなければならない。
+    public override int init()
+    {
+      return 10;
+    }
+  }
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      childBClass test = new childBClass();
+      Console.WriteLine(test.Data);
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/21/70_001.jpg" data-filename="001.jpg" style="width: 600px;"></p> 
+  <p>抽象クラスと一般クラスの構造は同じですが、一般クラスは継承しなくてそのままクラスとして使えるけど抽象クラスの場合は継承しなくて使えません。</p> 
+  <p style="text-align:left;"><img src="./contents/21/72_002.jpg" data-filename="002.jpg" style="width: 760px;"></p> 
+  <p><br></p> 
+  <h2><b><span>抽象メソッド</span></b></h2> 
+  <p>抽象メソッドの場合は必ず抽象クラス内だけ使えます。すなわち、抽象メソッドがあれば必ずクラスを抽象クラスに変換しなければならないという意味です。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AbstractClass
+{
+  public abstract class ParentAClass
+  {
+    private String data;
+
+    public String Data
+    {
+      get
+      {
+        return data;
+      }
+    }
+
+    /// &lt;summary&gt;
+    /// コンストラクタ
+    /// &lt;/summary&gt;
+    public ParentAClass()
+    {
+      //抽象メソッド使う。
+      data = getDate();
+    }
+    //抽象メソッド
+    public abstract String getDate();
+  }
+  public class ChildBClass : ParentAClass
+  {
+    /// &lt;summary&gt;
+    /// 抽象メソッド実装
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public override String getDate()
+    {
+      return "ChildBClass";
+    }
+  }
+  public class ChildCClass : ParentAClass
+  {
+    /// &lt;summary&gt;
+    /// 抽象メソッド実装
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public override String getDate()
+    {
+      return "ChildCClass";
+    }
+  }
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      ChildBClass Btest = new ChildBClass();
+      Console.WriteLine(Btest.Data);
+
+      ChildCClass Ctest = new ChildCClass();
+      Console.WriteLine(Ctest.Data);
+      
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p>上の例を見ると「AbstractClass」クラス内で抽象メソッド「getDate()」を宣言「abstract」しています。そのことを「ChildBClass」、「ChildCClass」クラスが継承して抽象メソッド「getDate()」を再実装「override」しています。そして親クラスのコンストラクタで派生メソッドを呼び出して変数「data」を設定しています。派生クラスの抽象メソッドを当該データから返却しています。</p> 
+  <p style="text-align:left;"><img src="./contents/21/71_003.jpg" data-filename="003.jpg" style="width: 600px;"></p> 
+  <p>結果を見ると各クラスの変数「data」の値を出力しています。そして結果は派生メソッドで返却したデータを「data」に格納して示させています。</p> 
+  <p><br></p> 
+  <h2><b><span>仮想メソッド</span></b></h2> 
+  <p>抽象メソッドは親クラスで実装しておらず、派生クラスに実装を引継ぎます。でも、親クラスで全然実装しないことではなく、一部実装して派生クラス(子クラス)にも引き継いで再実装(override)する場合もあると思いますね。あるいは再実装しなく、親クラスのデフォルトに実装してメソッドを使われる時もあります。</p> 
+  <p>そのメソッドを仮想メソッドといいます。仮想メソッドは返却タイプ前に「virtual」とキーワードをつけます。</p> 
+  <pre><code class="cs" data-type="">﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AbstractClass
+{
+  public abstract class ParentAClass
+  {
+    private String data;
+
+    public String Data
+    {
+      get
+      {
+        return data;
+      }
+    }
+
+    /// &lt;summary&gt;
+    /// コンストラクタ
+    /// &lt;/summary&gt;
+    public ParentAClass()
+    {
+      //抽象メソッド使う。
+      data = getDate();
+    }
+    //仮想メソッド
+    public virtual String getDate()
+    {
+      return "ParentClass";
+    }
+  }
+  public class ChildAClass : ParentAClass
+  {
+
+  }
+  public class ChildBClass : ParentAClass
+  {
+    /// &lt;summary&gt;
+    /// 抽象メソッド実装
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public override String getDate()
+    {
+      return "ChildBClass";
+    }
+  }
+  public class ChildCClass : ParentAClass
+  {
+    /// &lt;summary&gt;
+    /// 抽象メソッド実装
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    public override String getDate()
+    {
+      return "ChildCClass";
+    }
+  }
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      ChildAClass Atest = new ChildAClass();
+      Console.WriteLine(Atest.Data);
+
+      ChildBClass Btest = new ChildBClass();
+      Console.WriteLine(Btest.Data);
+
+      ChildCClass Ctest = new ChildCClass();
+      Console.WriteLine(Ctest.Data);
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p>上の例を見ると親クラスが仮想メソッド「getDate()」を宣言しました。そして「ChildAClass」の場合は再実装しないし「ChildBClass」、「ChildCClass」の場合は既存とおりに再実装しました。</p> 
+  <p style="text-align:left;"><img src="./contents/21/69_004.jpg" data-filename="004.jpg" style="width: 600px;"></p> 
+  <p>結果をみると再宣言しなかったクラス「ChildAClass」のメソッドは親クラスで実装したメソッドを呼び出され、データを取得します。「ChildBClass」、「ChildCClass」の場合は再宣言したメソッドからデータを取り出します。</p> 
+  <p><br></p> 
+  <p>仮想メソッドは再宣言しくても独立に使うことでできるので、抽象クラスではなく一般クラスでも使うことができます。</p> 
+  <p><br></p> 
+  <p>今まで抽象クラス、抽象メソッド、仮想メソッドについて勉強しました。プロジェクトをすると様々問題が発生し、どうすれば実装ができるか、またどうすれば既存の修正を最少にしてバージョンアップをするかについて悩むのが多いと思われます。結局ソフト開発はどのぐらい早めに開発できるか正確にできるか理解にしやすいかが問題ですね。そのための現在は開発構造理論で「OOP(オブジェクト指向プログラミング)」の概念が導入されました。その「OOP」の概念の始めが抽象、仮想になっています。</p> 
+  <p>これから勉強すること、後でデザインパタン、リファクタリング方法のこともすべて抽象、仮想の応用になっているので確実に覚えていきましょう。</p>
+ </body>
+</html></div>
+				<hr />
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=C%23>#C#</a> </span>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
