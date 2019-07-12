@@ -5,6 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
 <meta name="keywords" content="Study / C#" />
 <meta name="description" content="<![CDATA[こんにちは。明月です。今日はstruct(構造体)について勉強します。struct「struct」の意味的には「class(クラス)」と同じですね。すなわち、データを縛る最小単位です。そうするとなぜ「class」と「struct」にキーワードを分けただろうかと言えばメモリ参照方法の差があります。「class」の場合は外部でメモリに割り当ててメモリ参照タイプとして使いますが、「struct」の場合は宣言する時に「struct」内部でメモリに割り当てて値タイプとして使うの差があります。上の例をみるとクラスの場合は「aclass」を宣言して「new」キーワードで割り当てます。そして「aclass」の変数「data」に「10」の値を格納します。その後で「bclass」を宣言して「aclass」をメモリアドレスを代入します。その後で「bclass」の変数「data」に「15」の値を格納すると「aclass」の変数「data」の値はどうでしょうか？前のクラスの投稿にも説明しましたが、上の場合は「aclass」と「bclass」が同じクラスを参照しているので両方「15」の値を持っていることを知っています。[c# スタディ - 15] クラス(class)とコンストラクタ、そしてnew(割り当て)そうすると「astruct」と「bstruct」も同じパタンを考えれば両方の変数「data」が「15」になると思われますね。結果を見れば予想結果と違いますね。結果を見ると「aclass」と「bclass」は確かに同じメモリアドレスを入っていますが、「astruct」と「bstruct」の場合はメモリアドレスが違いますね。すなわち「teststruct bstruct」を宣言する時に内部でメモリに割り当てて後「bstruct」に「astruct」の値をコピーしたと意味になります。そしたらこれから「struct」の使用方法について勉強してみましょう。とりあえず、上の構造を見ると「struct」もコンストラクタがあります。構造体の場合もコンストラクタを呼び出すためには「new」キーワードを使います。その場合は内部からメモリが割り当てることではなく、クラスみたいに外部からメモリが割り当てます。また、継承について勉強する前ですが、構造体はstructから継承ができません。(それで、プロパティを使いません。)でも、インタフェースからは継承を]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
@@ -19,7 +22,7 @@
 <meta property="og:description" content="<![CDATA[こんにちは。明月です。今日はstruct(構造体)について勉強します。struct「struct」の意味的には「class(クラス)」と同じですね。すなわち、データを縛る最小単位です。そうするとなぜ「class」と「struct」にキーワードを分けただろうかと言えばメモリ参照方法の差があります。「class」の場合は外部でメモリに割り当ててメモリ参照タイプとして使いますが、「struct」の場合は宣言する時に「struct」内部でメモリに割り当てて値タイプとして使うの差があります。上の例をみるとクラスの場合は「aclass」を宣言して「new」キーワードで割り当てます。そして「aclass」の変数「data」に「10」の値を格納します。その後で「bclass」を宣言して「aclass」をメモリアドレスを代入します。その後で「bclass」の変数「data」に「15」の値を格納すると「aclass」の変数「data」の値はどうでしょうか？前のクラスの投稿にも説明しましたが、上の場合は「aclass」と「bclass」が同じクラスを参照しているので両方「15」の値を持っていることを知っています。[c# スタディ - 15] クラス(class)とコンストラクタ、そしてnew(割り当て)そうすると「astruct」と「bstruct」も同じパタンを考えれば両方の変数「data」が「15」になると思われますね。結果を見れば予想結果と違いますね。結果を見ると「aclass」と「bclass」は確かに同じメモリアドレスを入っていますが、「astruct」と「bstruct」の場合はメモリアドレスが違いますね。すなわち「teststruct bstruct」を宣言する時に内部でメモリに割り当てて後「bstruct」に「astruct」の値をコピーしたと意味になります。そしたらこれから「struct」の使用方法について勉強してみましょう。とりあえず、上の構造を見ると「struct」もコンストラクタがあります。構造体の場合もコンストラクタを呼び出すためには「new」キーワードを使います。その場合は内部からメモリが割り当てることではなく、クラスみたいに外部からメモリが割り当てます。また、継承について勉強する前ですが、構造体はstructから継承ができません。(それで、プロパティを使いません。)でも、インタフェースからは継承を]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta property="og:url" content="https://www.nowonbun.com/18.html" />
-<meta property="og:site_name" content="明月の開発ストーリ" / >
+<meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />

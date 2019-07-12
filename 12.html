@@ -5,6 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
 <meta name="keywords" content="Study / C#" />
 <meta name="description" content="<![CDATA[こんにちは。明月です。今日は制御文の最後のループ分岐に関して勉強します。我々がプログラムロジックを作成すると無限ループを作る時があります。でも本当に無限になるとプログラムが終わらないのでループの中で止まること、すなわち分岐ループが必要です。break 文「break」はループ制御を抜け出す時に使う制御文です。上の式を見ると「while」文は条件式がいつも「真」(true)になるので無限ループになります。でも、文の中で「if」によって「i」が「10」になると「break」文を呼ばれて無限ループから抜け出します。ループを強制的に抜け出すのは「break」になります。でも抜け出すことではなく、ループ文を終わらせずに次のインデックスに行くケースもあります。contineu 文「continue」はループ制御の次のインデックスに飛び超える制御です。上の例を見ると別に「break」、「continue」を使わなくても「if」文だけで処理ができそうですね。でも「break」、「continue」をよく使うとソースが綺麗になるのでループの中には状態をよくみて使うほうが良いと思います。]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
@@ -19,7 +22,7 @@
 <meta property="og:description" content="<![CDATA[こんにちは。明月です。今日は制御文の最後のループ分岐に関して勉強します。我々がプログラムロジックを作成すると無限ループを作る時があります。でも本当に無限になるとプログラムが終わらないのでループの中で止まること、すなわち分岐ループが必要です。break 文「break」はループ制御を抜け出す時に使う制御文です。上の式を見ると「while」文は条件式がいつも「真」(true)になるので無限ループになります。でも、文の中で「if」によって「i」が「10」になると「break」文を呼ばれて無限ループから抜け出します。ループを強制的に抜け出すのは「break」になります。でも抜け出すことではなく、ループ文を終わらせずに次のインデックスに行くケースもあります。contineu 文「continue」はループ制御の次のインデックスに飛び超える制御です。上の例を見ると別に「break」、「continue」を使わなくても「if」文だけで処理ができそうですね。でも「break」、「continue」をよく使うとソースが綺麗になるのでループの中には状態をよくみて使うほうが良いと思います。]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta property="og:url" content="https://www.nowonbun.com/12.html" />
-<meta property="og:site_name" content="明月の開発ストーリ" / >
+<meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />

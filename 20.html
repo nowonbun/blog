@@ -5,6 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
 <meta name="keywords" content="Study / C#" />
 <meta name="description" content="<![CDATA[こんにちは。明月です。今日は継承とsealedクラスについて勉強します。oopの特徴は抽象化、継承、多型、カプセル化があります。カプセルの場合はアクセス修飾子を勉強する時に説明したことがあります。[c# スタディ - 13] アクセス修飾子(public, private, protected)今日はoopの特徴の中の継承について勉強しましょう。継承この間にクラス、メソッド、プロパティ、変数の使用方法について勉強しました。正直にプログラムはその４つだけを知っても実装ができます。でも、プロジェクトが大きくなればなるほどその４つだけで実装が大変だし、出来上がった後を考えるとメンテおよびソース管理がすごく大変になると思います。その理由で継承は実装と管理のために使うと思っても結構です。継承の意味は親クラスから機能を引継いでもらい子クラスを生成することです。上の例をみると「successionbclass」を割り当てて「data1」のプロパティを呼び出します。でも「successionbclass」クラス内部には「data1」のプロパティがありません。しかし例の結果を見ると「successionbclass」に「data1」のデータが格納されるし、結果としても出力されます。なぜなら、「successionbclass」クラスは「successionaclass」クラスから機能をすべて継承したからのです。すなわち、「successionbclass」クラスは「successionaclass」クラスの機能をすべて使われると意味ですね。上の例を見ると「successionbclass」クラスの場合は「successionaclass」、「successioncclass」クラスと「successiondclass」クラスの場合は「successionbclass」を継承しています。もし、「successioncclass」のクラスと「successiondclass」のクラスが継承しなくてクラス内部で「data1」、「data2」を実装すると考えてみましょう。プロジェクト中で「data1」のデータタイプが「int」から「string」に修正することが発生すると継承しない場合は「successioncclass」のクラスと「successiondclass」のクラスを両方修正しなければならないのです。 しかし、継承してい]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
@@ -19,7 +22,7 @@
 <meta property="og:description" content="<![CDATA[こんにちは。明月です。今日は継承とsealedクラスについて勉強します。oopの特徴は抽象化、継承、多型、カプセル化があります。カプセルの場合はアクセス修飾子を勉強する時に説明したことがあります。[c# スタディ - 13] アクセス修飾子(public, private, protected)今日はoopの特徴の中の継承について勉強しましょう。継承この間にクラス、メソッド、プロパティ、変数の使用方法について勉強しました。正直にプログラムはその４つだけを知っても実装ができます。でも、プロジェクトが大きくなればなるほどその４つだけで実装が大変だし、出来上がった後を考えるとメンテおよびソース管理がすごく大変になると思います。その理由で継承は実装と管理のために使うと思っても結構です。継承の意味は親クラスから機能を引継いでもらい子クラスを生成することです。上の例をみると「successionbclass」を割り当てて「data1」のプロパティを呼び出します。でも「successionbclass」クラス内部には「data1」のプロパティがありません。しかし例の結果を見ると「successionbclass」に「data1」のデータが格納されるし、結果としても出力されます。なぜなら、「successionbclass」クラスは「successionaclass」クラスから機能をすべて継承したからのです。すなわち、「successionbclass」クラスは「successionaclass」クラスの機能をすべて使われると意味ですね。上の例を見ると「successionbclass」クラスの場合は「successionaclass」、「successioncclass」クラスと「successiondclass」クラスの場合は「successionbclass」を継承しています。もし、「successioncclass」のクラスと「successiondclass」のクラスが継承しなくてクラス内部で「data1」、「data2」を実装すると考えてみましょう。プロジェクト中で「data1」のデータタイプが「int」から「string」に修正することが発生すると継承しない場合は「successioncclass」のクラスと「successiondclass」のクラスを両方修正しなければならないのです。 しかし、継承してい]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta property="og:url" content="https://www.nowonbun.com/20.html" />
-<meta property="og:site_name" content="明月の開発ストーリ" / >
+<meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />

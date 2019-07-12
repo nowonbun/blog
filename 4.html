@@ -5,6 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
 <meta name="keywords" content="Study / C#" />
 <meta name="description" content="<![CDATA[こんにちは。明月です。今日からc#の基本文法について勉強します。それならvisualstudioを起動して新しいプロジェクト(ctrl+shift+n)を生成しましょう。そうすれば下記とおりに画面が出ますね。テンプレート項目で「コンソールアプリケーション」というリストを選択します。その後で「名前」項目にプロジェクト名を書き込みます。(私の場合はhelloworldということに書き込みました。)そして「ok」ボタンを押下して新しいプロジェクトを生成します。新しいプロジェクトが開けると基本的なプログラムの構造は準備しています。次の投稿から具体的に勉強するので、今日は一旦「namespace」の中で「class」の中で「main」のメソッドにコードを書き込んで作業します。これから「helloworld」を出力しましょう。c#でコンソール関連クラスは「console」のクラスです。その中で出力するメソッドは「write」あるいは「writeline」のメソッドを利用します。その通りにコーディングをすると下記みたいになります。ソースコーディングが作成できたら「f5」キーを押下してデバックをしましょう。結果は予想とおりに得ました。ちなみにコーディングについて説明します。コーディング内容を見ると行の最後にセミコロン(;)があります。それはブロックを開閉表示(｛、｝)以外にソース命令語が終了する時にセミコロンをつけることでコーディング約束が決めています。初心者の場合はセミコロンの漏れでコンパイルエラーが発生する時があるのでご注意してください。また、上のソースを見ると最後に「console.writeline(“press any key…”); consolre.readlist();」の部分があります。その部分を消して実行(f5)するとあっというまで結果コンソールが開いて閉じます。それならソース実行結果を確認できないのでしばらくにはソースを組む時にその2行ソースを追加しましょう。ここまで「helloworld」を出力しましたが、考えよりプログラムが簡単に作成できましたよね。c#の利点は初心者も簡単にしやすくプログラムを作成できるし開発進入壁が低いことです。でもどんな言語でも開発が複雑になると言語の特徴を100％に活かせる必要がありますので勉強が必要です。]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
@@ -19,7 +22,7 @@
 <meta property="og:description" content="<![CDATA[こんにちは。明月です。今日からc#の基本文法について勉強します。それならvisualstudioを起動して新しいプロジェクト(ctrl+shift+n)を生成しましょう。そうすれば下記とおりに画面が出ますね。テンプレート項目で「コンソールアプリケーション」というリストを選択します。その後で「名前」項目にプロジェクト名を書き込みます。(私の場合はhelloworldということに書き込みました。)そして「ok」ボタンを押下して新しいプロジェクトを生成します。新しいプロジェクトが開けると基本的なプログラムの構造は準備しています。次の投稿から具体的に勉強するので、今日は一旦「namespace」の中で「class」の中で「main」のメソッドにコードを書き込んで作業します。これから「helloworld」を出力しましょう。c#でコンソール関連クラスは「console」のクラスです。その中で出力するメソッドは「write」あるいは「writeline」のメソッドを利用します。その通りにコーディングをすると下記みたいになります。ソースコーディングが作成できたら「f5」キーを押下してデバックをしましょう。結果は予想とおりに得ました。ちなみにコーディングについて説明します。コーディング内容を見ると行の最後にセミコロン(;)があります。それはブロックを開閉表示(｛、｝)以外にソース命令語が終了する時にセミコロンをつけることでコーディング約束が決めています。初心者の場合はセミコロンの漏れでコンパイルエラーが発生する時があるのでご注意してください。また、上のソースを見ると最後に「console.writeline(“press any key…”); consolre.readlist();」の部分があります。その部分を消して実行(f5)するとあっというまで結果コンソールが開いて閉じます。それならソース実行結果を確認できないのでしばらくにはソースを組む時にその2行ソースを追加しましょう。ここまで「helloworld」を出力しましたが、考えよりプログラムが簡単に作成できましたよね。c#の利点は初心者も簡単にしやすくプログラムを作成できるし開発進入壁が低いことです。でもどんな言語でも開発が複雑になると言語の特徴を100％に活かせる必要がありますので勉強が必要です。]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta property="og:url" content="https://www.nowonbun.com/4.html" />
-<meta property="og:site_name" content="明月の開発ストーリ" / >
+<meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />

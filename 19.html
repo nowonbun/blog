@@ -5,6 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
 <meta name="keywords" content="Study / C#" />
 <meta name="description" content="<![CDATA[こんにちは。明月です。今日はenum(列挙型)について勉強します。前の投稿で「const」、「static」を勉強したことがあります。そのことを合わせて定義変数を作られることを知っています。「enum」の場合は定義変数と似ている概念ですが、データの値より集計的な区別のため使うキーワードです。それで「enum」は値のとしての意味を持ってることよりプロセス制御のため使えるものです。enum改めていうと、enumは分岐の制御のために整数を集合的に定義するものです。上の例を見ると「enum」は分岐制御の区別のために定義しています。上の型が一般的に「enum」を使う方法ですね。でも「enum」にも実際の整数を与えて設定するの方法もあります。上の例を見ると「enum」のメンバに実際整数を格納して、プラグとして使っています。でも「enum」には上みたいに整数は格納できますが、実数、文字(列)は格納できません。上の例は初めの例とにていますね。でも、前は「switch」文で分岐しましたが、今回は列挙変数「weak」を直接に出力しました。２つ目の例とおりなら「０〜７」間の数字が出力すると予想になります。結果は予想と違いますね。結果を見ると「enum」のメンバ名ままで出力しました。それで前の例と今回の例と比較すれば列挙型の上をみるとアトリビュート「flags」が付けていることを確認できます。「flags」のアトリビュートは「tostring」で出力する時にアトリビュート「flags」がなければ整数値、アトリビュート「flags」が付けていると「enum」の変数名が出力します。列挙変数「process」に値が「5」になることは予想できます。でも、列挙型のアトリビュートに「flags」が付けているので、変数名を出力しようとしますが、列挙メンバに「5」の値を持っているメンバがありません。この場合はビット演算子で計算したとおりに「type」、「type3」が出力します。]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
@@ -19,7 +22,7 @@
 <meta property="og:description" content="<![CDATA[こんにちは。明月です。今日はenum(列挙型)について勉強します。前の投稿で「const」、「static」を勉強したことがあります。そのことを合わせて定義変数を作られることを知っています。「enum」の場合は定義変数と似ている概念ですが、データの値より集計的な区別のため使うキーワードです。それで「enum」は値のとしての意味を持ってることよりプロセス制御のため使えるものです。enum改めていうと、enumは分岐の制御のために整数を集合的に定義するものです。上の例を見ると「enum」は分岐制御の区別のために定義しています。上の型が一般的に「enum」を使う方法ですね。でも「enum」にも実際の整数を与えて設定するの方法もあります。上の例を見ると「enum」のメンバに実際整数を格納して、プラグとして使っています。でも「enum」には上みたいに整数は格納できますが、実数、文字(列)は格納できません。上の例は初めの例とにていますね。でも、前は「switch」文で分岐しましたが、今回は列挙変数「weak」を直接に出力しました。２つ目の例とおりなら「０〜７」間の数字が出力すると予想になります。結果は予想と違いますね。結果を見ると「enum」のメンバ名ままで出力しました。それで前の例と今回の例と比較すれば列挙型の上をみるとアトリビュート「flags」が付けていることを確認できます。「flags」のアトリビュートは「tostring」で出力する時にアトリビュート「flags」がなければ整数値、アトリビュート「flags」が付けていると「enum」の変数名が出力します。列挙変数「process」に値が「5」になることは予想できます。でも、列挙型のアトリビュートに「flags」が付けているので、変数名を出力しようとしますが、列挙メンバに「5」の値を持っているメンバがありません。この場合はビット演算子で計算したとおりに「type」、「type3」が出力します。]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta property="og:url" content="https://www.nowonbun.com/19.html" />
-<meta property="og:site_name" content="明月の開発ストーリ" / >
+<meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />

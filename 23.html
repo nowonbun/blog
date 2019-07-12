@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / C#" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。今日はインタフェースについて勉強します。今まで継承すると思えばクラスあるいは抽象クラスから引継いてもらってクラスを生成することでした。でもその形なら２つ以上の継承をできずに統一されたデータタイプに結ぶことができないですね。各クラスは機能別で分けて処理するプロジェクトの案件がある場合、継承クラスをatype,btype,ctype,dtypeを作成して実装します。でも上の場合は一つずつ区分ができますが２つ以上に機能を結ぶのはできないですね。そのため、多重継承ができるものが必要でそれをインタフェース(interface)と言います。インタフェース(interface)インタフェース(interface)は抽象体なので実装しているロジックがあることではなく、抽象メソッドだけあります。上の例を見るとインタフェースを使われなくても、プログラム作成することができそうですね。ですから、インタフェースを使わなくても問題がなさそうだし、性能にも影響がなさそうですね。そのいうとおりでインタフェースを知らなくてもプログラムを作成できます。でもプロジェクトをデザイン、すなわちコーディング設計をする時にはインタフェースがなければ実装が大変になります。例えば、プロジェクトを構成する時にdbが２つがあると考えてみましょう。２つのデータベースで構成されているテーブル(データ構造)も全て違うことで、ユーザの場合は２つのデータを選ぶことではなく一つのデータベースから取得するみたいに構成して提供しましょうという課題があると考えましょう。上の例を見ると全体構造は少し複雑になりましたが、ロジックを使うユーザ(main関数)はデータベースを気にしずにデータだけ考えてロジックを実装ができます。また、上の条件ならデータベースが２つではなくもっと追加になってもソース修正が要らずにインタフェースに合わせてdblistに追加することができます。プロジェクトは一人で立ち上げることよりチームを組んで立ち上げる時が多いです。その時にモジュール実装するたびにモジュール間に機能影響があったり、エラーが発生するとプロジェクトを進めることが大変になると思います。それでoop開発はモジュールの結合分離することで勧めます。そのためにoopを実装するためにはインタフェースが必要なことです。プロジェクト構成方法、ソースを実装する方法には後でデザインパタンを勉]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [C# スタディ - 22] インタフェース( interface )" />
+<link rel="canonical" href="https://www.nowonbun.com/23.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [C# スタディ - 22] インタフェース( interface )" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。今日はインタフェースについて勉強します。今まで継承すると思えばクラスあるいは抽象クラスから引継いてもらってクラスを生成することでした。でもその形なら２つ以上の継承をできずに統一されたデータタイプに結ぶことができないですね。各クラスは機能別で分けて処理するプロジェクトの案件がある場合、継承クラスをatype,btype,ctype,dtypeを作成して実装します。でも上の場合は一つずつ区分ができますが２つ以上に機能を結ぶのはできないですね。そのため、多重継承ができるものが必要でそれをインタフェース(interface)と言います。インタフェース(interface)インタフェース(interface)は抽象体なので実装しているロジックがあることではなく、抽象メソッドだけあります。上の例を見るとインタフェースを使われなくても、プログラム作成することができそうですね。ですから、インタフェースを使わなくても問題がなさそうだし、性能にも影響がなさそうですね。そのいうとおりでインタフェースを知らなくてもプログラムを作成できます。でもプロジェクトをデザイン、すなわちコーディング設計をする時にはインタフェースがなければ実装が大変になります。例えば、プロジェクトを構成する時にdbが２つがあると考えてみましょう。２つのデータベースで構成されているテーブル(データ構造)も全て違うことで、ユーザの場合は２つのデータを選ぶことではなく一つのデータベースから取得するみたいに構成して提供しましょうという課題があると考えましょう。上の例を見ると全体構造は少し複雑になりましたが、ロジックを使うユーザ(main関数)はデータベースを気にしずにデータだけ考えてロジックを実装ができます。また、上の条件ならデータベースが２つではなくもっと追加になってもソース修正が要らずにインタフェースに合わせてdblistに追加することができます。プロジェクトは一人で立ち上げることよりチームを組んで立ち上げる時が多いです。その時にモジュール実装するたびにモジュール間に機能影響があったり、エラーが発生するとプロジェクトを進めることが大変になると思います。それでoop開発はモジュールの結合分離することで勧めます。そのためにoopを実装するためにはインタフェースが必要なことです。プロジェクト構成方法、ソースを実装する方法には後でデザインパタンを勉]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/23.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [C# スタディ - 22] インタフェース( interface )" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今日はインタフェースについて勉強します。今まで継承すると思えばクラスあるいは抽象クラスから引継いてもらってクラスを生成することでした。でもその形なら２つ以上の継承をできずに統一されたデータタイプに結ぶことができないですね。各クラスは機能別で分けて処理するプロジェクトの案件がある場合、継承クラスをatype,btype,ctype,dtypeを作成して実装します。でも上の場合は一つずつ区分ができますが２つ以上に機能を結ぶのはできないですね。そのため、多重継承ができるものが必要でそれをインタフェース(interface)と言います。インタフェース(interface)インタフェース(interface)は抽象体なので実装しているロジックがあることではなく、抽象メソッドだけあります。上の例を見るとインタフェースを使われなくても、プログラム作成することができそうですね。ですから、インタフェースを使わなくても問題がなさそうだし、性能にも影響がなさそうですね。そのいうとおりでインタフェースを知らなくてもプログラムを作成できます。でもプロジェクトをデザイン、すなわちコーディング設計をする時にはインタフェースがなければ実装が大変になります。例えば、プロジェクトを構成する時にdbが２つがあると考えてみましょう。２つのデータベースで構成されているテーブル(データ構造)も全て違うことで、ユーザの場合は２つのデータを選ぶことではなく一つのデータベースから取得するみたいに構成して提供しましょうという課題があると考えましょう。上の例を見ると全体構造は少し複雑になりましたが、ロジックを使うユーザ(main関数)はデータベースを気にしずにデータだけ考えてロジックを実装ができます。また、上の条件ならデータベースが２つではなくもっと追加になってもソース修正が要らずにインタフェースに合わせてdblistに追加することができます。プロジェクトは一人で立ち上げることよりチームを組んで立ち上げる時が多いです。その時にモジュール実装するたびにモジュール間に機能影響があったり、エラーが発生するとプロジェクトを進めることが大変になると思います。それでoop開発はモジュールの結合分離することで勧めます。そのためにoopを実装するためにはインタフェースが必要なことです。プロジェクト構成方法、ソースを実装する方法には後でデザインパタンを勉]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+
+<title>明月の開発ストーリ :: [C# スタディ - 22] インタフェース( interface )</title>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" />
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
+</head>
+<body>
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[C# スタディ - 22] インタフェース( interface )</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/13 01:06:04 &nbsp;&nbsp;修正日付 : 2019/07/13 01:06:52
+				</div>
+			</div>
+			<div class="article">
+				<div class="tt_article_useless_p_margin" id="article_contents"><html>
+ <head></head>
+ <body>
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>今日はインタフェースについて勉強します。</p> 
+  <p><br></p> 
+  <p>今まで継承すると思えばクラスあるいは抽象クラスから引継いてもらってクラスを生成することでした。でもその形なら２つ以上の継承をできずに統一されたデータタイプに結ぶことができないですね。</p> 
+  <p>各クラスは機能別で分けて処理するプロジェクトの案件がある場合、継承クラスをAType,BType,CType,DTypeを作成して実装します。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace InterfaceEx
+{
+  //抽象クラス Atype
+  public abstract class Atype
+  {
+    public abstract void AProcess();
+    public abstract void BProcess();
+  }
+  //抽象クラス Btype
+  public abstract class Btype
+  {
+    public abstract void AProcess();
+    public abstract void CProcess();
+  }
+  //抽象クラス Ctype
+  public abstract class Ctype
+  {
+    public abstract void DProcess();
+    public abstract void BProcess();
+  }
+  //抽象クラス Dtype
+  public abstract class Dtype
+  {
+    public abstract void DProcess();
+    public abstract void BProcess();
+  }
+
+  //一つしか継承できない。
+  public class ATypeProcess : Atype
+  {
+    public override void AProcess()
+    {
+      Console.WriteLine("Atype AProcess");
+    }
+    public override void BProcess()
+    {
+      Console.WriteLine("Atype BProcess");
+    }
+  }
+  //一つしか継承できない。
+  public class CTypeProcess : Ctype
+  {
+    public override void DProcess()
+    {
+      Console.WriteLine("Ctype DProcess");
+    }
+    public override void BProcess()
+    {
+      Console.WriteLine("Ctype BProcess");
+    }
+  }
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      //抽象をしましたが、纏めができない。
+      //割り当てはATypeProcessでしましたが親クラス(Atype)のタイプで定義ができる。
+      Atype atype = new ATypeProcess();
+      atype.AProcess();
+      atype.BProcess();
+      //抽象をしましたが、纏めができない。
+      //割り当てはCTypeProcessでしましたが親クラス(Ctype)のタイプで定義ができる。
+      Ctype ctype = new CTypeProcess();
+      ctype.DProcess();
+      ctype.BProcess();
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/23/78_001.jpg" data-filename="001.jpg" style="width: 600px;"></p> 
+  <p>でも上の場合は一つずつ区分ができますが２つ以上に機能を結ぶのはできないですね。そのため、多重継承ができるものが必要でそれをインタフェース(interface)と言います。</p> 
+  <p><br></p> 
+  <h2><b><span>インタフェース(interface)</span></b></h2> 
+  <p>インタフェース(Interface)は抽象体なので実装しているロジックがあることではなく、抽象メソッドだけあります。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace InterfaceEx
+{
+  //インタフェース
+  public interface Atype
+  {
+    void AProcess();
+  }
+  public interface Btype
+  {
+    void BProcess();
+  }
+  public interface Ctype
+  {
+    void CProcess();
+  }
+  public interface Dtype
+  {
+    void DProcess();
+  }
+
+  //インタフェースは多重継承ができる。(Atype,Btype)
+  public class ATypeProcess : Atype, Btype
+  {
+    public void AProcess()
+    {
+      Console.WriteLine("Atype AProcess");
+    }
+    public void BProcess()
+    {
+      Console.WriteLine("Atype BProcess");
+    }
+  }
+  //インタフェースは多重継承ができる。(Btype,Dtype)
+  public class CTypeProcess : Btype, Dtype
+  {
+    public void DProcess()
+    {
+      Console.WriteLine("Ctype DProcess");
+    }
+    public void BProcess()
+    {
+      Console.WriteLine("Ctype BProcess");
+    }
+  }
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      ATypeProcess atype = new ATypeProcess();
+      atype.AProcess();
+      atype.BProcess();
+      CTypeProcess ctype = new CTypeProcess();
+      ctype.BProcess();
+      ctype.DProcess();
+
+      Console.WriteLine();
+      //インタフェースがBtypeの共通インタフェースになるから結ぶのができます。
+      List&lt;Btype&gt; list = new List&lt;Btype&gt;();
+      list.Add(atype);
+      list.Add(ctype);
+      foreach (Btype item in list)
+      {
+        item.BProcess();
+      }
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/23/79_002.jpg" data-filename="002.jpg" style="width: 600px;"></p> 
+  <p>上の例を見るとインタフェースを使われなくても、プログラム作成することができそうですね。ですから、インタフェースを使わなくても問題がなさそうだし、性能にも影響がなさそうですね。</p> 
+  <p>そのいうとおりでインタフェースを知らなくてもプログラムを作成できます。でもプロジェクトをデザイン、すなわちコーディング設計をする時にはインタフェースがなければ実装が大変になります。</p> 
+  <p><br></p> 
+  <p>例えば、プロジェクトを構成する時にDBが２つがあると考えてみましょう。２つのデータベースで構成されているテーブル(データ構造)も全て違うことで、ユーザの場合は２つのデータを選ぶことではなく一つのデータベースから取得するみたいに構成して提供しましょうという課題があると考えましょう。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace InterfaceEx
+{
+  /// &lt;summary&gt;
+  /// テーブル区分する列挙型
+  /// &lt;/summary&gt;
+  public enum TABLE
+  {
+    ATABLE,
+    BTABLE,
+    CTABLE,
+    DTABLE
+  }
+  /// &lt;summary&gt;
+  /// データベースインタフェース
+  /// &lt;/summary&gt;
+  public interface Database
+  {
+    DataTable getTable(TABLE tableName);
+  }
+  /// &lt;summary&gt;
+  /// データテーブルインタフェース
+  /// &lt;/summary&gt;
+  public interface DataTable
+  {
+    String getData();
+  }
+  /// &lt;summary&gt;
+  /// ATABLEのデータテーブル
+  /// &lt;/summary&gt;
+  public class ATABLE : DataTable
+  {
+    public String getData()
+    {
+      return "ATABLE";
+    }
+  }
+  /// &lt;summary&gt;
+  /// BTABLEのデータテーブル
+  /// &lt;/summary&gt;
+  public class BTABLE : DataTable
+  {
+    public String getData()
+    {
+      return "BTABLE";
+    }
+  }
+  /// &lt;summary&gt;
+  /// CTABLEのデータテーブル
+  /// &lt;/summary&gt;
+  public class CTABLE : DataTable
+  {
+    public String getData()
+    {
+      return "CTABLE";
+    }
+  }
+  /// &lt;summary&gt;
+  /// DTABLEのデータテーブル
+  /// &lt;/summary&gt;
+  public class DTABLE : DataTable
+  {
+    public String getData()
+    {
+      return "DTABLE";
+    }
+  }
+  /// &lt;summary&gt;
+  /// Aデータベース
+  /// &lt;/summary&gt;
+  public class ADatabase : Database 
+  {
+    public DataTable getTable(TABLE tableName)
+    {
+      //AデータベースはATableとBTableを持っています。
+      if(tableName == TABLE.ATABLE)
+      {
+        return new ATABLE();
+      }else if(tableName == TABLE.BTABLE)
+      {
+        return new BTABLE();
+      }
+      return null;
+    }
+  }
+  public class BDatabase : Database
+  {
+    public DataTable getTable(TABLE tableName)
+    {
+      //AデータベースはCTableとDTableを持っています。
+      if (tableName == TABLE.CTABLE)
+      {
+        return new CTABLE();
+      }
+      else if (tableName == TABLE.DTABLE)
+      {
+        return new DTABLE();
+      }
+      return null;
+    }
+  }
+
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      //データベース宣言してリストに格納する。
+      List&lt;Database&gt; DBList = new List&lt;Database&gt;();
+      DBList.Add(new ADatabase());
+      DBList.Add(new BDatabase());
+
+      //データテーブル取得
+      //ここからはテーブルがADatabaseにあるかBDatabaseにあるかは関係ない。
+      //ただあるところで取得します。
+      //すなわち、データベースは二つだけどユーザはデータベースには関係なく、データだけ扱っている。(OOPの特徴)
+      DataTable table = getTable(DBList, TABLE.CTABLE);
+      String ret = table.getData();
+      Console.WriteLine(ret);
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+    //データテーブル取得メソッド
+    static DataTable getTable(List&lt;Database&gt; DBList, TABLE tableName)
+    {
+      foreach(Database Item in DBList)
+      {
+        DataTable dt = Item.getTable(tableName);
+        if(dt != null)
+        {
+          return dt;
+        }
+      }
+      return null;
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/23/80_003.jpg" data-filename="003.jpg" style="width: 600px;"></p> 
+  <p>上の例を見ると全体構造は少し複雑になりましたが、ロジックを使うユーザ(Main関数)はデータベースを気にしずにデータだけ考えてロジックを実装ができます。</p> 
+  <p>また、上の条件ならデータベースが２つではなくもっと追加になってもソース修正が要らずにインタフェースに合わせてDBListに追加することができます。</p> 
+  <p><br></p> 
+  <p>プロジェクトは一人で立ち上げることよりチームを組んで立ち上げる時が多いです。その時にモジュール実装するたびにモジュール間に機能影響があったり、エラーが発生するとプロジェクトを進めることが大変になると思います。</p> 
+  <p>それでOOP開発はモジュールの結合分離することで勧めます。そのためにOOPを実装するためにはインタフェースが必要なことです。</p> 
+  <p><br></p> 
+  <p>プロジェクト構成方法、ソースを実装する方法には後でデザインパタンを勉強する時に詳しく勉強しましょう。</p>
+ </body>
+</html></div>
+				<hr />
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=C%23>#C#</a> </span>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
