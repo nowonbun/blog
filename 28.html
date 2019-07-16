@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / C#" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。今日はc#ののlinqについて勉強します。プログラムを開発するとlist（リスト),map(dictionary)などをたくさん使うと思います。例えば仕様によって同じタイプのデータをリスト化にして実装するほうが実装が綺麗にできるし、ソース整理が楽だと思います。前の投稿でもlistについて勉強したことがあるので上の例を解析ができると思います。そうすれば上の「number」の「2」を検索するようにはどうしましょうか？一般的にはループで分岐文を付け入れて検索します。上の例はデータ複雑度が低いので簡単に実装ができますが、クラスのデータが複雑だし、量が多い場合は実装も大変になるし、データ処理時間も結構かかると思います。linqその場合があるとデータベースのクエリみたいに簡単に検索ができるのがあればいいと思われますね。それで「.net framework3.5」からリスト、ディクショナリをsqlクエリみたいなキーワードで簡単に検索ができるように「linq」ということを提供しています。上の例を見ると「getsearch2」のメソッドの中でsqlクエリみたいな「from」、「where」、「select」のキーワードがあります。結果は「getsearch」と同様に「number」を検索して「data」の値を返却します。そうすると「linq」のキーワードについて詳しく勉強しましょう。          linqキーワード    説明              from〜in    検索するリストあるいはディクショナリ、データテーブルを指定          where    リストを検索する条件          join    ２つ以上のデータリストを結合          orderby    結果のデータリストの整列          group    結果のデータリストのグループ化          select    結果データを抽出      linqの場合は上のキーワードを使ってリストを検索をします。そして検索した後のデータはただのリストを返却することではなく「ienumerable」タイプで返却しますね。 「ienumerable」は「yield」のキーワードを勉強する際に説明したことがあります。[c# スタディ - 24] indexer(インデクサー)とyield(リファレンス)も]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [C# スタディ - 27] LINQ(リンク)-1" />
+<link rel="canonical" href="https://www.nowonbun.com/28.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [C# スタディ - 27] LINQ(リンク)-1" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。今日はc#ののlinqについて勉強します。プログラムを開発するとlist（リスト),map(dictionary)などをたくさん使うと思います。例えば仕様によって同じタイプのデータをリスト化にして実装するほうが実装が綺麗にできるし、ソース整理が楽だと思います。前の投稿でもlistについて勉強したことがあるので上の例を解析ができると思います。そうすれば上の「number」の「2」を検索するようにはどうしましょうか？一般的にはループで分岐文を付け入れて検索します。上の例はデータ複雑度が低いので簡単に実装ができますが、クラスのデータが複雑だし、量が多い場合は実装も大変になるし、データ処理時間も結構かかると思います。linqその場合があるとデータベースのクエリみたいに簡単に検索ができるのがあればいいと思われますね。それで「.net framework3.5」からリスト、ディクショナリをsqlクエリみたいなキーワードで簡単に検索ができるように「linq」ということを提供しています。上の例を見ると「getsearch2」のメソッドの中でsqlクエリみたいな「from」、「where」、「select」のキーワードがあります。結果は「getsearch」と同様に「number」を検索して「data」の値を返却します。そうすると「linq」のキーワードについて詳しく勉強しましょう。          linqキーワード    説明              from〜in    検索するリストあるいはディクショナリ、データテーブルを指定          where    リストを検索する条件          join    ２つ以上のデータリストを結合          orderby    結果のデータリストの整列          group    結果のデータリストのグループ化          select    結果データを抽出      linqの場合は上のキーワードを使ってリストを検索をします。そして検索した後のデータはただのリストを返却することではなく「ienumerable」タイプで返却しますね。 「ienumerable」は「yield」のキーワードを勉強する際に説明したことがあります。[c# スタディ - 24] indexer(インデクサー)とyield(リファレンス)も]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/28.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [C# スタディ - 27] LINQ(リンク)-1" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今日はc#ののlinqについて勉強します。プログラムを開発するとlist（リスト),map(dictionary)などをたくさん使うと思います。例えば仕様によって同じタイプのデータをリスト化にして実装するほうが実装が綺麗にできるし、ソース整理が楽だと思います。前の投稿でもlistについて勉強したことがあるので上の例を解析ができると思います。そうすれば上の「number」の「2」を検索するようにはどうしましょうか？一般的にはループで分岐文を付け入れて検索します。上の例はデータ複雑度が低いので簡単に実装ができますが、クラスのデータが複雑だし、量が多い場合は実装も大変になるし、データ処理時間も結構かかると思います。linqその場合があるとデータベースのクエリみたいに簡単に検索ができるのがあればいいと思われますね。それで「.net framework3.5」からリスト、ディクショナリをsqlクエリみたいなキーワードで簡単に検索ができるように「linq」ということを提供しています。上の例を見ると「getsearch2」のメソッドの中でsqlクエリみたいな「from」、「where」、「select」のキーワードがあります。結果は「getsearch」と同様に「number」を検索して「data」の値を返却します。そうすると「linq」のキーワードについて詳しく勉強しましょう。          linqキーワード    説明              from〜in    検索するリストあるいはディクショナリ、データテーブルを指定          where    リストを検索する条件          join    ２つ以上のデータリストを結合          orderby    結果のデータリストの整列          group    結果のデータリストのグループ化          select    結果データを抽出      linqの場合は上のキーワードを使ってリストを検索をします。そして検索した後のデータはただのリストを返却することではなく「ienumerable」タイプで返却しますね。 「ienumerable」は「yield」のキーワードを勉強する際に説明したことがあります。[c# スタディ - 24] indexer(インデクサー)とyield(リファレンス)も]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+
+<title>明月の開発ストーリ :: [C# スタディ - 27] LINQ(リンク)-1</title>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" />
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
+</head>
+<body>
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[C# スタディ - 27] LINQ(リンク)-1</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/16 20:41:27 &nbsp;&nbsp;修正日付 : 2019/07/16 20:42:22
+				</div>
+			</div>
+			<div class="article">
+				<div class="tt_article_useless_p_margin" id="article_contents"><html>
+ <head></head>
+ <body>
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>今日はC#ののLINQについて勉強します。</p> 
+  <p><br></p> 
+  <p>プログラムを開発するとList（リスト),Map(Dictionary)などをたくさん使うと思います。例えば仕様によって同じタイプのデータをリスト化にして実装するほうが実装が綺麗にできるし、ソース整理が楽だと思います。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LINQEX1
+{
+  class TestRecord
+  {
+    public TestRecord(int number, String data)
+    {
+      this.Data = data;
+    }
+    public int Number
+    {
+      get; set;
+    }
+    public String Data
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    public Program()
+    {
+      //リストを宣言
+      List&lt;HTestRecord&gt; list = new List&lt;TestRecord&gt;();
+      //リストにデータを格納
+      list.Add(new TestRecord(1, "Hello"));
+      list.Add(new TestRecord(2, "World"));
+      list.Add(new TestRecord(3, "TEST"));
+      //リストを繰り返してデータを出力
+      foreach (TestRecord test in list)
+      {
+        Console.WriteLine(test.Data);
+      }
+    }
+    static void Main(string[] args)
+    {
+      new Program();
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/28/95_001.jpg" data-filename="001.jpg" style="width: 600px;"></p> 
+  <p>前の投稿でもListについて勉強したことがあるので上の例を解析ができると思います。そうすれば上の「number」の「2」を検索するようにはどうしましょうか？一般的にはループで分岐文を付け入れて検索します。</p> 
+  <pre><code class="cs" data-type="">﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LINQEX1
+{
+  class TestRecord
+  {
+    public TestRecord(int number, String data)
+    {
+     this.Number = number;
+      this.Data = data;
+    }
+    public int Number
+    {
+      get; set;
+    }
+    public String Data
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    public Program()
+    {
+      //リストを宣言
+      List&lt;TestRecord&gt; list = new List&lt;TestRecord&gt;();
+      //リストにデータを格納
+      list.Add(new TestRecord(1, "Hello"));
+      list.Add(new TestRecord(2, "World"));
+      list.Add(new TestRecord(3, "TEST"));
+
+      //numberが「2」のデータを検索する。
+      Console.WriteLine(getSearch(2,list));
+    }
+    //一般的にループの中で分岐を付け入れて検索する。
+    public String getSearch(int number, List&lt;TestRecord&gt; list)
+    {
+      //リストを繰り返してデータを検索
+      foreach (TestRecord test in list)
+      {
+        if(number == test.Number)
+        {
+          return test.Data;
+        }
+      }
+      return null;
+    }
+    static void Main(string[] args)
+    {
+      new Program();
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/28/96_002.jpg" data-filename="002.jpg" style="width: 600px;"></p> 
+  <p>上の例はデータ複雑度が低いので簡単に実装ができますが、クラスのデータが複雑だし、量が多い場合は実装も大変になるし、データ処理時間も結構かかると思います。</p> 
+  <p><br></p> 
+  <h2><b><span>LINQ</span></b></h2> 
+  <p>その場合があるとデータベースのクエリみたいに簡単に検索ができるのがあればいいと思われますね。それで「.Net Framework3.5」からリスト、ディクショナリをSQLクエリみたいなキーワードで簡単に検索ができるように「LINQ」ということを提供しています。</p> 
+  <pre><code class="cs" data-type="">﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LINQEX1
+{
+  class TestRecord
+  {
+    public TestRecord(int number, String data)
+    {
+      this.Number = number;
+      this.Data = data;
+    }
+    public int Number
+    {
+      get; set;
+    }
+    public String Data
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    public Program()
+    {
+      //リストを宣言
+      List&lt;TestRecord&gt; list = new List&lt;TestRecord&gt;();
+      //リストにデータを格納
+      list.Add(new TestRecord(1, "Hello"));
+      list.Add(new TestRecord(2, "World"));
+      list.Add(new TestRecord(3, "TEST"));
+
+      //numberが「2」のデータを検索する。
+      Console.WriteLine(getSearch(2,list));
+      //numberが「3」のデータを検索する。
+      Console.WriteLine(getSearch2(3, list));
+    }
+    //一般的にループの中で分岐を付け入れて検索する。
+    public String getSearch(int number, List&lt;TestRecord&gt; list)
+    {
+      //リストを繰り返してデータを検索
+      foreach (TestRecord item in list)
+      {
+        if(number == item.Number)
+        {
+          return item.Data;
+        }
+      }
+      return null;
+    }
+    //LINQの検索する例
+    public String getSearch2(int number,List&lt;TestRecord&gt; list)
+    {
+      //LINQを利用してデータを検索
+      //from item in list データ
+      //where 条件
+      //select 抽出データ
+      IEnumerable&lt;String&gt; ret = from item in list where item.Number == number  select item.Data;
+      return ret.Single&lt;String&gt;();
+    }
+    static void Main(string[] args)
+    {
+      new Program();
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/28/97_003.jpg" data-filename="003.jpg" style="width: 600px;"></p> 
+  <p>上の例を見ると「getSearch2」のメソッドの中でSQLクエリみたいな「from」、「where」、「select」のキーワードがあります。結果は「getSearch」と同様に「Number」を検索して「Data」の値を返却します。</p> 
+  <p><br></p> 
+  <p>そうすると「LINQ」のキーワードについて詳しく勉強しましょう。</p> 
+  <div class="table-responsive"> 
+   <table class="table table-striped table-bordered table-condensed"> 
+    <thead> 
+     <tr> 
+      <th>LINQキーワード</th> 
+      <th>説明</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td>from〜in</td> 
+      <td>検索するリストあるいはディクショナリ、データテーブルを指定</td> 
+     </tr> 
+     <tr> 
+      <td>where</td> 
+      <td>リストを検索する条件</td> 
+     </tr> 
+     <tr> 
+      <td>join</td> 
+      <td>２つ以上のデータリストを結合</td> 
+     </tr> 
+     <tr> 
+      <td>orderby</td> 
+      <td>結果のデータリストの整列</td> 
+     </tr> 
+     <tr> 
+      <td>group</td> 
+      <td>結果のデータリストのグループ化</td> 
+     </tr> 
+     <tr> 
+      <td>select</td> 
+      <td>結果データを抽出</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <p>Linqの場合は上のキーワードを使ってリストを検索をします。そして検索した後のデータはただのリストを返却することではなく「IEnumerable」タイプで返却しますね。</p> 
+  <p>「IEnumerable」は「yield」のキーワードを勉強する際に説明したことがあります。</p> 
+  <p><br></p> 
+  <p><a href="https://www.nowonbun.com/25.html" target="_blank">[C# スタディ - 24] indexer(インデクサー)とyield(リファレンス)</a></p> 
+  <p><br></p> 
+  <p>もう１回説明すると「IEnumerable」は「interator」パターンと関係があるクラスです。「IEnumerable」のタイプからデータ取得方法は「IEnumerator」に変換することや、「ToList」メソッドを使ってリストタイプに返却することや、「ToArray」メソッドを使って配列で取得することや、また結果の値が１つの場合に「ToSingle」のメソッドで単一結果を取得する方法があります。</p> 
+  <pre><code class="cs" data-type="">﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LINQEX1
+{
+  class TestRecord
+  {
+    public TestRecord(int number, String data)
+    {
+      this.Number = number;
+      this.Data = data;
+    }
+    public int Number
+    {
+      get; set;
+    }
+    public String Data
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    public Program()
+    {
+      //リストを宣言
+      List&lt;TestRecord&gt; list = new List&lt;TestRecord&gt;();
+      List&lt;TestRecord&gt; list2 = new List&lt;TestRecord&gt;();
+      //リストにデータを格納
+      list.Add(new TestRecord(1, "Hello"));
+      list.Add(new TestRecord(2, "World"));
+      list.Add(new TestRecord(3, "TEST"));
+
+      list2.Add(new TestRecord(1, "Data1"));
+      list2.Add(new TestRecord(2, "Data2"));
+      list2.Add(new TestRecord(3, "Data3"));
+
+      IEnumerable&lt;String&gt; retList = from item1 in list  //検索するデータリスト
+                      join item2 in list2 on item1.Number equals item2.Number //検索するデータリストをJoinする。
+                      where item1.Number &gt; 1  //データ抽出条件
+                      orderby item1.Number descending //データの整列
+                      select item1.Data + " " + item2.Data; //データを抽出
+      List&lt;String&gt; retlist = retList.ToList&lt;String&gt;();
+      foreach(String ret in retList)
+      {
+        Console.WriteLine(ret);
+      }
+      
+    }
+    static void Main(string[] args)
+    {
+      new Program();
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/28/98_004.jpg" data-filename="004.jpg" style="width: 600px;"></p> 
+  <p>今まで「LINQ」の基本文法について勉強しました。上の例をみると２つのリストを「Join」キーワードで結んでデータ処理しています。それをただのループで実装すると思えばソースが複雑度がかなりあがると思いますね。</p> 
+  <p>C#「LINQ」はデータをSQLクエリみたい扱う方法だけあることではないけど、上の例だけみても「LINQ」を使うと実装が簡単になることを確認できますね。</p> 
+  <p>上の形式はリンクのSQLクエリ文法ですが、次の投稿ではメソッドタイプの「LINQ」について勉強します。</p>
+ </body>
+</html></div>
+				<hr />
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=C%23>#C#</a> </span>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
