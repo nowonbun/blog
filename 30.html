@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / C#" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。今日はlinq(リンク)の「enumerable」について勉強します。「enumerable」は前の投稿で勉強したlinq(メソッド)も含めていることですが、コレクションのタイプのクラスなら(リスト、ディクショナリ、テーブル等)データを扱うように「enumerable」のクラスを拡張してメソッドを使えます。すなわち「enumerable」はデータを扱うクラスとして「where」、「orderby」、「select」の以外に「sum」、「average」、「max」、「min」、「aggregate」などのメソッドがあります。そうすると今日は「select」、「where」、「oderby」以外の「enumerable」クラスメソッドについて勉強しましょう。maxmaxのメソッドはコレクションタイプのクラスの中でデータの最大値を救うものです。このメソッドの返却値は整数、実数のみです。すなわち、文字、文字列、ブール代数(boolean)の値で返却をできないという意味です。上の例をみるとリストにtestclassのクラスを格納してmaxメソッドで最大値を検索しています。すなわち匿名メソッドでクラスのnumberデータを返却して結果はそのクラス達の最大値が出ると予想になります。minminのメソッドはコレクションタイプのクラスの中でデータの最少値を救うものです。このメソッドもmaxと同じとおりに整数、実数のみに返却します。sumsumのメソッドはコレクションタイプのクラスの中でデータの合計値を救うものです。このメソッドもmaxとminと同じとおりに整数、実数のみに返却します。averageaverageのメソッドはコレクションタイプのクラスの中でデータの平均値を救うものです。このメソッドもmaxとminとsuｍと同じとおりに整数、実数のみに返却します。ここまで数と関係がある「enumerable」のメソッドを調べてみました。次からはデータを扱って処理する「enumerable」クラスの「aggregate」と「zip」メソッドについて調べます。aggregateaggregateのメソッドはコレクションタイプのリストを繰り返してリストのデータを累積するものです。パラメタは累積しているデータと、新しく累積するデータを受け取ります。パラメタと返却値のデータタイプは対象のコレクションデータタイプと]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [C# スタディ - 29] LINQ(リンク)-3 (Enumerableクラス)" />
+<link rel="canonical" href="https://www.nowonbun.com/30.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [C# スタディ - 29] LINQ(リンク)-3 (Enumerableクラス)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。今日はlinq(リンク)の「enumerable」について勉強します。「enumerable」は前の投稿で勉強したlinq(メソッド)も含めていることですが、コレクションのタイプのクラスなら(リスト、ディクショナリ、テーブル等)データを扱うように「enumerable」のクラスを拡張してメソッドを使えます。すなわち「enumerable」はデータを扱うクラスとして「where」、「orderby」、「select」の以外に「sum」、「average」、「max」、「min」、「aggregate」などのメソッドがあります。そうすると今日は「select」、「where」、「oderby」以外の「enumerable」クラスメソッドについて勉強しましょう。maxmaxのメソッドはコレクションタイプのクラスの中でデータの最大値を救うものです。このメソッドの返却値は整数、実数のみです。すなわち、文字、文字列、ブール代数(boolean)の値で返却をできないという意味です。上の例をみるとリストにtestclassのクラスを格納してmaxメソッドで最大値を検索しています。すなわち匿名メソッドでクラスのnumberデータを返却して結果はそのクラス達の最大値が出ると予想になります。minminのメソッドはコレクションタイプのクラスの中でデータの最少値を救うものです。このメソッドもmaxと同じとおりに整数、実数のみに返却します。sumsumのメソッドはコレクションタイプのクラスの中でデータの合計値を救うものです。このメソッドもmaxとminと同じとおりに整数、実数のみに返却します。averageaverageのメソッドはコレクションタイプのクラスの中でデータの平均値を救うものです。このメソッドもmaxとminとsuｍと同じとおりに整数、実数のみに返却します。ここまで数と関係がある「enumerable」のメソッドを調べてみました。次からはデータを扱って処理する「enumerable」クラスの「aggregate」と「zip」メソッドについて調べます。aggregateaggregateのメソッドはコレクションタイプのリストを繰り返してリストのデータを累積するものです。パラメタは累積しているデータと、新しく累積するデータを受け取ります。パラメタと返却値のデータタイプは対象のコレクションデータタイプと]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/30.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [C# スタディ - 29] LINQ(リンク)-3 (Enumerableクラス)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今日はlinq(リンク)の「enumerable」について勉強します。「enumerable」は前の投稿で勉強したlinq(メソッド)も含めていることですが、コレクションのタイプのクラスなら(リスト、ディクショナリ、テーブル等)データを扱うように「enumerable」のクラスを拡張してメソッドを使えます。すなわち「enumerable」はデータを扱うクラスとして「where」、「orderby」、「select」の以外に「sum」、「average」、「max」、「min」、「aggregate」などのメソッドがあります。そうすると今日は「select」、「where」、「oderby」以外の「enumerable」クラスメソッドについて勉強しましょう。maxmaxのメソッドはコレクションタイプのクラスの中でデータの最大値を救うものです。このメソッドの返却値は整数、実数のみです。すなわち、文字、文字列、ブール代数(boolean)の値で返却をできないという意味です。上の例をみるとリストにtestclassのクラスを格納してmaxメソッドで最大値を検索しています。すなわち匿名メソッドでクラスのnumberデータを返却して結果はそのクラス達の最大値が出ると予想になります。minminのメソッドはコレクションタイプのクラスの中でデータの最少値を救うものです。このメソッドもmaxと同じとおりに整数、実数のみに返却します。sumsumのメソッドはコレクションタイプのクラスの中でデータの合計値を救うものです。このメソッドもmaxとminと同じとおりに整数、実数のみに返却します。averageaverageのメソッドはコレクションタイプのクラスの中でデータの平均値を救うものです。このメソッドもmaxとminとsuｍと同じとおりに整数、実数のみに返却します。ここまで数と関係がある「enumerable」のメソッドを調べてみました。次からはデータを扱って処理する「enumerable」クラスの「aggregate」と「zip」メソッドについて調べます。aggregateaggregateのメソッドはコレクションタイプのリストを繰り返してリストのデータを累積するものです。パラメタは累積しているデータと、新しく累積するデータを受け取ります。パラメタと返却値のデータタイプは対象のコレクションデータタイプと]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+
+<title>明月の開発ストーリ :: [C# スタディ - 29] LINQ(リンク)-3 (Enumerableクラス)</title>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" />
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
+</head>
+<body>
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[C# スタディ - 29] LINQ(リンク)-3 (Enumerableクラス)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/17 20:57:00 &nbsp;&nbsp;修正日付 : 2019/07/17 20:58:37
+				</div>
+			</div>
+			<div class="article">
+				<div class="tt_article_useless_p_margin" id="article_contents"><html>
+ <head></head>
+ <body>
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>今日はLINQ(リンク)の「Enumerable」について勉強します。</p> 
+  <p><br></p> 
+  <p>「Enumerable」は前の投稿で勉強したLINQ(メソッド)も含めていることですが、コレクションのタイプのクラスなら(リスト、ディクショナリ、テーブル等)データを扱うように「Enumerable」のクラスを拡張してメソッドを使えます。</p> 
+  <p>すなわち「Enumerable」はデータを扱うクラスとして「Where」、「Orderby」、「Select」の以外に「Sum」、「Average」、「Max」、「Min」、「Aggregate」などのメソッドがあります。</p> 
+  <p><br></p> 
+  <p>そうすると今日は「Select」、「Where」、「OderBy」以外の「Enumerable」クラスメソッドについて勉強しましょう。</p> 
+  <p><br></p> 
+  <h2><b><span>Max</span></b></h2> 
+  <p>Maxのメソッドはコレクションタイプのクラスの中でデータの最大値を救うものです。このメソッドの返却値は整数、実数のみです。すなわち、文字、文字列、ブール代数(Boolean)の値で返却をできないという意味です。</p> 
+  <pre><code class="cs" data-type="">﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LINQEX3
+{
+  //リストのテストクラス
+  class TestData
+  {
+    public TestData(int number, String data)
+    {
+      this.Number = number;
+      this.Data = data;
+    }
+    public int Number
+    {
+      get; set;
+    }
+    public String Data
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    public Program()
+    {
+      //テストするリストを格納する。
+      List&lt;TestData&gt; listEx = new List&lt;TestData&gt;();
+      listEx.Add(new TestData(1, "AAAA"));
+      listEx.Add(new TestData(2, "BBBB"));
+      listEx.Add(new TestData(3, "CCCC"));
+      listEx.Add(new TestData(4, "DDDD"));
+      listEx.Add(new TestData(5, "EEEE"));
+
+      //リストのNumber値が一番大きいデータは？
+      int max = listEx.Max(delegate (TestData item)
+      {
+        //整数、実数タイプ(int, short, float, double, Decimal...)のデータのみに返却をできます。
+        //ブール代数、文字、文字列タイプ(Boolean, char, String)などのデータは返却をできません。
+        return item.Number;
+      });
+
+      //予想になる値は「5」
+      Console.WriteLine("Max ? " + max);
+      
+    }
+    static void Main(string[] args)
+    {
+      new Program();
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p>上の例をみるとリストにTestClassのクラスを格納してMaxメソッドで最大値を検索しています。すなわち匿名メソッドでクラスのNumberデータを返却して結果はそのクラス達の最大値が出ると予想になります。</p> 
+  <p style="text-align:left;"><img src="./contents/30/103_001.jpg" data-filename="001.jpg" style="width: 600px;"></p> 
+  <p><br></p> 
+  <h2><b><span>Min</span></b></h2> 
+  <p>Minのメソッドはコレクションタイプのクラスの中でデータの最少値を救うものです。このメソッドもMaxと同じとおりに整数、実数のみに返却します。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LINQEX3
+{
+  //リストのテストクラス
+  class TestData
+  {
+    public TestData(int number, String data)
+    {
+      this.Number = number;
+      this.Data = data;
+    }
+    public int Number
+    {
+      get; set;
+    }
+    public String Data
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    public Program()
+    {
+      //テストするリストを格納する。
+      List&lt;TestData&gt; listEx = new List&lt;TestData&gt;();
+      listEx.Add(new TestData(1, "AAAA"));
+      listEx.Add(new TestData(2, "BBBB"));
+      listEx.Add(new TestData(3, "CCCC"));
+      listEx.Add(new TestData(4, "DDDD"));
+      listEx.Add(new TestData(5, "EEEE"));
+
+      //リストのNumber値が一番t小さいデータは？
+      int min = listEx.Min(delegate (TestData item)
+      {
+        return item.Number;
+      });
+
+      //予想になる値は「1」
+      Console.WriteLine("Min ? " + min);
+
+    }
+    static void Main(string[] args)
+    {
+      new Program();
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/30/104_002.jpg" data-filename="002.jpg" style="width: 600px;"></p> 
+  <p><br></p> 
+  <h2><b><span>Sum</span></b></h2> 
+  <p>Sumのメソッドはコレクションタイプのクラスの中でデータの合計値を救うものです。このメソッドもMaxとMinと同じとおりに整数、実数のみに返却します。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LINQEX3
+{
+  //リストのテストクラス
+  class TestData
+  {
+    public TestData(int number, String data)
+    {
+      this.Number = number;
+      this.Data = data;
+    }
+    public int Number
+    {
+      get; set;
+    }
+    public String Data
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    public Program()
+    {
+      //テストするリストを格納する。
+      List&lt;TestData&gt; listEx = new List&lt;TestData&gt;();
+      listEx.Add(new TestData(1, "AAAA"));
+      listEx.Add(new TestData(2, "BBBB"));
+      listEx.Add(new TestData(3, "CCCC"));
+      listEx.Add(new TestData(4, "DDDD"));
+      listEx.Add(new TestData(5, "EEEE"));
+
+      //リストのNumber値の合計は？
+      int sum = listEx.Sum(delegate (TestData item)
+      {
+        return item.Number;
+      });
+
+      //予想になる値は「15」
+      Console.WriteLine("Sum ? " + sum);
+    }
+    static void Main(string[] args)
+    {
+      new Program();
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/30/105_003.jpg" data-filename="003.jpg" style="width: 600px;"></p> 
+  <p><br></p> 
+  <h2><b><span>Average</span></b></h2> 
+  <p>Averageのメソッドはコレクションタイプのクラスの中でデータの平均値を救うものです。このメソッドもMaxとMinとSuｍと同じとおりに整数、実数のみに返却します。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LINQEX3
+{
+  //リストのテストクラス
+  class TestData
+  {
+    public TestData(int number, String data)
+    {
+      this.Number = number;
+      this.Data = data;
+    }
+    public int Number
+    {
+      get; set;
+    }
+    public String Data
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    public Program()
+    {
+      //テストするリストを格納する。
+      List&lt;TestData&gt; listEx = new List&lt;TestData&gt;();
+      listEx.Add(new TestData(1, "AAAA"));
+      listEx.Add(new TestData(2, "BBBB"));
+      listEx.Add(new TestData(3, "CCCC"));
+      listEx.Add(new TestData(4, "DDDD"));
+      listEx.Add(new TestData(5, "EEEE"));
+
+      //リストのNumber値の平均は？
+      double aver = listEx.Average(delegate (TestData item)
+      {
+        return item.Number;
+      });
+
+      //予想になる値は「3」
+      Console.WriteLine("average ? " + aver);
+    }
+    static void Main(string[] args)
+    {
+      new Program();
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/30/106_004.jpg" data-filename="004.jpg" style="width: 600px;"></p> 
+  <p>ここまで数と関係がある「Enumerable」のメソッドを調べてみました。次からはデータを扱って処理する「Enumerable」クラスの「Aggregate」と「Zip」メソッドについて調べます。</p> 
+  <p><br></p> 
+  <h2><b><span>Aggregate</span></b></h2> 
+  <p>Aggregateのメソッドはコレクションタイプのリストを繰り返してリストのデータを累積するものです。パラメタは累積しているデータと、新しく累積するデータを受け取ります。パラメタと返却値のデータタイプは対象のコレクションデータタイプと一致になります。</p> 
+  <pre><code class="cs" data-type="">﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LINQEX3
+{
+  //リストのテストクラス
+  class TestData
+  {
+    public TestData(int number, String data)
+    {
+      this.Number = number;
+      this.Data = data;
+    }
+    public int Number
+    {
+      get; set;
+    }
+    public String Data
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    public Program()
+    {
+      //テストするリストを格納する。
+      List&lt;TestData&gt; listEx = new List&lt;TestData&gt;();
+      listEx.Add(new TestData(1, "AAAA"));
+      listEx.Add(new TestData(2, "BBBB"));
+      listEx.Add(new TestData(3, "CCCC"));
+      listEx.Add(new TestData(4, "DDDD"));
+      listEx.Add(new TestData(5, "EEEE"));
+
+      //データを累積する関数
+      //workingSentence - 累積しているデータ
+      //next - 繰り返しながら新しく累積するデータ
+      TestData aggregate = listEx.Aggregate(delegate (TestData workingSentence, TestData next)
+      {
+        //最初の繰り返しで作業クラスがリスト[0]の場合は新しく割り当てて返却する。
+        if(workingSentence.GetHashCode() == listEx[0].GetHashCode())
+        {
+          workingSentence = new TestData(workingSentence.Number, workingSentence.Data);
+        }
+        //最初に割り当てたクラスデータに累積します。
+        workingSentence.Number = workingSentence.Number + next.Number;
+        workingSentence.Data = workingSentence.Data + " " + next.Data;
+        //次の繰り返しに累積しているデータを渡す。
+        return workingSentence;
+      });
+
+      //予想になる値は「15」
+      Console.WriteLine("Aggregate Number ? " + aggregate.Number);
+      //予想になる値は「AAAA BBBB CCCC DDDD EEEE」
+      Console.WriteLine("Aggregate Data ? " + aggregate.Data);
+    }
+    static void Main(string[] args)
+    {
+      new Program();
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/30/111_005.jpg" data-filename="005.jpg" style="width: 600px;"></p> 
+  <p><br></p> 
+  <h2><b><span>Zip</span></b></h2> 
+  <p>Zipメソッドは二つのコレクションを併合することです。すなわち、対象コレクションに他のリストのデータを同じインデックスとおりにデータを併合したい際に使います。</p> 
+  <p>始めのパラメタは併合したいコレクションリスト、二つ目が匿名メソッドになりあます。匿名メソッドのデータタイプは初めは対象コレクションリストのデータタイプ、二つ目は併合するコレクションリストのデータタイプになります。コレクションリストのインデックスが合わないデータは処理しません。</p> 
+  <pre><code class="cs" data-type="">﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LINQEX3
+{
+  //リストのテストクラス
+  class TestData
+  {
+    public TestData(int number, String data)
+    {
+      this.Number = number;
+      this.Data = data;
+    }
+    public int Number
+    {
+      get; set;
+    }
+    public String Data
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    public Program()
+    {
+      //テストするリストを格納する。
+      List&lt;TestData&gt; listEx = new List&lt;TestData&gt;();
+      listEx.Add(new TestData(1, "AAAA"));
+      listEx.Add(new TestData(2, "BBBB"));
+      listEx.Add(new TestData(3, "CCCC"));
+      listEx.Add(new TestData(4, "DDDD"));
+      listEx.Add(new TestData(5, "EEEE"));
+
+      List&lt;String&gt; listEx2 = new List&lt;string&gt;();
+      listEx2.Add("One");
+      listEx2.Add("Two");
+      listEx2.Add("Three");
+
+      //listExリストにlistEx2リストを併合する。
+      IEnumerable&lt;String&gt; ret =  listEx.Zip(listEx2, delegate (TestData item1, String item2) {
+        //listExとlistEx2の同じインデックスでデータを抽出する。
+        // 0の場合 (1, AAAA) (One)
+        // 1の場合 (2, BBBB) (Two)
+        // 2の場合 (3, CCCC) (Three)
+        // 3と4の場合はlistEx2にはないので処理しません。
+        return item1.Number + " " + item1.Data + " " + item2;
+      });
+      //予想する結果
+      // 1 AAAA One
+      // 2 BBBB Two
+      // 3 CCCC Three
+      foreach(String item in ret)
+      {
+        Console.WriteLine(item);
+      }
+    }
+    static void Main(string[] args)
+    {
+      new Program();
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/30/109_006.jpg" data-filename="006.jpg" style="width: 600px;"></p> 
+  <p><br></p> 
+  <p>今まで「Enumerable」のデータ数計算とデータを扱いメソッドについて調べてみました。</p> 
+  <p>「LINQ」の「Enumerable」クラスのメソッドを使うと基本的に返却の値は「IEnumerable」インタフェースタイプになります。</p> 
+  <p>ただ「IEnumerable」タイプを繰り返して使えることもできますが、他のコレクションに変換する時があるはずと思います。</p> 
+  <p>それで「Enumerable」クラスは他のコレクションタイプに変換する「ToArray」、「ToList」、「ToDictionary」、「Single」のメソッドがあります。</p> 
+  <p><br></p> 
+  <h2><b><span>ToList</span></b></h2> 
+  <p>「ToList」は「IEnumerable」から「リスト」タイプに変換する「Enumerable」のクラスメソッドです。パラメタはなしで、リストのデータタイプは「IEnumerable」の同じタイプに返却します。</p> 
+  <pre><code class="cs" data-type="">﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LINQEX3
+{
+  //リストのテストクラス
+  class TestData
+  {
+    public TestData(int number, String data)
+    {
+      this.Number = number;
+      this.Data = data;
+    }
+    public int Number
+    {
+      get; set;
+    }
+    public String Data
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    public Program()
+    {
+      //テストするリストを格納する。
+      List&lt;TestData&gt; listEx = new List&lt;TestData&gt;();
+      listEx.Add(new TestData(1, "AAAA"));
+      listEx.Add(new TestData(2, "BBBB"));
+      listEx.Add(new TestData(3, "CCCC"));
+      listEx.Add(new TestData(4, "DDDD"));
+      listEx.Add(new TestData(5, "EEEE"));
+
+      List&lt;String&gt; listEx2 = new List&lt;string&gt;();
+      listEx2.Add("One");
+      listEx2.Add("Two");
+      listEx2.Add("Three");
+
+      IEnumerable&lt;String&gt; ret =  listEx.Zip(listEx2, delegate (TestData item1, String item2) {
+        //listExとlistEx2の同じインデックスでデータを抽出する。
+        // 0の場合 (1, AAAA) (One)
+        // 1の場合 (2, BBBB) (Two)
+        // 2の場合 (3, CCCC) (Three)
+        return item1.Number + " " + item1.Data + " " + item2;
+      });
+      //リストに変換する。
+      List&lt;String&gt; list = ret.ToList();
+      foreach(String item in list)
+      {
+        Console.WriteLine(item);
+      }
+
+    }
+    static void Main(string[] args)
+    {
+      new Program();
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/30/108_007.jpg" data-filename="007.jpg" style="width: 600px;"></p> 
+  <p><br></p> 
+  <h2><b><span>ToDictionary</span></b></h2> 
+  <p>「ToDictionary」は「IEnumerable」から「ディクショナリ」タイプに変換する「Enumerable」のクラスメソッドです。匿名メソッドのパラメタはリストのオブジェクトを受けるし、返却値はキーを返却します。「ToDictionary」で返却したコレクションのキータイプは匿名メソッドで返却したデータタイプだし、値は「IEnumerable」のオブジェクトのタイプになります。</p> 
+  <pre><code class="cs" data-type="">﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LINQEX3
+{
+  //リストのテストクラス
+  class TestData
+  {
+    public TestData(int number, String data)
+    {
+      this.Number = number;
+      this.Data = data;
+    }
+    public int Number
+    {
+      get; set;
+    }
+    public String Data
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    public Program()
+    {
+      //テストするリストを格納する。
+      List&lt;TestData&gt; listEx = new List&lt;TestData&gt;();
+      listEx.Add(new TestData(1, "AAAA"));
+      listEx.Add(new TestData(2, "BBBB"));
+      listEx.Add(new TestData(3, "CCCC"));
+      listEx.Add(new TestData(4, "DDDD"));
+      listEx.Add(new TestData(5, "EEEE"));
+
+      List&lt;String&gt; listEx2 = new List&lt;string&gt;();
+      listEx2.Add("One");
+      listEx2.Add("Two");
+      listEx2.Add("Three");
+
+      IEnumerable&lt;String&gt; ret = listEx.Zip(listEx2, delegate (TestData item1, String item2)
+      {
+        //listExとlistEx2の同じインデックスでデータを抽出する。
+        // 0の場合 (1, AAAA) (One)
+        // 1の場合 (2, BBBB) (Two)
+        // 2の場合 (3, CCCC) (Three)
+        return item1.Number + " " + item1.Data + " " + item2;
+      });
+      //ディクショナリに変換
+      Dictionary&lt;String, String&gt; dic = ret.ToDictionary(delegate (String item)
+      {
+       //文字列をスペース区切りで分割
+        String[] value = item.Split(' ');
+        //３つ目にある文字列がキーなる。
+        return value[2];
+      });
+      //One : 1 AAAA One
+      //Two : 2 BBBB Two
+      //Three : 3 CCCC Three
+      foreach (String key in dic.Keys)
+      {
+        String value = dic[key];
+        Console.WriteLine(key + " : " + value);
+      }
+    }
+    static void Main(string[] args)
+    {
+      new Program();
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/30/112_008.jpg" data-filename="008.jpg" style="width: 600px;"></p> 
+  <p><br></p> 
+  <h2><b><span>ToArray</span></b></h2> 
+  <p>「ToArray」は「IEnumerable」から「配列」タイプに変換する「Enumerable」のクラスメソッドです。パラメタはなしで、リストのデータタイプは「IEnumerable」の同じタイプに返却します。</p> 
+  <pre><code class="cs" data-type="">﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LINQEX3
+{
+  //リストのテストクラス
+  class TestData
+  {
+    public TestData(int number, String data)
+    {
+      this.Number = number;
+      this.Data = data;
+    }
+    public int Number
+    {
+      get; set;
+    }
+    public String Data
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    public Program()
+    {
+      //テストするリストを格納する。
+      List&lt;TestData&gt; listEx = new List&lt;TestData&gt;();
+      listEx.Add(new TestData(1, "AAAA"));
+      listEx.Add(new TestData(2, "BBBB"));
+      listEx.Add(new TestData(3, "CCCC"));
+      listEx.Add(new TestData(4, "DDDD"));
+      listEx.Add(new TestData(5, "EEEE"));
+
+      List&lt;String&gt; listEx2 = new List&lt;string&gt;();
+      listEx2.Add("One");
+      listEx2.Add("Two");
+      listEx2.Add("Three");
+
+      IEnumerable&lt;String&gt; ret = listEx.Zip(listEx2, delegate (TestData item1, String item2)
+      {
+        //listExとlistEx2の同じインデックスでデータを抽出する。
+        // 0の場合 (1, AAAA) (One)
+        // 1の場合 (2, BBBB) (Two)
+        // 2の場合 (3, CCCC) (Three)
+        return item1.Number + " " + item1.Data + " " + item2;
+      });
+      //配列に変換
+      String[] array = ret.ToArray();
+      foreach(String item in array)
+      {
+        Console.WriteLine(item);
+      }
+    }
+    static void Main(string[] args)
+    {
+      new Program();
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+} 
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/30/107_009.jpg" data-filename="009.jpg" style="width: 600px;"></p> 
+  <p><br></p> 
+  <h2><b><span>Single</span></b></h2> 
+  <p>「Single」は「IEnumerable」のデータが一つの場合にコレクションタイプではなく、「IEnumerable」のオブジェクトのタイプに返却するメソッドです。</p> 
+  <pre><code class="cs" data-type="">﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LINQEX3
+{
+  //リストのテストクラス
+  class TestData
+  {
+    public TestData(int number, String data)
+    {
+      this.Number = number;
+      this.Data = data;
+    }
+    public int Number
+    {
+      get; set;
+    }
+    public String Data
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    public Program()
+    {
+      //テストするリストを格納する。
+      List&lt;TestData&gt; listEx = new List&lt;TestData&gt;();
+      listEx.Add(new TestData(1, "AAAA"));
+      listEx.Add(new TestData(2, "BBBB"));
+      listEx.Add(new TestData(3, "CCCC"));
+      listEx.Add(new TestData(4, "DDDD"));
+      listEx.Add(new TestData(5, "EEEE"));
+
+      IEnumerable&lt;TestData&gt; ret = listEx.Where(delegate (TestData item)
+      {
+        return item.Number == 1;
+      });
+
+      TestData data = ret.Single();
+
+      Console.WriteLine(data.Number);
+      Console.WriteLine(data.Data);
+    }
+    static void Main(string[] args)
+    {
+      new Program();
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/30/110_010.jpg" data-filename="010.jpg" style="width: 600px;"></p> 
+  <p>今までLINQの「Enumerable」について勉強しました。プログラムはホームページなどみたいにデータを扱わないプロジェクトもありますが、ほとんどデータを扱うプロジェクトが多いです。</p> 
+  <p>それで「C#」の場合はデータを扱う「LINQ」の「Enumeration」クラスを置き、複雑なアルゴリズムを知らなくてもデータ処理ができるようになっています。</p> 
+  <p>また、Enumerableは関数型プログラムを指向しているし、パラレル処理でも「Enumerable」クラスを利用して処理します。これからの投稿からにも「Enumerable」をよく使うのでここで使用する方法を確かに認知していきましょう。</p>
+ </body>
+</html></div>
+				<hr />
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=C%23>#C#</a> </span>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
