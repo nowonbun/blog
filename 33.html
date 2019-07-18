@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / C#" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。今日は高級データタイプ文法のobjectタイプ、varタイプ(匿名タイプ)、dynamicタイプについて勉強します。筆者はc#の勉強の初め部分でデータタイプについて勉強したことがあります。[c# スタディ - 5] データタイプとリテラル(literal)、 nullable[c# スタディ - 6] 変数と定数すなわち、データを宣言して使うことあるいはクラスを割当して使う方法は「データタイプ　変数名 = new クラス名()」の形で使いました。上の例を見るとデータタイプに「testclass1」を宣言してクラスを割り当てて使います。ここまでは今まで勉強したとおりに問題がありません。objectタイプそれでは、c#のことではすべてのデータタイプとクラスの最高の親クラスが存在します。それを「object」タイプで基本のメソッドは「tostring」等を持っているクラスです。それですべてのクラス、データタイプは「tostring」を持っていることです。そうすると次は「object」タイプの例です。でもデータタイプを「object」で宣言して「testclass1」を割り当てれば、データタイプが一番上位の抽象クラスを宣言したことなので、「testclass1」タイプままで使われずに、「object」のタイプに使われるので「testclass1」の属性を使うことができないですね。それで「testclass1」属性を使うためには「testclass1」クラスに強制キャスティングしてから使うことができます。しかし、強制キャスティングの問題はコンパイルする前の状況でエラーを発見しにくいし、ソース可読性も落ちる問題が発生します。匿名タイプ(var)それでデータタイプを正義しなくて使えるタイプがあります。「object」タイプほどにデータタイプのとしての役割はありませんが、割り当てる時にデータタイプを明示しなくて使うことができる匿名タイプがあります。でも、匿名タイプは見た目は「object」タイプと似ていることでみえますが、コンパイル段階でクラスを割り当てる時にデータタイプが決めることなので他のタイプに再割当てはできません。すなわち、匿名タイプはソース段階の見た目を整理することだけなので性能にも影響がありません。dynamic匿名クラスの再割当てる問題を解決するようなタイプが「dynamic」タイプで]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [C# スタディ - 32] Objectタイプ、varタイプ(匿名タイプ)、dynamicタイプ" />
+<link rel="canonical" href="https://www.nowonbun.com/33.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [C# スタディ - 32] Objectタイプ、varタイプ(匿名タイプ)、dynamicタイプ" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。今日は高級データタイプ文法のobjectタイプ、varタイプ(匿名タイプ)、dynamicタイプについて勉強します。筆者はc#の勉強の初め部分でデータタイプについて勉強したことがあります。[c# スタディ - 5] データタイプとリテラル(literal)、 nullable[c# スタディ - 6] 変数と定数すなわち、データを宣言して使うことあるいはクラスを割当して使う方法は「データタイプ　変数名 = new クラス名()」の形で使いました。上の例を見るとデータタイプに「testclass1」を宣言してクラスを割り当てて使います。ここまでは今まで勉強したとおりに問題がありません。objectタイプそれでは、c#のことではすべてのデータタイプとクラスの最高の親クラスが存在します。それを「object」タイプで基本のメソッドは「tostring」等を持っているクラスです。それですべてのクラス、データタイプは「tostring」を持っていることです。そうすると次は「object」タイプの例です。でもデータタイプを「object」で宣言して「testclass1」を割り当てれば、データタイプが一番上位の抽象クラスを宣言したことなので、「testclass1」タイプままで使われずに、「object」のタイプに使われるので「testclass1」の属性を使うことができないですね。それで「testclass1」属性を使うためには「testclass1」クラスに強制キャスティングしてから使うことができます。しかし、強制キャスティングの問題はコンパイルする前の状況でエラーを発見しにくいし、ソース可読性も落ちる問題が発生します。匿名タイプ(var)それでデータタイプを正義しなくて使えるタイプがあります。「object」タイプほどにデータタイプのとしての役割はありませんが、割り当てる時にデータタイプを明示しなくて使うことができる匿名タイプがあります。でも、匿名タイプは見た目は「object」タイプと似ていることでみえますが、コンパイル段階でクラスを割り当てる時にデータタイプが決めることなので他のタイプに再割当てはできません。すなわち、匿名タイプはソース段階の見た目を整理することだけなので性能にも影響がありません。dynamic匿名クラスの再割当てる問題を解決するようなタイプが「dynamic」タイプで]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/33.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [C# スタディ - 32] Objectタイプ、varタイプ(匿名タイプ)、dynamicタイプ" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今日は高級データタイプ文法のobjectタイプ、varタイプ(匿名タイプ)、dynamicタイプについて勉強します。筆者はc#の勉強の初め部分でデータタイプについて勉強したことがあります。[c# スタディ - 5] データタイプとリテラル(literal)、 nullable[c# スタディ - 6] 変数と定数すなわち、データを宣言して使うことあるいはクラスを割当して使う方法は「データタイプ　変数名 = new クラス名()」の形で使いました。上の例を見るとデータタイプに「testclass1」を宣言してクラスを割り当てて使います。ここまでは今まで勉強したとおりに問題がありません。objectタイプそれでは、c#のことではすべてのデータタイプとクラスの最高の親クラスが存在します。それを「object」タイプで基本のメソッドは「tostring」等を持っているクラスです。それですべてのクラス、データタイプは「tostring」を持っていることです。そうすると次は「object」タイプの例です。でもデータタイプを「object」で宣言して「testclass1」を割り当てれば、データタイプが一番上位の抽象クラスを宣言したことなので、「testclass1」タイプままで使われずに、「object」のタイプに使われるので「testclass1」の属性を使うことができないですね。それで「testclass1」属性を使うためには「testclass1」クラスに強制キャスティングしてから使うことができます。しかし、強制キャスティングの問題はコンパイルする前の状況でエラーを発見しにくいし、ソース可読性も落ちる問題が発生します。匿名タイプ(var)それでデータタイプを正義しなくて使えるタイプがあります。「object」タイプほどにデータタイプのとしての役割はありませんが、割り当てる時にデータタイプを明示しなくて使うことができる匿名タイプがあります。でも、匿名タイプは見た目は「object」タイプと似ていることでみえますが、コンパイル段階でクラスを割り当てる時にデータタイプが決めることなので他のタイプに再割当てはできません。すなわち、匿名タイプはソース段階の見た目を整理することだけなので性能にも影響がありません。dynamic匿名クラスの再割当てる問題を解決するようなタイプが「dynamic」タイプで]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+
+<title>明月の開発ストーリ :: [C# スタディ - 32] Objectタイプ、varタイプ(匿名タイプ)、dynamicタイプ</title>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" />
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
+</head>
+<body>
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[C# スタディ - 32] Objectタイプ、varタイプ(匿名タイプ)、dynamicタイプ</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/18 22:50:16 &nbsp;&nbsp;修正日付 : 2019/07/18 22:52:02
+				</div>
+			</div>
+			<div class="article">
+				<div class="tt_article_useless_p_margin" id="article_contents"><html>
+ <head></head>
+ <body>
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>今日は高級データタイプ文法のObjectタイプ、varタイプ(匿名タイプ)、dynamicタイプについて勉強します。</p> 
+  <p><br></p> 
+  <p>筆者はC#の勉強の初め部分でデータタイプについて勉強したことがあります。</p> 
+  <p><br></p> 
+  <p><a href="https://www.nowonbun.com/6.html" target="_blank">[C# スタディ - 5] データタイプとリテラル(literal)、 Nullable</a></p> 
+  <p><br></p> 
+  <p><a href="https://www.nowonbun.com/7.html" target="_blank">[C# スタディ - 6] 変数と定数</a></p> 
+  <p><br></p> 
+  <p>すなわち、データを宣言して使うことあるいはクラスを割当して使う方法は「データタイプ　変数名 = new クラス名()」の形で使いました。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace varDynamic
+{
+  //テストクラス
+  class TestClass1
+  {
+    private int number;
+    private String data;
+    private String className;
+    //コンストラクタ
+    public TestClass1()
+    {
+      this.className = "TestClass1";
+    }
+    //プロパティ
+    public int Number
+    {
+      get
+      {
+        return this.number;
+      }
+      set
+      {
+        this.number = value;
+      }
+    }
+    public String Data
+    {
+      get
+      {
+        return this.data;
+      }
+      set
+      {
+        this.data = value;
+      }
+    }
+    public String ClassName
+    {
+      get
+      {
+        return this.className;
+      }
+    }
+    //メソッド
+    public void Print()
+    {
+      Console.WriteLine(this.ClassName);
+    }
+  }
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      new Program();
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+    public Program()
+    {
+      //データタイプ 変数名 = new 割当();
+      TestClass1 test = new TestClass1();
+      test.Print();
+    }
+  }
+}
+</code></pre> 
+  <p>上の例を見るとデータタイプに「TestClass1」を宣言してクラスを割り当てて使います。ここまでは今まで勉強したとおりに問題がありません。</p> 
+  <p><br></p> 
+  <h2><b><span>Objectタイプ</span></b></h2> 
+  <p>それでは、C#のことではすべてのデータタイプとクラスの最高の親クラスが存在します。それを「Object」タイプで基本のメソッドは「ToString」等を持っているクラスです。</p> 
+  <p>それですべてのクラス、データタイプは「ToString」を持っていることです。</p> 
+  <p style="text-align:left;"><img src="./contents/33/124_001.jpg" data-filename="001.jpg" style="width: 600px;"></p> 
+  <p>そうすると次は「Object」タイプの例です。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace varDynamic
+{
+  //テストクラス１
+  class TestClass1
+  {
+    private int number;
+    private String data;
+    private String className;
+    //コンストラクタ
+    public TestClass1()
+    {
+      this.className = "TestClass1";
+    }
+    //プロパティ
+    public int Number
+    {
+      get
+      {
+        return this.number;
+      }
+      set
+      {
+        this.number = value;
+      }
+    }
+    public String Data
+    {
+      get
+      {
+        return this.data;
+      }
+      set
+      {
+        this.data = value;
+      }
+    }
+    public String ClassName
+    {
+      get
+      {
+        return this.className;
+      }
+    }
+    //メソッド
+    public void Print()
+    {
+      Console.WriteLine(this.ClassName);
+    }
+  }
+  //テストクラス２
+  class TestClass2
+  {
+    private int number;
+    private String data;
+    private String className;
+    //コンストラクタ
+    public TestClass2()
+    {
+      this.className = "TestClass2";
+    }
+    //プロパティ
+    public int Number
+    {
+      get
+      {
+        return this.number;
+      }
+      set
+      {
+        this.number = value;
+      }
+    }
+    public String Data
+    {
+      get
+      {
+        return this.data;
+      }
+      set
+      {
+        this.data = value;
+      }
+    }
+    public String ClassName
+    {
+      get
+      {
+        return this.className;
+      }
+    }
+    //メソッド
+    public void Print()
+    {
+      Console.WriteLine(this.ClassName);
+    }
+  }
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      new Program();
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+    public Program()
+    {
+      //Objectタイプでリストを宣言する。
+      List&lt;Object&gt; listObject = new List&lt;Object&gt;();
+      //どんなクラスタイプでもリストに格納できます。
+      listObject.Add(new TestClass1());
+      listObject.Add(new TestClass2());
+      //intタイプ
+      listObject.Add(11);
+      //Stringタイプ
+      listObject.Add("String");
+
+      Object test = new TestClass1();
+      //でもObjectの場合は一番上位の抽象タイプなのでTestClassの機能がなくなる。
+      //使うためには強制キャスティングする必要がある。
+      ((TestClass1)test).Print();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/33/121_002.jpg" data-filename="002.jpg" style="width: 600px;"></p> 
+  <p>でもデータタイプを「Object」で宣言して「TestClass1」を割り当てれば、データタイプが一番上位の抽象クラスを宣言したことなので、「TestClass1」タイプままで使われずに、「Object」のタイプに使われるので「TestClass1」の属性を使うことができないですね。それで「TestClass1」属性を使うためには「TestClass1」クラスに強制キャスティングしてから使うことができます。</p> 
+  <p>しかし、強制キャスティングの問題はコンパイルする前の状況でエラーを発見しにくいし、ソース可読性も落ちる問題が発生します。</p> 
+  <p style="text-align:left;"><img src="./contents/33/123_003.jpg" data-filename="003.jpg" style="width: 600px;"></p> 
+  <p><br></p> 
+  <h2><b><span>匿名タイプ(var)</span></b></h2> 
+  <p>それでデータタイプを正義しなくて使えるタイプがあります。「Object」タイプほどにデータタイプのとしての役割はありませんが、割り当てる時にデータタイプを明示しなくて使うことができる匿名タイプがあります。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace varDynamic
+{
+  //テストクラス１
+  class TestClass1
+  {
+    private int number;
+    private String data;
+    private String className;
+    //コンストラクタ
+    public TestClass1()
+    {
+      this.className = "TestClass1";
+    }
+    //プロパティ
+    public int Number
+    {
+      get
+      {
+        return this.number;
+      }
+      set
+      {
+        this.number = value;
+      }
+    }
+    public String Data
+    {
+      get
+      {
+        return this.data;
+      }
+      set
+      {
+        this.data = value;
+      }
+    }
+    public String ClassName
+    {
+      get
+      {
+        return this.className;
+      }
+    }
+    //メソッド
+    public void Print()
+    {
+      Console.WriteLine(this.ClassName);
+    }
+  }
+  //テストクラス２
+  class TestClass2
+  {
+    private int number;
+    private String data;
+    private String className;
+    //コンストラクタ
+    public TestClass2()
+    {
+      this.className = "TestClass2";
+    }
+    //プロパティ
+    public int Number
+    {
+      get
+      {
+        return this.number;
+      }
+      set
+      {
+        this.number = value;
+      }
+    }
+    public String Data
+    {
+      get
+      {
+        return this.data;
+      }
+      set
+      {
+        this.data = value;
+      }
+    }
+    public String ClassName
+    {
+      get
+      {
+        return this.className;
+      }
+    }
+    //メソッド
+    public void Print()
+    {
+      Console.WriteLine(this.ClassName);
+    }
+  }
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      new Program();
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+    public Program()
+    {
+      //匿名タイプ(var)はデータタイプではないからリストなどで「Object」らしく使えません。
+      var test = new TestClass1();
+      //データタイプを決めなくて割り当てる。
+      test.Print();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/33/122_004.jpg" data-filename="004.jpg" style="width: 600px;"></p> 
+  <p>でも、匿名タイプは見た目は「Object」タイプと似ていることでみえますが、コンパイル段階でクラスを割り当てる時にデータタイプが決めることなので他のタイプに再割当てはできません。</p> 
+  <p>すなわち、匿名タイプはソース段階の見た目を整理することだけなので性能にも影響がありません。</p> 
+  <p><br></p> 
+  <h2><b><span>dynamic</span></b></h2> 
+  <p>匿名クラスの再割当てる問題を解決するようなタイプが「dynamic」タイプです。匿名タイプはデータタイプをコンパイルする前に決めて使うタイプなら「dynamic」はコンパイルする時にデータタイプを決めるタイプです。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace varDynamic
+{
+  //テストクラス１
+  class TestClass1
+  {
+    private int number;
+    private String data;
+    private String className;
+    //コンストラクタ
+    public TestClass1()
+    {
+      this.className = "TestClass1";
+    }
+    //プロパティ
+    public int Number
+    {
+      get
+      {
+        return this.number;
+      }
+      set
+      {
+        this.number = value;
+      }
+    }
+    public String Data
+    {
+      get
+      {
+        return this.data;
+      }
+      set
+      {
+        this.data = value;
+      }
+    }
+    public String ClassName
+    {
+      get
+      {
+        return this.className;
+      }
+    }
+    //メソッド
+    public void Print()
+    {
+      Console.WriteLine(this.ClassName);
+    }
+  }
+  //テストクラス２
+  class TestClass2
+  {
+    private int number;
+    private String data;
+    private String className;
+    //コンストラクタ
+    public TestClass2()
+    {
+      this.className = "TestClass2";
+    }
+    //プロパティ
+    public int Number
+    {
+      get
+      {
+        return this.number;
+      }
+      set
+      {
+        this.number = value;
+      }
+    }
+    public String Data
+    {
+      get
+      {
+        return this.data;
+      }
+      set
+      {
+        this.data = value;
+      }
+    }
+    public String ClassName
+    {
+      get
+      {
+        return this.className;
+      }
+    }
+    //メソッド
+    public void Print()
+    {
+      Console.WriteLine(this.ClassName);
+    }
+  }
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      new Program();
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+    public Program()
+    {
+      //dynamicはデータタイプではないからリストなどで「Object」らしく使えません。
+      dynamic test = new TestClass1();
+      //データタイプを決めなくて割り当てる。
+      test.Print();
+      //他のクラスに再割り当てることが出来る。
+      test = new TestClass2();
+      test.Print();
+
+      List&lt;Object&gt; objectList = new List&lt;Object&gt;();
+      objectList.Add(new TestClass1());
+      objectList.Add(new TestClass2());
+
+      //同じ抽象クラスに継承をしなくてもただメソッド名が合うことだけで抽象効果を示す。
+      foreach(dynamic item in objectList)
+      {
+        item.Print();
+      }
+
+    }
+  }
+}
+</code></pre> 
+  <p>上の例を見ると「dynamic」タイプを使うと「var」と比べて再割当てても変数を使えるし、最後のループ(foreach)部分は「TestClass1」と「TestClass2」は抽象クラスで結んでいることではないが、同じクラスらしくメソッドを呼ばせることができます。</p> 
+  <p><br></p> 
+  <p>今まで使った部分で「var」と「dynamic」の差を見ると「dynamic」が活用度が高いようで、応用もできそうですね。でも「dynamic」の場合はコンパイル後でデータタイプが決めるタイプで「Reflect」と関係があります。</p> 
+  <p>「Reflect」は次の投稿で勉強しようかと思いますが、簡単に言うとプログラム自体をすべて「static」化して「Invoke」することなので、性能が既存のことより遅くなります。 すなわち、上のループの例みたいに抽象クラスを利用しなくて,メソッド名だけ合わせて使えば大量処理プログラムを作成する時にすごく遅くなります。「Reflect」の説明は後で詳しくしましょう。</p> 
+  <p><br></p> 
+  <p>改めて纏めると、筆者の場合は「dynamic」タイプはウェブ環境と性能に影響がない場合に使いますが、その以外は使わないほうがよいです。（プログラマ達のスタイルはすべて違うので筆者が言うのが正解ではなく、自分の考えです。)</p> 
+  <p>そして、「var」タイプの場合は勧めないです。確かに「var」タイプはソース作成量を縮めてソース生産性が高くなると思いますが、逆に可読性が落ちるので綺麗が実装ができると思わないです。</p> 
+  <p>でも、「dynamic」は可読性が落ちますが、代わりにソース生産性だけではなく、抽象しなくても抽象クラスを使いらしく作成ができますので、上の条件通りに性能の影響がない場合にはよく使う方です。</p>
+ </body>
+</html></div>
+				<hr />
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=C%23>#C#</a> </span>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
