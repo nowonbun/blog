@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / C#" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。前の投稿でファイルとディレクトリを扱う方法について勉強しました。今日はファイルを作成する方法について勉強します。パソコンの中でファイルの種類は様々なことがあります。その中でドキュメントタイプだけで考えてもエクセル、ワード、テキスト、csv等の様々な種類があります。でもドキュメントタイプか、イメージ、様々なデータでもファイルは基本的にバイナリデータでされています。バイナリデータということをプログラム的に考えると「byte」タイプにされていることの意味です。filestreamc#にはその「byte」型にされているファイルを書き込むあるいは読み込むクラスがあり、それをc#では「filestream」というクラスがバイナリを扱うことです。そうすると「filestream」についてmsdnから調べ、使用方法について勉強します。msdnリンク - filestream クラスfilestreamはmsdnをみると「ファイルについてストリーム(stream)を提供します」ということで書いています。そうすると、streamについて知らないので、まずfilestreamを勉強する前にstreamについて勉強します。「stream」というのはファイルだけではなく通信と様々なデータを扱う時にstream(ストリーム)を使います。我々がテキストを開いて文字を書いて格納するものまたは格納したファイルを開いて格納したデータを画面に確認するものだと思います。改めていうとデータを格納して格納したとおりに画面に見えることが当たり前だと思いますがパソコンの中では当たり前ではないですね。テキストに「あいうえお」と書くとファイルが小さいからそのままで格納することができると思いますが、ファイルサイズが「100mb」「1gb」だとそのくらいの空間がハードディスクにない可能性もあります。そして上の状況になるとデータを「20mb」「50mb」で分けてデータをハードディスクに格納します。でもユーザーが「file」を作成する時あるいは閲覧する時にファイルが分散されているものを探して合せることやファイルを作成する時にディスクをの空間を計算して分割するんだと思えばファイルシステムを実装することが結構難しくなると思われます。それで「stream」では格納する時に一連のデータを受け取ってディスクの状況に合わせてファイルを作成することやファイ]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [C# スタディ - 37] ファイルシステム(File System) - FileStream、 Encoding、 Serializable" />
+<link rel="canonical" href="https://www.nowonbun.com/38.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [C# スタディ - 37] ファイルシステム(File System) - FileStream、 Encoding、 Serializable" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。前の投稿でファイルとディレクトリを扱う方法について勉強しました。今日はファイルを作成する方法について勉強します。パソコンの中でファイルの種類は様々なことがあります。その中でドキュメントタイプだけで考えてもエクセル、ワード、テキスト、csv等の様々な種類があります。でもドキュメントタイプか、イメージ、様々なデータでもファイルは基本的にバイナリデータでされています。バイナリデータということをプログラム的に考えると「byte」タイプにされていることの意味です。filestreamc#にはその「byte」型にされているファイルを書き込むあるいは読み込むクラスがあり、それをc#では「filestream」というクラスがバイナリを扱うことです。そうすると「filestream」についてmsdnから調べ、使用方法について勉強します。msdnリンク - filestream クラスfilestreamはmsdnをみると「ファイルについてストリーム(stream)を提供します」ということで書いています。そうすると、streamについて知らないので、まずfilestreamを勉強する前にstreamについて勉強します。「stream」というのはファイルだけではなく通信と様々なデータを扱う時にstream(ストリーム)を使います。我々がテキストを開いて文字を書いて格納するものまたは格納したファイルを開いて格納したデータを画面に確認するものだと思います。改めていうとデータを格納して格納したとおりに画面に見えることが当たり前だと思いますがパソコンの中では当たり前ではないですね。テキストに「あいうえお」と書くとファイルが小さいからそのままで格納することができると思いますが、ファイルサイズが「100mb」「1gb」だとそのくらいの空間がハードディスクにない可能性もあります。そして上の状況になるとデータを「20mb」「50mb」で分けてデータをハードディスクに格納します。でもユーザーが「file」を作成する時あるいは閲覧する時にファイルが分散されているものを探して合せることやファイルを作成する時にディスクをの空間を計算して分割するんだと思えばファイルシステムを実装することが結構難しくなると思われます。それで「stream」では格納する時に一連のデータを受け取ってディスクの状況に合わせてファイルを作成することやファイ]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/38.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [C# スタディ - 37] ファイルシステム(File System) - FileStream、 Encoding、 Serializable" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。前の投稿でファイルとディレクトリを扱う方法について勉強しました。今日はファイルを作成する方法について勉強します。パソコンの中でファイルの種類は様々なことがあります。その中でドキュメントタイプだけで考えてもエクセル、ワード、テキスト、csv等の様々な種類があります。でもドキュメントタイプか、イメージ、様々なデータでもファイルは基本的にバイナリデータでされています。バイナリデータということをプログラム的に考えると「byte」タイプにされていることの意味です。filestreamc#にはその「byte」型にされているファイルを書き込むあるいは読み込むクラスがあり、それをc#では「filestream」というクラスがバイナリを扱うことです。そうすると「filestream」についてmsdnから調べ、使用方法について勉強します。msdnリンク - filestream クラスfilestreamはmsdnをみると「ファイルについてストリーム(stream)を提供します」ということで書いています。そうすると、streamについて知らないので、まずfilestreamを勉強する前にstreamについて勉強します。「stream」というのはファイルだけではなく通信と様々なデータを扱う時にstream(ストリーム)を使います。我々がテキストを開いて文字を書いて格納するものまたは格納したファイルを開いて格納したデータを画面に確認するものだと思います。改めていうとデータを格納して格納したとおりに画面に見えることが当たり前だと思いますがパソコンの中では当たり前ではないですね。テキストに「あいうえお」と書くとファイルが小さいからそのままで格納することができると思いますが、ファイルサイズが「100mb」「1gb」だとそのくらいの空間がハードディスクにない可能性もあります。そして上の状況になるとデータを「20mb」「50mb」で分けてデータをハードディスクに格納します。でもユーザーが「file」を作成する時あるいは閲覧する時にファイルが分散されているものを探して合せることやファイルを作成する時にディスクをの空間を計算して分割するんだと思えばファイルシステムを実装することが結構難しくなると思われます。それで「stream」では格納する時に一連のデータを受け取ってディスクの状況に合わせてファイルを作成することやファイ]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+
+<title>明月の開発ストーリ :: [C# スタディ - 37] ファイルシステム(File System) - FileStream、 Encoding、 Serializable</title>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" />
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
+</head>
+<body>
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[C# スタディ - 37] ファイルシステム(File System) - FileStream、 Encoding、 Serializable</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/22 23:45:05 &nbsp;&nbsp;修正日付 : 2019/07/22 23:46:07
+				</div>
+			</div>
+			<div class="article">
+				<div class="tt_article_useless_p_margin" id="article_contents"><html>
+ <head></head>
+ <body>
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>前の投稿でファイルとディレクトリを扱う方法について勉強しました。今日はファイルを作成する方法について勉強します。</p> 
+  <p><br></p> 
+  <p>パソコンの中でファイルの種類は様々なことがあります。その中でドキュメントタイプだけで考えてもエクセル、ワード、テキスト、CSV等の様々な種類があります。</p> 
+  <p>でもドキュメントタイプか、イメージ、様々なデータでもファイルは基本的にバイナリデータでされています。バイナリデータということをプログラム的に考えると「byte」タイプにされていることの意味です。</p> 
+  <p><br></p> 
+  <h2><b><span>FileStream</span></b></h2> 
+  <p>C#にはその「byte」型にされているファイルを書き込むあるいは読み込むクラスがあり、それをC#では「FileStream」というクラスがバイナリを扱うことです。そうすると「FileStream」についてMSDNから調べ、使用方法について勉強します。</p> 
+  <p><br></p> 
+  <p>MSDNリンク - <a href="//msdn.microsoft.com/ja-jp/library/system.io.filestream(v=vs.110).aspx" target="_blank">FileStream クラス</a></p> 
+  <p style="text-align:left;"><img src="./contents/38/152_001.jpg" data-filename="001.jpg" style="width: 848px;"></p> 
+  <p>FileStreamはMSDNをみると「ファイルについてストリーム(Stream)を提供します」ということで書いています。</p> 
+  <p>そうすると、Streamについて知らないので、まずFileStreamを勉強する前にStreamについて勉強します。「Stream」というのはファイルだけではなく通信と様々なデータを扱う時にStream(ストリーム)を使います。</p> 
+  <p>我々がテキストを開いて文字を書いて格納するものまたは格納したファイルを開いて格納したデータを画面に確認するものだと思います。改めていうとデータを格納して格納したとおりに画面に見えることが当たり前だと思いますがパソコンの中では当たり前ではないですね。</p> 
+  <p>テキストに「あいうえお」と書くとファイルが小さいからそのままで格納することができると思いますが、ファイルサイズが「100Mb」「1Gb」だとそのくらいの空間がハードディスクにない可能性もあります。</p> 
+  <p style="text-align:left;"><img src="./contents/38/143_002.jpg" data-filename="002.jpg" style="width: 600px;"></p> 
+  <p>そして上の状況になるとデータを「20Mb」「50Mb」で分けてデータをハードディスクに格納します。でもユーザーが「File」を作成する時あるいは閲覧する時にファイルが分散されているものを探して合せることやファイルを作成する時にディスクをの空間を計算して分割するんだと思えばファイルシステムを実装することが結構難しくなると思われます。</p> 
+  <p>それで「Stream」では格納する時に一連のデータを受け取ってディスクの状況に合わせてファイルを作成することやファイルが分散されているものを一連のデータに組み合わせて返却するデータを返却するデータ構造パターンです。</p> 
+  <p><br></p> 
+  <p>そうすると「FileStream」を利用して「byte」単位のデータをファイルに作成してみます。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace FileStreamEx
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      FileInfo info = new FileInfo("c:\\work\\file.txt");
+      //FileInfoから書き込むストリームを取得する。
+      FileStream stream = info.OpenWrite();
+      //Asciiコード : a
+      stream.WriteByte(97);
+      //Asciiコード : b
+      stream.WriteByte(98);
+      //Asciiコード : c
+      stream.WriteByte(99);
+      //ストリームは終了するとCloseでコネクションを閉めなければならない。
+      stream.Close();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/38/149_003.png" data-filename="003.png" style="width: 600px;"></p> 
+  <p>上の例を見るとbyte変数にASCIIコードと合わせるデータを入れてファイルに出力しました。ただ、StringとInt系を入れなくてbyte型に入れることにはパソコンはデータを文字ままで認識することではなく２陣データの形式で認識するので、Byteタイプに変換する必要があります。byte形式の中でもUnicode、Shift-JIS等があり、例はACSIIコードを利用してファイルを作成しました。</p> 
+  <p style="text-align:left;"><img src="./contents/38/145_004.gif" data-filename="004.gif" style="width: 695px;"></p> 
+  <p>そうすればファイルを作成するたびにデータをByte形式に変換しなければならないと思いますが、C#にはデータをbyte形式に変換するクラスを提供しています。</p> 
+  <p><br></p> 
+  <h2><b><span>Encoding</span></b></h2> 
+  <p>Encodingクラスはデータをbyte形式に変換するクラスです。そしてEncodingクラスはバイナリコードのタイプのASCII、ユニコード、shift-jisを選択して変換することもできます。</p> 
+  <p><br></p> 
+  <p>MSDNリンク - <a href="//msdn.microsoft.com/ja-jp/library/system.text.encoding(v=vs.110).aspx" target="_blank">Encoding クラス</a></p> 
+  <p style="text-align:left;"><img src="./contents/38/146_005.jpg" data-filename="005.jpg" style="width: 848px;"></p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace EncodingEx
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      //FileInfo取得
+      FileInfo info = new FileInfo("c:\\work\\file2.txt");
+      //ストリーム取得
+      FileStream stream = info.OpenWrite();
+
+      //格納データの文字列
+      String data = "Hello world";
+      //文字列をbyte配列に変換する。
+      byte[] dataBuffer = Encoding.UTF8.GetBytes(data);
+      //格納
+      stream.Write(dataBuffer, 0, dataBuffer.Length);
+      //コネクション閉める。
+      stream.Close();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/38/151_006.png" data-filename="006.png" style="width: 600px;"></p> 
+  <p>上の例を見ると確かに「String」型のデータをユニコードのbyte形式に変換してファイルを作成しています。作成したファイルをメモ帳で開くと「String」式で格納したデータがメモ帳で表示されることを確認できます。</p> 
+  <p><br></p> 
+  <h2><b><span>Serializable(直列化)</span></b></h2> 
+  <p>今回はデータ単位の変換ではなく、クラス単位のデータを「byte」型に変換することです。「C#」はクラスを「byte」に変換するためには「Serialize(直列化)」が必要です。</p> 
+  <p>「C#」のdata形式は静的な構造体ではなくクラスタイプなのでデータの順番が無くポイント形式でされています。でも「File」のバイナリの構造に変換するには「Stream」のデータ順番が必要だし構造的なデータ形式にされなければならないと思います。</p> 
+  <p>そんなことでクラス形式のデータを「Stream」式のデータ構造に変換することをSerializable(直列化)だといいます。</p> 
+  <p><br></p> 
+  <p>MSDNリンク - <a href="//msdn.microsoft.com/ja-jp/library/system.serializableattribute(v=vs.110).aspx" target="_blank">SerializableAttribute クラス</a></p> 
+  <p style="text-align:left;"><img src="./contents/38/150_007.jpg" data-filename="007.jpg" style="width: 848px;"></p> 
+  <p>MSDNリンク - <a href="//msdn.microsoft.com/ja-jp/library/system.runtime.serialization.formatters.binary.binaryformatter(v=vs.110).aspx" target="_blank">BinaryFormatter クラス</a></p> 
+  <p style="text-align:left;"><img src="./contents/38/148_008.jpg" data-filename="008.jpg" style="width: 848px;"></p> 
+  <p>筆者は「serializable」と「BinaryFormatter」のことを紹介していますが、「C#」にはクラスを宣言することにクラスが「serializable」が可能かどうかを宣言して実際に「Stream」のデータ構造に変換する時には「BinaryFormatter」のクラスを利用してクラスデータをStream形式に変換しています。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+
+namespace EncodingEx
+{
+  [Serializable]
+  class DataNode
+  {
+    public int Value
+    {
+      get; set;
+    }
+    public String Data
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      IList&lt;DataNode&gt; list = new List&lt;DataNode&gt;();
+
+      //DataNodeクラスの形式でデータ10個を作成
+      for (int i = 0; i &lt; 10; i++)
+      {
+        DataNode node = new DataNode() { Value = i, Data = String.Format("Data{0}", i) };
+        list.Add(node);
+      }
+      BinaryFormatter formatter = new BinaryFormatter();
+
+      //FileInfo取得
+      FileInfo info = new FileInfo("c:\\work\\file2.txt");
+
+      FileStream stream = info.OpenWrite();
+      //直列化してファイルストリームを利用して格納する。
+      formatter.Serialize(stream, list);
+      stream.Close();
+      
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/38/147_009.png" data-filename="009.png" style="width: 600px;"></p> 
+  <p>上の例をみると「DataNode」クラスを１０個割り当てリストに格納しています。そしてリスト自体を「BinaryFormatter」クラスを利用して「Stream」形式に変換し、ファイルに出力する例になります。出力したファイルをメモ帳に開くと人間が認識できない形でデータが作成されたことを確認できます。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+
+namespace EncodingEx
+{
+  [Serializable]
+  class DataNode
+  {
+    public int Value
+    {
+      get; set;
+    }
+    public String Data
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      BinaryFormatter formatter = new BinaryFormatter();
+
+      //FileInfo取得
+      FileInfo info = new FileInfo("c:\\work\\file2.txt");
+
+      FileStream stream = info.OpenRead();
+      //直列化されているファイルをストリームを通って取得する。
+      IList&lt;DataNode&gt; list = (IList&lt;DataNode&gt;)formatter.Deserialize(stream);
+      stream.Close();
+
+      foreach (DataNode node in list)
+      {
+        Console.WriteLine(String.Format("Value : {0} , Data : {1}", node.Value, node.Data));
+      }
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/38/144_010.jpg" data-filename="010.jpg" style="width: 600px;"></p> 
+  <p>今回は「serializable」して格納されたファイルを「BinaryFormatter」を利用して読み込んでクラスに割り当てしました。メモ帳には人間が認識できなかったデータでしだが、C#には「DataNode 」クラスデータが１０個あるリストのデータで認識して読み込まれました。</p> 
+  <p><br></p> 
+  <p>今までファイルを作成することや読み込む方法について勉強しました。プロジェクトでプログラムを作る時にファイルの関連モジュールはたくさんあると思われます。なのでファイルシステムは重要な部分だと思いますね。少なくても プログラムのLogを作成する部分でファイルの入出力(IO)を使うと思います。そのことでプログラムを作成することではファイルの入出力は基本だと思うので、機能にとしてよく認知して勉強するほうが良いと思います。</p>
+ </body>
+</html></div>
+				<hr />
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=C%23>#C#</a> </span>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>

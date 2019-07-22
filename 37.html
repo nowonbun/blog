@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / C#" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。今日から「c#」の文法ではなく「c#.netframework」でよく使うクラス、システムについて勉強します。c#でプロジェクトを構築して実装する時によく使うクラスとネームスペースがあります。 それはファイルを扱うもののファイルシステム、通信する時に使うソケットシステム、データを構造的に構成するxmlシステム,jsonシステム等で「c#.netframework」から様々なモジュールシステムを提供しています。その中で今日からはファイルを扱うクラスについて勉強します。ファイルシステムは基本的にファイルとディレクトリを扱うクラ組です。体表的にファイルを扱うクラスは「fileinfo」とディレクトリを扱うクラスは「directoryinfo」があります。fileinfo下記のアドレスリンクは「fileinfo」のクラスの説明です。接続して確認をしてください。msdnリンク - fileinfo クラスfileinfoのクラスはファイルを扱うクラスです。ファイルのコピー、削除、移動、プロパティ情報を閲覧する場合に「fileinfo」クラスを利用して実装します。上の例を見ると「test.txt」を読み込んで生成日付を出力しています。そしてファイルをコピーしてまた生成日付を取得して最終には削除する流れで実装されています。結果を見ると「test2.txt」のファイルは生成してすぐ削除する流れなので、「work」のディレクトリの中には「test.txt」ファイルが見えないですね。directoryinfo下記のアドレスリンクは「directoryinfo」のクラスの説明です。接続して確認をしてください。msdnリンク - directoryinfo クラスdirectoryinfoのクラスはディレクトリを扱うクラスです。ディレクトリのコピー、削除、移動、プロパティ情報を閲覧する場合に「directoryinfo」クラスを利用して実装されています。上の例は「work」ディレクトリの生成日付を取得して出力していますね。後で「work」のディレクトリの中でファイルを取得して「fileinfo」のクラスに返却していますね。そして下記ディレクトリの「create1」、「create2」を生成して「create2」のディレクトリは削除します。結果としては「create2」ディレクトリを削除したので「create]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [C# スタディ - 36] ファイルシステム(File System) - FileInfo,DirectoryInfo" />
+<link rel="canonical" href="https://www.nowonbun.com/37.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [C# スタディ - 36] ファイルシステム(File System) - FileInfo,DirectoryInfo" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。今日から「c#」の文法ではなく「c#.netframework」でよく使うクラス、システムについて勉強します。c#でプロジェクトを構築して実装する時によく使うクラスとネームスペースがあります。 それはファイルを扱うもののファイルシステム、通信する時に使うソケットシステム、データを構造的に構成するxmlシステム,jsonシステム等で「c#.netframework」から様々なモジュールシステムを提供しています。その中で今日からはファイルを扱うクラスについて勉強します。ファイルシステムは基本的にファイルとディレクトリを扱うクラ組です。体表的にファイルを扱うクラスは「fileinfo」とディレクトリを扱うクラスは「directoryinfo」があります。fileinfo下記のアドレスリンクは「fileinfo」のクラスの説明です。接続して確認をしてください。msdnリンク - fileinfo クラスfileinfoのクラスはファイルを扱うクラスです。ファイルのコピー、削除、移動、プロパティ情報を閲覧する場合に「fileinfo」クラスを利用して実装します。上の例を見ると「test.txt」を読み込んで生成日付を出力しています。そしてファイルをコピーしてまた生成日付を取得して最終には削除する流れで実装されています。結果を見ると「test2.txt」のファイルは生成してすぐ削除する流れなので、「work」のディレクトリの中には「test.txt」ファイルが見えないですね。directoryinfo下記のアドレスリンクは「directoryinfo」のクラスの説明です。接続して確認をしてください。msdnリンク - directoryinfo クラスdirectoryinfoのクラスはディレクトリを扱うクラスです。ディレクトリのコピー、削除、移動、プロパティ情報を閲覧する場合に「directoryinfo」クラスを利用して実装されています。上の例は「work」ディレクトリの生成日付を取得して出力していますね。後で「work」のディレクトリの中でファイルを取得して「fileinfo」のクラスに返却していますね。そして下記ディレクトリの「create1」、「create2」を生成して「create2」のディレクトリは削除します。結果としては「create2」ディレクトリを削除したので「create]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/37.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [C# スタディ - 36] ファイルシステム(File System) - FileInfo,DirectoryInfo" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今日から「c#」の文法ではなく「c#.netframework」でよく使うクラス、システムについて勉強します。c#でプロジェクトを構築して実装する時によく使うクラスとネームスペースがあります。 それはファイルを扱うもののファイルシステム、通信する時に使うソケットシステム、データを構造的に構成するxmlシステム,jsonシステム等で「c#.netframework」から様々なモジュールシステムを提供しています。その中で今日からはファイルを扱うクラスについて勉強します。ファイルシステムは基本的にファイルとディレクトリを扱うクラ組です。体表的にファイルを扱うクラスは「fileinfo」とディレクトリを扱うクラスは「directoryinfo」があります。fileinfo下記のアドレスリンクは「fileinfo」のクラスの説明です。接続して確認をしてください。msdnリンク - fileinfo クラスfileinfoのクラスはファイルを扱うクラスです。ファイルのコピー、削除、移動、プロパティ情報を閲覧する場合に「fileinfo」クラスを利用して実装します。上の例を見ると「test.txt」を読み込んで生成日付を出力しています。そしてファイルをコピーしてまた生成日付を取得して最終には削除する流れで実装されています。結果を見ると「test2.txt」のファイルは生成してすぐ削除する流れなので、「work」のディレクトリの中には「test.txt」ファイルが見えないですね。directoryinfo下記のアドレスリンクは「directoryinfo」のクラスの説明です。接続して確認をしてください。msdnリンク - directoryinfo クラスdirectoryinfoのクラスはディレクトリを扱うクラスです。ディレクトリのコピー、削除、移動、プロパティ情報を閲覧する場合に「directoryinfo」クラスを利用して実装されています。上の例は「work」ディレクトリの生成日付を取得して出力していますね。後で「work」のディレクトリの中でファイルを取得して「fileinfo」のクラスに返却していますね。そして下記ディレクトリの「create1」、「create2」を生成して「create2」のディレクトリは削除します。結果としては「create2」ディレクトリを削除したので「create]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+
+<title>明月の開発ストーリ :: [C# スタディ - 36] ファイルシステム(File System) - FileInfo,DirectoryInfo</title>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" />
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
+</head>
+<body>
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[C# スタディ - 36] ファイルシステム(File System) - FileInfo,DirectoryInfo</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/22 23:30:17 &nbsp;&nbsp;修正日付 : 2019/07/22 23:31:20
+				</div>
+			</div>
+			<div class="article">
+				<div class="tt_article_useless_p_margin" id="article_contents"><html>
+ <head></head>
+ <body>
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>今日から「C#」の文法ではなく「C#.NetFramework」でよく使うクラス、システムについて勉強します。</p> 
+  <p><br></p> 
+  <p>C#でプロジェクトを構築して実装する時によく使うクラスとネームスペースがあります。 それはファイルを扱うもののファイルシステム、通信する時に使うソケットシステム、データを構造的に構成するXMLシステム,Jsonシステム等で「C#.NetFramework」から様々なモジュールシステムを提供しています。</p> 
+  <p>その中で今日からはファイルを扱うクラスについて勉強します。</p> 
+  <p><br></p> 
+  <p>ファイルシステムは基本的にファイルとディレクトリを扱うクラ組です。体表的にファイルを扱うクラスは「FileInfo」とディレクトリを扱うクラスは「DirectoryInfo」があります。</p> 
+  <p><br></p> 
+  <h2><b><span>FileInfo</span></b></h2> 
+  <p>下記のアドレスリンクは「FileInfo」のクラスの説明です。接続して確認をしてください。</p> 
+  <br> 
+  <p>MSDNリンク - <a href="//msdn.microsoft.com/ja-jp/library/system.io.fileinfo(v=vs.110).aspx" target="_blank">FileInfo クラス</a></p> 
+  <p style="text-align:left;"><img src="./contents/37/141_001.jpg" data-filename="001.jpg" style="width: 848px;"></p> 
+  <p>FileInfoのクラスはファイルを扱うクラスです。ファイルのコピー、削除、移動、プロパティ情報を閲覧する場合に「FileInfo」クラスを利用して実装します。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace FileSystem
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      //ファイル情報取得
+      FileInfo info = new FileInfo("C:\\work\\test.txt");
+      //ファイル生成時間
+      Console.WriteLine(info.CreationTime.ToString());
+      //ファイルコピー
+      FileInfo info2 = info.CopyTo("C:\\work\\test2.txt", true);
+      //ファイル生成可否
+      if (info2.Exists)
+      {
+        Console.WriteLine("File 生成");
+      }
+      Console.WriteLine(info2.CreationTime.ToString());
+      //ファイル削除
+      info2.Delete();
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p>上の例を見ると「test.txt」を読み込んで生成日付を出力しています。そしてファイルをコピーしてまた生成日付を取得して最終には削除する流れで実装されています。</p> 
+  <p style="text-align:left;"><img src="./contents/37/139_002.png" data-filename="002.png" style="width: 739px;"></p> 
+  <p style="text-align:left;"><img src="./contents/37/137_003.png" data-filename="003.png" style="width: 600px;"></p> 
+  <p>結果を見ると「test2.txt」のファイルは生成してすぐ削除する流れなので、「work」のディレクトリの中には「test.txt」ファイルが見えないですね。</p> 
+  <p><br></p> 
+  <h2><b><span>DirectoryInfo</span></b></h2> 
+  <p>下記のアドレスリンクは「DirectoryInfo」のクラスの説明です。接続して確認をしてください。</p> 
+  <p><br></p> 
+  <p>MSDNリンク - <a href="//msdn.microsoft.com/ja-jp/library/system.io.directoryinfo(v=vs.110).aspx" target="_blank">DirectoryInfo クラス</a></p> 
+  <p style="text-align:left;"><img src="./contents/37/142_004.jpg" data-filename="004.jpg" style="width: 848px;"></p> 
+  <p>DirectoryInfoのクラスはディレクトリを扱うクラスです。ディレクトリのコピー、削除、移動、プロパティ情報を閲覧する場合に「DirectoryInfo」クラスを利用して実装されています。</p> 
+  <pre><code class="cs" data-type="">using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+
+namespace FileSystem
+{
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      //ディレクトリ情報取得
+      DirectoryInfo info = new DirectoryInfo("c:\\work");
+      Console.WriteLine(info.CreationTime.ToString());
+
+      //ディレクトリ中のファイルを情報を取得
+      FileInfo[] files = info.GetFiles();
+      foreach(FileInfo file in files)
+      {
+        Console.WriteLine(file.Name);
+      }
+      //ディレクトリ生成
+      info = new DirectoryInfo("c:\\work\\create1");
+      info.Create();
+      //ディレクトリ情報取得
+      Console.WriteLine(info.CreationTime.ToString());
+      //ディレクトリ生成
+      info = new DirectoryInfo("c:\\work\\create2");
+      info.Create();
+      //ディレクトリ情報取得
+      Console.WriteLine(info.CreationTime.ToString());
+      //ディレクトリ削除
+      info.Delete();
+
+      Console.WriteLine("Press Any Key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p>上の例は「work」ディレクトリの生成日付を取得して出力していますね。後で「work」のディレクトリの中でファイルを取得して「FileInfo」のクラスに返却していますね。</p> 
+  <p>そして下記ディレクトリの「create1」、「create2」を生成して「create2」のディレクトリは削除します。</p> 
+  <p style="text-align:left;"><img src="./contents/37/138_006.png" data-filename="006.png" style="width: 739px;"></p> 
+  <p style="text-align:left;"><img src="./contents/37/140_007.png" data-filename="007.png" style="width: 600px;"></p> 
+  <p>結果としては「create2」ディレクトリを削除したので「create」ディレクトリだけあります。</p> 
+  <p><br></p> 
+  <p>今回の投稿には「FileInfo」、「DirectoryInfo」を通ってファイルとディレクトリを扱う方法について勉強しました。その以外に「File」、「Directory」クラスでもFileInfoとDiretoryInfoクラスみたいに実装が可能ですが、C#には「FileInfo」、「DirectoryInfo」を利用して実装するのをMSDNから推奨しているので「FileInfo」と「DiretoryInfo」で実装することを確実に認知しておくほうが良いと思います。</p>
+ </body>
+</html></div>
+				<hr />
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=C%23>#C#</a> </span>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
