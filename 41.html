@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。今日まで「c#」について勉強しましたが、今日から「java」についても勉強しようかと思います。「c#」と「java」の場合は互いに似ている言語だし、文法も似ているので、事前に一緒に「c#」を勉強した方は「java」も簡単に習得できる言語ではないかと思いになります。とりあえず、「java」について調べてみます。javaについて「java」は1991年代にジェームズ・ゴスリンとその人のチームによって開発されて1995年に発表しました。初めは家電製品等のため開発されましたが、現在はウェブアプリケーションで一番人気があるプログラム言語になりました。現在、「java」はサン・マイクロシステムズによって無料で提供しているし、「java」のバージョンは12.0まで発表しました。「java」の場合は「c#」を比べて値段が安いですが、安いって言うのは「c#」がお金がかかることではなく、javaの環境を作るように立ち上がるシステムが無料オープンソースが多いですね。例えば、サーバの場合はcentosがあるしideツールでも「eclipse」、「netbeans」があるます。そしてウェブサーバ、アプリサーバの「apache」、「tomcat」、「glassfish」、「jboss」がすべて無料なので、システムを立ち上げる時、比較的に安く構築ができますね。そうすろとこれからjavaを開発するようにjavaのインストールとeclipseをインストールします。最近のwindows環境だと基本的にjavaがインストールされていますが、最新バージョンをダウンロードします。(参考：javaのバージョンはoracleバージョンとopenjavaバージョンがありますが、oracleの場合は最近著作権の問題で一応無料ですが、念のためopenjavaでインストールします。)javaインストール링크 - https://jdk.java.net/12/上のリンクを接続してopenjdk12をダウンロードします。ホームページ見るともう32ビットとプログラムを存在もしないですね。32ビットを利用したいなら、仕方がなくてoracle jskを使うしかないですね。ダウンロードが完了すれば適当なところで圧縮を解凍します。私の場合はd:\javaに解凍しました。javaをインストールしましたら、これからはpathを設定します。そしてシステム]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java スタディ - 1] Javaとは？、Javaインストール、Eclipseインストール" />
+<link rel="canonical" href="https://www.nowonbun.com/41.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java スタディ - 1] Javaとは？、Javaインストール、Eclipseインストール" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。今日まで「c#」について勉強しましたが、今日から「java」についても勉強しようかと思います。「c#」と「java」の場合は互いに似ている言語だし、文法も似ているので、事前に一緒に「c#」を勉強した方は「java」も簡単に習得できる言語ではないかと思いになります。とりあえず、「java」について調べてみます。javaについて「java」は1991年代にジェームズ・ゴスリンとその人のチームによって開発されて1995年に発表しました。初めは家電製品等のため開発されましたが、現在はウェブアプリケーションで一番人気があるプログラム言語になりました。現在、「java」はサン・マイクロシステムズによって無料で提供しているし、「java」のバージョンは12.0まで発表しました。「java」の場合は「c#」を比べて値段が安いですが、安いって言うのは「c#」がお金がかかることではなく、javaの環境を作るように立ち上がるシステムが無料オープンソースが多いですね。例えば、サーバの場合はcentosがあるしideツールでも「eclipse」、「netbeans」があるます。そしてウェブサーバ、アプリサーバの「apache」、「tomcat」、「glassfish」、「jboss」がすべて無料なので、システムを立ち上げる時、比較的に安く構築ができますね。そうすろとこれからjavaを開発するようにjavaのインストールとeclipseをインストールします。最近のwindows環境だと基本的にjavaがインストールされていますが、最新バージョンをダウンロードします。(参考：javaのバージョンはoracleバージョンとopenjavaバージョンがありますが、oracleの場合は最近著作権の問題で一応無料ですが、念のためopenjavaでインストールします。)javaインストール링크 - https://jdk.java.net/12/上のリンクを接続してopenjdk12をダウンロードします。ホームページ見るともう32ビットとプログラムを存在もしないですね。32ビットを利用したいなら、仕方がなくてoracle jskを使うしかないですね。ダウンロードが完了すれば適当なところで圧縮を解凍します。私の場合はd:\javaに解凍しました。javaをインストールしましたら、これからはpathを設定します。そしてシステム]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/41.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 1] Javaとは？、Javaインストール、Eclipseインストール" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今日まで「c#」について勉強しましたが、今日から「java」についても勉強しようかと思います。「c#」と「java」の場合は互いに似ている言語だし、文法も似ているので、事前に一緒に「c#」を勉強した方は「java」も簡単に習得できる言語ではないかと思いになります。とりあえず、「java」について調べてみます。javaについて「java」は1991年代にジェームズ・ゴスリンとその人のチームによって開発されて1995年に発表しました。初めは家電製品等のため開発されましたが、現在はウェブアプリケーションで一番人気があるプログラム言語になりました。現在、「java」はサン・マイクロシステムズによって無料で提供しているし、「java」のバージョンは12.0まで発表しました。「java」の場合は「c#」を比べて値段が安いですが、安いって言うのは「c#」がお金がかかることではなく、javaの環境を作るように立ち上がるシステムが無料オープンソースが多いですね。例えば、サーバの場合はcentosがあるしideツールでも「eclipse」、「netbeans」があるます。そしてウェブサーバ、アプリサーバの「apache」、「tomcat」、「glassfish」、「jboss」がすべて無料なので、システムを立ち上げる時、比較的に安く構築ができますね。そうすろとこれからjavaを開発するようにjavaのインストールとeclipseをインストールします。最近のwindows環境だと基本的にjavaがインストールされていますが、最新バージョンをダウンロードします。(参考：javaのバージョンはoracleバージョンとopenjavaバージョンがありますが、oracleの場合は最近著作権の問題で一応無料ですが、念のためopenjavaでインストールします。)javaインストール링크 - https://jdk.java.net/12/上のリンクを接続してopenjdk12をダウンロードします。ホームページ見るともう32ビットとプログラムを存在もしないですね。32ビットを利用したいなら、仕方がなくてoracle jskを使うしかないですね。ダウンロードが完了すれば適当なところで圧縮を解凍します。私の場合はd:\javaに解凍しました。javaをインストールしましたら、これからはpathを設定します。そしてシステム]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+
+<title>明月の開発ストーリ :: [Java スタディ - 1] Javaとは？、Javaインストール、Eclipseインストール</title>
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" />
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
+</head>
+<body>
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[Java スタディ - 1] Javaとは？、Javaインストール、Eclipseインストール</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0203">Study / Java</a> &nbsp;&nbsp; 作成日付 : 2019/07/24 23:03:21 &nbsp;&nbsp;修正日付 : 2019/07/24 23:10:12
+				</div>
+			</div>
+			<div class="article">
+				<div class="tt_article_useless_p_margin" id="article_contents"><html>
+ <head></head>
+ <body>
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>今日まで「C#」について勉強しましたが、今日から「Java」についても勉強しようかと思います。</p> 
+  <p><br></p> 
+  <p>「C#」と「Java」の場合は互いに似ている言語だし、文法も似ているので、事前に一緒に「C#」を勉強した方は「Java」も簡単に習得できる言語ではないかと思いになります。</p> 
+  <p>とりあえず、「Java」について調べてみます。</p> 
+  <p><br></p> 
+  <h2><b><span>Javaについて</span></b></h2> 
+  <p>「Java」は1991年代にジェームズ・ゴスリンとその人のチームによって開発されて1995年に発表しました。初めは家電製品等のため開発されましたが、現在はウェブアプリケーションで一番人気があるプログラム言語になりました。</p> 
+  <p>現在、「Java」はサン・マイクロシステムズによって無料で提供しているし、「Java」のバージョンは12.0まで発表しました。</p> 
+  <p><br></p> 
+  <p>「Java」の場合は「C#」を比べて値段が安いですが、安いって言うのは「C#」がお金がかかることではなく、Javaの環境を作るように立ち上がるシステムが無料オープンソースが多いですね。</p> 
+  <p>例えば、サーバの場合はCentOSがあるしIDEツールでも「Eclipse」、「NetBeans」があるます。そしてウェブサーバ、アプリサーバの「Apache」、「Tomcat」、「GlassFish」、「JBoss」がすべて無料なので、システムを立ち上げる時、比較的に安く構築ができますね。</p> 
+  <p>そうすろとこれからJavaを開発するようにJavaのインストールとEclipseをインストールします。</p> 
+  <p><br></p> 
+  <p>最近のWindows環境だと基本的にJavaがインストールされていますが、最新バージョンをダウンロードします。</p> 
+  <p>(参考：JavaのバージョンはOracleバージョンとOpenJavaバージョンがありますが、Oracleの場合は最近著作権の問題で一応無料ですが、念のためOpenJavaでインストールします。)</p> 
+  <p><br></p> 
+  <h2><b><span>Javaインストール</span></b></h2> 
+  <p>링크 - <a href="https://jdk.java.net/12/">https://jdk.java.net/12/</a></p> 
+  <p><br></p> 
+  <p style="text-align:left;"><img src="./contents/41/172_001.png" data-filename="001.png" style="width: 848px;"></p> 
+  <p>上のリンクを接続してopenJDK12をダウンロードします。ホームページ見るともう32ビットとプログラムを存在もしないですね。32ビットを利用したいなら、仕方がなくてoracle JSKを使うしかないですね。</p> 
+  <p>ダウンロードが完了すれば適当なところで圧縮を解凍します。私の場合はd:\javaに解凍しました。</p> 
+  <p><br></p> 
+  <p>Javaをインストールしましたら、これからはPathを設定します。</p> 
+  <p style="text-align:left;"><img src="./contents/41/164_002.png" data-filename="002.png" style="width: 332px;"></p> 
+  <p style="text-align:left;"><img src="./contents/41/163_003.png" data-filename="003.png" style="width: 232px;"></p> 
+  <p style="text-align:left;"><img src="./contents/41/167_004.png" data-filename="004.png" style="width: 479px;"></p> 
+  <p>そしてシステム環境設定の「JAVA_HOME」をd:\javaに設定します。もし、JAVA_HOMEの変数がなければ生成します。</p> 
+  <p style="text-align:left;"><img src="./contents/41/170_005.png" data-filename="005.png" style="width: 663px;"></p> 
+  <p style="text-align:left;"><img src="./contents/41/177_006.png" data-filename="006.png" style="width: 625px;"></p> 
+  <p>これから「Windowキー」 +「R」を打ってCMDのウィンドウを開きます。そしてコマンドで「java -version」を打ってバージョンが表示されるとJavaが正しくインストールされたかを確認できます。</p> 
+  <p style="text-align:left;"><img src="./contents/41/165_008.png" data-filename="008.png" style="width: 634px;"></p> 
+  <p><br></p> 
+  <h2><b><span>Eclipseインストール</span></b></h2> 
+  <p>これからJavaの開発ツール(IED)のEclipseをインストールします。実は開発ツールはEclipseではなく色々がありますね。でも私の場合はEclipseしか使えないし、他のツール、例えばNetBeansはすごく不便でした。多分、私の使い方を知らないからそうだと思いましたが、自分の個人的な感情はEclipseが一番いいではないかと思います。</p> 
+  <p>링크 - <a href="https://www.eclipse.org/downloads/packages/" target="_blank">https://www.eclipse.org/downloads/packages/</a></p> 
+  <p><br></p> 
+  <p>実はグーグルでただ検索してダウンロードしても構いないですが、ただStandardバージョンを使うと後でウェブサービスを開発する時に一々パッケージをインストールしなければならないので、すごく面倒になります。なので、基本的なパッケージがインストールされているEnterprise versionをインストールする方が楽ですね。</p> 
+  <p style="text-align:left;"><img src="./contents/41/174_009.png" data-filename="009.png" style="width: 848px;"></p> 
+  <p style="text-align:left;"><img src="./contents/41/178_010.png" data-filename="010.png" style="width: 848px;"></p> 
+  <p>ダウンロードが終われば、適当なところで圧縮を解凍します。私の場合はd:\eclipseに圧縮を解凍しました。</p> 
+  <p><br></p> 
+  <p>そしてEclipseを実行すればソースを格納するディレクトリを選択するポップアップでます。</p> 
+  <p style="text-align:left;"><img src="./contents/41/166_011.png" data-filename="011.png" style="width: 615px;"></p> 
+  <p>これも適当なところで指定するとよいです。私の場合はd:\workspaceに作成しました。</p> 
+  <p><br></p> 
+  <p>すべてのインストールは完了しました。これからプロジェクトを生成してHello worldを出力します。</p> 
+  <p style="text-align:left;"><img src="./contents/41/173_012.png" data-filename="012.png" style="width: 635px;"></p> 
+  <p style="text-align:left;"><img src="./contents/41/171_013.png" data-filename="013.png" style="width: 736px;"></p> 
+  <p>プロジェクトを生成しました。その後でクラスの中でmain関数を生成します。</p> 
+  <p style="text-align:left;"><img src="./contents/41/179_014.png" data-filename="014.png" style="width: 723px;"></p> 
+  <p style="text-align:left;"><img src="./contents/41/175_015.png" data-filename="015.png" style="width: 528px;"></p> 
+  <pre><code class="java" data-type="">public class Test {
+  public static void main(String... args) {
+    System.out.println("Hello world");
+  }
+}
+</code></pre> 
+  <p>ソースを作成しましたら、デバックをします。</p> 
+  <p style="text-align:left;"><img src="./contents/41/168_016.png" data-filename="016.png" style="width: 453px;"></p>
+  <p> </p>
+  <p style="text-align:left;"><img src="./contents/41/176_017.png" data-filename="017.png" style="width: 844px;"></p> 
+  <p style="text-align:left;"><img src="./contents/41/169_018.png" data-filename="018.png" style="width: 569px;"></p> 
+  <p>Hello worldの結果がでました。</p>
+ </body>
+</html></div>
+				<hr />
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=Java%23>#Java#</a> </span>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
