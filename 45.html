@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<link async rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" />
+<style type="text/css">
+body{
+	font-family: 'Noto Sans JP', sans-serif;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。制御文とはプログラムの処理順番を制御するか繰り返して処理する文法と言います。単純に制御文はこれだって言うのは難しいですね。基本的にプログラムは人間と同じく上から下向き、左から右向きに読み込んで処理します。それなら単純に演算子だけ使って「int」型のデータを１から１００まで加算すると思えば、１から１００まで「+」記号で加算して解決します。(アルゴリズム的には考えなく、単純に考えて)これをプログラム的に表現すると下記通りになりますね。単純な数計算がこの頃ならもっと複雑な計算がどんなふうになるか恐ろしいですね。その時に使う文法が制御です。制御文法はjavaだけではなく、c言語、c++、c#などもすべて同じ文法で動きます。リンク - [c# スタディ - 9] 制御文 - 分岐 (if, switch〜case, goto)リンク - [c# スタディ - 10] 制御文 - ループ(for, while, do〜while, foreach)リンク - [c# スタディ - 11] 制御文 - ループ分岐(break, continue)ここでは制御文の中で分岐文に関して説明します。if ~ else if ~ else 文- if ~ else if ~ else文は条件の値によって(「true」、「false」)処理する制御文です。初めの例はif条件で「check」の値が「true」なので、「number 1 true」がコンソールに出力しました。２つ目の例はif条件で「check」の値が「false」なので、else式に入って「number 2 false」をコンソールに出力しました。３つ目の例はif条件でcheck2の値は「3」ですが「check2 == 1」を計算すれば「false」の結果がでます。なので、次の条件に行きます。次の条件は「check2 == 3」は「true」ですから、コンソールに「number3 true 2」がコンソールに出力します。switch ~ case 文- switch ~ case文は数式によってデータが一致するとこを処理する多重選択文です。上の条件式を見ると「switch」の条件は「4」のデータが設定されています。そして条件の値と「case」の値が一致する条件の文章式を実行されます。もし、一致するデータがなければ、「default」のデータが実行]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java スタディ - 5] 制御文 - 分岐 (if, switch〜case)" />
+<link rel="canonical" href="https://www.nowonbun.com/45.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java スタディ - 5] 制御文 - 分岐 (if, switch〜case)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。制御文とはプログラムの処理順番を制御するか繰り返して処理する文法と言います。単純に制御文はこれだって言うのは難しいですね。基本的にプログラムは人間と同じく上から下向き、左から右向きに読み込んで処理します。それなら単純に演算子だけ使って「int」型のデータを１から１００まで加算すると思えば、１から１００まで「+」記号で加算して解決します。(アルゴリズム的には考えなく、単純に考えて)これをプログラム的に表現すると下記通りになりますね。単純な数計算がこの頃ならもっと複雑な計算がどんなふうになるか恐ろしいですね。その時に使う文法が制御です。制御文法はjavaだけではなく、c言語、c++、c#などもすべて同じ文法で動きます。リンク - [c# スタディ - 9] 制御文 - 分岐 (if, switch〜case, goto)リンク - [c# スタディ - 10] 制御文 - ループ(for, while, do〜while, foreach)リンク - [c# スタディ - 11] 制御文 - ループ分岐(break, continue)ここでは制御文の中で分岐文に関して説明します。if ~ else if ~ else 文- if ~ else if ~ else文は条件の値によって(「true」、「false」)処理する制御文です。初めの例はif条件で「check」の値が「true」なので、「number 1 true」がコンソールに出力しました。２つ目の例はif条件で「check」の値が「false」なので、else式に入って「number 2 false」をコンソールに出力しました。３つ目の例はif条件でcheck2の値は「3」ですが「check2 == 1」を計算すれば「false」の結果がでます。なので、次の条件に行きます。次の条件は「check2 == 3」は「true」ですから、コンソールに「number3 true 2」がコンソールに出力します。switch ~ case 文- switch ~ case文は数式によってデータが一致するとこを処理する多重選択文です。上の条件式を見ると「switch」の条件は「4」のデータが設定されています。そして条件の値と「case」の値が一致する条件の文章式を実行されます。もし、一致するデータがなければ、「default」のデータが実行]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/45.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 5] 制御文 - 分岐 (if, switch〜case)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。制御文とはプログラムの処理順番を制御するか繰り返して処理する文法と言います。単純に制御文はこれだって言うのは難しいですね。基本的にプログラムは人間と同じく上から下向き、左から右向きに読み込んで処理します。それなら単純に演算子だけ使って「int」型のデータを１から１００まで加算すると思えば、１から１００まで「+」記号で加算して解決します。(アルゴリズム的には考えなく、単純に考えて)これをプログラム的に表現すると下記通りになりますね。単純な数計算がこの頃ならもっと複雑な計算がどんなふうになるか恐ろしいですね。その時に使う文法が制御です。制御文法はjavaだけではなく、c言語、c++、c#などもすべて同じ文法で動きます。リンク - [c# スタディ - 9] 制御文 - 分岐 (if, switch〜case, goto)リンク - [c# スタディ - 10] 制御文 - ループ(for, while, do〜while, foreach)リンク - [c# スタディ - 11] 制御文 - ループ分岐(break, continue)ここでは制御文の中で分岐文に関して説明します。if ~ else if ~ else 文- if ~ else if ~ else文は条件の値によって(「true」、「false」)処理する制御文です。初めの例はif条件で「check」の値が「true」なので、「number 1 true」がコンソールに出力しました。２つ目の例はif条件で「check」の値が「false」なので、else式に入って「number 2 false」をコンソールに出力しました。３つ目の例はif条件でcheck2の値は「3」ですが「check2 == 1」を計算すれば「false」の結果がでます。なので、次の条件に行きます。次の条件は「check2 == 3」は「true」ですから、コンソールに「number3 true 2」がコンソールに出力します。switch ~ case 文- switch ~ case文は数式によってデータが一致するとこを処理する多重選択文です。上の条件式を見ると「switch」の条件は「4」のデータが設定されています。そして条件の値と「case」の値が一致する条件の文章式を実行されます。もし、一致するデータがなければ、「default」のデータが実行]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+
+<title>明月の開発ストーリ :: [Java スタディ - 5] 制御文 - 分岐 (if, switch〜case)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
+</head>
+<body>
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[Java スタディ - 5] 制御文 - 分岐 (if, switch〜case)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0203">Study / Java</a> &nbsp;&nbsp; 作成日付 : 2019/07/26 23:25:58 &nbsp;&nbsp;修正日付 : 2019/07/26 23:28:01
+				</div>
+			</div>
+			<div class="article">
+				<div class="tt_article_useless_p_margin" id="article_contents"><html>
+ <head></head>
+ <body>
+  <p></p>
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>制御文とはプログラムの処理順番を制御するか繰り返して処理する文法と言います。単純に制御文はこれだって言うのは難しいですね。</p> 
+  <p>基本的にプログラムは人間と同じく上から下向き、左から右向きに読み込んで処理します。</p> 
+  <p><br></p> 
+  <p>それなら単純に演算子だけ使って「int」型のデータを１から１００まで加算すると思えば、１から１００まで「+」記号で加算して解決します。(アルゴリズム的には考えなく、単純に考えて)</p> 
+  <p>これをプログラム的に表現すると下記通りになりますね。</p> 
+  <pre><code class="java" data-type="">int temp = 1;
+temp += 1;
+temp += 1;
+．．．
+</code></pre> 
+  <p>単純な数計算がこの頃ならもっと複雑な計算がどんなふうになるか恐ろしいですね。その時に使う文法が制御です。</p> 
+  <p><br></p> 
+  <p>制御文法はJavaだけではなく、C言語、C++、C#などもすべて同じ文法で動きます。</p> 
+  <p>リンク - <a href="https://www.nowonbun.com/10.html" target="_blank">[C# スタディ - 9] 制御文 - 分岐 (if, switch〜case, goto)</a></p> 
+  <p>リンク - <a href="https://www.nowonbun.com/11.html" target="_blank">[C# スタディ - 10] 制御文 - ループ(for, while, do〜while, foreach)</a></p> 
+  <p>リンク - <a href="https://www.nowonbun.com/12.html" target="_blank">[C# スタディ - 11] 制御文 - ループ分岐(break, continue)</a></p> 
+  <p><br></p> 
+  <p>ここでは制御文の中で分岐文に関して説明します。</p> 
+  <p><br></p> 
+  <h2><b><span>if ~ else if ~ else 文</span></b></h2> 
+  <p>- if ~ else if ~ else文は条件の値によって(「true」、「false」)処理する制御文です。</p> 
+  <pre><code class="java" data-type="">① if(条件)
+    文章 ; =&gt; 条件が「true」なら文章を実行する。
+② if(条件)
+    文章1; =&gt; 条件が「true」なら文章1を実行するｓ，「faｌse」なら文章2(else)を実行する。
+  else
+    文章2;
+③ if(条件1)
+    文章1; =&gt; 条件1が「true」なら文章1を実行するし、「false」なら次の条件を検査する。
+  else if(条件2) 
+    文章2; =&gt;条件2が「true」なら文章2を実行するし、「false」なら文章3を実行する。
+  else
+    文章3;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/45/191_003.jpg" data-filename="003.jpg" style="width: 450px;"></p> 
+  <p style="text-align:left;"><img src="./contents/45/190_001.png" data-filename="001.png" style="width: 586px;"></p> 
+  <p>初めの例はif条件で「check」の値が「true」なので、「number 1 true」がコンソールに出力しました。</p> 
+  <p>２つ目の例はif条件で「check」の値が「false」なので、else式に入って「number 2 false」をコンソールに出力しました。</p> 
+  <p>３つ目の例はif条件でcheck2の値は「3」ですが「check2 == 1」を計算すれば「false」の結果がでます。</p> 
+  <p>なので、次の条件に行きます。次の条件は「check2 == 3」は「true」ですから、コンソールに「number3 true 2」がコンソールに出力します。</p> 
+  <p><br></p> 
+  <h2><b><span>switch ~ case 文</span></b></h2> 
+  <p>- switch ~ case文は数式によってデータが一致するとこを処理する多重選択文です。</p> 
+  <pre><code class="java" data-type="">switch(数式) {
+  case 値1:
+    文章1;
+      break;
+  case 値2:
+    文章2;
+    break;
+  case 値3:
+    文章3;
+    break;
+   ...
+  default:
+    文章;
+    break;
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/45/189_004.jpg" data-filename="004.jpg" style="width: 450px;"></p> 
+  <p style="text-align:left;"><img src="./contents/45/192_002.png" data-filename="002.png" style="width: 587px;"></p> 
+  <p>上の条件式を見ると「switch」の条件は「4」のデータが設定されています。そして条件の値と「case」の値が一致する条件の文章式を実行されます。</p> 
+  <p>もし、一致するデータがなければ、「default」のデータが実行されます。</p> 
+  <p>例では、「check」のデータが「4」なので「case 4」の文章式が実行され、結果は「number 4」に出力します。</p> 
+  <p><br></p> 
+  <p>ここまで、Javaの分岐に関して説明しました。</p>
+  <p></p>
+ </body>
+</html></div>
+				<hr />
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=Java%23>#Java#</a> </span>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
