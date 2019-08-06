@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<link async rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" />
+<style type="text/css">
+body{
+	font-family: 'Noto Sans JP', sans-serif;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。関数とはプログラムで実行する最小単位ということです。今まで、私が変数と制御文などを紹介する時に「public static void main」という関数から始まりました。基本的にプログラムでクラスを関係しずに、「main」関数を探して呼びれますね。「main」関数のロジックを実行します。でも、全てのプログラム処理を「main」関数に入れれば、すごく複雑になります。そのことは数学の関数と同じ意味で計算単位として分けることができます。例えば「f(x) = x + 1」の数学の関数がある時、我々は「f(1) = 2, f(2) = 3, f(3) = 4」で一つの数学正義公式みたいに使いますね。プログラムの関数も同じいみです。上でアクセスタイプに関して後で別途で勉強します。リターンタイプはデータタイプの意味です。例えば、関数を呼び出してリターンタイプを「int」型にするか「string」タイプにするかを決めることですね。一つの例で確認します。結果は加算の場合は「233 + 10」になるから「243」になりますね。減算の場合、「223」になるし、乗算、割算もそれぞれの結果がでました。上の例みたいに関数は計算単位で処理を分けますね。関数で「static」のキーワードがありますが、それは「main」関数が「static」タイプなので呼ばれる関数も「static」になります。「static」に関しては後で詳しく勉強します。上の例では「main」から「add」などの関数を呼び出して結果をもらって処理します。そうすると関数の中で自身を呼び出したらどうふうになるか？それを「再帰的呼出」と言います。簡単に「再帰」とよく言いますね。上の例は「main」から「reflect」関数を呼び出します。でも「reflect」関数の中ではまた「reflect」	関数を呼び出しています。数学の形では「f(x) = f(x + 1)」の状況で条件は「x &amp;lt; 10」の場合になります。結局「system.out.println」で届くのは「f(10)」からなので「10、10、...」になりますね。「10」が２つになることは「reflect(9)」と「reflect(10)」が同じ値を出力しますね。]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java スタディ - 9] 関数 (メソッド、Function)" />
+<link rel="canonical" href="https://www.nowonbun.com/49.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java スタディ - 9] 関数 (メソッド、Function)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。関数とはプログラムで実行する最小単位ということです。今まで、私が変数と制御文などを紹介する時に「public static void main」という関数から始まりました。基本的にプログラムでクラスを関係しずに、「main」関数を探して呼びれますね。「main」関数のロジックを実行します。でも、全てのプログラム処理を「main」関数に入れれば、すごく複雑になります。そのことは数学の関数と同じ意味で計算単位として分けることができます。例えば「f(x) = x + 1」の数学の関数がある時、我々は「f(1) = 2, f(2) = 3, f(3) = 4」で一つの数学正義公式みたいに使いますね。プログラムの関数も同じいみです。上でアクセスタイプに関して後で別途で勉強します。リターンタイプはデータタイプの意味です。例えば、関数を呼び出してリターンタイプを「int」型にするか「string」タイプにするかを決めることですね。一つの例で確認します。結果は加算の場合は「233 + 10」になるから「243」になりますね。減算の場合、「223」になるし、乗算、割算もそれぞれの結果がでました。上の例みたいに関数は計算単位で処理を分けますね。関数で「static」のキーワードがありますが、それは「main」関数が「static」タイプなので呼ばれる関数も「static」になります。「static」に関しては後で詳しく勉強します。上の例では「main」から「add」などの関数を呼び出して結果をもらって処理します。そうすると関数の中で自身を呼び出したらどうふうになるか？それを「再帰的呼出」と言います。簡単に「再帰」とよく言いますね。上の例は「main」から「reflect」関数を呼び出します。でも「reflect」関数の中ではまた「reflect」	関数を呼び出しています。数学の形では「f(x) = f(x + 1)」の状況で条件は「x &amp;lt; 10」の場合になります。結局「system.out.println」で届くのは「f(10)」からなので「10、10、...」になりますね。「10」が２つになることは「reflect(9)」と「reflect(10)」が同じ値を出力しますね。]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/49.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 9] 関数 (メソッド、Function)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。関数とはプログラムで実行する最小単位ということです。今まで、私が変数と制御文などを紹介する時に「public static void main」という関数から始まりました。基本的にプログラムでクラスを関係しずに、「main」関数を探して呼びれますね。「main」関数のロジックを実行します。でも、全てのプログラム処理を「main」関数に入れれば、すごく複雑になります。そのことは数学の関数と同じ意味で計算単位として分けることができます。例えば「f(x) = x + 1」の数学の関数がある時、我々は「f(1) = 2, f(2) = 3, f(3) = 4」で一つの数学正義公式みたいに使いますね。プログラムの関数も同じいみです。上でアクセスタイプに関して後で別途で勉強します。リターンタイプはデータタイプの意味です。例えば、関数を呼び出してリターンタイプを「int」型にするか「string」タイプにするかを決めることですね。一つの例で確認します。結果は加算の場合は「233 + 10」になるから「243」になりますね。減算の場合、「223」になるし、乗算、割算もそれぞれの結果がでました。上の例みたいに関数は計算単位で処理を分けますね。関数で「static」のキーワードがありますが、それは「main」関数が「static」タイプなので呼ばれる関数も「static」になります。「static」に関しては後で詳しく勉強します。上の例では「main」から「add」などの関数を呼び出して結果をもらって処理します。そうすると関数の中で自身を呼び出したらどうふうになるか？それを「再帰的呼出」と言います。簡単に「再帰」とよく言いますね。上の例は「main」から「reflect」関数を呼び出します。でも「reflect」関数の中ではまた「reflect」	関数を呼び出しています。数学の形では「f(x) = f(x + 1)」の状況で条件は「x &amp;lt; 10」の場合になります。結局「system.out.println」で届くのは「f(10)」からなので「10、10、...」になりますね。「10」が２つになることは「reflect(9)」と「reflect(10)」が同じ値を出力しますね。]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+
+<title>明月の開発ストーリ :: [Java スタディ - 9] 関数 (メソッド、Function)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
+</head>
+<body>
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[Java スタディ - 9] 関数 (メソッド、Function)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0203">Study / Java</a> &nbsp;&nbsp; 作成日付 : 2019/08/06 20:22:48 &nbsp;&nbsp;修正日付 : 2019/08/06 20:30:24
+				</div>
+			</div>
+			<div class="article">
+				<div class="tt_article_useless_p_margin" id="article_contents"><html>
+ <head></head>
+ <body>
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>関数とはプログラムで実行する最小単位ということです。今まで、私が変数と制御文などを紹介する時に「public static void main」という関数から始まりました。</p> 
+  <p>基本的にプログラムでクラスを関係しずに、「main」関数を探して呼びれますね。「main」関数のロジックを実行します。でも、全てのプログラム処理を「main」関数に入れれば、すごく複雑になります。</p> 
+  <p>そのことは数学の関数と同じ意味で計算単位として分けることができます。</p> 
+  <p><br></p> 
+  <p>例えば「f(x) = x + 1」の数学の関数がある時、我々は「f(1) = 2, f(2) = 3, f(3) = 4」で一つの数学正義公式みたいに使いますね。プログラムの関数も同じいみです。</p> 
+  <pre><code class="java" data-type="">[アクセスタイプ] [リターンタイプ] メソード名 (パラメータ) {
+  ...
+  return リターンタイプ;
+}
+</code></pre> 
+  <p>上でアクセスタイプに関して後で別途で勉強します。</p> 
+  <p>リターンタイプはデータタイプの意味です。例えば、関数を呼び出してリターンタイプを「int」型にするか「String」タイプにするかを決めることですね。</p> 
+  <p>一つの例で確認します。</p> 
+  <pre><code class="java" data-type="">public class Example {
+  public static void main(String... args) {
+    int ret = 233;
+    int ret2 = 10;
+    // 加算
+    int ret3 = add(ret, ret2);
+    System.out.println(ret3);
+    // 減算
+    ret3 = sub(ret, ret2);
+    System.out.println(ret3);
+    // 乗算
+    ret3 = multi(ret, ret2);
+    System.out.println(ret3);
+    // 割算
+    ret = divi(ret, ret2)
+    System.out.println(ret3);
+  }
+  
+  // 加算関数
+  public static int add(int a, int b) {
+    return a + b; 
+  }
+  // 減算関数
+  public static int sub(int a, int b) {
+    return a - b;
+  }
+  // 乗算関数
+  public static int multi(int a, int b) {
+    return a * b;
+  }
+  // 割算
+  public static int divi(int a, int b) {
+    return a / b;
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/49/204_001.jpeg" data-filename="001.jpeg" style="width: 562px;"></p> 
+  <p>結果は加算の場合は「233 + 10」になるから「243」になりますね。減算の場合、「223」になるし、乗算、割算もそれぞれの結果がでました。</p> 
+  <p>上の例みたいに関数は計算単位で処理を分けますね。</p> 
+  <p><br></p> 
+  <p>関数で「static」のキーワードがありますが、それは「main」関数が「static」タイプなので呼ばれる関数も「static」になります。「static」に関しては後で詳しく勉強します。</p> 
+  <p><br></p> 
+  <p>上の例では「main」から「add」などの関数を呼び出して結果をもらって処理します。</p> 
+  <p>そうすると関数の中で自身を呼び出したらどうふうになるか？それを「再帰的呼出」と言います。簡単に「再帰」とよく言いますね。</p> 
+  <pre><code class="java" data-type="">public class Example1 {
+  public static void main(String... args){
+    reflect(1);
+  }
+  //재귀적 함수호출
+  public static void reflect(int a){
+    if(a &lt; 10){
+      a++;
+      //reflect(2)
+      //reflect(3)
+      //...
+      reflect(a);
+    }
+    System.out.println(a);
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/49/205_002.jpeg" data-filename="002.jpeg" style="width: 562px;"></p> 
+  <p>上の例は「main」から「reflect」関数を呼び出します。でも「reflect」関数の中ではまた「reflect」 関数を呼び出しています。</p> 
+  <p>数学の形では「f(x) = f(x + 1)」の状況で条件は「x &lt; 10」の場合になります。</p> 
+  <p>結局「System.out.println」で届くのは「f(10)」からなので「10、10、...」になりますね。「10」が２つになることは「reflect(9)」と「reflect(10)」が同じ値を出力しますね。</p>
+ </body>
+</html></div>
+				<hr />
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=java>#java</a> </span>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
