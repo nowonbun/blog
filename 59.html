@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<link async rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" />
+<style type="text/css">
+body{
+	font-family: 'Noto Sans JP', sans-serif;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。このページには例外処理に関して調べてみました。例外処理とはプログラムを作成しながら予想できなかった部分を処理することを例外処理といいます。例えば、除算する関数を作ると考えたら、その関数はパラメータを2つをもらいます。1つめのパラメータは除算する対象、2つめのパラメータは分ける数ですね。でも、2つめのデータを「0」をもらうとどのようになるかな？上の例を見れば、「10」から「2」を分けった時には確かに「5」の結果になりますね。でも、「0」になった時にはコンソールタブで赤い文字でエラーメッセージが出ました。その後で「10」から「5」を分ける構文は実行しなくてシステムが止まりました。もちろん、「division」関数で「val2」が「0」の場合は「if」を作成してエラーがならないようにできます。今回は簡単なプログラムなので問題ないですが、複雑なプログラムの場合はすべての例外を予想して作成はできないですね。そのため、例外処理があります。上の例をみれば、「division」関数で「try ~ catch」構文がありますね。「try」はエラーが発生する可能性がある範囲、「catch」の場合はエラーが発生する時に処理する構文ですね。上の例は「0」でエラーが発生しましたから、コンソールで「error」を出力して「0」をリターンしますね。例外処理は「try ~ catch」ですね。そうすると「catch」のキーワードで「exception」というクラスが宣言しています。その意味はエラー処理別で処理する分岐ですね。上の例をみれば、「arithmeticexception」の「catch」を作って実行しました。結果は「zero error」が出力しました。その意味ではエラー別で分岐して処理ができると意味です。「exception」の場合は例外処理の上位クラスなので、「arithmeticexception」の以外のエラーは「exception」になります。(※一番上位インタフェースは「throwable」です。「throwable」は「runtimexception」と「exception」になります。「runtimeexception」と「exception」の差は少し後で説明します。)そうすると意図的に「exception」も作ることができます。上の例をみれば、「print」関数でパラメータが「0」より]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java スタディ - 19] 例外処理( try ~ catch)" />
+<link rel="canonical" href="https://www.nowonbun.com/59.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java スタディ - 19] 例外処理( try ~ catch)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。このページには例外処理に関して調べてみました。例外処理とはプログラムを作成しながら予想できなかった部分を処理することを例外処理といいます。例えば、除算する関数を作ると考えたら、その関数はパラメータを2つをもらいます。1つめのパラメータは除算する対象、2つめのパラメータは分ける数ですね。でも、2つめのデータを「0」をもらうとどのようになるかな？上の例を見れば、「10」から「2」を分けった時には確かに「5」の結果になりますね。でも、「0」になった時にはコンソールタブで赤い文字でエラーメッセージが出ました。その後で「10」から「5」を分ける構文は実行しなくてシステムが止まりました。もちろん、「division」関数で「val2」が「0」の場合は「if」を作成してエラーがならないようにできます。今回は簡単なプログラムなので問題ないですが、複雑なプログラムの場合はすべての例外を予想して作成はできないですね。そのため、例外処理があります。上の例をみれば、「division」関数で「try ~ catch」構文がありますね。「try」はエラーが発生する可能性がある範囲、「catch」の場合はエラーが発生する時に処理する構文ですね。上の例は「0」でエラーが発生しましたから、コンソールで「error」を出力して「0」をリターンしますね。例外処理は「try ~ catch」ですね。そうすると「catch」のキーワードで「exception」というクラスが宣言しています。その意味はエラー処理別で処理する分岐ですね。上の例をみれば、「arithmeticexception」の「catch」を作って実行しました。結果は「zero error」が出力しました。その意味ではエラー別で分岐して処理ができると意味です。「exception」の場合は例外処理の上位クラスなので、「arithmeticexception」の以外のエラーは「exception」になります。(※一番上位インタフェースは「throwable」です。「throwable」は「runtimexception」と「exception」になります。「runtimeexception」と「exception」の差は少し後で説明します。)そうすると意図的に「exception」も作ることができます。上の例をみれば、「print」関数でパラメータが「0」より]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/59.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 19] 例外処理( try ~ catch)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。このページには例外処理に関して調べてみました。例外処理とはプログラムを作成しながら予想できなかった部分を処理することを例外処理といいます。例えば、除算する関数を作ると考えたら、その関数はパラメータを2つをもらいます。1つめのパラメータは除算する対象、2つめのパラメータは分ける数ですね。でも、2つめのデータを「0」をもらうとどのようになるかな？上の例を見れば、「10」から「2」を分けった時には確かに「5」の結果になりますね。でも、「0」になった時にはコンソールタブで赤い文字でエラーメッセージが出ました。その後で「10」から「5」を分ける構文は実行しなくてシステムが止まりました。もちろん、「division」関数で「val2」が「0」の場合は「if」を作成してエラーがならないようにできます。今回は簡単なプログラムなので問題ないですが、複雑なプログラムの場合はすべての例外を予想して作成はできないですね。そのため、例外処理があります。上の例をみれば、「division」関数で「try ~ catch」構文がありますね。「try」はエラーが発生する可能性がある範囲、「catch」の場合はエラーが発生する時に処理する構文ですね。上の例は「0」でエラーが発生しましたから、コンソールで「error」を出力して「0」をリターンしますね。例外処理は「try ~ catch」ですね。そうすると「catch」のキーワードで「exception」というクラスが宣言しています。その意味はエラー処理別で処理する分岐ですね。上の例をみれば、「arithmeticexception」の「catch」を作って実行しました。結果は「zero error」が出力しました。その意味ではエラー別で分岐して処理ができると意味です。「exception」の場合は例外処理の上位クラスなので、「arithmeticexception」の以外のエラーは「exception」になります。(※一番上位インタフェースは「throwable」です。「throwable」は「runtimexception」と「exception」になります。「runtimeexception」と「exception」の差は少し後で説明します。)そうすると意図的に「exception」も作ることができます。上の例をみれば、「print」関数でパラメータが「0」より]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+
+<title>明月の開発ストーリ :: [Java スタディ - 19] 例外処理( try ~ catch)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
+</head>
+<body>
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[Java スタディ - 19] 例外処理( try ~ catch)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0203">Study / Java</a> &nbsp;&nbsp; 作成日付 : 2019/09/03 20:37:14 &nbsp;&nbsp;修正日付 : 2019/09/03 20:38:32
+				</div>
+			</div>
+			<div class="article">
+				<div class="tt_article_useless_p_margin" id="article_contents"><html>
+ <head></head>
+ <body>
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>このページには例外処理に関して調べてみました。</p> 
+  <p>例外処理とはプログラムを作成しながら予想できなかった部分を処理することを例外処理といいます。</p> 
+  <p><br></p> 
+  <p>例えば、除算する関数を作ると考えたら、その関数はパラメータを2つをもらいます。1つめのパラメータは除算する対象、2つめのパラメータは分ける数ですね。</p> 
+  <p>でも、2つめのデータを「0」をもらうとどのようになるかな？</p> 
+  <p style="text-align:left;"><img src="" data-filename="001.jpg" style="width: 554px;"></p> 
+  <p>上の例を見れば、「10」から「2」を分けった時には確かに「5」の結果になりますね。</p> 
+  <p>でも、「0」になった時にはコンソールタブで赤い文字でエラーメッセージが出ました。その後で「10」から「5」を分ける構文は実行しなくてシステムが止まりました。</p> 
+  <p><br></p> 
+  <p>もちろん、「division」関数で「val2」が「0」の場合は「if」を作成してエラーがならないようにできます。今回は簡単なプログラムなので問題ないですが、複雑なプログラムの場合はすべての例外を予想して作成はできないですね。</p> 
+  <p>そのため、例外処理があります。</p> 
+  <p style="text-align:left;"><img src="" data-filename="002.jpg" style="width: 487px;"></p> 
+  <p>上の例をみれば、「division」関数で「try ~ catch」構文がありますね。「try」はエラーが発生する可能性がある範囲、「catch」の場合はエラーが発生する時に処理する構文ですね。</p> 
+  <p>上の例は「0」でエラーが発生しましたから、コンソールで「error」を出力して「0」をリターンしますね。</p> 
+  <p><br></p> 
+  <p>例外処理は「try ~ catch」ですね。そうすると「catch」のキーワードで「Exception」というクラスが宣言しています。その意味はエラー処理別で処理する分岐ですね。</p> 
+  <p style="text-align:left;"><img src="./contents/59/236_003.jpg" data-filename="003.jpg" style="width: 529px;"></p> 
+  <p>上の例をみれば、「ArithmeticException」の「catch」を作って実行しました。結果は「Zero Error」が出力しました。その意味ではエラー別で分岐して処理ができると意味です。</p> 
+  <p>「Exception」の場合は例外処理の上位クラスなので、「ArithmeticException」の以外のエラーは「Exception」になります。</p> 
+  <p>(※一番上位インタフェースは「Throwable」です。「Throwable」は「RuntimException」と「Exception」になります。「RuntimeException」と「Exception」の差は少し後で説明します。)</p> 
+  <p><br></p> 
+  <p>そうすると意図的に「Exception」も作ることができます。</p> 
+  <p style="text-align:left;"><img src="./contents/59/237_004.jpg" data-filename="004.jpg" style="width: 501px;"></p> 
+  <p>上の例をみれば、「print」関数でパラメータが「0」より未満だと「throw」を利用して「Exception」を発生しています。</p> 
+  <p>コンソールをみれば「Error!」というメッセージが出力しました。関数の隣をみると「throws」という予約子のキーワードがあります。</p> 
+  <p>「throws」は関数の中で発生する可能があるエラーを宣言することですね。</p> 
+  <p style="text-align:left;"><img src="./contents/59/239_005.jpg" data-filename="005.jpg" style="width: 778px;"></p> 
+  <p>その予約子で関数の中で発生するエラーをコンパイル段階でチェックができるので、プログラムの品質が上がるようなキーワードです。</p> 
+  <p>でも、関数が複雑だし、全てのエラーを検出することが大変な時には「RuntimmException」を利用してコンパイルの段階でチェックしないように実行ができます。</p> 
+  <p style="text-align:left;"><img src="./contents/59/238_006.jpg" data-filename="006.jpg" style="width: 502px;"></p> 
+  <p>そしてすべての関数で「try ~ catch(Throwable)」を掛けて実装するのがいいじゃないと思われますね。「try ~ catch」の場合はインタラプトと関係があるキーワードなので、「try ~ catch」はパフォーマンスがすごく遅いですね。</p> 
+  <p>簡単なプログラムでは認知しないですね。複雑のプログラムだとパフォーマンスがすごく落ちる可能性があるので、戦略的に本当に必要なところで設計して作成するほうが良いと思います。</p>
+ </body>
+</html></div>
+				<hr />
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=java>#java</a> </span>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
