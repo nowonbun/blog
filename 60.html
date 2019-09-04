@@ -20,29 +20,29 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / Java" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。制御文とはプログラムの処理順番を制御するか繰り返して処理する文法と言います。単純に制御文はこれだって言うのは難しいですね。基本的にプログラムは人間と同じく上から下向き、左から右向きに読み込んで処理します。それなら単純に演算子だけ使って「int」型のデータを１から１００まで加算すると思えば、１から１００まで「+」記号で加算して解決します。(アルゴリズム的には考えなく、単純に考えて)これをプログラム的に表現すると下記通りになりますね。単純な数計算がこの頃ならもっと複雑な計算がどんなふうになるか恐ろしいですね。その時に使う文法が制御です。制御文法はjavaだけではなく、c言語、c++、c#などもすべて同じ文法で動きます。リンク - [c# スタディ - 9] 制御文 - 分岐 (if, switch〜case, goto)リンク - [c# スタディ - 10] 制御文 - ループ(for, while, do〜while, foreach)リンク - [c# スタディ - 11] 制御文 - ループ分岐(break, continue)ここでは制御文の中で分岐文に関して説明します。if ~ else if ~ else 文- if ~ else if ~ else文は条件の値によって(「true」、「false」)処理する制御文です。初めの例はif条件で「check」の値が「true」なので、「number 1 true」がコンソールに出力しました。２つ目の例はif条件で「check」の値が「false」なので、else式に入って「number 2 false」をコンソールに出力しました。３つ目の例はif条件でcheck2の値は「3」ですが「check2 == 1」を計算すれば「false」の結果がでます。なので、次の条件に行きます。次の条件は「check2 == 3」は「true」ですから、コンソールに「number3 true 2」がコンソールに出力します。switch ~ case 文- switch ~ case文は数式によってデータが一致するとこを処理する多重選択文です。上の条件式を見ると「switch」の条件は「4」のデータが設定されています。そして条件の値と「case」の値が一致する条件の文章式を実行されます。もし、一致するデータがなければ、「default」のデータが実行]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。このページは匿名クラスとラムダ式に関して調べてみました。匿名クラスとは言うとおりにクラス名がないことを言います。クラス名がないならどのように実装するかと思いますが。簡単に説明するとインタフェースの指示子で別に実装されたクラスではなく、直接に「new」キーワードだけ使ってクラスを宣言する方法だと思われます。説明が難しいですね。上の例をみれば、インタフェース「exampleinterface」を実装しました。「main」関数で指示子「exam」をインタフェース「exampleinterface」で宣言しました。そうすると基本的に我々の知識だとクラスを割当て使いますね。でも、実装したクラスではなく、「new インタフェース名」で宣言して「override」でクラスを継承しますね。すなわち、別にクラスを作ることではなく、直接にクラスを作ることです。下で「setdata」で「10」の値を入れて、「print」関数で出力しました。普通のクラスと使う方法が同じですね。匿名クラスは普通のクラスと別に差異がないですね。別に普通のクラスを宣言して使ってもいいと思いますが、なんで匿名クラスを使うかと言えば匿名クラスはラムダ式と関係があります。我々が一回用のため、一つ一つクラスをすべて宣言するとプロジェクトサイズが大きくなりますね。ラムダ式とはクラス名とメソッド名を省略して一つのメソッド式で表現した文法といいます。簡単にいうと匿名クラスでメソッド名まで省略したいということですね。上の例を見れば、「exampleinterface」のインタフェースに「print」の関数がありますね。それを「run」関数でパラメータとしてインタフェースを受けています。「main」関数で「run」を呼出しますが、ラムダ式( () -&amp;gt; { } )でデータを渡します。ラムダ式の条件はインタフェースの中で一つのメソッドの時に使われますが、もしメソッドが2つ以上ならラムダ式を使えません。ラムダ式は上の例みたいに「void」だけではないです。上の例みたいに、パラメータ設定も可能だし、リターン値設定も可能です。ラムダ式の条件ではインタフェースで一つのメソッドがある時に使うことですが、その条件せいでよく使うインタフェースがあります。それは「runnable」ですね。上のイメージをみれば、インタフェースで一つのメソッドの条件があ]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [Java スタディ - 5] 制御文 - 分岐 (if, switch〜case)" />
-<link rel="canonical" href="https://www.nowonbun.com/45.html" />
+<meta name="title" content="明月の開発ストーリ :: [Java スタディ - 20] 匿名クラス、そしてラムダ式(Lambda expression)" />
+<link rel="canonical" href="https://www.nowonbun.com/60.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [Java スタディ - 5] 制御文 - 分岐 (if, switch〜case)" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。制御文とはプログラムの処理順番を制御するか繰り返して処理する文法と言います。単純に制御文はこれだって言うのは難しいですね。基本的にプログラムは人間と同じく上から下向き、左から右向きに読み込んで処理します。それなら単純に演算子だけ使って「int」型のデータを１から１００まで加算すると思えば、１から１００まで「+」記号で加算して解決します。(アルゴリズム的には考えなく、単純に考えて)これをプログラム的に表現すると下記通りになりますね。単純な数計算がこの頃ならもっと複雑な計算がどんなふうになるか恐ろしいですね。その時に使う文法が制御です。制御文法はjavaだけではなく、c言語、c++、c#などもすべて同じ文法で動きます。リンク - [c# スタディ - 9] 制御文 - 分岐 (if, switch〜case, goto)リンク - [c# スタディ - 10] 制御文 - ループ(for, while, do〜while, foreach)リンク - [c# スタディ - 11] 制御文 - ループ分岐(break, continue)ここでは制御文の中で分岐文に関して説明します。if ~ else if ~ else 文- if ~ else if ~ else文は条件の値によって(「true」、「false」)処理する制御文です。初めの例はif条件で「check」の値が「true」なので、「number 1 true」がコンソールに出力しました。２つ目の例はif条件で「check」の値が「false」なので、else式に入って「number 2 false」をコンソールに出力しました。３つ目の例はif条件でcheck2の値は「3」ですが「check2 == 1」を計算すれば「false」の結果がでます。なので、次の条件に行きます。次の条件は「check2 == 3」は「true」ですから、コンソールに「number3 true 2」がコンソールに出力します。switch ~ case 文- switch ~ case文は数式によってデータが一致するとこを処理する多重選択文です。上の条件式を見ると「switch」の条件は「4」のデータが設定されています。そして条件の値と「case」の値が一致する条件の文章式を実行されます。もし、一致するデータがなければ、「default」のデータが実行]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java スタディ - 20] 匿名クラス、そしてラムダ式(Lambda expression)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。このページは匿名クラスとラムダ式に関して調べてみました。匿名クラスとは言うとおりにクラス名がないことを言います。クラス名がないならどのように実装するかと思いますが。簡単に説明するとインタフェースの指示子で別に実装されたクラスではなく、直接に「new」キーワードだけ使ってクラスを宣言する方法だと思われます。説明が難しいですね。上の例をみれば、インタフェース「exampleinterface」を実装しました。「main」関数で指示子「exam」をインタフェース「exampleinterface」で宣言しました。そうすると基本的に我々の知識だとクラスを割当て使いますね。でも、実装したクラスではなく、「new インタフェース名」で宣言して「override」でクラスを継承しますね。すなわち、別にクラスを作ることではなく、直接にクラスを作ることです。下で「setdata」で「10」の値を入れて、「print」関数で出力しました。普通のクラスと使う方法が同じですね。匿名クラスは普通のクラスと別に差異がないですね。別に普通のクラスを宣言して使ってもいいと思いますが、なんで匿名クラスを使うかと言えば匿名クラスはラムダ式と関係があります。我々が一回用のため、一つ一つクラスをすべて宣言するとプロジェクトサイズが大きくなりますね。ラムダ式とはクラス名とメソッド名を省略して一つのメソッド式で表現した文法といいます。簡単にいうと匿名クラスでメソッド名まで省略したいということですね。上の例を見れば、「exampleinterface」のインタフェースに「print」の関数がありますね。それを「run」関数でパラメータとしてインタフェースを受けています。「main」関数で「run」を呼出しますが、ラムダ式( () -&amp;gt; { } )でデータを渡します。ラムダ式の条件はインタフェースの中で一つのメソッドの時に使われますが、もしメソッドが2つ以上ならラムダ式を使えません。ラムダ式は上の例みたいに「void」だけではないです。上の例みたいに、パラメータ設定も可能だし、リターン値設定も可能です。ラムダ式の条件ではインタフェースで一つのメソッドがある時に使うことですが、その条件せいでよく使うインタフェースがあります。それは「runnable」ですね。上のイメージをみれば、インタフェースで一つのメソッドの条件があ]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/45.html" />
+<meta property="og:url" content="https://www.nowonbun.com/60.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 5] 制御文 - 分岐 (if, switch〜case)" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。制御文とはプログラムの処理順番を制御するか繰り返して処理する文法と言います。単純に制御文はこれだって言うのは難しいですね。基本的にプログラムは人間と同じく上から下向き、左から右向きに読み込んで処理します。それなら単純に演算子だけ使って「int」型のデータを１から１００まで加算すると思えば、１から１００まで「+」記号で加算して解決します。(アルゴリズム的には考えなく、単純に考えて)これをプログラム的に表現すると下記通りになりますね。単純な数計算がこの頃ならもっと複雑な計算がどんなふうになるか恐ろしいですね。その時に使う文法が制御です。制御文法はjavaだけではなく、c言語、c++、c#などもすべて同じ文法で動きます。リンク - [c# スタディ - 9] 制御文 - 分岐 (if, switch〜case, goto)リンク - [c# スタディ - 10] 制御文 - ループ(for, while, do〜while, foreach)リンク - [c# スタディ - 11] 制御文 - ループ分岐(break, continue)ここでは制御文の中で分岐文に関して説明します。if ~ else if ~ else 文- if ~ else if ~ else文は条件の値によって(「true」、「false」)処理する制御文です。初めの例はif条件で「check」の値が「true」なので、「number 1 true」がコンソールに出力しました。２つ目の例はif条件で「check」の値が「false」なので、else式に入って「number 2 false」をコンソールに出力しました。３つ目の例はif条件でcheck2の値は「3」ですが「check2 == 1」を計算すれば「false」の結果がでます。なので、次の条件に行きます。次の条件は「check2 == 3」は「true」ですから、コンソールに「number3 true 2」がコンソールに出力します。switch ~ case 文- switch ~ case文は数式によってデータが一致するとこを処理する多重選択文です。上の条件式を見ると「switch」の条件は「4」のデータが設定されています。そして条件の値と「case」の値が一致する条件の文章式を実行されます。もし、一致するデータがなければ、「default」のデータが実行]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 20] 匿名クラス、そしてラムダ式(Lambda expression)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。このページは匿名クラスとラムダ式に関して調べてみました。匿名クラスとは言うとおりにクラス名がないことを言います。クラス名がないならどのように実装するかと思いますが。簡単に説明するとインタフェースの指示子で別に実装されたクラスではなく、直接に「new」キーワードだけ使ってクラスを宣言する方法だと思われます。説明が難しいですね。上の例をみれば、インタフェース「exampleinterface」を実装しました。「main」関数で指示子「exam」をインタフェース「exampleinterface」で宣言しました。そうすると基本的に我々の知識だとクラスを割当て使いますね。でも、実装したクラスではなく、「new インタフェース名」で宣言して「override」でクラスを継承しますね。すなわち、別にクラスを作ることではなく、直接にクラスを作ることです。下で「setdata」で「10」の値を入れて、「print」関数で出力しました。普通のクラスと使う方法が同じですね。匿名クラスは普通のクラスと別に差異がないですね。別に普通のクラスを宣言して使ってもいいと思いますが、なんで匿名クラスを使うかと言えば匿名クラスはラムダ式と関係があります。我々が一回用のため、一つ一つクラスをすべて宣言するとプロジェクトサイズが大きくなりますね。ラムダ式とはクラス名とメソッド名を省略して一つのメソッド式で表現した文法といいます。簡単にいうと匿名クラスでメソッド名まで省略したいということですね。上の例を見れば、「exampleinterface」のインタフェースに「print」の関数がありますね。それを「run」関数でパラメータとしてインタフェースを受けています。「main」関数で「run」を呼出しますが、ラムダ式( () -&amp;gt; { } )でデータを渡します。ラムダ式の条件はインタフェースの中で一つのメソッドの時に使われますが、もしメソッドが2つ以上ならラムダ式を使えません。ラムダ式は上の例みたいに「void」だけではないです。上の例みたいに、パラメータ設定も可能だし、リターン値設定も可能です。ラムダ式の条件ではインタフェースで一つのメソッドがある時に使うことですが、その条件せいでよく使うインタフェースがあります。それは「runnable」ですね。上のイメージをみれば、インタフェースで一つのメソッドの条件があ]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 
-<title>明月の開発ストーリ :: [Java スタディ - 5] 制御文 - 分岐 (if, switch〜case)</title>
+<title>明月の開発ストーリ :: [Java スタディ - 20] 匿名クラス、そしてラムダ式(Lambda expression)</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -108,11 +108,11 @@ body{
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[Java スタディ - 5] 制御文 - 分岐 (if, switch〜case)</h1>
+					<h1 id="titleTxt">[Java スタディ - 20] 匿名クラス、そしてラムダ式(Lambda expression)</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0203">Study / Java</a> &nbsp;&nbsp; 作成日付 : 2019/07/26 23:25:58 &nbsp;&nbsp;修正日付 : 2019/07/26 23:28:01
+					<a href="./?category=0203">Study / Java</a> &nbsp;&nbsp; 作成日付 : 2019/09/04 20:11:28 &nbsp;&nbsp;修正日付 : 2019/09/04 20:12:19
 				</div>
 			</div>
 			<div class="article">
@@ -122,83 +122,49 @@ body{
 				<div class="tt_article_useless_p_margin" id="article_contents">
  
  
-  <p></p>
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>制御文とはプログラムの処理順番を制御するか繰り返して処理する文法と言います。単純に制御文はこれだって言うのは難しいですね。</p> 
-  <p>基本的にプログラムは人間と同じく上から下向き、左から右向きに読み込んで処理します。</p> 
+  <p>このページは匿名クラスとラムダ式に関して調べてみました。</p> 
   <p><br></p> 
-  <p>それなら単純に演算子だけ使って「int」型のデータを１から１００まで加算すると思えば、１から１００まで「+」記号で加算して解決します。(アルゴリズム的には考えなく、単純に考えて)</p> 
-  <p>これをプログラム的に表現すると下記通りになりますね。</p> 
-  <pre><code class="java" data-type="">int temp = 1;
-temp += 1;
-temp += 1;
-．．．
-</code></pre> 
-  <p>単純な数計算がこの頃ならもっと複雑な計算がどんなふうになるか恐ろしいですね。その時に使う文法が制御です。</p> 
+  <p>匿名クラスとは言うとおりにクラス名がないことを言います。クラス名がないならどのように実装するかと思いますが。</p> 
+  <p>簡単に説明するとインタフェースの指示子で別に実装されたクラスではなく、直接に「new」キーワードだけ使ってクラスを宣言する方法だと思われます。</p> 
+  <p>説明が難しいですね。</p> 
+  <p style="text-align:left;"><img src="./contents/60/243_001.jpg" data-filename="001.jpg" style="width: 528px;"></p> 
+  <p>上の例をみれば、インタフェース「ExampleInterface」を実装しました。</p> 
+  <p>「main」関数で指示子「exam」をインタフェース「ExampleInterface」で宣言しました。そうすると基本的に我々の知識だとクラスを割当て使いますね。</p> 
+  <p>でも、実装したクラスではなく、「new インタフェース名」で宣言して「Override」でクラスを継承しますね。</p> 
+  <p>すなわち、別にクラスを作ることではなく、直接にクラスを作ることです。</p> 
   <p><br></p> 
-  <p>制御文法はJavaだけではなく、C言語、C++、C#などもすべて同じ文法で動きます。</p> 
-  <p>リンク - <a href="https://www.nowonbun.com/10.html" target="_blank">[C# スタディ - 9] 制御文 - 分岐 (if, switch〜case, goto)</a></p> 
-  <p>リンク - <a href="https://www.nowonbun.com/11.html" target="_blank">[C# スタディ - 10] 制御文 - ループ(for, while, do〜while, foreach)</a></p> 
-  <p>リンク - <a href="https://www.nowonbun.com/12.html" target="_blank">[C# スタディ - 11] 制御文 - ループ分岐(break, continue)</a></p> 
+  <p>下で「setData」で「10」の値を入れて、「print」関数で出力しました。普通のクラスと使う方法が同じですね。</p> 
+  <p>匿名クラスは普通のクラスと別に差異がないですね。別に普通のクラスを宣言して使ってもいいと思いますが、なんで匿名クラスを使うかと言えば匿名クラスはラムダ式と関係があります。</p> 
   <p><br></p> 
-  <p>ここでは制御文の中で分岐文に関して説明します。</p> 
+  <p>我々が一回用のため、一つ一つクラスをすべて宣言するとプロジェクトサイズが大きくなりますね。</p> 
   <p><br></p> 
-  <h2><b><span>if ~ else if ~ else 文</span></b></h2> 
-  <p>- if ~ else if ~ else文は条件の値によって(「true」、「false」)処理する制御文です。</p> 
-  <pre><code class="java" data-type="">① if(条件)
-    文章 ; =&gt; 条件が「true」なら文章を実行する。
-② if(条件)
-    文章1; =&gt; 条件が「true」なら文章1を実行するｓ，「faｌse」なら文章2(else)を実行する。
-  else
-    文章2;
-③ if(条件1)
-    文章1; =&gt; 条件1が「true」なら文章1を実行するし、「false」なら次の条件を検査する。
-  else if(条件2) 
-    文章2; =&gt;条件2が「true」なら文章2を実行するし、「false」なら文章3を実行する。
-  else
-    文章3;
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/45/191_003.jpg" data-filename="003.jpg" style="width: 450px;"></p> 
-  <p style="text-align:left;"><img src="./contents/45/190_001.png" data-filename="001.png" style="width: 586px;"></p> 
-  <p>初めの例はif条件で「check」の値が「true」なので、「number 1 true」がコンソールに出力しました。</p> 
-  <p>２つ目の例はif条件で「check」の値が「false」なので、else式に入って「number 2 false」をコンソールに出力しました。</p> 
-  <p>３つ目の例はif条件でcheck2の値は「3」ですが「check2 == 1」を計算すれば「false」の結果がでます。</p> 
-  <p>なので、次の条件に行きます。次の条件は「check2 == 3」は「true」ですから、コンソールに「number3 true 2」がコンソールに出力します。</p> 
+  <p>ラムダ式とはクラス名とメソッド名を省略して一つのメソッド式で表現した文法といいます。</p> 
+  <p>簡単にいうと匿名クラスでメソッド名まで省略したいということですね。</p> 
+  <p style="text-align:left;"><img src="./contents/60/241_002.jpg" data-filename="002.jpg" style="width: 483px;"></p> 
+  <p>上の例を見れば、「ExampleInterface」のインタフェースに「print」の関数がありますね。</p> 
+  <p>それを「run」関数でパラメータとしてインタフェースを受けています。</p> 
+  <p>「main」関数で「run」を呼出しますが、ラムダ式( () -&gt; { } )でデータを渡します。</p> 
+  <p>ラムダ式の条件はインタフェースの中で一つのメソッドの時に使われますが、もしメソッドが2つ以上ならラムダ式を使えません。</p> 
   <p><br></p> 
-  <h2><b><span>switch ~ case 文</span></b></h2> 
-  <p>- switch ~ case文は数式によってデータが一致するとこを処理する多重選択文です。</p> 
-  <pre><code class="java" data-type="">switch(数式) {
-  case 値1:
-    文章1;
-      break;
-  case 値2:
-    文章2;
-    break;
-  case 値3:
-    文章3;
-    break;
-   ...
-  default:
-    文章;
-    break;
-}
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/45/189_004.jpg" data-filename="004.jpg" style="width: 450px;"></p> 
-  <p style="text-align:left;"><img src="./contents/45/192_002.png" data-filename="002.png" style="width: 587px;"></p> 
-  <p>上の条件式を見ると「switch」の条件は「4」のデータが設定されています。そして条件の値と「case」の値が一致する条件の文章式を実行されます。</p> 
-  <p>もし、一致するデータがなければ、「default」のデータが実行されます。</p> 
-  <p>例では、「check」のデータが「4」なので「case 4」の文章式が実行され、結果は「number 4」に出力します。</p> 
+  <p>ラムダ式は上の例みたいに「void」だけではないです。</p> 
+  <p style="text-align:left;"><img src="./contents/60/245_003.jpg" data-filename="003.jpg" style="width: 652px;"></p> 
+  <p>上の例みたいに、パラメータ設定も可能だし、リターン値設定も可能です。</p> 
   <p><br></p> 
-  <p>ここまで、Javaの分岐に関して説明しました。</p>
-  <p></p>
+  <p>ラムダ式の条件ではインタフェースで一つのメソッドがある時に使うことですが、その条件せいでよく使うインタフェースがあります。</p> 
+  <p>それは「Runnable」ですね。</p> 
+  <p style="text-align:left;"><img src="./contents/60/242_004.jpg" data-filename="004.jpg" style="width: 539px;"></p> 
+  <p>上のイメージをみれば、インタフェースで一つのメソッドの条件があうし、パラメータとリターンの値が「void」ですね。それだけではなく、ラムダ式の概念でクロージャ機能があります。</p> 
+  <p>クロージャ機能は変数がラムダ式外で宣言した変数をラムダ式内で使えることができるのでです。</p> 
+  <p style="text-align:left;"><img src="./contents/60/244_005.jpg" data-filename="005.jpg" style="width: 468px;"></p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=Java%23>#Java#</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=java>#java</a> </span>
 				</div>
 				<div class="other-category">
 					<ul><li><a href='https://www.nowonbun.com/60.html'>[Java スタディ - 20] 匿名クラス、そしてラムダ式(Lambda expression)</a><span>2019/09/04 20:11:28</span></li><li><a href='https://www.nowonbun.com/59.html'>[Java スタディ - 19] 例外処理( try ~ catch)</a><span>2019/09/03 20:37:14</span></li><li><a href='https://www.nowonbun.com/58.html'>[Java スタディ - 18] 列挙型(enum)</a><span>2019/09/02 20:30:34</span></li><li><a href='https://www.nowonbun.com/57.html'>[Java スタディ - 17] 抽象クラス</a><span>2019/08/27 19:05:44</span></li><li><a href='https://www.nowonbun.com/56.html'>[Java スタディ - 16] インタフェース</a><span>2019/08/26 23:40:29</span></li><li><a href='https://www.nowonbun.com/55.html'>[Java スタディ - 15] thisとsuper</a><span>2019/08/23 19:46:10</span></li><li><a href='https://www.nowonbun.com/54.html'>[Java スタディ - 14] クラス継承</a><span>2019/08/22 20:08:37</span></li><li><a href='https://www.nowonbun.com/53.html'>[Java スタディ - 13] new</a><span>2019/08/22 00:06:20</span></li><li><a href='https://www.nowonbun.com/52.html'>[Java スタディ - 12]  Static</a><span>2019/08/20 23:46:23</span></li><li><a href='https://www.nowonbun.com/51.html'>[Java スタディ - 11] アクセス修飾子</a><span>2019/08/20 00:42:04</span></li><li><a href='https://www.nowonbun.com/50.html'>[Java スタディ - 10] クラス(Class)</a><span>2019/08/07 20:53:34</span></li><li><a href='https://www.nowonbun.com/49.html'>[Java スタディ - 9] 関数 (メソッド、Function)</a><span>2019/08/06 20:22:48</span></li><li><a href='https://www.nowonbun.com/48.html'>[Java スタディ - 8] 配列(Array)</a><span>2019/08/05 23:22:58</span></li><li><a href='https://www.nowonbun.com/47.html'>[Java スタディ - 7] 制御文 - ループ分岐 (break, continue)</a><span>2019/08/02 22:45:42</span></li><li><a href='https://www.nowonbun.com/46.html'>[Java スタディ - 6] 制御文 - ループ (for, while, do~while)</a><span>2019/08/01 20:40:40</span></li></ul>
