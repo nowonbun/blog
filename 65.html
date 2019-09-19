@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。このページではスレッドプール(threadpool)に関して調べてみました。以前までスレッド(thread)に関して説明しました。スレッド(thread)とは並列処理でプロセス内で同時に処理ができることです。そのため、データを共有するように同期化(synchronized)によってデータの無欠性を守ることにします。スレッドの場合はシステムの性能関係なく、無限に生成ができます。適切なスレッド生成は並列処理でプログラムの性能を上げることができますね。でも、スレッドは無限に生成できると思っても、パソコンの物理的な容量は限界がありますね。無限にスレッドを生成することでプログラムが指数的に性能が上がることではなく、限界が至ると結局スレッドを実行するリソースでシングルスレッドより遅くなる段階になりますね。その意味では、スレッド個数を制御するし、リソースを再使用することでプログラムの性能をあがることができます。スレッドプールはシステムによってスレッド個数を制御するし、スレッドのステップが終わったものだってもリソース解除ではなく、次のスレッドに再使用することでリソースを節約することができます。「executors.newsinglethreadexecutor()」はスレッドプールの中で一つのスレッドを利用する例です。結果をみれば１番目、２番目、３番目を実行しても順番通りにスレッドが動きます。スレッド名も「thread1」で同じスレッドになっていますね。「executors.newcachedthreadpool()」はスレッドプールの中でスレッドスレッド個数を最大に「int」のサイズほど生成ができます。システム性能によって限界がありますが、かなり多くスレッドを生成できます。でもシステム中では一つのプログラムがあるので、パフォーマンスを最大まで使うのは危ないですね。スレッドプールでスレッドリソースを再使用すると機能がなければ、別に一般「thread」を生成することと差異がないと思いますね。スレッド２つだけ使うスレッドプールを生成したので、結果をみれば初めにはスレッドを２つを利用して２つのスレッドが終了すると「thread1」は再使用するして一つのスレッドに展開することを見えますね。その以外のスレッドプールの種類は「newscheduledthreadpool」,「newworkstealingpoo]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java スタディ - 25] スレッドプール(ThreadPool)" />
+<link rel="canonical" href="https://www.nowonbun.com/65.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java スタディ - 25] スレッドプール(ThreadPool)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。このページではスレッドプール(threadpool)に関して調べてみました。以前までスレッド(thread)に関して説明しました。スレッド(thread)とは並列処理でプロセス内で同時に処理ができることです。そのため、データを共有するように同期化(synchronized)によってデータの無欠性を守ることにします。スレッドの場合はシステムの性能関係なく、無限に生成ができます。適切なスレッド生成は並列処理でプログラムの性能を上げることができますね。でも、スレッドは無限に生成できると思っても、パソコンの物理的な容量は限界がありますね。無限にスレッドを生成することでプログラムが指数的に性能が上がることではなく、限界が至ると結局スレッドを実行するリソースでシングルスレッドより遅くなる段階になりますね。その意味では、スレッド個数を制御するし、リソースを再使用することでプログラムの性能をあがることができます。スレッドプールはシステムによってスレッド個数を制御するし、スレッドのステップが終わったものだってもリソース解除ではなく、次のスレッドに再使用することでリソースを節約することができます。「executors.newsinglethreadexecutor()」はスレッドプールの中で一つのスレッドを利用する例です。結果をみれば１番目、２番目、３番目を実行しても順番通りにスレッドが動きます。スレッド名も「thread1」で同じスレッドになっていますね。「executors.newcachedthreadpool()」はスレッドプールの中でスレッドスレッド個数を最大に「int」のサイズほど生成ができます。システム性能によって限界がありますが、かなり多くスレッドを生成できます。でもシステム中では一つのプログラムがあるので、パフォーマンスを最大まで使うのは危ないですね。スレッドプールでスレッドリソースを再使用すると機能がなければ、別に一般「thread」を生成することと差異がないと思いますね。スレッド２つだけ使うスレッドプールを生成したので、結果をみれば初めにはスレッドを２つを利用して２つのスレッドが終了すると「thread1」は再使用するして一つのスレッドに展開することを見えますね。その以外のスレッドプールの種類は「newscheduledthreadpool」,「newworkstealingpoo]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/65.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 25] スレッドプール(ThreadPool)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。このページではスレッドプール(threadpool)に関して調べてみました。以前までスレッド(thread)に関して説明しました。スレッド(thread)とは並列処理でプロセス内で同時に処理ができることです。そのため、データを共有するように同期化(synchronized)によってデータの無欠性を守ることにします。スレッドの場合はシステムの性能関係なく、無限に生成ができます。適切なスレッド生成は並列処理でプログラムの性能を上げることができますね。でも、スレッドは無限に生成できると思っても、パソコンの物理的な容量は限界がありますね。無限にスレッドを生成することでプログラムが指数的に性能が上がることではなく、限界が至ると結局スレッドを実行するリソースでシングルスレッドより遅くなる段階になりますね。その意味では、スレッド個数を制御するし、リソースを再使用することでプログラムの性能をあがることができます。スレッドプールはシステムによってスレッド個数を制御するし、スレッドのステップが終わったものだってもリソース解除ではなく、次のスレッドに再使用することでリソースを節約することができます。「executors.newsinglethreadexecutor()」はスレッドプールの中で一つのスレッドを利用する例です。結果をみれば１番目、２番目、３番目を実行しても順番通りにスレッドが動きます。スレッド名も「thread1」で同じスレッドになっていますね。「executors.newcachedthreadpool()」はスレッドプールの中でスレッドスレッド個数を最大に「int」のサイズほど生成ができます。システム性能によって限界がありますが、かなり多くスレッドを生成できます。でもシステム中では一つのプログラムがあるので、パフォーマンスを最大まで使うのは危ないですね。スレッドプールでスレッドリソースを再使用すると機能がなければ、別に一般「thread」を生成することと差異がないと思いますね。スレッド２つだけ使うスレッドプールを生成したので、結果をみれば初めにはスレッドを２つを利用して２つのスレッドが終了すると「thread1」は再使用するして一つのスレッドに展開することを見えますね。その以外のスレッドプールの種類は「newscheduledthreadpool」,「newworkstealingpoo]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+
+<title>明月の開発ストーリ :: [Java スタディ - 25] スレッドプール(ThreadPool)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[Java スタディ - 25] スレッドプール(ThreadPool)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0203">Study / Java</a> &nbsp;&nbsp; 作成日付 : 2019/09/13 00:58:31 &nbsp;&nbsp;修正日付 : 2019/09/13 00:59:53
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>このページではスレッドプール(ThreadPool)に関して調べてみました。</p> 
+  <p><br></p> 
+  <p>以前までスレッド(Thread)に関して説明しました。スレッド(Thread)とは並列処理でプロセス内で同時に処理ができることです。</p> 
+  <p>そのため、データを共有するように同期化(synchronized)によってデータの無欠性を守ることにします。</p> 
+  <p><br></p> 
+  <p>スレッドの場合はシステムの性能関係なく、無限に生成ができます。</p> 
+  <p>適切なスレッド生成は並列処理でプログラムの性能を上げることができますね。</p> 
+  <p>でも、スレッドは無限に生成できると思っても、パソコンの物理的な容量は限界がありますね。無限にスレッドを生成することでプログラムが指数的に性能が上がることではなく、限界が至ると結局スレッドを実行するリソースでシングルスレッドより遅くなる段階になりますね。</p> 
+  <p>その意味では、スレッド個数を制御するし、リソースを再使用することでプログラムの性能をあがることができます。</p> 
+  <p><br></p> 
+  <p>スレッドプールはシステムによってスレッド個数を制御するし、スレッドのステップが終わったものだってもリソース解除ではなく、次のスレッドに再使用することでリソースを節約することができます。</p> 
+  <pre><code class="java" data-type="Executors.newSingleThreadExecutor()">import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class Example {
+  // スレッドsleep関数
+  private static void sleep() {
+    try {
+      Thread.sleep(1000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public static void main(String[] main) {
+    // シングルスレッドプール -&gt; スレッドプールの中で一つのプールを呼出す。その意味は使うたびに一つのスレッドで再使用する目的だ。
+    ExecutorService service = Executors.newSingleThreadExecutor();
+    // スレッドプールの中でステップを実行する。
+    service.execute(() -&gt; {
+      for (int i = 0; i &lt; 10; i++) {
+        System.out.println(Thread.currentThread().getName() + " " + i);
+        sleep();
+      }
+    });
+    // スレッド再使用
+    service.execute(() -&gt; {
+      for (int i = 0; i &lt; 10; i++) {
+        System.out.println(Thread.currentThread().getName() + " " + i);
+        sleep();
+      }
+    });
+    // スレッド再使用
+    service.execute(() -&gt; {
+      for (int i = 0; i &lt; 10; i++) {
+        System.out.println(Thread.currentThread().getName() + " " + i);
+        sleep();
+      }
+    });
+    service.shutdown();
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/65/264_001.jpg" data-filename="001.jpg" style="width: 502px;"></p> 
+  <p>「Executors.newSingleThreadExecutor()」はスレッドプールの中で一つのスレッドを利用する例です。結果をみれば１番目、２番目、３番目を実行しても順番通りにスレッドが動きます。スレッド名も「thread1」で同じスレッドになっていますね。</p> 
+  <pre><code class="java" data-type="Executors.newCachedThreadPool()">import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class Example {
+  // スレッドsleep関数
+  private static void sleep() {
+    try {
+      Thread.sleep(1000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public static void main(String[] main) {
+    // スレッド個数をシステムの性能によって自動に生成する。
+    ExecutorService service = Executors.newCachedThreadPool();
+    // スレッドプールの中でステップを実行する。
+    service.execute(() -&gt; {
+      for (int i = 0; i &lt; 10; i++) {
+        System.out.println(Thread.currentThread().getName() + " " + i);
+        sleep();
+      }
+    });
+    // スレッド再使用
+    service.execute(() -&gt; {
+      for (int i = 0; i &lt; 10; i++) {
+        System.out.println(Thread.currentThread().getName() + " " + i);
+        sleep();
+      }
+    });
+    // スレッド再使用
+    service.execute(() -&gt; {
+      for (int i = 0; i &lt; 10; i++) {
+        System.out.println(Thread.currentThread().getName() + " " + i);
+        sleep();
+      }
+    });
+    service.shutdown();
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/65/265_002.jpg" data-filename="002.jpg" style="width: 417px;"></p> 
+  <p>「Executors.newCachedThreadPool()」はスレッドプールの中でスレッドスレッド個数を最大に「int」のサイズほど生成ができます。システム性能によって限界がありますが、かなり多くスレッドを生成できます。</p> 
+  <p>でもシステム中では一つのプログラムがあるので、パフォーマンスを最大まで使うのは危ないですね。スレッドプールでスレッドリソースを再使用すると機能がなければ、別に一般「thread」を生成することと差異がないと思いますね。</p> 
+  <pre><code class="java" data-type="Executors.newFixedThreadPool()">import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class Example {
+  // スレッドsleep関数
+  private static void sleep() {
+    try {
+      Thread.sleep(1000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public static void main(String[] main) {
+    // スレッド個数を決めることができるスレッドプールだ。例は２つ生成しました。
+    ExecutorService service = Executors.newFixedThreadPool(2);
+    // スレッドプールの中でステップを実行する。
+    service.execute(() -&gt; {
+      for (int i = 0; i &lt; 10; i++) {
+        System.out.println(Thread.currentThread().getName() + " " + i);
+        sleep();
+      }
+    });
+    // スレッド再使用
+    service.execute(() -&gt; {
+      for (int i = 0; i &lt; 10; i++) {
+        System.out.println(Thread.currentThread().getName() + " " + i);
+        sleep();
+      }
+    });
+    // スレッド再使用
+    service.execute(() -&gt; {
+      for (int i = 0; i &lt; 10; i++) {
+        System.out.println(Thread.currentThread().getName() + " " + i);
+        sleep();
+      }
+    });
+    service.shutdown();
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/65/267_003.jpg" data-filename="003.jpg" style="width: 368px;"></p> 
+  <p>スレッド２つだけ使うスレッドプールを生成したので、結果をみれば初めにはスレッドを２つを利用して２つのスレッドが終了すると「thread1」は再使用するして一つのスレッドに展開することを見えますね。</p> 
+  <p>その以外のスレッドプールの種類は「newScheduledThreadPool」,「newWorkStealingPool」がありますが、私も使ったことがないので説明が難しいですね。</p> 
+  <p><br></p> 
+  <p>そしてスレッドプールの中でスレッドを起動する時に「execute」関数を使いました。「execute」関数の場合はインタフェース「Runnable」で使うのでラムダ式に簡単に作成ができますね。</p> 
+  <p>でもスレッドプールの中で並列計算が終わった時に結果をもらいたい時には「submit」があり、データを返却して貰えます。</p> 
+  <p style="text-align:left;"><img src="./contents/65/268_004.png" data-filename="004.png" style="width: 701px;"></p> 
+  <pre><code class="java" data-type="">import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+public class Example {
+  // スレッドsleep関数
+  private static void sleep() {
+    try {
+      Thread.sleep(1000);
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+  }
+
+  public static void main(String[] main) {
+    // スレッド個数を決めることができるスレッドプールだ。例は２つ生成しました。
+    ExecutorService service = Executors.newFixedThreadPool(2);
+    // スレッドプールの中でステップを実行する。
+    Future&lt;Integer&gt; data1 = service.submit(() -&gt; {
+      int sum = 0;
+      for (int i = 0; i &lt; 10; i++) {
+        System.out.println(Thread.currentThread().getName() + " " + i);
+        sum += i;
+        sleep();
+      }
+      return sum;
+    });
+    // スレッドプールの中でステップを実行する。
+    Future&lt;Integer&gt; data2 = service.submit(() -&gt; {
+      int sum = 0;
+      for (int i = 10; i &lt; 20; i++) {
+        System.out.println(Thread.currentThread().getName() + " " + i);
+        sum += i;
+        sleep();
+      }
+      return sum;
+    });
+    // スレッドプールの中でステップを実行する。
+    Future&lt;Integer&gt; data3 = service.submit(() -&gt; {
+      int sum = 0;
+      for (int i = 20; i &lt; 30; i++) {
+        System.out.println(Thread.currentThread().getName() + " " + i);
+        sum += i;
+        sleep();
+      }
+      return sum;
+    });
+    try {
+      // ３つ目のスレッド値
+      System.out.println(data3.get());
+      // ３つ目が終わるまで待つ。
+      System.out.println(data2.get());
+      System.out.println(data1.get());
+    } catch (Throwable e) {
+      e.printStackTrace();
+    }
+    service.shutdown();
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/65/266_005.jpg" data-filename="005.jpg" style="width: 390px;"></p> 
+  <p>実は「execute」や「submit」やどちらを使っても構いません。「execute」を使用して変数をクロージャ機能でデータを共有しても問題ないですね。(参考:クロージャ機能は変数がラムダ式外で宣言した変数をラムダ式内で使えることができることです。)</p> 
+  <p>でも私の場合は特別なこと以外は「submit」関数を使います。</p> 
+  <p>なぜなら「submit」関数は「Runnable」インタフェース、「Callable」インタフェースの両方を使えるのでです。</p> 
+  <p><br></p> 
+  <p>ここまえ纏めます。</p> 
+  <div class="table-responsive"> 
+   <table class="table table-striped table-bordered table-condensed"> 
+    <thead> 
+     <tr style="background-color:#DAD7D7"> 
+      <th>スレッド種類</th> 
+      <th>説明</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td>newSingleThreadExecutor</td> 
+      <td>1個のスレッドを使用するスレッドプール</td> 
+     </tr> 
+     <tr> 
+      <td>newCachedThreadPool</td> 
+      <td>個数の制限がないスレッドプール</td> 
+     </tr> 
+     <tr> 
+      <td>newFixedThreadPool</td> 
+      <td>個数を指定して使用するスレッドプール</td> 
+     </tr> 
+     <tr> 
+      <td>newScheduledThreadPool</td> 
+      <td>特定時間などを指定して使用するスレッドプール</td> 
+     </tr> 
+     <tr> 
+      <td>newWorkStealingPool</td> 
+      <td>1.8バージョンから使えるスレッドプールですが、完全なパラレル形で使えるスレッドプール</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <p>そしてスレッドプールではスレッドを呼び出せる関数が２つがあります。</p> 
+  <div class="table-responsive"> 
+   <table class="table table-striped table-bordered table-condensed"> 
+    <thead> 
+     <tr style="background-color:#DAD7D7"> 
+      <th>関数名</th> 
+      <th>説明</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td>execute</td> 
+      <td>パラメータは「Runnable」インタフェースでリターン値がありません。</td> 
+     </tr> 
+     <tr> 
+      <td>submit</td> 
+      <td>パラメータは「Runnable」、「Callable」インタフェースがオバーロードになっているので、「void」やジェネリックタイプで返却が可能です。</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <p>参考でスレッドプールを終了するようには関数が３つあります。</p> 
+  <p>一般的に使用する「shutdown」はプールの中の全てのスレッドが終了するとプールを終了する関数です。</p> 
+  <p>「shutdownNow」の場合はプールの中のスレッドを強制終了してプールを終了します。「awaitTermination」は時間を設定して時間まで終了しなかったらスレッドを強制終了してプールを終了します。</p> 
+  <div class="table-responsive"> 
+   <table class="table table-striped table-bordered table-condensed"> 
+    <thead> 
+     <tr style="background-color:#DAD7D7"> 
+      <th>関数名</th> 
+      <th>説明</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td>shutdown</td> 
+      <td>全てのスレッドが終了するとプールを終了します。</td> 
+     </tr> 
+     <tr> 
+      <td>shutdownNow</td> 
+      <td>全てのスレッドが強制終了するとプールを終了します。</td> 
+     </tr> 
+     <tr> 
+      <td>awaitTermination</td> 
+      <td>時間間で終了しないと全てのスレッドが強制終了するとプールを終了します。</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=java>#java</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0203">Study / Java</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/70.html'>[Java スタディ - 30] Reflection - Variable編</a><span>2019/09/19 20:20:10</span></li><li><a href='https://www.nowonbun.com/69.html'>[Java スタディ - 29] Reflection - Method編</a><span>2019/09/18 20:02:14</span></li><li><a href='https://www.nowonbun.com/68.html'>[Java スタディ - 28] Reflection - Class編</a><span>2019/09/17 20:22:02</span></li><li><a href='https://www.nowonbun.com/67.html'>[Java スタディ - 27] ソケット(Socket)通信</a><span>2019/09/16 23:42:46</span></li><li><a href='https://www.nowonbun.com/66.html'>[Java スタディ - 26] アノテーション(annotation)</a><span>2019/09/13 20:03:58</span></li><li><a href='https://www.nowonbun.com/65.html'>[Java スタディ - 25] スレッドプール(ThreadPool)</a><span>2019/09/13 00:58:31</span></li><li><a href='https://www.nowonbun.com/64.html'>[Java スタディ - 24] スレッド(Thread)、同期化(synchronized)、デッドロック(deadlock)</a><span>2019/09/11 23:06:09</span></li><li><a href='https://www.nowonbun.com/63.html'>[Java スタディ - 23] Streamフィルタ式</a><span>2019/09/10 21:55:36</span></li><li><a href='https://www.nowonbun.com/62.html'>[Java スタディ - 22] ジェネリック(Generic type)</a><span>2019/09/06 22:30:49</span></li><li><a href='https://www.nowonbun.com/61.html'>[Java スタディ - 21] IO(Input / Output)</a><span>2019/09/05 22:58:20</span></li><li><a href='https://www.nowonbun.com/60.html'>[Java スタディ - 20] 匿名クラス、そしてラムダ式(Lambda expression)</a><span>2019/09/04 20:11:28</span></li><li><a href='https://www.nowonbun.com/59.html'>[Java スタディ - 19] 例外処理( try ~ catch)</a><span>2019/09/03 20:37:14</span></li><li><a href='https://www.nowonbun.com/58.html'>[Java スタディ - 18] 列挙型(enum)</a><span>2019/09/02 20:30:34</span></li><li><a href='https://www.nowonbun.com/57.html'>[Java スタディ - 17] 抽象クラス</a><span>2019/08/27 19:05:44</span></li><li><a href='https://www.nowonbun.com/56.html'>[Java スタディ - 16] インタフェース</a><span>2019/08/26 23:40:29</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/70.html'>[Java スタディ - 30] Reflection - Variable編</a><span>2019/09/19 20:20:10</span></li><li><a href='https://www.nowonbun.com/69.html'>[Java スタディ - 29] Reflection - Method編</a><span>2019/09/18 20:02:14</span></li><li><a href='https://www.nowonbun.com/68.html'>[Java スタディ - 28] Reflection - Class編</a><span>2019/09/17 20:22:02</span></li><li><a href='https://www.nowonbun.com/67.html'>[Java スタディ - 27] ソケット(Socket)通信</a><span>2019/09/16 23:42:46</span></li><li><a href='https://www.nowonbun.com/66.html'>[Java スタディ - 26] アノテーション(annotation)</a><span>2019/09/13 20:03:58</span></li><li><a href='https://www.nowonbun.com/65.html'>[Java スタディ - 25] スレッドプール(ThreadPool)</a><span>2019/09/13 00:58:31</span></li><li><a href='https://www.nowonbun.com/64.html'>[Java スタディ - 24] スレッド(Thread)、同期化(synchronized)、デッドロック(deadlock)</a><span>2019/09/11 23:06:09</span></li><li><a href='https://www.nowonbun.com/63.html'>[Java スタディ - 23] Streamフィルタ式</a><span>2019/09/10 21:55:36</span></li><li><a href='https://www.nowonbun.com/62.html'>[Java スタディ - 22] ジェネリック(Generic type)</a><span>2019/09/06 22:30:49</span></li><li><a href='https://www.nowonbun.com/61.html'>[Java スタディ - 21] IO(Input / Output)</a><span>2019/09/05 22:58:20</span></li><li><a href='https://www.nowonbun.com/60.html'>[Java スタディ - 20] 匿名クラス、そしてラムダ式(Lambda expression)</a><span>2019/09/04 20:11:28</span></li><li><a href='https://www.nowonbun.com/59.html'>[Java スタディ - 19] 例外処理( try ~ catch)</a><span>2019/09/03 20:37:14</span></li><li><a href='https://www.nowonbun.com/58.html'>[Java スタディ - 18] 列挙型(enum)</a><span>2019/09/02 20:30:34</span></li><li><a href='https://www.nowonbun.com/57.html'>[Java スタディ - 17] 抽象クラス</a><span>2019/08/27 19:05:44</span></li><li><a href='https://www.nowonbun.com/56.html'>[Java スタディ - 16] インタフェース</a><span>2019/08/26 23:40:29</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>

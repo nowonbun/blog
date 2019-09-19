@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。このページはstreamフィルタ式に関して調べてみました。以前、私が「i/o」に関して説明する時にstreamについて説明したことがありますね。link - [java スタディ - 21] io(input / output)意味としてはその時に同じですが、今回はlistやmapにあるデータを「stream」型に変わって検索、ソートなどをすることです。説明が難しいですが、例で説明します。上の例をみれば、「list」に「0」から「9」までのデータを入れました。そのリストで私は偶数を抽出したいですね。なので、「filter」関数を作って偶数を抽出して返却しました。なので上みたいなソースが実装されました。でも、ただ「int」型のリストで抽出でも複雑ですね。ただ「int」系ではなく「class」タイプならどうかな。もっと複雑になりますね。プログラミングでデータ抽出やソート処理がすごく多いですね。それを簡単に処理するような文法がstreamフィルタ式です。使用方法はリストの場合に「stream()」で変換します。「filter」関数で中はラムダ式ですね。形式はリターン値が「boolean」タイプでパラメータはリストの一つのデータが繰り返して出ます。繰り返して出たデータでリターン値が「true」場合にstream式に残ります。「collect」関数で「list」タイプに変換して返却しますと意味ですね。他の例です。上の例では３つの例を作成しました。初めはリスト形式をマップ形式に変換しました。「collect」関数でパラメータは「キーになるデータを取得する関数名」と「キーによってなるデータ」でマップを作ります。「tomap」の場合は一つのキーで一つのデータを作成することですが、もし重複キーがある場合あにはエラーになります。その時には「groupingby」関数を利用してマップを作れば、キーによってリストデータで紐付きます。後、「toarray」を利用してリストを配列にも変換できますね。最後は「findany」や「findone」関数がありますが、その関数は一つのデータを出力します。すなわち、フィルタで一つの結果を予想する時に使います。でも、上の関数は「optional」クラスに変換しますが、「optional」関数は「null」などの検索結果が正しい可否をチェックするようなクラスですね。例えば、「]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java スタディ - 23] Streamフィルタ式" />
+<link rel="canonical" href="https://www.nowonbun.com/63.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java スタディ - 23] Streamフィルタ式" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。このページはstreamフィルタ式に関して調べてみました。以前、私が「i/o」に関して説明する時にstreamについて説明したことがありますね。link - [java スタディ - 21] io(input / output)意味としてはその時に同じですが、今回はlistやmapにあるデータを「stream」型に変わって検索、ソートなどをすることです。説明が難しいですが、例で説明します。上の例をみれば、「list」に「0」から「9」までのデータを入れました。そのリストで私は偶数を抽出したいですね。なので、「filter」関数を作って偶数を抽出して返却しました。なので上みたいなソースが実装されました。でも、ただ「int」型のリストで抽出でも複雑ですね。ただ「int」系ではなく「class」タイプならどうかな。もっと複雑になりますね。プログラミングでデータ抽出やソート処理がすごく多いですね。それを簡単に処理するような文法がstreamフィルタ式です。使用方法はリストの場合に「stream()」で変換します。「filter」関数で中はラムダ式ですね。形式はリターン値が「boolean」タイプでパラメータはリストの一つのデータが繰り返して出ます。繰り返して出たデータでリターン値が「true」場合にstream式に残ります。「collect」関数で「list」タイプに変換して返却しますと意味ですね。他の例です。上の例では３つの例を作成しました。初めはリスト形式をマップ形式に変換しました。「collect」関数でパラメータは「キーになるデータを取得する関数名」と「キーによってなるデータ」でマップを作ります。「tomap」の場合は一つのキーで一つのデータを作成することですが、もし重複キーがある場合あにはエラーになります。その時には「groupingby」関数を利用してマップを作れば、キーによってリストデータで紐付きます。後、「toarray」を利用してリストを配列にも変換できますね。最後は「findany」や「findone」関数がありますが、その関数は一つのデータを出力します。すなわち、フィルタで一つの結果を予想する時に使います。でも、上の関数は「optional」クラスに変換しますが、「optional」関数は「null」などの検索結果が正しい可否をチェックするようなクラスですね。例えば、「]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/63.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 23] Streamフィルタ式" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。このページはstreamフィルタ式に関して調べてみました。以前、私が「i/o」に関して説明する時にstreamについて説明したことがありますね。link - [java スタディ - 21] io(input / output)意味としてはその時に同じですが、今回はlistやmapにあるデータを「stream」型に変わって検索、ソートなどをすることです。説明が難しいですが、例で説明します。上の例をみれば、「list」に「0」から「9」までのデータを入れました。そのリストで私は偶数を抽出したいですね。なので、「filter」関数を作って偶数を抽出して返却しました。なので上みたいなソースが実装されました。でも、ただ「int」型のリストで抽出でも複雑ですね。ただ「int」系ではなく「class」タイプならどうかな。もっと複雑になりますね。プログラミングでデータ抽出やソート処理がすごく多いですね。それを簡単に処理するような文法がstreamフィルタ式です。使用方法はリストの場合に「stream()」で変換します。「filter」関数で中はラムダ式ですね。形式はリターン値が「boolean」タイプでパラメータはリストの一つのデータが繰り返して出ます。繰り返して出たデータでリターン値が「true」場合にstream式に残ります。「collect」関数で「list」タイプに変換して返却しますと意味ですね。他の例です。上の例では３つの例を作成しました。初めはリスト形式をマップ形式に変換しました。「collect」関数でパラメータは「キーになるデータを取得する関数名」と「キーによってなるデータ」でマップを作ります。「tomap」の場合は一つのキーで一つのデータを作成することですが、もし重複キーがある場合あにはエラーになります。その時には「groupingby」関数を利用してマップを作れば、キーによってリストデータで紐付きます。後、「toarray」を利用してリストを配列にも変換できますね。最後は「findany」や「findone」関数がありますが、その関数は一つのデータを出力します。すなわち、フィルタで一つの結果を予想する時に使います。でも、上の関数は「optional」クラスに変換しますが、「optional」関数は「null」などの検索結果が正しい可否をチェックするようなクラスですね。例えば、「]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+
+<title>明月の開発ストーリ :: [Java スタディ - 23] Streamフィルタ式</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[Java スタディ - 23] Streamフィルタ式</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0203">Study / Java</a> &nbsp;&nbsp; 作成日付 : 2019/09/10 21:55:36 &nbsp;&nbsp;修正日付 : 2019/09/10 22:18:42
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>このページはStreamフィルタ式に関して調べてみました。 </p>
+  <p><br></p> 
+  <p>以前、私が「I/O」に関して説明する時にStreamについて説明したことがありますね。</p> 
+  <p>link - <a href="https://www.nowonbun.com/61.html" target="_blank">[Java スタディ - 21] IO(Input / Output)</a></p> 
+  <p><br></p> 
+  <p>意味としてはその時に同じですが、今回はListやMapにあるデータを「Stream」型に変わって検索、ソートなどをすることです。</p> 
+  <p>説明が難しいですが、例で説明します。</p> 
+  <pre><code class="java" data-type="">import java.util.ArrayList;
+import java.util.List;
+
+public class Example {
+  public static void main(String[] args) {
+    List&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+    for (int i = 0; i &lt; 10; i++) {
+      list.add(i);
+    }
+    list = filter(list);
+
+    for (Integer item : list) {
+      System.out.println(item);
+    }
+  }
+
+  public static List&lt;Integer&gt; filter(List&lt;Integer&gt; list) {
+    List&lt;Integer&gt; buffer = new ArrayList&lt;&gt;();
+    for (Integer item : list) {
+      if (item % 2 == 0) {
+        buffer.add(item);
+      }
+    }
+    return buffer;
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/63/257_001.jpg" data-filename="001.jpg" style="width: 525px;"></p> 
+  <p>上の例をみれば、「list」に「0」から「9」までのデータを入れました。そのリストで私は偶数を抽出したいですね。</p> 
+  <p>なので、「filter」関数を作って偶数を抽出して返却しました。なので上みたいなソースが実装されました。</p> 
+  <p><br></p> 
+  <p>でも、ただ「int」型のリストで抽出でも複雑ですね。ただ「int」系ではなく「class」タイプならどうかな。もっと複雑になりますね。</p> 
+  <p>プログラミングでデータ抽出やソート処理がすごく多いですね。それを簡単に処理するような文法がStreamフィルタ式です。</p> 
+  <pre><code class="java" data-type="">import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Example {
+  public static void main(String[] args) {
+    List&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+    for (int i = 0; i &lt; 10; i++) {
+      list.add(i);
+    }
+    list = list.stream().filter(x -&gt; {
+      //　filterの内容は偶数が「true」になる。
+      return x % 2 == 0;
+      //　返却データはリストタイプにする。
+    }).collect(Collectors.toList());
+    
+    //繰り返して出力します。
+    list.forEach(x -&gt; {
+      System.out.println(x);
+    });
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/63/258_002.jpg" data-filename="002.jpg" style="width: 484px;"></p> 
+  <p>使用方法はリストの場合に「stream()」で変換します。「filter」関数で中はラムダ式ですね。形式はリターン値が「boolean」タイプでパラメータはリストの一つのデータが繰り返して出ます。</p> 
+  <p>繰り返して出たデータでリターン値が「true」場合にStream式に残ります。「collect」関数で「list」タイプに変換して返却しますと意味ですね。</p> 
+  <p><br></p> 
+  <p>他の例です。</p> 
+  <pre><code class="java" data-type="">import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+public class Example {
+  public static void main(String[] args) {
+    List&lt;Node&gt; list = new ArrayList&lt;&gt;();
+    for (int i = 0; i &lt; 10; i++) {
+      Node node = new Node();
+      node.setIndex(i);
+      node.setData("data " + i);
+      list.add(node);
+    }
+    
+    // リストをマップ形式に変換して出力する。
+    Map&lt;Integer, Node&gt; map = list.stream().filter(x -&gt; {
+      return x.getIndex() % 2 == 0;
+    }).collect(Collectors.toMap(Node::getIndex, x -&gt; x));
+
+    for (int key : map.keySet()) {
+      System.out.println(key);
+      System.out.println(map.get(key).getData());
+    }
+    System.out.println();
+    
+    // toMapの場合は重複データがある場合にエラーになる。重複データをリスト別でするようには「groupingBy」関数を利用する。
+    Map&lt;Integer, List&lt;Node&gt;&gt; map1 = list.stream().filter(x -&gt; {
+      return x.getIndex() % 2 == 0;
+    }).collect(Collectors.groupingBy(x -&gt; x.getIndex()));
+    for (int key : map1.keySet()) {
+      System.out.println(key);
+      for(Node node : map1.get(key)) {
+        System.out.println(node.getData());
+      }
+    }
+    
+    // 配列に変換して出力する。
+    Object[] array = (Object[]) list.stream().filter(x -&gt; {
+      return x.getIndex() % 2 == 0;
+    }).sorted((a, b) -&gt; Integer.compare(a.getIndex(), b.getIndex()) * -1).toArray();
+    // 降順でリストを並ぶ。
+    for (Object item : array) {
+      System.out.println(((Node) item).getData());
+    }
+    System.out.println();
+    
+    //　一つのデータを出力する。「Optional」のタイプで返却する。
+    // parallelStreamの場合は「パラレルループ」を使います。
+    Optional&lt;Node&gt; node = list.parallelStream().filter(x -&gt; x.getIndex() == 5).findAny();
+    if(node.isPresent()) {
+      System.out.println(node.get().getIndex());
+    }
+  }
+}
+
+class Node {
+  private int index;
+  private String data;
+  public int getIndex() {
+    return index;
+  }
+  public void setIndex(int index) {
+    this.index = index;
+  }
+  public String getData() {
+    return data;
+  }
+  public void setData(String data) {
+    this.data = data;
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/63/259_004.jpg" data-filename="004.jpg" style="width: 593px;"></p> 
+  <p>上の例では３つの例を作成しました。</p> 
+  <p>初めはリスト形式をマップ形式に変換しました。「collect」関数でパラメータは「キーになるデータを取得する関数名」と「キーによってなるデータ」でマップを作ります。</p> 
+  <p>「toMap」の場合は一つのキーで一つのデータを作成することですが、もし重複キーがある場合あにはエラーになります。</p> 
+  <p>その時には「groupingBy」関数を利用してマップを作れば、キーによってリストデータで紐付きます。</p> 
+  <p>後、「toArray」を利用してリストを配列にも変換できますね。</p> 
+  <p><br></p> 
+  <p>最後は「findAny」や「findOne」関数がありますが、その関数は一つのデータを出力します。すなわち、フィルタで一つの結果を予想する時に使います。</p> 
+  <p>でも、上の関数は「Optional」クラスに変換しますが、「Optional」関数は「null」などの検索結果が正しい可否をチェックするようなクラスですね。</p> 
+  <p>例えば、「String」タイプならクラスタイプなので、問題ないですが、「int」や「double」の場合は「null」がないデータタイプなので、データタイプだけでは「null」チェックができないですね。</p> 
+  <p>そのため、「Optional」クラスが存在することだと思えばよいです。</p> 
+  <p><br></p> 
+  <p>結果は「collect」や「finaAny」、「findOne」で結果をもらいます。</p> 
+  <p><br></p> 
+  <p>上の例を見れば「sorted」場合はリストの並びを設定できますね。上の場合は「* -1」を入れて降順に設定しましたが、「* -1」がなければ昇順でリストが並びますね。</p> 
+  <p>並びのキーは「Node」の中で「index」によって設定しました。</p> 
+  <p><br></p> 
+  <p>「parallelStream」がありますが。「parallelStream」はループを一つのCPUではなく並列CPUを利用してフィルタを反映するように設定することですね。</p> 
+  <p>大量データの場合は「parallelStream」が早いと思いますが、少ない場合はインタラプト設定で逆に遅くなります。</p> 
+  <pre><code class="java" data-type="">import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Example {
+  public static void main(String[] args) {
+    List&lt;Node&gt; list = new ArrayList&lt;&gt;();
+    for (int i = 0; i &lt; 1000; i++) {
+      Node node = new Node();
+      node.setIndex(i);
+      node.setData("data " + i);
+      list.add(node);
+    }
+    List&lt;Node&gt; ret = list.parallelStream().filter(x -&gt; x.getIndex() % 2 == 0).collect(Collectors.toList());
+    for (Node item : ret) {
+      System.out.println(item.getData());
+    }
+  }
+}
+
+class Node {
+  private int index;
+  private String data;
+  public int getIndex() {
+    return index;
+  }
+  public void setIndex(int index) {
+    this.index = index;
+  }
+  public String getData() {
+    return data;
+  }
+  public void setData(String data) {
+    this.data = data;
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/63/260_005.jpg" data-filename="005.jpg" style="width: 799px;"></p> 
+  <p>私の結果は別に問題なく出ましたが、パラレル処理する場合は結果が順番通りに出ない可能性もあります。パラレル処理する時には順番が関係ない、データ量が多いが早い結果を出せる時には良いと思いますね。</p> 
+  <p><br></p> 
+  <p>「Stream」の場合は「C#」の「Linq」の機能と似てます。参考してください。</p> 
+  <p>link - <a href="https://www.nowonbun.com/28.html" target="_balnk">[C# スタディ - 27] LINQ(リンク)-1</a></p> 
+  <p>link - <a href="https://www.nowonbun.com/29.html" target="_blank">[C# スタディ - 28] LINQ(リンク)-2 (メソッド式)</a></p> 
+  <p>link - <a href="https://www.nowonbun.com/30.html" target="_blank">[C# スタディ - 29] LINQ(リンク)-3 (Enumerableクラス)</a></p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=java>#java</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0203">Study / Java</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/70.html'>[Java スタディ - 30] Reflection - Variable編</a><span>2019/09/19 20:20:10</span></li><li><a href='https://www.nowonbun.com/69.html'>[Java スタディ - 29] Reflection - Method編</a><span>2019/09/18 20:02:14</span></li><li><a href='https://www.nowonbun.com/68.html'>[Java スタディ - 28] Reflection - Class編</a><span>2019/09/17 20:22:02</span></li><li><a href='https://www.nowonbun.com/67.html'>[Java スタディ - 27] ソケット(Socket)通信</a><span>2019/09/16 23:42:46</span></li><li><a href='https://www.nowonbun.com/66.html'>[Java スタディ - 26] アノテーション(annotation)</a><span>2019/09/13 20:03:58</span></li><li><a href='https://www.nowonbun.com/65.html'>[Java スタディ - 25] スレッドプール(ThreadPool)</a><span>2019/09/13 00:58:31</span></li><li><a href='https://www.nowonbun.com/64.html'>[Java スタディ - 24] スレッド(Thread)、同期化(synchronized)、デッドロック(deadlock)</a><span>2019/09/11 23:06:09</span></li><li><a href='https://www.nowonbun.com/63.html'>[Java スタディ - 23] Streamフィルタ式</a><span>2019/09/10 21:55:36</span></li><li><a href='https://www.nowonbun.com/62.html'>[Java スタディ - 22] ジェネリック(Generic type)</a><span>2019/09/06 22:30:49</span></li><li><a href='https://www.nowonbun.com/61.html'>[Java スタディ - 21] IO(Input / Output)</a><span>2019/09/05 22:58:20</span></li><li><a href='https://www.nowonbun.com/60.html'>[Java スタディ - 20] 匿名クラス、そしてラムダ式(Lambda expression)</a><span>2019/09/04 20:11:28</span></li><li><a href='https://www.nowonbun.com/59.html'>[Java スタディ - 19] 例外処理( try ~ catch)</a><span>2019/09/03 20:37:14</span></li><li><a href='https://www.nowonbun.com/58.html'>[Java スタディ - 18] 列挙型(enum)</a><span>2019/09/02 20:30:34</span></li><li><a href='https://www.nowonbun.com/57.html'>[Java スタディ - 17] 抽象クラス</a><span>2019/08/27 19:05:44</span></li><li><a href='https://www.nowonbun.com/56.html'>[Java スタディ - 16] インタフェース</a><span>2019/08/26 23:40:29</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/70.html'>[Java スタディ - 30] Reflection - Variable編</a><span>2019/09/19 20:20:10</span></li><li><a href='https://www.nowonbun.com/69.html'>[Java スタディ - 29] Reflection - Method編</a><span>2019/09/18 20:02:14</span></li><li><a href='https://www.nowonbun.com/68.html'>[Java スタディ - 28] Reflection - Class編</a><span>2019/09/17 20:22:02</span></li><li><a href='https://www.nowonbun.com/67.html'>[Java スタディ - 27] ソケット(Socket)通信</a><span>2019/09/16 23:42:46</span></li><li><a href='https://www.nowonbun.com/66.html'>[Java スタディ - 26] アノテーション(annotation)</a><span>2019/09/13 20:03:58</span></li><li><a href='https://www.nowonbun.com/65.html'>[Java スタディ - 25] スレッドプール(ThreadPool)</a><span>2019/09/13 00:58:31</span></li><li><a href='https://www.nowonbun.com/64.html'>[Java スタディ - 24] スレッド(Thread)、同期化(synchronized)、デッドロック(deadlock)</a><span>2019/09/11 23:06:09</span></li><li><a href='https://www.nowonbun.com/63.html'>[Java スタディ - 23] Streamフィルタ式</a><span>2019/09/10 21:55:36</span></li><li><a href='https://www.nowonbun.com/62.html'>[Java スタディ - 22] ジェネリック(Generic type)</a><span>2019/09/06 22:30:49</span></li><li><a href='https://www.nowonbun.com/61.html'>[Java スタディ - 21] IO(Input / Output)</a><span>2019/09/05 22:58:20</span></li><li><a href='https://www.nowonbun.com/60.html'>[Java スタディ - 20] 匿名クラス、そしてラムダ式(Lambda expression)</a><span>2019/09/04 20:11:28</span></li><li><a href='https://www.nowonbun.com/59.html'>[Java スタディ - 19] 例外処理( try ~ catch)</a><span>2019/09/03 20:37:14</span></li><li><a href='https://www.nowonbun.com/58.html'>[Java スタディ - 18] 列挙型(enum)</a><span>2019/09/02 20:30:34</span></li><li><a href='https://www.nowonbun.com/57.html'>[Java スタディ - 17] 抽象クラス</a><span>2019/08/27 19:05:44</span></li><li><a href='https://www.nowonbun.com/56.html'>[Java スタディ - 16] インタフェース</a><span>2019/08/26 23:40:29</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
