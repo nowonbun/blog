@@ -20,29 +20,29 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / Java" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。このページではインターフェースに関して調べてみます。インターフェースとは一般クラスと違いますが、処理式と変数がない形だけあるクラス(?)、すなわち、「new」ができないクラス(?)と言います。つまり、「heap」メモリに割当てるのができなく、「stack」だけメモリアドレスを宣言する形になるクラスです。クラスといいますが、インターフェースですね。そうなら、なぜ処理式がなしで形が￥だけあるインターフェースがあるか？プログラムを作成する時に本当に割当てるクラスだけではなく、形だけで宣言してデータを扱う時がありますね。上の例を見れば、時にプログラム上で問題がありません。「print」関数のパラメータで「true」を入れると「class1」の「print」が実行して結果が出力するはずですね。または「false」を入力すると「class2」が出力します。でも、私の場合はクラスをリターンしてクラスの値をもらいたい時にどうすればいいかな？確かに上のクラスが違うので、一つの返却データタイプで決めて返却はできないですね。じゃなければ、「object」タイプで返却をもらうことができますが(※javaはすべてのクラスが「object」タイプを経書しています。)、「object」タイプには「print」関数がないので、「print」関数を呼出すのができないですね。上の例を見れば、「eclipse」でエラーが発生しますね。そうです。そのために、インターフェースが必要ですね。上の例を見れば、「interface」を宣言して「interface」中で何を使うかのメソッドを宣言します。参考に「interface」は処理式と変数は要らないです。なのでアクセス修飾子も要らなく、全て「public」だと思ったらよいです。また、「main」関数に戻って「print」関数を呼出すと「interface1」の形式でリターンします。でもそのインタフェースは「true」の場合は「class1」を「false」の場合は「class2」のデータを持っています。インタフェースの場合はリターン式のためではなく、クラスを纏めて処理式を作ることも可能ですね。上のみたいに戦略的に設計も可能です。実際に「interface」は「oop」で重要なキーワードで本当に「oop」らしくプログラミングができるようにするキーワードですね。後で、デザインパター]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。このページではこのページにはreflection機能の中でアノテーション(annotation)に関して調べてみました。前述でアノテーションに関して説明した時があります。link - [java スタディ - 26] アノテーション(annotation) その時にアノテーションではただ、クラスやメソッドや変数などのメタデータだと言いましたが、実はアノテーションはreflectionで入るとデータ初期設定、メソッドを探しの里程表だと思います。上の例をみれば、クラスのメソッドを全て取得してアノテーションがあるかどうかであるなら「invoke」で実行します。なので結果は「method1」、「method3」は出力するし、「method2」の場合は出力しないですね。上の例を見れば「main」で「example」クラスを割当てクラスの中の「node」変数にデータを入れるところがありません。当たり前で「node」変数は「null」と予想します。でも「exec」で「node」クラスの「print」メソッドを呼出す時、「exception」が発生しませんでした。その理由は「main」関数で「reflection」機能を使ってアノテーションに書いている「クラス」名で割当てしたからのです。上の例が依存性注入の概念ですね。「reflection」機能はデザインパターンと合わせることになると素晴らしく綺麗なソースに作られるので、デザインパターンも含めて熟知しなければならないと思います。]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [Java スタディ - 16] インタフェース" />
-<link rel="canonical" href="https://www.nowonbun.com/56.html" />
+<meta name="title" content="明月の開発ストーリ :: [Java スタディ - 31] Reflection - Annotation編" />
+<link rel="canonical" href="https://www.nowonbun.com/71.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [Java スタディ - 16] インタフェース" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。このページではインターフェースに関して調べてみます。インターフェースとは一般クラスと違いますが、処理式と変数がない形だけあるクラス(?)、すなわち、「new」ができないクラス(?)と言います。つまり、「heap」メモリに割当てるのができなく、「stack」だけメモリアドレスを宣言する形になるクラスです。クラスといいますが、インターフェースですね。そうなら、なぜ処理式がなしで形が￥だけあるインターフェースがあるか？プログラムを作成する時に本当に割当てるクラスだけではなく、形だけで宣言してデータを扱う時がありますね。上の例を見れば、時にプログラム上で問題がありません。「print」関数のパラメータで「true」を入れると「class1」の「print」が実行して結果が出力するはずですね。または「false」を入力すると「class2」が出力します。でも、私の場合はクラスをリターンしてクラスの値をもらいたい時にどうすればいいかな？確かに上のクラスが違うので、一つの返却データタイプで決めて返却はできないですね。じゃなければ、「object」タイプで返却をもらうことができますが(※javaはすべてのクラスが「object」タイプを経書しています。)、「object」タイプには「print」関数がないので、「print」関数を呼出すのができないですね。上の例を見れば、「eclipse」でエラーが発生しますね。そうです。そのために、インターフェースが必要ですね。上の例を見れば、「interface」を宣言して「interface」中で何を使うかのメソッドを宣言します。参考に「interface」は処理式と変数は要らないです。なのでアクセス修飾子も要らなく、全て「public」だと思ったらよいです。また、「main」関数に戻って「print」関数を呼出すと「interface1」の形式でリターンします。でもそのインタフェースは「true」の場合は「class1」を「false」の場合は「class2」のデータを持っています。インタフェースの場合はリターン式のためではなく、クラスを纏めて処理式を作ることも可能ですね。上のみたいに戦略的に設計も可能です。実際に「interface」は「oop」で重要なキーワードで本当に「oop」らしくプログラミングができるようにするキーワードですね。後で、デザインパター]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java スタディ - 31] Reflection - Annotation編" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。このページではこのページにはreflection機能の中でアノテーション(annotation)に関して調べてみました。前述でアノテーションに関して説明した時があります。link - [java スタディ - 26] アノテーション(annotation) その時にアノテーションではただ、クラスやメソッドや変数などのメタデータだと言いましたが、実はアノテーションはreflectionで入るとデータ初期設定、メソッドを探しの里程表だと思います。上の例をみれば、クラスのメソッドを全て取得してアノテーションがあるかどうかであるなら「invoke」で実行します。なので結果は「method1」、「method3」は出力するし、「method2」の場合は出力しないですね。上の例を見れば「main」で「example」クラスを割当てクラスの中の「node」変数にデータを入れるところがありません。当たり前で「node」変数は「null」と予想します。でも「exec」で「node」クラスの「print」メソッドを呼出す時、「exception」が発生しませんでした。その理由は「main」関数で「reflection」機能を使ってアノテーションに書いている「クラス」名で割当てしたからのです。上の例が依存性注入の概念ですね。「reflection」機能はデザインパターンと合わせることになると素晴らしく綺麗なソースに作られるので、デザインパターンも含めて熟知しなければならないと思います。]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/56.html" />
+<meta property="og:url" content="https://www.nowonbun.com/71.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 16] インタフェース" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。このページではインターフェースに関して調べてみます。インターフェースとは一般クラスと違いますが、処理式と変数がない形だけあるクラス(?)、すなわち、「new」ができないクラス(?)と言います。つまり、「heap」メモリに割当てるのができなく、「stack」だけメモリアドレスを宣言する形になるクラスです。クラスといいますが、インターフェースですね。そうなら、なぜ処理式がなしで形が￥だけあるインターフェースがあるか？プログラムを作成する時に本当に割当てるクラスだけではなく、形だけで宣言してデータを扱う時がありますね。上の例を見れば、時にプログラム上で問題がありません。「print」関数のパラメータで「true」を入れると「class1」の「print」が実行して結果が出力するはずですね。または「false」を入力すると「class2」が出力します。でも、私の場合はクラスをリターンしてクラスの値をもらいたい時にどうすればいいかな？確かに上のクラスが違うので、一つの返却データタイプで決めて返却はできないですね。じゃなければ、「object」タイプで返却をもらうことができますが(※javaはすべてのクラスが「object」タイプを経書しています。)、「object」タイプには「print」関数がないので、「print」関数を呼出すのができないですね。上の例を見れば、「eclipse」でエラーが発生しますね。そうです。そのために、インターフェースが必要ですね。上の例を見れば、「interface」を宣言して「interface」中で何を使うかのメソッドを宣言します。参考に「interface」は処理式と変数は要らないです。なのでアクセス修飾子も要らなく、全て「public」だと思ったらよいです。また、「main」関数に戻って「print」関数を呼出すと「interface1」の形式でリターンします。でもそのインタフェースは「true」の場合は「class1」を「false」の場合は「class2」のデータを持っています。インタフェースの場合はリターン式のためではなく、クラスを纏めて処理式を作ることも可能ですね。上のみたいに戦略的に設計も可能です。実際に「interface」は「oop」で重要なキーワードで本当に「oop」らしくプログラミングができるようにするキーワードですね。後で、デザインパター]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 31] Reflection - Annotation編" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。このページではこのページにはreflection機能の中でアノテーション(annotation)に関して調べてみました。前述でアノテーションに関して説明した時があります。link - [java スタディ - 26] アノテーション(annotation) その時にアノテーションではただ、クラスやメソッドや変数などのメタデータだと言いましたが、実はアノテーションはreflectionで入るとデータ初期設定、メソッドを探しの里程表だと思います。上の例をみれば、クラスのメソッドを全て取得してアノテーションがあるかどうかであるなら「invoke」で実行します。なので結果は「method1」、「method3」は出力するし、「method2」の場合は出力しないですね。上の例を見れば「main」で「example」クラスを割当てクラスの中の「node」変数にデータを入れるところがありません。当たり前で「node」変数は「null」と予想します。でも「exec」で「node」クラスの「print」メソッドを呼出す時、「exception」が発生しませんでした。その理由は「main」関数で「reflection」機能を使ってアノテーションに書いている「クラス」名で割当てしたからのです。上の例が依存性注入の概念ですね。「reflection」機能はデザインパターンと合わせることになると素晴らしく綺麗なソースに作られるので、デザインパターンも含めて熟知しなければならないと思います。]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 
-<title>明月の開発ストーリ :: [Java スタディ - 16] インタフェース</title>
+<title>明月の開発ストーリ :: [Java スタディ - 31] Reflection - Annotation編</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -108,11 +108,11 @@ body{
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[Java スタディ - 16] インタフェース</h1>
+					<h1 id="titleTxt">[Java スタディ - 31] Reflection - Annotation編</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0203">Study / Java</a> &nbsp;&nbsp; 作成日付 : 2019/08/26 23:40:29 &nbsp;&nbsp;修正日付 : 2019/09/05 20:55:19
+					<a href="./?category=0203">Study / Java</a> &nbsp;&nbsp; 作成日付 : 2019/09/20 22:34:40 &nbsp;&nbsp;修正日付 : 2019/09/20 22:35:47
 				</div>
 			</div>
 			<div class="article">
@@ -124,44 +124,128 @@ body{
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>このページではインターフェースに関して調べてみます。</p> 
+  <p>このページではこのページにはReflection機能の中でアノテーション(Annotation)に関して調べてみました。</p> 
   <p><br></p> 
-  <p>インターフェースとは一般クラスと違いますが、処理式と変数がない形だけあるクラス(?)、すなわち、「new」ができないクラス(?)と言います。</p> 
-  <p>つまり、「Heap」メモリに割当てるのができなく、「Stack」だけメモリアドレスを宣言する形になるクラスです。</p> 
-  <p>クラスといいますが、インターフェースですね。</p> 
+  <p>前述でアノテーションに関して説明した時があります。</p> 
+  <p>link - <a href="https://www.nowonbun.com/66.html" target="_blank">[Java スタディ - 26] アノテーション(annotation)</a></p> 
   <p><br></p> 
-  <p>そうなら、なぜ処理式がなしで形が￥だけあるインターフェースがあるか？</p> 
-  <p>プログラムを作成する時に本当に割当てるクラスだけではなく、形だけで宣言してデータを扱う時がありますね。</p> 
-  <p style="text-align:left;"><img src="./contents/56/227_001.jpg" data-filename="001.jpg" style="width: 436px;"></p> 
-  <p>上の例を見れば、時にプログラム上で問題がありません。「print」関数のパラメータで「true」を入れると「Class1」の「print」が実行して結果が出力するはずですね。</p> 
-  <p>または「false」を入力すると「Class2」が出力します。</p> 
+  <p>その時にアノテーションではただ、クラスやメソッドや変数などのメタデータだと言いましたが、実はアノテーションはReflectionで入るとデータ初期設定、メソッドを探しの里程表だと思います。</p> 
+  <pre><code class="java" data-type="TestAnnotation.java">import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target(ElementType.METHOD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface TestAnnotaion { }
+</code></pre> 
+  <pre><code class="java" data-type="Node.java">public class Node {
+  @TestAnnotaion()
+  public void method1() {
+    System.out.println("method1");
+  }
+  
+  public void method2() {
+    System.out.println("method2");
+  }
+ 
+  @TestAnnotaion()
+  public void method3() {
+    System.out.println("method3");
+  }
+}
+</code></pre> 
+  <pre><code class="java" data-type="Example.java">public class Example {
+  public static void main(String... args) throws Exception {
+    try {
+      // クラスを割当てします。
+      Node node = new Node();
+      // Nodeクラス中でメソッドを全て取得する。
+      Method[] methods = Node.class.getMethods();
+      for(Method method : methods) {
+        // メソッドでアノテーション「TestAnnotation」を取得する。
+        TestAnnotaion anno = method.getAnnotation(TestAnnotaion.class);
+        if(anno != null) {
+          //　アノテーションがあることだけ実行
+          method.invoke(node);    
+        }
+      }
+    } catch (Throwable e) {
+      throw new RuntimeException(e);
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/71/285_001.jpg" data-filename="001.jpg" style="width: 484px;"></p> 
+  <p>上の例をみれば、クラスのメソッドを全て取得してアノテーションがあるかどうかであるなら「invoke」で実行します。</p> 
+  <p>なので結果は「method1」、「method3」は出力するし、「method2」の場合は出力しないですね。</p> 
+  <pre><code class="java" data-type="AllocAnnotation.java">import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+
+@Target(ElementType.FIELD)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface AllocAnnotaion {
+  public String value();
+}
+</code></pre> 
+  <pre><code class="java" data-type="Node.java">public class Node {
+  public void print() {
+    System.out.println("Alloc OK!");
+  }
+}
+</code></pre> 
+  <pre><code class="java" data-type="Example.java">import java.lang.reflect.Field;
+
+public class  {
+  // 依存性注入パターン(DI)としてデータを割当てする。
+  @AllocAnnotaion("Node")
+  private Node node;
+  
+  // 実行
+  public void exec() {
+    node.print();
+  }
+  
+  public static void main(String... args) throws Exception {
+    try {
+      Example obj = new Example();
+      // Example クラスの中でメンバー変数を探す
+      for(Field field : Example.class.getDeclaredFields()) {
+        // privateとprotectedを関係ずに操作できるように修正
+        field.setAccessible(true);
+        // AllocAnntaionのアノテーションを取得する。
+        AllocAnnotaion anno = field.getAnnotation(AllocAnnotaion.class);
+        if(anno != null) {
+          // あれば、該当な変数に割当する。
+          String className = anno.value();
+          field.set(obj, Class.forName(className).getConstructor().newInstance());
+        }
+      }
+      // 関数を呼出す。
+      obj.exec();
+    } catch (Throwable e) {
+      throw new RuntimeException(e);
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/71/286_002.jpg" data-filename="002.jpg" style="width: 544px;"></p> 
+  <p>上の例を見れば「main」で「Example」クラスを割当てクラスの中の「node」変数にデータを入れるところがありません。</p> 
+  <p>当たり前で「node」変数は「null」と予想します。でも「exec」で「Node」クラスの「print」メソッドを呼出す時、「Exception」が発生しませんでした。</p> 
   <p><br></p> 
-  <p>でも、私の場合はクラスをリターンしてクラスの値をもらいたい時にどうすればいいかな？</p> 
-  <p>確かに上のクラスが違うので、一つの返却データタイプで決めて返却はできないですね。</p> 
+  <p>その理由は「main」関数で「Reflection」機能を使ってアノテーションに書いている「クラス」名で割当てしたからのです。</p> 
+  <p>上の例が依存性注入の概念ですね。</p> 
   <p><br></p> 
-  <p>じゃなければ、「Object」タイプで返却をもらうことができますが(※Javaはすべてのクラスが「Object」タイプを経書しています。)、「Object」タイプには「print」関数がないので、「print」関数を呼出すのができないですね。</p> 
-  <p style="text-align:left;"><img src="./contents/56/228_002.jpg" data-filename="002.jpg" style="width: 399px;"></p> 
-  <p>上の例を見れば、「Eclipse」でエラーが発生しますね。</p> 
-  <p><br></p> 
-  <p>そうです。そのために、インターフェースが必要ですね。</p> 
-  <p style="text-align:left;"><img src="./contents/56/229_003.jpg" data-filename="003.jpg" style="width: 444px;"></p> 
-  <p>上の例を見れば、「interface」を宣言して「interface」中で何を使うかのメソッドを宣言します。</p> 
-  <p>参考に「interface」は処理式と変数は要らないです。なのでアクセス修飾子も要らなく、全て「public」だと思ったらよいです。</p> 
-  <p><br></p> 
-  <p>また、「main」関数に戻って「print」関数を呼出すと「Interface1」の形式でリターンします。でもそのインタフェースは「true」の場合は「Class1」を「false」の場合は「Class2」のデータを持っています。</p> 
-  <p style="text-align:left;"><img src="./contents/56/231_004.jpg" data-filename="004.jpg" style="width: 398px;"></p> 
-  <p>インタフェースの場合はリターン式のためではなく、クラスを纏めて処理式を作ることも可能ですね。</p> 
-  <p style="text-align:left;"><img src="./contents/56/230_005.jpg" data-filename="005.jpg" style="width: 457px;"></p> 
-  <p>上のみたいに戦略的に設計も可能です。</p> 
-  <p>実際に「interface」は「oop」で重要なキーワードで本当に「oop」らしくプログラミングができるようにするキーワードですね。</p> 
-  <p>後で、デザインパターンに関しても説明しようと思いますが、そのデザインパターンで核心な文法だし、概念ですね。</p>
+  <p>「Reflection」機能はデザインパターンと合わせることになると素晴らしく綺麗なソースに作られるので、デザインパターンも含めて熟知しなければならないと思います。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=Java>#Java</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=java>#java</a> </span>
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0203">Study / Java</a>」の他投稿</div>
