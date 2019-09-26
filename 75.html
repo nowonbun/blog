@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。このページは「eclipse」で「spring web framework」を利用してウェブサービスプロジェクトを立ち上がる方法に関して調べてみました。先に「spring web framework」でウェブサービスプロジェックとを作成する前に「maven」インストールと「servlet」作成に関して知らなければならないです。link - [java スタディ - 32] mavenをインストール、使用方法、そしてeclipseに連結する方法link - [java スタディ - 34] web serviceプログラムのservletを作成方法(eclipse)先にサブレットプロジェクトを作成しましょう。そしてmavenプロジェクトに変換しましょう。そして「pom.xml」で「spring framework」ライブラリを登録して、ライブラリをダウンロードするし、連携しましょう。そして「mvc-config.xml」を「webcontent -&amp;gt; web-inf」フォルダの中で生成しましょう。そして「web.xml」で「mvc-config.xml」を設定しましょう。「spring framework」の設定はここまでです。これから「controller」を作成しましょう。先に「mvc-config.xml」ファイルで「controller」パッケージ名を「controller」で設定しましたので、「controller」パッケージで「helloworld」クラスを生成しましょう。「controller」クラスで重要なことは「@controller」のアトリビュートを設定することです。そして関数で「url」マッピングパターンを入れて関数でアトリビュートを指定します。上のソースの場合は「/index.html」で要請されると「index」関数が呼び出されますね。参考にルートのページは「index.html」で指定しましたので、ルートページがその関数を呼出します。「modelmap」でキーとデータを入れると「view」でデータを渡します。「return」の値は「string」タイプですがそれが「view」のファイル名を指定します。私の場合は「index」でリターンしますね。ここまで起動するための基本設定が完了しました。私が予想することは起動すると「hello world」]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java スタディ - 35] EclipseでSpring web frameworkを利用してウェブサービスプロジェクトを立ち上がる方法" />
+<link rel="canonical" href="https://www.nowonbun.com/75.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java スタディ - 35] EclipseでSpring web frameworkを利用してウェブサービスプロジェクトを立ち上がる方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。このページは「eclipse」で「spring web framework」を利用してウェブサービスプロジェクトを立ち上がる方法に関して調べてみました。先に「spring web framework」でウェブサービスプロジェックとを作成する前に「maven」インストールと「servlet」作成に関して知らなければならないです。link - [java スタディ - 32] mavenをインストール、使用方法、そしてeclipseに連結する方法link - [java スタディ - 34] web serviceプログラムのservletを作成方法(eclipse)先にサブレットプロジェクトを作成しましょう。そしてmavenプロジェクトに変換しましょう。そして「pom.xml」で「spring framework」ライブラリを登録して、ライブラリをダウンロードするし、連携しましょう。そして「mvc-config.xml」を「webcontent -&amp;gt; web-inf」フォルダの中で生成しましょう。そして「web.xml」で「mvc-config.xml」を設定しましょう。「spring framework」の設定はここまでです。これから「controller」を作成しましょう。先に「mvc-config.xml」ファイルで「controller」パッケージ名を「controller」で設定しましたので、「controller」パッケージで「helloworld」クラスを生成しましょう。「controller」クラスで重要なことは「@controller」のアトリビュートを設定することです。そして関数で「url」マッピングパターンを入れて関数でアトリビュートを指定します。上のソースの場合は「/index.html」で要請されると「index」関数が呼び出されますね。参考にルートのページは「index.html」で指定しましたので、ルートページがその関数を呼出します。「modelmap」でキーとデータを入れると「view」でデータを渡します。「return」の値は「string」タイプですがそれが「view」のファイル名を指定します。私の場合は「index」でリターンしますね。ここまで起動するための基本設定が完了しました。私が予想することは起動すると「hello world」]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/75.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 35] EclipseでSpring web frameworkを利用してウェブサービスプロジェクトを立ち上がる方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。このページは「eclipse」で「spring web framework」を利用してウェブサービスプロジェクトを立ち上がる方法に関して調べてみました。先に「spring web framework」でウェブサービスプロジェックとを作成する前に「maven」インストールと「servlet」作成に関して知らなければならないです。link - [java スタディ - 32] mavenをインストール、使用方法、そしてeclipseに連結する方法link - [java スタディ - 34] web serviceプログラムのservletを作成方法(eclipse)先にサブレットプロジェクトを作成しましょう。そしてmavenプロジェクトに変換しましょう。そして「pom.xml」で「spring framework」ライブラリを登録して、ライブラリをダウンロードするし、連携しましょう。そして「mvc-config.xml」を「webcontent -&amp;gt; web-inf」フォルダの中で生成しましょう。そして「web.xml」で「mvc-config.xml」を設定しましょう。「spring framework」の設定はここまでです。これから「controller」を作成しましょう。先に「mvc-config.xml」ファイルで「controller」パッケージ名を「controller」で設定しましたので、「controller」パッケージで「helloworld」クラスを生成しましょう。「controller」クラスで重要なことは「@controller」のアトリビュートを設定することです。そして関数で「url」マッピングパターンを入れて関数でアトリビュートを指定します。上のソースの場合は「/index.html」で要請されると「index」関数が呼び出されますね。参考にルートのページは「index.html」で指定しましたので、ルートページがその関数を呼出します。「modelmap」でキーとデータを入れると「view」でデータを渡します。「return」の値は「string」タイプですがそれが「view」のファイル名を指定します。私の場合は「index」でリターンしますね。ここまで起動するための基本設定が完了しました。私が予想することは起動すると「hello world」]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+
+<title>明月の開発ストーリ :: [Java スタディ - 35] EclipseでSpring web frameworkを利用してウェブサービスプロジェクトを立ち上がる方法</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[Java スタディ - 35] EclipseでSpring web frameworkを利用してウェブサービスプロジェクトを立ち上がる方法</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0203">Study / Java</a> &nbsp;&nbsp; 作成日付 : 2019/09/26 21:31:25 &nbsp;&nbsp;修正日付 : 2019/09/26 21:37:19
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>このページは「Eclipse」で「Spring web framework」を利用してウェブサービスプロジェクトを立ち上がる方法に関して調べてみました。</p> 
+  <p><br></p> 
+  <p>先に「Spring web framework」でウェブサービスプロジェックとを作成する前に「maven」インストールと「Servlet」作成に関して知らなければならないです。</p> 
+  <p><br></p> 
+  <p>link - <a href="https://www.nowonbun.com/72.html" target="_blank">[Java スタディ - 32] Mavenをインストール、使用方法、そしてeclipseに連結する方法</a></p> 
+  <p>link - <a href="https://www.nowonbun.com/74.html" target="_blank">[Java スタディ - 34] Web serviceプログラムのServletを作成方法(Eclipse)</a></p> 
+  <p><br></p> 
+  <p>先にサブレットプロジェクトを作成しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/75/327_001.jpg" data-filename="001.jpg" style="width: 462px;"></p> 
+  <p>そしてMavenプロジェクトに変換しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/75/331_002.png" data-filename="002.png" style="width: 818px;"></p> 
+  <p style="text-align:left;"><img src="./contents/75/333_003.jpg" data-filename="003.jpg" style="width: 607px;"></p> 
+  <p>そして「pom.xml」で「spring framework」ライブラリを登録して、ライブラリをダウンロードするし、連携しましょう。</p> 
+  <pre><code class="xml" data-type="pom.xml">&lt;dependencies&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+    &lt;version&gt;5.1.1.RELEASE&lt;/version&gt;
+  &lt;/dependency&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+    &lt;artifactId&gt;jstl&lt;/artifactId&gt;
+    &lt;version&gt;1.2&lt;/version&gt;
+  &lt;/dependency&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+    &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
+    &lt;version&gt;3.1.0&lt;/version&gt;
+  &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/75/337_004.jpg" data-filename="004.jpg" style="width: 565px;"></p> 
+  <p style="text-align:left;"><img src="./contents/75/338_005.png" data-filename="005.png" style="width: 817px;"></p> 
+  <p>そして「mvc-config.xml」を「WebContent -&gt; WEB-INF」フォルダの中で生成しましょう。</p> 
+  <pre><code class="xml" data-type="mvc-config.xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+ 
+&lt;beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"&gt;
+  &lt;!-- コントローラのパッケージ設定 --&gt;
+  &lt;context:component-scan base-package="controller"/&gt;
+  &lt;mvc:annotation-driven&gt;
+    &lt;mvc:message-converters&gt;
+      &lt;bean class="org.springframework.http.converter.StringHttpMessageConverter"&gt;
+        &lt;property name="supportedMediaTypes"&gt;
+          &lt;list&gt;
+            &lt;value&gt;text/html;charset=UTF-8&lt;/value&gt;
+          &lt;/list&gt;
+        &lt;/property&gt;
+      &lt;/bean&gt;
+    &lt;/mvc:message-converters&gt;
+  &lt;/mvc:annotation-driven&gt;
+  &lt;!-- view 設定フォルダ --&gt;
+  &lt;bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"&gt;
+          &lt;property name="prefix" value="/WEB-INF/view/"/&gt;
+          &lt;property name="suffix" value=".jsp"/&gt;
+  &lt;/bean&gt;
+&lt;/beans&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/75/335_006.jpg" data-filename="006.jpg" style="width: 780px;"></p> 
+  <p>そして「web.xml」で「mvc-config.xml」を設定しましょう。</p> 
+  <pre><code class="xml" data-type="web.xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+  version="4.0"&gt;
+  &lt;display-name&gt;SpringTestWeb&lt;/display-name&gt;
+  &lt;!-- ルート(/)の時のページ --&gt;
+  &lt;welcome-file-list&gt;
+    &lt;welcome-file&gt;index.html&lt;/welcome-file&gt;
+  &lt;/welcome-file-list&gt;
+  &lt;!-- mvc-config.xml 設定 --&gt;
+  &lt;servlet&gt;
+    &lt;servlet-name&gt;dispatcherServlet&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+    &lt;init-param&gt;
+      &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+      &lt;param-value&gt;/WEB-INF/mvc-config.xml&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+  &lt;/servlet&gt;
+  &lt;!-- web url パターン, *.html 拡張子で requestすると spring frameworkで読み込む --&gt;
+  &lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;dispatcherServlet&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;*.html&lt;/url-pattern&gt;
+  &lt;/servlet-mapping&gt;
+  &lt;!-- encoding パターン (Postなどでヘッドの値のインコディング設定) --&gt;
+  &lt;filter&gt;
+    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;
+    &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;
+    &lt;init-param&gt;
+      &lt;param-name&gt;encoding&lt;/param-name&gt;
+      &lt;param-value&gt;UTF-8&lt;/param-value&gt;
+    &lt;/init-param&gt;
+    &lt;init-param&gt;
+      &lt;param-name&gt;forceEncoding&lt;/param-name&gt;
+      &lt;param-value&gt;true&lt;/param-value&gt;
+    &lt;/init-param&gt;
+  &lt;/filter&gt;
+  &lt;filter-mapping&gt;
+    &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;
+    &lt;url-pattern&gt;/*&lt;/url-pattern&gt;
+  &lt;/filter-mapping&gt;
+&lt;/web-app&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/75/336_007.jpg" data-filename="007.jpg" style="width: 739px;"></p> 
+  <p>「Spring framework」の設定はここまでです。これから「Controller」を作成しましょう。</p> 
+  <p>先に「mvc-config.xml」ファイルで「Controller」パッケージ名を「controller」で設定しましたので、「controller」パッケージで「Helloworld」クラスを生成しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/75/330_008.jpg" data-filename="008.jpg" style="width: 275px;"></p> 
+  <pre><code class="java" data-type="Helloworld.java">package controller;
+ 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+ 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+ 
+@Controller
+public class Helloworld {
+  
+  // url パターン
+  @RequestMapping(value = "/index.html")
+  public String index(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+    
+    // データを渡すような modelmap
+    modelmap.addAttribute("Data", "Helloworld");
+    
+    // viewのファイル名
+    return "index";
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/75/332_009.jpg" data-filename="009.jpg" style="width: 770px;"></p> 
+  <p>「controller」クラスで重要なことは「@Controller」のアトリビュートを設定することです。そして関数で「url」マッピングパターンを入れて関数でアトリビュートを指定します。</p> 
+  <p>上のソースの場合は「/index.html」で要請されると「index」関数が呼び出されますね。参考にルートのページは「index.html」で指定しましたので、ルートページがその関数を呼出します。</p> 
+  <p>「modelmap」でキーとデータを入れると「view」でデータを渡します。</p> 
+  <p>「return」の値は「string」タイプですがそれが「view」のファイル名を指定します。私の場合は「index」でリターンしますね。</p> 
+  <p style="text-align:left;"><img src="./contents/75/334_010.jpg" data-filename="010.jpg" style="width: 277px;"></p> 
+  <pre><code class="jsp" data-type="index.jsp">&lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Insert title here&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- modelmapで渡してもらうデータ --&gt;
+  ${Data}
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/75/329_011.jpg" data-filename="011.jpg" style="width: 591px;"></p> 
+  <p>ここまで起動するための基本設定が完了しました。私が予想することは起動すると「Hello world」ページが見えることです。</p> 
+  <p style="text-align:left;"><img src="./contents/75/328_012.jpg" data-filename="012.jpg" style="width: 619px;"></p> 
+  <p>予想とろりで結果が出ました。ここまで「Spring web server」の基本構築が完了しました。</p> 
+  <p><br></p> 
+  <p>添付ファイルを添付します。</p> 
+  <p>添付 - <a class="attachfile" href="./contents/75/339_SpringTestWeb.zip" data-filename="SpringTestWeb.zip"><img src="./img/zip.gif"> SpringTestWeb.zip</a></p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=java>#java</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0203">Study / Java</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/75.html'>[Java スタディ - 35] EclipseでSpring web frameworkを利用してウェブサービスプロジェクトを立ち上がる方法</a><span>2019/09/26 21:31:25</span></li><li><a href='https://www.nowonbun.com/74.html'>[Java スタディ - 34] Web serviceプログラムのServletを作成方法(Eclipse)</a><span>2019/09/25 19:58:30</span></li><li><a href='https://www.nowonbun.com/73.html'>[Java スタディ - 33] 「Eclipse」でトムキャット(tomcat)を設定する方法</a><span>2019/09/24 19:35:54</span></li><li><a href='https://www.nowonbun.com/72.html'>[Java スタディ - 32] Mavenをインストール、使用方法、そしてeclipseに連結する方法</a><span>2019/09/24 00:19:25</span></li><li><a href='https://www.nowonbun.com/71.html'>[Java スタディ - 31] Reflection - Annotation編</a><span>2019/09/20 22:34:40</span></li><li><a href='https://www.nowonbun.com/70.html'>[Java スタディ - 30] Reflection - Variable編</a><span>2019/09/19 20:20:10</span></li><li><a href='https://www.nowonbun.com/69.html'>[Java スタディ - 29] Reflection - Method編</a><span>2019/09/18 20:02:14</span></li><li><a href='https://www.nowonbun.com/68.html'>[Java スタディ - 28] Reflection - Class編</a><span>2019/09/17 20:22:02</span></li><li><a href='https://www.nowonbun.com/67.html'>[Java スタディ - 27] ソケット(Socket)通信</a><span>2019/09/16 23:42:46</span></li><li><a href='https://www.nowonbun.com/66.html'>[Java スタディ - 26] アノテーション(annotation)</a><span>2019/09/13 20:03:58</span></li><li><a href='https://www.nowonbun.com/65.html'>[Java スタディ - 25] スレッドプール(ThreadPool)</a><span>2019/09/13 00:58:31</span></li><li><a href='https://www.nowonbun.com/64.html'>[Java スタディ - 24] スレッド(Thread)、同期化(synchronized)、デッドロック(deadlock)</a><span>2019/09/11 23:06:09</span></li><li><a href='https://www.nowonbun.com/63.html'>[Java スタディ - 23] Streamフィルタ式</a><span>2019/09/10 21:55:36</span></li><li><a href='https://www.nowonbun.com/62.html'>[Java スタディ - 22] ジェネリック(Generic type)</a><span>2019/09/06 22:30:49</span></li><li><a href='https://www.nowonbun.com/61.html'>[Java スタディ - 21] IO(Input / Output)</a><span>2019/09/05 22:58:20</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/75.html'>[Java スタディ - 35] EclipseでSpring web frameworkを利用してウェブサービスプロジェクトを立ち上がる方法</a><span>2019/09/26 21:31:25</span></li><li><a href='https://www.nowonbun.com/74.html'>[Java スタディ - 34] Web serviceプログラムのServletを作成方法(Eclipse)</a><span>2019/09/25 19:58:30</span></li><li><a href='https://www.nowonbun.com/73.html'>[Java スタディ - 33] 「Eclipse」でトムキャット(tomcat)を設定する方法</a><span>2019/09/24 19:35:54</span></li><li><a href='https://www.nowonbun.com/72.html'>[Java スタディ - 32] Mavenをインストール、使用方法、そしてeclipseに連結する方法</a><span>2019/09/24 00:19:25</span></li><li><a href='https://www.nowonbun.com/71.html'>[Java スタディ - 31] Reflection - Annotation編</a><span>2019/09/20 22:34:40</span></li><li><a href='https://www.nowonbun.com/70.html'>[Java スタディ - 30] Reflection - Variable編</a><span>2019/09/19 20:20:10</span></li><li><a href='https://www.nowonbun.com/69.html'>[Java スタディ - 29] Reflection - Method編</a><span>2019/09/18 20:02:14</span></li><li><a href='https://www.nowonbun.com/68.html'>[Java スタディ - 28] Reflection - Class編</a><span>2019/09/17 20:22:02</span></li><li><a href='https://www.nowonbun.com/67.html'>[Java スタディ - 27] ソケット(Socket)通信</a><span>2019/09/16 23:42:46</span></li><li><a href='https://www.nowonbun.com/66.html'>[Java スタディ - 26] アノテーション(annotation)</a><span>2019/09/13 20:03:58</span></li><li><a href='https://www.nowonbun.com/65.html'>[Java スタディ - 25] スレッドプール(ThreadPool)</a><span>2019/09/13 00:58:31</span></li><li><a href='https://www.nowonbun.com/64.html'>[Java スタディ - 24] スレッド(Thread)、同期化(synchronized)、デッドロック(deadlock)</a><span>2019/09/11 23:06:09</span></li><li><a href='https://www.nowonbun.com/63.html'>[Java スタディ - 23] Streamフィルタ式</a><span>2019/09/10 21:55:36</span></li><li><a href='https://www.nowonbun.com/62.html'>[Java スタディ - 22] ジェネリック(Generic type)</a><span>2019/09/06 22:30:49</span></li><li><a href='https://www.nowonbun.com/61.html'>[Java スタディ - 21] IO(Input / Output)</a><span>2019/09/05 22:58:20</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
