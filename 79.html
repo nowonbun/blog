@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。このページでは「web spring framework」の「view」で使う「jstl」 - 関数、データベースに関して調べてみました。前述でコアーとフォーマティングライブラリに関して投稿しましたが、続けて関数とデータベースのライブラリに続けます。関数ライブラリfn:contains(string, sbustring)- 文字列で文字の含め可否fn:containsignorecase(string, sbustring)- 文字列で文字の含め可否(大、小文字無視)fn:endswith(string, suffix)- 文字列で当該文字で終わる可否fn:escapexml(string)- 特殊文字(&amp;lt;,&amp;gt;,&amp;amp;,&apos;,&quot;)をxmlエンティティコードに変換fn:indexof(string, sbustring)- 文字列で当該文字と一致するインデックスfn:split(string, separator)- 文字列をseparatorの文字によって配列に分離fn:join(array, separator)- arrayをseparatorの文字によって結合fn:length(string)- 文字列の長さfn:replace(string, before, after)- 文字列の中で「before」の文字列を「after」の文字列に置換fn:startswith(string, prefix)- stringがprefixで始まる可否fn:substring(string, before, after)- 文字列で「before」から「after」まで出力fn:substringafter(string, sbustring)- 文字列で当該な文字列以降を出力fn:substringbefore(string, sbustring)- 文字列で当該文字列以前を出力fn:tolowercase(string)- 文字列を小文字に出力する。fn:touppercase(string)- 文字列を大文字に出力する。fn:trim(string)- 文字列の前後の空白を取り除く。データベースライブラリ最近、ウェブプロジェクトは画面でデータベースを接続してデータを取得することではなく、サーバサイドでデータを取得してデータを]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java スタディ - 39] Web spring frameworkのJSPで使う言語 JSTL - 関数、データベース" />
+<link rel="canonical" href="https://www.nowonbun.com/79.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java スタディ - 39] Web spring frameworkのJSPで使う言語 JSTL - 関数、データベース" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。このページでは「web spring framework」の「view」で使う「jstl」 - 関数、データベースに関して調べてみました。前述でコアーとフォーマティングライブラリに関して投稿しましたが、続けて関数とデータベースのライブラリに続けます。関数ライブラリfn:contains(string, sbustring)- 文字列で文字の含め可否fn:containsignorecase(string, sbustring)- 文字列で文字の含め可否(大、小文字無視)fn:endswith(string, suffix)- 文字列で当該文字で終わる可否fn:escapexml(string)- 特殊文字(&amp;lt;,&amp;gt;,&amp;amp;,&apos;,&quot;)をxmlエンティティコードに変換fn:indexof(string, sbustring)- 文字列で当該文字と一致するインデックスfn:split(string, separator)- 文字列をseparatorの文字によって配列に分離fn:join(array, separator)- arrayをseparatorの文字によって結合fn:length(string)- 文字列の長さfn:replace(string, before, after)- 文字列の中で「before」の文字列を「after」の文字列に置換fn:startswith(string, prefix)- stringがprefixで始まる可否fn:substring(string, before, after)- 文字列で「before」から「after」まで出力fn:substringafter(string, sbustring)- 文字列で当該な文字列以降を出力fn:substringbefore(string, sbustring)- 文字列で当該文字列以前を出力fn:tolowercase(string)- 文字列を小文字に出力する。fn:touppercase(string)- 文字列を大文字に出力する。fn:trim(string)- 文字列の前後の空白を取り除く。データベースライブラリ最近、ウェブプロジェクトは画面でデータベースを接続してデータを取得することではなく、サーバサイドでデータを取得してデータを]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/79.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 39] Web spring frameworkのJSPで使う言語 JSTL - 関数、データベース" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。このページでは「web spring framework」の「view」で使う「jstl」 - 関数、データベースに関して調べてみました。前述でコアーとフォーマティングライブラリに関して投稿しましたが、続けて関数とデータベースのライブラリに続けます。関数ライブラリfn:contains(string, sbustring)- 文字列で文字の含め可否fn:containsignorecase(string, sbustring)- 文字列で文字の含め可否(大、小文字無視)fn:endswith(string, suffix)- 文字列で当該文字で終わる可否fn:escapexml(string)- 特殊文字(&amp;lt;,&amp;gt;,&amp;amp;,&apos;,&quot;)をxmlエンティティコードに変換fn:indexof(string, sbustring)- 文字列で当該文字と一致するインデックスfn:split(string, separator)- 文字列をseparatorの文字によって配列に分離fn:join(array, separator)- arrayをseparatorの文字によって結合fn:length(string)- 文字列の長さfn:replace(string, before, after)- 文字列の中で「before」の文字列を「after」の文字列に置換fn:startswith(string, prefix)- stringがprefixで始まる可否fn:substring(string, before, after)- 文字列で「before」から「after」まで出力fn:substringafter(string, sbustring)- 文字列で当該な文字列以降を出力fn:substringbefore(string, sbustring)- 文字列で当該文字列以前を出力fn:tolowercase(string)- 文字列を小文字に出力する。fn:touppercase(string)- 文字列を大文字に出力する。fn:trim(string)- 文字列の前後の空白を取り除く。データベースライブラリ最近、ウェブプロジェクトは画面でデータベースを接続してデータを取得することではなく、サーバサイドでデータを取得してデータを]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+
+<title>明月の開発ストーリ :: [Java スタディ - 39] Web spring frameworkのJSPで使う言語 JSTL - 関数、データベース</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body>
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[Java スタディ - 39] Web spring frameworkのJSPで使う言語 JSTL - 関数、データベース</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0203">Study / Java</a> &nbsp;&nbsp; 作成日付 : 2019/10/02 21:00:22 &nbsp;&nbsp;修正日付 : 2019/10/02 21:05:57
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>このページでは「Web spring framework」の「view」で使う「jstl」 - 関数、データベースに関して調べてみました。</p> 
+  <p><br></p> 
+  <p>前述でコアーとフォーマティングライブラリに関して投稿しましたが、続けて関数とデータベースのライブラリに続けます。</p> 
+  <h2><b><span>関数ライブラリ</span></b></h2> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <h2><b><span>fn:contains(string, sbustring)</span></b></h2> 
+   <p>- 文字列で文字の含め可否</p> 
+   <pre><code class="jsp" data-type="例">&lt;c:set var="name" value="hello world"/&gt;
+&lt;c:if test="${fn:contains(name, 'world')}"&gt;
+  Hello world
+&lt;/c:if&gt;
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/79/362_001.png" data-filename="001.png" style="width: 428px;"></p> 
+   <p><br></p> 
+   <h2><b><span>fn:containsIgnoreCase(string, sbustring)</span></b></h2> 
+   <p>- 文字列で文字の含め可否(大、小文字無視)</p> 
+   <pre><code class="jsp" data-type="例">&lt;c:set var="name" value="hello world"/&gt;
+&lt;c:if test="${fn:containsIgnoreCase(name, 'world')}"&gt;
+  Hello world
+&lt;/c:if&gt;
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/79/362_001.png" data-filename="001.png" style="width: 428px;"></p> 
+   <p><br></p> 
+   <h2><b><span>fn:endsWith(string, suffix)</span></b></h2> 
+   <p>- 文字列で当該文字で終わる可否</p> 
+   <pre><code class="jsp" data-type="例">&lt;c:set var="name" value="hello world"/&gt;
+&lt;c:if test="${fn:endsWith(name, 'world')}"&gt;
+  Hello world
+&lt;/c:if&gt;
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/79/362_001.png" data-filename="001.png" style="width: 428px;"></p> 
+   <p><br></p> 
+   <h2><b><span>fn:escapeXml(string)</span></b></h2> 
+   <p>- 特殊文字(&lt;,&gt;,&amp;,',")をxmlエンティティコードに変換</p> 
+   <pre><code class="jsp" data-type="例">&lt;c:set var="name" value="&lt; , &gt; &amp; ' ' \" \"  "/&gt;
+${fn:escapeXml(name)}
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/79/363_002.png" data-filename="002.png" style="width: 395px;"></p> 
+   <p style="text-align:left;"><img src="./contents/79/366_003.png" data-filename="003.png" style="width: 479px;"></p> 
+   <p><br></p> 
+   <h2><b><span>fn:indexOf(string, sbustring)</span></b></h2> 
+   <p>- 文字列で当該文字と一致するインデックス</p> 
+   <pre><code class="jsp" data-type="例">&lt;c:set var="name" value="hello world"/&gt;
+${fn:indexOf(name, "world")}
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/79/372_004.png" data-filename="004.png" style="width: 387px;"></p> 
+   <p><br></p> 
+   <h2><b><span>fn:split(string, separator)</span></b></h2> 
+   <p>- 文字列をseparatorの文字によって配列に分離</p> 
+   <pre><code class="jsp" data-type="例">&lt;c:set var="name" value="hello,world,good"/&gt;
+&lt;c:set var="arr" value="${fn:split(name,',')}"/&gt;
+&lt;c:forEach var="ret" items="${arr}"&gt;
+  ${ret} &lt;br /&gt;
+&lt;/c:forEach&gt;
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/79/377_005.png" data-filename="005.png" style="width: 418px;"></p> 
+   <p><br></p> 
+   <h2><b><span>fn:join(array, separator)</span></b></h2> 
+   <p>- arrayをseparatorの文字によって結合</p> 
+   <pre><code class="jsp" data-type="例">&lt;c:set var="name" value="hello,world,good"/&gt;
+&lt;c:set var="arr" value="${fn:split(name,',')}"/&gt;
+&lt;c:set var="join" value="${fn:join(arr,'***')}"/&gt;
+${join}
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/79/378_006.png" data-filename="006.png" style="width: 408px;"></p> 
+   <p><br></p> 
+   <h2><b><span>fn:length(string)</span></b></h2> 
+   <p>- 文字列の長さ</p> 
+   <pre><code class="jsp" data-type="例">&lt;c:set var="name" value="hello world"/&gt;
+${fn:length(name)}
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/79/368_007.png" data-filename="007.png" style="width: 454px;"></p> 
+   <p><br></p> 
+   <h2><b><span>fn:replace(string, before, after)</span></b></h2> 
+   <p>- 文字列の中で「before」の文字列を「after」の文字列に置換</p> 
+   <pre><code class="jsp" data-type="例">&lt;c:set var="name" value="hello world"/&gt;
+${fn:replace(name,"world", "home")}
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/79/367_008.png" data-filename="008.png" style="width: 426px;"></p> 
+   <p><br></p> 
+   <h2><b><span>fn:startsWith(string, prefix)</span></b></h2> 
+   <p>- Stringがprefixで始まる可否</p> 
+   <pre><code class="jsp" data-type="例">&lt;c:set var="name" value="hello world"/&gt;
+&lt;c:if test="${fn:startsWith(name, 'hello')}"&gt;
+  Hello world
+&lt;/c:if&gt;
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/79/362_001.png" data-filename="001.png" style="width: 428px;"></p> 
+   <p><br></p> 
+   <h2><b><span>fn:substring(string, before, after)</span></b></h2> 
+   <p>- 文字列で「before」から「after」まで出力</p> 
+   <pre><code class="jsp" data-type="例">&lt;:c:set var="name" value="hello world"/&gt;
+${fn:substring(name,6,8)}
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/79/373_009.png" data-filename="009.png" style="width: 381px;"></p> 
+   <p><br></p> 
+   <h2><b><span>fn:substringAfter(string, sbustring)</span></b></h2> 
+   <p>- 文字列で当該な文字列以降を出力</p> 
+   <pre><code class="jsp" data-type="例">&lt;:c:set var="name" value="hello world"/&gt;
+${fn:substringAfter(name,"wo")}
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/79/365_010.png" data-filename="010.png" style="width: 432px;"></p> 
+   <p><br></p> 
+   <h2><b><span>fn:substringBefore(string, sbustring)</span></b></h2> 
+   <p>- 文字列で当該文字列以前を出力</p> 
+   <pre><code class="jsp" data-type="例">&lt;c:set var="name" value="hello world"/&gt;
+${fn:substringBefore(name,"wo")}
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/79/364_011.png" data-filename="011.png" style="width: 376px;"></p> 
+   <p><br></p> 
+   <h2><b><span>fn:toLowerCase(string)</span></b></h2> 
+   <p>- 文字列を小文字に出力する。</p> 
+   <pre><code class="jsp" data-type="例">&lt;c:set var="name" value="HELLO WORLD"/&gt;
+${fn:toLowerCase(name)}
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/79/374_012.png" data-filename="012.png" style="width: 402px;"></p> 
+   <p><br></p> 
+   <h2><b><span>fn:toUpperCase(string)</span></b></h2> 
+   <p>- 文字列を大文字に出力する。</p> 
+   <pre><code class="jsp" data-type="例">&lt;c:set var="name" value="hello world"/&gt;
+${fn:toUpperCase(name)}
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/79/369_013.png" data-filename="013.png" style="width: 464px;"></p> 
+   <p><br></p> 
+   <h2><b><span>fn:trim(string)</span></b></h2> 
+   <p>- 文字列の前後の空白を取り除く。</p> 
+   <pre><code class="jsp" data-type="例">&lt;c:set var="name" value="   hello world    "/&gt;
+${fn:trim(name)}
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/79/376_014.png" data-filename="014.png" style="width: 423px;"></p> 
+  </blockquote> 
+  <p><br></p> 
+  <h2><b><span>データベースライブラリ</span></b></h2> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <p>最近、ウェブプロジェクトは画面でデータベースを接続してデータを取得することではなく、サーバサイドでデータを取得してデータを処理して画面で結果を渡しますね。</p> 
+   <p>なので、最近はJSTLのデータベースライブラリは使うことはないと思いますが、ただ参考で説明します。</p> 
+   <p>先、データベースコネクションライブラリが必要ですが私の場合は「mysql」で説明します。</p> 
+   <pre><code class="xml" data-type="pom.xml">&lt;dependency&gt;
+  &lt;groupId&gt;mysql&lt;/groupId&gt;
+  &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+  &lt;version&gt;5.1.41&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/79/370_015.png" data-filename="015.png" style="width: 485px;"></p> 
+   <pre><code class="jsp" data-type="index.jsp">&lt;%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %&gt;
+&lt;!-- コネクションタグ --&gt;
+&lt;sql:setDataSource url="jdbc:mysql://localhost:3306/test" driver="com.mysql.jdbc.Driver" user="id" password="pw" var="ds" scope="application"/&gt;
+&lt;!-- クエリタグ --&gt;
+&lt;sql:query var="rs" scope="page" dataSource="${ds}" maxRows="10" startRow="0"&gt;
+  select * from datatest where idx=?
+  &lt;sql:param value="1" /&gt;
+&lt;/sql:query&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;c:forEach var="columnName" items="${rs.columnNames}"&gt;
+      &lt;td&gt;&lt;c:out value="${columnName}"/&gt;&lt;/td&gt;
+    &lt;/c:forEach&gt;
+  &lt;/tr&gt;
+  &lt;c:forEach var="row" items="${rs.rowsByIndex}"&gt;
+    &lt;tr&gt;
+      &lt;c:forEach var="columnValue" items="${row}"&gt;
+        &lt;td&gt;&lt;c:out value="${columnValue}"/&gt;&lt;/td&gt;
+      &lt;/c:forEach&gt;
+    &lt;/tr&gt;
+  &lt;/c:forEach&gt;
+&lt;/table&gt;
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/79/371_016.png" data-filename="016.png" style="width: 240px;"></p> 
+   <p style="text-align:left;"><img src="./contents/79/375_017.png" data-filename="017.png" style="width: 501px;"></p> 
+  </blockquote> 
+  <p>内容がなさそうだったのに、整理するとすごく多いですね。それで投稿を三つで分けって作成します。</p> 
+  <p>link - <a href="https://www.nowonbun.com/78.html" target="_blank">「Web spring framework」の「JSP」で使う言語 JSTL - コアー、フォーマッティング</a></p> 
+  <p>link - <a href="https://www.nowonbun.com/80.html" target="_blank">「Web spring framework」の「view」で使う「jstl」 - xml</a></p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=java>#java</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0203">Study / Java</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/79.html'>[Java スタディ - 39] Web spring frameworkのJSPで使う言語 JSTL - 関数、データベース</a><span>2019/10/02 21:00:22</span></li><li><a href='https://www.nowonbun.com/78.html'>[Java スタディ - 38] Web spring frameworkのJSPで使う言語 JSTL - コアー、フォーマッティング</a><span>2019/10/01 21:48:08</span></li><li><a href='https://www.nowonbun.com/77.html'>[Java スタディ - 37] 「Web spring framework」の「Controller」で「ajax」の要請する時「json」タイプで返却する方法</a><span>2019/09/30 22:19:34</span></li><li><a href='https://www.nowonbun.com/76.html'>[Java スタディ - 36] Spring web frameworkでControllerを使用する方法</a><span>2019/09/27 20:39:09</span></li><li><a href='https://www.nowonbun.com/75.html'>[Java スタディ - 35] EclipseでSpring web frameworkを利用してウェブサービスプロジェクトを立ち上がる方法</a><span>2019/09/26 21:31:25</span></li><li><a href='https://www.nowonbun.com/74.html'>[Java スタディ - 34] Web serviceプログラムのServletを作成方法(Eclipse)</a><span>2019/09/25 19:58:30</span></li><li><a href='https://www.nowonbun.com/73.html'>[Java スタディ - 33] 「Eclipse」でトムキャット(tomcat)を設定する方法</a><span>2019/09/24 19:35:54</span></li><li><a href='https://www.nowonbun.com/72.html'>[Java スタディ - 32] Mavenをインストール、使用方法、そしてeclipseに連結する方法</a><span>2019/09/24 00:19:25</span></li><li><a href='https://www.nowonbun.com/71.html'>[Java スタディ - 31] Reflection - Annotation編</a><span>2019/09/20 22:34:40</span></li><li><a href='https://www.nowonbun.com/70.html'>[Java スタディ - 30] Reflection - Variable編</a><span>2019/09/19 20:20:10</span></li><li><a href='https://www.nowonbun.com/69.html'>[Java スタディ - 29] Reflection - Method編</a><span>2019/09/18 20:02:14</span></li><li><a href='https://www.nowonbun.com/68.html'>[Java スタディ - 28] Reflection - Class編</a><span>2019/09/17 20:22:02</span></li><li><a href='https://www.nowonbun.com/67.html'>[Java スタディ - 27] ソケット(Socket)通信</a><span>2019/09/16 23:42:46</span></li><li><a href='https://www.nowonbun.com/66.html'>[Java スタディ - 26] アノテーション(annotation)</a><span>2019/09/13 20:03:58</span></li><li><a href='https://www.nowonbun.com/65.html'>[Java スタディ - 25] スレッドプール(ThreadPool)</a><span>2019/09/13 00:58:31</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/79.html'>[Java スタディ - 39] Web spring frameworkのJSPで使う言語 JSTL - 関数、データベース</a><span>2019/10/02 21:00:22</span></li><li><a href='https://www.nowonbun.com/78.html'>[Java スタディ - 38] Web spring frameworkのJSPで使う言語 JSTL - コアー、フォーマッティング</a><span>2019/10/01 21:48:08</span></li><li><a href='https://www.nowonbun.com/77.html'>[Java スタディ - 37] 「Web spring framework」の「Controller」で「ajax」の要請する時「json」タイプで返却する方法</a><span>2019/09/30 22:19:34</span></li><li><a href='https://www.nowonbun.com/76.html'>[Java スタディ - 36] Spring web frameworkでControllerを使用する方法</a><span>2019/09/27 20:39:09</span></li><li><a href='https://www.nowonbun.com/75.html'>[Java スタディ - 35] EclipseでSpring web frameworkを利用してウェブサービスプロジェクトを立ち上がる方法</a><span>2019/09/26 21:31:25</span></li><li><a href='https://www.nowonbun.com/74.html'>[Java スタディ - 34] Web serviceプログラムのServletを作成方法(Eclipse)</a><span>2019/09/25 19:58:30</span></li><li><a href='https://www.nowonbun.com/73.html'>[Java スタディ - 33] 「Eclipse」でトムキャット(tomcat)を設定する方法</a><span>2019/09/24 19:35:54</span></li><li><a href='https://www.nowonbun.com/72.html'>[Java スタディ - 32] Mavenをインストール、使用方法、そしてeclipseに連結する方法</a><span>2019/09/24 00:19:25</span></li><li><a href='https://www.nowonbun.com/71.html'>[Java スタディ - 31] Reflection - Annotation編</a><span>2019/09/20 22:34:40</span></li><li><a href='https://www.nowonbun.com/70.html'>[Java スタディ - 30] Reflection - Variable編</a><span>2019/09/19 20:20:10</span></li><li><a href='https://www.nowonbun.com/69.html'>[Java スタディ - 29] Reflection - Method編</a><span>2019/09/18 20:02:14</span></li><li><a href='https://www.nowonbun.com/68.html'>[Java スタディ - 28] Reflection - Class編</a><span>2019/09/17 20:22:02</span></li><li><a href='https://www.nowonbun.com/67.html'>[Java スタディ - 27] ソケット(Socket)通信</a><span>2019/09/16 23:42:46</span></li><li><a href='https://www.nowonbun.com/66.html'>[Java スタディ - 26] アノテーション(annotation)</a><span>2019/09/13 20:03:58</span></li><li><a href='https://www.nowonbun.com/65.html'>[Java スタディ - 25] スレッドプール(ThreadPool)</a><span>2019/09/13 00:58:31</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
