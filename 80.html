@@ -27,29 +27,29 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / Java" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。このページはジェネリック(generic type)に関して調べてみました。クラスの基本構成はメンバー変数、関数になります。上の例はstackアルゴリズムを実装しました。stackアルゴリズムは「push」、「pop」の関数でなっているアルゴリズムです。「push」の順番で「pop」のより一番最後に入力されたデータが一番最初に出る構造です。(filo構造)上のアルゴリズムでパラメータは「object」型になっていますね。なので「string」や「int」や「float」、「double」のデータタイプでも入力します。でも、「pop」にして使うようには「object」型なので、ユーザによってデータタイプを知らないですね。逆にデータキャストをしなければならない構造です。そうすれば「object」ではなく、データタイプをクラス内部ではなく、外部で決める方法がないかというとそれをジェネリック(generic type)で解決できます。eclipseのコードアシスタントを確認しても「pop」関数の返却タイプが「integer」になっているし「push」のパラメータも「integer」タイプになっていますね。我々がよく使う関数「list」タイプでもすべてジェネリック(generic type)になっていますね。ジェネリック(generic type)は単純なキーワードですが、プログラムのデータ正誤性のため、様々のところで重要なキーワードですね。]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。このページでは「web spring framework」の「view」で使う「jstl」 - xmlに関して調べてみました。前述でコアー、フォーマティング、関数、データベースに関して説明しました。「xml」に関して続けましょう。link - [java スタディ - 39] web spring frameworkのjspで使う言語 jstl - 関数、データベースlink - [java スタディ - 38] web spring frameworkのjspで使う言語 jstl - コアー、フォーマッティング実は「jstl」言語でコアー、フォーマティング、関数以外はあまり使わないですね。「xml」ライブラリもそんなに使わないと思います。データベースライブラリと同じく「xml」データを処理すると思うと「jsp」ページではなく、サーバサイトで処理しますね。または最近は「xml」より「json」タイプをよく使うので以前よりもっと使わないライブラリと言います。先、「jstl - xml」の関数を使う前に「pom.xml」でライブラリを一つ追加しなければならないです。(既存のpom.xmlで設定したライブラリを同然にあるんでしょう。)xmlライブラリc:importでxmlファイルを読み込みます。注意点はウェブ上の「http url」ではなく、サーバサイドの相対パスです。x:parse, x:out- x:parseはxmlデータをパーシングします。- x:outはxpath表現式でデータを出力します。x.foreach- list形でタグ(繰り返されたタグ)の場合、ループらしく、データを持ち来ます。x:sec- データを変数で置換して格納します。x:choise x:when x:otherwise- xmlで「if~else」文です。x:if- xmlの「if」文です。x:transform, x:param- 「xlst」ファイルと「xml」ファイルを結合する関数です。ここまで「jsp」の「jstl」言語を纏めました。参照したページは下記でリンクします。link - https://www.viralpatel.net/parsing-rss-xml-using-jstl-tag-library/link - https://www.javatpoint.com/jstl-xml-t]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [Java スタディ - 22] ジェネリック(Generic type)" />
-<link rel="canonical" href="https://www.nowonbun.com/62.html" />
+<meta name="title" content="明月の開発ストーリ :: [Java スタディ - 40] Web spring frameworkのJSPで使う言語 JSTL - XML" />
+<link rel="canonical" href="https://www.nowonbun.com/80.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [Java スタディ - 22] ジェネリック(Generic type)" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。このページはジェネリック(generic type)に関して調べてみました。クラスの基本構成はメンバー変数、関数になります。上の例はstackアルゴリズムを実装しました。stackアルゴリズムは「push」、「pop」の関数でなっているアルゴリズムです。「push」の順番で「pop」のより一番最後に入力されたデータが一番最初に出る構造です。(filo構造)上のアルゴリズムでパラメータは「object」型になっていますね。なので「string」や「int」や「float」、「double」のデータタイプでも入力します。でも、「pop」にして使うようには「object」型なので、ユーザによってデータタイプを知らないですね。逆にデータキャストをしなければならない構造です。そうすれば「object」ではなく、データタイプをクラス内部ではなく、外部で決める方法がないかというとそれをジェネリック(generic type)で解決できます。eclipseのコードアシスタントを確認しても「pop」関数の返却タイプが「integer」になっているし「push」のパラメータも「integer」タイプになっていますね。我々がよく使う関数「list」タイプでもすべてジェネリック(generic type)になっていますね。ジェネリック(generic type)は単純なキーワードですが、プログラムのデータ正誤性のため、様々のところで重要なキーワードですね。]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java スタディ - 40] Web spring frameworkのJSPで使う言語 JSTL - XML" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。このページでは「web spring framework」の「view」で使う「jstl」 - xmlに関して調べてみました。前述でコアー、フォーマティング、関数、データベースに関して説明しました。「xml」に関して続けましょう。link - [java スタディ - 39] web spring frameworkのjspで使う言語 jstl - 関数、データベースlink - [java スタディ - 38] web spring frameworkのjspで使う言語 jstl - コアー、フォーマッティング実は「jstl」言語でコアー、フォーマティング、関数以外はあまり使わないですね。「xml」ライブラリもそんなに使わないと思います。データベースライブラリと同じく「xml」データを処理すると思うと「jsp」ページではなく、サーバサイトで処理しますね。または最近は「xml」より「json」タイプをよく使うので以前よりもっと使わないライブラリと言います。先、「jstl - xml」の関数を使う前に「pom.xml」でライブラリを一つ追加しなければならないです。(既存のpom.xmlで設定したライブラリを同然にあるんでしょう。)xmlライブラリc:importでxmlファイルを読み込みます。注意点はウェブ上の「http url」ではなく、サーバサイドの相対パスです。x:parse, x:out- x:parseはxmlデータをパーシングします。- x:outはxpath表現式でデータを出力します。x.foreach- list形でタグ(繰り返されたタグ)の場合、ループらしく、データを持ち来ます。x:sec- データを変数で置換して格納します。x:choise x:when x:otherwise- xmlで「if~else」文です。x:if- xmlの「if」文です。x:transform, x:param- 「xlst」ファイルと「xml」ファイルを結合する関数です。ここまで「jsp」の「jstl」言語を纏めました。参照したページは下記でリンクします。link - https://www.viralpatel.net/parsing-rss-xml-using-jstl-tag-library/link - https://www.javatpoint.com/jstl-xml-t]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/62.html" />
+<meta property="og:url" content="https://www.nowonbun.com/80.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 22] ジェネリック(Generic type)" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。このページはジェネリック(generic type)に関して調べてみました。クラスの基本構成はメンバー変数、関数になります。上の例はstackアルゴリズムを実装しました。stackアルゴリズムは「push」、「pop」の関数でなっているアルゴリズムです。「push」の順番で「pop」のより一番最後に入力されたデータが一番最初に出る構造です。(filo構造)上のアルゴリズムでパラメータは「object」型になっていますね。なので「string」や「int」や「float」、「double」のデータタイプでも入力します。でも、「pop」にして使うようには「object」型なので、ユーザによってデータタイプを知らないですね。逆にデータキャストをしなければならない構造です。そうすれば「object」ではなく、データタイプをクラス内部ではなく、外部で決める方法がないかというとそれをジェネリック(generic type)で解決できます。eclipseのコードアシスタントを確認しても「pop」関数の返却タイプが「integer」になっているし「push」のパラメータも「integer」タイプになっていますね。我々がよく使う関数「list」タイプでもすべてジェネリック(generic type)になっていますね。ジェネリック(generic type)は単純なキーワードですが、プログラムのデータ正誤性のため、様々のところで重要なキーワードですね。]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 40] Web spring frameworkのJSPで使う言語 JSTL - XML" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。このページでは「web spring framework」の「view」で使う「jstl」 - xmlに関して調べてみました。前述でコアー、フォーマティング、関数、データベースに関して説明しました。「xml」に関して続けましょう。link - [java スタディ - 39] web spring frameworkのjspで使う言語 jstl - 関数、データベースlink - [java スタディ - 38] web spring frameworkのjspで使う言語 jstl - コアー、フォーマッティング実は「jstl」言語でコアー、フォーマティング、関数以外はあまり使わないですね。「xml」ライブラリもそんなに使わないと思います。データベースライブラリと同じく「xml」データを処理すると思うと「jsp」ページではなく、サーバサイトで処理しますね。または最近は「xml」より「json」タイプをよく使うので以前よりもっと使わないライブラリと言います。先、「jstl - xml」の関数を使う前に「pom.xml」でライブラリを一つ追加しなければならないです。(既存のpom.xmlで設定したライブラリを同然にあるんでしょう。)xmlライブラリc:importでxmlファイルを読み込みます。注意点はウェブ上の「http url」ではなく、サーバサイドの相対パスです。x:parse, x:out- x:parseはxmlデータをパーシングします。- x:outはxpath表現式でデータを出力します。x.foreach- list形でタグ(繰り返されたタグ)の場合、ループらしく、データを持ち来ます。x:sec- データを変数で置換して格納します。x:choise x:when x:otherwise- xmlで「if~else」文です。x:if- xmlの「if」文です。x:transform, x:param- 「xlst」ファイルと「xml」ファイルを結合する関数です。ここまで「jsp」の「jstl」言語を纏めました。参照したページは下記でリンクします。link - https://www.viralpatel.net/parsing-rss-xml-using-jstl-tag-library/link - https://www.javatpoint.com/jstl-xml-t]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 
-<title>明月の開発ストーリ :: [Java スタディ - 22] ジェネリック(Generic type)</title>
+<title>明月の開発ストーリ :: [Java スタディ - 40] Web spring frameworkのJSPで使う言語 JSTL - XML</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -115,11 +115,11 @@ body{
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[Java スタディ - 22] ジェネリック(Generic type)</h1>
+					<h1 id="titleTxt">[Java スタディ - 40] Web spring frameworkのJSPで使う言語 JSTL - XML</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0203">Study / Java</a> &nbsp;&nbsp; 作成日付 : 2019/09/06 22:30:49 &nbsp;&nbsp;修正日付 : 2019/09/06 22:34:14
+					<a href="./?category=0203">Study / Java</a> &nbsp;&nbsp; 作成日付 : 2019/10/03 20:02:06 &nbsp;&nbsp;修正日付 : 2019/10/03 20:03:42
 				</div>
 			</div>
 			<div class="article">
@@ -131,114 +131,172 @@ body{
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>このページはジェネリック(Generic type)に関して調べてみました。</p> 
+  <p>このページでは「Web spring framework」の「view」で使う「jstl」 - xmlに関して調べてみました。</p> 
   <p><br></p> 
-  <p>クラスの基本構成はメンバー変数、関数になります。</p> 
-  <pre><code class="java" data-type="">public class Example {
-  public static void main(String[] args) {
-    Stack obj = new Stack();
-    for (int i = 0; i &lt; 10; i++) {
-      // int型で入力
-      obj.push(i);
-    }
-    while(true) {
-      // Object型でデールのでこのデータが「int」型かはしらないね。
-      Object data = obj.pop();
-      if(data == null) {
-        break;
-      }
-      System.out.println(data);
-    }
-  }
-}
-
-class Stack {
-  // メモリポインタのため、あるクラス
-  class Node {
-    Object data;
-    Node link;
-  }
-
-  private Node pointer = null;
-
-  // データをクラスに入力する。
-  public void push(Object data) {
-    Node node = new Node();
-    node.data = data;
-    node.link = pointer;
-    this.pointer = node;
-  }
-  // 一番、最後に「push」されたことが出る構造
-  public Object pop() {
-    if (pointer == null) {
-      return null;
-    }
-    Node node = this.pointer;
-    this.pointer = node.link;
-    return node.data;
-  }
-}
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/62/254_001.png" data-filename="001.png" style="width: 584px;"></p> 
-  <p>上の例はStackアルゴリズムを実装しました。Stackアルゴリズムは「push」、「pop」の関数でなっているアルゴリズムです。</p> 
-  <p>「push」の順番で「pop」のより一番最後に入力されたデータが一番最初に出る構造です。(FILO構造)</p> 
+  <p>前述でコアー、フォーマティング、関数、データベースに関して説明しました。「xml」に関して続けましょう。</p> 
+  <p>link - <a href="https://www.nowonbun.com/79.html" target="_blank">[Java スタディ - 39] Web spring frameworkのJSPで使う言語 JSTL - 関数、データベース</a></p> 
+  <p>link - <a href="https://www.nowonbun.com/78.html" target="_blank">[Java スタディ - 38] Web spring frameworkのJSPで使う言語 JSTL - コアー、フォーマッティング</a></p> 
   <p><br></p> 
-  <p>上のアルゴリズムでパラメータは「Object」型になっていますね。なので「String」や「int」や「float」、「double」のデータタイプでも入力します。</p> 
-  <p>でも、「pop」にして使うようには「Object」型なので、ユーザによってデータタイプを知らないですね。逆にデータキャストをしなければならない構造です。</p> 
-  <p style="text-align:left;"><img src="./contents/62/253_002.png" data-filename="002.png" style="width: 553px;"></p> 
-  <p>そうすれば「Object」ではなく、データタイプをクラス内部ではなく、外部で決める方法がないかというとそれをジェネリック(Generic type)で解決できます。</p> 
-  <pre><code class="java" data-type="">public class Example {
-  public static void main(String[] args) {
-    //ジェネリックを「Integer」に設定しているから「Stack」のクラス内部の「T」と書いてることがすべて「Integer」タイプに切り替えると思えば楽。
-    Stack&lt;Integer&gt; obj = new Stack&lt;&gt;();
-    for (int i = 0; i &lt; 10; i++) {
-      obj.push(i);
-    }
-    while(true) {
-      //　返却データタイプが「Integer」になっているからキャストが必要ない。
-      Integer data = obj.pop();
-      if(data == null) {
-        break;
-      }
-      System.out.println(data * 10);
-    }
-  }
-}
-// ジェネリック(Generic type)で内部ではデータタイプを決めてない。
-class Stack&lt;T&gt; {
-  class Node {
-    // データタイプはジェネリックだ。
-    T data;
-    Node link;
-  }
-
-  private Node pointer = null;
-
-  // パラメータのデータタイプはジェネリックだ。
-  public void push(T data) {
-    Node node = new Node();
-    node.data = data;
-    node.link = pointer;
-    this.pointer = node;
-  }
-
-  //返却データタイプはジェネリックだ。
-  public T pop() {
-    if (pointer == null) {
-      return null;
-    }
-    Node node = this.pointer;
-    this.pointer = node.link;
-    return node.data;
-  }
-}
+  <p>実は「JSTL」言語でコアー、フォーマティング、関数以外はあまり使わないですね。「xml」ライブラリもそんなに使わないと思います。</p> 
+  <p>データベースライブラリと同じく「xml」データを処理すると思うと「jsp」ページではなく、サーバサイトで処理しますね。または最近は「xml」より「json」タイプをよく使うので以前よりもっと使わないライブラリと言います。</p> 
+  <p><br></p> 
+  <p>先、「JSTL - xml」の関数を使う前に「pom.xml」でライブラリを一つ追加しなければならないです。(既存のpom.xmlで設定したライブラリを同然にあるんでしょう。)</p> 
+  <pre><code class="xml" data-type="pom.xml">&lt;!-- https://mvnrepository.com/artifact/xalan/xalan --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;xalan&lt;/groupId&gt;
+  &lt;artifactId&gt;xalan&lt;/artifactId&gt;
+  &lt;version&gt;2.4.0&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- https://mvnrepository.com/artifact/xerces/xercesImpl --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;xerces&lt;/groupId&gt;
+  &lt;artifactId&gt;xercesImpl&lt;/artifactId&gt;
+  &lt;version&gt;2.8.0&lt;/version&gt;
+&lt;/dependency&gt;
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/62/255_003.png" data-filename="003.png" style="width: 588px;"></p> 
-  <p>Eclipseのコードアシスタントを確認しても「pop」関数の返却タイプが「Integer」になっているし「push」のパラメータも「Integer」タイプになっていますね。</p> 
-  <p style="text-align:left;"><img src="./contents/62/256_004.png" data-filename="004.png" style="width: 848px;"></p> 
-  <p>我々がよく使う関数「List」タイプでもすべてジェネリック(Generic type)になっていますね。</p> 
-  <p style="text-align:left;"><img src="./contents/62/252_005.png" data-filename="005.png" style="width: 530px;"></p> 
-  <p>ジェネリック(Generic type)は単純なキーワードですが、プログラムのデータ正誤性のため、様々のところで重要なキーワードですね。</p>
+  <h2><b><span>XMLライブラリ</span></b></h2> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <p>c:importでxmlファイルを読み込みます。注意点はウェブ上の「http url」ではなく、サーバサイドの相対パスです。</p> 
+   <pre><code class="xml" data-type="data.xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;data&gt;
+  &lt;title&gt;Hello world&lt;/title&gt;
+  &lt;persons&gt;
+    &lt;student&gt;
+      &lt;name&gt;Mary&lt;/name&gt;
+      &lt;age&gt;12&lt;/age&gt;
+      &lt;class&gt;5&lt;/class&gt;
+    &lt;/student&gt;
+    &lt;student&gt;
+      &lt;name&gt;John&lt;/name&gt;
+      &lt;age&gt;13&lt;/age&gt;
+      &lt;class&gt;6&lt;/class&gt;
+    &lt;/student&gt;
+  &lt;/persons&gt;
+&lt;/data&gt;
+</code></pre> 
+   <h2><b><span>x:parse, x:out</span></b></h2> 
+   <p>- x:parseはxmlデータをパーシングします。</p> 
+   <p>- x:outはxpath表現式でデータを出力します。</p> 
+   <pre><code class="jsp" data-type="index.jsp">&lt;c:import var="xmlDoc" url="data.xml"/&gt;
+&lt;x:parse var="parsedDocument" xml="${xmlDoc}"/&gt;
+&lt;x:out select="$parsedDocument/data/title" /&gt;
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/80/379_001.png" data-filename="001.png" style="width: 445px;"></p> 
+   <p><br></p> 
+   <h2><b><span>x.forEach</span></b></h2> 
+   <p>- List形でタグ(繰り返されたタグ)の場合、ループらしく、データを持ち来ます。</p> 
+   <pre><code class="jsp" data-type="index.jsp">&lt;c:import var="xmlDoc" url="data.xml"/&gt;
+&lt;x:parse var="parsedDocument" xml="${xmlDoc}"/&gt;
+&lt;x:forEach select="$parsedDocument/data/persons/student"&gt;
+&lt;x:out select="name" /&gt;     
+&lt;x:out select="age" /&gt;     
+&lt;x:out select="class" /&gt;
+&lt;br /&gt;
+&lt;/x:forEach&gt;
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/80/380_002.png" data-filename="002.png" style="width: 479px;"></p> 
+   <p><br></p> 
+   <h2><b><span>x:sec</span></b></h2> 
+   <p>- データを変数で置換して格納します。</p> 
+   <pre><code class="jsp" data-type="index.jsp">&lt;c:import var="xmlDoc" url="data.xml"/&gt;
+&lt;x:parse var="parsedDocument" xml="${xmlDoc}"/&gt;
+&lt;x:set select="$parsedDocument/data/title" var="title"/&gt;
+&lt;x:out select="$title" /&gt;
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/80/379_001.png" data-filename="001.png" style="width: 445px;"></p> 
+   <h2><b><span>x:choise x:when x:otherwise</span></b></h2> 
+   <p>- xmlで「if~else」文です。</p> 
+   <pre><code class="jsp" data-type="index.jsp">&lt;c:import var="xmlDoc" url="data.xml"/&gt;
+&lt;x:parse var="parsedDocument" xml="${xmlDoc}"/&gt;
+&lt;x:choose&gt;  
+   &lt;x:when select="$parsedDocument/data/persons/student[2]/age = 13"&gt;  
+      Johnは13歳
+   &lt;/x:when&gt;  
+   &lt;x:when select="$parsedDocument/data/persons/student[2]/age = 12"&gt;  
+      Johnは12歳
+   &lt;/x:when&gt;  
+   &lt;x:otherwise&gt;  
+      Johnの歳は知りません。
+   &lt;/x:otherwise&gt;  
+&lt;/x:choose&gt;
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/80/381_003.png" data-filename="003.png" style="width: 492px;"></p> 
+   <p><br></p> 
+   <h2><b><span>x:if</span></b></h2> 
+   <p>- xmlの「if」文です。</p> 
+   <pre><code class="jsp" data-type="index.jsp">&lt;c:import var="xmlDoc" url="data.xml"/&gt;
+&lt;x:parse var="parsedDocument" xml="${xmlDoc}"/&gt;
+&lt;x:if select="$parsedDocument/data/persons/student[2]/age = 13"&gt;  
+  Johnは13歳
+&lt;/x:if&gt;
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/80/381_003.png" data-filename="003.png" style="width: 492px;"></p> 
+   <p><br></p> 
+   <h2><b><span>x:transform, x:param</span></b></h2> 
+   <p>- 「xlst」ファイルと「xml」ファイルを結合する関数です。</p> 
+   <pre><code class="xsl" data-type="data.xsl">&lt;?xml version="1.0"?&gt;  
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;  
+&lt;xsl:output method="html" indent="yes"/&gt;  
+&lt;xsl:param name="bgColor"/&gt;  
+  
+&lt;xsl:template match="/"&gt;  
+  &lt;html&gt;  
+  &lt;body&gt;  
+   &lt;xsl:apply-templates/&gt;  
+  &lt;/body&gt;  
+  &lt;/html&gt;  
+&lt;/xsl:template&gt;  
+  
+&lt;xsl:template match="books"&gt;  
+  &lt;table border="1" width="60%" bgColor="{$bgColor}"&gt;  
+    &lt;xsl:for-each select="book"&gt;  
+      &lt;tr&gt;  
+        &lt;td&gt;  
+          &lt;b&gt;&lt;xsl:value-of select="name"/&gt;&lt;/b&gt;  
+        &lt;/td&gt;  
+        &lt;td&gt;  
+          &lt;xsl:value-of select="author"/&gt;  
+        &lt;/td&gt;  
+        &lt;td&gt;  
+          &lt;xsl:value-of select="price"/&gt;  
+        &lt;/td&gt;  
+      &lt;/tr&gt;  
+    &lt;/xsl:for-each&gt;  
+  &lt;/table&gt;  
+&lt;/xsl:template&gt;  
+&lt;/xsl:stylesheet&gt;
+</code></pre> 
+   <pre><code class="jsp" data-type="index.jsp">&lt;c:set var="xmltext"&gt;  
+  &lt;books&gt;
+    &lt;book&gt;  
+      &lt;name&gt;C#&lt;/name&gt;  
+      &lt;author&gt;명월&lt;/author&gt;  
+      &lt;price&gt;200&lt;/price&gt;  
+    &lt;/book&gt;  
+    &lt;book&gt;  
+      &lt;name&gt;JAVA&lt;/name&gt;  
+      &lt;author&gt;명월&lt;/author&gt;  
+      &lt;price&gt;1000&lt;/price&gt;  
+    &lt;/book&gt;
+    &lt;book&gt;  
+      &lt;name&gt;PHP&lt;/name&gt;  
+      &lt;author&gt;명월&lt;/author&gt;  
+      &lt;price&gt;500&lt;/price&gt;  
+    &lt;/book&gt;  
+  &lt;/books&gt;  
+&lt;/c:set&gt;  
+  
+&lt;c:import var="xslt" url="data.xsl"/&gt;  
+&lt;x:transform xml="${xmltext}" xslt="${xslt}"&gt;  
+  &lt;x:param name="bgColor" value="yellow"/&gt;  
+&lt;/x:transform&gt; 
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/80/382_004.png" data-filename="004.png" style="width: 848px;"></p> 
+  </blockquote> 
+  <p>ここまで「jsp」の「JSTL」言語を纏めました。参照したページは下記でリンクします。</p> 
+  <p><br></p> 
+  <p>link - https://www.viralpatel.net/parsing-rss-xml-using-jstl-tag-library/</p> 
+  <p>link - https://www.javatpoint.com/jstl-xml-tags</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
