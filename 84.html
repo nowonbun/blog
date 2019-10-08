@@ -27,29 +27,29 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / Java" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。このページでは「web spring framework」の「view」で使う「jstl」 - xmlに関して調べてみました。前述でコアー、フォーマティング、関数、データベースに関して説明しました。「xml」に関して続けましょう。link - [java スタディ - 39] web spring frameworkのjspで使う言語 jstl - 関数、データベースlink - [java スタディ - 38] web spring frameworkのjspで使う言語 jstl - コアー、フォーマッティング実は「jstl」言語でコアー、フォーマティング、関数以外はあまり使わないですね。「xml」ライブラリもそんなに使わないと思います。データベースライブラリと同じく「xml」データを処理すると思うと「jsp」ページではなく、サーバサイトで処理しますね。または最近は「xml」より「json」タイプをよく使うので以前よりもっと使わないライブラリと言います。先、「jstl - xml」の関数を使う前に「pom.xml」でライブラリを一つ追加しなければならないです。(既存のpom.xmlで設定したライブラリを同然にあるんでしょう。)xmlライブラリc:importでxmlファイルを読み込みます。注意点はウェブ上の「http url」ではなく、サーバサイドの相対パスです。x:parse, x:out- x:parseはxmlデータをパーシングします。- x:outはxpath表現式でデータを出力します。x.foreach- list形でタグ(繰り返されたタグ)の場合、ループらしく、データを持ち来ます。x:sec- データを変数で置換して格納します。x:choise x:when x:otherwise- xmlで「if~else」文です。x:if- xmlの「if」文です。x:transform, x:param- 「xlst」ファイルと「xml」ファイルを結合する関数です。ここまで「jsp」の「jstl」言語を纏めました。参照したページは下記でリンクします。link - https://www.viralpatel.net/parsing-rss-xml-using-jstl-tag-library/link - https://www.javatpoint.com/jstl-xml-t]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。jpaでデータを取得する方法に関しては三つがあります。一つ目は「find」関数を使って持ち来ることです。二つ目は「createquery」を通って持ち来る方法、「createnativequery」の関数で持ち来る方法があります。「find」関数はクラスタイプを渡して持ち来る単純な方法です。上の例の方法が一番シンプルですが派生「info」データが制御できません。例えば「age」データが「80」以上のデータを持ち込みたいなら、検索上でデータを持ち込んでソース上で「if」文で分岐する方法しかないです。もしかして、「info」データが何万件だと思ったら、多いリソースでパフォーマンスが落ちると思います。次は「createnativequery」で持ち来る方法です。上の方法は「sql」クエリをそのまま入れて検索して持ち来る方法です。実はこの方法を一番推薦しません。率直にこんなに使う方法なら「jpa」を使う意味がありません。検索してもらったデータもentityマッピングができません。次は「createquery」で持ち来る方法です。実は上の方法が「jpa」側では一番理想的です。「entity」クラスにもちゃんとマッピングできるし、派生データのも「fetch」で管理でいます。でも、この方法は一般のsqlではなく、「jpql(java persistence query language)」というクエリです。私もjpqlに関して100%知ってることではないですが、「select」以外は「sql」と似てます。「select」だけ違いますが、代表的に「join」の方法、テーブル名ではなくエイリアスを使わなければならないことです。jpql1. jpqlはテーブル名ではなくentity名を使います。私の場合はテーブル名と「entity」名(クラス名)と一致していますが、違うなら「entity」名を使います。もちろん、where節とかでテーブルカラム名を使うことがあれば、変わりに変数名を使います。※大小文字を区分します。※変数のアトリビュートで「@entity(name=変数名)」を設定した場合、変数名ではなくアトリビュート名で設定した値で動きます。2.「join」する時には「fetch」を使います。「fetch」を使わなければ、派生クラスの値が検索条件によって表示されません。上の場合は「user」の場合は「]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [Java スタディ - 40] Web spring frameworkのJSPで使う言語 JSTL - XML" />
-<link rel="canonical" href="https://www.nowonbun.com/80.html" />
+<meta name="title" content="明月の開発ストーリ :: [Java スタディ - 44]  JPAのQuery を作り方" />
+<link rel="canonical" href="https://www.nowonbun.com/84.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [Java スタディ - 40] Web spring frameworkのJSPで使う言語 JSTL - XML" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。このページでは「web spring framework」の「view」で使う「jstl」 - xmlに関して調べてみました。前述でコアー、フォーマティング、関数、データベースに関して説明しました。「xml」に関して続けましょう。link - [java スタディ - 39] web spring frameworkのjspで使う言語 jstl - 関数、データベースlink - [java スタディ - 38] web spring frameworkのjspで使う言語 jstl - コアー、フォーマッティング実は「jstl」言語でコアー、フォーマティング、関数以外はあまり使わないですね。「xml」ライブラリもそんなに使わないと思います。データベースライブラリと同じく「xml」データを処理すると思うと「jsp」ページではなく、サーバサイトで処理しますね。または最近は「xml」より「json」タイプをよく使うので以前よりもっと使わないライブラリと言います。先、「jstl - xml」の関数を使う前に「pom.xml」でライブラリを一つ追加しなければならないです。(既存のpom.xmlで設定したライブラリを同然にあるんでしょう。)xmlライブラリc:importでxmlファイルを読み込みます。注意点はウェブ上の「http url」ではなく、サーバサイドの相対パスです。x:parse, x:out- x:parseはxmlデータをパーシングします。- x:outはxpath表現式でデータを出力します。x.foreach- list形でタグ(繰り返されたタグ)の場合、ループらしく、データを持ち来ます。x:sec- データを変数で置換して格納します。x:choise x:when x:otherwise- xmlで「if~else」文です。x:if- xmlの「if」文です。x:transform, x:param- 「xlst」ファイルと「xml」ファイルを結合する関数です。ここまで「jsp」の「jstl」言語を纏めました。参照したページは下記でリンクします。link - https://www.viralpatel.net/parsing-rss-xml-using-jstl-tag-library/link - https://www.javatpoint.com/jstl-xml-t]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java スタディ - 44]  JPAのQuery を作り方" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。jpaでデータを取得する方法に関しては三つがあります。一つ目は「find」関数を使って持ち来ることです。二つ目は「createquery」を通って持ち来る方法、「createnativequery」の関数で持ち来る方法があります。「find」関数はクラスタイプを渡して持ち来る単純な方法です。上の例の方法が一番シンプルですが派生「info」データが制御できません。例えば「age」データが「80」以上のデータを持ち込みたいなら、検索上でデータを持ち込んでソース上で「if」文で分岐する方法しかないです。もしかして、「info」データが何万件だと思ったら、多いリソースでパフォーマンスが落ちると思います。次は「createnativequery」で持ち来る方法です。上の方法は「sql」クエリをそのまま入れて検索して持ち来る方法です。実はこの方法を一番推薦しません。率直にこんなに使う方法なら「jpa」を使う意味がありません。検索してもらったデータもentityマッピングができません。次は「createquery」で持ち来る方法です。実は上の方法が「jpa」側では一番理想的です。「entity」クラスにもちゃんとマッピングできるし、派生データのも「fetch」で管理でいます。でも、この方法は一般のsqlではなく、「jpql(java persistence query language)」というクエリです。私もjpqlに関して100%知ってることではないですが、「select」以外は「sql」と似てます。「select」だけ違いますが、代表的に「join」の方法、テーブル名ではなくエイリアスを使わなければならないことです。jpql1. jpqlはテーブル名ではなくentity名を使います。私の場合はテーブル名と「entity」名(クラス名)と一致していますが、違うなら「entity」名を使います。もちろん、where節とかでテーブルカラム名を使うことがあれば、変わりに変数名を使います。※大小文字を区分します。※変数のアトリビュートで「@entity(name=変数名)」を設定した場合、変数名ではなくアトリビュート名で設定した値で動きます。2.「join」する時には「fetch」を使います。「fetch」を使わなければ、派生クラスの値が検索条件によって表示されません。上の場合は「user」の場合は「]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/80.html" />
+<meta property="og:url" content="https://www.nowonbun.com/84.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 40] Web spring frameworkのJSPで使う言語 JSTL - XML" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。このページでは「web spring framework」の「view」で使う「jstl」 - xmlに関して調べてみました。前述でコアー、フォーマティング、関数、データベースに関して説明しました。「xml」に関して続けましょう。link - [java スタディ - 39] web spring frameworkのjspで使う言語 jstl - 関数、データベースlink - [java スタディ - 38] web spring frameworkのjspで使う言語 jstl - コアー、フォーマッティング実は「jstl」言語でコアー、フォーマティング、関数以外はあまり使わないですね。「xml」ライブラリもそんなに使わないと思います。データベースライブラリと同じく「xml」データを処理すると思うと「jsp」ページではなく、サーバサイトで処理しますね。または最近は「xml」より「json」タイプをよく使うので以前よりもっと使わないライブラリと言います。先、「jstl - xml」の関数を使う前に「pom.xml」でライブラリを一つ追加しなければならないです。(既存のpom.xmlで設定したライブラリを同然にあるんでしょう。)xmlライブラリc:importでxmlファイルを読み込みます。注意点はウェブ上の「http url」ではなく、サーバサイドの相対パスです。x:parse, x:out- x:parseはxmlデータをパーシングします。- x:outはxpath表現式でデータを出力します。x.foreach- list形でタグ(繰り返されたタグ)の場合、ループらしく、データを持ち来ます。x:sec- データを変数で置換して格納します。x:choise x:when x:otherwise- xmlで「if~else」文です。x:if- xmlの「if」文です。x:transform, x:param- 「xlst」ファイルと「xml」ファイルを結合する関数です。ここまで「jsp」の「jstl」言語を纏めました。参照したページは下記でリンクします。link - https://www.viralpatel.net/parsing-rss-xml-using-jstl-tag-library/link - https://www.javatpoint.com/jstl-xml-t]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 44]  JPAのQuery を作り方" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。jpaでデータを取得する方法に関しては三つがあります。一つ目は「find」関数を使って持ち来ることです。二つ目は「createquery」を通って持ち来る方法、「createnativequery」の関数で持ち来る方法があります。「find」関数はクラスタイプを渡して持ち来る単純な方法です。上の例の方法が一番シンプルですが派生「info」データが制御できません。例えば「age」データが「80」以上のデータを持ち込みたいなら、検索上でデータを持ち込んでソース上で「if」文で分岐する方法しかないです。もしかして、「info」データが何万件だと思ったら、多いリソースでパフォーマンスが落ちると思います。次は「createnativequery」で持ち来る方法です。上の方法は「sql」クエリをそのまま入れて検索して持ち来る方法です。実はこの方法を一番推薦しません。率直にこんなに使う方法なら「jpa」を使う意味がありません。検索してもらったデータもentityマッピングができません。次は「createquery」で持ち来る方法です。実は上の方法が「jpa」側では一番理想的です。「entity」クラスにもちゃんとマッピングできるし、派生データのも「fetch」で管理でいます。でも、この方法は一般のsqlではなく、「jpql(java persistence query language)」というクエリです。私もjpqlに関して100%知ってることではないですが、「select」以外は「sql」と似てます。「select」だけ違いますが、代表的に「join」の方法、テーブル名ではなくエイリアスを使わなければならないことです。jpql1. jpqlはテーブル名ではなくentity名を使います。私の場合はテーブル名と「entity」名(クラス名)と一致していますが、違うなら「entity」名を使います。もちろん、where節とかでテーブルカラム名を使うことがあれば、変わりに変数名を使います。※大小文字を区分します。※変数のアトリビュートで「@entity(name=変数名)」を設定した場合、変数名ではなくアトリビュート名で設定した値で動きます。2.「join」する時には「fetch」を使います。「fetch」を使わなければ、派生クラスの値が検索条件によって表示されません。上の場合は「user」の場合は「]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 
-<title>明月の開発ストーリ :: [Java スタディ - 40] Web spring frameworkのJSPで使う言語 JSTL - XML</title>
+<title>明月の開発ストーリ :: [Java スタディ - 44]  JPAのQuery を作り方</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -115,11 +115,11 @@ body{
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[Java スタディ - 40] Web spring frameworkのJSPで使う言語 JSTL - XML</h1>
+					<h1 id="titleTxt">[Java スタディ - 44]  JPAのQuery を作り方</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0203">Study / Java</a> &nbsp;&nbsp; 作成日付 : 2019/10/03 20:02:06 &nbsp;&nbsp;修正日付 : 2019/10/03 20:03:42
+					<a href="./?category=0203">Study / Java</a> &nbsp;&nbsp; 作成日付 : 2019/10/09 07:34:08 &nbsp;&nbsp;修正日付 : 2019/10/09 07:35:37
 				</div>
 			</div>
 			<div class="article">
@@ -131,172 +131,106 @@ body{
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>このページでは「Web spring framework」の「view」で使う「jstl」 - xmlに関して調べてみました。</p> 
-  <p><br></p> 
-  <p>前述でコアー、フォーマティング、関数、データベースに関して説明しました。「xml」に関して続けましょう。</p> 
-  <p>link - <a href="https://www.nowonbun.com/79.html" target="_blank">[Java スタディ - 39] Web spring frameworkのJSPで使う言語 JSTL - 関数、データベース</a></p> 
-  <p>link - <a href="https://www.nowonbun.com/78.html" target="_blank">[Java スタディ - 38] Web spring frameworkのJSPで使う言語 JSTL - コアー、フォーマッティング</a></p> 
-  <p><br></p> 
-  <p>実は「JSTL」言語でコアー、フォーマティング、関数以外はあまり使わないですね。「xml」ライブラリもそんなに使わないと思います。</p> 
-  <p>データベースライブラリと同じく「xml」データを処理すると思うと「jsp」ページではなく、サーバサイトで処理しますね。または最近は「xml」より「json」タイプをよく使うので以前よりもっと使わないライブラリと言います。</p> 
-  <p><br></p> 
-  <p>先、「JSTL - xml」の関数を使う前に「pom.xml」でライブラリを一つ追加しなければならないです。(既存のpom.xmlで設定したライブラリを同然にあるんでしょう。)</p> 
-  <pre><code class="xml" data-type="pom.xml">&lt;!-- https://mvnrepository.com/artifact/xalan/xalan --&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;xalan&lt;/groupId&gt;
-  &lt;artifactId&gt;xalan&lt;/artifactId&gt;
-  &lt;version&gt;2.4.0&lt;/version&gt;
-&lt;/dependency&gt;
-&lt;!-- https://mvnrepository.com/artifact/xerces/xercesImpl --&gt;
-&lt;dependency&gt;
-  &lt;groupId&gt;xerces&lt;/groupId&gt;
-  &lt;artifactId&gt;xercesImpl&lt;/artifactId&gt;
-  &lt;version&gt;2.8.0&lt;/version&gt;
-&lt;/dependency&gt;
+  <p>JPAでデータを取得する方法に関しては三つがあります。</p> 
+  <p>一つ目は「find」関数を使って持ち来ることです。二つ目は「createQuery」を通って持ち来る方法、「createNativeQuery」の関数で持ち来る方法があります。</p> 
+  <p>「find」関数はクラスタイプを渡して持ち来る単純な方法です。</p> 
+  <pre><code class="java" data-type="main.java">public static void main(String... args) {
+  EntityManagerFactory emf = Persistence.createEntityManagerFactory("JpaExample");
+  EntityManager em = emf.createEntityManager();
+ 
+  User user = em.find(User.class, "TEST");
+  System.out.println(user.getName());
+  for (Info info : user.getInfos()) {
+    System.out.println(info.getAge());
+  }
+}
 </code></pre> 
-  <h2><b><span>XMLライブラリ</span></b></h2> 
+  <p style="text-align:left;"><img src="./contents/84/422_001.png" data-filename="001.png" style="width: 485px;"></p> 
+  <p>上の例の方法が一番シンプルですが派生「Info」データが制御できません。例えば「age」データが「80」以上のデータを持ち込みたいなら、検索上でデータを持ち込んでソース上で「if」文で分岐する方法しかないです。</p> 
+  <p>もしかして、「info」データが何万件だと思ったら、多いリソースでパフォーマンスが落ちると思います。</p> 
+  <p><br></p> 
+  <p>次は「createNativeQuery」で持ち来る方法です。</p> 
+  <pre><code class="java" data-type="Main.java">public class Main {
+  public static void main(String... args) {
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("JpaExample");
+    EntityManager em = emf.createEntityManager();
+ 
+    Query query = em.createNativeQuery("select * from user join info on user.id = info.id where user.id = 'TEST' and info.age &gt; 80");
+    Object[] user = (Object[])query.getSingleResult();
+    for(Object item : user) {
+      System.out.println(item);
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/84/423_002.png" data-filename="002.png" style="width: 611px;"></p> 
+  <p>上の方法は「sql」クエリをそのまま入れて検索して持ち来る方法です。実はこの方法を一番推薦しません。率直にこんなに使う方法なら「JPA」を使う意味がありません。検索してもらったデータもEntityマッピングができません。</p> 
+  <p><br></p> 
+  <p>次は「createQuery」で持ち来る方法です。</p> 
+  <pre><code class="java" data-type="Main.java">public static void main(String... args) {
+  EntityManagerFactory emf = Persistence.createEntityManagerFactory("JpaExample");
+  EntityManager em = emf.createEntityManager();
+  
+  Query query = em.createQuery("SELECT u FROM User u JOIN FETCH u.infos i WHERE i.age &gt;= 100");
+  List&lt;User&gt; resultList = (List&lt;User&gt;)query.getResultList();
+  for (User user : resultList) {
+    System.out.println(user.getName());
+    for(Info info : user.getInfos()) {
+      System.out.println(info.getAge());
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/84/424_003.png" data-filename="003.png" style="width: 692px;"></p> 
+  <p>実は上の方法が「JPA」側では一番理想的です。「Entity」クラスにもちゃんとマッピングできるし、派生データのも「FETCH」で管理でいます。</p> 
+  <p>でも、この方法は一般のSQLではなく、「JPQL(Java Persistence Query Language)」というクエリです。</p> 
+  <p><br></p> 
+  <p>私もJPQLに関して100%知ってることではないですが、「Select」以外は「SQL」と似てます。</p> 
+  <p>「Select」だけ違いますが、代表的に「join」の方法、テーブル名ではなくエイリアスを使わなければならないことです。</p> 
+  <p><br></p> 
+  <h2><b><span>JPQL</span></b></h2> 
   <blockquote style="border: 1px solid;border-left: 5px solid;"> 
-   <p>c:importでxmlファイルを読み込みます。注意点はウェブ上の「http url」ではなく、サーバサイドの相対パスです。</p> 
-   <pre><code class="xml" data-type="data.xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;data&gt;
-  &lt;title&gt;Hello world&lt;/title&gt;
-  &lt;persons&gt;
-    &lt;student&gt;
-      &lt;name&gt;Mary&lt;/name&gt;
-      &lt;age&gt;12&lt;/age&gt;
-      &lt;class&gt;5&lt;/class&gt;
-    &lt;/student&gt;
-    &lt;student&gt;
-      &lt;name&gt;John&lt;/name&gt;
-      &lt;age&gt;13&lt;/age&gt;
-      &lt;class&gt;6&lt;/class&gt;
-    &lt;/student&gt;
-  &lt;/persons&gt;
-&lt;/data&gt;
-</code></pre> 
-   <h2><b><span>x:parse, x:out</span></b></h2> 
-   <p>- x:parseはxmlデータをパーシングします。</p> 
-   <p>- x:outはxpath表現式でデータを出力します。</p> 
-   <pre><code class="jsp" data-type="index.jsp">&lt;c:import var="xmlDoc" url="data.xml"/&gt;
-&lt;x:parse var="parsedDocument" xml="${xmlDoc}"/&gt;
-&lt;x:out select="$parsedDocument/data/title" /&gt;
-</code></pre> 
-   <p style="text-align:left;"><img src="./contents/80/379_001.png" data-filename="001.png" style="width: 445px;"></p> 
+   <p>1. JPQLはテーブル名ではなくEntity名を使います。</p> 
+   <p style="text-align:left;"><img src="./contents/84/425_004.png" data-filename="004.png" style="width: 532px;"></p> 
+   <p>私の場合はテーブル名と「Entity」名(クラス名)と一致していますが、違うなら「Entity」名を使います。</p> 
+   <p>もちろん、Where節とかでテーブルカラム名を使うことがあれば、変わりに変数名を使います。</p> 
+   <p>※大小文字を区分します。</p> 
+   <p>※変数のアトリビュートで「@Entity(name=変数名)」を設定した場合、変数名ではなくアトリビュート名で設定した値で動きます。</p> 
    <p><br></p> 
-   <h2><b><span>x.forEach</span></b></h2> 
-   <p>- List形でタグ(繰り返されたタグ)の場合、ループらしく、データを持ち来ます。</p> 
-   <pre><code class="jsp" data-type="index.jsp">&lt;c:import var="xmlDoc" url="data.xml"/&gt;
-&lt;x:parse var="parsedDocument" xml="${xmlDoc}"/&gt;
-&lt;x:forEach select="$parsedDocument/data/persons/student"&gt;
-&lt;x:out select="name" /&gt;     
-&lt;x:out select="age" /&gt;     
-&lt;x:out select="class" /&gt;
-&lt;br /&gt;
-&lt;/x:forEach&gt;
+   <p>2.「Join」する時には「FETCH」を使います。「FETCH」を使わなければ、派生クラスの値が検索条件によって表示されません。</p> 
+   <p style="text-align:left;"><img src="./contents/84/429_005.png" data-filename="005.png" style="width: 470px;"></p> 
+   <pre><code class="sql" data-type="JPQL例">-- この場合はUserクラスのageの値が100以上の場合だけ検索する。
+SELECT u FROM User u JOIN FETCH u.infos i WHERE i.age &gt;= 100
 </code></pre> 
-   <p style="text-align:left;"><img src="./contents/80/380_002.png" data-filename="002.png" style="width: 479px;"></p> 
+   <p style="text-align:left;"><img src="./contents/84/426_006.png" data-filename="006.png" style="width: 465px;"></p> 
+   <pre><code class="sql" data-type="JPQL例">-- FETCHを使わない場合です。
+SELECT u FROM User u JOIN u.infos i WHERE i.age &gt;= 100
+</code></pre> 
+   <p style="text-align:left;"><img src="./contents/84/428_007.png" data-filename="007.png" style="width: 602px;"></p> 
+   <p>上の場合は「User」の場合は「info」の「age」が「100」以上を持っている「User」データを検索しました。派生「infos」にも「age」が「100」以上の場合だけあります。　でも下の場合は「User」は正しく「info」の「age」が「100」以上を持っている「User」データを検索しました。</p> 
+   <p>でも、派生「infos」の場合は「age」が「100」以上だけではなく、すべてのデータが検索されました。</p> 
    <p><br></p> 
-   <h2><b><span>x:sec</span></b></h2> 
-   <p>- データを変数で置換して格納します。</p> 
-   <pre><code class="jsp" data-type="index.jsp">&lt;c:import var="xmlDoc" url="data.xml"/&gt;
-&lt;x:parse var="parsedDocument" xml="${xmlDoc}"/&gt;
-&lt;x:set select="$parsedDocument/data/title" var="title"/&gt;
-&lt;x:out select="$title" /&gt;
+   <p>そしてパラメータバインディングは「:」を使用してパラメータ変数を指定して「setParameter」を利用してパラメータを設定します。</p> 
+   <pre><code class="java" data-type="Main.java">public static void main(String... args) {
+  EntityManagerFactory emf = Persistence.createEntityManagerFactory("JpaExample");
+  EntityManager em = emf.createEntityManager();
+  EntityTransaction transaction = em.getTransaction();
+  // パラメータ変数名は:age設定する。
+  Query query = em.createQuery("SELECT u FROM User u JOIN FETCH u.infos i WHERE i.age &gt;= :age");
+  // バインディングは「setParameter」関数で設定する。
+  query.setParameter("age", 100);
+  List&lt;User&gt; resultList = (List&lt;User&gt;)query.getResultList();
+  for (User user : resultList) {
+    System.out.println(user.getName());
+    for(Info info : user.getInfos()) {
+      System.out.println(info.getAge());
+    }
+  }
+}
 </code></pre> 
-   <p style="text-align:left;"><img src="./contents/80/379_001.png" data-filename="001.png" style="width: 445px;"></p> 
-   <h2><b><span>x:choise x:when x:otherwise</span></b></h2> 
-   <p>- xmlで「if~else」文です。</p> 
-   <pre><code class="jsp" data-type="index.jsp">&lt;c:import var="xmlDoc" url="data.xml"/&gt;
-&lt;x:parse var="parsedDocument" xml="${xmlDoc}"/&gt;
-&lt;x:choose&gt;  
-   &lt;x:when select="$parsedDocument/data/persons/student[2]/age = 13"&gt;  
-      Johnは13歳
-   &lt;/x:when&gt;  
-   &lt;x:when select="$parsedDocument/data/persons/student[2]/age = 12"&gt;  
-      Johnは12歳
-   &lt;/x:when&gt;  
-   &lt;x:otherwise&gt;  
-      Johnの歳は知りません。
-   &lt;/x:otherwise&gt;  
-&lt;/x:choose&gt;
-</code></pre> 
-   <p style="text-align:left;"><img src="./contents/80/381_003.png" data-filename="003.png" style="width: 492px;"></p> 
-   <p><br></p> 
-   <h2><b><span>x:if</span></b></h2> 
-   <p>- xmlの「if」文です。</p> 
-   <pre><code class="jsp" data-type="index.jsp">&lt;c:import var="xmlDoc" url="data.xml"/&gt;
-&lt;x:parse var="parsedDocument" xml="${xmlDoc}"/&gt;
-&lt;x:if select="$parsedDocument/data/persons/student[2]/age = 13"&gt;  
-  Johnは13歳
-&lt;/x:if&gt;
-</code></pre> 
-   <p style="text-align:left;"><img src="./contents/80/381_003.png" data-filename="003.png" style="width: 492px;"></p> 
-   <p><br></p> 
-   <h2><b><span>x:transform, x:param</span></b></h2> 
-   <p>- 「xlst」ファイルと「xml」ファイルを結合する関数です。</p> 
-   <pre><code class="xsl" data-type="data.xsl">&lt;?xml version="1.0"?&gt;  
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"&gt;  
-&lt;xsl:output method="html" indent="yes"/&gt;  
-&lt;xsl:param name="bgColor"/&gt;  
-  
-&lt;xsl:template match="/"&gt;  
-  &lt;html&gt;  
-  &lt;body&gt;  
-   &lt;xsl:apply-templates/&gt;  
-  &lt;/body&gt;  
-  &lt;/html&gt;  
-&lt;/xsl:template&gt;  
-  
-&lt;xsl:template match="books"&gt;  
-  &lt;table border="1" width="60%" bgColor="{$bgColor}"&gt;  
-    &lt;xsl:for-each select="book"&gt;  
-      &lt;tr&gt;  
-        &lt;td&gt;  
-          &lt;b&gt;&lt;xsl:value-of select="name"/&gt;&lt;/b&gt;  
-        &lt;/td&gt;  
-        &lt;td&gt;  
-          &lt;xsl:value-of select="author"/&gt;  
-        &lt;/td&gt;  
-        &lt;td&gt;  
-          &lt;xsl:value-of select="price"/&gt;  
-        &lt;/td&gt;  
-      &lt;/tr&gt;  
-    &lt;/xsl:for-each&gt;  
-  &lt;/table&gt;  
-&lt;/xsl:template&gt;  
-&lt;/xsl:stylesheet&gt;
-</code></pre> 
-   <pre><code class="jsp" data-type="index.jsp">&lt;c:set var="xmltext"&gt;  
-  &lt;books&gt;
-    &lt;book&gt;  
-      &lt;name&gt;C#&lt;/name&gt;  
-      &lt;author&gt;명월&lt;/author&gt;  
-      &lt;price&gt;200&lt;/price&gt;  
-    &lt;/book&gt;  
-    &lt;book&gt;  
-      &lt;name&gt;JAVA&lt;/name&gt;  
-      &lt;author&gt;명월&lt;/author&gt;  
-      &lt;price&gt;1000&lt;/price&gt;  
-    &lt;/book&gt;
-    &lt;book&gt;  
-      &lt;name&gt;PHP&lt;/name&gt;  
-      &lt;author&gt;명월&lt;/author&gt;  
-      &lt;price&gt;500&lt;/price&gt;  
-    &lt;/book&gt;  
-  &lt;/books&gt;  
-&lt;/c:set&gt;  
-  
-&lt;c:import var="xslt" url="data.xsl"/&gt;  
-&lt;x:transform xml="${xmltext}" xslt="${xslt}"&gt;  
-  &lt;x:param name="bgColor" value="yellow"/&gt;  
-&lt;/x:transform&gt; 
-</code></pre> 
-   <p style="text-align:left;"><img src="./contents/80/382_004.png" data-filename="004.png" style="width: 848px;"></p> 
-  </blockquote> 
-  <p>ここまで「jsp」の「JSTL」言語を纏めました。参照したページは下記でリンクします。</p> 
-  <p><br></p> 
-  <p>link - https://www.viralpatel.net/parsing-rss-xml-using-jstl-tag-library/</p> 
-  <p>link - https://www.javatpoint.com/jstl-xml-tags</p>
+   <p style="text-align:left;"><img src="./contents/84/427_008.png" data-filename="008.png" style="width: 570px;"></p> 
+   <p>その後で「count」や「max」などの集計関数、「group by」は既存SQLと同じです。</p> 
+  </blockquote>
  
 </div>
 				<!-- 일본 반응형 2 -->
