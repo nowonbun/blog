@@ -26,30 +26,30 @@ body{
 <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-<meta name="keywords" content="Study / C#" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。今日は制御文の最後のループ分岐に関して勉強します。我々がプログラムロジックを作成すると無限ループを作る時があります。でも本当に無限になるとプログラムが終わらないのでループの中で止まること、すなわち分岐ループが必要です。break 文「break」はループ制御を抜け出す時に使う制御文です。上の式を見ると「while」文は条件式がいつも「真」(true)になるので無限ループになります。でも、文の中で「if」によって「i」が「10」になると「break」文を呼ばれて無限ループから抜け出します。ループを強制的に抜け出すのは「break」になります。でも抜け出すことではなく、ループ文を終わらせずに次のインデックスに行くケースもあります。contineu 文「continue」はループ制御の次のインデックスに飛び超える制御です。上の例を見ると別に「break」、「continue」を使わなくても「if」文だけで処理ができそうですね。でも「break」、「continue」をよく使うとソースが綺麗になるのでループの中には状態をよくみて使うほうが良いと思います。]]>" />
+<meta name="keywords" content="Devlopment note / Linux" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。linuxを使う時、よく使うエディタがvi編集ツールではないかと面ます。でもvi編集ツールはウィンドウosで考えるとメモ帳ですね。メモ帳はただのime編集機能しかないので、普通は「sakura」や「notepad++」を使いますね。「linux」と同じ状況なので「vi」はただメモ帳なら「vim」ならターミナルの「sakura」や「notepad++」ですね。それならインストールをしましょう。vi編集ツールとvim編集ツールをhttpd.confファイルでどの差があるかを確認しましょう。下記はvi編集ツールです。下記はvim編集ツールです。色が付けているので可読性がよいですね。その以外に検索、grep機能などがよいといいますが、自分もそこまでの差はよく知らないですね。もともとvi編集ツールも悪くないからですね。でも、linuxターミナルをよく使う人はvim編集ツールをよく使いますね。]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [C# スタディ - 11] 制御文 - ループ分岐(break, continue)" />
-<link rel="canonical" href="https://www.nowonbun.com/12.html" />
+<meta name="title" content="明月の開発ストーリ :: [CentOS] Vim編集ツールをインストールする方法" />
+<link rel="canonical" href="https://www.nowonbun.com/95.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [C# スタディ - 11] 制御文 - ループ分岐(break, continue)" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。今日は制御文の最後のループ分岐に関して勉強します。我々がプログラムロジックを作成すると無限ループを作る時があります。でも本当に無限になるとプログラムが終わらないのでループの中で止まること、すなわち分岐ループが必要です。break 文「break」はループ制御を抜け出す時に使う制御文です。上の式を見ると「while」文は条件式がいつも「真」(true)になるので無限ループになります。でも、文の中で「if」によって「i」が「10」になると「break」文を呼ばれて無限ループから抜け出します。ループを強制的に抜け出すのは「break」になります。でも抜け出すことではなく、ループ文を終わらせずに次のインデックスに行くケースもあります。contineu 文「continue」はループ制御の次のインデックスに飛び超える制御です。上の例を見ると別に「break」、「continue」を使わなくても「if」文だけで処理ができそうですね。でも「break」、「continue」をよく使うとソースが綺麗になるのでループの中には状態をよくみて使うほうが良いと思います。]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [CentOS] Vim編集ツールをインストールする方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。linuxを使う時、よく使うエディタがvi編集ツールではないかと面ます。でもvi編集ツールはウィンドウosで考えるとメモ帳ですね。メモ帳はただのime編集機能しかないので、普通は「sakura」や「notepad++」を使いますね。「linux」と同じ状況なので「vi」はただメモ帳なら「vim」ならターミナルの「sakura」や「notepad++」ですね。それならインストールをしましょう。vi編集ツールとvim編集ツールをhttpd.confファイルでどの差があるかを確認しましょう。下記はvi編集ツールです。下記はvim編集ツールです。色が付けているので可読性がよいですね。その以外に検索、grep機能などがよいといいますが、自分もそこまでの差はよく知らないですね。もともとvi編集ツールも悪くないからですね。でも、linuxターミナルをよく使う人はvim編集ツールをよく使いますね。]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/12.html" />
+<meta property="og:url" content="https://www.nowonbun.com/95.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [C# スタディ - 11] 制御文 - ループ分岐(break, continue)" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今日は制御文の最後のループ分岐に関して勉強します。我々がプログラムロジックを作成すると無限ループを作る時があります。でも本当に無限になるとプログラムが終わらないのでループの中で止まること、すなわち分岐ループが必要です。break 文「break」はループ制御を抜け出す時に使う制御文です。上の式を見ると「while」文は条件式がいつも「真」(true)になるので無限ループになります。でも、文の中で「if」によって「i」が「10」になると「break」文を呼ばれて無限ループから抜け出します。ループを強制的に抜け出すのは「break」になります。でも抜け出すことではなく、ループ文を終わらせずに次のインデックスに行くケースもあります。contineu 文「continue」はループ制御の次のインデックスに飛び超える制御です。上の例を見ると別に「break」、「continue」を使わなくても「if」文だけで処理ができそうですね。でも「break」、「continue」をよく使うとソースが綺麗になるのでループの中には状態をよくみて使うほうが良いと思います。]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CentOS] Vim編集ツールをインストールする方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。linuxを使う時、よく使うエディタがvi編集ツールではないかと面ます。でもvi編集ツールはウィンドウosで考えるとメモ帳ですね。メモ帳はただのime編集機能しかないので、普通は「sakura」や「notepad++」を使いますね。「linux」と同じ状況なので「vi」はただメモ帳なら「vim」ならターミナルの「sakura」や「notepad++」ですね。それならインストールをしましょう。vi編集ツールとvim編集ツールをhttpd.confファイルでどの差があるかを確認しましょう。下記はvi編集ツールです。下記はvim編集ツールです。色が付けているので可読性がよいですね。その以外に検索、grep機能などがよいといいますが、自分もそこまでの差はよく知らないですね。もともとvi編集ツールも悪くないからですね。でも、linuxターミナルをよく使う人はvim編集ツールをよく使いますね。]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 
-<title>明月の開発ストーリ :: [C# スタディ - 11] 制御文 - ループ分岐(break, continue)</title>
+<title>明月の開発ストーリ :: [CentOS] Vim編集ツールをインストールする方法</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -115,11 +115,11 @@ body{
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[C# スタディ - 11] 制御文 - ループ分岐(break, continue)</h1>
+					<h1 id="titleTxt">[CentOS] Vim編集ツールをインストールする方法</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/07 22:54:13 &nbsp;&nbsp;修正日付 : 2019/07/07 22:56:17
+					<a href="./?category=0106">Devlopment note / Linux</a> &nbsp;&nbsp; 作成日付 : 2019/10/21 00:24:44 &nbsp;&nbsp;修正日付 : 2019/10/21 00:25:09
 				</div>
 			</div>
 			<div class="article">
@@ -131,175 +131,36 @@ body{
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>今日は制御文の最後のループ分岐に関して勉強します。</p> 
+  <p>Linuxを使う時、よく使うエディタがVI編集ツールではないかと面ます。でもVI編集ツールはウィンドウOSで考えるとメモ帳ですね。</p> 
+  <p>メモ帳はただのIME編集機能しかないので、普通は「sakura」や「notepad++」を使いますね。</p> 
   <p><br></p> 
-  <p>我々がプログラムロジックを作成すると無限ループを作る時があります。でも本当に無限になるとプログラムが終わらないのでループの中で止まること、すなわち分岐ループが必要です。</p> 
+  <p>「linux」と同じ状況なので「VI」はただメモ帳なら「VIM」ならターミナルの「sakura」や「notepad++」ですね。</p> 
   <p><br></p> 
-  <h2><b><span>break 文</span></b></h2> 
-  <p>「break」はループ制御を抜け出す時に使う制御文です。</p> 
-  <pre><code class="cs" data-type="">ループ(true){
-  break;
-}
+  <p>それならインストールをしましょう。</p> 
+  <pre><code class="shell" data-type="shell">yum list vim*
+yum install vim
 </code></pre> 
-  <pre><code class="cs" data-type="">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Operation
-{
-  class Program
-  {
-    static void Main(string[] args)
-    {
-      int i = 0;
-      while (true)
-      {
-        if (i == 10)
-        {
-         Console.WriteLine(i);
-          break;
-        }
-        i++;
-      }
-
-      Console.WriteLine("Press Any key...");
-      Console.ReadLine();
-    }
-  }
-}
-</code></pre> 
-  <p>上の式を見ると「while」文は条件式がいつも「真」(true)になるので無限ループになります。でも、文の中で「if」によって「i」が「10」になると「break」文を呼ばれて無限ループから抜け出します。</p> 
-  <p style="text-align:left;"><img src="./contents/12/38_001.jpg" data-filename="001.jpg" style="width: 600px;"></p> 
-  <p>ループを強制的に抜け出すのは「break」になります。でも抜け出すことではなく、ループ文を終わらせずに次のインデックスに行くケースもあります。</p> 
+  <p style="text-align:left;"><img src="./contents/95/510_001.png" data-filename="001.png" style="width: 848px;"></p> 
+  <p style="text-align:left;"><img src="./contents/95/511_002.png" data-filename="002.png" style="width: 848px;"></p> 
+  <p>vi編集ツールとvim編集ツールをhttpd.confファイルでどの差があるかを確認しましょう。</p> 
   <p><br></p> 
-  <h2><b><span>contineu 文</span></b></h2> 
-  <p>「continue」はループ制御の次のインデックスに飛び超える制御です。</p> 
-  <pre><code class="cs" data-type="">ループ(条件式){
-  continue;
-}
-</code></pre> 
-  <pre><code class="cs" data-type="">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Operation
-{
-  class Program
-  {
-    static void Main(string[] args)
-    {
-      for(int i = 0; i &lt; 10; i++)
-      {
-        if(i%2 == 0)
-        {
-          continue;
-        }
-        Console.WriteLine(i);
-      }
-
-      Console.WriteLine("Press Any key...");
-      Console.ReadLine();
-    }
-  }
-}
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/12/39_002.jpg" data-filename="002.jpg" style="width: 600px;"></p> 
-  <p>上の例を見ると別に「break」、「continue」を使わなくても「if」文だけで処理ができそうですね。でも「break」、「continue」をよく使うとソースが綺麗になるのでループの中には状態をよくみて使うほうが良いと思います。</p> 
-  <pre><code class="cs" data-type="">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Operation
-{
-  class Program
-  {
-    static void Main(string[] args)
-    {
-      for(int i = 0; i &lt; 10; i++)
-      {
-        if(i%2 == 0)
-        {
-          Console.WriteLine(i * 1);
-          if (i &lt; 5)
-          {
-            Console.WriteLine(i * 2);
-            if (i &gt; 2)
-            {
-              Console.WriteLine(i * 3);
-              Console.WriteLine(i * 4);
-              Console.WriteLine(i * 5);
-              Console.WriteLine(i * 6);
-              Console.WriteLine(i * 7);
-              Console.WriteLine(i * 8);
-              Console.WriteLine(i * 9);
-              Console.WriteLine(i * 10);
-            }
-            
-          }
-          
-        }
-      }
-      //ループの深さが深い。それで見難い。
-      Console.WriteLine();
-      for(int i = 0; i &lt; 10; i++)
-      {
-        if(i%2 != 0)
-        {  
-          continue;
-        }
-        else
-        {
-          Console.WriteLine(i * 1);
-        }
-
-        if(i &gt;= 5)
-        {
-          continue;
-        }
-        else
-        {
-          Console.WriteLine(i * 2);
-        }
-
-        if(i &lt;= 2)
-        {
-          continue;
-        }
-        Console.WriteLine(i * 3);
-        Console.WriteLine(i * 4);
-        Console.WriteLine(i * 5);
-        Console.WriteLine(i * 6);
-        Console.WriteLine(i * 7);
-        Console.WriteLine(i * 8);
-        Console.WriteLine(i * 9);
-        Console.WriteLine(i * 10);
-      }
-      //ソースの長さは長くなったが、ソースが見やすい
-
-      Console.WriteLine("Press Any key...");
-      Console.ReadLine();
-    }
-  }
-}
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/12/37_003.jpg" data-filename="003.jpg" style="width: 600px;"></p>
+  <p>下記はvi編集ツールです。</p> 
+  <p style="text-align:left;"><img src="./contents/95/509_003.png" data-filename="003.png" style="width: 848px;"></p> 
+  <p>下記はvim編集ツールです。</p> 
+  <p style="text-align:left;"><img src="./contents/95/508_004.png" data-filename="004.png" style="width: 848px;"></p> 
+  <p>色が付けているので可読性がよいですね。その以外に検索、grep機能などがよいといいますが、自分もそこまでの差はよく知らないですね。</p> 
+  <p>もともとvi編集ツールも悪くないからですね。でも、Linuxターミナルをよく使う人はvim編集ツールをよく使いますね。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=C%23>#C#</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=linux>#linux</a>, #vim, #centos </span>
 				</div>
 				<div class="other-category">
-					<div class="list-title">「<a href="./?category=0202">Study / C#</a>」の他投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/40.html'>[C# スタディ - 39] Thread(スレッド)</a><span>2019/07/24 00:57:35</span></li><li><a href='https://www.nowonbun.com/39.html'>[C# スタディ - 38] 「IDisposable」と「using」</a><span>2019/07/23 00:05:40</span></li><li><a href='https://www.nowonbun.com/38.html'>[C# スタディ - 37] ファイルシステム(File System) - FileStream、 Encoding、 Serializable</a><span>2019/07/22 23:45:05</span></li><li><a href='https://www.nowonbun.com/37.html'>[C# スタディ - 36] ファイルシステム(File System) - FileInfo,DirectoryInfo</a><span>2019/07/22 23:30:17</span></li><li><a href='https://www.nowonbun.com/36.html'>[C# スタディ - 35] MSDN(Microsoft Developer Network)</a><span>2019/07/22 23:15:42</span></li><li><a href='https://www.nowonbun.com/35.html'>[C# スタディ - 34] Attribute(アトリビュート)</a><span>2019/07/20 02:27:23</span></li><li><a href='https://www.nowonbun.com/34.html'>[C# スタディ - 33] Reflection(リフレクション)</a><span>2019/07/20 02:22:03</span></li><li><a href='https://www.nowonbun.com/33.html'>[C# スタディ - 32] Objectタイプ、varタイプ(匿名タイプ)、dynamicタイプ</a><span>2019/07/18 22:50:16</span></li><li><a href='https://www.nowonbun.com/32.html'>[C# スタディ - 31] Partial Type(クラス分割)、拡張メソッド</a><span>2019/07/18 20:22:16</span></li><li><a href='https://www.nowonbun.com/31.html'>[C# スタディ - 30] Lamda(ラムダ)</a><span>2019/07/17 23:06:42</span></li><li><a href='https://www.nowonbun.com/30.html'>[C# スタディ - 29] LINQ(リンク)-3 (Enumerableクラス)</a><span>2019/07/17 20:57:00</span></li><li><a href='https://www.nowonbun.com/29.html'>[C# スタディ - 28] LINQ(リンク)-2 (メソッド式)</a><span>2019/07/16 22:40:03</span></li><li><a href='https://www.nowonbun.com/28.html'>[C# スタディ - 27] LINQ(リンク)-1</a><span>2019/07/16 20:41:27</span></li><li><a href='https://www.nowonbun.com/27.html'>[C# スタディ - 26] event(イベント)</a><span>2019/07/16 00:59:34</span></li><li><a href='https://www.nowonbun.com/26.html'>[C# スタディ - 25] delegate(デリゲート)</a><span>2019/07/16 00:48:03</span></li></ul>
+					<div class="list-title">「<a href="./?category=0106">Devlopment note / Linux</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li></ul>
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
