@@ -119,7 +119,7 @@ body{
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0106">Devlopment note / Linux</a> &nbsp;&nbsp; 作成日付 : 2019/10/21 16:58:39 &nbsp;&nbsp;修正日付 : 2019/10/21 16:59:25
+					<a href="./?category=0106">Devlopment note / Linux</a> &nbsp;&nbsp; 作成日付 : 2019/10/21 16:58:39 &nbsp;&nbsp;修正日付 : 2019/10/21 17:01:35
 				</div>
 			</div>
 			<div class="article">
@@ -137,25 +137,25 @@ body{
   <p>なので、英語でインストールしてユーザ別で文字セットを設定します。</p> 
   <p><br></p> 
   <p>文字セットをする方法では下記のコマンド名で修正します。</p> 
-  <pre><code class="shell" data-type="shell"># 文字セット確認
+  <pre><code class="shell" data-type="shell">## 文字セット確認
 locale | grep LANG
-# 文字セットインストール確認
+## 文字セットインストール確認
 localectl list-locales | grep jp
-# 文字セット変更
+## 文字セット変更
 localectl set-locale LANG=ja_JP.UTF8
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/96/512_001.png" data-filename="001.png" style="width: 592px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/96/512_001.png" data-filename="001.png" style="width: 592px;"></p> 
   <p>一応、私の場合は「ja_JP.eucjp」なので「ja_jp.utf8」をダウンロードしなければならないです。</p> 
-  <pre><code class="shell" data-type="shell">##文字セットを再インストール
+  <pre><code class="shell" data-type="shell">## 文字セットを再インストール
 yum -y reinstall glibc-common
 localectl list-locales | grep -i ja
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/96/515_002.png" data-filename="002.png" style="width: 848px;"><br></p> 
-  <p style="text-align:left;"><img src="./contents/96/513_003.png" data-filename="003.png" style="width: 531px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/96/515_002.png" data-filename="002.png" style="width: 848px;"></p> 
+  <p style="text-align:left;"><img src="./contents/96/513_003.png" data-filename="003.png" style="width: 531px;"></p> 
   <p>「ja_JP.utf8」があります。文字セットを変更しましょう。</p> 
-  <p style="text-align:left;"><img src="./contents/96/514_004.png" data-filename="004.png" style="width: 540px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/96/514_004.png" data-filename="004.png" style="width: 540px;"></p> 
   <p>リブートすると日本語がちゃんとできました。</p> 
-  <p style="text-align:left;"><img src="./contents/96/516_005.png" data-filename="005.png" style="width: 848px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/96/516_005.png" data-filename="005.png" style="width: 848px;"></p> 
   <p>そのあとでサーバーをリブートすると文字セットが変わっています。</p> 
   <p><br></p> 
   <p>文字セットを変わって文字化けになると下記のリンクを参考してください。</p> 
