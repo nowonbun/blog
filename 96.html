@@ -26,30 +26,30 @@ body{
 <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-<meta name="keywords" content="Study / Java" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。このページでは列挙型に関して調べてみました。列挙型に関しては「java」だけあることではなく、「c#」でも同じ意味であるのでご参考してください。link - [c# スタディ - 18] enum(列挙型)列挙型とは、プログラミングする時にタイプやステータスを表現する時にありますね。でも、そのステータスをただ、「int」型で値を「1」や「0」に表現すると皆にプログラム可読性が悪くなります。上の例を見れば、「print」関数で「int」タイプのパラメータを受け取って、「1」の場合と「2」の場合、「3」の場合を分けって処理することになります。上の例はすごく簡単な例なので、「int」型でしてもそんなに難しいとは思わないですが、プログラムが複雑になれば悪いコードになります。そのためあることが列挙型です。上の例をみれば、列挙型の「printtype」を宣言しました。「print」関数でパラメータタイプを「printtype」にして「main」関数で「printtype」を入れることを確認できますね。そのとおりにプログラムを作成すると確かに以前みたいに「1」と「2」で数字だけの意味ではなく、宣言文字の意味を与えて使用ができますので、プログラムの可読性が上がると思いますね。]]>" />
+<meta name="keywords" content="Devlopment note / Linux" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。centosをインストールする時に日本語でインストールする方もいると思いますが、普通では英語でインストールをします。インストールする時に勝手に日本語名のディレクトリーができることがあるからです。最近はそうではないと思いますが。。なので、英語でインストールしてユーザ別で文字セットを設定します。文字セットをする方法では下記のコマンド名で修正します。一応、私の場合は「ja_jp.eucjp」なので「ja_jp.utf8」をダウンロードしなければならないです。「ja_jp.utf8」があります。文字セットを変更しましょう。リブートすると日本語がちゃんとできました。そのあとでサーバーをリブートすると文字セットが変わっています。文字セットを変わって文字化けになると下記のリンクを参考してください。link - [linux] putty使用方法上のリンクを参考すると解決します。]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [Java スタディ - 18] 列挙型(enum)" />
-<link rel="canonical" href="https://www.nowonbun.com/58.html" />
+<meta name="title" content="明月の開発ストーリ :: [CentOS] システムの文字セット変更" />
+<link rel="canonical" href="https://www.nowonbun.com/96.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [Java スタディ - 18] 列挙型(enum)" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。このページでは列挙型に関して調べてみました。列挙型に関しては「java」だけあることではなく、「c#」でも同じ意味であるのでご参考してください。link - [c# スタディ - 18] enum(列挙型)列挙型とは、プログラミングする時にタイプやステータスを表現する時にありますね。でも、そのステータスをただ、「int」型で値を「1」や「0」に表現すると皆にプログラム可読性が悪くなります。上の例を見れば、「print」関数で「int」タイプのパラメータを受け取って、「1」の場合と「2」の場合、「3」の場合を分けって処理することになります。上の例はすごく簡単な例なので、「int」型でしてもそんなに難しいとは思わないですが、プログラムが複雑になれば悪いコードになります。そのためあることが列挙型です。上の例をみれば、列挙型の「printtype」を宣言しました。「print」関数でパラメータタイプを「printtype」にして「main」関数で「printtype」を入れることを確認できますね。そのとおりにプログラムを作成すると確かに以前みたいに「1」と「2」で数字だけの意味ではなく、宣言文字の意味を与えて使用ができますので、プログラムの可読性が上がると思いますね。]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [CentOS] システムの文字セット変更" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。centosをインストールする時に日本語でインストールする方もいると思いますが、普通では英語でインストールをします。インストールする時に勝手に日本語名のディレクトリーができることがあるからです。最近はそうではないと思いますが。。なので、英語でインストールしてユーザ別で文字セットを設定します。文字セットをする方法では下記のコマンド名で修正します。一応、私の場合は「ja_jp.eucjp」なので「ja_jp.utf8」をダウンロードしなければならないです。「ja_jp.utf8」があります。文字セットを変更しましょう。リブートすると日本語がちゃんとできました。そのあとでサーバーをリブートすると文字セットが変わっています。文字セットを変わって文字化けになると下記のリンクを参考してください。link - [linux] putty使用方法上のリンクを参考すると解決します。]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/58.html" />
+<meta property="og:url" content="https://www.nowonbun.com/96.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 18] 列挙型(enum)" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。このページでは列挙型に関して調べてみました。列挙型に関しては「java」だけあることではなく、「c#」でも同じ意味であるのでご参考してください。link - [c# スタディ - 18] enum(列挙型)列挙型とは、プログラミングする時にタイプやステータスを表現する時にありますね。でも、そのステータスをただ、「int」型で値を「1」や「0」に表現すると皆にプログラム可読性が悪くなります。上の例を見れば、「print」関数で「int」タイプのパラメータを受け取って、「1」の場合と「2」の場合、「3」の場合を分けって処理することになります。上の例はすごく簡単な例なので、「int」型でしてもそんなに難しいとは思わないですが、プログラムが複雑になれば悪いコードになります。そのためあることが列挙型です。上の例をみれば、列挙型の「printtype」を宣言しました。「print」関数でパラメータタイプを「printtype」にして「main」関数で「printtype」を入れることを確認できますね。そのとおりにプログラムを作成すると確かに以前みたいに「1」と「2」で数字だけの意味ではなく、宣言文字の意味を与えて使用ができますので、プログラムの可読性が上がると思いますね。]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CentOS] システムの文字セット変更" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。centosをインストールする時に日本語でインストールする方もいると思いますが、普通では英語でインストールをします。インストールする時に勝手に日本語名のディレクトリーができることがあるからです。最近はそうではないと思いますが。。なので、英語でインストールしてユーザ別で文字セットを設定します。文字セットをする方法では下記のコマンド名で修正します。一応、私の場合は「ja_jp.eucjp」なので「ja_jp.utf8」をダウンロードしなければならないです。「ja_jp.utf8」があります。文字セットを変更しましょう。リブートすると日本語がちゃんとできました。そのあとでサーバーをリブートすると文字セットが変わっています。文字セットを変わって文字化けになると下記のリンクを参考してください。link - [linux] putty使用方法上のリンクを参考すると解決します。]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 
-<title>明月の開発ストーリ :: [Java スタディ - 18] 列挙型(enum)</title>
+<title>明月の開発ストーリ :: [CentOS] システムの文字セット変更</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -115,11 +115,11 @@ body{
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[Java スタディ - 18] 列挙型(enum)</h1>
+					<h1 id="titleTxt">[CentOS] システムの文字セット変更</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0203">Study / Java</a> &nbsp;&nbsp; 作成日付 : 2019/09/02 20:30:34 &nbsp;&nbsp;修正日付 : 2019/09/02 20:31:06
+					<a href="./?category=0106">Devlopment note / Linux</a> &nbsp;&nbsp; 作成日付 : 2019/10/21 16:58:39 &nbsp;&nbsp;修正日付 : 2019/10/21 16:59:25
 				</div>
 			</div>
 			<div class="article">
@@ -131,29 +131,47 @@ body{
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>このページでは列挙型に関して調べてみました。</p> 
+  <p>CentOSをインストールする時に日本語でインストールする方もいると思いますが、普通では英語でインストールをします。</p> 
+  <p>インストールする時に勝手に日本語名のディレクトリーができることがあるからです。最近はそうではないと思いますが。。</p> 
   <p><br></p> 
-  <p>列挙型に関しては「Java」だけあることではなく、「C#」でも同じ意味であるのでご参考してください。</p> 
-  <p>link - <a href="https://www.nowonbun.com/19.html" target="_blank">[C# スタディ - 18] enum(列挙型)</a></p> 
+  <p>なので、英語でインストールしてユーザ別で文字セットを設定します。</p> 
   <p><br></p> 
-  <p>列挙型とは、プログラミングする時にタイプやステータスを表現する時にありますね。でも、そのステータスをただ、「int」型で値を「1」や「0」に表現すると皆にプログラム可読性が悪くなります。</p> 
-  <p style="text-align:left;"><img src="./contents/58/234_001.jpg" data-filename="001.jpg" style="width: 375px;"></p> 
-  <p>上の例を見れば、「print」関数で「int」タイプのパラメータを受け取って、「1」の場合と「2」の場合、「3」の場合を分けって処理することになります。上の例はすごく簡単な例なので、「int」型でしてもそんなに難しいとは思わないですが、プログラムが複雑になれば悪いコードになります。</p> 
-  <p>そのためあることが列挙型です。</p> 
-  <p style="text-align:left;"><img src="./contents/58/235_002.jpg" data-filename="002.jpg" style="width: 383px;"></p> 
-  <p>上の例をみれば、列挙型の「PrintType」を宣言しました。「print」関数でパラメータタイプを「PrintType」にして「main」関数で「PrintType」を入れることを確認できますね。</p> 
-  <p>そのとおりにプログラムを作成すると確かに以前みたいに「1」と「2」で数字だけの意味ではなく、宣言文字の意味を与えて使用ができますので、プログラムの可読性が上がると思いますね。</p>
+  <p>文字セットをする方法では下記のコマンド名で修正します。</p> 
+  <pre><code class="shell" data-type="shell"># 文字セット確認
+locale | grep LANG
+# 文字セットインストール確認
+localectl list-locales | grep jp
+# 文字セット変更
+localectl set-locale LANG=ja_JP.UTF8
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/96/512_001.png" data-filename="001.png" style="width: 592px;"><br></p> 
+  <p>一応、私の場合は「ja_JP.eucjp」なので「ja_jp.utf8」をダウンロードしなければならないです。</p> 
+  <pre><code class="shell" data-type="shell">##文字セットを再インストール
+yum -y reinstall glibc-common
+localectl list-locales | grep -i ja
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/96/515_002.png" data-filename="002.png" style="width: 848px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/96/513_003.png" data-filename="003.png" style="width: 531px;"><br></p> 
+  <p>「ja_JP.utf8」があります。文字セットを変更しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/96/514_004.png" data-filename="004.png" style="width: 540px;"><br></p> 
+  <p>リブートすると日本語がちゃんとできました。</p> 
+  <p style="text-align:left;"><img src="./contents/96/516_005.png" data-filename="005.png" style="width: 848px;"><br></p> 
+  <p>そのあとでサーバーをリブートすると文字セットが変わっています。</p> 
+  <p><br></p> 
+  <p>文字セットを変わって文字化けになると下記のリンクを参考してください。</p> 
+  <p>link - <a href="https://www.nowonbun.com/94.html" target="_blank">[Linux] Putty使用方法</a></p> 
+  <p>上のリンクを参考すると解決します。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=java>#java</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=centos>#centos</a>, #linux </span>
 				</div>
 				<div class="other-category">
-					<div class="list-title">「<a href="./?category=0203">Study / Java</a>」の他投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/92.html'>[Javaスタディ- 52] Java servletでインスタンスを初期する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Javaスタディ- 50] Web Spring frameworkでfilter設定</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Javaスタディ- 49] Web serviceのweb.xmlでエラーページ設定</a><span>2019/10/14 20:13:44</span></li><li><a href='https://www.nowonbun.com/88.html'>[Javaスタディ- 48] JPAのDAOをFactoryパターンで管理する方法</a><span>2019/10/13 22:55:52</span></li><li><a href='https://www.nowonbun.com/87.html'>[Java スタディ - 47] JPAのSpring frameworkで依存性注入する方法</a><span>2019/10/13 00:40:08</span></li><li><a href='https://www.nowonbun.com/86.html'>[Java スタディ - 46] JPAでDAOを生成する方法</a><span>2019/10/11 07:30:14</span></li><li><a href='https://www.nowonbun.com/85.html'>[Java スタディ - 45] JPAでトランザクションの使用方法とオブサーバーパターンで共通トランザクション関数を作り方</a><span>2019/10/10 07:29:43</span></li><li><a href='https://www.nowonbun.com/84.html'>[Java スタディ - 44]  JPAのQuery を作り方</a><span>2019/10/09 07:34:08</span></li><li><a href='https://www.nowonbun.com/83.html'>[Java スタディ - 43] JPAのEntityクラス設定(Cascade, fetch)</a><span>2019/10/08 07:43:33</span></li><li><a href='https://www.nowonbun.com/82.html'>[Java スタディ - 42] JPAでpersistance.xml設定とentityクラス設定(@GeneratedValue設定)</a><span>2019/10/07 07:38:13</span></li><li><a href='https://www.nowonbun.com/81.html'>[Java スタディ - 41] EclipseでJPAフレームワーク設定する方法</a><span>2019/10/04 19:24:43</span></li><li><a href='https://www.nowonbun.com/80.html'>[Java スタディ - 40] Web spring frameworkのJSPで使う言語 JSTL - XML</a><span>2019/10/03 20:02:06</span></li><li><a href='https://www.nowonbun.com/79.html'>[Java スタディ - 39] Web spring frameworkのJSPで使う言語 JSTL - 関数、データベース</a><span>2019/10/02 21:00:22</span></li><li><a href='https://www.nowonbun.com/78.html'>[Java スタディ - 38] Web spring frameworkのJSPで使う言語 JSTL - コアー、フォーマッティング</a><span>2019/10/01 21:48:08</span></li></ul>
+					<div class="list-title">「<a href="./?category=0106">Devlopment note / Linux</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/96.html'>[CentOS] システムの文字セット変更</a><span>2019/10/21 16:58:39</span></li><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li></ul>
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
