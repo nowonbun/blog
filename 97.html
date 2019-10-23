@@ -26,30 +26,30 @@ body{
 <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-<meta name="keywords" content="Study / C#" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。今日はプログラムの演算子について勉強します。プログラムは演算子が数学らしい数式の演算子があるし、その以外に論理演算子、条件演算子などもあります。演算子に関することは下記の表と例を参考して詳しく説明します。          演算子タイプ                演算子                                例                                   数式演算子                +, -, *, /, %                                int a = (x + y - z) * (b / c) % d;                                                        割当演算子                =, +=, -=, *=, /=, %=                int a = 100;sum += a;                                        増加/減少演算子                ++, --                int i = 1;i++;                                        論理演算子                &amp;amp;&amp;amp; (and), || (or), ! (not)                if ((a &amp;gt; 1 &amp;amp;&amp;amp; b &amp;lt; 0) || c == 1 || !d)                                        関係/比較演算子                &amp;lt;, &amp;gt;, ==, !=, &amp;gt;=, &amp;lt;=                if (a &amp;lt;= b)                                        ビット演算子                &amp;amp; (and), | (or), ^ (xor)                byte a=7;byte b=(a &amp;amp]]>" />
+<meta name="keywords" content="Devlopment note / Linux" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。centosをインストールする時には基本「root」のidでパスワードを設定します。でもサーバでidをそのままを置いたらもしサーバが露出されると最高権限の「root」が見つかれされてしまいます。そのままだとサーバのセキュリティに大問題になります。それで「root」のidを接続を制限して「wheel」のグループのidで接続して「sudo su」で管理者権限(root)を受け取って運用することになります。それで「wheel」権限を設定してみましょう。先、vi編集ツールで「/etc/pam.d/su」のファイルを開きます。編集ツールで確認すると「auth required pam_wheel.so usd_uid」部分にコメント(#)になっています。この部分のコメントを解除します。その後、ユーザを追加しましょう。もう登録したユーザがあれば諸略してもよいです。そして追加したユーザを「wheel」グループに追加します。そして「bin」にある「su」のファイルを「wheel」グループに実行権限を与えましょう。最後に「root」のidを隠します。その後、サーバをrebootをします。rootで接続を試したが、認証失敗のメッセージが出ました。最後に登録したユーザで接続しましょう。「sudo su」でコマンドを入れると権限が「root」に代わります。]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [C# スタディ - 8] 演算子" />
-<link rel="canonical" href="https://www.nowonbun.com/9.html" />
+<meta name="title" content="明月の開発ストーリ :: [CentOS] Wheel設定" />
+<link rel="canonical" href="https://www.nowonbun.com/97.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [C# スタディ - 8] 演算子" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。今日はプログラムの演算子について勉強します。プログラムは演算子が数学らしい数式の演算子があるし、その以外に論理演算子、条件演算子などもあります。演算子に関することは下記の表と例を参考して詳しく説明します。          演算子タイプ                演算子                                例                                   数式演算子                +, -, *, /, %                                int a = (x + y - z) * (b / c) % d;                                                        割当演算子                =, +=, -=, *=, /=, %=                int a = 100;sum += a;                                        増加/減少演算子                ++, --                int i = 1;i++;                                        論理演算子                &amp;amp;&amp;amp; (and), || (or), ! (not)                if ((a &amp;gt; 1 &amp;amp;&amp;amp; b &amp;lt; 0) || c == 1 || !d)                                        関係/比較演算子                &amp;lt;, &amp;gt;, ==, !=, &amp;gt;=, &amp;lt;=                if (a &amp;lt;= b)                                        ビット演算子                &amp;amp; (and), | (or), ^ (xor)                byte a=7;byte b=(a &amp;amp]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [CentOS] Wheel設定" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。centosをインストールする時には基本「root」のidでパスワードを設定します。でもサーバでidをそのままを置いたらもしサーバが露出されると最高権限の「root」が見つかれされてしまいます。そのままだとサーバのセキュリティに大問題になります。それで「root」のidを接続を制限して「wheel」のグループのidで接続して「sudo su」で管理者権限(root)を受け取って運用することになります。それで「wheel」権限を設定してみましょう。先、vi編集ツールで「/etc/pam.d/su」のファイルを開きます。編集ツールで確認すると「auth required pam_wheel.so usd_uid」部分にコメント(#)になっています。この部分のコメントを解除します。その後、ユーザを追加しましょう。もう登録したユーザがあれば諸略してもよいです。そして追加したユーザを「wheel」グループに追加します。そして「bin」にある「su」のファイルを「wheel」グループに実行権限を与えましょう。最後に「root」のidを隠します。その後、サーバをrebootをします。rootで接続を試したが、認証失敗のメッセージが出ました。最後に登録したユーザで接続しましょう。「sudo su」でコマンドを入れると権限が「root」に代わります。]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/9.html" />
+<meta property="og:url" content="https://www.nowonbun.com/97.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [C# スタディ - 8] 演算子" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今日はプログラムの演算子について勉強します。プログラムは演算子が数学らしい数式の演算子があるし、その以外に論理演算子、条件演算子などもあります。演算子に関することは下記の表と例を参考して詳しく説明します。          演算子タイプ                演算子                                例                                   数式演算子                +, -, *, /, %                                int a = (x + y - z) * (b / c) % d;                                                        割当演算子                =, +=, -=, *=, /=, %=                int a = 100;sum += a;                                        増加/減少演算子                ++, --                int i = 1;i++;                                        論理演算子                &amp;amp;&amp;amp; (and), || (or), ! (not)                if ((a &amp;gt; 1 &amp;amp;&amp;amp; b &amp;lt; 0) || c == 1 || !d)                                        関係/比較演算子                &amp;lt;, &amp;gt;, ==, !=, &amp;gt;=, &amp;lt;=                if (a &amp;lt;= b)                                        ビット演算子                &amp;amp; (and), | (or), ^ (xor)                byte a=7;byte b=(a &amp;amp]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CentOS] Wheel設定" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。centosをインストールする時には基本「root」のidでパスワードを設定します。でもサーバでidをそのままを置いたらもしサーバが露出されると最高権限の「root」が見つかれされてしまいます。そのままだとサーバのセキュリティに大問題になります。それで「root」のidを接続を制限して「wheel」のグループのidで接続して「sudo su」で管理者権限(root)を受け取って運用することになります。それで「wheel」権限を設定してみましょう。先、vi編集ツールで「/etc/pam.d/su」のファイルを開きます。編集ツールで確認すると「auth required pam_wheel.so usd_uid」部分にコメント(#)になっています。この部分のコメントを解除します。その後、ユーザを追加しましょう。もう登録したユーザがあれば諸略してもよいです。そして追加したユーザを「wheel」グループに追加します。そして「bin」にある「su」のファイルを「wheel」グループに実行権限を与えましょう。最後に「root」のidを隠します。その後、サーバをrebootをします。rootで接続を試したが、認証失敗のメッセージが出ました。最後に登録したユーザで接続しましょう。「sudo su」でコマンドを入れると権限が「root」に代わります。]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 
-<title>明月の開発ストーリ :: [C# スタディ - 8] 演算子</title>
+<title>明月の開発ストーリ :: [CentOS] Wheel設定</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -115,11 +115,11 @@ body{
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[C# スタディ - 8] 演算子</h1>
+					<h1 id="titleTxt">[CentOS] Wheel設定</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0202">Study / C#</a> &nbsp;&nbsp; 作成日付 : 2019/07/05 00:12:42 &nbsp;&nbsp;修正日付 : 2019/07/05 00:13:41
+					<a href="./?category=0106">Devlopment note / Linux</a> &nbsp;&nbsp; 作成日付 : 2019/10/23 23:53:40 &nbsp;&nbsp;修正日付 : 2019/10/23 23:55:04
 				</div>
 			</div>
 			<div class="article">
@@ -131,163 +131,52 @@ body{
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>今日はプログラムの演算子について勉強します。</p> 
-  <p>プログラムは演算子が数学らしい数式の演算子があるし、その以外に論理演算子、条件演算子などもあります。</p> 
-  <p>演算子に関することは下記の表と例を参考して詳しく説明します。</p> 
-  <div class="table-responsive"> 
-   <table class="table table-striped table-bordered table-condensed"> 
-    <thead> 
-     <tr> 
-      <th>演算子タイプ</th> 
-      <th>演算子</th> 
-      <th>例</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td>数式演算子</td> 
-      <td>+, -, *, /, %</td> 
-      <td>int a = (x + y - z) * (b / c) % d;</td> 
-     </tr> 
-     <tr> 
-      <td>割当演算子</td> 
-      <td>=, +=, -=, *=, /=, %=</td> 
-      <td>int a = 100;<br>sum += a;</td> 
-     </tr> 
-     <tr> 
-      <td>増加/減少演算子</td> 
-      <td>++, --</td> 
-      <td>int i = 1;<br>i++;</td> 
-     </tr> 
-     <tr> 
-      <td>論理演算子</td> 
-      <td>&amp;&amp; (And), || (Or), ! (Not)</td> 
-      <td>if ((a &gt; 1 &amp;&amp; b &lt; 0) || c == 1 || !d)</td> 
-     </tr> 
-     <tr> 
-      <td>関係/比較演算子</td> 
-      <td>&lt;, &gt;, ==, !=, &gt;=, &lt;=</td> 
-      <td>if (a &lt;= b)</td> 
-     </tr> 
-     <tr> 
-      <td>ビット演算子</td> 
-      <td>&amp; (AND), | (OR), ^ (XOR)</td> 
-      <td>byte a=7;<br>byte b=(a &amp; 3) | 4;</td> 
-     </tr> 
-     <tr> 
-      <td>シフト演算子</td> 
-      <td>&gt;&gt;, &lt;&lt;</td> 
-      <td>int i=8;<br>i = i &lt;&lt; 5;</td> 
-     </tr> 
-     <tr> 
-      <td>条件演算子</td> 
-      <td>?<br>?? (C# 3.0以上だけ)</td> 
-      <td>int val = (a &gt; b) ? a : b;<br>string s = str ?? "(null)";</td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <pre><code class="cs" data-type="">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Operation
-{
-  class Program
-  {
-    static void Main(string[] args)
-    {
-      //数式演算子
-      int a = (6 + 5 - 4) * (3 / 2) % 10;
-      Console.WriteLine("Equation Operaion - " + a);
-
-      //割当演算子
-      int b = 10;
-      b += a;
-      Console.WriteLine("Assignment Operation - " + a);
-
-      //増加/減少演算子
-      int c = 10;
-      c++;
-      Console.WriteLine("increase/decrease Operation - " + c);
-      c--;
-      Console.WriteLine("increase/decrease Operation - " + c);
-
-      //論理演算子、関係/比較演算子
-      bool d = a &gt; 10 &amp;&amp; b &lt;= 10;
-      Console.WriteLine("login Operation, Relation Operation - " + d);
-      d = c != 10 || a &lt; 10;
-      Console.WriteLine("login Operation, Relation Operation - " + d);
-      d = !d;
-      Console.WriteLine("login Operation, Relation Operation - " + d);
-
-      //ビット演算子
-      int e = 3 &amp; 2; //0011 &amp; 0010 = 0010
-      Console.WriteLine("bit Operation - " + e);
-      e = 3 | 2; //0011 | 0010 = 0010
-      Console.WriteLine("bit Operation - " + e);
-
-      //シフト演算子
-      int f = 3 &lt;&lt; 1;//0011 &lt;&lt; 1 = 0110
-      Console.WriteLine("Shift Operation - " + f);
-
-      f = 3 &gt;&gt; 1;//0010 &gt;&gt; 1 = 0001
-      Console.WriteLine("Shift Operation - " + f);
-
-      // 条件？真 : 偽
-      int g = 3 &gt; 1 ? 1 : 2;
-      Console.WriteLine("Condition Operation - " + g);
-
-      Console.WriteLine("Press Any Key...");
-      Console.ReadLine();
-    }
-  }
-}
+  <p>CentOSをインストールする時には基本「root」のIDでパスワードを設定します。でもサーバでIDをそのままを置いたらもしサーバが露出されると最高権限の「root」が見つかれされてしまいます。</p> 
+  <p>そのままだとサーバのセキュリティに大問題になります。</p> 
+  <p><br></p> 
+  <p>それで「root」のIDを接続を制限して「wheel」のグループのIDで接続して「sudo su」で管理者権限(root)を受け取って運用することになります。</p> 
+  <p><br></p> 
+  <p>それで「wheel」権限を設定してみましょう。</p> 
+  <p><br></p> 
+  <p>先、vi編集ツールで「/etc/pam.d/su」のファイルを開きます。</p> 
+  <pre><code class="shell" data-type="shell">vi /etc/pam.d/su
 </code></pre> 
-  <p style="text-align: left;"><img src="./contents/9/23_001.jpg" data-filename="001.jpg" style="width: 600px;"></p> 
-  <p>C#は「Null-coalescing Operation」という演算子があります。記号は「??」の形で使います。</p> 
-  <p>「Null-coalescing operation」は簡単にいうと「null」をチェックする演算子です。「??」の左の被演算子の値が「null」の場合に右の被演算子を返却するし、「null」ではない場合はそのままに左の被演算子を返却します。</p> 
-  <p>下記の例を参考してください。</p> 
-  <pre><code class="cs" data-type="">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Operation
-{
-  class Program
-  {
-    static void Main(string[] args)
-    {
-      int? test = null;
-      //testの変数がnullなので0の値が返却する。
-      Console.WriteLine(test ?? 0);
-
-      //testの変数がnullなので「10」の値に更新される。
-      test = test ?? 10;
-      Console.WriteLine(test);
-
-      Console.WriteLine("Press Any Key...");
-      Console.ReadLine();
-    }
-  }
-}
+  <p>編集ツールで確認すると「auth required pam_wheel.so usd_uid」部分にコメント(#)になっています。この部分のコメントを解除します。</p> 
+  <p style="text-align:left;"><img src="./contents/97/517_001.png" data-filename="001.png" style="width: 666px;"></p> 
+  <p>その後、ユーザを追加しましょう。もう登録したユーザがあれば諸略してもよいです。</p> 
+  <pre><code class="shell" data-type="shell">useradd ユーザ名
+passwd ユーザ名
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/9/22_002.jpg" data-filename="002.jpg" style="width: 600px;"></p>
+  <p style="text-align:left;"><img src="./contents/97/518_002.png" data-filename="002.png" style="width: 553px;"></p> 
+  <p>そして追加したユーザを「wheel」グループに追加します。</p> 
+  <pre><code class="shell" data-type="shell">vim /etc/group
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/97/519_003.png" data-filename="003.png" style="width: 528px;"></p> 
+  <p>そして「bin」にある「su」のファイルを「wheel」グループに実行権限を与えましょう。</p> 
+  <pre><code class="shell" data-type="shell">chgrp wheel /bin/su
+chmod 4750 /bin/su
+</code></pre> 
+  <p>最後に「root」のIDを隠します。</p> 
+  <pre><code class="shell" data-type="shell">vi /etc/ssh/sshd_config
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/97/521_004.png" data-filename="004.png" style="width: 567px;"></p> 
+  <p>その後、サーバをrebootをします。</p> 
+  <p style="text-align:left;"><img src="./contents/97/520_005.png" data-filename="005.png" style="width: 393px;"></p> 
+  <p>rootで接続を試したが、認証失敗のメッセージが出ました。</p> 
+  <p>最後に登録したユーザで接続しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/97/522_006.png" data-filename="006.png" style="width: 509px;"></p> 
+  <p>「sudo su」でコマンドを入れると権限が「root」に代わります。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=C%23>#C#</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=centos>#centos</a>, #wheel, #linux </span>
 				</div>
 				<div class="other-category">
-					<div class="list-title">「<a href="./?category=0202">Study / C#</a>」の他投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/40.html'>[C# スタディ - 39] Thread(スレッド)</a><span>2019/07/24 00:57:35</span></li><li><a href='https://www.nowonbun.com/39.html'>[C# スタディ - 38] 「IDisposable」と「using」</a><span>2019/07/23 00:05:40</span></li><li><a href='https://www.nowonbun.com/38.html'>[C# スタディ - 37] ファイルシステム(File System) - FileStream、 Encoding、 Serializable</a><span>2019/07/22 23:45:05</span></li><li><a href='https://www.nowonbun.com/37.html'>[C# スタディ - 36] ファイルシステム(File System) - FileInfo,DirectoryInfo</a><span>2019/07/22 23:30:17</span></li><li><a href='https://www.nowonbun.com/36.html'>[C# スタディ - 35] MSDN(Microsoft Developer Network)</a><span>2019/07/22 23:15:42</span></li><li><a href='https://www.nowonbun.com/35.html'>[C# スタディ - 34] Attribute(アトリビュート)</a><span>2019/07/20 02:27:23</span></li><li><a href='https://www.nowonbun.com/34.html'>[C# スタディ - 33] Reflection(リフレクション)</a><span>2019/07/20 02:22:03</span></li><li><a href='https://www.nowonbun.com/33.html'>[C# スタディ - 32] Objectタイプ、varタイプ(匿名タイプ)、dynamicタイプ</a><span>2019/07/18 22:50:16</span></li><li><a href='https://www.nowonbun.com/32.html'>[C# スタディ - 31] Partial Type(クラス分割)、拡張メソッド</a><span>2019/07/18 20:22:16</span></li><li><a href='https://www.nowonbun.com/31.html'>[C# スタディ - 30] Lamda(ラムダ)</a><span>2019/07/17 23:06:42</span></li><li><a href='https://www.nowonbun.com/30.html'>[C# スタディ - 29] LINQ(リンク)-3 (Enumerableクラス)</a><span>2019/07/17 20:57:00</span></li><li><a href='https://www.nowonbun.com/29.html'>[C# スタディ - 28] LINQ(リンク)-2 (メソッド式)</a><span>2019/07/16 22:40:03</span></li><li><a href='https://www.nowonbun.com/28.html'>[C# スタディ - 27] LINQ(リンク)-1</a><span>2019/07/16 20:41:27</span></li><li><a href='https://www.nowonbun.com/27.html'>[C# スタディ - 26] event(イベント)</a><span>2019/07/16 00:59:34</span></li><li><a href='https://www.nowonbun.com/26.html'>[C# スタディ - 25] delegate(デリゲート)</a><span>2019/07/16 00:48:03</span></li></ul>
+					<div class="list-title">「<a href="./?category=0106">Devlopment note / Linux</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/97.html'>[CentOS] Wheel設定</a><span>2019/10/23 23:53:40</span></li><li><a href='https://www.nowonbun.com/96.html'>[CentOS] システムの文字セット変更</a><span>2019/10/21 16:58:39</span></li><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li></ul>
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
