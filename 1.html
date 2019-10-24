@@ -8,6 +8,15 @@
           enable_page_level_ads: true
      });
 </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
 <style type="text/css">
 @font-face { 
 	font-family: 'Noto Sans JP';
@@ -48,6 +57,7 @@ body{
 <meta name="twitter:title" content="明月の開発ストーリ :: [Window] WindowでExplorerのContext menuを修正する方法。" />
 <meta name="twitter:description" content="<![CDATA[こんにちは。明月です。我々が「window」を使う間に「context」メニューをカスタムマイズや編集ができれば「window」運用中でもっと楽になるではないかと思ったことがあります。その前に「window」の「context」メニューが何かと言うと「window」の画面のバックグラウンドにマウスの右クリックすると出るメニューです。上のイメージのメニューが「context」。メニューです。(ここで「context」メニュを知らないなら説明が続けられないので、「window」のバックグラウンドでマウス右クリックしてみて確認してください。)そうするとこれから「context」メニューに命令語を登録して編集してみます。「window」の環境設定は「regedit」というところに「window」の全て設定があります。例えば、拡張名が「.xxx」の場合に何のプログラムを連携することや、「window」が始動する時にバックグラウンドで実行するプログラム設定などの様々な設定があります。(そのため「regedit」を間違って設定すると「window」が可笑しくなる可能性があるので気をつけてください。)※「ファイル名を指定して実行」は「window」マークボタン(左の下のaltキー隣)＋「r」キーを押下すると開けられます。上のイメージが「regedit」の「window」です。「regedit」の「window」が開いたら様々な「key」があると思いますが、我々はcontextのmenuの設定だけ編集するなので「hkey_classes_root」の群だけ確認します。参考に「hkey_classes_root」のキーは拡張子別で連携されるプログラムの環境設定です。「hkey_classes_root」のキーを開くと様々なサブキーが見えると思います。そのキーの中で我々は「directory」キーを編集するつもりです。「directory」キーは「explorer」の「directory」と関係があるキーです。ここで我々が「context」-「menu」を編集することができます。下記のイメージは「context」メニューを編集した結果になります。「examplemenu」のメニューをクリックすると我々が「command」キーに設定した命令語が実行させ、コマンドウィンドウが開けられます。ここまで「context」のメニューを編集]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
 <title>明月の開発ストーリ :: [Window] WindowでExplorerのContext menuを修正する方法。</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
@@ -68,16 +78,9 @@ body{
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <script type="text/javascript" src="./js/common.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-143114597-1');
-</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 </head>
 <body>
 	<div class="loader off"></div>
@@ -170,7 +173,7 @@ body{
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/97.html'>[CentOS] Wheel設定</a><span>2019/10/23 23:53:40</span></li><li><a href='https://www.nowonbun.com/96.html'>[CentOS] システムの文字セット変更</a><span>2019/10/21 16:58:39</span></li><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li><li><a href='https://www.nowonbun.com/93.html'>[Window] Apacheをインストール方法、サービスに登録する方法。</a><span>2019/10/18 07:36:51</span></li><li><a href='https://www.nowonbun.com/92.html'>[Javaスタディ- 52] Java servletでインスタンスを初期する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Javaスタディ- 50] Web Spring frameworkでfilter設定</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Javaスタディ- 49] Web serviceのweb.xmlでエラーページ設定</a><span>2019/10/14 20:13:44</span></li><li><a href='https://www.nowonbun.com/88.html'>[Javaスタディ- 48] JPAのDAOをFactoryパターンで管理する方法</a><span>2019/10/13 22:55:52</span></li><li><a href='https://www.nowonbun.com/87.html'>[Java スタディ - 47] JPAのSpring frameworkで依存性注入する方法</a><span>2019/10/11 07:30:14</span></li><li><a href='https://www.nowonbun.com/86.html'>[Java スタディ - 46] JPAでDAOを生成する方法</a><span>2019/10/11 07:30:14</span></li><li><a href='https://www.nowonbun.com/85.html'>[Java スタディ - 45] JPAでトランザクションの使用方法とオブサーバーパターンで共通トランザクション関数を作り方</a><span>2019/10/10 07:29:43</span></li><li><a href='https://www.nowonbun.com/84.html'>[Java スタディ - 44]  JPAのQuery を作り方</a><span>2019/10/09 07:34:08</span></li><li><a href='https://www.nowonbun.com/83.html'>[Java スタディ - 43] JPAのEntityクラス設定(Cascade, fetch)</a><span>2019/10/08 07:43:33</span></li></ul>
+					<ul><li><a href='https://www.nowonbun.com/98.html'>[Linux] ディスク使用率チェック(df, du, lsof)とdfバグを解決方法</a><span>2019/10/24 21:46:31</span></li><li><a href='https://www.nowonbun.com/97.html'>[CentOS] Wheel設定</a><span>2019/10/23 23:53:40</span></li><li><a href='https://www.nowonbun.com/96.html'>[CentOS] システムの文字セット変更</a><span>2019/10/21 16:58:39</span></li><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li><li><a href='https://www.nowonbun.com/93.html'>[Window] Apacheをインストール方法、サービスに登録する方法。</a><span>2019/10/18 07:36:51</span></li><li><a href='https://www.nowonbun.com/92.html'>[Javaスタディ- 52] Java servletでインスタンスを初期する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Javaスタディ- 50] Web Spring frameworkでfilter設定</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Javaスタディ- 49] Web serviceのweb.xmlでエラーページ設定</a><span>2019/10/14 20:13:44</span></li><li><a href='https://www.nowonbun.com/88.html'>[Javaスタディ- 48] JPAのDAOをFactoryパターンで管理する方法</a><span>2019/10/13 22:55:52</span></li><li><a href='https://www.nowonbun.com/87.html'>[Java スタディ - 47] JPAのSpring frameworkで依存性注入する方法</a><span>2019/10/13 00:40:08</span></li><li><a href='https://www.nowonbun.com/86.html'>[Java スタディ - 46] JPAでDAOを生成する方法</a><span>2019/10/11 07:30:14</span></li><li><a href='https://www.nowonbun.com/85.html'>[Java スタディ - 45] JPAでトランザクションの使用方法とオブサーバーパターンで共通トランザクション関数を作り方</a><span>2019/10/10 07:29:43</span></li><li><a href='https://www.nowonbun.com/84.html'>[Java スタディ - 44]  JPAのQuery を作り方</a><span>2019/10/09 07:34:08</span></li></ul>
 				</div>
 			</div>
 		</article>

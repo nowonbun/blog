@@ -8,6 +8,15 @@
           enable_page_level_ads: true
      });
 </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
 <style type="text/css">
 @font-face { 
 	font-family: 'Noto Sans JP';
@@ -48,6 +57,7 @@ body{
 <meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 40] Web spring frameworkのJSPで使う言語 JSTL - XML" />
 <meta name="twitter:description" content="<![CDATA[こんにちは。明月です。このページでは「web spring framework」の「view」で使う「jstl」 - xmlに関して調べてみました。前述でコアー、フォーマティング、関数、データベースに関して説明しました。「xml」に関して続けましょう。link - [java スタディ - 39] web spring frameworkのjspで使う言語 jstl - 関数、データベースlink - [java スタディ - 38] web spring frameworkのjspで使う言語 jstl - コアー、フォーマッティング実は「jstl」言語でコアー、フォーマティング、関数以外はあまり使わないですね。「xml」ライブラリもそんなに使わないと思います。データベースライブラリと同じく「xml」データを処理すると思うと「jsp」ページではなく、サーバサイトで処理しますね。または最近は「xml」より「json」タイプをよく使うので以前よりもっと使わないライブラリと言います。先、「jstl - xml」の関数を使う前に「pom.xml」でライブラリを一つ追加しなければならないです。(既存のpom.xmlで設定したライブラリを同然にあるんでしょう。)xmlライブラリc:importでxmlファイルを読み込みます。注意点はウェブ上の「http url」ではなく、サーバサイドの相対パスです。x:parse, x:out- x:parseはxmlデータをパーシングします。- x:outはxpath表現式でデータを出力します。x.foreach- list形でタグ(繰り返されたタグ)の場合、ループらしく、データを持ち来ます。x:sec- データを変数で置換して格納します。x:choise x:when x:otherwise- xmlで「if~else」文です。x:if- xmlの「if」文です。x:transform, x:param- 「xlst」ファイルと「xml」ファイルを結合する関数です。ここまで「jsp」の「jstl」言語を纏めました。参照したページは下記でリンクします。link - https://www.viralpatel.net/parsing-rss-xml-using-jstl-tag-library/link - https://www.javatpoint.com/jstl-xml-t]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
 <title>明月の開発ストーリ :: [Java スタディ - 40] Web spring frameworkのJSPで使う言語 JSTL - XML</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
@@ -68,16 +78,9 @@ body{
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <script type="text/javascript" src="./js/common.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-143114597-1');
-</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 </head>
 <body>
 	<div class="loader off"></div>
@@ -311,7 +314,7 @@ body{
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/97.html'>[CentOS] Wheel設定</a><span>2019/10/23 23:53:40</span></li><li><a href='https://www.nowonbun.com/96.html'>[CentOS] システムの文字セット変更</a><span>2019/10/21 16:58:39</span></li><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li><li><a href='https://www.nowonbun.com/93.html'>[Window] Apacheをインストール方法、サービスに登録する方法。</a><span>2019/10/18 07:36:51</span></li><li><a href='https://www.nowonbun.com/92.html'>[Javaスタディ- 52] Java servletでインスタンスを初期する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Javaスタディ- 50] Web Spring frameworkでfilter設定</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Javaスタディ- 49] Web serviceのweb.xmlでエラーページ設定</a><span>2019/10/14 20:13:44</span></li><li><a href='https://www.nowonbun.com/88.html'>[Javaスタディ- 48] JPAのDAOをFactoryパターンで管理する方法</a><span>2019/10/13 22:55:52</span></li><li><a href='https://www.nowonbun.com/87.html'>[Java スタディ - 47] JPAのSpring frameworkで依存性注入する方法</a><span>2019/10/13 00:40:08</span></li><li><a href='https://www.nowonbun.com/86.html'>[Java スタディ - 46] JPAでDAOを生成する方法</a><span>2019/10/11 07:30:14</span></li><li><a href='https://www.nowonbun.com/85.html'>[Java スタディ - 45] JPAでトランザクションの使用方法とオブサーバーパターンで共通トランザクション関数を作り方</a><span>2019/10/10 07:29:43</span></li><li><a href='https://www.nowonbun.com/84.html'>[Java スタディ - 44]  JPAのQuery を作り方</a><span>2019/10/09 07:34:08</span></li><li><a href='https://www.nowonbun.com/83.html'>[Java スタディ - 43] JPAのEntityクラス設定(Cascade, fetch)</a><span>2019/10/08 07:43:33</span></li></ul>
+					<ul><li><a href='https://www.nowonbun.com/98.html'>[Linux] ディスク使用率チェック(df, du, lsof)とdfバグを解決方法</a><span>2019/10/24 21:46:31</span></li><li><a href='https://www.nowonbun.com/97.html'>[CentOS] Wheel設定</a><span>2019/10/23 23:53:40</span></li><li><a href='https://www.nowonbun.com/96.html'>[CentOS] システムの文字セット変更</a><span>2019/10/21 16:58:39</span></li><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li><li><a href='https://www.nowonbun.com/93.html'>[Window] Apacheをインストール方法、サービスに登録する方法。</a><span>2019/10/18 07:36:51</span></li><li><a href='https://www.nowonbun.com/92.html'>[Javaスタディ- 52] Java servletでインスタンスを初期する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Javaスタディ- 50] Web Spring frameworkでfilter設定</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Javaスタディ- 49] Web serviceのweb.xmlでエラーページ設定</a><span>2019/10/14 20:13:44</span></li><li><a href='https://www.nowonbun.com/88.html'>[Javaスタディ- 48] JPAのDAOをFactoryパターンで管理する方法</a><span>2019/10/13 22:55:52</span></li><li><a href='https://www.nowonbun.com/87.html'>[Java スタディ - 47] JPAのSpring frameworkで依存性注入する方法</a><span>2019/10/13 00:40:08</span></li><li><a href='https://www.nowonbun.com/86.html'>[Java スタディ - 46] JPAでDAOを生成する方法</a><span>2019/10/11 07:30:14</span></li><li><a href='https://www.nowonbun.com/85.html'>[Java スタディ - 45] JPAでトランザクションの使用方法とオブサーバーパターンで共通トランザクション関数を作り方</a><span>2019/10/10 07:29:43</span></li><li><a href='https://www.nowonbun.com/84.html'>[Java スタディ - 44]  JPAのQuery を作り方</a><span>2019/10/09 07:34:08</span></li></ul>
 				</div>
 			</div>
 		</article>

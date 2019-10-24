@@ -8,6 +8,15 @@
           enable_page_level_ads: true
      });
 </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
 <style type="text/css">
 @font-face { 
 	font-family: 'Noto Sans JP';
@@ -48,6 +57,7 @@ body{
 <meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 5] 制御文 - 分岐 (if, switch〜case)" />
 <meta name="twitter:description" content="<![CDATA[こんにちは。明月です。制御文とはプログラムの処理順番を制御するか繰り返して処理する文法と言います。単純に制御文はこれだって言うのは難しいですね。基本的にプログラムは人間と同じく上から下向き、左から右向きに読み込んで処理します。それなら単純に演算子だけ使って「int」型のデータを１から１００まで加算すると思えば、１から１００まで「+」記号で加算して解決します。(アルゴリズム的には考えなく、単純に考えて)これをプログラム的に表現すると下記通りになりますね。単純な数計算がこの頃ならもっと複雑な計算がどんなふうになるか恐ろしいですね。その時に使う文法が制御です。制御文法はjavaだけではなく、c言語、c++、c#などもすべて同じ文法で動きます。リンク - [c# スタディ - 9] 制御文 - 分岐 (if, switch〜case, goto)リンク - [c# スタディ - 10] 制御文 - ループ(for, while, do〜while, foreach)リンク - [c# スタディ - 11] 制御文 - ループ分岐(break, continue)ここでは制御文の中で分岐文に関して説明します。if ~ else if ~ else 文- if ~ else if ~ else文は条件の値によって(「true」、「false」)処理する制御文です。初めの例はif条件で「check」の値が「true」なので、「number 1 true」がコンソールに出力しました。２つ目の例はif条件で「check」の値が「false」なので、else式に入って「number 2 false」をコンソールに出力しました。３つ目の例はif条件でcheck2の値は「3」ですが「check2 == 1」を計算すれば「false」の結果がでます。なので、次の条件に行きます。次の条件は「check2 == 3」は「true」ですから、コンソールに「number3 true 2」がコンソールに出力します。switch ~ case 文- switch ~ case文は数式によってデータが一致するとこを処理する多重選択文です。上の条件式を見ると「switch」の条件は「4」のデータが設定されています。そして条件の値と「case」の値が一致する条件の文章式を実行されます。もし、一致するデータがなければ、「default」のデータが実行]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
 <title>明月の開発ストーリ :: [Java スタディ - 5] 制御文 - 分岐 (if, switch〜case)</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
@@ -68,16 +78,9 @@ body{
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <script type="text/javascript" src="./js/common.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-143114597-1');
-</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 </head>
 <body>
 	<div class="loader off"></div>
@@ -213,7 +216,7 @@ temp += 1;
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/97.html'>[CentOS] Wheel設定</a><span>2019/10/23 23:53:40</span></li><li><a href='https://www.nowonbun.com/96.html'>[CentOS] システムの文字セット変更</a><span>2019/10/21 16:58:39</span></li><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li><li><a href='https://www.nowonbun.com/93.html'>[Window] Apacheをインストール方法、サービスに登録する方法。</a><span>2019/10/18 07:36:51</span></li><li><a href='https://www.nowonbun.com/92.html'>[Javaスタディ- 52] Java servletでインスタンスを初期する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Javaスタディ- 50] Web Spring frameworkでfilter設定</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Javaスタディ- 49] Web serviceのweb.xmlでエラーページ設定</a><span>2019/10/14 20:13:44</span></li><li><a href='https://www.nowonbun.com/88.html'>[Javaスタディ- 48] JPAのDAOをFactoryパターンで管理する方法</a><span>2019/10/13 22:55:52</span></li><li><a href='https://www.nowonbun.com/87.html'>[Java スタディ - 47] JPAのSpring frameworkで依存性注入する方法</a><span>2019/10/13 00:40:08</span></li><li><a href='https://www.nowonbun.com/86.html'>[Java スタディ - 46] JPAでDAOを生成する方法</a><span>2019/10/11 07:30:14</span></li><li><a href='https://www.nowonbun.com/85.html'>[Java スタディ - 45] JPAでトランザクションの使用方法とオブサーバーパターンで共通トランザクション関数を作り方</a><span>2019/10/10 07:29:43</span></li><li><a href='https://www.nowonbun.com/84.html'>[Java スタディ - 44]  JPAのQuery を作り方</a><span>2019/10/09 07:34:08</span></li><li><a href='https://www.nowonbun.com/83.html'>[Java スタディ - 43] JPAのEntityクラス設定(Cascade, fetch)</a><span>2019/10/08 07:43:33</span></li></ul>
+					<ul><li><a href='https://www.nowonbun.com/98.html'>[Linux] ディスク使用率チェック(df, du, lsof)とdfバグを解決方法</a><span>2019/10/24 21:46:31</span></li><li><a href='https://www.nowonbun.com/97.html'>[CentOS] Wheel設定</a><span>2019/10/23 23:53:40</span></li><li><a href='https://www.nowonbun.com/96.html'>[CentOS] システムの文字セット変更</a><span>2019/10/21 16:58:39</span></li><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li><li><a href='https://www.nowonbun.com/93.html'>[Window] Apacheをインストール方法、サービスに登録する方法。</a><span>2019/10/18 07:36:51</span></li><li><a href='https://www.nowonbun.com/92.html'>[Javaスタディ- 52] Java servletでインスタンスを初期する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Javaスタディ- 50] Web Spring frameworkでfilter設定</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Javaスタディ- 49] Web serviceのweb.xmlでエラーページ設定</a><span>2019/10/14 20:13:44</span></li><li><a href='https://www.nowonbun.com/88.html'>[Javaスタディ- 48] JPAのDAOをFactoryパターンで管理する方法</a><span>2019/10/13 22:55:52</span></li><li><a href='https://www.nowonbun.com/87.html'>[Java スタディ - 47] JPAのSpring frameworkで依存性注入する方法</a><span>2019/10/13 00:40:08</span></li><li><a href='https://www.nowonbun.com/86.html'>[Java スタディ - 46] JPAでDAOを生成する方法</a><span>2019/10/11 07:30:14</span></li><li><a href='https://www.nowonbun.com/85.html'>[Java スタディ - 45] JPAでトランザクションの使用方法とオブサーバーパターンで共通トランザクション関数を作り方</a><span>2019/10/10 07:29:43</span></li><li><a href='https://www.nowonbun.com/84.html'>[Java スタディ - 44]  JPAのQuery を作り方</a><span>2019/10/09 07:34:08</span></li></ul>
 				</div>
 			</div>
 		</article>

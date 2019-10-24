@@ -8,6 +8,15 @@
           enable_page_level_ads: true
      });
 </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
 <style type="text/css">
 @font-face { 
 	font-family: 'Noto Sans JP';
@@ -48,6 +57,7 @@ body{
 <meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 21] IO(Input / Output)" />
 <meta name="twitter:description" content="<![CDATA[こんにちは。明月です。このページはjavaで使うio(input / output)に関して調べてみました。ioとは(input / output)の略語でただinputのキーボードとoutputのモニターの意味ではなく、ファイルのinputのファイル作る、ファイルのoutputのファイルを読込みのいみですね。すなわち、プログラムでioというのはファイルを扱うと意味になります。一応、この「input / output」を理解するようには「byte[]」配列と「stream」に関して認知しなければならないです。我々がプログラムで使うデータは結局、計算してどこかで格納するか、出力するか(印刷とか、モニターに結果を表示か)、どこかで通信してデータを渡すかになりますね。そのデータをデータ化するようにはバイナリー形式に変換します。バイナリーとは機械が認識できるような2進ファイルですね。その2進ファイルの一つのデータがjavaでは「byte」形式になっています。なので、バイナリーデータは「byte[]」配列になっています。javaで使うデータタイプでは「int」型があります。この「int」はすべて「4byte」になっていますね。「4byte」になっていることの意味では「int」型をバイナリーにすると「byte[4]」になります。もし、上の「4byte」で順番が変わったり、「4byte」の[0]と[1]が「0」なので、省略しますと思うと、データが「1000」にならないですね。初めから「int」が「4byte」だから「2byte」で格納するとデータが「int」に戻れません。なので、連続なデータの流れ、上のデータを「byte[]」単位の結ぶかたをプログラムでは「stream」と言います。「stream」は「i/o」と「socket」通信などと関係がたくさんありますね。テキストファイルをプログラム側に読込む時に「stream」形式で受け取るし、データをファイルに書出す時にも「stream」形式を利用します。上の例をみれば、「fileinputstream」でファイルを読み込んで、コンソールに出力しました。結果は「test.txt」と同じ文言が出力しますね。今回は逆にデータ内容をファイルに書出します。上の例をみれば、すべて「stream.close()」の関数を呼出しています。なぜなら、「i/o」にはコネクションがありますが、]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
 <title>明月の開発ストーリ :: [Java スタディ - 21] IO(Input / Output)</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
@@ -68,16 +78,9 @@ body{
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <script type="text/javascript" src="./js/common.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-143114597-1');
-</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 </head>
 <body>
 	<div class="loader off"></div>
@@ -236,7 +239,7 @@ public class Example {
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/97.html'>[CentOS] Wheel設定</a><span>2019/10/23 23:53:40</span></li><li><a href='https://www.nowonbun.com/96.html'>[CentOS] システムの文字セット変更</a><span>2019/10/21 16:58:39</span></li><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li><li><a href='https://www.nowonbun.com/93.html'>[Window] Apacheをインストール方法、サービスに登録する方法。</a><span>2019/10/18 07:36:51</span></li><li><a href='https://www.nowonbun.com/92.html'>[Javaスタディ- 52] Java servletでインスタンスを初期する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Javaスタディ- 50] Web Spring frameworkでfilter設定</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Javaスタディ- 49] Web serviceのweb.xmlでエラーページ設定</a><span>2019/10/14 20:13:44</span></li><li><a href='https://www.nowonbun.com/88.html'>[Javaスタディ- 48] JPAのDAOをFactoryパターンで管理する方法</a><span>2019/10/13 22:55:52</span></li><li><a href='https://www.nowonbun.com/87.html'>[Java スタディ - 47] JPAのSpring frameworkで依存性注入する方法</a><span>2019/10/13 00:40:08</span></li><li><a href='https://www.nowonbun.com/86.html'>[Java スタディ - 46] JPAでDAOを生成する方法</a><span>2019/10/11 07:30:14</span></li><li><a href='https://www.nowonbun.com/85.html'>[Java スタディ - 45] JPAでトランザクションの使用方法とオブサーバーパターンで共通トランザクション関数を作り方</a><span>2019/10/10 07:29:43</span></li><li><a href='https://www.nowonbun.com/84.html'>[Java スタディ - 44]  JPAのQuery を作り方</a><span>2019/10/09 07:34:08</span></li><li><a href='https://www.nowonbun.com/83.html'>[Java スタディ - 43] JPAのEntityクラス設定(Cascade, fetch)</a><span>2019/10/08 07:43:33</span></li></ul>
+					<ul><li><a href='https://www.nowonbun.com/98.html'>[Linux] ディスク使用率チェック(df, du, lsof)とdfバグを解決方法</a><span>2019/10/24 21:46:31</span></li><li><a href='https://www.nowonbun.com/97.html'>[CentOS] Wheel設定</a><span>2019/10/23 23:53:40</span></li><li><a href='https://www.nowonbun.com/96.html'>[CentOS] システムの文字セット変更</a><span>2019/10/21 16:58:39</span></li><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li><li><a href='https://www.nowonbun.com/93.html'>[Window] Apacheをインストール方法、サービスに登録する方法。</a><span>2019/10/18 07:36:51</span></li><li><a href='https://www.nowonbun.com/92.html'>[Javaスタディ- 52] Java servletでインスタンスを初期する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Javaスタディ- 50] Web Spring frameworkでfilter設定</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Javaスタディ- 49] Web serviceのweb.xmlでエラーページ設定</a><span>2019/10/14 20:13:44</span></li><li><a href='https://www.nowonbun.com/88.html'>[Javaスタディ- 48] JPAのDAOをFactoryパターンで管理する方法</a><span>2019/10/13 22:55:52</span></li><li><a href='https://www.nowonbun.com/87.html'>[Java スタディ - 47] JPAのSpring frameworkで依存性注入する方法</a><span>2019/10/13 00:40:08</span></li><li><a href='https://www.nowonbun.com/86.html'>[Java スタディ - 46] JPAでDAOを生成する方法</a><span>2019/10/11 07:30:14</span></li><li><a href='https://www.nowonbun.com/85.html'>[Java スタディ - 45] JPAでトランザクションの使用方法とオブサーバーパターンで共通トランザクション関数を作り方</a><span>2019/10/10 07:29:43</span></li><li><a href='https://www.nowonbun.com/84.html'>[Java スタディ - 44]  JPAのQuery を作り方</a><span>2019/10/09 07:34:08</span></li></ul>
 				</div>
 			</div>
 		</article>

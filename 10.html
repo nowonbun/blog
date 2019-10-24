@@ -8,6 +8,15 @@
           enable_page_level_ads: true
      });
 </script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143114597-1');
+</script>
 <style type="text/css">
 @font-face { 
 	font-family: 'Noto Sans JP';
@@ -48,6 +57,7 @@ body{
 <meta name="twitter:title" content="明月の開発ストーリ :: [C# スタディ - 9] 制御文 - 分岐 (if, switch〜case, goto)" />
 <meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今日からは制御文を勉強します。プログラムの制御文はc#だけではなく、c言語やjavaと同じです。そしてその中で制御文は大きく３つの形で分けます。プログラムの流れで何の項目を選んで流すかを決める分岐制御、特定ブロックの流れを繰り返すループ、ループの流れを分岐するループ分岐があります。その中で今日は分岐(if, switch〜case, goto)を勉強します。if〜else if〜else文if〜else if〜else文は真、偽によって処理する制御文です。上の例を説明すると変数「a」の値は「5」なので一つ目の分岐では「else if(a &amp;gt; 0)」を通って「console.writeline(&quot;文２&quot;);」になります。次の変数「b」の場合は「true」だから「if」の条件を満たします。それで「console.writeline(&quot;文４&quot;);」に実行されます。最後も「if」条件を満たすので「console.writeline(&quot;文６&quot;);」を実行します。switch文「switch」は制御条件値が間に合うところを処理するマルチ制御文です。上の例を見ると変数「a」は「5」の値が格納されています。それで「switch」の「case 5」を通って「console.writeline(&quot;文１&quot;);」を実行します。c#の「switch」文は他の言語と違うところがあります。それはc++、javaの場合は「switch〜case」に行って「break」を付けないことができます。「break」がなければ次の文に実行する処理になるがc#の場合はこの「case」の後に「break」が必須キーワードなので「break」を利用して次の段階に行く処理がありません。goto文「goto」文はラベルの部分に強制的に移動する制御文です。そして「goto」文はプログラムの中で使わない制御文です。なぜならプログラムの中で「goto」文が多いなら性能(パフォーマンス)が悪くなるし、後でソース管理が大変になるからです。参考してください。上の例を見ると実行中で「goto test」文にあうと「test」ラベルに移動ます。今日は制御文の分岐に関して勉強しました。その中で「if」の場合はプログラムで一番多く使う制御なのでよく覚えて行きまし]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
 <title>明月の開発ストーリ :: [C# スタディ - 9] 制御文 - 分岐 (if, switch〜case, goto)</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
@@ -68,16 +78,9 @@ body{
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 <script type="text/javascript" src="./js/common.js"></script>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143114597-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-143114597-1');
-</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 </head>
 <body>
 	<div class="loader off"></div>
@@ -308,11 +311,11 @@ namespace control
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0202">Study / C#</a>」の他投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/40.html'>[C# スタディ - 39] Thread(スレッド)</a><span>2019/07/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/39.html'>[C# スタディ - 38] 「IDisposable」と「using」</a><span>2019/07/23 00:05:40</span></li><li><a href='https://www.nowonbun.com/38.html'>[C# スタディ - 37] ファイルシステム(File System) - FileStream、 Encoding、 Serializable</a><span>2019/07/22 23:45:05</span></li><li><a href='https://www.nowonbun.com/37.html'>[C# スタディ - 36] ファイルシステム(File System) - FileInfo,DirectoryInfo</a><span>2019/07/22 23:30:17</span></li><li><a href='https://www.nowonbun.com/36.html'>[C# スタディ - 35] MSDN(Microsoft Developer Network)</a><span>2019/07/22 23:15:42</span></li><li><a href='https://www.nowonbun.com/35.html'>[C# スタディ - 34] Attribute(アトリビュート)</a><span>2019/07/20 02:27:23</span></li><li><a href='https://www.nowonbun.com/34.html'>[C# スタディ - 33] Reflection(リフレクション)</a><span>2019/07/15 20:14:28</span></li><li><a href='https://www.nowonbun.com/33.html'>[C# スタディ - 32] Objectタイプ、varタイプ(匿名タイプ)、dynamicタイプ</a><span>2019/07/18 22:50:16</span></li><li><a href='https://www.nowonbun.com/32.html'>[C# スタディ - 31] Partial Type(クラス分割)、拡張メソッド</a><span>2019/07/18 20:22:16</span></li><li><a href='https://www.nowonbun.com/31.html'>[C# スタディ - 30] Lamda(ラムダ)</a><span>2019/07/17 23:06:42</span></li><li><a href='https://www.nowonbun.com/30.html'>[C# スタディ - 29] LINQ(リンク)-3 (Enumerableクラス)</a><span>2019/07/17 20:57:00</span></li><li><a href='https://www.nowonbun.com/29.html'>[C# スタディ - 28] LINQ(リンク)-2 (メソッド式)</a><span>2019/07/16 22:40:03</span></li><li><a href='https://www.nowonbun.com/28.html'>[C# スタディ - 27] LINQ(リンク)-1</a><span>2019/07/16 20:41:27</span></li><li><a href='https://www.nowonbun.com/27.html'>[C# スタディ - 26] event(イベント)</a><span>2019/07/16 00:59:34</span></li><li><a href='https://www.nowonbun.com/26.html'>[C# スタディ - 25] delegate(デリゲート)</a><span>2019/07/16 00:48:03</span></li></ul>
+					<ul><li><a href='https://www.nowonbun.com/40.html'>[C# スタディ - 39] Thread(スレッド)</a><span>2019/07/24 00:57:35</span></li><li><a href='https://www.nowonbun.com/39.html'>[C# スタディ - 38] 「IDisposable」と「using」</a><span>2019/07/23 00:05:40</span></li><li><a href='https://www.nowonbun.com/38.html'>[C# スタディ - 37] ファイルシステム(File System) - FileStream、 Encoding、 Serializable</a><span>2019/07/22 23:45:05</span></li><li><a href='https://www.nowonbun.com/37.html'>[C# スタディ - 36] ファイルシステム(File System) - FileInfo,DirectoryInfo</a><span>2019/07/22 23:30:17</span></li><li><a href='https://www.nowonbun.com/36.html'>[C# スタディ - 35] MSDN(Microsoft Developer Network)</a><span>2019/07/22 23:15:42</span></li><li><a href='https://www.nowonbun.com/35.html'>[C# スタディ - 34] Attribute(アトリビュート)</a><span>2019/07/20 02:27:23</span></li><li><a href='https://www.nowonbun.com/34.html'>[C# スタディ - 33] Reflection(リフレクション)</a><span>2019/07/20 02:22:03</span></li><li><a href='https://www.nowonbun.com/33.html'>[C# スタディ - 32] Objectタイプ、varタイプ(匿名タイプ)、dynamicタイプ</a><span>2019/07/18 22:50:16</span></li><li><a href='https://www.nowonbun.com/32.html'>[C# スタディ - 31] Partial Type(クラス分割)、拡張メソッド</a><span>2019/07/18 20:22:16</span></li><li><a href='https://www.nowonbun.com/31.html'>[C# スタディ - 30] Lamda(ラムダ)</a><span>2019/07/17 23:06:42</span></li><li><a href='https://www.nowonbun.com/30.html'>[C# スタディ - 29] LINQ(リンク)-3 (Enumerableクラス)</a><span>2019/07/17 20:57:00</span></li><li><a href='https://www.nowonbun.com/29.html'>[C# スタディ - 28] LINQ(リンク)-2 (メソッド式)</a><span>2019/07/16 22:40:03</span></li><li><a href='https://www.nowonbun.com/28.html'>[C# スタディ - 27] LINQ(リンク)-1</a><span>2019/07/16 20:41:27</span></li><li><a href='https://www.nowonbun.com/27.html'>[C# スタディ - 26] event(イベント)</a><span>2019/07/16 00:59:34</span></li><li><a href='https://www.nowonbun.com/26.html'>[C# スタディ - 25] delegate(デリゲート)</a><span>2019/07/16 00:48:03</span></li></ul>
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/97.html'>[CentOS] Wheel設定</a><span>2019/10/23 23:53:40</span></li><li><a href='https://www.nowonbun.com/96.html'>[CentOS] システムの文字セット変更</a><span>2019/10/21 16:58:39</span></li><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li><li><a href='https://www.nowonbun.com/93.html'>[Window] Apacheをインストール方法、サービスに登録する方法。</a><span>2019/10/18 07:36:51</span></li><li><a href='https://www.nowonbun.com/92.html'>[Javaスタディ- 52] Java servletでインスタンスを初期する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Javaスタディ- 50] Web Spring frameworkでfilter設定</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Javaスタディ- 49] Web serviceのweb.xmlでエラーページ設定</a><span>2019/10/14 20:13:44</span></li><li><a href='https://www.nowonbun.com/88.html'>[Javaスタディ- 48] JPAのDAOをFactoryパターンで管理する方法</a><span>2019/10/13 22:55:52</span></li><li><a href='https://www.nowonbun.com/87.html'>[Java スタディ - 47] JPAのSpring frameworkで依存性注入する方法</a><span>2019/10/13 00:40:08</span></li><li><a href='https://www.nowonbun.com/86.html'>[Java スタディ - 46] JPAでDAOを生成する方法</a><span>2019/10/11 07:30:14</span></li><li><a href='https://www.nowonbun.com/85.html'>[Java スタディ - 45] JPAでトランザクションの使用方法とオブサーバーパターンで共通トランザクション関数を作り方</a><span>2019/10/10 07:29:43</span></li><li><a href='https://www.nowonbun.com/84.html'>[Java スタディ - 44]  JPAのQuery を作り方</a><span>2019/10/09 07:34:08</span></li><li><a href='https://www.nowonbun.com/83.html'>[Java スタディ - 43] JPAのEntityクラス設定(Cascade, fetch)</a><span>2019/10/08 07:43:33</span></li></ul>
+					<ul><li><a href='https://www.nowonbun.com/98.html'>[Linux] ディスク使用率チェック(df, du, lsof)とdfバグを解決方法</a><span>2019/10/24 21:46:31</span></li><li><a href='https://www.nowonbun.com/97.html'>[CentOS] Wheel設定</a><span>2019/10/23 23:53:40</span></li><li><a href='https://www.nowonbun.com/96.html'>[CentOS] システムの文字セット変更</a><span>2019/10/21 16:58:39</span></li><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li><li><a href='https://www.nowonbun.com/93.html'>[Window] Apacheをインストール方法、サービスに登録する方法。</a><span>2019/10/18 07:36:51</span></li><li><a href='https://www.nowonbun.com/92.html'>[Javaスタディ- 52] Java servletでインスタンスを初期する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Javaスタディ- 50] Web Spring frameworkでfilter設定</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Javaスタディ- 49] Web serviceのweb.xmlでエラーページ設定</a><span>2019/10/14 20:13:44</span></li><li><a href='https://www.nowonbun.com/88.html'>[Javaスタディ- 48] JPAのDAOをFactoryパターンで管理する方法</a><span>2019/10/13 22:55:52</span></li><li><a href='https://www.nowonbun.com/87.html'>[Java スタディ - 47] JPAのSpring frameworkで依存性注入する方法</a><span>2019/10/13 00:40:08</span></li><li><a href='https://www.nowonbun.com/86.html'>[Java スタディ - 46] JPAでDAOを生成する方法</a><span>2019/10/11 07:30:14</span></li><li><a href='https://www.nowonbun.com/85.html'>[Java スタディ - 45] JPAでトランザクションの使用方法とオブサーバーパターンで共通トランザクション関数を作り方</a><span>2019/10/10 07:29:43</span></li><li><a href='https://www.nowonbun.com/84.html'>[Java スタディ - 44]  JPAのQuery を作り方</a><span>2019/10/09 07:34:08</span></li></ul>
 				</div>
 			</div>
 		</article>
