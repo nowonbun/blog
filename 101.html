@@ -38,12 +38,12 @@ body{
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [CentOS] tomcat インストール" />
+<meta name="title" content="明月の開発ストーリ :: [CentOS] Tomcat インストール方法" />
 <link rel="canonical" href="https://www.nowonbun.com/101.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [CentOS] tomcat インストール" />
+<meta property="og:title" content="明月の開発ストーリ :: [CentOS] Tomcat インストール方法" />
 <meta property="og:description" content="<![CDATA[こんにちは。明月です。javaでウェブサーバーを立ち上がるようには「apache-tomcat」が必要です。「apache-tomcat」とはウェブブラウザからhttp要請が来る時に動的にウェブページを作り直し、ウェブブラウザに応答するウェブアプリケーションサーバ(was)です。正確にいうとウェブサーバではなく、ウェブアプリケーションサーバですね。でもこのトムキャットは「apache」機能も一部含めているので、独立でサーバを立ち上がることができます。でも、ロードバランシングや仮想ホストなどで純正な「apache」よりはパフォーマンスや機能が足りないので、実際には「apache」 + 「tomcat」でサーバを構成することになります。開発環境は「tomcat」だけでも十分ですね。「centos」に「tomcat」をインストールしましょう。先、「tomcat」をサーバで使うようには「java」が先にインストールされなければならないです。link - [centos] java インストールこれから「/usr/local/lib」のディレクトリに行ってトムキャットをダウンロードしましょう。link - https://tomcat.apache.org/download-90.cgiダウンロードが終わったら圧縮を解凍して、起動しましょう。ファイアウォールでウェブポート(tomcatの場合は基本8080)を開放しましょう。ブラウザで8080ポートで接続すれば下記とおりの結果がでます。起動することができたら、サーバが起動するたびに自動にトムキャットと起動されるように設定しなければならないです。「/etc/rc.d/init.d」に行って「tomcat」という起動実行ファイルを作りましょう。そこで下記とおりにスクリプトを作成しましょう。そのファイルタイプを「chmode」で変更して「chkconfig」で登録すれば完了になります。]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta property="og:url" content="https://www.nowonbun.com/101.html" />
@@ -52,12 +52,12 @@ body{
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [CentOS] tomcat インストール" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CentOS] Tomcat インストール方法" />
 <meta name="twitter:description" content="<![CDATA[こんにちは。明月です。javaでウェブサーバーを立ち上がるようには「apache-tomcat」が必要です。「apache-tomcat」とはウェブブラウザからhttp要請が来る時に動的にウェブページを作り直し、ウェブブラウザに応答するウェブアプリケーションサーバ(was)です。正確にいうとウェブサーバではなく、ウェブアプリケーションサーバですね。でもこのトムキャットは「apache」機能も一部含めているので、独立でサーバを立ち上がることができます。でも、ロードバランシングや仮想ホストなどで純正な「apache」よりはパフォーマンスや機能が足りないので、実際には「apache」 + 「tomcat」でサーバを構成することになります。開発環境は「tomcat」だけでも十分ですね。「centos」に「tomcat」をインストールしましょう。先、「tomcat」をサーバで使うようには「java」が先にインストールされなければならないです。link - [centos] java インストールこれから「/usr/local/lib」のディレクトリに行ってトムキャットをダウンロードしましょう。link - https://tomcat.apache.org/download-90.cgiダウンロードが終わったら圧縮を解凍して、起動しましょう。ファイアウォールでウェブポート(tomcatの場合は基本8080)を開放しましょう。ブラウザで8080ポートで接続すれば下記とおりの結果がでます。起動することができたら、サーバが起動するたびに自動にトムキャットと起動されるように設定しなければならないです。「/etc/rc.d/init.d」に行って「tomcat」という起動実行ファイルを作りましょう。そこで下記とおりにスクリプトを作成しましょう。そのファイルタイプを「chmode」で変更して「chkconfig」で登録すれば完了になります。]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [CentOS] tomcat インストール</title>
+<title>明月の開発ストーリ :: [CentOS] Tomcat インストール方法</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -120,11 +120,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[CentOS] tomcat インストール</h1>
+					<h1 id="titleTxt">[CentOS] Tomcat インストール方法</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0106">Devlopment note / Linux</a> &nbsp;&nbsp; 作成日付 : 2019/10/28 22:38:56 &nbsp;&nbsp;修正日付 : 2019/10/28 22:39:35
+					<a href="./?category=0106">Devlopment note / Linux</a> &nbsp;&nbsp; 作成日付 : 2019/10/28 22:38:56 &nbsp;&nbsp;修正日付 : 2019/10/29 07:28:47
 				</div>
 			</div>
 			<div class="article">
@@ -205,11 +205,11 @@ exit 0
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0106">Devlopment note / Linux</a>」の他投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/101.html'>[CentOS] tomcat インストール</a><span>2019/10/28 22:38:56</span></li><li><a href='https://www.nowonbun.com/100.html'>[CentOS] Java インストール</a><span>2019/10/28 00:22:32</span></li><li><a href='https://www.nowonbun.com/99.html'>[CentOS] apacheをインストールする方法</a><span>2019/10/25 21:43:27</span></li><li><a href='https://www.nowonbun.com/98.html'>[Linux] ディスク使用率チェック(df, du, lsof)とdfバグを解決方法</a><span>2019/10/24 21:46:31</span></li><li><a href='https://www.nowonbun.com/97.html'>[CentOS] Wheel設定</a><span>2019/10/23 23:53:40</span></li><li><a href='https://www.nowonbun.com/96.html'>[CentOS] システムの文字セット変更</a><span>2019/10/21 16:58:39</span></li><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li></ul>
+					<ul><li><a href='https://www.nowonbun.com/102.html'>[CentOS] ApacheとTomcatの連携</a><span>2019/10/29 07:28:33</span></li><li><a href='https://www.nowonbun.com/101.html'>[CentOS] Tomcat インストール方法</a><span>2019/10/28 22:38:56</span></li><li><a href='https://www.nowonbun.com/100.html'>[CentOS] Java インストール</a><span>2019/10/28 00:22:32</span></li><li><a href='https://www.nowonbun.com/99.html'>[CentOS] apacheをインストールする方法</a><span>2019/10/25 21:43:27</span></li><li><a href='https://www.nowonbun.com/98.html'>[Linux] ディスク使用率チェック(df, du, lsof)とdfバグを解決方法</a><span>2019/10/24 21:46:31</span></li><li><a href='https://www.nowonbun.com/97.html'>[CentOS] Wheel設定</a><span>2019/10/23 23:53:40</span></li><li><a href='https://www.nowonbun.com/96.html'>[CentOS] システムの文字セット変更</a><span>2019/10/21 16:58:39</span></li><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li></ul>
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/101.html'>[CentOS] tomcat インストール</a><span>2019/10/28 22:38:56</span></li><li><a href='https://www.nowonbun.com/100.html'>[CentOS] Java インストール</a><span>2019/10/28 00:22:32</span></li><li><a href='https://www.nowonbun.com/99.html'>[CentOS] apacheをインストールする方法</a><span>2019/10/25 21:43:27</span></li><li><a href='https://www.nowonbun.com/98.html'>[Linux] ディスク使用率チェック(df, du, lsof)とdfバグを解決方法</a><span>2019/10/24 21:46:31</span></li><li><a href='https://www.nowonbun.com/97.html'>[CentOS] Wheel設定</a><span>2019/10/23 23:53:40</span></li><li><a href='https://www.nowonbun.com/96.html'>[CentOS] システムの文字セット変更</a><span>2019/10/21 16:58:39</span></li><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li><li><a href='https://www.nowonbun.com/93.html'>[Window] Apacheをインストール方法、サービスに登録する方法。</a><span>2019/10/18 07:36:51</span></li><li><a href='https://www.nowonbun.com/92.html'>[Javaスタディ- 52] Java servletでインスタンスを初期する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Javaスタディ- 50] Web Spring frameworkでfilter設定</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Javaスタディ- 49] Web serviceのweb.xmlでエラーページ設定</a><span>2019/10/14 20:13:44</span></li><li><a href='https://www.nowonbun.com/88.html'>[Javaスタディ- 48] JPAのDAOをFactoryパターンで管理する方法</a><span>2019/10/13 22:55:52</span></li><li><a href='https://www.nowonbun.com/87.html'>[Java スタディ - 47] JPAのSpring frameworkで依存性注入する方法</a><span>2019/10/13 00:40:08</span></li></ul>
+					<ul><li><a href='https://www.nowonbun.com/102.html'>[CentOS] ApacheとTomcatの連携</a><span>2019/10/29 07:28:33</span></li><li><a href='https://www.nowonbun.com/101.html'>[CentOS] Tomcat インストール方法</a><span>2019/10/28 22:38:56</span></li><li><a href='https://www.nowonbun.com/100.html'>[CentOS] Java インストール</a><span>2019/10/28 00:22:32</span></li><li><a href='https://www.nowonbun.com/99.html'>[CentOS] apacheをインストールする方法</a><span>2019/10/25 21:43:27</span></li><li><a href='https://www.nowonbun.com/98.html'>[Linux] ディスク使用率チェック(df, du, lsof)とdfバグを解決方法</a><span>2019/10/24 21:46:31</span></li><li><a href='https://www.nowonbun.com/97.html'>[CentOS] Wheel設定</a><span>2019/10/23 23:53:40</span></li><li><a href='https://www.nowonbun.com/96.html'>[CentOS] システムの文字セット変更</a><span>2019/10/21 16:58:39</span></li><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li><li><a href='https://www.nowonbun.com/93.html'>[Window] Apacheをインストール方法、サービスに登録する方法。</a><span>2019/10/18 07:36:51</span></li><li><a href='https://www.nowonbun.com/92.html'>[Javaスタディ- 52] Java servletでインスタンスを初期する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Javaスタディ- 50] Web Spring frameworkでfilter設定</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Javaスタディ- 49] Web serviceのweb.xmlでエラーページ設定</a><span>2019/10/14 20:13:44</span></li><li><a href='https://www.nowonbun.com/88.html'>[Javaスタディ- 48] JPAのDAOをFactoryパターンで管理する方法</a><span>2019/10/13 22:55:52</span></li></ul>
 				</div>
 			</div>
 		</article>
