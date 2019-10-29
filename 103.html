@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Devlopment note / Linux" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。phpとは「apache」サーバの基盤で動作するウェブスクリプトプログラム言語です。phpはjavaとc#と比べてコンパイル言語ではなく、スクリプト言語です。phpの良い点は軽く、早く開発できるし、サーバの再起動がなしでソース修正が可能なことが利点ではないかと思います。悪い点はやはりスクリプト言語なので、サイトが大きくなると遅くなるしソース管理が難しくなるということです。まぁ。開発者の腕によって違うことですからね。それではcentosでphpをインストールしましょう。phpの場合は「yum」を通ってインストールしましょう。先、listを通ってphpを確認しましょう。でも、phpバージョンが低いですね。。。現在は「php7」なのに。。「yum」ではなく、直接にインストールしましょう。「yum」のconfigで「php5.4」を非活性化して「php7.3」を活性化しましょう。これからインストールする雰囲気になります。phpと関係あるライブラリをインストールしましょう。インストールが完了でサービスを活性化します。これで「php-v」でphpのバージョンを確認すればphpがよくインストールされていることを確認できます。でも、ただのphpインストールだけではなく、「apache」を通ってphpが動くことを確認しなければ完了ではないですね。これから「httpd」の環境設定ディレクトリに移動しましょう。httpd.confの下の部分で下記の構文を追加しましょう。そして「dir_module」でスタートページで「index.php」を追加しましょう。そして「/var/www/http」のディレクトリに「phpinfo.php」ファイルを作成して下記の内容を入れましょう。そしてブラウザで./phpinfo.phpに接続しましょう。上のphpの仕様に関して表がでればインストール成功です。]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [CentOS] PHPインストールする方法" />
+<link rel="canonical" href="https://www.nowonbun.com/103.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [CentOS] PHPインストールする方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。phpとは「apache」サーバの基盤で動作するウェブスクリプトプログラム言語です。phpはjavaとc#と比べてコンパイル言語ではなく、スクリプト言語です。phpの良い点は軽く、早く開発できるし、サーバの再起動がなしでソース修正が可能なことが利点ではないかと思います。悪い点はやはりスクリプト言語なので、サイトが大きくなると遅くなるしソース管理が難しくなるということです。まぁ。開発者の腕によって違うことですからね。それではcentosでphpをインストールしましょう。phpの場合は「yum」を通ってインストールしましょう。先、listを通ってphpを確認しましょう。でも、phpバージョンが低いですね。。。現在は「php7」なのに。。「yum」ではなく、直接にインストールしましょう。「yum」のconfigで「php5.4」を非活性化して「php7.3」を活性化しましょう。これからインストールする雰囲気になります。phpと関係あるライブラリをインストールしましょう。インストールが完了でサービスを活性化します。これで「php-v」でphpのバージョンを確認すればphpがよくインストールされていることを確認できます。でも、ただのphpインストールだけではなく、「apache」を通ってphpが動くことを確認しなければ完了ではないですね。これから「httpd」の環境設定ディレクトリに移動しましょう。httpd.confの下の部分で下記の構文を追加しましょう。そして「dir_module」でスタートページで「index.php」を追加しましょう。そして「/var/www/http」のディレクトリに「phpinfo.php」ファイルを作成して下記の内容を入れましょう。そしてブラウザで./phpinfo.phpに接続しましょう。上のphpの仕様に関して表がでればインストール成功です。]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/103.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CentOS] PHPインストールする方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。phpとは「apache」サーバの基盤で動作するウェブスクリプトプログラム言語です。phpはjavaとc#と比べてコンパイル言語ではなく、スクリプト言語です。phpの良い点は軽く、早く開発できるし、サーバの再起動がなしでソース修正が可能なことが利点ではないかと思います。悪い点はやはりスクリプト言語なので、サイトが大きくなると遅くなるしソース管理が難しくなるということです。まぁ。開発者の腕によって違うことですからね。それではcentosでphpをインストールしましょう。phpの場合は「yum」を通ってインストールしましょう。先、listを通ってphpを確認しましょう。でも、phpバージョンが低いですね。。。現在は「php7」なのに。。「yum」ではなく、直接にインストールしましょう。「yum」のconfigで「php5.4」を非活性化して「php7.3」を活性化しましょう。これからインストールする雰囲気になります。phpと関係あるライブラリをインストールしましょう。インストールが完了でサービスを活性化します。これで「php-v」でphpのバージョンを確認すればphpがよくインストールされていることを確認できます。でも、ただのphpインストールだけではなく、「apache」を通ってphpが動くことを確認しなければ完了ではないですね。これから「httpd」の環境設定ディレクトリに移動しましょう。httpd.confの下の部分で下記の構文を追加しましょう。そして「dir_module」でスタートページで「index.php」を追加しましょう。そして「/var/www/http」のディレクトリに「phpinfo.php」ファイルを作成して下記の内容を入れましょう。そしてブラウザで./phpinfo.phpに接続しましょう。上のphpの仕様に関して表がでればインストール成功です。]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [CentOS] PHPインストールする方法</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-2 my-lg-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-sm-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window</a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux</a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC</a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#</a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java</a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css</a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP</a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python</a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database</a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern</a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm</a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience</a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other</a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[CentOS] PHPインストールする方法</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0106">Devlopment note / Linux</a> &nbsp;&nbsp; 作成日付 : 2019/10/29 20:09:03 &nbsp;&nbsp;修正日付 : 2019/10/29 20:10:02
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>PHPとは「apache」サーバの基盤で動作するウェブスクリプトプログラム言語です。PHPはJavaとC#と比べてコンパイル言語ではなく、スクリプト言語です。</p> 
+  <p>PHPの良い点は軽く、早く開発できるし、サーバの再起動がなしでソース修正が可能なことが利点ではないかと思います。悪い点はやはりスクリプト言語なので、サイトが大きくなると遅くなるしソース管理が難しくなるということです。</p> 
+  <p>まぁ。開発者の腕によって違うことですからね。</p> 
+  <p><br></p> 
+  <p>それではCentOSでPHPをインストールしましょう。</p> 
+  <p><br></p> 
+  <p>PHPの場合は「yum」を通ってインストールしましょう。</p> 
+  <p>先、listを通ってPHPを確認しましょう。でも、PHPバージョンが低いですね。。。現在は「PHP7」なのに。。「yum」ではなく、直接にインストールしましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/103/570_001.png" data-filename="001.png" style="width: 788px;"></p> 
+  <pre><code class="shell" data-type="manual install">yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+yum install epel-release yum-utils
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/103/571_002.png" data-filename="002.png" style="width: 789px;"></p> 
+  <p>「yum」のconfigで「php5.4」を非活性化して「php7.3」を活性化しましょう。</p> 
+  <pre><code class="shell" data-type="php config　設定">yum-config-manager --disable remi-php54
+yum-config-manager --enable remi-php73
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/103/575_003.png" data-filename="003.png" style="width: 789px;"></p> 
+  <pre><code class="shell" data-type="install">yum install php-fpm
+yum --enablerepo=remi-php73 install php
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/103/576_004.png" data-filename="004.png" style="width: 789px;"></p> 
+  <p style="text-align:left;"><img src="./contents/103/577_010.png" data-filename="010.png" style="width: 848px;"></p> 
+  <p>これからインストールする雰囲気になります。</p> 
+  <p>PHPと関係あるライブラリをインストールしましょう。</p> 
+  <pre><code class="shell" data-type="library install">yum install redis memcached
+yum install php-fpm php-cli php-redis php-brotli php-gd php-gmp php-imap php-bcmath php-interbase php-json php-mbstring php-mysqlnd php-odbc php-opcache php-memcached php-tidy php-pdo php-pdo-dblib php-pear php-pgsql php-process php-pecl-apcu php-pecl-geoip php-pecl-gmagick php-pecl-hrtime php-pecl-json php-pecl-memcache php-pecl-mongodb php-pecl-rar php-pecl-pq php-pecl-redis4 php-pecl-yaml php-pecl-zip
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/103/579_005.png" data-filename="005.png" style="width: 789px;"></p> 
+  <p>インストールが完了でサービスを活性化します。</p> 
+  <pre><code class="shell" data-type="">systemctl enable php-fpm
+systemctl start php-fpm
+</code></pre> 
+  <p>これで「php-v」でPHPのバージョンを確認すればPHPがよくインストールされていることを確認できます。</p> 
+  <p>でも、ただのPHPインストールだけではなく、「apache」を通ってPHPが動くことを確認しなければ完了ではないですね。</p> 
+  <p style="text-align:left;"><img src="./contents/103/580_006.png" data-filename="006.png" style="width: 789px;"></p> 
+  <p>これから「httpd」の環境設定ディレクトリに移動しましょう。</p> 
+  <pre><code class="shell" data-type="shell">cd /etc/httpd/conf
+vi httpd.conf
+</code></pre> 
+  <p>httpd.confの下の部分で下記の構文を追加しましょう。</p> 
+  <pre><code class="shell" data-type="httpd.conf">AddType application/x-httpd-php .php .php3 .html .htm
+AddType application/x-httpd-php-source .phps
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/103/574_007.png" data-filename="007.png" style="width: 789px;"></p> 
+  <p>そして「dir_module」でスタートページで「index.php」を追加しましょう。</p> 
+  <pre><code class="shell" data-type="httpd.conf">&lt;IfModule dir_module&gt;
+  DirectoryIndex index.html index.php
+&lt;/IfModule&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/103/573_008.png" data-filename="008.png" style="width: 727px;"></p> 
+  <p>そして「/var/www/http」のディレクトリに「phpinfo.php」ファイルを作成して下記の内容を入れましょう。</p> 
+  <pre><code class="php" data-type="phpinfo.php">&lt;?php
+phpinfo();
+?&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/103/572_009.png" data-filename="009.png" style="width: 589px;"></p> 
+  <p>そしてブラウザで./phpinfo.phpに接続しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/103/578_011.png" data-filename="011.png" style="width: 848px;"></p> 
+  <p>上のPHPの仕様に関して表がでればインストール成功です。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=centos>#centos</a>, #php </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0106">Devlopment note / Linux</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/103.html'>[CentOS] PHPインストールする方法</a><span>2019/10/29 20:09:03</span></li><li><a href='https://www.nowonbun.com/102.html'>[CentOS] ApacheとTomcatの連携</a><span>2019/10/29 07:28:33</span></li><li><a href='https://www.nowonbun.com/101.html'>[CentOS] Tomcat インストール方法</a><span>2019/10/28 22:38:56</span></li><li><a href='https://www.nowonbun.com/100.html'>[CentOS] Java インストール</a><span>2019/10/28 00:22:32</span></li><li><a href='https://www.nowonbun.com/99.html'>[CentOS] apacheをインストールする方法</a><span>2019/10/25 21:43:27</span></li><li><a href='https://www.nowonbun.com/98.html'>[Linux] ディスク使用率チェック(df, du, lsof)とdfバグを解決方法</a><span>2019/10/24 21:46:31</span></li><li><a href='https://www.nowonbun.com/97.html'>[CentOS] Wheel設定</a><span>2019/10/23 23:53:40</span></li><li><a href='https://www.nowonbun.com/96.html'>[CentOS] システムの文字セット変更</a><span>2019/10/21 16:58:39</span></li><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/103.html'>[CentOS] PHPインストールする方法</a><span>2019/10/29 20:09:03</span></li><li><a href='https://www.nowonbun.com/102.html'>[CentOS] ApacheとTomcatの連携</a><span>2019/10/29 07:28:33</span></li><li><a href='https://www.nowonbun.com/101.html'>[CentOS] Tomcat インストール方法</a><span>2019/10/28 22:38:56</span></li><li><a href='https://www.nowonbun.com/100.html'>[CentOS] Java インストール</a><span>2019/10/28 00:22:32</span></li><li><a href='https://www.nowonbun.com/99.html'>[CentOS] apacheをインストールする方法</a><span>2019/10/25 21:43:27</span></li><li><a href='https://www.nowonbun.com/98.html'>[Linux] ディスク使用率チェック(df, du, lsof)とdfバグを解決方法</a><span>2019/10/24 21:46:31</span></li><li><a href='https://www.nowonbun.com/97.html'>[CentOS] Wheel設定</a><span>2019/10/23 23:53:40</span></li><li><a href='https://www.nowonbun.com/96.html'>[CentOS] システムの文字セット変更</a><span>2019/10/21 16:58:39</span></li><li><a href='https://www.nowonbun.com/95.html'>[CentOS] Vim編集ツールをインストールする方法</a><span>2019/10/21 00:24:44</span></li><li><a href='https://www.nowonbun.com/94.html'>[Linux] Putty使用方法</a><span>2019/10/20 00:42:54</span></li><li><a href='https://www.nowonbun.com/93.html'>[Window] Apacheをインストール方法、サービスに登録する方法。</a><span>2019/10/18 07:36:51</span></li><li><a href='https://www.nowonbun.com/92.html'>[Javaスタディ- 52] Java servletでインスタンスを初期する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Javaスタディ- 50] Web Spring frameworkでfilter設定</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Javaスタディ- 49] Web serviceのweb.xmlでエラーページ設定</a><span>2019/10/14 20:13:44</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">&times;</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
