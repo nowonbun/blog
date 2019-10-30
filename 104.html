@@ -34,30 +34,30 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Devlopment note / Linux" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。centosをインストールする時には基本「root」のidでパスワードを設定します。でもサーバでidをそのままを置いたらもしサーバが露出されると最高権限の「root」が見つかれされてしまいます。そのままだとサーバのセキュリティに大問題になります。それで「root」のidを接続を制限して「wheel」のグループのidで接続して「sudo su」で管理者権限(root)を受け取って運用することになります。それで「wheel」権限を設定してみましょう。先、vi編集ツールで「/etc/pam.d/su」のファイルを開きます。編集ツールで確認すると「auth required pam_wheel.so usd_uid」部分にコメント(#)になっています。この部分のコメントを解除します。その後、ユーザを追加しましょう。もう登録したユーザがあれば諸略してもよいです。そして追加したユーザを「wheel」グループに追加します。そして「bin」にある「su」のファイルを「wheel」グループに実行権限を与えましょう。最後に「root」のidを隠します。その後、サーバをrebootをします。rootで接続を試したが、認証失敗のメッセージが出ました。最後に登録したユーザで接続しましょう。「sudo su」でコマンドを入れると権限が「root」に代わります。]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。会社や組織グループの中でよくいうネットワークドライブという格納の場所があります。でも、ネットワークドライブではなく、正式なプロコール名は「samba」です。sambaとは「session message block」というプロトコールでcクラスネットワーク、すなわち192.168.0.1のipを持っている環境なら、192.168.0.xxxの範囲でプリンターやファイルなどを共有するようなプログラムということです。それでsambaをインストールしましょう。インストールはyumを利用して簡単に完了しました。ファイアウォールの解除と共有フォルダーを設定しましょう。解除されました。共有フォルダーを設定します。次はsambaパスワードを設定しましょう。このパスワードはサーバを接続パスワードではなく、samba接続パスワードです。サーバが起動する時にsambaを起動するような設定をしましょう。参考にselinuxで接続できない場合は解除する方法を下記通りです。接続が確認できました。]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [CentOS] Wheel設定" />
-<link rel="canonical" href="https://www.nowonbun.com/97.html" />
+<meta name="title" content="明月の開発ストーリ :: [CentOS] SAMBAインストール方法" />
+<link rel="canonical" href="https://www.nowonbun.com/104.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [CentOS] Wheel設定" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。centosをインストールする時には基本「root」のidでパスワードを設定します。でもサーバでidをそのままを置いたらもしサーバが露出されると最高権限の「root」が見つかれされてしまいます。そのままだとサーバのセキュリティに大問題になります。それで「root」のidを接続を制限して「wheel」のグループのidで接続して「sudo su」で管理者権限(root)を受け取って運用することになります。それで「wheel」権限を設定してみましょう。先、vi編集ツールで「/etc/pam.d/su」のファイルを開きます。編集ツールで確認すると「auth required pam_wheel.so usd_uid」部分にコメント(#)になっています。この部分のコメントを解除します。その後、ユーザを追加しましょう。もう登録したユーザがあれば諸略してもよいです。そして追加したユーザを「wheel」グループに追加します。そして「bin」にある「su」のファイルを「wheel」グループに実行権限を与えましょう。最後に「root」のidを隠します。その後、サーバをrebootをします。rootで接続を試したが、認証失敗のメッセージが出ました。最後に登録したユーザで接続しましょう。「sudo su」でコマンドを入れると権限が「root」に代わります。]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [CentOS] SAMBAインストール方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。会社や組織グループの中でよくいうネットワークドライブという格納の場所があります。でも、ネットワークドライブではなく、正式なプロコール名は「samba」です。sambaとは「session message block」というプロトコールでcクラスネットワーク、すなわち192.168.0.1のipを持っている環境なら、192.168.0.xxxの範囲でプリンターやファイルなどを共有するようなプログラムということです。それでsambaをインストールしましょう。インストールはyumを利用して簡単に完了しました。ファイアウォールの解除と共有フォルダーを設定しましょう。解除されました。共有フォルダーを設定します。次はsambaパスワードを設定しましょう。このパスワードはサーバを接続パスワードではなく、samba接続パスワードです。サーバが起動する時にsambaを起動するような設定をしましょう。参考にselinuxで接続できない場合は解除する方法を下記通りです。接続が確認できました。]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/97.html" />
+<meta property="og:url" content="https://www.nowonbun.com/104.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [CentOS] Wheel設定" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。centosをインストールする時には基本「root」のidでパスワードを設定します。でもサーバでidをそのままを置いたらもしサーバが露出されると最高権限の「root」が見つかれされてしまいます。そのままだとサーバのセキュリティに大問題になります。それで「root」のidを接続を制限して「wheel」のグループのidで接続して「sudo su」で管理者権限(root)を受け取って運用することになります。それで「wheel」権限を設定してみましょう。先、vi編集ツールで「/etc/pam.d/su」のファイルを開きます。編集ツールで確認すると「auth required pam_wheel.so usd_uid」部分にコメント(#)になっています。この部分のコメントを解除します。その後、ユーザを追加しましょう。もう登録したユーザがあれば諸略してもよいです。そして追加したユーザを「wheel」グループに追加します。そして「bin」にある「su」のファイルを「wheel」グループに実行権限を与えましょう。最後に「root」のidを隠します。その後、サーバをrebootをします。rootで接続を試したが、認証失敗のメッセージが出ました。最後に登録したユーザで接続しましょう。「sudo su」でコマンドを入れると権限が「root」に代わります。]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CentOS] SAMBAインストール方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。会社や組織グループの中でよくいうネットワークドライブという格納の場所があります。でも、ネットワークドライブではなく、正式なプロコール名は「samba」です。sambaとは「session message block」というプロトコールでcクラスネットワーク、すなわち192.168.0.1のipを持っている環境なら、192.168.0.xxxの範囲でプリンターやファイルなどを共有するようなプログラムということです。それでsambaをインストールしましょう。インストールはyumを利用して簡単に完了しました。ファイアウォールの解除と共有フォルダーを設定しましょう。解除されました。共有フォルダーを設定します。次はsambaパスワードを設定しましょう。このパスワードはサーバを接続パスワードではなく、samba接続パスワードです。サーバが起動する時にsambaを起動するような設定をしましょう。参考にselinuxで接続できない場合は解除する方法を下記通りです。接続が確認できました。]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [CentOS] Wheel設定</title>
+<title>明月の開発ストーリ :: [CentOS] SAMBAインストール方法</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -120,11 +120,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[CentOS] Wheel設定</h1>
+					<h1 id="titleTxt">[CentOS] SAMBAインストール方法</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0106">Devlopment note / Linux</a> &nbsp;&nbsp; 作成日付 : 2019/10/23 23:53:40 &nbsp;&nbsp;修正日付 : 2019/10/23 23:55:04
+					<a href="./?category=0106">Devlopment note / Linux</a> &nbsp;&nbsp; 作成日付 : 2019/10/30 07:38:57 &nbsp;&nbsp;修正日付 : 2019/10/30 07:39:42
 				</div>
 			</div>
 			<div class="article">
@@ -136,48 +136,74 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>CentOSをインストールする時には基本「root」のIDでパスワードを設定します。でもサーバでIDをそのままを置いたらもしサーバが露出されると最高権限の「root」が見つかれされてしまいます。</p> 
-  <p>そのままだとサーバのセキュリティに大問題になります。</p> 
+  <p>会社や組織グループの中でよくいうネットワークドライブという格納の場所があります。</p> 
+  <p>でも、ネットワークドライブではなく、正式なプロコール名は「samba」です。</p> 
+  <p>SAMBAとは「Session Message Block」というプロトコールでCクラスネットワーク、すなわち192.168.0.1のIPを持っている環境なら、192.168.0.XXXの範囲でプリンターやファイルなどを共有するようなプログラムということです。</p> 
+  <p>それでSAMBAをインストールしましょう。</p> 
+  <pre><code class="shell" data-type="samba install">yum install samba
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/104/581_001.png" data-filename="001.png" style="width: 848px;"></p> 
+  <p>インストールはyumを利用して簡単に完了しました。</p> 
   <p><br></p> 
-  <p>それで「root」のIDを接続を制限して「wheel」のグループのIDで接続して「sudo su」で管理者権限(root)を受け取って運用することになります。</p> 
-  <p><br></p> 
-  <p>それで「wheel」権限を設定してみましょう。</p> 
-  <p><br></p> 
-  <p>先、vi編集ツールで「/etc/pam.d/su」のファイルを開きます。</p> 
-  <pre><code class="shell" data-type="shell">vi /etc/pam.d/su
+  <p>ファイアウォールの解除と共有フォルダーを設定しましょう。</p> 
+  <pre><code class="shell" data-type="firewall setting">firewall-cmd --zone=public --list-all
+firewall-cmd --permanent --zone=public --add-service=samba
+firewall-cmd --reload
+firewall-cmd --zone=public --list-all
 </code></pre> 
-  <p>編集ツールで確認すると「auth required pam_wheel.so usd_uid」部分にコメント(#)になっています。この部分のコメントを解除します。</p> 
-  <p style="text-align:left;"><img src="./contents/97/517_001.png" data-filename="001.png" style="width: 666px;"></p> 
-  <p>その後、ユーザを追加しましょう。もう登録したユーザがあれば諸略してもよいです。</p> 
-  <pre><code class="shell" data-type="shell">useradd ユーザ名
-passwd ユーザ名
+  <p style="text-align:left;"><img src="./contents/104/582_002.png" data-filename="002.png" style="width: 848px;"></p> 
+  <p>解除されました。共有フォルダーを設定します。</p> 
+  <pre><code class="shell" data-type="shell command">cd /home
+#フォルダー生成
+mkdir shared
+#権限設定
+chmod 777 shared
+#Samba設定ファイルを編集
+cd /etc/samba
+vi smb.conf
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/97/518_002.png" data-filename="002.png" style="width: 553px;"></p> 
-  <p>そして追加したユーザを「wheel」グループに追加します。</p> 
-  <pre><code class="shell" data-type="shell">vim /etc/group
+  <pre><code class="shell" data-type="smb.conf">[global]
+  workgroup = WORKGROUP
+  security = user
+  passdb backend = tdbsam
+  printing = cups
+  printcap name = cups
+  load printers = yes
+  cups options = raw
+ 
+[shared]
+  comment = First Shared Folder
+  path = /home/shared
+  public = yes
+  writable = yes
+  write list = ユーザid
+  create mask = 0777
+  directory mask = 0777
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/97/519_003.png" data-filename="003.png" style="width: 528px;"></p> 
-  <p>そして「bin」にある「su」のファイルを「wheel」グループに実行権限を与えましょう。</p> 
-  <pre><code class="shell" data-type="shell">chgrp wheel /bin/su
-chmod 4750 /bin/su
+  <p style="text-align:left;"><img src="./contents/104/584_003.png" data-filename="003.png" style="width: 848px;"></p> 
+  <p>次はsambaパスワードを設定しましょう。このパスワードはサーバを接続パスワードではなく、samba接続パスワードです。</p> 
+  <pre><code class="shell" data-type="samba password">smbpasswd -a 接続 id
 </code></pre> 
-  <p>最後に「root」のIDを隠します。</p> 
-  <pre><code class="shell" data-type="shell">vi /etc/ssh/sshd_config
+  <p style="text-align:left;"><img src="./contents/104/583_004.png" data-filename="004.png" style="width: 848px;"></p> 
+  <p>サーバが起動する時にsambaを起動するような設定をしましょう。</p> 
+  <pre><code class="shell" data-type="">systemctl enable smb
+systemctl list-unit-files | grep enabled
+##samba 再起動
+systemctl restart smb
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/97/521_004.png" data-filename="004.png" style="width: 567px;"></p> 
-  <p>その後、サーバをrebootをします。</p> 
-  <p style="text-align:left;"><img src="./contents/97/520_005.png" data-filename="005.png" style="width: 393px;"></p> 
-  <p>rootで接続を試したが、認証失敗のメッセージが出ました。</p> 
-  <p>最後に登録したユーザで接続しましょう。</p> 
-  <p style="text-align:left;"><img src="./contents/97/522_006.png" data-filename="006.png" style="width: 509px;"></p> 
-  <p>「sudo su」でコマンドを入れると権限が「root」に代わります。</p>
+  <p>参考にSELINUXで接続できない場合は解除する方法を下記通りです。</p> 
+  <pre><code class="shell" data-type="">vi /etc/sysconfig/selinux
+SELINUX=disabled
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/104/585_005.png" data-filename="005.png" style="width: 848px;"></p> 
+  <p>接続が確認できました。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./?query=centos>#centos</a>, #wheel, #linux </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag">  </span>
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0106">Devlopment note / Linux</a>」の他投稿</div>
