@@ -35,30 +35,30 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Devlopment note / Linux" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。我々がサーバosをインストールする理由はいつも動いているサーバプログラムを起動するためですね。その中で代表的なことがウェブサーバです。ウェブサーバの種類は様々がありますが、その中で「iis」と「apache」が有名ではないかと思いますね。でも「iis」の場合はlinux型ではなく、windowサーバosで動いているし、ウェブサーバと言っても実はasp.netとaspのアプリサーバというのが近いですね。参考にウェブアプリサーバはブラウザとウェブサーバが通信する時に必要な応答ヘッダとボディを動的にパーシングするの役のサーバです。つまり、「iis」の場合はwindowサーバosので動いてるしウェブサーバとアプリサーバ機能があるウェブサーバです。「apache」の場合はwindowとlinuxバージョン両方あります。基本的に「apache」だけにはアプリサーバ機能はありません。なので静的なファイルを要請、応答することです。拡張機能で「php」をつけるとphp言語はパーシングができます。その後でウェブサーバはトラフィック分散機能、仮想機能などがありますが、それは別途で必要な時に投稿します。これから「apache」をインストールしましょう。インストールが完了するとサーバを起動しましょう。ファイアウォールも設定しなければならないです。これからブラウザを接続して下記通りに画面が出るとokです。後は、サーバosが起動する時に自動にサーバが起動できるように設定をしましょう。サービスがdisabledになっていますね。上のコマンドを実行すると「enable」に変わります。そうするとサーバを再起動しても「apache」が起動します。環境設定パスは「/etc/httpd」です。「/etc/httpd」の中には「conf」のディレクトリがありますが、そこで「httpd.conf」が「apache」の環境設定ファイルです。]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。前述でsambaのネットワークドライブに関してインストールしました。sambaの場合は「c class」中で簡単にファイルを電送しますが、問題は「c class」内部ではなく、外部ならsambaを利用ができません。なので、外部でサーバにファイルを電送するようにはファイルプロトコールが必要ですが、それが「ftp」です。ftpとは「file transfer protocol」の略語でサーバの初期設定でsambaほど重要な設定だと考えられます。それで「ftp」をインストールしましょう。インストールは完了しました。設定ファイルで設定しましょう。サーバ起動時、vsftpdも起動されるような設定です。次はファイアウォールを解除しましょう。次に「selinux」を解除する方法です。設定は完了しました。これから接続して確認しましょう。接続が完了しました。]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [CentOS] apacheをインストールする方法" />
-<link rel="canonical" href="https://www.nowonbun.com/99.html" />
+<meta name="title" content="明月の開発ストーリ :: [CentOS] FTPインストールする方法(vsftpd)" />
+<link rel="canonical" href="https://www.nowonbun.com/105.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [CentOS] apacheをインストールする方法" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。我々がサーバosをインストールする理由はいつも動いているサーバプログラムを起動するためですね。その中で代表的なことがウェブサーバです。ウェブサーバの種類は様々がありますが、その中で「iis」と「apache」が有名ではないかと思いますね。でも「iis」の場合はlinux型ではなく、windowサーバosで動いているし、ウェブサーバと言っても実はasp.netとaspのアプリサーバというのが近いですね。参考にウェブアプリサーバはブラウザとウェブサーバが通信する時に必要な応答ヘッダとボディを動的にパーシングするの役のサーバです。つまり、「iis」の場合はwindowサーバosので動いてるしウェブサーバとアプリサーバ機能があるウェブサーバです。「apache」の場合はwindowとlinuxバージョン両方あります。基本的に「apache」だけにはアプリサーバ機能はありません。なので静的なファイルを要請、応答することです。拡張機能で「php」をつけるとphp言語はパーシングができます。その後でウェブサーバはトラフィック分散機能、仮想機能などがありますが、それは別途で必要な時に投稿します。これから「apache」をインストールしましょう。インストールが完了するとサーバを起動しましょう。ファイアウォールも設定しなければならないです。これからブラウザを接続して下記通りに画面が出るとokです。後は、サーバosが起動する時に自動にサーバが起動できるように設定をしましょう。サービスがdisabledになっていますね。上のコマンドを実行すると「enable」に変わります。そうするとサーバを再起動しても「apache」が起動します。環境設定パスは「/etc/httpd」です。「/etc/httpd」の中には「conf」のディレクトリがありますが、そこで「httpd.conf」が「apache」の環境設定ファイルです。]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [CentOS] FTPインストールする方法(vsftpd)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。前述でsambaのネットワークドライブに関してインストールしました。sambaの場合は「c class」中で簡単にファイルを電送しますが、問題は「c class」内部ではなく、外部ならsambaを利用ができません。なので、外部でサーバにファイルを電送するようにはファイルプロトコールが必要ですが、それが「ftp」です。ftpとは「file transfer protocol」の略語でサーバの初期設定でsambaほど重要な設定だと考えられます。それで「ftp」をインストールしましょう。インストールは完了しました。設定ファイルで設定しましょう。サーバ起動時、vsftpdも起動されるような設定です。次はファイアウォールを解除しましょう。次に「selinux」を解除する方法です。設定は完了しました。これから接続して確認しましょう。接続が完了しました。]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/99.html" />
+<meta property="og:url" content="https://www.nowonbun.com/105.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [CentOS] apacheをインストールする方法" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。我々がサーバosをインストールする理由はいつも動いているサーバプログラムを起動するためですね。その中で代表的なことがウェブサーバです。ウェブサーバの種類は様々がありますが、その中で「iis」と「apache」が有名ではないかと思いますね。でも「iis」の場合はlinux型ではなく、windowサーバosで動いているし、ウェブサーバと言っても実はasp.netとaspのアプリサーバというのが近いですね。参考にウェブアプリサーバはブラウザとウェブサーバが通信する時に必要な応答ヘッダとボディを動的にパーシングするの役のサーバです。つまり、「iis」の場合はwindowサーバosので動いてるしウェブサーバとアプリサーバ機能があるウェブサーバです。「apache」の場合はwindowとlinuxバージョン両方あります。基本的に「apache」だけにはアプリサーバ機能はありません。なので静的なファイルを要請、応答することです。拡張機能で「php」をつけるとphp言語はパーシングができます。その後でウェブサーバはトラフィック分散機能、仮想機能などがありますが、それは別途で必要な時に投稿します。これから「apache」をインストールしましょう。インストールが完了するとサーバを起動しましょう。ファイアウォールも設定しなければならないです。これからブラウザを接続して下記通りに画面が出るとokです。後は、サーバosが起動する時に自動にサーバが起動できるように設定をしましょう。サービスがdisabledになっていますね。上のコマンドを実行すると「enable」に変わります。そうするとサーバを再起動しても「apache」が起動します。環境設定パスは「/etc/httpd」です。「/etc/httpd」の中には「conf」のディレクトリがありますが、そこで「httpd.conf」が「apache」の環境設定ファイルです。]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CentOS] FTPインストールする方法(vsftpd)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。前述でsambaのネットワークドライブに関してインストールしました。sambaの場合は「c class」中で簡単にファイルを電送しますが、問題は「c class」内部ではなく、外部ならsambaを利用ができません。なので、外部でサーバにファイルを電送するようにはファイルプロトコールが必要ですが、それが「ftp」です。ftpとは「file transfer protocol」の略語でサーバの初期設定でsambaほど重要な設定だと考えられます。それで「ftp」をインストールしましょう。インストールは完了しました。設定ファイルで設定しましょう。サーバ起動時、vsftpdも起動されるような設定です。次はファイアウォールを解除しましょう。次に「selinux」を解除する方法です。設定は完了しました。これから接続して確認しましょう。接続が完了しました。]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [CentOS] apacheをインストールする方法</title>
+<title>明月の開発ストーリ :: [CentOS] FTPインストールする方法(vsftpd)</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[CentOS] apacheをインストールする方法</h1>
+					<h1 id="titleTxt">[CentOS] FTPインストールする方法(vsftpd)</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0106">Devlopment note / Linux</a>    作成日付 : 2019/10/25 21:43:27   修正日付 : 2019/10/25 21:44:13
+					<a href="./?category=0106">Devlopment note / Linux</a>    作成日付 : 2019/11/01 07:29:57   修正日付 : 2019/11/01 07:30:32
 				</div>
 			</div>
 			<div class="article">
@@ -137,51 +137,47 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>我々がサーバOSをインストールする理由はいつも動いているサーバプログラムを起動するためですね。その中で代表的なことがウェブサーバです。</p> 
+  <p>前述でSambaのネットワークドライブに関してインストールしました。Sambaの場合は「c class」中で簡単にファイルを電送しますが、問題は「c class」内部ではなく、外部ならSambaを利用ができません。</p> 
+  <p>なので、外部でサーバにファイルを電送するようにはファイルプロトコールが必要ですが、それが「FTP」です。</p> 
+  <p>FTPとは「File Transfer Protocol」の略語でサーバの初期設定でSambaほど重要な設定だと考えられます。</p> 
   <p><br></p> 
-  <p>ウェブサーバの種類は様々がありますが、その中で「IIS」と「apache」が有名ではないかと思いますね。</p> 
-  <p>でも「IIS」の場合はLinux型ではなく、WindowサーバOSで動いているし、ウェブサーバと言っても実はASP.netとASPのアプリサーバというのが近いですね。</p> 
-  <p>参考にウェブアプリサーバはブラウザとウェブサーバが通信する時に必要な応答ヘッダとボディを動的にパーシングするの役のサーバです。つまり、「IIS」の場合はWindowサーバOSので動いてるしウェブサーバとアプリサーバ機能があるウェブサーバです。</p> 
-  <p>「apache」の場合はWindowとLinuxバージョン両方あります。基本的に「apache」だけにはアプリサーバ機能はありません。</p> 
-  <p>なので静的なファイルを要請、応答することです。拡張機能で「PHP」をつけるとPHP言語はパーシングができます。</p> 
-  <p><br></p> 
-  <p>その後でウェブサーバはトラフィック分散機能、仮想機能などがありますが、それは別途で必要な時に投稿します。</p> 
-  <p><br></p> 
-  <p>これから「apache」をインストールしましょう。</p> 
-  <pre><code class="shell" data-type="apache install">yum list httpd
-yum install httpd
+  <p>それで「FTP」をインストールしましょう。</p> 
+  <pre><code class="shell" data-type="install">yum install vsftpd
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/99/530_001.png" data-filename="001.png" style="width: 848px;"></p> 
-  <p>インストールが完了するとサーバを起動しましょう。</p> 
-  <pre><code class="shell" data-type="apache start">service httpd start
+  <p style="text-align:left;"><img src="./contents/105/587_001.png" data-filename="001.png" style="width: 848px;"></p> 
+  <p>インストールは完了しました。設定ファイルで設定しましょう。</p> 
+  <pre><code class="conf" data-type="vsftpd.conf">vi /etc/vsftpd/vsftpd.conf
+#匿名接続禁止
+anonymous_enable=NO
+#権限設定 644
+local_umask=022
 </code></pre> 
-  <p>ファイアウォールも設定しなければならないです。</p> 
-  <pre><code class="cs" data-type="firewall apply">firewall-cmd --permanent --zone=public --add-port=80/tcp
+  <p style="text-align:left;"><img src="./contents/105/588_002.png" data-filename="002.png" style="width: 848px;"></p> 
+  <p>サーバ起動時、vsftpdも起動されるような設定です。</p> 
+  <pre><code class="shell" data-type="">systemctl enable vsftpd
+systemctl list-unit-files | grep enabled
+</code></pre> 
+  <p>次はファイアウォールを解除しましょう。</p> 
+  <pre><code class="shell" data-type="firewall-cmd setting">firewall-cmd --permanent --zone=public --add-service=ftp
 firewall-cmd --reload
-firewall-cmd --list-all
+firewall-cmd --zone=public --list-all
+systemctl restart vsftpd
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/99/531_002.png" data-filename="002.png" style="width: 848px;"></p> 
-  <p>これからブラウザを接続して下記通りに画面が出るとOKです。</p> 
-  <p style="text-align:left;"><img src="./contents/99/534_003.png" data-filename="003.png" style="width: 848px;"></p> 
-  <p>後は、サーバOSが起動する時に自動にサーバが起動できるように設定をしましょう。</p> 
-  <pre><code class="shell" data-type="systemctl check">systemctl status httpd
+  <p>次に「SELINUX」を解除する方法です。</p> 
+  <pre><code class="shell" data-type="selnux disabled">vi /etc/sysconfig/selinux
+SELINUX=disabled
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/99/529_004.png" data-filename="004.png" style="width: 848px;"></p> 
-  <p>サービスがdisabledになっていますね。</p> 
-  <pre><code class="shell" data-type="systemctl apply">systemctl enable httpd
-</code></pre> 
-  <p>上のコマンドを実行すると「enable」に変わります。</p> 
-  <p style="text-align:left;"><img src="./contents/99/533_005.png" data-filename="005.png" style="width: 848px;"></p> 
-  <p>そうするとサーバを再起動しても「apache」が起動します。環境設定パスは「/etc/httpd」です。</p> 
-  <p>「/etc/httpd」の中には「conf」のディレクトリがありますが、そこで「httpd.conf」が「apache」の環境設定ファイルです。</p> 
-  <p style="text-align:left;"><img src="./contents/99/532_006.png" data-filename="006.png" style="width: 848px;"></p>
+  <p>設定は完了しました。これから接続して確認しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/105/589_003.png" data-filename="003.png" style="width: 576px;"></p> 
+  <p style="text-align:left;"><img src="./contents/105/586_004.png" data-filename="004.png" style="width: 848px;"></p> 
+  <p>接続が完了しました。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=linux>#linux</a>,<a href=./search.html?query=centos>#centos</a>,<a href=./search.html?query=apache>#apache</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=centos>#centos</a>,<a href=./search.html?query=vsfptd>#vsfptd</a>,<a href=./search.html?query=ftp>#ftp</a> </span>
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0106">Devlopment note / Linux</a>」の他投稿</div>
