@@ -35,30 +35,30 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Devlopment note / Linux" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。前述でcentosでapacheとtomcatをインストールしました。先にtomcatの場合は独立でウェブサーバで運用できますが、なぜ別で「apache」をインストールして「tomcat」を連携するのかは「tomcat」は確かにウェブサーバの機能がありますが、「apache」よりロードバランシングや仮想機能が落ちています。最近、バージョンが「9.x」まで上がって性能が以前よりは良くなりましたが、それでも分ける方がよいですね。筆者の場合はサーバで「java」だけではなく、jsp、phpなど混在してプログラミングするタイプなので、「apache」の「virtual host」機能をよく使うので、「tomcat」のサーバの一つだけではなく、様々な「tomcat」かつ一つの「apache」を紐付いて使っています。それで、「apache」と「tomcat」を連携しましょう。先、「tomcat」にはhttpポートを設定してブラウザと通信するhttpプロトコル領域があります。または、「ajp」プロトコルという「apache」と通信するポートがあります。「apache」と「tomcat」を連携するようにはこの「ajp」プロトコルを利用しましょう。「apache」側で「ajp」プロトコルを使うようには「mod_jk」がインストールされなければならないです。mok_jk - https://tomcat.apache.org/download-connectors.cgi圧縮を解凍したらこれからコンパイルをしなべきです。「native」フォルダにいきましょう。「/etc/httpd/modules」フォルダで「mod_jk.so」ファイルがあれば、コンパイル成功です。そして「httpd.conf」に行って下記とおりに設定しましょう。その後、「workers.properties」を作成しましょう。筆者の場合は「jenkins」とウェブサーバがあるので２つで設定しました。また「httpd.conf」を下記とおりに追加しましょう。そしてそれぞれのディレクトリに「apache」権限を与えます。]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。我々がよく使うウィンドウ環境はインストールパッケージファイルをダウンロードしてダブルクリックでインストールができます。でも、linuxの場合はそんな簡単ではないです。サーバ起動する時に登録しなければならないし、パッケージ管理、依存性管理もしなければならないです。それを一々で手動でするとすごく面倒になりますね。それを管理するプログラムがありますが、それが「yum」です。「yum」とは「yellowdog updater modified」の略語で「rpm基盤のシステムのため、自動アップデータ、パッケージ管理ツール」です。また「yum」は自動に依存性を処理してくれるし、rpmパッケージを安全にインストール、削除及びアップデートのため、必ずしなければならないものを自ら処理します。簡単に説明するとスマートフォンなどであるappストアと似てます。パッケージは全て無料ですね。昔、スマートフォンがある前には不慣れな概念でしたが。。纏めて、「yum」は簡単で使用可能し、接近性もよいパッケージ管理ツールです。「yum」に関して使用方法はコマンドで「yum help」で詳しく確認できます。                    コマンド        説明                            yum check-update現在、インストールされたプログラムでアップデータしたことをチェックします。        yum clean allキャッシュされたリストをクリアする。        yum deplistyumパッケージによる依存性テスト。        yum downgrade パッケージyumをとおってパッケージをダウングレードする。        yum erase パッケージyumをとおってシステムで削除する。        yum groupinfo グループグループパッケージの情報を表示。        yum groupinstall グループグループパケージをインストールする。        yum grouplist グループグループリストに関する情報を確認する。        yum groupremove グループグループリストに関して削除する。        yum helpyumの使用方法を確認する。        yum info グループまたはパッ]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [CentOS] ApacheとTomcatの連携" />
-<link rel="canonical" href="https://www.nowonbun.com/102.html" />
+<meta name="title" content="明月の開発ストーリ :: [CentOS] YUMについて、YUMが出来ない場合処理方法" />
+<link rel="canonical" href="https://www.nowonbun.com/107.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [CentOS] ApacheとTomcatの連携" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。前述でcentosでapacheとtomcatをインストールしました。先にtomcatの場合は独立でウェブサーバで運用できますが、なぜ別で「apache」をインストールして「tomcat」を連携するのかは「tomcat」は確かにウェブサーバの機能がありますが、「apache」よりロードバランシングや仮想機能が落ちています。最近、バージョンが「9.x」まで上がって性能が以前よりは良くなりましたが、それでも分ける方がよいですね。筆者の場合はサーバで「java」だけではなく、jsp、phpなど混在してプログラミングするタイプなので、「apache」の「virtual host」機能をよく使うので、「tomcat」のサーバの一つだけではなく、様々な「tomcat」かつ一つの「apache」を紐付いて使っています。それで、「apache」と「tomcat」を連携しましょう。先、「tomcat」にはhttpポートを設定してブラウザと通信するhttpプロトコル領域があります。または、「ajp」プロトコルという「apache」と通信するポートがあります。「apache」と「tomcat」を連携するようにはこの「ajp」プロトコルを利用しましょう。「apache」側で「ajp」プロトコルを使うようには「mod_jk」がインストールされなければならないです。mok_jk - https://tomcat.apache.org/download-connectors.cgi圧縮を解凍したらこれからコンパイルをしなべきです。「native」フォルダにいきましょう。「/etc/httpd/modules」フォルダで「mod_jk.so」ファイルがあれば、コンパイル成功です。そして「httpd.conf」に行って下記とおりに設定しましょう。その後、「workers.properties」を作成しましょう。筆者の場合は「jenkins」とウェブサーバがあるので２つで設定しました。また「httpd.conf」を下記とおりに追加しましょう。そしてそれぞれのディレクトリに「apache」権限を与えます。]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [CentOS] YUMについて、YUMが出来ない場合処理方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。我々がよく使うウィンドウ環境はインストールパッケージファイルをダウンロードしてダブルクリックでインストールができます。でも、linuxの場合はそんな簡単ではないです。サーバ起動する時に登録しなければならないし、パッケージ管理、依存性管理もしなければならないです。それを一々で手動でするとすごく面倒になりますね。それを管理するプログラムがありますが、それが「yum」です。「yum」とは「yellowdog updater modified」の略語で「rpm基盤のシステムのため、自動アップデータ、パッケージ管理ツール」です。また「yum」は自動に依存性を処理してくれるし、rpmパッケージを安全にインストール、削除及びアップデートのため、必ずしなければならないものを自ら処理します。簡単に説明するとスマートフォンなどであるappストアと似てます。パッケージは全て無料ですね。昔、スマートフォンがある前には不慣れな概念でしたが。。纏めて、「yum」は簡単で使用可能し、接近性もよいパッケージ管理ツールです。「yum」に関して使用方法はコマンドで「yum help」で詳しく確認できます。                    コマンド        説明                            yum check-update現在、インストールされたプログラムでアップデータしたことをチェックします。        yum clean allキャッシュされたリストをクリアする。        yum deplistyumパッケージによる依存性テスト。        yum downgrade パッケージyumをとおってパッケージをダウングレードする。        yum erase パッケージyumをとおってシステムで削除する。        yum groupinfo グループグループパッケージの情報を表示。        yum groupinstall グループグループパケージをインストールする。        yum grouplist グループグループリストに関する情報を確認する。        yum groupremove グループグループリストに関して削除する。        yum helpyumの使用方法を確認する。        yum info グループまたはパッ]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/102.html" />
+<meta property="og:url" content="https://www.nowonbun.com/107.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [CentOS] ApacheとTomcatの連携" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。前述でcentosでapacheとtomcatをインストールしました。先にtomcatの場合は独立でウェブサーバで運用できますが、なぜ別で「apache」をインストールして「tomcat」を連携するのかは「tomcat」は確かにウェブサーバの機能がありますが、「apache」よりロードバランシングや仮想機能が落ちています。最近、バージョンが「9.x」まで上がって性能が以前よりは良くなりましたが、それでも分ける方がよいですね。筆者の場合はサーバで「java」だけではなく、jsp、phpなど混在してプログラミングするタイプなので、「apache」の「virtual host」機能をよく使うので、「tomcat」のサーバの一つだけではなく、様々な「tomcat」かつ一つの「apache」を紐付いて使っています。それで、「apache」と「tomcat」を連携しましょう。先、「tomcat」にはhttpポートを設定してブラウザと通信するhttpプロトコル領域があります。または、「ajp」プロトコルという「apache」と通信するポートがあります。「apache」と「tomcat」を連携するようにはこの「ajp」プロトコルを利用しましょう。「apache」側で「ajp」プロトコルを使うようには「mod_jk」がインストールされなければならないです。mok_jk - https://tomcat.apache.org/download-connectors.cgi圧縮を解凍したらこれからコンパイルをしなべきです。「native」フォルダにいきましょう。「/etc/httpd/modules」フォルダで「mod_jk.so」ファイルがあれば、コンパイル成功です。そして「httpd.conf」に行って下記とおりに設定しましょう。その後、「workers.properties」を作成しましょう。筆者の場合は「jenkins」とウェブサーバがあるので２つで設定しました。また「httpd.conf」を下記とおりに追加しましょう。そしてそれぞれのディレクトリに「apache」権限を与えます。]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CentOS] YUMについて、YUMが出来ない場合処理方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。我々がよく使うウィンドウ環境はインストールパッケージファイルをダウンロードしてダブルクリックでインストールができます。でも、linuxの場合はそんな簡単ではないです。サーバ起動する時に登録しなければならないし、パッケージ管理、依存性管理もしなければならないです。それを一々で手動でするとすごく面倒になりますね。それを管理するプログラムがありますが、それが「yum」です。「yum」とは「yellowdog updater modified」の略語で「rpm基盤のシステムのため、自動アップデータ、パッケージ管理ツール」です。また「yum」は自動に依存性を処理してくれるし、rpmパッケージを安全にインストール、削除及びアップデートのため、必ずしなければならないものを自ら処理します。簡単に説明するとスマートフォンなどであるappストアと似てます。パッケージは全て無料ですね。昔、スマートフォンがある前には不慣れな概念でしたが。。纏めて、「yum」は簡単で使用可能し、接近性もよいパッケージ管理ツールです。「yum」に関して使用方法はコマンドで「yum help」で詳しく確認できます。                    コマンド        説明                            yum check-update現在、インストールされたプログラムでアップデータしたことをチェックします。        yum clean allキャッシュされたリストをクリアする。        yum deplistyumパッケージによる依存性テスト。        yum downgrade パッケージyumをとおってパッケージをダウングレードする。        yum erase パッケージyumをとおってシステムで削除する。        yum groupinfo グループグループパッケージの情報を表示。        yum groupinstall グループグループパケージをインストールする。        yum grouplist グループグループリストに関する情報を確認する。        yum groupremove グループグループリストに関して削除する。        yum helpyumの使用方法を確認する。        yum info グループまたはパッ]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [CentOS] ApacheとTomcatの連携</title>
+<title>明月の開発ストーリ :: [CentOS] YUMについて、YUMが出来ない場合処理方法</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[CentOS] ApacheとTomcatの連携</h1>
+					<h1 id="titleTxt">[CentOS] YUMについて、YUMが出来ない場合処理方法</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0106">Devlopment note / Linux</a>    作成日付 : 2019/10/29 07:28:33   修正日付 : 2019/10/29 07:37:07
+					<a href="./?category=0106">Devlopment note / Linux</a>    作成日付 : 2019/11/05 07:17:58   修正日付 : 2019/11/05 07:17:58
 				</div>
 			</div>
 			<div class="article">
@@ -137,101 +137,96 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>前述でCentOSでapacheとtomcatをインストールしました。</p> 
-  <p>先にtomcatの場合は独立でウェブサーバで運用できますが、なぜ別で「apache」をインストールして「tomcat」を連携するのかは「tomcat」は確かにウェブサーバの機能がありますが、「apache」よりロードバランシングや仮想機能が落ちています。</p> 
-  <p>最近、バージョンが「9.x」まで上がって性能が以前よりは良くなりましたが、それでも分ける方がよいですね。</p> 
-  <p>筆者の場合はサーバで「java」だけではなく、jsp、phpなど混在してプログラミングするタイプなので、「apache」の「virtual host」機能をよく使うので、「tomcat」のサーバの一つだけではなく、様々な「tomcat」かつ一つの「apache」を紐付いて使っています。</p> 
+  <p>我々がよく使うウィンドウ環境はインストールパッケージファイルをダウンロードしてダブルクリックでインストールができます。</p> 
+  <p>でも、Linuxの場合はそんな簡単ではないです。サーバ起動する時に登録しなければならないし、パッケージ管理、依存性管理もしなければならないです。</p> 
+  <p>それを一々で手動でするとすごく面倒になりますね。</p> 
   <p><br></p> 
-  <p>それで、「apache」と「tomcat」を連携しましょう。</p> 
-  <p style="text-align:left;"><img src="./contents/102/566_001.png" data-filename="001.png" style="width: 848px;"></p> 
-  <p>先、「tomcat」にはhttpポートを設定してブラウザと通信するHTTPプロトコル領域があります。または、「ajp」プロトコルという「apache」と通信するポートがあります。</p> 
-  <p>「apache」と「tomcat」を連携するようにはこの「ajp」プロトコルを利用しましょう。</p> 
+  <p>それを管理するプログラムがありますが、それが「YUM」です。</p> 
+  <p>「YUM」とは「Yellowdog Updater Modified」の略語で「rpm基盤のシステムのため、自動アップデータ、パッケージ管理ツール」です。また「YUM」は自動に依存性を処理してくれるし、rpmパッケージを安全にインストール、削除及びアップデートのため、必ずしなければならないものを自ら処理します。</p> 
+  <p>簡単に説明するとスマートフォンなどであるAPPストアと似てます。パッケージは全て無料ですね。昔、スマートフォンがある前には不慣れな概念でしたが。。</p> 
   <p><br></p> 
-  <p>「apache」側で「ajp」プロトコルを使うようには「mod_jk」がインストールされなければならないです。</p> 
-  <p>mok_jk - <a href="https://tomcat.apache.org/download-connectors.cgi" target="_blank">https://tomcat.apache.org/download-connectors.cgi</a></p> 
-  <pre><code class="shell" data-type="shell">wget http://ftp.tsukuba.wide.ad.jp/software/apache/tomcat/tomcat-connectors/jk/tomcat-connectors-1.2.46-src.tar.gz
-yum install gcc gcc-c++ httpd-devel #依存性ライブラリ
-tar zxvf tomcat-connectors-1.2.46-src.tar.gz
+  <p>纏めて、「YUM」は簡単で使用可能し、接近性もよいパッケージ管理ツールです。</p> 
+  <p>「yum」に関して使用方法はコマンドで「yum help」で詳しく確認できます。</p> 
+  <p style="text-align:left;"><img src="./contents/107/598_001.png" data-filename="001.png" style="width: 848px;"><br></p> 
+  <div class="table-responsive"> 
+   <table class="table table-striped table-bordered table-condensed"> 
+    <thead> 
+     <tr style="background-color:#DAD7D7"> 
+      <th>コマンド</th> 
+      <th>説明</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td>yum check-update</td>
+      <td>現在、インストールされたプログラムでアップデータしたことをチェックします。</td> 
+      <td>yum clean all</td>
+      <td>キャッシュされたリストをクリアする。</td> 
+      <td>yum deplist</td>
+      <td>yumパッケージによる依存性テスト。</td> 
+      <td>yum downgrade パッケージ</td>
+      <td>yumをとおってパッケージをダウングレードする。</td> 
+      <td>yum erase パッケージ</td>
+      <td>yumをとおってシステムで削除する。</td> 
+      <td>yum groupinfo グループ</td>
+      <td>グループパッケージの情報を表示。</td> 
+      <td>yum groupinstall グループ</td>
+      <td>グループパケージをインストールする。</td> 
+      <td>yum grouplist グループ</td>
+      <td>グループリストに関する情報を確認する。</td> 
+      <td>yum groupremove グループ</td>
+      <td>グループリストに関して削除する。</td> 
+      <td>yum help</td>
+      <td>yumの使用方法を確認する。</td> 
+      <td>yum info グループまたはパッケージ</td>
+      <td>パッケージまたはグループのパッケージを詳しく確認する。</td> 
+      <td>yum install パッケージ</td>
+      <td>システムでパッケージのInstallを実施する。</td> 
+      <td>yum list</td>
+      <td>サーバにあるグループ及びパッケージのリスト</td> 
+      <td>yum localinstall パッケージ</td>
+      <td>ローカルでインストールをします。</td> 
+      <td>yum makecache</td>
+      <td>キャッシュを再作成する。</td> 
+      <td>yum provides ファイルパス名</td>
+      <td>ファイルで提供するパッケージ情報</td> 
+      <td>yum reinstall パッケージ</td>
+      <td>パッケージを再インストールする。</td> 
+      <td>yum update パッケージ</td>
+      <td>パッケージをアップデータする。(yumのバージョン情報など)</td> 
+      <td>yum upgrade パッケージ</td>
+      <td>パッケージをアップグレードする。(実際に当該プログラムを更新する。)</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <h2><b><span>CentOSを初めにインストールする時にYUMが動作しない時</span></b></h2> 
+  <p>基本的に設定されているYUMの接続URLが間違っていることもあるし、様々な理由でできない時があります。</p> 
+  <p>その時に参照すればよいセット方法です。</p> 
+  <p><br></p> 
+  <p>「/etc/resolv.conf」でDNSサーバ設定をしましょう。</p> 
+  <pre><code class="shell" data-type="/etc/resolv.conf">search com
+nameserver 1.1.1.1
+nameserver 8.8.8.8
 </code></pre> 
-  <p>圧縮を解凍したらこれからコンパイルをしなべきです。「native」フォルダにいきましょう。</p> 
-  <pre><code class="shell" data-type="shell">cd tomcat-connectors-1.2.46-src
-cd native/
-./configure --with-apxs=/usr/bin/apxs
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/102/567_002.png" data-filename="002.png" style="width: 848px;"></p> 
-  <pre><code class="shell" data-type="shell">make
-make install
-</code></pre> 
-  <p>「/etc/httpd/modules」フォルダで「mod_jk.so」ファイルがあれば、コンパイル成功です。</p> 
-  <p style="text-align:left;"><img src="./contents/102/561_003.png" data-filename="003.png" style="width: 848px;"></p> 
-  <p>そして「httpd.conf」に行って下記とおりに設定しましょう。</p> 
-  <pre><code class="conf" data-type="httpd.conf">&lt;IfModule mod_jk.c&gt;
-  JkWorkersFile conf/workers.properties
-  JkShmFile run/mod_jk.shm
-  JkLogFile logs/mod_jk.log
-  JkLogLevel info
-  JkLogStampFormat "[%y %m %d %H:%M:%S] "
-&lt;/IfModule&gt;
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/102/564_004.png" data-filename="004.png" style="width: 848px;"></p> 
-  <p>その後、「workers.properties」を作成しましょう。筆者の場合は「jenkins」とウェブサーバがあるので２つで設定しました。</p> 
-  <pre><code class="shell" data-type="workers.properties">worker.list=devhousehold,devtistoryblog,jenkins
- 
-worker.devhousehold.port=18010
-worker.devhousehold.host=dev.household.nowonbun.com
-worker.devhousehold.type=ajp13
-worker.devhousehold.lbfactor=1
- 
-worker.devtistoryblog.port=18010
-worker.devtistoryblog.host=dev.tistoryblog.nowonbun.com
-worker.devtistoryblog.type=ajp13
-worker.devtistoryblog.lbfactor=1
- 
-worker.jenkins.port=18009
-worker.jenkins.host=jenkins.nowonbun.com
-worker.jenkins.type=ajp13
-worker.jenkins.lbfactor=1
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/102/563_005.png" data-filename="005.png" style="width: 848px;"></p> 
-  <p>また「httpd.conf」を下記とおりに追加しましょう。</p> 
-  <pre><code class="conf" data-type="httpd.config">&lt;VirtualHost *:80&gt;
-  DocumentRoot "/var/www/html"
-&lt;/VirtualHost&gt;
-&lt;VirtualHost *:80&gt;
-  DocumentRoot "/home/program/httpd"
-  ServerName dev.nowonbun.com
-  &lt;Directory "/home/program/httpd"&gt;
-    AllowOverride none
-    Require all granted
-  &lt;/Directory&gt;
-&lt;/VirtualHost&gt;
-&lt;VirtualHost *:80&gt;
-  JkMount /* jenkins
-  ServerName jenkins.nowonbun.com
-&lt;/VirtualHost&gt;
-&lt;VirtualHost *:80&gt;
-  JkMount /* devhousehold
-  ServerName dev.household.nowonbun.com
-&lt;/VirtualHost&gt;
-&lt;VirtualHost *:80&gt;
-  JkMount /* devtistoryblog
-  ServerName dev.tistoryblog.nowonbun.com
-&lt;/VirtualHost&gt;
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/102/565_006.png" data-filename="006.png" style="width: 848px;"></p> 
-  <p>そしてそれぞれのディレクトリに「apache」権限を与えます。</p> 
-  <pre><code class="shell" data-type="shell">chown -R apache:apache /home/program/httpd
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/102/569_007.png" data-filename="007.png" style="width: 848px;"></p> 
-  <p style="text-align:left;"><img src="./contents/102/568_008.png" data-filename="008.png" style="width: 848px;"></p> 
-  <p style="text-align:left;"><img src="./contents/102/562_009.png" data-filename="009.png" style="width: 848px;"></p>
+  <p style="text-align:left;"><img src="./contents/107/597_002.png" data-filename="002.png" style="width: 537px;"><br></p> 
+  <p>上のサーバアドレスは上は「cloudflare」で下は「google」dnsサーバです。速度及び安全性が一番いいものではないかと思います。</p> 
+  <p>それに変更してYUMの動作確認しましょう。</p> 
+  <p>それでも出来なかった場合にはレポジトリを修正しましょう。</p> 
+  <p><br></p> 
+  <p>基本的にCentOSで提供するレポジトリで接続ができなければ、日本では「riken.jp」で提供するcentosレポジトリを使ったら良いです。</p> 
+  <p>基本Centosのレポジトリは外海だからかな、たまに遅くなり、接続が失敗する時あります。国内のレポジトリを使うとその可能性が低いので良いと思います。</p> 
+  <p>レポジトリを修正するためにはvim編集ツールで「/etc/yum.repos.d/CentOS-Base.repo」を修正すると良いです。</p> 
+  <p>レポジトリ中で「baseurl」のurlアドレスが「mirrorlist.centos.org」を 「ftp.riken.jp/linux」に修正しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/107/599_003.png" data-filename="003.png" style="width: 848px;"><br></p> 
+  <p>設定した後でまた「yum」をテストしてそれでもエラーがなると再起動することでできます。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=centos>#centos</a>,<a href=./search.html?query=apache>#apache</a>,<a href=./search.html?query=tomcat>#tomcat</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=centos>#centos</a>,<a href=./search.html?query=yum>#yum</a> </span>
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0106">Devlopment note / Linux</a>」の他投稿</div>
