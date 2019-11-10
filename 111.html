@@ -35,30 +35,30 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Devlopment note / Linux" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。我々がサーバosをインストールする理由はいつも動いているサーバプログラムを起動するためですね。その中で代表的なことがウェブサーバです。ウェブサーバの種類は様々がありますが、その中で「iis」と「apache」が有名ではないかと思いますね。でも「iis」の場合はlinux型ではなく、windowサーバosで動いているし、ウェブサーバと言っても実はasp.netとaspのアプリサーバというのが近いですね。参考にウェブアプリサーバはブラウザとウェブサーバが通信する時に必要な応答ヘッダとボディを動的にパーシングするの役のサーバです。つまり、「iis」の場合はwindowサーバosので動いてるしウェブサーバとアプリサーバ機能があるウェブサーバです。「apache」の場合はwindowとlinuxバージョン両方あります。基本的に「apache」だけにはアプリサーバ機能はありません。なので静的なファイルを要請、応答することです。拡張機能で「php」をつけるとphp言語はパーシングができます。その後でウェブサーバはトラフィック分散機能、仮想機能などがありますが、それは別途で必要な時に投稿します。これから「apache」をインストールしましょう。インストールが完了するとサーバを起動しましょう。ファイアウォールも設定しなければならないです。これからブラウザを接続して下記通りに画面が出るとokです。後は、サーバosが起動する時に自動にサーバが起動できるように設定をしましょう。サービスがdisabledになっていますね。上のコマンドを実行すると「enable」に変わります。そうするとサーバを再起動しても「apache」が起動します。環境設定パスは「/etc/httpd」です。「/etc/httpd」の中には「conf」のディレクトリがありますが、そこで「httpd.conf」が「apache」の環境設定ファイルです。]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。ubuntuを利用する時に「apt-get」コマンドをよく使います。パッケージをインストールする時やアップデートする時や。。。その時に、たまに「acquire the dpkg frontend lock」エラーが発生しますが、その時に解決方法です。実は「acquire the dpkg frontend lock」のエラーはインストールやアップデート中でパソコンの電源を切る時、apt-getのロックがそのまま残っているままで「apt-get」でまたインストールやアップデートすると発生することですね。また、別途のターミナルで「apt-get」を使う時も発生します。その時には解除するとngですね。筆者の場合は「apt-get upgrade」中でパソコンパワを消してしまって、また起動してアップデードコマンドを実行したら発生しました。先は「lock」をすべて削除します。その後でまた「apt-get upgrade」のコマンドを実行しました。lock関係なエラーがなくなってupgradeが実行されました。参照 - https://www.linuxuprising.com/2018/07/how-to-fix-could-not-get-lock.html]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [CentOS] apacheをインストールする方法" />
-<link rel="canonical" href="https://www.nowonbun.com/99.html" />
+<meta name="title" content="明月の開発ストーリ :: [Ubuntu] 「acquire the dpkg frontend lock」のエラーを解決方法" />
+<link rel="canonical" href="https://www.nowonbun.com/111.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [CentOS] apacheをインストールする方法" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。我々がサーバosをインストールする理由はいつも動いているサーバプログラムを起動するためですね。その中で代表的なことがウェブサーバです。ウェブサーバの種類は様々がありますが、その中で「iis」と「apache」が有名ではないかと思いますね。でも「iis」の場合はlinux型ではなく、windowサーバosで動いているし、ウェブサーバと言っても実はasp.netとaspのアプリサーバというのが近いですね。参考にウェブアプリサーバはブラウザとウェブサーバが通信する時に必要な応答ヘッダとボディを動的にパーシングするの役のサーバです。つまり、「iis」の場合はwindowサーバosので動いてるしウェブサーバとアプリサーバ機能があるウェブサーバです。「apache」の場合はwindowとlinuxバージョン両方あります。基本的に「apache」だけにはアプリサーバ機能はありません。なので静的なファイルを要請、応答することです。拡張機能で「php」をつけるとphp言語はパーシングができます。その後でウェブサーバはトラフィック分散機能、仮想機能などがありますが、それは別途で必要な時に投稿します。これから「apache」をインストールしましょう。インストールが完了するとサーバを起動しましょう。ファイアウォールも設定しなければならないです。これからブラウザを接続して下記通りに画面が出るとokです。後は、サーバosが起動する時に自動にサーバが起動できるように設定をしましょう。サービスがdisabledになっていますね。上のコマンドを実行すると「enable」に変わります。そうするとサーバを再起動しても「apache」が起動します。環境設定パスは「/etc/httpd」です。「/etc/httpd」の中には「conf」のディレクトリがありますが、そこで「httpd.conf」が「apache」の環境設定ファイルです。]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [Ubuntu] 「acquire the dpkg frontend lock」のエラーを解決方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。ubuntuを利用する時に「apt-get」コマンドをよく使います。パッケージをインストールする時やアップデートする時や。。。その時に、たまに「acquire the dpkg frontend lock」エラーが発生しますが、その時に解決方法です。実は「acquire the dpkg frontend lock」のエラーはインストールやアップデート中でパソコンの電源を切る時、apt-getのロックがそのまま残っているままで「apt-get」でまたインストールやアップデートすると発生することですね。また、別途のターミナルで「apt-get」を使う時も発生します。その時には解除するとngですね。筆者の場合は「apt-get upgrade」中でパソコンパワを消してしまって、また起動してアップデードコマンドを実行したら発生しました。先は「lock」をすべて削除します。その後でまた「apt-get upgrade」のコマンドを実行しました。lock関係なエラーがなくなってupgradeが実行されました。参照 - https://www.linuxuprising.com/2018/07/how-to-fix-could-not-get-lock.html]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/99.html" />
+<meta property="og:url" content="https://www.nowonbun.com/111.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [CentOS] apacheをインストールする方法" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。我々がサーバosをインストールする理由はいつも動いているサーバプログラムを起動するためですね。その中で代表的なことがウェブサーバです。ウェブサーバの種類は様々がありますが、その中で「iis」と「apache」が有名ではないかと思いますね。でも「iis」の場合はlinux型ではなく、windowサーバosで動いているし、ウェブサーバと言っても実はasp.netとaspのアプリサーバというのが近いですね。参考にウェブアプリサーバはブラウザとウェブサーバが通信する時に必要な応答ヘッダとボディを動的にパーシングするの役のサーバです。つまり、「iis」の場合はwindowサーバosので動いてるしウェブサーバとアプリサーバ機能があるウェブサーバです。「apache」の場合はwindowとlinuxバージョン両方あります。基本的に「apache」だけにはアプリサーバ機能はありません。なので静的なファイルを要請、応答することです。拡張機能で「php」をつけるとphp言語はパーシングができます。その後でウェブサーバはトラフィック分散機能、仮想機能などがありますが、それは別途で必要な時に投稿します。これから「apache」をインストールしましょう。インストールが完了するとサーバを起動しましょう。ファイアウォールも設定しなければならないです。これからブラウザを接続して下記通りに画面が出るとokです。後は、サーバosが起動する時に自動にサーバが起動できるように設定をしましょう。サービスがdisabledになっていますね。上のコマンドを実行すると「enable」に変わります。そうするとサーバを再起動しても「apache」が起動します。環境設定パスは「/etc/httpd」です。「/etc/httpd」の中には「conf」のディレクトリがありますが、そこで「httpd.conf」が「apache」の環境設定ファイルです。]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Ubuntu] 「acquire the dpkg frontend lock」のエラーを解決方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。ubuntuを利用する時に「apt-get」コマンドをよく使います。パッケージをインストールする時やアップデートする時や。。。その時に、たまに「acquire the dpkg frontend lock」エラーが発生しますが、その時に解決方法です。実は「acquire the dpkg frontend lock」のエラーはインストールやアップデート中でパソコンの電源を切る時、apt-getのロックがそのまま残っているままで「apt-get」でまたインストールやアップデートすると発生することですね。また、別途のターミナルで「apt-get」を使う時も発生します。その時には解除するとngですね。筆者の場合は「apt-get upgrade」中でパソコンパワを消してしまって、また起動してアップデードコマンドを実行したら発生しました。先は「lock」をすべて削除します。その後でまた「apt-get upgrade」のコマンドを実行しました。lock関係なエラーがなくなってupgradeが実行されました。参照 - https://www.linuxuprising.com/2018/07/how-to-fix-could-not-get-lock.html]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [CentOS] apacheをインストールする方法</title>
+<title>明月の開発ストーリ :: [Ubuntu] 「acquire the dpkg frontend lock」のエラーを解決方法</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[CentOS] apacheをインストールする方法</h1>
+					<h1 id="titleTxt">[Ubuntu] 「acquire the dpkg frontend lock」のエラーを解決方法</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0106">Devlopment note / Linux</a>    作成日付 : 2019/10/25 21:43:27   修正日付 : 2019/10/25 21:44:13
+					<a href="./?category=0106">Devlopment note / Linux</a>    作成日付 : 2019/11/10 22:19:34   修正日付 : 2019/11/10 22:20:09
 				</div>
 			</div>
 			<div class="article">
@@ -137,51 +137,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>我々がサーバOSをインストールする理由はいつも動いているサーバプログラムを起動するためですね。その中で代表的なことがウェブサーバです。</p> 
+  <p>Ubuntuを利用する時に「apt-get」コマンドをよく使います。パッケージをインストールする時やアップデートする時や。。。</p> 
+  <p>その時に、たまに「acquire the dpkg frontend lock」エラーが発生しますが、その時に解決方法です。</p> 
   <p><br></p> 
-  <p>ウェブサーバの種類は様々がありますが、その中で「IIS」と「apache」が有名ではないかと思いますね。</p> 
-  <p>でも「IIS」の場合はLinux型ではなく、WindowサーバOSで動いているし、ウェブサーバと言っても実はASP.netとASPのアプリサーバというのが近いですね。</p> 
-  <p>参考にウェブアプリサーバはブラウザとウェブサーバが通信する時に必要な応答ヘッダとボディを動的にパーシングするの役のサーバです。つまり、「IIS」の場合はWindowサーバOSので動いてるしウェブサーバとアプリサーバ機能があるウェブサーバです。</p> 
-  <p>「apache」の場合はWindowとLinuxバージョン両方あります。基本的に「apache」だけにはアプリサーバ機能はありません。</p> 
-  <p>なので静的なファイルを要請、応答することです。拡張機能で「PHP」をつけるとPHP言語はパーシングができます。</p> 
+  <p>実は「acquire the dpkg frontend lock」のエラーはインストールやアップデート中でパソコンの電源を切る時、apt-getのロックがそのまま残っているままで「apt-get」でまたインストールやアップデートすると発生することですね。</p> 
+  <p>また、別途のターミナルで「apt-get」を使う時も発生します。その時には解除するとNGですね。</p> 
+  <p style="text-align:left;"><img src="./contents/111/624_001.png" data-filename="001.png" style="width: 733px;"></p> 
+  <p>筆者の場合は「apt-get upgrade」中でパソコンパワを消してしまって、また起動してアップデードコマンドを実行したら発生しました。</p> 
+  <p>先は「lock」をすべて削除します。</p> 
+  <pre><code class="shell" data-type="shell">sudo rm /var/lib/apt/lists/lock
+sudo rm /var/lib/dpkg/lock
+sudo dpkg --configure -a
+sudo apt install -f
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/111/625_002.png" data-filename="002.png" style="width: 733px;"></p> 
+  <p style="text-align:left;"><img src="./contents/111/626_003.png" data-filename="003.png" style="width: 735px;"></p> 
+  <p>その後でまた「apt-get upgrade」のコマンドを実行しました。</p> 
+  <p style="text-align:left;"><img src="./contents/111/627_004.png" data-filename="004.png" style="width: 733px;"></p> 
+  <p>lock関係なエラーがなくなってupgradeが実行されました。</p> 
   <p><br></p> 
-  <p>その後でウェブサーバはトラフィック分散機能、仮想機能などがありますが、それは別途で必要な時に投稿します。</p> 
-  <p><br></p> 
-  <p>これから「apache」をインストールしましょう。</p> 
-  <pre><code class="shell" data-type="apache install">yum list httpd
-yum install httpd
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/99/530_001.png" data-filename="001.png" style="width: 848px;"></p> 
-  <p>インストールが完了するとサーバを起動しましょう。</p> 
-  <pre><code class="shell" data-type="apache start">service httpd start
-</code></pre> 
-  <p>ファイアウォールも設定しなければならないです。</p> 
-  <pre><code class="cs" data-type="firewall apply">firewall-cmd --permanent --zone=public --add-port=80/tcp
-firewall-cmd --reload
-firewall-cmd --list-all
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/99/531_002.png" data-filename="002.png" style="width: 848px;"></p> 
-  <p>これからブラウザを接続して下記通りに画面が出るとOKです。</p> 
-  <p style="text-align:left;"><img src="./contents/99/534_003.png" data-filename="003.png" style="width: 848px;"></p> 
-  <p>後は、サーバOSが起動する時に自動にサーバが起動できるように設定をしましょう。</p> 
-  <pre><code class="shell" data-type="systemctl check">systemctl status httpd
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/99/529_004.png" data-filename="004.png" style="width: 848px;"></p> 
-  <p>サービスがdisabledになっていますね。</p> 
-  <pre><code class="shell" data-type="systemctl apply">systemctl enable httpd
-</code></pre> 
-  <p>上のコマンドを実行すると「enable」に変わります。</p> 
-  <p style="text-align:left;"><img src="./contents/99/533_005.png" data-filename="005.png" style="width: 848px;"></p> 
-  <p>そうするとサーバを再起動しても「apache」が起動します。環境設定パスは「/etc/httpd」です。</p> 
-  <p>「/etc/httpd」の中には「conf」のディレクトリがありますが、そこで「httpd.conf」が「apache」の環境設定ファイルです。</p> 
-  <p style="text-align:left;"><img src="./contents/99/532_006.png" data-filename="006.png" style="width: 848px;"></p>
+  <p>参照 - <a href="https://www.linuxuprising.com/2018/07/how-to-fix-could-not-get-lock.html" target="_blank">https://www.linuxuprising.com/2018/07/how-to-fix-could-not-get-lock.html</a></p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=linux>#linux</a>,<a href=./search.html?query=centos>#centos</a>,<a href=./search.html?query=apache>#apache</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=ubuntu>#ubuntu</a>,<a href=./search.html?query=apt+error>#apt error</a> </span>
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0106">Devlopment note / Linux</a>」の他投稿</div>
