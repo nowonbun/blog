@@ -34,31 +34,31 @@ body{
 <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-<meta name="keywords" content="Study / Java" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。このページではこのページにはreflection機能の中でアノテーション(annotation)に関して調べてみました。前述でアノテーションに関して説明した時があります。link - [java スタディ - 26] アノテーション(annotation) その時にアノテーションではただ、クラスやメソッドや変数などのメタデータだと言いましたが、実はアノテーションはreflectionで入るとデータ初期設定、メソッドを探しの里程表だと思います。上の例をみれば、クラスのメソッドを全て取得してアノテーションがあるかどうかであるなら「invoke」で実行します。なので結果は「method1」、「method3」は出力するし、「method2」の場合は出力しないですね。上の例を見れば「main」で「example」クラスを割当てクラスの中の「node」変数にデータを入れるところがありません。当たり前で「node」変数は「null」と予想します。でも「exec」で「node」クラスの「print」メソッドを呼出す時、「exception」が発生しませんでした。その理由は「main」関数で「reflection」機能を使ってアノテーションに書いている「クラス」名で割当てしたからのです。上の例が依存性注入の概念ですね。「reflection」機能はデザインパターンと合わせることになると素晴らしく綺麗なソースに作られるので、デザインパターンも含めて熟知しなければならないと思います。]]>" />
+<meta name="keywords" content="Study / Javascript, Jquery, Css" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。ウェブサービスで構成するものは大幅で「html」と「javascript」、「css style」があります。その中で「html」はxml形式でドキュメントの構造を担当しているし、「css style」はuiデザインスタイルを担当しています。「javascript」の場合はウェブドキュメントを動的に動くようにスクリプトの領域です。先に「html」の構造に関して調べましょう。「html」はxml形式を継承したので、基本はタグが開くと閉める構造になっています。「&amp;lt;タグ&amp;gt;&amp;lt;/タグ&amp;gt;」の構造ですね。閉めるタグには「/」記号を入れて表示します。基本構造は初めドキュメントタイプ宣言してhtmlタグから始まります。htmlタグはheadタグとbodyタグが必須にあるし、headタグはtitleタグが必須にあります。上の構造になっています。headのタグはtitleやメタタグ、style宣言、script宣言などがあります。bodyタグは実際にブラウザから見えるデータタグがあります。                    タグ        説明                            html        htmlタグの最上位タグです。(必須)                    head        htmlの下位タグでheadではタイトル、メタ情報があります。                    body        htmlの下位タグでhtmlのドキュメント情報があります。                    meta        headの下位タグでドキュメントのメタ情報があります。        メタ情報はドキュメントエンコーディング情報、キーワード、検索サイトの制御設定、外部リンク情報があります。                    title        headの下位タグでhtmlドキュメントのタイトルで宣言するし、ブラウザのタイトルで表示します。                    link        headの下位タグでライブラリなどをリンクします。                    header        bodyの下位タグでドキュメントの上端部分を作成します。       ]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [Java スタディ - 31] Reflection - Annotation編" />
-<link rel="canonical" href="https://www.nowonbun.com/71.html" />
+<meta name="title" content="明月の開発ストーリ :: [HTML] HTMLタグ構造" />
+<link rel="canonical" href="https://www.nowonbun.com/115.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [Java スタディ - 31] Reflection - Annotation編" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。このページではこのページにはreflection機能の中でアノテーション(annotation)に関して調べてみました。前述でアノテーションに関して説明した時があります。link - [java スタディ - 26] アノテーション(annotation) その時にアノテーションではただ、クラスやメソッドや変数などのメタデータだと言いましたが、実はアノテーションはreflectionで入るとデータ初期設定、メソッドを探しの里程表だと思います。上の例をみれば、クラスのメソッドを全て取得してアノテーションがあるかどうかであるなら「invoke」で実行します。なので結果は「method1」、「method3」は出力するし、「method2」の場合は出力しないですね。上の例を見れば「main」で「example」クラスを割当てクラスの中の「node」変数にデータを入れるところがありません。当たり前で「node」変数は「null」と予想します。でも「exec」で「node」クラスの「print」メソッドを呼出す時、「exception」が発生しませんでした。その理由は「main」関数で「reflection」機能を使ってアノテーションに書いている「クラス」名で割当てしたからのです。上の例が依存性注入の概念ですね。「reflection」機能はデザインパターンと合わせることになると素晴らしく綺麗なソースに作られるので、デザインパターンも含めて熟知しなければならないと思います。]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [HTML] HTMLタグ構造" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。ウェブサービスで構成するものは大幅で「html」と「javascript」、「css style」があります。その中で「html」はxml形式でドキュメントの構造を担当しているし、「css style」はuiデザインスタイルを担当しています。「javascript」の場合はウェブドキュメントを動的に動くようにスクリプトの領域です。先に「html」の構造に関して調べましょう。「html」はxml形式を継承したので、基本はタグが開くと閉める構造になっています。「&amp;lt;タグ&amp;gt;&amp;lt;/タグ&amp;gt;」の構造ですね。閉めるタグには「/」記号を入れて表示します。基本構造は初めドキュメントタイプ宣言してhtmlタグから始まります。htmlタグはheadタグとbodyタグが必須にあるし、headタグはtitleタグが必須にあります。上の構造になっています。headのタグはtitleやメタタグ、style宣言、script宣言などがあります。bodyタグは実際にブラウザから見えるデータタグがあります。                    タグ        説明                            html        htmlタグの最上位タグです。(必須)                    head        htmlの下位タグでheadではタイトル、メタ情報があります。                    body        htmlの下位タグでhtmlのドキュメント情報があります。                    meta        headの下位タグでドキュメントのメタ情報があります。        メタ情報はドキュメントエンコーディング情報、キーワード、検索サイトの制御設定、外部リンク情報があります。                    title        headの下位タグでhtmlドキュメントのタイトルで宣言するし、ブラウザのタイトルで表示します。                    link        headの下位タグでライブラリなどをリンクします。                    header        bodyの下位タグでドキュメントの上端部分を作成します。       ]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/71.html" />
+<meta property="og:url" content="https://www.nowonbun.com/115.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [Java スタディ - 31] Reflection - Annotation編" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。このページではこのページにはreflection機能の中でアノテーション(annotation)に関して調べてみました。前述でアノテーションに関して説明した時があります。link - [java スタディ - 26] アノテーション(annotation) その時にアノテーションではただ、クラスやメソッドや変数などのメタデータだと言いましたが、実はアノテーションはreflectionで入るとデータ初期設定、メソッドを探しの里程表だと思います。上の例をみれば、クラスのメソッドを全て取得してアノテーションがあるかどうかであるなら「invoke」で実行します。なので結果は「method1」、「method3」は出力するし、「method2」の場合は出力しないですね。上の例を見れば「main」で「example」クラスを割当てクラスの中の「node」変数にデータを入れるところがありません。当たり前で「node」変数は「null」と予想します。でも「exec」で「node」クラスの「print」メソッドを呼出す時、「exception」が発生しませんでした。その理由は「main」関数で「reflection」機能を使ってアノテーションに書いている「クラス」名で割当てしたからのです。上の例が依存性注入の概念ですね。「reflection」機能はデザインパターンと合わせることになると素晴らしく綺麗なソースに作られるので、デザインパターンも含めて熟知しなければならないと思います。]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [HTML] HTMLタグ構造" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。ウェブサービスで構成するものは大幅で「html」と「javascript」、「css style」があります。その中で「html」はxml形式でドキュメントの構造を担当しているし、「css style」はuiデザインスタイルを担当しています。「javascript」の場合はウェブドキュメントを動的に動くようにスクリプトの領域です。先に「html」の構造に関して調べましょう。「html」はxml形式を継承したので、基本はタグが開くと閉める構造になっています。「&amp;lt;タグ&amp;gt;&amp;lt;/タグ&amp;gt;」の構造ですね。閉めるタグには「/」記号を入れて表示します。基本構造は初めドキュメントタイプ宣言してhtmlタグから始まります。htmlタグはheadタグとbodyタグが必須にあるし、headタグはtitleタグが必須にあります。上の構造になっています。headのタグはtitleやメタタグ、style宣言、script宣言などがあります。bodyタグは実際にブラウザから見えるデータタグがあります。                    タグ        説明                            html        htmlタグの最上位タグです。(必須)                    head        htmlの下位タグでheadではタイトル、メタ情報があります。                    body        htmlの下位タグでhtmlのドキュメント情報があります。                    meta        headの下位タグでドキュメントのメタ情報があります。        メタ情報はドキュメントエンコーディング情報、キーワード、検索サイトの制御設定、外部リンク情報があります。                    title        headの下位タグでhtmlドキュメントのタイトルで宣言するし、ブラウザのタイトルで表示します。                    link        headの下位タグでライブラリなどをリンクします。                    header        bodyの下位タグでドキュメントの上端部分を作成します。       ]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [Java スタディ - 31] Reflection - Annotation編</title>
+<title>明月の開発ストーリ :: [HTML] HTMLタグ構造</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[Java スタディ - 31] Reflection - Annotation編</h1>
+					<h1 id="titleTxt">[HTML] HTMLタグ構造</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0203">Study / Java</a>    作成日付 : 2019/09/20 22:34:40   修正日付 : 2019/09/20 22:35:47
+					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/11/22 19:49:41   修正日付 : 2019/11/22 19:49:41
 				</div>
 			</div>
 			<div class="article">
@@ -137,132 +137,109 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>このページではこのページにはReflection機能の中でアノテーション(Annotation)に関して調べてみました。</p> 
+  <p>ウェブサービスで構成するものは大幅で「Html」と「Javascript」、「CSS Style」があります。</p> 
+  <p>その中で「Html」はXml形式でドキュメントの構造を担当しているし、「CSS Style」はUIデザインスタイルを担当しています。「Javascript」の場合はウェブドキュメントを動的に動くようにスクリプトの領域です。</p> 
+  <p>先に「Html」の構造に関して調べましょう。</p> 
   <p><br></p> 
-  <p>前述でアノテーションに関して説明した時があります。</p> 
-  <p>link - <a href="https://www.nowonbun.com/66.html" target="_blank">[Java スタディ - 26] アノテーション(annotation)</a></p> 
+  <p>「Html」はXml形式を継承したので、基本はタグが開くと閉める構造になっています。</p> 
+  <p>「&lt;タグ&gt;&lt;/タグ&gt;」の構造ですね。閉めるタグには「/」記号を入れて表示します。</p> 
   <p><br></p> 
-  <p>その時にアノテーションではただ、クラスやメソッドや変数などのメタデータだと言いましたが、実はアノテーションはReflectionで入るとデータ初期設定、メソッドを探しの里程表だと思います。</p> 
-  <pre><code class="java" data-type="TestAnnotation.java">import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
-@Target(ElementType.METHOD)
-@Retention(RetentionPolicy.RUNTIME)
-public @interface TestAnnotaion { }
+  <p>基本構造は初めドキュメントタイプ宣言してhtmlタグから始まります。</p> 
+  <p>htmlタグはheadタグとbodyタグが必須にあるし、headタグはtitleタグが必須にあります。</p> 
+  <pre><code class="html" data-type="Htmlの基本構造">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
 </code></pre> 
-  <pre><code class="java" data-type="Node.java">public class Node {
-  @TestAnnotaion()
-  public void method1() {
-    System.out.println("method1");
-  }
-  
-  public void method2() {
-    System.out.println("method2");
-  }
- 
-  @TestAnnotaion()
-  public void method3() {
-    System.out.println("method3");
-  }
-}
-</code></pre> 
-  <pre><code class="java" data-type="Example.java">public class Example {
-  public static void main(String... args) throws Exception {
-    try {
-      // クラスを割当てします。
-      Node node = new Node();
-      // Nodeクラス中でメソッドを全て取得する。
-      Method[] methods = Node.class.getMethods();
-      for(Method method : methods) {
-        // メソッドでアノテーション「TestAnnotation」を取得する。
-        TestAnnotaion anno = method.getAnnotation(TestAnnotaion.class);
-        if(anno != null) {
-          //　アノテーションがあることだけ実行
-          method.invoke(node);    
-        }
-      }
-    } catch (Throwable e) {
-      throw new RuntimeException(e);
-    }
-  }
-}
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/71/285_001.jpg" data-filename="001.jpg" style="width: 484px;"></p> 
-  <p>上の例をみれば、クラスのメソッドを全て取得してアノテーションがあるかどうかであるなら「invoke」で実行します。</p> 
-  <p>なので結果は「method1」、「method3」は出力するし、「method2」の場合は出力しないですね。</p> 
-  <pre><code class="java" data-type="AllocAnnotation.java">import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
-@Target(ElementType.FIELD)
-@Retention(RetentionPolicy.RUNTIME)
-public @interface AllocAnnotaion {
-  public String value();
-}
-</code></pre> 
-  <pre><code class="java" data-type="Node.java">public class Node {
-  public void print() {
-    System.out.println("Alloc OK!");
-  }
-}
-</code></pre> 
-  <pre><code class="java" data-type="Example.java">import java.lang.reflect.Field;
-
-public class  {
-  // 依存性注入パターン(DI)としてデータを割当てする。
-  @AllocAnnotaion("Node")
-  private Node node;
-  
-  // 実行
-  public void exec() {
-    node.print();
-  }
-  
-  public static void main(String... args) throws Exception {
-    try {
-      Example obj = new Example();
-      // Example クラスの中でメンバー変数を探す
-      for(Field field : Example.class.getDeclaredFields()) {
-        // privateとprotectedを関係ずに操作できるように修正
-        field.setAccessible(true);
-        // AllocAnntaionのアノテーションを取得する。
-        AllocAnnotaion anno = field.getAnnotation(AllocAnnotaion.class);
-        if(anno != null) {
-          // あれば、該当な変数に割当する。
-          String className = anno.value();
-          field.set(obj, Class.forName(className).getConstructor().newInstance());
-        }
-      }
-      // 関数を呼出す。
-      obj.exec();
-    } catch (Throwable e) {
-      throw new RuntimeException(e);
-    }
-  }
-}
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/71/286_002.jpg" data-filename="002.jpg" style="width: 544px;"></p> 
-  <p>上の例を見れば「main」で「Example」クラスを割当てクラスの中の「node」変数にデータを入れるところがありません。</p> 
-  <p>当たり前で「node」変数は「null」と予想します。でも「exec」で「Node」クラスの「print」メソッドを呼出す時、「Exception」が発生しませんでした。</p> 
+  <p>上の構造になっています。headのタグはtitleやメタタグ、style宣言、script宣言などがあります。bodyタグは実際にブラウザから見えるデータタグがあります。</p> 
+  <div class="table-responsive"> 
+   <table class="table table-striped table-bordered table-condensed"> 
+    <thead> 
+     <tr style="background-color:#DAD7D7"> 
+      <th>タグ</th> 
+      <th>説明</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td>html</td> 
+      <td>HTMLタグの最上位タグです。(必須)</td> 
+     </tr> 
+     <tr> 
+      <td>head</td> 
+      <td>HTMLの下位タグでheadではタイトル、メタ情報があります。</td> 
+     </tr> 
+     <tr> 
+      <td>body</td> 
+      <td>HTMLの下位タグでHTMLのドキュメント情報があります。</td> 
+     </tr> 
+     <tr> 
+      <td>meta</td> 
+      <td>headの下位タグでドキュメントのメタ情報があります。<br> メタ情報はドキュメントエンコーディング情報、キーワード、検索サイトの制御設定、外部リンク情報があります。</td> 
+     </tr> 
+     <tr> 
+      <td>title</td> 
+      <td>headの下位タグでHTMLドキュメントのタイトルで宣言するし、ブラウザのタイトルで表示します。</td> 
+     </tr> 
+     <tr> 
+      <td>link</td> 
+      <td>headの下位タグでライブラリなどをリンクします。</td> 
+     </tr> 
+     <tr> 
+      <td>header</td> 
+      <td>bodyの下位タグでドキュメントの上端部分を作成します。</td> 
+     </tr> 
+     <tr> 
+      <td>main</td> 
+      <td>bodyの下位タグでとキュメンとのメインコンテンツを作成します。</td> 
+     </tr> 
+     <tr> 
+      <td>article</td> 
+      <td>bodyの下位タグで独立的なコンテンツを作成します。</td> 
+     </tr> 
+     <tr> 
+      <td>session</td> 
+      <td>bodyの下位タグでコンテンツのセッションを区分します。</td> 
+     </tr> 
+     <tr> 
+      <td>nav</td> 
+      <td>bodyの下位タグでドキュメントのナビを作成します。</td> 
+     </tr> 
+     <tr> 
+      <td>aside</td> 
+      <td>bodyの下位タグでmainタグのメインコンテンツと情報を分離します。</td> 
+     </tr> 
+     <tr> 
+      <td>footer</td> 
+      <td>bodyの下位タグでドキュメントの下端部分を作成します。</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <p>構造的なHTMLを説明しましたが、理解しにくいですね。</p> 
+  <p style="text-align:left;"><img src="./contents/115/662_001.jpeg" data-filename="001.jpeg" style="width: 650px;"></p> 
+  <p>上のイメージはheadタグは省略してbodyタグの領域だけ説明しました。実際には上みたいにタグをまもりながらコード実装はしないですね。</p> 
+  <p>でも、タグを確実に分けて作成するとデータ区分もしやすくなるし、CSS可読性をよくなります。</p> 
   <p><br></p> 
-  <p>その理由は「main」関数で「Reflection」機能を使ってアノテーションに書いている「クラス」名で割当てしたからのです。</p> 
-  <p>上の例が依存性注入の概念ですね。</p> 
+  <p>既存よりHTML5の場合はタグがたくさんありますね。昔は筆者もこのタグの種類をよく知らずに、全て「div」タグでCSSを付けて作成した記憶があります。</p> 
+  <p>その時より、HTMLがもっとドキュメントらしいな雰囲気もあるし、みやすいですね。</p> 
   <p><br></p> 
-  <p>「Reflection」機能はデザインパターンと合わせることになると素晴らしく綺麗なソースに作られるので、デザインパターンも含めて熟知しなければならないと思います。</p>
+  <p>また、このタグにはSEOと関係があり、タグの目的をきちんとまもって使うと検索順位でも影響がありそうです。本当かどうかをもっとテストをしなければならないですね。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=java>#java</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=html>#html</a>,<a href=./search.html?query=tag>#tag</a> </span>
 				</div>
 				<div class="other-category">
-					<div class="list-title">「<a href="./?category=0203">Study / Java</a>」の他投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/92.html'>[Javaスタディ- 52] Java servletでインスタンスを初期する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Javaスタディ- 50] Web Spring frameworkでfilter設定</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Javaスタディ- 49] Web serviceのweb.xmlでエラーページ設定</a><span>2019/10/14 20:13:44</span></li><li><a href='https://www.nowonbun.com/88.html'>[Javaスタディ- 48] JPAのDAOをFactoryパターンで管理する方法</a><span>2019/10/13 22:55:52</span></li><li><a href='https://www.nowonbun.com/87.html'>[Java スタディ - 47] JPAのSpring frameworkで依存性注入する方法</a><span>2019/10/13 00:40:08</span></li><li><a href='https://www.nowonbun.com/86.html'>[Java スタディ - 46] JPAでDAOを生成する方法</a><span>2019/10/11 07:30:14</span></li><li><a href='https://www.nowonbun.com/85.html'>[Java スタディ - 45] JPAでトランザクションの使用方法とオブサーバーパターンで共通トランザクション関数を作り方</a><span>2019/10/10 07:29:43</span></li><li><a href='https://www.nowonbun.com/84.html'>[Java スタディ - 44]  JPAのQuery を作り方</a><span>2019/10/09 07:34:08</span></li><li><a href='https://www.nowonbun.com/83.html'>[Java スタディ - 43] JPAのEntityクラス設定(Cascade, fetch)</a><span>2019/10/08 07:43:33</span></li><li><a href='https://www.nowonbun.com/82.html'>[Java スタディ - 42] JPAでpersistance.xml設定とentityクラス設定(@GeneratedValue設定)</a><span>2019/10/07 07:38:13</span></li><li><a href='https://www.nowonbun.com/81.html'>[Java スタディ - 41] EclipseでJPAフレームワーク設定する方法</a><span>2019/10/04 19:24:43</span></li><li><a href='https://www.nowonbun.com/80.html'>[Java スタディ - 40] Web spring frameworkのJSPで使う言語 JSTL - XML</a><span>2019/10/03 20:02:06</span></li><li><a href='https://www.nowonbun.com/79.html'>[Java スタディ - 39] Web spring frameworkのJSPで使う言語 JSTL - 関数、データベース</a><span>2019/10/02 21:00:22</span></li><li><a href='https://www.nowonbun.com/78.html'>[Java スタディ - 38] Web spring frameworkのJSPで使う言語 JSTL - コアー、フォーマッティング</a><span>2019/10/01 21:48:08</span></li></ul>
+					<div class="list-title">「<a href="./?category=0204">Study / Javascript, Jquery, Css</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/115.html'>[HTML] HTMLタグ構造</a><span>2019/11/22 19:49:41</span></li></ul>
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
