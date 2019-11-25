@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Javascript, Jquery, Css" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。ウェブドキュメントの中でメタタグのウェブドキュメントの説明、キーワード、要約情報と考えられます。htmlはウェブページの基本骨格で考えられるし、cssはこの骨格で色やフォントサイズなどのスタイルを付けてユーザがもっと綺麗、よく見えるようにすることで、javascriptはそのページを動的に変換させ整合性ウェブプロシージャを実装、動的に変換をあげ、プログラムらしく動くようにする機能です。そのなかでhtmlのタグ、タグの中でメタタグということがあり、ウェブページの詳細情報になります。メタタグは３つのアトリビュート(属性)を持っています。1. http-equiv - ヘッドの値を正義することができる属性だし、この属性でサーバとブラウザ間の作動方法、指示を正義するアトリビュートです。2. content - meta情報の内容です。3. name - ドキュメントラベルのメタデータの名を正義します。itemprop、http-equivあるいはcharsetの属性の中で一つでも設定された場合、設定できません。1. 文字コードの種類設定 ウェブページのエンコーディング属性を指定できます。2. 互換性設定ブラウザ別の互換性を設定するタグです。ie 8から11、edgeまでの各バージョンによってレンダリング特性が違います。少なくとも色のコードも少し違いますね。そのことでウェブのドキュメントが何のバージョンに最適化になっているかを設定することです。最近にはie８バージョンや9、10バージョンに合わせる必要がないので、前よりは重要が少ないです。普通は基本的に入れるタグですが別にこのタグがなくてもウェブサイトを実装することではそんなに問題ないと思います。3. ビューポート設定モバイルとpcは解像度は違います。特にモバイルの場合、モニターのサイズによって解像度が高いですが、この解像度によってウェブを設定するとモバイルでは文字がすごく小さく見えると思います。そして、ウェブの形が解像度ではなくサイズによって表現しなければならないですが、そのことを設定するタグです。4. 説明タグ(description)このタグは検索エンジンで説明がでる部分です。私の考えではseoタグの中では一番重要な部分ではないかと思います。このタグの内容がなくても検索ができないか説明表示をしないことではないですが、検索の優先順位で高くで]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [HTML] Metaタグに関して(SEO最適化)" />
+<link rel="canonical" href="https://www.nowonbun.com/116.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [HTML] Metaタグに関して(SEO最適化)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。ウェブドキュメントの中でメタタグのウェブドキュメントの説明、キーワード、要約情報と考えられます。htmlはウェブページの基本骨格で考えられるし、cssはこの骨格で色やフォントサイズなどのスタイルを付けてユーザがもっと綺麗、よく見えるようにすることで、javascriptはそのページを動的に変換させ整合性ウェブプロシージャを実装、動的に変換をあげ、プログラムらしく動くようにする機能です。そのなかでhtmlのタグ、タグの中でメタタグということがあり、ウェブページの詳細情報になります。メタタグは３つのアトリビュート(属性)を持っています。1. http-equiv - ヘッドの値を正義することができる属性だし、この属性でサーバとブラウザ間の作動方法、指示を正義するアトリビュートです。2. content - meta情報の内容です。3. name - ドキュメントラベルのメタデータの名を正義します。itemprop、http-equivあるいはcharsetの属性の中で一つでも設定された場合、設定できません。1. 文字コードの種類設定 ウェブページのエンコーディング属性を指定できます。2. 互換性設定ブラウザ別の互換性を設定するタグです。ie 8から11、edgeまでの各バージョンによってレンダリング特性が違います。少なくとも色のコードも少し違いますね。そのことでウェブのドキュメントが何のバージョンに最適化になっているかを設定することです。最近にはie８バージョンや9、10バージョンに合わせる必要がないので、前よりは重要が少ないです。普通は基本的に入れるタグですが別にこのタグがなくてもウェブサイトを実装することではそんなに問題ないと思います。3. ビューポート設定モバイルとpcは解像度は違います。特にモバイルの場合、モニターのサイズによって解像度が高いですが、この解像度によってウェブを設定するとモバイルでは文字がすごく小さく見えると思います。そして、ウェブの形が解像度ではなくサイズによって表現しなければならないですが、そのことを設定するタグです。4. 説明タグ(description)このタグは検索エンジンで説明がでる部分です。私の考えではseoタグの中では一番重要な部分ではないかと思います。このタグの内容がなくても検索ができないか説明表示をしないことではないですが、検索の優先順位で高くで]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/116.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [HTML] Metaタグに関して(SEO最適化)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。ウェブドキュメントの中でメタタグのウェブドキュメントの説明、キーワード、要約情報と考えられます。htmlはウェブページの基本骨格で考えられるし、cssはこの骨格で色やフォントサイズなどのスタイルを付けてユーザがもっと綺麗、よく見えるようにすることで、javascriptはそのページを動的に変換させ整合性ウェブプロシージャを実装、動的に変換をあげ、プログラムらしく動くようにする機能です。そのなかでhtmlのタグ、タグの中でメタタグということがあり、ウェブページの詳細情報になります。メタタグは３つのアトリビュート(属性)を持っています。1. http-equiv - ヘッドの値を正義することができる属性だし、この属性でサーバとブラウザ間の作動方法、指示を正義するアトリビュートです。2. content - meta情報の内容です。3. name - ドキュメントラベルのメタデータの名を正義します。itemprop、http-equivあるいはcharsetの属性の中で一つでも設定された場合、設定できません。1. 文字コードの種類設定 ウェブページのエンコーディング属性を指定できます。2. 互換性設定ブラウザ別の互換性を設定するタグです。ie 8から11、edgeまでの各バージョンによってレンダリング特性が違います。少なくとも色のコードも少し違いますね。そのことでウェブのドキュメントが何のバージョンに最適化になっているかを設定することです。最近にはie８バージョンや9、10バージョンに合わせる必要がないので、前よりは重要が少ないです。普通は基本的に入れるタグですが別にこのタグがなくてもウェブサイトを実装することではそんなに問題ないと思います。3. ビューポート設定モバイルとpcは解像度は違います。特にモバイルの場合、モニターのサイズによって解像度が高いですが、この解像度によってウェブを設定するとモバイルでは文字がすごく小さく見えると思います。そして、ウェブの形が解像度ではなくサイズによって表現しなければならないですが、そのことを設定するタグです。4. 説明タグ(description)このタグは検索エンジンで説明がでる部分です。私の考えではseoタグの中では一番重要な部分ではないかと思います。このタグの内容がなくても検索ができないか説明表示をしないことではないですが、検索の優先順位で高くで]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [HTML] Metaタグに関して(SEO最適化)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(23)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(93)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[HTML] Metaタグに関して(SEO最適化)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/11/25 20:16:18   修正日付 : 2019/11/25 20:16:18
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>ウェブドキュメントの中でメタタグのウェブドキュメントの説明、キーワード、要約情報と考えられます。</p> 
+  <p>Htmlはウェブページの基本骨格で考えられるし、CSSはこの骨格で色やフォントサイズなどのスタイルを付けてユーザがもっと綺麗、よく見えるようにすることで、Javascriptはそのページを動的に変換させ整合性ウェブプロシージャを実装、動的に変換をあげ、プログラムらしく動くようにする機能です。</p> 
+  <p><br></p> 
+  <p>そのなかでHtmlのタグ、タグの中でメタタグということがあり、ウェブページの詳細情報になります。</p> 
+  <p><br></p> 
+  <p>メタタグは３つのアトリビュート(属性)を持っています。</p> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <p>1. http-equiv</p> 
+   <p> - ヘッドの値を正義することができる属性だし、この属性でサーバとブラウザ間の作動方法、指示を正義するアトリビュートです。</p> 
+   <p>2. content</p> 
+   <p> - meta情報の内容です。</p> 
+   <p>3. name</p> 
+   <p> - ドキュメントラベルのメタデータの名を正義します。itemprop、http-equivあるいはcharsetの属性の中で一つでも設定された場合、設定できません。</p> 
+  </blockquote> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <p>1. 文字コードの種類設定</p> 
+   <p> ウェブページのエンコーディング属性を指定できます。</p> 
+   <pre><code class="html" data-type="content-type tag">&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+&lt;meta charset="utf-8"&gt;
+</code></pre> 
+   <p>2. 互換性設定</p> 
+   <p>ブラウザ別の互換性を設定するタグです。IE 8から11、edgeまでの各バージョンによってレンダリング特性が違います。少なくとも色のコードも少し違いますね。</p> 
+   <p>そのことでウェブのドキュメントが何のバージョンに最適化になっているかを設定することです。</p> 
+   <p>最近にはIE８バージョンや9、10バージョンに合わせる必要がないので、前よりは重要が少ないです。普通は基本的に入れるタグですが別にこのタグがなくてもウェブサイトを実装することではそんなに問題ないと思います。</p> 
+   <pre><code class="html" data-type="browser setting tag">
+</code></pre> 
+   <pre><code class="html" data-type="browser tag">&lt;meta http-equiv="X-UA-Compatible" content="IE=edge;Chromeframe=1"&gt;
+</code></pre> 
+   <p>3. ビューポート設定</p> 
+   <p>モバイルとPCは解像度は違います。特にモバイルの場合、モニターのサイズによって解像度が高いですが、この解像度によってウェブを設定するとモバイルでは文字がすごく小さく見えると思います。</p> 
+   <p>そして、ウェブの形が解像度ではなくサイズによって表現しなければならないですが、そのことを設定するタグです。</p> 
+   <pre><code class="html" data-type="viewport tag">&lt;meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"&gt;
+</code></pre> 
+   <p>4. 説明タグ(description)</p> 
+   <p>このタグは検索エンジンで説明がでる部分です。</p> 
+   <p style="text-align:left;"><img src="./contents/116/663_001.png" data-filename="001.png" style="width: 633px;"><br></p> 
+   <p>私の考えではSEOタグの中では一番重要な部分ではないかと思います。このタグの内容がなくても検索ができないか説明表示をしないことではないですが、検索の優先順位で高くできないし、正確なキーワード検索が難しいではないかと思います。</p> 
+   <pre><code class="html" data-type="description">&lt;meta name="description" content="&lt;![CDATA[ 内容　最大20文字 ]&gt;"&gt;
+</code></pre> 
+   <p>5. クローリング及びインデックス生成、動作制御タグ</p> 
+   <p>このタグは検索エンジンでインデックスになれ、検索エンジンの検索タイプを設定するタイプです。</p> 
+   <pre><code class="html" data-type="robots">&lt;meta name="robots" content="ALL"&gt;
+</code></pre> 
+   <p>もしこのタグを省略すれば基本設定のALLで認識します。しかし、「none」で設定すればクローリング、リンクを設定しません。「noindex」の場合はクローリングはするけど、検索結果にはでないようにすること、「nofollow」はリンクが見えないようにすることです。</p> 
+   <p>「nosnippet」はイメージと動画はクローリングをしないようにすること、「noimageindex」はイメージや動画が検索結果にでないように設定することです。</p> 
+   <p>私の場合はブログで検索ができないようにする設定がなかったので、普通は「ALL」で設定します。</p> 
+   <p>6. 指定されたタイムアウトになるとリダイレクト制御タグ</p> 
+   <p>このタグは設定したタイム時間がすぎるとリダイレクトにする機能です。このタグによってはブラウザ別でエラーになることがありますね。</p> 
+   <pre><code class="html" data-type="refresh">&lt;meta http-equiv="refresh" content="30;url=https://www.nowonbun.com" /&gt;
+</code></pre> 
+   <p>３０秒後で「https://www.nowonbun.com」に繊維すると意味です。</p> 
+   <p>7. アダルトサイトということを設定する。</p> 
+   <pre><code class="html" data-type="adult setting">&lt;meta name="rating" content="adult" /&gt;
+&lt;meta name="rating" content="RTA-5042-1996-1400-1577-RTA" /&gt;
+</code></pre> 
+   <p>8. そのた</p> 
+   <p>「author」タグや「keywords」、「copyright」などのタグもあります。でも最近は使わないタグになりますね。</p> 
+   <p>検索エンジンでもクローリングしないし、ウェブページでも設定しないですね。なので、説明を省略します。</p> 
+  </blockquote> 
+  <p>link - <a href="https://www.w3schools.com/tags/tag_meta.asp" target="_blank">https://www.w3schools.com/tags/tag_meta.asp</a></p> 
+  <p>link - <a href="https://support.google.com/webmasters/answer/79812?hl=ja" target="_blank">https://support.google.com/webmasters/answer/79812?hl=ja</a></p> 
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=metatag>#metatag</a>,<a href=./search.html?query=SEO>#SEO</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0204">Study / Javascript, Jquery, Css</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/116.html'>[HTML] Metaタグに関して(SEO最適化)</a><span>2019/11/25 20:16:18</span></li><li><a href='https://www.nowonbun.com/115.html'>[HTML] HTMLタグ構造</a><span>2019/11/22 19:49:41</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/116.html'>[HTML] Metaタグに関して(SEO最適化)</a><span>2019/11/25 20:16:18</span></li><li><a href='https://www.nowonbun.com/115.html'>[HTML] HTMLタグ構造</a><span>2019/11/22 19:49:41</span></li><li><a href='https://www.nowonbun.com/114.html'>[Ubuntu] PHPをインストール、Composer設定する方法</a><span>2019/11/13 07:32:21</span></li><li><a href='https://www.nowonbun.com/113.html'>[Ubuntu] テーマ(Arc)を変更する方法(tweak)</a><span>2019/11/12 07:32:13</span></li><li><a href='https://www.nowonbun.com/112.html'>[Ubuntu] Apache2をインストールする方法</a><span>2019/11/11 07:28:28</span></li><li><a href='https://www.nowonbun.com/111.html'>[Ubuntu] 「acquire the dpkg frontend lock」のエラーを解決方法</a><span>2019/11/10 22:19:34</span></li><li><a href='https://www.nowonbun.com/110.html'>[Ubuntu] JavaインストールとEclipseをインストールする方法</a><span>2019/11/08 07:29:55</span></li><li><a href='https://www.nowonbun.com/109.html'>[Ubuntu] MariaDB(Mysql)をインストールする方法</a><span>2019/11/07 07:50:58</span></li><li><a href='https://www.nowonbun.com/108.html'>[Ubuntu] Chromeをインストールする方法</a><span>2019/11/06 19:48:19</span></li><li><a href='https://www.nowonbun.com/107.html'>[CentOS] YUMについて、YUMが出来ない場合処理方法</a><span>2019/11/05 07:17:58</span></li><li><a href='https://www.nowonbun.com/106.html'>[CentOS] MariaDB(Mysql)をインストール</a><span>2019/11/04 18:35:10</span></li><li><a href='https://www.nowonbun.com/105.html'>[CentOS] FTPインストールする方法(vsftpd)</a><span>2019/11/01 07:29:57</span></li><li><a href='https://www.nowonbun.com/104.html'>[CentOS] SAMBAインストール方法</a><span>2019/10/30 07:38:57</span></li><li><a href='https://www.nowonbun.com/103.html'>[CentOS] PHPインストールする方法</a><span>2019/10/29 20:09:03</span></li><li><a href='https://www.nowonbun.com/102.html'>[CentOS] ApacheとTomcatの連携</a><span>2019/10/29 07:28:33</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
