@@ -35,30 +35,30 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / Javascript, Jquery, Css" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。ウェブサービスで構成するものは大幅で「html」と「javascript」、「css style」があります。その中で「html」はxml形式でドキュメントの構造を担当しているし、「css style」はuiデザインスタイルを担当しています。「javascript」の場合はウェブドキュメントを動的に動くようにスクリプトの領域です。先に「html」の構造に関して調べましょう。「html」はxml形式を継承したので、基本はタグが開くと閉める構造になっています。「&amp;lt;タグ&amp;gt;&amp;lt;/タグ&amp;gt;」の構造ですね。閉めるタグには「/」記号を入れて表示します。基本構造は初めドキュメントタイプ宣言してhtmlタグから始まります。htmlタグはheadタグとbodyタグが必須にあるし、headタグはtitleタグが必須にあります。上の構造になっています。headのタグはtitleやメタタグ、style宣言、script宣言などがあります。bodyタグは実際にブラウザから見えるデータタグがあります。                    タグ        説明                            html        htmlタグの最上位タグです。(必須)                    head        htmlの下位タグでheadではタイトル、メタ情報があります。                    body        htmlの下位タグでhtmlのドキュメント情報があります。                    meta        headの下位タグでドキュメントのメタ情報があります。        メタ情報はドキュメントエンコーディング情報、キーワード、検索サイトの制御設定、外部リンク情報があります。                    title        headの下位タグでhtmlドキュメントのタイトルで宣言するし、ブラウザのタイトルで表示します。                    link        headの下位タグでライブラリなどをリンクします。                    header        bodyの下位タグでドキュメントの上端部分を作成します。       ]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。前述でタグに関して調べて見ました。link - [html] metaタグに関して(seo最適化)今日、説明しようという「opengraph」も実はhtmlのメタタグの中ですが、その特性が一般メタタグと違うので別の投稿で掲示しました。「opengraph」はsns(ソーシャルネットワーク)でよく使うタグです。我々がsnsでウェブページのリックを##00コピペーする時に、ただurlアドレスだけあればそのリンクだけではウェブページの情報が何があるかを知らないですね。例えば、私がツイッターにブログのリンクを掲示した場合、他人がそのリンクが開発サイトかアダルトサイトかは知らないです。また、最近ウェブページでスパムや悪性コードがあるサイトが多い時代にはただリンクだけでは接続が大変ですね。その時に使うプリビュータグでイメージやリンクの説明、タイトルを表示するようなタグです。上のイメージは私がツイッターに掲示したブログのリンクです。イメージやタイトル、説明が表示されますね。「opengraph」に関して調べましょう。link -  http://ogp.meopengraphの基本タグ1. og:title - サイトのタイトルタグ2. og:type - サイトの種類スタイル (例)video.movie3. og:image - サイトの代表イメージ4. og:url - サイトの代表urlopengraphのオプションタグ1. og:audio - サイトで含めるオーディオファイルurl2. og:description - サイトの説明3. og:determiner - 文言の始まる単語の選択ですが、日本語とは関係ないと思います。4. og:locale - サイトの言語です。基本値は「en_us」ですが、日本語は「ja_jp」です。5. og:locale:alternate - サイトの多国語設定タグです。6. og:site_name - サイトタイトルはtitleタグで設定しますが、site_nameは細かいカテゴリタイトルです。7. og:video - サイトで含めている動画ファイルurlopengraphの構造プロパティog:オブジェクト:url - イメージあるいはビデオ、オーディオオブジェクトアドレスog:オブジェクト:secure_url - ssl(https)のア]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [HTML] HTMLタグ構造" />
-<link rel="canonical" href="https://www.nowonbun.com/115.html" />
+<meta name="title" content="明月の開発ストーリ :: [HTML] Open graph(ogタグ)" />
+<link rel="canonical" href="https://www.nowonbun.com/117.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [HTML] HTMLタグ構造" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。ウェブサービスで構成するものは大幅で「html」と「javascript」、「css style」があります。その中で「html」はxml形式でドキュメントの構造を担当しているし、「css style」はuiデザインスタイルを担当しています。「javascript」の場合はウェブドキュメントを動的に動くようにスクリプトの領域です。先に「html」の構造に関して調べましょう。「html」はxml形式を継承したので、基本はタグが開くと閉める構造になっています。「&amp;lt;タグ&amp;gt;&amp;lt;/タグ&amp;gt;」の構造ですね。閉めるタグには「/」記号を入れて表示します。基本構造は初めドキュメントタイプ宣言してhtmlタグから始まります。htmlタグはheadタグとbodyタグが必須にあるし、headタグはtitleタグが必須にあります。上の構造になっています。headのタグはtitleやメタタグ、style宣言、script宣言などがあります。bodyタグは実際にブラウザから見えるデータタグがあります。                    タグ        説明                            html        htmlタグの最上位タグです。(必須)                    head        htmlの下位タグでheadではタイトル、メタ情報があります。                    body        htmlの下位タグでhtmlのドキュメント情報があります。                    meta        headの下位タグでドキュメントのメタ情報があります。        メタ情報はドキュメントエンコーディング情報、キーワード、検索サイトの制御設定、外部リンク情報があります。                    title        headの下位タグでhtmlドキュメントのタイトルで宣言するし、ブラウザのタイトルで表示します。                    link        headの下位タグでライブラリなどをリンクします。                    header        bodyの下位タグでドキュメントの上端部分を作成します。       ]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [HTML] Open graph(ogタグ)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。前述でタグに関して調べて見ました。link - [html] metaタグに関して(seo最適化)今日、説明しようという「opengraph」も実はhtmlのメタタグの中ですが、その特性が一般メタタグと違うので別の投稿で掲示しました。「opengraph」はsns(ソーシャルネットワーク)でよく使うタグです。我々がsnsでウェブページのリックを##00コピペーする時に、ただurlアドレスだけあればそのリンクだけではウェブページの情報が何があるかを知らないですね。例えば、私がツイッターにブログのリンクを掲示した場合、他人がそのリンクが開発サイトかアダルトサイトかは知らないです。また、最近ウェブページでスパムや悪性コードがあるサイトが多い時代にはただリンクだけでは接続が大変ですね。その時に使うプリビュータグでイメージやリンクの説明、タイトルを表示するようなタグです。上のイメージは私がツイッターに掲示したブログのリンクです。イメージやタイトル、説明が表示されますね。「opengraph」に関して調べましょう。link -  http://ogp.meopengraphの基本タグ1. og:title - サイトのタイトルタグ2. og:type - サイトの種類スタイル (例)video.movie3. og:image - サイトの代表イメージ4. og:url - サイトの代表urlopengraphのオプションタグ1. og:audio - サイトで含めるオーディオファイルurl2. og:description - サイトの説明3. og:determiner - 文言の始まる単語の選択ですが、日本語とは関係ないと思います。4. og:locale - サイトの言語です。基本値は「en_us」ですが、日本語は「ja_jp」です。5. og:locale:alternate - サイトの多国語設定タグです。6. og:site_name - サイトタイトルはtitleタグで設定しますが、site_nameは細かいカテゴリタイトルです。7. og:video - サイトで含めている動画ファイルurlopengraphの構造プロパティog:オブジェクト:url - イメージあるいはビデオ、オーディオオブジェクトアドレスog:オブジェクト:secure_url - ssl(https)のア]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/115.html" />
+<meta property="og:url" content="https://www.nowonbun.com/117.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [HTML] HTMLタグ構造" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。ウェブサービスで構成するものは大幅で「html」と「javascript」、「css style」があります。その中で「html」はxml形式でドキュメントの構造を担当しているし、「css style」はuiデザインスタイルを担当しています。「javascript」の場合はウェブドキュメントを動的に動くようにスクリプトの領域です。先に「html」の構造に関して調べましょう。「html」はxml形式を継承したので、基本はタグが開くと閉める構造になっています。「&amp;lt;タグ&amp;gt;&amp;lt;/タグ&amp;gt;」の構造ですね。閉めるタグには「/」記号を入れて表示します。基本構造は初めドキュメントタイプ宣言してhtmlタグから始まります。htmlタグはheadタグとbodyタグが必須にあるし、headタグはtitleタグが必須にあります。上の構造になっています。headのタグはtitleやメタタグ、style宣言、script宣言などがあります。bodyタグは実際にブラウザから見えるデータタグがあります。                    タグ        説明                            html        htmlタグの最上位タグです。(必須)                    head        htmlの下位タグでheadではタイトル、メタ情報があります。                    body        htmlの下位タグでhtmlのドキュメント情報があります。                    meta        headの下位タグでドキュメントのメタ情報があります。        メタ情報はドキュメントエンコーディング情報、キーワード、検索サイトの制御設定、外部リンク情報があります。                    title        headの下位タグでhtmlドキュメントのタイトルで宣言するし、ブラウザのタイトルで表示します。                    link        headの下位タグでライブラリなどをリンクします。                    header        bodyの下位タグでドキュメントの上端部分を作成します。       ]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [HTML] Open graph(ogタグ)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。前述でタグに関して調べて見ました。link - [html] metaタグに関して(seo最適化)今日、説明しようという「opengraph」も実はhtmlのメタタグの中ですが、その特性が一般メタタグと違うので別の投稿で掲示しました。「opengraph」はsns(ソーシャルネットワーク)でよく使うタグです。我々がsnsでウェブページのリックを##00コピペーする時に、ただurlアドレスだけあればそのリンクだけではウェブページの情報が何があるかを知らないですね。例えば、私がツイッターにブログのリンクを掲示した場合、他人がそのリンクが開発サイトかアダルトサイトかは知らないです。また、最近ウェブページでスパムや悪性コードがあるサイトが多い時代にはただリンクだけでは接続が大変ですね。その時に使うプリビュータグでイメージやリンクの説明、タイトルを表示するようなタグです。上のイメージは私がツイッターに掲示したブログのリンクです。イメージやタイトル、説明が表示されますね。「opengraph」に関して調べましょう。link -  http://ogp.meopengraphの基本タグ1. og:title - サイトのタイトルタグ2. og:type - サイトの種類スタイル (例)video.movie3. og:image - サイトの代表イメージ4. og:url - サイトの代表urlopengraphのオプションタグ1. og:audio - サイトで含めるオーディオファイルurl2. og:description - サイトの説明3. og:determiner - 文言の始まる単語の選択ですが、日本語とは関係ないと思います。4. og:locale - サイトの言語です。基本値は「en_us」ですが、日本語は「ja_jp」です。5. og:locale:alternate - サイトの多国語設定タグです。6. og:site_name - サイトタイトルはtitleタグで設定しますが、site_nameは細かいカテゴリタイトルです。7. og:video - サイトで含めている動画ファイルurlopengraphの構造プロパティog:オブジェクト:url - イメージあるいはビデオ、オーディオオブジェクトアドレスog:オブジェクト:secure_url - ssl(https)のア]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [HTML] HTMLタグ構造</title>
+<title>明月の開発ストーリ :: [HTML] Open graph(ogタグ)</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[HTML] HTMLタグ構造</h1>
+					<h1 id="titleTxt">[HTML] Open graph(ogタグ)</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/11/22 19:49:41   修正日付 : 2019/11/22 19:49:41
+					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/11/26 07:42:20   修正日付 : 2019/11/26 07:42:56
 				</div>
 			</div>
 			<div class="article">
@@ -137,105 +137,90 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>ウェブサービスで構成するものは大幅で「Html」と「Javascript」、「CSS Style」があります。</p> 
-  <p>その中で「Html」はXml形式でドキュメントの構造を担当しているし、「CSS Style」はUIデザインスタイルを担当しています。「Javascript」の場合はウェブドキュメントを動的に動くようにスクリプトの領域です。</p> 
-  <p>先に「Html」の構造に関して調べましょう。</p> 
+  <p>前述でタグに関して調べて見ました。</p> 
+  <p>link - <a href="https://www.nowonbun.com/116.html" target="_blank">[HTML] Metaタグに関して(SEO最適化)</a></p> 
   <p><br></p> 
-  <p>「Html」はXml形式を継承したので、基本はタグが開くと閉める構造になっています。</p> 
-  <p>「&lt;タグ&gt;&lt;/タグ&gt;」の構造ですね。閉めるタグには「/」記号を入れて表示します。</p> 
+  <p>今日、説明しようという「opengraph」も実はhtmlのメタタグの中ですが、その特性が一般メタタグと違うので別の投稿で掲示しました。</p> 
+  <p>「opengraph」はSNS(ソーシャルネットワーク)でよく使うタグです。我々がSNSでウェブページのリックを##00コピペーする時に、ただURLアドレスだけあればそのリンクだけではウェブページの情報が何があるかを知らないですね。</p> 
+  <p>例えば、私がツイッターにブログのリンクを掲示した場合、他人がそのリンクが開発サイトかアダルトサイトかは知らないです。また、最近ウェブページでスパムや悪性コードがあるサイトが多い時代にはただリンクだけでは接続が大変ですね。</p> 
   <p><br></p> 
-  <p>基本構造は初めドキュメントタイプ宣言してhtmlタグから始まります。</p> 
-  <p>htmlタグはheadタグとbodyタグが必須にあるし、headタグはtitleタグが必須にあります。</p> 
-  <pre><code class="html" data-type="Htmlの基本構造">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
+  <p>その時に使うプリビュータグでイメージやリンクの説明、タイトルを表示するようなタグです。</p> 
+  <p style="text-align:left;"><img src="./contents/117/664_001.png" data-filename="001.png" style="width: 848px;"></p> 
+  <p>上のイメージは私がツイッターに掲示したブログのリンクです。イメージやタイトル、説明が表示されますね。</p> 
+  <p><br></p> 
+  <p>「opengraph」に関して調べましょう。</p> 
+  <p>link - <a href="http://ogp.me" target="_blank">http://ogp.me</a></p> 
+  <p><br></p> 
+  <h2><b><span>opengraphの基本タグ</span></b></h2> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <p>1. og:title - サイトのタイトルタグ</p> 
+   <p>2. og:type - サイトの種類スタイル (例)video.movie</p> 
+   <p>3. og:image - サイトの代表イメージ</p> 
+   <p>4. og:url - サイトの代表URL</p> 
+   <pre><code class="html" data-type="default tag">&lt;meta property="og:title" content="明月の開発ストーリ" /&gt;
+&lt;meta property="og:type" content="website" /&gt;
+&lt;meta property="og:url" content="https://www.nowonbun.com" /&gt;
+&lt;meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" /&gt;
 </code></pre> 
-  <p>上の構造になっています。headのタグはtitleやメタタグ、style宣言、script宣言などがあります。bodyタグは実際にブラウザから見えるデータタグがあります。</p> 
-  <div class="table-responsive"> 
-   <table class="table table-striped table-bordered table-condensed"> 
-    <thead> 
-     <tr style="background-color:#DAD7D7"> 
-      <th>タグ</th> 
-      <th>説明</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td>html</td> 
-      <td>HTMLタグの最上位タグです。(必須)</td> 
-     </tr> 
-     <tr> 
-      <td>head</td> 
-      <td>HTMLの下位タグでheadではタイトル、メタ情報があります。</td> 
-     </tr> 
-     <tr> 
-      <td>body</td> 
-      <td>HTMLの下位タグでHTMLのドキュメント情報があります。</td> 
-     </tr> 
-     <tr> 
-      <td>meta</td> 
-      <td>headの下位タグでドキュメントのメタ情報があります。<br> メタ情報はドキュメントエンコーディング情報、キーワード、検索サイトの制御設定、外部リンク情報があります。</td> 
-     </tr> 
-     <tr> 
-      <td>title</td> 
-      <td>headの下位タグでHTMLドキュメントのタイトルで宣言するし、ブラウザのタイトルで表示します。</td> 
-     </tr> 
-     <tr> 
-      <td>link</td> 
-      <td>headの下位タグでライブラリなどをリンクします。</td> 
-     </tr> 
-     <tr> 
-      <td>header</td> 
-      <td>bodyの下位タグでドキュメントの上端部分を作成します。</td> 
-     </tr> 
-     <tr> 
-      <td>main</td> 
-      <td>bodyの下位タグでとキュメンとのメインコンテンツを作成します。</td> 
-     </tr> 
-     <tr> 
-      <td>article</td> 
-      <td>bodyの下位タグで独立的なコンテンツを作成します。</td> 
-     </tr> 
-     <tr> 
-      <td>session</td> 
-      <td>bodyの下位タグでコンテンツのセッションを区分します。</td> 
-     </tr> 
-     <tr> 
-      <td>nav</td> 
-      <td>bodyの下位タグでドキュメントのナビを作成します。</td> 
-     </tr> 
-     <tr> 
-      <td>aside</td> 
-      <td>bodyの下位タグでmainタグのメインコンテンツと情報を分離します。</td> 
-     </tr> 
-     <tr> 
-      <td>footer</td> 
-      <td>bodyの下位タグでドキュメントの下端部分を作成します。</td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <p>構造的なHTMLを説明しましたが、理解しにくいですね。</p> 
-  <p style="text-align:left;"><img src="./contents/115/662_001.jpeg" data-filename="001.jpeg" style="width: 650px;"></p> 
-  <p>上のイメージはheadタグは省略してbodyタグの領域だけ説明しました。実際には上みたいにタグをまもりながらコード実装はしないですね。</p> 
-  <p>でも、タグを確実に分けて作成するとデータ区分もしやすくなるし、CSS可読性をよくなります。</p> 
+  </blockquote> 
+  <h2><b><span>opengraphのオプションタグ</span></b></h2> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <p>1. og:audio - サイトで含めるオーディオファイルURL</p> 
+   <p>2. og:description - サイトの説明</p> 
+   <p>3. og:determiner - 文言の始まる単語の選択ですが、日本語とは関係ないと思います。</p> 
+   <p>4. og:locale - サイトの言語です。基本値は「en_US」ですが、日本語は「ja_JP」です。</p> 
+   <p>5. og:locale:alternate - サイトの多国語設定タグです。</p> 
+   <p>6. og:site_name - サイトタイトルはtitleタグで設定しますが、site_nameは細かいカテゴリタイトルです。</p> 
+   <p>7. og:video - サイトで含めている動画ファイルURL</p> 
+   <pre><code class="html" data-type="option tag">&lt;meta property="og:audio" content="http://example.com/bond/theme.mp3" /&gt;
+&lt;meta property="og:description"  content="&lt;![CDATA[説明]]&gt;"" /&gt;
+&lt;meta property="og:determiner" content="the" /&gt;
+&lt;meta property="og:locale" content="en_GB" /&gt;
+&lt;meta property="og:locale:alternate" content="fr_FR" /&gt;
+&lt;meta property="og:locale:alternate" content="es_ES" /&gt;
+&lt;meta property="og:site_name" content="Open graph タグ" /&gt;
+&lt;meta property="og:video" content="http://example.com/bond/trailer.swf" /&gt;
+</code></pre> 
+  </blockquote> 
+  <h2><b><span>opengraphの構造プロパティ</span></b></h2> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <p>og:オブジェクト:url - イメージあるいはビデオ、オーディオオブジェクトアドレス</p> 
+   <p>og:オブジェクト:secure_url - SSL(HTTPS)のアドレス</p> 
+   <p>og:オブジェクト:type - オブジェクトタイプの種類</p> 
+   <p>og:オブジェクト:width - オブジェクト幅</p> 
+   <p>og:オブジェクト:height - オブジェクト高さ</p> 
+   <p>og:オブジェクト:alt - オブジェクト説明</p> 
+   <pre><code class="html" data-type="structure property">&lt;meta property="og:image" content="http://example.com/ogp.jpg" /&gt;
+&lt;meta property="og:image:secure_url" content="https://secure.example.com/ogp.jpg" /&gt;
+&lt;meta property="og:image:type" content="image/jpeg" /&gt;
+&lt;meta property="og:image:width" content="400" /&gt;
+&lt;meta property="og:image:height" content="300" /&gt;
+&lt;meta property="og:image:alt" content="A shiny red apple with a bite taken out" /&gt;
+&lt;meta property="og:video" content="http://example.com/movie.swf" /&gt;
+&lt;meta property="og:video:secure_url" content="https://secure.example.com/movie.swf" /&gt;
+&lt;meta property="og:video:type" content="application/x-shockwave-flash" /&gt;
+&lt;meta property="og:video:width" content="400" /&gt;
+&lt;meta property="og:video:height" content="300" /&gt;
+&lt;meta property="og:audio" content="http://example.com/sound.mp3" /&gt;
+&lt;meta property="og:audio:secure_url" content="https://secure.example.com/sound.mp3" /&gt;
+&lt;meta property="og:audio:type" content="audio/mpeg" /&gt;
+</code></pre> 
+  </blockquote> 
+  <p>Arrays(配列)とObject Typesのこともありますが、必要がないと思います。</p> 
+  <p>ここまで、opengraphに関して調査しましたが、opengraphは検索最適化とは関係ないです。</p> 
+  <p>googleマニュアルでもopengraphは検索順位で影響があるということはありません。</p> 
   <p><br></p> 
-  <p>既存よりHTML5の場合はタグがたくさんありますね。昔は筆者もこのタグの種類をよく知らずに、全て「div」タグでCSSを付けて作成した記憶があります。</p> 
-  <p>その時より、HTMLがもっとドキュメントらしいな雰囲気もあるし、みやすいですね。</p> 
+  <p>link - <a href="https://support.google.com/webmasters/answer/7451184?hl=ko" target="_blank">https://support.google.com/webmasters/answer/7451184?hl=ko</a></p> 
   <p><br></p> 
-  <p>また、このタグにはSEOと関係があり、タグの目的をきちんとまもって使うと検索順位でも影響がありそうです。本当かどうかをもっとテストをしなければならないですね。</p>
+  <p>でも、Googleでは他のサイトでどのぐらいリンクされていることは検索順位では影響があります。</p> 
+  <p>つまり、opengraphだけでは検索順位では影響がないですが、opengraphが設定されているサイトはSNSでリンク共有がしやすいので、2次的にグーグルの検索順位で影響があります。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=html>#html</a>,<a href=./search.html?query=tag>#tag</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=ogtag>#ogtag</a> </span>
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0204">Study / Javascript, Jquery, Css</a>」の他投稿</div>
