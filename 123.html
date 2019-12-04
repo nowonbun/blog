@@ -35,30 +35,30 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / Javascript, Jquery, Css" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。前述で疑似クラス nth-childとnth-of-typeに関して説明しました。link - [css] 疑似クラス - nth-child, nth-of-type, nth-last-child, nth-last-of-type今回は「first-child」と「first-of-type」に関して調べてみます。簡単に「first-child」に説明すると「first-child」は「nth-child(1)」と同じ意味です。上のテーブルで全ての枠を描こうと思いまして、「td」のタグで重ねないようにしようと考えています。初めの行の初めの列だけの左上の枠を描いて全ての「td」の右下を描くと全ての枠が描くことに出来ます。参考に「first-child」の代わりに「nth-child(1)」を入れても同じ結果になります。]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。前述で疑似クラス nth-childとnth-of-type,first-child,fist-of-typeに関して説明しました。link - [css] 疑似クラス - nth-child, nth-of-type, nth-last-child, nth-last-of-typelink - [css] 疑似クラス - first-child, last-child, first-of-type, last-of-type今回の投稿ではonly-child, only-of-type, empty, empty, rootを調べると思いますが、あまり使わない選択子ですね。それで例を確認しましょう。そしてcssで「only-child, only-of-type, empty, empty, root」を作成してまましょう。「only-child」の疑似クラスは「test」クラスの派生タグで「p」タグが一つだけあることを探します。そしたら「p」タグを持っている「.test」クラスのエレメントは初めの「div」タグと２つ目の「div」タグですね。でも２つ目の「div」タグは「p」タグ以外に「span」タグも持っているので、「only-child」では初めの「dev &amp;gt; p」タグが文字が赤くなると思います。次は「only-of-type」です。「only-of-type」は「only-child」と似てますが、結果は全然違います。「p:only-child」の場合は全ての派生タグで一つの「p」タグと意味です。「span:only-of-type」の場合は全ての派生タグではなく「span」のバグが一つだけのタグですね。「div.test」タグを見ると２つ目と３つ目が「div」タグで「span」タグを持っていますが、２つ目の場合は「span」タグが２つですね。３番目の「div」タグだけ対象です。「:empty」の場合は派生のタグがないタグを調べます。参考に「&amp;lt;タグ&amp;gt;テスト値&amp;lt;/タグ&amp;gt;」の形式も派生データがあることで判断します。つまり、「:empty」に選択されません。「:root」は「html」を選択することと同じ意味です。「html」や「body」選択することと「:root」で選択することと差異があるかな。]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type" />
-<link rel="canonical" href="https://www.nowonbun.com/122.html" />
+<meta name="title" content="明月の開発ストーリ :: [CSS] 疑似クラス - only-child, only-of-type, empty, empty, root" />
+<link rel="canonical" href="https://www.nowonbun.com/123.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。前述で疑似クラス nth-childとnth-of-typeに関して説明しました。link - [css] 疑似クラス - nth-child, nth-of-type, nth-last-child, nth-last-of-type今回は「first-child」と「first-of-type」に関して調べてみます。簡単に「first-child」に説明すると「first-child」は「nth-child(1)」と同じ意味です。上のテーブルで全ての枠を描こうと思いまして、「td」のタグで重ねないようにしようと考えています。初めの行の初めの列だけの左上の枠を描いて全ての「td」の右下を描くと全ての枠が描くことに出来ます。参考に「first-child」の代わりに「nth-child(1)」を入れても同じ結果になります。]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [CSS] 疑似クラス - only-child, only-of-type, empty, empty, root" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。前述で疑似クラス nth-childとnth-of-type,first-child,fist-of-typeに関して説明しました。link - [css] 疑似クラス - nth-child, nth-of-type, nth-last-child, nth-last-of-typelink - [css] 疑似クラス - first-child, last-child, first-of-type, last-of-type今回の投稿ではonly-child, only-of-type, empty, empty, rootを調べると思いますが、あまり使わない選択子ですね。それで例を確認しましょう。そしてcssで「only-child, only-of-type, empty, empty, root」を作成してまましょう。「only-child」の疑似クラスは「test」クラスの派生タグで「p」タグが一つだけあることを探します。そしたら「p」タグを持っている「.test」クラスのエレメントは初めの「div」タグと２つ目の「div」タグですね。でも２つ目の「div」タグは「p」タグ以外に「span」タグも持っているので、「only-child」では初めの「dev &amp;gt; p」タグが文字が赤くなると思います。次は「only-of-type」です。「only-of-type」は「only-child」と似てますが、結果は全然違います。「p:only-child」の場合は全ての派生タグで一つの「p」タグと意味です。「span:only-of-type」の場合は全ての派生タグではなく「span」のバグが一つだけのタグですね。「div.test」タグを見ると２つ目と３つ目が「div」タグで「span」タグを持っていますが、２つ目の場合は「span」タグが２つですね。３番目の「div」タグだけ対象です。「:empty」の場合は派生のタグがないタグを調べます。参考に「&amp;lt;タグ&amp;gt;テスト値&amp;lt;/タグ&amp;gt;」の形式も派生データがあることで判断します。つまり、「:empty」に選択されません。「:root」は「html」を選択することと同じ意味です。「html」や「body」選択することと「:root」で選択することと差異があるかな。]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/122.html" />
+<meta property="og:url" content="https://www.nowonbun.com/123.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。前述で疑似クラス nth-childとnth-of-typeに関して説明しました。link - [css] 疑似クラス - nth-child, nth-of-type, nth-last-child, nth-last-of-type今回は「first-child」と「first-of-type」に関して調べてみます。簡単に「first-child」に説明すると「first-child」は「nth-child(1)」と同じ意味です。上のテーブルで全ての枠を描こうと思いまして、「td」のタグで重ねないようにしようと考えています。初めの行の初めの列だけの左上の枠を描いて全ての「td」の右下を描くと全ての枠が描くことに出来ます。参考に「first-child」の代わりに「nth-child(1)」を入れても同じ結果になります。]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] 疑似クラス - only-child, only-of-type, empty, empty, root" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。前述で疑似クラス nth-childとnth-of-type,first-child,fist-of-typeに関して説明しました。link - [css] 疑似クラス - nth-child, nth-of-type, nth-last-child, nth-last-of-typelink - [css] 疑似クラス - first-child, last-child, first-of-type, last-of-type今回の投稿ではonly-child, only-of-type, empty, empty, rootを調べると思いますが、あまり使わない選択子ですね。それで例を確認しましょう。そしてcssで「only-child, only-of-type, empty, empty, root」を作成してまましょう。「only-child」の疑似クラスは「test」クラスの派生タグで「p」タグが一つだけあることを探します。そしたら「p」タグを持っている「.test」クラスのエレメントは初めの「div」タグと２つ目の「div」タグですね。でも２つ目の「div」タグは「p」タグ以外に「span」タグも持っているので、「only-child」では初めの「dev &amp;gt; p」タグが文字が赤くなると思います。次は「only-of-type」です。「only-of-type」は「only-child」と似てますが、結果は全然違います。「p:only-child」の場合は全ての派生タグで一つの「p」タグと意味です。「span:only-of-type」の場合は全ての派生タグではなく「span」のバグが一つだけのタグですね。「div.test」タグを見ると２つ目と３つ目が「div」タグで「span」タグを持っていますが、２つ目の場合は「span」タグが２つですね。３番目の「div」タグだけ対象です。「:empty」の場合は派生のタグがないタグを調べます。参考に「&amp;lt;タグ&amp;gt;テスト値&amp;lt;/タグ&amp;gt;」の形式も派生データがあることで判断します。つまり、「:empty」に選択されません。「:root」は「html」を選択することと同じ意味です。「html」や「body」選択することと「:root」で選択することと差異があるかな。]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type</title>
+<title>明月の開発ストーリ :: [CSS] 疑似クラス - only-child, only-of-type, empty, empty, root</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type</h1>
+					<h1 id="titleTxt">[CSS] 疑似クラス - only-child, only-of-type, empty, empty, root</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/04 07:28:37   修正日付 : 2019/12/04 07:29:26
+					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/05 07:29:15   修正日付 : 2019/12/05 07:29:41
 				</div>
 			</div>
 			<div class="article">
@@ -137,72 +137,75 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>前述で疑似クラス nth-childとnth-of-typeに関して説明しました。</p> 
+  <p>前述で疑似クラス nth-childとnth-of-type,first-child,fist-of-typeに関して説明しました。</p> 
   <p>link - <a href="https://www.nowonbun.com/121.html" target="_blank">[CSS] 疑似クラス - nth-child, nth-of-type, nth-last-child, nth-last-of-type</a></p> 
+  <p>link - <a href="https://www.nowonbun.com/122.html" target="_blank">[CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type</a></p> 
   <p><br></p> 
-  <p>今回は「first-child」と「first-of-type」に関して調べてみます。</p> 
-  <p>簡単に「first-child」に説明すると「first-child」は「nth-child(1)」と同じ意味です。</p> 
+  <p>今回の投稿ではonly-child, only-of-type, empty, empty, rootを調べると思いますが、あまり使わない選択子ですね。</p> 
+  <p>それで例を確認しましょう。</p> 
   <pre><code class="html" data-type="example.html">&lt;!DOCTYPE&gt;
 &lt;html&gt;
  &lt;head&gt;
-  &lt;style&gt;
-    table {
-      border-spacing:0px;
-      padding:0px;
+    &lt;style&gt;
+    .test{
+      height:100px;
     }
-    td {
-      width:200px;
-    }
-  &lt;/style&gt;
+    &lt;/style&gt;
  &lt;/head&gt;
  &lt;body&gt;
-  &lt;table&gt;
-    &lt;tbody&gt;
-      &lt;tr&gt;
-        &lt;td&gt;1&lt;/td&gt;
-        &lt;td&gt;2&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;3&lt;/td&gt;
-        &lt;td&gt;4&lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/tbody&gt;
-  &lt;/table&gt;
+  &lt;div class="test"&gt;
+    &lt;p&gt;Testです。&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;br /&gt;
+  &lt;div class="test"&gt;
+    &lt;p&gt;Hello worldです。&lt;/p&gt;
+    &lt;br /&gt;
+    &lt;span&gt;これはSPANです。&lt;/span&gt;
+    &lt;br /&gt;
+    &lt;span&gt;これはSPAN2です。&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;br /&gt;
+  &lt;div class="test"&gt;
+    &lt;span&gt;これはSPAN3です。&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="test"&gt;&lt;/div&gt;
  &lt;/body&gt;
 &lt;/html&gt;
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/122/673_001.jpeg" data-filename="001.jpeg" style="width: 409px;"></p> 
-  <p>上のテーブルで全ての枠を描こうと思いまして、「td」のタグで重ねないようにしようと考えています。</p> 
-  <p>初めの行の初めの列だけの左上の枠を描いて全ての「td」の右下を描くと全ての枠が描くことに出来ます。</p> 
-  <pre><code class="css" data-type="draw-border.css">tr:first-child &gt; td {
-  border-top:1px solid #000;
+  <p style="text-align:left;"><img src="./contents/123/676_001.png" data-filename="001.png" style="width: 254px;"></p> 
+  <p>そしてCSSで「only-child, only-of-type, empty, empty, root」を作成してまましょう。</p> 
+  <pre><code class="css" data-type="css">.test p:only-child{
+  color:red;
 }
-td:first-child {
-  border-left:1px solid #000;
+.test span:only-of-type{
+  color:blue;
 }
-td {
-  border-right:1px solid #000;
-  border-bottom:1px solid #000;
+.test:empty{
+  background-color:green;
+}
+:root{
+  background-color:pink;
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/122/674_002.jpeg" data-filename="002.jpeg" style="width: 441px;"></p> 
-  <p>参考に「first-child」の代わりに「nth-child(1)」を入れても同じ結果になります。</p> 
+  <p>「only-child」の疑似クラスは「test」クラスの派生タグで「p」タグが一つだけあることを探します。</p> 
+  <p>そしたら「p」タグを持っている「.test」クラスのエレメントは初めの「div」タグと２つ目の「div」タグですね。でも２つ目の「div」タグは「p」タグ以外に「span」タグも持っているので、「only-child」では初めの「dev &gt; p」タグが文字が赤くなると思います。</p> 
+  <p>次は「only-of-type」です。</p> 
+  <p>「only-of-type」は「only-child」と似てますが、結果は全然違います。</p> 
+  <p>「p:only-child」の場合は全ての派生タグで一つの「p」タグと意味です。</p> 
+  <p>「span:only-of-type」の場合は全ての派生タグではなく「span」のバグが一つだけのタグですね。</p> 
+  <p>「div.test」タグを見ると２つ目と３つ目が「div」タグで「span」タグを持っていますが、２つ目の場合は「span」タグが２つですね。</p> 
+  <p>３番目の「div」タグだけ対象です。</p> 
   <p><br></p> 
-  <pre><code class="css" data-type="example.css">td:first-of-type {
-  background-color:rgba(15, 105, 35, 0.3);
-}
-td:last-of-type {
-  background-color:rgba(92, 120, 140, 0.41);
-}
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/122/675_003.jpeg" data-filename="003.jpeg" style="width: 441px;"></p>
+  <p>「:empty」の場合は派生のタグがないタグを調べます。参考に「&lt;タグ&gt;テスト値&lt;/タグ&gt;」の形式も派生データがあることで判断します。つまり、「:empty」に選択されません。</p> 
+  <p>「:root」は「html」を選択することと同じ意味です。「html」や「body」選択することと「:root」で選択することと差異があるかな。</p> 
+  <p style="text-align:left;"><img src="./contents/123/677_002.png" data-filename="002.png" style="width: 599px;"></p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=css>#css</a>,<a href=./search.html?query=selector>#selector</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=CSS>#CSS</a>,<a href=./search.html?query=Selector>#Selector</a> </span>
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0204">Study / Javascript, Jquery, Css</a>」の他投稿</div>
