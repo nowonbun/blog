@@ -34,31 +34,31 @@ body{
 <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-<meta name="keywords" content="Devlopment note / Linux" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。会社や組織グループの中でよくいうネットワークドライブという格納の場所があります。でも、ネットワークドライブではなく、正式なプロコール名は「samba」です。sambaとは「session message block」というプロトコールでcクラスネットワーク、すなわち192.168.0.1のipを持っている環境なら、192.168.0.xxxの範囲でプリンターやファイルなどを共有するようなプログラムということです。それでsambaをインストールしましょう。インストールはyumを利用して簡単に完了しました。ファイアウォールの解除と共有フォルダーを設定しましょう。解除されました。共有フォルダーを設定します。次はsambaパスワードを設定しましょう。このパスワードはサーバを接続パスワードではなく、samba接続パスワードです。サーバが起動する時にsambaを起動するような設定をしましょう。参考にselinuxで接続できない場合は解除する方法を下記通りです。接続が確認できました。]]>" />
+<meta name="keywords" content="Study / Javascript, Jquery, Css" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。前述で疑似クラス選択子に関して説明しましたが、今回は疑似要素選択子ですね。名称が似てますが、選択対象に関しては全然違いますね。疑似クラスの場合は同じタグのリストで何番目の要素を選択ということですが、疑似要素選択子はタグ要素を選択するという意味が近いではないかと思います。この疑似要素はよく使いますが、特に内容を強調やiconを付ける時によく使いますね。「first-line」は「p」、「span」、「div」タグなどの文字列を入れられるタグに使う選択子です。文字列で一行目だけ反映する選択子、つまり「br」タグの前までの適用される選択子です。タグの形式ではなく、文字列で選択する特徴をもっています。「first-letter」の場合、初めの文字だけ反映する選択子です。日本語より英語で似合う選択子で、筆者も使ったことがないですね。そして「before」と「after」はタグの前後に「content」の値を入れるタグです。疑似要素選択子はメニューやアクティブ効果などで使うとよい選択子だと思います。]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [CentOS] SAMBAインストール方法" />
-<link rel="canonical" href="https://www.nowonbun.com/104.html" />
+<meta name="title" content="明月の開発ストーリ :: [CSS] 疑似要素選択子 - fist-line, first-letter, before, after" />
+<link rel="canonical" href="https://www.nowonbun.com/125.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [CentOS] SAMBAインストール方法" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。会社や組織グループの中でよくいうネットワークドライブという格納の場所があります。でも、ネットワークドライブではなく、正式なプロコール名は「samba」です。sambaとは「session message block」というプロトコールでcクラスネットワーク、すなわち192.168.0.1のipを持っている環境なら、192.168.0.xxxの範囲でプリンターやファイルなどを共有するようなプログラムということです。それでsambaをインストールしましょう。インストールはyumを利用して簡単に完了しました。ファイアウォールの解除と共有フォルダーを設定しましょう。解除されました。共有フォルダーを設定します。次はsambaパスワードを設定しましょう。このパスワードはサーバを接続パスワードではなく、samba接続パスワードです。サーバが起動する時にsambaを起動するような設定をしましょう。参考にselinuxで接続できない場合は解除する方法を下記通りです。接続が確認できました。]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [CSS] 疑似要素選択子 - fist-line, first-letter, before, after" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。前述で疑似クラス選択子に関して説明しましたが、今回は疑似要素選択子ですね。名称が似てますが、選択対象に関しては全然違いますね。疑似クラスの場合は同じタグのリストで何番目の要素を選択ということですが、疑似要素選択子はタグ要素を選択するという意味が近いではないかと思います。この疑似要素はよく使いますが、特に内容を強調やiconを付ける時によく使いますね。「first-line」は「p」、「span」、「div」タグなどの文字列を入れられるタグに使う選択子です。文字列で一行目だけ反映する選択子、つまり「br」タグの前までの適用される選択子です。タグの形式ではなく、文字列で選択する特徴をもっています。「first-letter」の場合、初めの文字だけ反映する選択子です。日本語より英語で似合う選択子で、筆者も使ったことがないですね。そして「before」と「after」はタグの前後に「content」の値を入れるタグです。疑似要素選択子はメニューやアクティブ効果などで使うとよい選択子だと思います。]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/104.html" />
+<meta property="og:url" content="https://www.nowonbun.com/125.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [CentOS] SAMBAインストール方法" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。会社や組織グループの中でよくいうネットワークドライブという格納の場所があります。でも、ネットワークドライブではなく、正式なプロコール名は「samba」です。sambaとは「session message block」というプロトコールでcクラスネットワーク、すなわち192.168.0.1のipを持っている環境なら、192.168.0.xxxの範囲でプリンターやファイルなどを共有するようなプログラムということです。それでsambaをインストールしましょう。インストールはyumを利用して簡単に完了しました。ファイアウォールの解除と共有フォルダーを設定しましょう。解除されました。共有フォルダーを設定します。次はsambaパスワードを設定しましょう。このパスワードはサーバを接続パスワードではなく、samba接続パスワードです。サーバが起動する時にsambaを起動するような設定をしましょう。参考にselinuxで接続できない場合は解除する方法を下記通りです。接続が確認できました。]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] 疑似要素選択子 - fist-line, first-letter, before, after" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。前述で疑似クラス選択子に関して説明しましたが、今回は疑似要素選択子ですね。名称が似てますが、選択対象に関しては全然違いますね。疑似クラスの場合は同じタグのリストで何番目の要素を選択ということですが、疑似要素選択子はタグ要素を選択するという意味が近いではないかと思います。この疑似要素はよく使いますが、特に内容を強調やiconを付ける時によく使いますね。「first-line」は「p」、「span」、「div」タグなどの文字列を入れられるタグに使う選択子です。文字列で一行目だけ反映する選択子、つまり「br」タグの前までの適用される選択子です。タグの形式ではなく、文字列で選択する特徴をもっています。「first-letter」の場合、初めの文字だけ反映する選択子です。日本語より英語で似合う選択子で、筆者も使ったことがないですね。そして「before」と「after」はタグの前後に「content」の値を入れるタグです。疑似要素選択子はメニューやアクティブ効果などで使うとよい選択子だと思います。]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [CentOS] SAMBAインストール方法</title>
+<title>明月の開発ストーリ :: [CSS] 疑似要素選択子 - fist-line, first-letter, before, after</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[CentOS] SAMBAインストール方法</h1>
+					<h1 id="titleTxt">[CSS] 疑似要素選択子 - fist-line, first-letter, before, after</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0106">Devlopment note / Linux</a>    作成日付 : 2019/10/30 07:38:57   修正日付 : 2019/10/30 07:39:42
+					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/09 07:28:27   修正日付 : 2019/12/09 07:28:47
 				</div>
 			</div>
 			<div class="article">
@@ -137,78 +137,80 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>会社や組織グループの中でよくいうネットワークドライブという格納の場所があります。</p> 
-  <p>でも、ネットワークドライブではなく、正式なプロコール名は「samba」です。</p> 
-  <p>SAMBAとは「Session Message Block」というプロトコールでCクラスネットワーク、すなわち192.168.0.1のIPを持っている環境なら、192.168.0.XXXの範囲でプリンターやファイルなどを共有するようなプログラムということです。</p> 
-  <p>それでSAMBAをインストールしましょう。</p> 
-  <pre><code class="shell" data-type="samba install">yum install samba
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/104/581_001.png" data-filename="001.png" style="width: 848px;"></p> 
-  <p>インストールはyumを利用して簡単に完了しました。</p> 
+  <p>前述で疑似クラス選択子に関して説明しましたが、今回は疑似要素選択子ですね。</p> 
+  <p>名称が似てますが、選択対象に関しては全然違いますね。</p> 
   <p><br></p> 
-  <p>ファイアウォールの解除と共有フォルダーを設定しましょう。</p> 
-  <pre><code class="shell" data-type="firewall setting">firewall-cmd --zone=public --list-all
-firewall-cmd --permanent --zone=public --add-service=samba
-firewall-cmd --reload
-firewall-cmd --zone=public --list-all
+  <p>疑似クラスの場合は同じタグのリストで何番目の要素を選択ということですが、疑似要素選択子はタグ要素を選択するという意味が近いではないかと思います。</p> 
+  <p>この疑似要素はよく使いますが、特に内容を強調やiconを付ける時によく使いますね。</p> 
+  <pre><code class="html" data-type="html example">&lt;!DOCTYPE&gt;
+&lt;html&gt;
+ &lt;head&gt;&lt;/head&gt;
+ &lt;body&gt;
+  &lt;p&gt;こんにちは。&lt;br&gt;明月です。&lt;br /&gt;これは練習です。&lt;/p&gt;  
+  &lt;ul&gt;
+    &lt;li&gt;TEST1&lt;/li&gt;
+    &lt;li class="new"&gt;TEST2&lt;/li&gt;
+    &lt;li&gt;TEST3&lt;/li&gt;
+    &lt;li&gt;TEST4&lt;/li&gt;
+    &lt;li class="note"&gt;TEST5&lt;/li&gt;
+    &lt;li&gt;TEST6&lt;/li&gt;
+    &lt;li&gt;TEST7&lt;/li&gt;
+    &lt;li&gt;TEST8&lt;/li&gt;
+    &lt;li&gt;TEST9&lt;/li&gt;
+  &lt;/ul&gt;
+ &lt;/body&gt;
+&lt;/html&gt;
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/104/582_002.png" data-filename="002.png" style="width: 848px;"></p> 
-  <p>解除されました。共有フォルダーを設定します。</p> 
-  <pre><code class="shell" data-type="shell command">cd /home
-#フォルダー生成
-mkdir shared
-#権限設定
-chmod 777 shared
-#Samba設定ファイルを編集
-cd /etc/samba
-vi smb.conf
+  <pre><code class="css" data-type="css example">/*pタグの一行目*/
+p:first-line {
+  color:blue;
+}
+/*pタグの初めの文字*/
+p:first-letter {
+  font-size:30px;
+}
+/*liタグ*/
+li {
+  margin:10px 0px;
+}
+/*liタグの前の要素*/
+li.note:before{
+  content:"note!"; /*「note!」という文字を入れる*/
+  border:1px solid rgba(52, 94, 236, 0.51);
+  margin:0px 5px;
+  border-radius:5px;
+  color:rgba(224, 89, 89, 0.88);
+  background-color:rgba(102, 255, 253, 0.39);
+  font-weight:bold;
+  padding:1px;
+  font-size:9px;
+}
+/*liタグの後の要素*/
+li.new:after{
+  content:"new"; /*「new」という文字を入れる*/
+  color:red;
+  font-weight:bold;
+  font-size:9px;
+  margin:0px 5px;
+}
 </code></pre> 
-  <pre><code class="shell" data-type="smb.conf">[global]
-  workgroup = WORKGROUP
-  security = user
-  passdb backend = tdbsam
-  printing = cups
-  printcap name = cups
-  load printers = yes
-  cups options = raw
- 
-[shared]
-  comment = First Shared Folder
-  path = /home/shared
-  public = yes
-  writable = yes
-  write list = ユーザid
-  create mask = 0777
-  directory mask = 0777
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/104/584_003.png" data-filename="003.png" style="width: 848px;"></p> 
-  <p>次はsambaパスワードを設定しましょう。このパスワードはサーバを接続パスワードではなく、samba接続パスワードです。</p> 
-  <pre><code class="shell" data-type="samba password">smbpasswd -a 接続 id
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/104/583_004.png" data-filename="004.png" style="width: 848px;"></p> 
-  <p>サーバが起動する時にsambaを起動するような設定をしましょう。</p> 
-  <pre><code class="shell" data-type="">systemctl enable smb
-systemctl list-unit-files | grep enabled
-##samba 再起動
-systemctl restart smb
-</code></pre> 
-  <p>参考にSELINUXで接続できない場合は解除する方法を下記通りです。</p> 
-  <pre><code class="shell" data-type="">vi /etc/sysconfig/selinux
-SELINUX=disabled
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/104/585_005.png" data-filename="005.png" style="width: 848px;"></p> 
-  <p>接続が確認できました。</p>
+  <p>「first-line」は「p」、「span」、「div」タグなどの文字列を入れられるタグに使う選択子です。</p> 
+  <p>文字列で一行目だけ反映する選択子、つまり「br」タグの前までの適用される選択子です。タグの形式ではなく、文字列で選択する特徴をもっています。</p> 
+  <p>「first-letter」の場合、初めの文字だけ反映する選択子です。日本語より英語で似合う選択子で、筆者も使ったことがないですね。</p> 
+  <p>そして「before」と「after」はタグの前後に「content」の値を入れるタグです。</p> 
+  <p style="text-align:left;"><img src="./contents/125/681_001.png" data-filename="001.png" style="width: 401px;"></p> 
+  <p>疑似要素選択子はメニューやアクティブ効果などで使うとよい選択子だと思います。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag">  </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=css>#css</a>,<a href=./search.html?query=selector>#selector</a> </span>
 				</div>
 				<div class="other-category">
-					<div class="list-title">「<a href="./?category=0106">Devlopment note / Linux</a>」の他投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/114.html'>[Ubuntu] PHPをインストール、Composer設定する方法</a><span>2019/11/13 07:32:21</span></li><li><a href='https://www.nowonbun.com/113.html'>[Ubuntu] テーマ(Arc)を変更する方法(tweak)</a><span>2019/11/12 07:32:13</span></li><li><a href='https://www.nowonbun.com/112.html'>[Ubuntu] Apache2をインストールする方法</a><span>2019/11/11 07:28:28</span></li><li><a href='https://www.nowonbun.com/111.html'>[Ubuntu] 「acquire the dpkg frontend lock」のエラーを解決方法</a><span>2019/11/10 22:19:34</span></li><li><a href='https://www.nowonbun.com/110.html'>[Ubuntu] JavaインストールとEclipseをインストールする方法</a><span>2019/11/08 07:29:55</span></li><li><a href='https://www.nowonbun.com/109.html'>[Ubuntu] MariaDB(Mysql)をインストールする方法</a><span>2019/11/07 07:50:58</span></li><li><a href='https://www.nowonbun.com/108.html'>[Ubuntu] Chromeをインストールする方法</a><span>2019/11/06 19:48:19</span></li><li><a href='https://www.nowonbun.com/107.html'>[CentOS] YUMについて、YUMが出来ない場合処理方法</a><span>2019/11/05 07:17:58</span></li><li><a href='https://www.nowonbun.com/106.html'>[CentOS] MariaDB(Mysql)をインストール</a><span>2019/11/04 18:35:10</span></li><li><a href='https://www.nowonbun.com/105.html'>[CentOS] FTPインストールする方法(vsftpd)</a><span>2019/11/01 07:29:57</span></li><li><a href='https://www.nowonbun.com/104.html'>[CentOS] SAMBAインストール方法</a><span>2019/10/30 07:38:57</span></li><li><a href='https://www.nowonbun.com/103.html'>[CentOS] PHPインストールする方法</a><span>2019/10/29 20:09:03</span></li><li><a href='https://www.nowonbun.com/102.html'>[CentOS] ApacheとTomcatの連携</a><span>2019/10/29 07:28:33</span></li><li><a href='https://www.nowonbun.com/101.html'>[CentOS] Tomcat インストール方法</a><span>2019/10/28 22:38:56</span></li><li><a href='https://www.nowonbun.com/100.html'>[CentOS] Java インストール</a><span>2019/10/28 00:22:32</span></li></ul>
+					<div class="list-title">「<a href="./?category=0204">Study / Javascript, Jquery, Css</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/125.html'>[CSS] 疑似要素選択子 - fist-line, first-letter, before, after</a><span>2019/12/09 07:28:27</span></li><li><a href='https://www.nowonbun.com/124.html'>[CSS] 属性選択子</a><span>2019/12/06 07:27:36</span></li><li><a href='https://www.nowonbun.com/123.html'>[CSS] 疑似クラス - only-child, only-of-type, empty, empty, root</a><span>2019/12/05 07:29:15</span></li><li><a href='https://www.nowonbun.com/122.html'>[CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type</a><span>2019/12/04 07:28:37</span></li><li><a href='https://www.nowonbun.com/121.html'>[CSS] 疑似クラス - nth-child, nth-of-type, nth-last-child, nth-last-of-type</a><span>2019/12/03 07:21:20</span></li><li><a href='https://www.nowonbun.com/120.html'>[CSS] 属性選択子</a><span>2019/12/02 07:32:37</span></li><li><a href='https://www.nowonbun.com/119.html'>[C#] Selector(選択子)</a><span>2019/11/28 07:28:03</span></li><li><a href='https://www.nowonbun.com/118.html'>[CSS] CSS Stylesとは？</a><span>2019/11/27 07:30:30</span></li><li><a href='https://www.nowonbun.com/117.html'>[HTML] Open graph(ogタグ)</a><span>2019/11/26 07:42:20</span></li><li><a href='https://www.nowonbun.com/116.html'>[HTML] Metaタグに関して(SEO最適化)</a><span>2019/11/25 20:16:18</span></li><li><a href='https://www.nowonbun.com/115.html'>[HTML] HTMLタグ構造</a><span>2019/11/22 19:49:41</span></li></ul>
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
