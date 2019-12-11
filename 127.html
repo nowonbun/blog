@@ -35,30 +35,30 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / Javascript, Jquery, Css" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。前述で疑似クラス nth-childとnth-of-typeに関して説明しました。link - [css] 疑似クラス - nth-child, nth-of-type, nth-last-child, nth-last-of-type今回は「first-child」と「first-of-type」に関して調べてみます。簡単に「first-child」に説明すると「first-child」は「nth-child(1)」と同じ意味です。上のテーブルで全ての枠を描こうと思いまして、「td」のタグで重ねないようにしようと考えています。初めの行の初めの列だけの左上の枠を描いて全ての「td」の右下を描くと全ての枠が描くことに出来ます。参考に「first-child」の代わりに「nth-child(1)」を入れても同じ結果になります。]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。cssはhtmlタグでスタイルを付ける言語です。webの構造は基本文字でなっているドキュメント形式です。そこでcssで文字スタイルを付けるのが基本ではないかと思います。実はfontのスタイルは上よりもっと多いですね。でも筆者も使ったことがないし、よく使うことは上の以外にはないかと思います。font-sizeは文字のサイスのスタイルです。文字単位では、「px」、「pt」、「em」、「rem」があります。「px」の場合はピクセルの単位で文字のサイズを幅、縦がモニターの12ピクセルサイズになることです。「pt」の場合はフォントサイズの単位ですが、基準としては筆者もよく知りません。でもwordやメモ帳でよく使うフォント単位なので大体にどのサイズかは分かると思います。「em」と「rem」は比率サイズですが、「em」の場合は違いところで設定したサイズによって倍率、「rem」の場合は「root」のサイズ、つまり「html」で設定したサイズの倍率です。上の例は「em」で定義しました。「div.test」は「body」の派生位置になっているので、bodyタグの「font-size:12px」の「1倍」で設定されます。「font-style」はイタリックなどの設定です。「font-family」はフォントの種類を設定することですね。「font-weight」はフォントの太さを設定するところです。数値は何の意味かを詳しくしらないですが、「100」単位で大きい数字だと太くなります。boldやbolder、lighterでも設定ができます。font-colorはフォントの色の設定ですが、代表的な色は英語で設定してもいいです。でも細かい色はhexの色値で設定ができます。hexの色は下記のリンクを参照してください。link - https://htmlcolorcodes.com/text-alignはテキストの整列設定です。text-decorationの場合は取り消し線やアンダーラインなどの設定ができます。text-shadowの場合は影効果ですが、「左右 上下 遠さ」の順番で設定ができます。white-spaceは文字列の折り返し設定ですが、テーブルの場合は自動に折り返すことがあるので、たまにテーブル見方が崩れることがあります。]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type" />
-<link rel="canonical" href="https://www.nowonbun.com/122.html" />
+<meta name="title" content="明月の開発ストーリ :: [CSS] 文字スタイル" />
+<link rel="canonical" href="https://www.nowonbun.com/127.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。前述で疑似クラス nth-childとnth-of-typeに関して説明しました。link - [css] 疑似クラス - nth-child, nth-of-type, nth-last-child, nth-last-of-type今回は「first-child」と「first-of-type」に関して調べてみます。簡単に「first-child」に説明すると「first-child」は「nth-child(1)」と同じ意味です。上のテーブルで全ての枠を描こうと思いまして、「td」のタグで重ねないようにしようと考えています。初めの行の初めの列だけの左上の枠を描いて全ての「td」の右下を描くと全ての枠が描くことに出来ます。参考に「first-child」の代わりに「nth-child(1)」を入れても同じ結果になります。]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [CSS] 文字スタイル" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。cssはhtmlタグでスタイルを付ける言語です。webの構造は基本文字でなっているドキュメント形式です。そこでcssで文字スタイルを付けるのが基本ではないかと思います。実はfontのスタイルは上よりもっと多いですね。でも筆者も使ったことがないし、よく使うことは上の以外にはないかと思います。font-sizeは文字のサイスのスタイルです。文字単位では、「px」、「pt」、「em」、「rem」があります。「px」の場合はピクセルの単位で文字のサイズを幅、縦がモニターの12ピクセルサイズになることです。「pt」の場合はフォントサイズの単位ですが、基準としては筆者もよく知りません。でもwordやメモ帳でよく使うフォント単位なので大体にどのサイズかは分かると思います。「em」と「rem」は比率サイズですが、「em」の場合は違いところで設定したサイズによって倍率、「rem」の場合は「root」のサイズ、つまり「html」で設定したサイズの倍率です。上の例は「em」で定義しました。「div.test」は「body」の派生位置になっているので、bodyタグの「font-size:12px」の「1倍」で設定されます。「font-style」はイタリックなどの設定です。「font-family」はフォントの種類を設定することですね。「font-weight」はフォントの太さを設定するところです。数値は何の意味かを詳しくしらないですが、「100」単位で大きい数字だと太くなります。boldやbolder、lighterでも設定ができます。font-colorはフォントの色の設定ですが、代表的な色は英語で設定してもいいです。でも細かい色はhexの色値で設定ができます。hexの色は下記のリンクを参照してください。link - https://htmlcolorcodes.com/text-alignはテキストの整列設定です。text-decorationの場合は取り消し線やアンダーラインなどの設定ができます。text-shadowの場合は影効果ですが、「左右 上下 遠さ」の順番で設定ができます。white-spaceは文字列の折り返し設定ですが、テーブルの場合は自動に折り返すことがあるので、たまにテーブル見方が崩れることがあります。]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/122.html" />
+<meta property="og:url" content="https://www.nowonbun.com/127.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。前述で疑似クラス nth-childとnth-of-typeに関して説明しました。link - [css] 疑似クラス - nth-child, nth-of-type, nth-last-child, nth-last-of-type今回は「first-child」と「first-of-type」に関して調べてみます。簡単に「first-child」に説明すると「first-child」は「nth-child(1)」と同じ意味です。上のテーブルで全ての枠を描こうと思いまして、「td」のタグで重ねないようにしようと考えています。初めの行の初めの列だけの左上の枠を描いて全ての「td」の右下を描くと全ての枠が描くことに出来ます。参考に「first-child」の代わりに「nth-child(1)」を入れても同じ結果になります。]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] 文字スタイル" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。cssはhtmlタグでスタイルを付ける言語です。webの構造は基本文字でなっているドキュメント形式です。そこでcssで文字スタイルを付けるのが基本ではないかと思います。実はfontのスタイルは上よりもっと多いですね。でも筆者も使ったことがないし、よく使うことは上の以外にはないかと思います。font-sizeは文字のサイスのスタイルです。文字単位では、「px」、「pt」、「em」、「rem」があります。「px」の場合はピクセルの単位で文字のサイズを幅、縦がモニターの12ピクセルサイズになることです。「pt」の場合はフォントサイズの単位ですが、基準としては筆者もよく知りません。でもwordやメモ帳でよく使うフォント単位なので大体にどのサイズかは分かると思います。「em」と「rem」は比率サイズですが、「em」の場合は違いところで設定したサイズによって倍率、「rem」の場合は「root」のサイズ、つまり「html」で設定したサイズの倍率です。上の例は「em」で定義しました。「div.test」は「body」の派生位置になっているので、bodyタグの「font-size:12px」の「1倍」で設定されます。「font-style」はイタリックなどの設定です。「font-family」はフォントの種類を設定することですね。「font-weight」はフォントの太さを設定するところです。数値は何の意味かを詳しくしらないですが、「100」単位で大きい数字だと太くなります。boldやbolder、lighterでも設定ができます。font-colorはフォントの色の設定ですが、代表的な色は英語で設定してもいいです。でも細かい色はhexの色値で設定ができます。hexの色は下記のリンクを参照してください。link - https://htmlcolorcodes.com/text-alignはテキストの整列設定です。text-decorationの場合は取り消し線やアンダーラインなどの設定ができます。text-shadowの場合は影効果ですが、「左右 上下 遠さ」の順番で設定ができます。white-spaceは文字列の折り返し設定ですが、テーブルの場合は自動に折り返すことがあるので、たまにテーブル見方が崩れることがあります。]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type</title>
+<title>明月の開発ストーリ :: [CSS] 文字スタイル</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type</h1>
+					<h1 id="titleTxt">[CSS] 文字スタイル</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/04 07:28:37   修正日付 : 2019/12/04 07:29:26
+					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/11 21:13:22   修正日付 : 2019/12/11 21:13:45
 				</div>
 			</div>
 			<div class="article">
@@ -137,72 +137,66 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>前述で疑似クラス nth-childとnth-of-typeに関して説明しました。</p> 
-  <p>link - <a href="https://www.nowonbun.com/121.html" target="_blank">[CSS] 疑似クラス - nth-child, nth-of-type, nth-last-child, nth-last-of-type</a></p> 
-  <p><br></p> 
-  <p>今回は「first-child」と「first-of-type」に関して調べてみます。</p> 
-  <p>簡単に「first-child」に説明すると「first-child」は「nth-child(1)」と同じ意味です。</p> 
+  <p>CSSはHTMLタグでスタイルを付ける言語です。</p> 
+  <p>Webの構造は基本文字でなっているドキュメント形式です。そこでCSSで文字スタイルを付けるのが基本ではないかと思います。</p> 
   <pre><code class="html" data-type="example.html">&lt;!DOCTYPE&gt;
 &lt;html&gt;
- &lt;head&gt;
-  &lt;style&gt;
-    table {
-      border-spacing:0px;
-      padding:0px;
-    }
-    td {
-      width:200px;
-    }
-  &lt;/style&gt;
- &lt;/head&gt;
- &lt;body&gt;
-  &lt;table&gt;
-    &lt;tbody&gt;
-      &lt;tr&gt;
-        &lt;td&gt;1&lt;/td&gt;
-        &lt;td&gt;2&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;3&lt;/td&gt;
-        &lt;td&gt;4&lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/tbody&gt;
-  &lt;/table&gt;
- &lt;/body&gt;
+  &lt;head&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="test"&gt;Hello World!!!!&lt;/div&gt;
+  &lt;/body&gt;
 &lt;/html&gt;
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/122/673_001.jpeg" data-filename="001.jpeg" style="width: 409px;"></p> 
-  <p>上のテーブルで全ての枠を描こうと思いまして、「td」のタグで重ねないようにしようと考えています。</p> 
-  <p>初めの行の初めの列だけの左上の枠を描いて全ての「td」の右下を描くと全ての枠が描くことに出来ます。</p> 
-  <pre><code class="css" data-type="draw-border.css">tr:first-child &gt; td {
-  border-top:1px solid #000;
+  <pre><code class="css" data-type="example.css">html {
+  font-size: 12px;
 }
-td:first-child {
-  border-left:1px solid #000;
+body {
+  font-size: 12px;
 }
-td {
-  border-right:1px solid #000;
-  border-bottom:1px solid #000;
+div.test {
+  /*fontサイズ設定*/
+  font-size: 1em;
+  /*fontスタイル*/
+  font-style: italic;
+  /*font種類*/
+  font-family: arial;
+  /*font太さ*/
+  font-weight: 800;
+  /*font色*/
+  color: red;
+  /*font整列方法 left, center, right*/
+  text-align: center;
+  /*font効果 - underline, 取り消し線など。*/
+  text-decoration: line-through;
+  /*fontの影効果*/
+  text-shadow: 1px 2px 4px;
+  /*文字列の折り返し設定*/
+  white-space: nowrap;
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/122/674_002.jpeg" data-filename="002.jpeg" style="width: 441px;"></p> 
-  <p>参考に「first-child」の代わりに「nth-child(1)」を入れても同じ結果になります。</p> 
+  <p>実はfontのスタイルは上よりもっと多いですね。でも筆者も使ったことがないし、よく使うことは上の以外にはないかと思います。</p> 
+  <p>font-sizeは文字のサイスのスタイルです。文字単位では、「px」、「pt」、「em」、「rem」があります。</p> 
+  <p>「px」の場合はピクセルの単位で文字のサイズを幅、縦がモニターの12ピクセルサイズになることです。</p> 
+  <p>「pt」の場合はフォントサイズの単位ですが、基準としては筆者もよく知りません。でもWordやメモ帳でよく使うフォント単位なので大体にどのサイズかは分かると思います。</p> 
+  <p>「em」と「rem」は比率サイズですが、「em」の場合は違いところで設定したサイズによって倍率、「rem」の場合は「root」のサイズ、つまり「html」で設定したサイズの倍率です。</p> 
+  <p>上の例は「em」で定義しました。「div.test」は「body」の派生位置になっているので、bodyタグの「font-size:12px」の「1倍」で設定されます。</p> 
   <p><br></p> 
-  <pre><code class="css" data-type="example.css">td:first-of-type {
-  background-color:rgba(15, 105, 35, 0.3);
-}
-td:last-of-type {
-  background-color:rgba(92, 120, 140, 0.41);
-}
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/122/675_003.jpeg" data-filename="003.jpeg" style="width: 441px;"></p>
+  <p>「font-style」はイタリックなどの設定です。「font-family」はフォントの種類を設定することですね。</p> 
+  <p>「font-weight」はフォントの太さを設定するところです。数値は何の意味かを詳しくしらないですが、「100」単位で大きい数字だと太くなります。boldやbolder、lighterでも設定ができます。</p> 
+  <p>font-colorはフォントの色の設定ですが、代表的な色は英語で設定してもいいです。でも細かい色はHEXの色値で設定ができます。</p> 
+  <p>HEXの色は下記のリンクを参照してください。</p> 
+  <p>link - <a href="https://htmlcolorcodes.com/" target="_blank">https://htmlcolorcodes.com/</a></p> 
+  <p>text-alignはテキストの整列設定です。text-decorationの場合は取り消し線やアンダーラインなどの設定ができます。</p> 
+  <p>text-shadowの場合は影効果ですが、「左右 上下 遠さ」の順番で設定ができます。</p> 
+  <p>white-spaceは文字列の折り返し設定ですが、テーブルの場合は自動に折り返すことがあるので、たまにテーブル見方が崩れることがあります。</p> 
+  <p style="text-align:left;"><img src="./contents/127/683_001.png" data-filename="001.png" style="width: 775px;"></p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=css>#css</a>,<a href=./search.html?query=selector>#selector</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=css>#css</a>,<a href=./search.html?query=font+style>#font style</a> </span>
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0204">Study / Javascript, Jquery, Css</a>」の他投稿</div>
