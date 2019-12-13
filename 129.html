@@ -35,30 +35,30 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / Javascript, Jquery, Css" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。cssでselectorというのはhtmlドキュメントにスタイルを付けるような指示子ということです。このselectorは単一のタグを設定も可能し、復讐のタグの設定も可能です。そして、タグだけの指示だと特定タグを選択するのは大変ですが、アトリビュート、配列順番なのでも選択が可能です。参照リンク - https://www.w3schools.com/cssref/css_selectors.aspcss selectorを確認するように先にhtmlドキュメントを作成しましょう。上のhtmlタグは普通のテーブルタグです。htmlタグを作成したことがある方なら構造がすく理解すると思いますね。そうすると我々は「tbody」タグの１番の「tr」タグの１版「td」タグを選択したいならどうしましょうか？簡単にタグで選択すると「table#test &amp;gt; tbody &amp;gt; tr:nth-child(0) &amp;gt; td:nth-child(0)」になります。意味としてはtableのアトリビュートのiｄがtestのタグの直下派生のtbodyの直下派生のtrタグの０番目の直下派生のtdタグの0番目のタグを指しています。複雑ですね。でもタグを指しる時にはこんなに細かく全てのタグ名を書く必要はないです。タグでスタイルを定義するのはそんなに難しくないですね。それなら、css selectorに関して纏めます。                    選択子        説明                            .class        class=”class”の全てのオブジェクトを選択                    #id        id=”id”のオブジェクトを選択(タグのidはページの雄一が仕様です。)                    *        全体選択子全てのオブジェクトを選択                    element        要素選択子 - 指定した要素を選択                    element1,element2        要素選択子 - 選択する要素を様々を指定(element1とelement2を選択)                    element1 element2]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。前述からcssのスタイルに関して纏めています。今回は要素の表示タイプと位置(postision）に関して調べてみます。上の例を見ればスタイルで「display」を使いました。displayは要素のスタイルの形態を決めるものです。displayの要素の値には下記とおりにあります。                    値        説明                            inline        要素をインライン要素（など）として表示します。 高さと幅のプロパティは効果がありません。                    block        要素をブロック要素（など）として表示します。 新しい行から始まり、幅全体を占有します。                    contents        コンテナを非表示にし、要素の子要素をdomの次のレベルに上げます。                    flex        ブロックレベルのフレックスコンテナとして要素を表示します。                    grid        要素をブロックレベルのグリッドコンテナとして表示します。                    inline-block        要素をインラインレベルのブロックコンテナとして表示します。 要素自体はインライン要素としてフォーマットされますが、高さと幅の値を適用できます。                    inline-flex        要素をインラインレベルのフレックスコンテナとして表示します。                    inline-grid        要素をインラインレベルのグリッドコンテナとして表示します。                    inline-table        要素はインラインレベルの表として表示されます。                    list-item        要素を&amp;lt;li&amp;gt;要素のように動作させます。                    run-in        コンテキストに応じて、要素をブロックまたはインラインとして表示します。                    table        要素を]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [C#] Selector(選択子)" />
-<link rel="canonical" href="https://www.nowonbun.com/119.html" />
+<meta name="title" content="明月の開発ストーリ :: [CSS] 位置(position),表示(display)スタイル" />
+<link rel="canonical" href="https://www.nowonbun.com/129.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [C#] Selector(選択子)" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。cssでselectorというのはhtmlドキュメントにスタイルを付けるような指示子ということです。このselectorは単一のタグを設定も可能し、復讐のタグの設定も可能です。そして、タグだけの指示だと特定タグを選択するのは大変ですが、アトリビュート、配列順番なのでも選択が可能です。参照リンク - https://www.w3schools.com/cssref/css_selectors.aspcss selectorを確認するように先にhtmlドキュメントを作成しましょう。上のhtmlタグは普通のテーブルタグです。htmlタグを作成したことがある方なら構造がすく理解すると思いますね。そうすると我々は「tbody」タグの１番の「tr」タグの１版「td」タグを選択したいならどうしましょうか？簡単にタグで選択すると「table#test &amp;gt; tbody &amp;gt; tr:nth-child(0) &amp;gt; td:nth-child(0)」になります。意味としてはtableのアトリビュートのiｄがtestのタグの直下派生のtbodyの直下派生のtrタグの０番目の直下派生のtdタグの0番目のタグを指しています。複雑ですね。でもタグを指しる時にはこんなに細かく全てのタグ名を書く必要はないです。タグでスタイルを定義するのはそんなに難しくないですね。それなら、css selectorに関して纏めます。                    選択子        説明                            .class        class=”class”の全てのオブジェクトを選択                    #id        id=”id”のオブジェクトを選択(タグのidはページの雄一が仕様です。)                    *        全体選択子全てのオブジェクトを選択                    element        要素選択子 - 指定した要素を選択                    element1,element2        要素選択子 - 選択する要素を様々を指定(element1とelement2を選択)                    element1 element2]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [CSS] 位置(position),表示(display)スタイル" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。前述からcssのスタイルに関して纏めています。今回は要素の表示タイプと位置(postision）に関して調べてみます。上の例を見ればスタイルで「display」を使いました。displayは要素のスタイルの形態を決めるものです。displayの要素の値には下記とおりにあります。                    値        説明                            inline        要素をインライン要素（など）として表示します。 高さと幅のプロパティは効果がありません。                    block        要素をブロック要素（など）として表示します。 新しい行から始まり、幅全体を占有します。                    contents        コンテナを非表示にし、要素の子要素をdomの次のレベルに上げます。                    flex        ブロックレベルのフレックスコンテナとして要素を表示します。                    grid        要素をブロックレベルのグリッドコンテナとして表示します。                    inline-block        要素をインラインレベルのブロックコンテナとして表示します。 要素自体はインライン要素としてフォーマットされますが、高さと幅の値を適用できます。                    inline-flex        要素をインラインレベルのフレックスコンテナとして表示します。                    inline-grid        要素をインラインレベルのグリッドコンテナとして表示します。                    inline-table        要素はインラインレベルの表として表示されます。                    list-item        要素を&amp;lt;li&amp;gt;要素のように動作させます。                    run-in        コンテキストに応じて、要素をブロックまたはインラインとして表示します。                    table        要素を]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/119.html" />
+<meta property="og:url" content="https://www.nowonbun.com/129.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [C#] Selector(選択子)" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。cssでselectorというのはhtmlドキュメントにスタイルを付けるような指示子ということです。このselectorは単一のタグを設定も可能し、復讐のタグの設定も可能です。そして、タグだけの指示だと特定タグを選択するのは大変ですが、アトリビュート、配列順番なのでも選択が可能です。参照リンク - https://www.w3schools.com/cssref/css_selectors.aspcss selectorを確認するように先にhtmlドキュメントを作成しましょう。上のhtmlタグは普通のテーブルタグです。htmlタグを作成したことがある方なら構造がすく理解すると思いますね。そうすると我々は「tbody」タグの１番の「tr」タグの１版「td」タグを選択したいならどうしましょうか？簡単にタグで選択すると「table#test &amp;gt; tbody &amp;gt; tr:nth-child(0) &amp;gt; td:nth-child(0)」になります。意味としてはtableのアトリビュートのiｄがtestのタグの直下派生のtbodyの直下派生のtrタグの０番目の直下派生のtdタグの0番目のタグを指しています。複雑ですね。でもタグを指しる時にはこんなに細かく全てのタグ名を書く必要はないです。タグでスタイルを定義するのはそんなに難しくないですね。それなら、css selectorに関して纏めます。                    選択子        説明                            .class        class=”class”の全てのオブジェクトを選択                    #id        id=”id”のオブジェクトを選択(タグのidはページの雄一が仕様です。)                    *        全体選択子全てのオブジェクトを選択                    element        要素選択子 - 指定した要素を選択                    element1,element2        要素選択子 - 選択する要素を様々を指定(element1とelement2を選択)                    element1 element2]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] 位置(position),表示(display)スタイル" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。前述からcssのスタイルに関して纏めています。今回は要素の表示タイプと位置(postision）に関して調べてみます。上の例を見ればスタイルで「display」を使いました。displayは要素のスタイルの形態を決めるものです。displayの要素の値には下記とおりにあります。                    値        説明                            inline        要素をインライン要素（など）として表示します。 高さと幅のプロパティは効果がありません。                    block        要素をブロック要素（など）として表示します。 新しい行から始まり、幅全体を占有します。                    contents        コンテナを非表示にし、要素の子要素をdomの次のレベルに上げます。                    flex        ブロックレベルのフレックスコンテナとして要素を表示します。                    grid        要素をブロックレベルのグリッドコンテナとして表示します。                    inline-block        要素をインラインレベルのブロックコンテナとして表示します。 要素自体はインライン要素としてフォーマットされますが、高さと幅の値を適用できます。                    inline-flex        要素をインラインレベルのフレックスコンテナとして表示します。                    inline-grid        要素をインラインレベルのグリッドコンテナとして表示します。                    inline-table        要素はインラインレベルの表として表示されます。                    list-item        要素を&amp;lt;li&amp;gt;要素のように動作させます。                    run-in        コンテキストに応じて、要素をブロックまたはインラインとして表示します。                    table        要素を]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [C#] Selector(選択子)</title>
+<title>明月の開発ストーリ :: [CSS] 位置(position),表示(display)スタイル</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[C#] Selector(選択子)</h1>
+					<h1 id="titleTxt">[CSS] 位置(position),表示(display)スタイル</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/11/28 07:28:03   修正日付 : 2019/11/28 07:28:03
+					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/13 20:08:50   修正日付 : 2019/12/13 20:10:20
 				</div>
 			</div>
 			<div class="article">
@@ -137,285 +137,225 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>CSSでSelectorというのはHTMLドキュメントにスタイルを付けるような指示子ということです。このSelectorは単一のタグを設定も可能し、復讐のタグの設定も可能です。</p> 
-  <p>そして、タグだけの指示だと特定タグを選択するのは大変ですが、アトリビュート、配列順番なのでも選択が可能です。</p> 
-  <p><br></p> 
-  <p>参照リンク - <a href="https://www.w3schools.com/cssref/css_selectors.asp" target="_blank">https://www.w3schools.com/cssref/css_selectors.asp</a></p> 
-  <p><br></p> 
-  <p>CSS Selectorを確認するように先にHTMLドキュメントを作成しましょう。</p> 
-  <pre><code class="html" data-type="example">&lt;div id="test"&gt;
-  &lt;table&gt;
-    &lt;thead&gt;
-      &lt;tr&gt;
-        &lt;th&gt;A&lt;/th&gt;
-        &lt;th&gt;B&lt;/th&gt;
-      &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-      &lt;tr&gt;
-        &lt;td&gt;C&lt;/td&gt;
-        &lt;td&gt;D&lt;/td&gt;
-      &lt;/tr&gt;
-    &lt;/tbody&gt;
-  &lt;/table&gt;
-&lt;/div&gt;
+  <p>前述からCSSのスタイルに関して纏めています。</p> 
+  <p>今回は要素の表示タイプと位置(postision）に関して調べてみます。</p> 
+  <pre><code class="html" data-type="example.html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;style&gt;
+      body {
+        background: gray;
+      }
+      div {
+        background: white;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="item"&gt;item&lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
 </code></pre> 
-  <p>上のHTMLタグは普通のテーブルタグです。HTMLタグを作成したことがある方なら構造がすく理解すると思いますね。</p> 
-  <p>そうすると我々は「tbody」タグの１番の「tr」タグの１版「td」タグを選択したいならどうしましょうか？</p> 
-  <p><br></p> 
-  <p>簡単にタグで選択すると「table#test &gt; tbody &gt; tr:nth-child(0) &gt; td:nth-child(0)」になります。</p> 
-  <p>意味としてはtableのアトリビュートのiｄがtestのタグの直下派生のtbodyの直下派生のtrタグの０番目の直下派生のtdタグの0番目のタグを指しています。</p> 
-  <p>複雑ですね。でもタグを指しる時にはこんなに細かく全てのタグ名を書く必要はないです。</p> 
-  <pre><code class="css" data-type="example">table{
-  border-top:1px solid #000;
-  border-left:1px solid #000;
-  border-spacing: 0px;
-  padding:0px;
-}
-th{
-  border-bottom:1px solid #000;
-  border-right:1px solid #000;
-  width:500px;
-  height:50px;
-}
-td{
-  border-bottom:1px solid #000;
-  border-right:1px solid #000;
-  width:500px;
-  height:50px;
-}
-div#test &gt; table &gt; tbody &gt; tr &gt; td:nth-child(1){
-  background-color:#000;
-  color:#FFF;
+  <pre><code class="css" data-type="css style">div.item {
+  /*表示スタイル*/
+  display: initial;
+  /*位置オプション*/
+  position: absolute;
+  /*上から位置*/
+  top: 100px;
+  /*左から位置*/
+  left: 100px;
+  /*要素の幅*/
+  width: 200px;
+  /*要素の縦*/
+  height: 300px;
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/119/667_001.png" data-filename="001.png" style="width: 623px;"><br></p> 
-  <p>タグでスタイルを定義するのはそんなに難しくないですね。</p> 
-  <p>それなら、CSS Selectorに関して纏めます。</p> 
+  <p style="text-align:left;"><img src="./contents/129/687_001.png" data-filename="001.png" style="width: 582px;"><br></p> 
+  <p>上の例を見ればスタイルで「display」を使いました。</p> 
+  <p>displayは要素のスタイルの形態を決めるものです。</p> 
+  <p>displayの要素の値には下記とおりにあります。</p> 
   <div class="table-responsive"> 
    <table class="table table-striped table-bordered table-condensed"> 
     <thead> 
-     <tr> 
-      <th>選択子</th> 
+     <tr style="background-color:#DAD7D7"> 
+      <th>値</th> 
       <th>説明</th> 
      </tr> 
     </thead> 
     <tbody> 
      <tr> 
-      <td>.class</td> 
-      <td>class=”class”の全てのオブジェクトを選択</td> 
+      <td>inline</td> 
+      <td>要素をインライン要素（<span>など）として表示します。 高さと幅のプロパティは効果がありません。</span></td> 
      </tr> 
      <tr> 
-      <td>#id</td> 
-      <td>id=”id”のオブジェクトを選択(タグのidはページの雄一が仕様です。)</td> 
+      <td>block</td> 
+      <td>要素をブロック要素（<p>など）として表示します。 新しい行から始まり、幅全体を占有します。</p></td> 
      </tr> 
      <tr> 
-      <td>*</td> 
-      <td>全体選択子全てのオブジェクトを選択</td> 
+      <td>contents</td> 
+      <td>コンテナを非表示にし、要素の子要素をDOMの次のレベルに上げます。</td> 
      </tr> 
      <tr> 
-      <td>element</td> 
-      <td>要素選択子 - 指定した要素を選択</td> 
+      <td>flex</td> 
+      <td>ブロックレベルのフレックスコンテナとして要素を表示します。</td> 
      </tr> 
      <tr> 
-      <td>element1,element2</td> 
-      <td>要素選択子 - 選択する要素を様々を指定(element1とelement2を選択)</td> 
+      <td>grid</td> 
+      <td>要素をブロックレベルのグリッドコンテナとして表示します。</td> 
      </tr> 
      <tr> 
-      <td>element1 element2</td> 
-      <td>子選択子 - 指定された親要素の指定された派生要素の全て要素を指定(element1の派生の全てelement2)</td> 
+      <td>inline-block</td> 
+      <td>要素をインラインレベルのブロックコンテナとして表示します。 要素自体はインライン要素としてフォーマットされますが、高さと幅の値を適用できます。</td> 
      </tr> 
      <tr> 
-      <td>element&gt;element</td> 
-      <td>子選択子 - 指定された親要素の直下の派生要素だけ指定(elementの直下の派生element2)</td> 
+      <td>inline-flex</td> 
+      <td>要素をインラインレベルのフレックスコンテナとして表示します。</td> 
      </tr> 
      <tr> 
-      <td>element+element</td> 
-      <td>隣接選択子 - 指定された要素と同じレーベルの次の要素を指定</td> 
+      <td>inline-grid</td> 
+      <td>要素をインラインレベルのグリッドコンテナとして表示します。</td> 
      </tr> 
      <tr> 
-      <td>element1~element2</td> 
-      <td>element1要素の後である全てのelement2要素を指定</td> 
+      <td>inline-table</td> 
+      <td>要素はインラインレベルの表として表示されます。</td> 
      </tr> 
      <tr> 
-      <td>[attribute]</td> 
-      <td>属性選択子 - 指定された属性を持っている全て要素を指定</td> 
+      <td>list-item</td> 
+      <td>要素を&lt;li&gt;要素のように動作させます。</td> 
      </tr> 
      <tr> 
-      <td>[attribute=value]</td> 
-      <td>属性選択子 - 指定された属性の値を持っている全ての要素を指定</td> 
+      <td>run-in</td> 
+      <td>コンテキストに応じて、要素をブロックまたはインラインとして表示します。</td> 
      </tr> 
      <tr> 
-      <td>[attribute~=value]</td> 
-      <td>属性選択子 - 指定された属性に指定された値を含めている全ての要素を指定</td> 
+      <td>table</td> 
+      <td>要素を&lt;table&gt;要素のように動作させます。</td> 
      </tr> 
      <tr> 
-      <td>[attribute|=value]</td> 
-      <td>属性選択子 - 指定された属性の値が指定された値で始まる全ての要素を指定</td> 
+      <td>table-caption</td> 
+      <td>要素を&lt;caption&gt;要素のように動作させます。</td> 
      </tr> 
      <tr> 
-      <td>[attribute^=value]</td> 
-      <td>属性選択子 - 指定された属性の値が指定された値で始まる全ての要素を指定</td> 
+      <td>table-column-group</td> 
+      <td>要素を&lt;colgroup&gt;要素のように動作させます。</td> 
      </tr> 
      <tr> 
-      <td>[attribute$=value]</td> 
-      <td>属性選択子 - 指定された属性が指定された値で終わる全ての要素を指定</td> 
+      <td>table-header-group</td> 
+      <td>要素を&lt;thead&gt;要素のように動作させます。</td> 
      </tr> 
      <tr> 
-      <td>[attribute*=value]</td> 
-      <td>属性選択子 - 指定された属性値が指定された値を含めている全ての要素を指定</td> 
+      <td>table-footer-group</td> 
+      <td>要素を&lt;tfoot&gt;要素のように動作させます。</td> 
      </tr> 
      <tr> 
-      <td>:active</td> 
-      <td>全ての活性化になっている要素を選択</td> 
+      <td>table-row-group</td> 
+      <td>要素を&lt;tbody&gt;要素のように動作させます。</td> 
      </tr> 
      <tr> 
-      <td>:after</td> 
-      <td>指定された要素の次を選択</td> 
+      <td>table-cell</td> 
+      <td>要素を&lt;td&gt;要素のように動作させます。</td> 
      </tr> 
      <tr> 
-      <td>:before</td> 
-      <td>指定された要素の前を選択</td> 
+      <td>table-column</td> 
+      <td>要素を&lt;col&gt;要素のように動作させます。</td> 
      </tr> 
      <tr> 
-      <td>:checked</td> 
-      <td>全てのcheckedされた要素を選択</td> 
+      <td>table-row</td> 
+      <td>要素を&lt;tr&gt;要素のように動作させます。</td> 
      </tr> 
      <tr> 
-      <td>:disabled</td> 
-      <td>全てのdisabledされた要素を選択</td> 
+      <td>none</td> 
+      <td>要素は完全に削除されます。</td> 
      </tr> 
      <tr> 
-      <td>:empty</td> 
-      <td>派生ノードがない要素を選択</td> 
+      <td>initial</td> 
+      <td>このプロパティをデフォルト値に設定します。 初期について読みます。</td> 
      </tr> 
      <tr> 
-      <td>:enabled</td> 
-      <td>全てのenabledされた要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:first-child</td> 
-      <td>指定された要素の初めの派生ノードを選択</td> 
-     </tr> 
-     <tr> 
-      <td>:first-letter</td> 
-      <td>指定された要素の初めの文字を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:first-line</td> 
-      <td>指定された要素の初め行を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:first-of-type</td> 
-      <td>指定された要素の初めの派生ノードの全ての要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:focus</td> 
-      <td>全てのフォーカスされた要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:hover</td> 
-      <td>マウスがhoverされた要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:in-range</td> 
-      <td>指定された範囲内の値で入力要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:invalid</td> 
-      <td>間違って値を持っている全ての入力要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:lang(language)</td> 
-      <td>指定された値の言語でされている要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:last-child</td> 
-      <td>指定された派生ノードの最後要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:last-of-type</td> 
-      <td>指定された要素の最後の派生ノードの全ての要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:not</td> 
-      <td>指定された要素がない要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:nth-child(n)</td> 
-      <td>指定された要素と同じレベルの(n)番目の要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:nth-last-child(n)</td> 
-      <td>指定された要素と同じレベルの後から(ｎ)番目の要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:nth-last-of-type(n)</td> 
-      <td>最後ノードから計算、親の２つ目に指定された要素の全ての要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:nth-of-type(n)</td> 
-      <td>親の２つ目に指定された要素の全ての要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:only-of-type</td> 
-      <td>親の雄一な指定された要素の全ての要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:only-child</td> 
-      <td>派生ノードが一つの要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:optional</td> 
-      <td>指定された必須属性がない要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:out-of-range</td> 
-      <td>指定された範囲外になっている入力要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:read-only</td> 
-      <td>読み取り専用の入力要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:read-write</td> 
-      <td>読み取り専用がない入力要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:required</td> 
-      <td>指定された必須属性の要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:root</td> 
-      <td>ドキュメントのルートの要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>::selection</td> 
-      <td>ユーザによって選択された要素の一部を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:target</td> 
-      <td>targetに指定された要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:valid</td> 
-      <td>有効な値を持っている全ての入力要素を選択</td> 
-     </tr> 
-     <tr> 
-      <td>:visited</td> 
-      <td>訪問したページのリンクの要素</td> 
+      <td>inherit</td> 
+      <td>親要素からこのプロパティを継承します。 継承について読みます。</td> 
      </tr> 
     </tbody> 
    </table> 
   </div> 
-  <p>纏めてみると量がかなりありますね。部分的にセレクトの種類別で分けて例や詳しく説明します。</p>
+  <p>「div」タグは基本displayが「block」に設定されています。「block」の場合は「width」が基本「100%」です。</p> 
+  <p>なので上の例では「display」を「initial」に設定して「width」を設定しました。</p> 
+  <p><br></p> 
+  <p>また「position」のスタイルは要素の位置を決めるものです。</p> 
+  <p>基本的にHtmlタグはとキュメンとスタイルで上から下、左から右方法で作成します。でも要素によって位置を変わりたい時がありますね。その時に使います。</p> 
+  <div class="table-responsive"> 
+   <table class="table table-striped table-bordered table-condensed"> 
+    <thead> 
+     <tr style="background-color:#DAD7D7"> 
+      <th>値</th> 
+      <th>説明</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td>static</td> 
+      <td>デフォルト値。 文書フローに表示されるように、要素は順番にレンダリングされます。</td> 
+     </tr> 
+     <tr> 
+      <td>absolute</td> 
+      <td>要素は最初に配置された（静的ではない）親要素に対して配置されます。</td> 
+     </tr> 
+     <tr> 
+      <td>fixed</td> 
+      <td>要素はブラウザウィンドウに対して相対的に配置されます。</td> 
+     </tr> 
+     <tr> 
+      <td>relative</td> 
+      <td>要素は通常の位置を基準にして配置されるため、「left：20px」は要素の左位置に20ピクセルを追加します。</td> 
+     </tr> 
+     <tr> 
+      <td>sticky</td> 
+      <td>要素は、ユーザーのスクロール位置に基づいて配置されます。<br>スティッキー要素は、スクロール位置に応じて、相対要素と固定要素を切り替えます。 ビューポートで指定されたオフセット位置が満たされるまで相対的な位置に配置されます-そして、（position：fixedのように）所定の位置に「固定」されます。<br>注：IE / Edge 15以前ではサポートされていません。 -webkit-プレフィックス付きのバージョン6.1のSafariでサポートされています。</td> 
+     </tr> 
+     <tr> 
+      <td>initial</td> 
+      <td>このプロパティをデフォルト値に設定します。</td> 
+     </tr> 
+     <tr> 
+      <td>inherit</td> 
+      <td>親要素からこのプロパティを継承します。</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <p>上の例は「absolute」で設定しました。「div」の親要素は「body」なので、画面の一番上、右、基準で「top」が「100px」、「left」が「100px」を設定します。</p> 
+  <p><br></p> 
+  <p>この「position」と「display」はよく使わないですが、よく使うスタイルですね。</p> 
+  <p>特に「display」で「none」タグを利用して見えたり、見えなかったりする動的なスタイルを作るし、「position」で「fixed」や「absolute」でメニューの位置を決めることもします。</p> 
+  <pre><code class="html" data-type="example.html">&lt;style&gt;
+  .test:hover {
+    display:none;
+  }
+&lt;/style&gt;
+&lt;input type="button" class="test" value="これをクリックできますか？" onclick="alert('まじで？');" &gt;
+</code></pre> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <p>例</p> 
+   <p><br></p> 
+   <style>
+  .test:hover {
+    display:none;
+  }
+</style> 
+   <div style="height:40px;"> 
+    <input type="button" class="test" value="これをクリックできますか？" onclick="alert('まじで？');"> 
+   </div> 
+  </blockquote> 
+  <p>上の例はマウスをボタンの上に置く(hover)を選択する選択子で「display」を「none」に設定しました。</p> 
+  <p>つまり、マウスを上に置くとボタンがなくなりますね。お試してください。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=%23Css+Selector>##Css Selector</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=css>#css</a>,<a href=./search.html?query=position>#position</a>,<a href=./search.html?query=display>#display</a> </span>
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0204">Study / Javascript, Jquery, Css</a>」の他投稿</div>
