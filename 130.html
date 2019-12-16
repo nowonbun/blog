@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Javascript, Jquery, Css" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。html中で基本的にタグが優先でウェブページを作りますが、タグだけでは画面スタイルで要素配置が限界があります。タグ以外のもっと動的な配置するようには「float」のスタイルを利用してもっと綺麗に配置ができます。上の例をみれば「p」タグの幅が「40%」で、「1」の「p」タグ隣に「2」の「p」タグがあることまで十分に予想できます。「3」の「p」タグの位置ですが、普通なら「1」の「p」タグの下にあることが正常です。でも、実際には「1」タグ隣に「2」、「3」の「p」タグがあります。なぜ、その結果になるかというと「float」タグのことです。上の「p」タグを「float」設定をすべて「left」に設定します。上、右からテトリスになると思ったらよいです。「1」番が右に先に整列します。「2」番を整列します。「3」番は「2」番の下に空間があるので、そこで表示します。同じく下に「4」番のことに置くとどのようになるか？「1」番の下に「4」番が置くことになります。でも上の例は私が「3」番の高さを「40px」に設定しますね。「1」番と「4」番の間が余白がなりました。ここで「1」番の下に余白なしで置く仕方はないかな。「1」番と「2」番の「p」タグは「float」が「left」でしたが、「3」、「4」番は「right」に変更しました。つまり、「3」番からテトリスが上、左に変わることですね。なので「3」、「4」番が上の例みたいになります。普通は「float」要素を「left」、「right」を混在して使わないです。「float」がポータルでダッシュボードのウィジェットを作ることでよく使うスタイルですが、逆にスタイルを崩れやすいのでサイズをよく考えながら使わなければならないです。「float」を使いながら解除したいときには「clear:both;」タグで解除ができます。「4」と「5」番の「p」タグは「clear: both」タグで「float」を解除しました。]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [CSS] 整列スタイル (float)" />
+<link rel="canonical" href="https://www.nowonbun.com/130.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [CSS] 整列スタイル (float)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。html中で基本的にタグが優先でウェブページを作りますが、タグだけでは画面スタイルで要素配置が限界があります。タグ以外のもっと動的な配置するようには「float」のスタイルを利用してもっと綺麗に配置ができます。上の例をみれば「p」タグの幅が「40%」で、「1」の「p」タグ隣に「2」の「p」タグがあることまで十分に予想できます。「3」の「p」タグの位置ですが、普通なら「1」の「p」タグの下にあることが正常です。でも、実際には「1」タグ隣に「2」、「3」の「p」タグがあります。なぜ、その結果になるかというと「float」タグのことです。上の「p」タグを「float」設定をすべて「left」に設定します。上、右からテトリスになると思ったらよいです。「1」番が右に先に整列します。「2」番を整列します。「3」番は「2」番の下に空間があるので、そこで表示します。同じく下に「4」番のことに置くとどのようになるか？「1」番の下に「4」番が置くことになります。でも上の例は私が「3」番の高さを「40px」に設定しますね。「1」番と「4」番の間が余白がなりました。ここで「1」番の下に余白なしで置く仕方はないかな。「1」番と「2」番の「p」タグは「float」が「left」でしたが、「3」、「4」番は「right」に変更しました。つまり、「3」番からテトリスが上、左に変わることですね。なので「3」、「4」番が上の例みたいになります。普通は「float」要素を「left」、「right」を混在して使わないです。「float」がポータルでダッシュボードのウィジェットを作ることでよく使うスタイルですが、逆にスタイルを崩れやすいのでサイズをよく考えながら使わなければならないです。「float」を使いながら解除したいときには「clear:both;」タグで解除ができます。「4」と「5」番の「p」タグは「clear: both」タグで「float」を解除しました。]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/130.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] 整列スタイル (float)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。html中で基本的にタグが優先でウェブページを作りますが、タグだけでは画面スタイルで要素配置が限界があります。タグ以外のもっと動的な配置するようには「float」のスタイルを利用してもっと綺麗に配置ができます。上の例をみれば「p」タグの幅が「40%」で、「1」の「p」タグ隣に「2」の「p」タグがあることまで十分に予想できます。「3」の「p」タグの位置ですが、普通なら「1」の「p」タグの下にあることが正常です。でも、実際には「1」タグ隣に「2」、「3」の「p」タグがあります。なぜ、その結果になるかというと「float」タグのことです。上の「p」タグを「float」設定をすべて「left」に設定します。上、右からテトリスになると思ったらよいです。「1」番が右に先に整列します。「2」番を整列します。「3」番は「2」番の下に空間があるので、そこで表示します。同じく下に「4」番のことに置くとどのようになるか？「1」番の下に「4」番が置くことになります。でも上の例は私が「3」番の高さを「40px」に設定しますね。「1」番と「4」番の間が余白がなりました。ここで「1」番の下に余白なしで置く仕方はないかな。「1」番と「2」番の「p」タグは「float」が「left」でしたが、「3」、「4」番は「right」に変更しました。つまり、「3」番からテトリスが上、左に変わることですね。なので「3」、「4」番が上の例みたいになります。普通は「float」要素を「left」、「right」を混在して使わないです。「float」がポータルでダッシュボードのウィジェットを作ることでよく使うスタイルですが、逆にスタイルを崩れやすいのでサイズをよく考えながら使わなければならないです。「float」を使いながら解除したいときには「clear:both;」タグで解除ができます。「4」と「5」番の「p」タグは「clear: both」タグで「float」を解除しました。]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [CSS] 整列スタイル (float)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(23)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(107)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(16)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[CSS] 整列スタイル (float)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/17 00:08:54   修正日付 : 2019/12/17 00:09:42
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>html中で基本的にタグが優先でウェブページを作りますが、タグだけでは画面スタイルで要素配置が限界があります。</p> 
+  <p>タグ以外のもっと動的な配置するようには「float」のスタイルを利用してもっと綺麗に配置ができます。</p> 
+  <pre><code class="html" data-type="index.html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;style&gt;
+      body {
+        background: gray;
+      }
+      div.row {
+        background: white;
+        display: inline-block;
+        width: 100%;
+      }
+      p {
+        border: 1px solid;
+        margin: 5px;
+        width: calc(50% - 12px);
+        float: left;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="row"&gt;
+      &lt;p style="height:50px;"&gt;1&lt;/p&gt;
+      &lt;p style="height:20px;"&gt;2&lt;/p&gt;
+      &lt;p style="height:20px;"&gt;3&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p>上の例をみれば「p」タグの幅が「40%」で、「1」の「p」タグ隣に「2」の「p」タグがあることまで十分に予想できます。</p> 
+  <p>「3」の「p」タグの位置ですが、普通なら「1」の「p」タグの下にあることが正常です。</p> 
+  <p style="text-align:left;"><img src="./contents/130/689_001.png" data-filename="001.png" style="width: 848px;"></p> 
+  <p>でも、実際には「1」タグ隣に「2」、「3」の「p」タグがあります。</p> 
+  <p>なぜ、その結果になるかというと「float」タグのことです。</p> 
+  <p><br></p> 
+  <p>上の「p」タグを「float」設定をすべて「left」に設定します。上、右からテトリスになると思ったらよいです。</p> 
+  <p>「1」番が右に先に整列します。「2」番を整列します。「3」番は「2」番の下に空間があるので、そこで表示します。</p> 
+  <p><br></p> 
+  <p>同じく下に「4」番のことに置くとどのようになるか？</p> 
+  <p style="text-align:left;"><img src="./contents/130/688_002.png" data-filename="002.png" style="width: 848px;"></p> 
+  <p>「1」番の下に「4」番が置くことになります。でも上の例は私が「3」番の高さを「40px」に設定しますね。</p> 
+  <p>「1」番と「4」番の間が余白がなりました。ここで「1」番の下に余白なしで置く仕方はないかな。</p> 
+  <pre><code class="html" data-type="index.html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;style&gt;
+      body {
+        background: gray;
+      }
+      div.row {
+        background: white;
+        display: inline-block;
+        width: 100%;
+      }
+      p {
+        border: 1px solid;
+        margin: 5px;
+        width: calc(50% - 12px);
+        float: left;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="row"&gt;
+      &lt;p style="height:50px;"&gt;1&lt;/p&gt;
+      &lt;p style="height:20px;"&gt;2&lt;/p&gt;
+      &lt;p style="height:50px;float:right;"&gt;3&lt;/p&gt;
+      &lt;p style="height:20px;float:right;"&gt;4&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/130/692_003.png" data-filename="003.png" style="width: 848px;"></p> 
+  <p>「1」番と「2」番の「p」タグは「float」が「left」でしたが、「3」、「4」番は「right」に変更しました。</p> 
+  <p>つまり、「3」番からテトリスが上、左に変わることですね。なので「3」、「4」番が上の例みたいになります。</p> 
+  <p><br></p> 
+  <p>普通は「float」要素を「left」、「right」を混在して使わないです。</p> 
+  <p>「float」がポータルでダッシュボードのウィジェットを作ることでよく使うスタイルですが、逆にスタイルを崩れやすいのでサイズをよく考えながら使わなければならないです。</p> 
+  <p style="text-align:left;"><img src="./contents/130/691_004.png" data-filename="004.png" style="width: 731px;"></p> 
+  <p>「float」を使いながら解除したいときには「clear:both;」タグで解除ができます。</p> 
+  <pre><code class="html" data-type="index.html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;style&gt;
+      body {
+        background: gray;
+      }
+      div.row {
+        background: white;
+        display: inline-block;
+        width: 100%;
+      }
+      p {
+        border: 1px solid;
+        margin: 5px;
+        width: calc(50% - 12px);
+        float: left;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="row"&gt;
+      &lt;p style="height:50px;"&gt;1&lt;/p&gt;
+      &lt;p style="height:20px;"&gt;2&lt;/p&gt;
+      &lt;p style="height:50px;float:right;"&gt;3&lt;/p&gt;
+	  &lt;p style="height:20px;clear: both;"&gt;4&lt;/p&gt;
+      &lt;p style="height:20px;clear: both;"&gt;5&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/130/690_005.png" data-filename="005.png" style="width: 729px;"></p> 
+  <p>「4」と「5」番の「p」タグは「clear: both」タグで「float」を解除しました。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=css>#css</a>,<a href=./search.html?query=float>#float</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0204">Study / Javascript, Jquery, Css</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/130.html'>[CSS] 整列スタイル (float)</a><span>2019/12/17 00:08:54</span></li><li><a href='https://www.nowonbun.com/129.html'>[CSS] 位置(position),表示(display)スタイル</a><span>2019/12/13 20:08:50</span></li><li><a href='https://www.nowonbun.com/128.html'>[CSS] border(枠)、余白スタイル - border, margin, padding</a><span>2019/12/12 20:16:43</span></li><li><a href='https://www.nowonbun.com/127.html'>[CSS] 文字スタイル</a><span>2019/12/11 21:13:22</span></li><li><a href='https://www.nowonbun.com/126.html'>[CSS] その他の疑似選択子 - link, visited, target, enabled, disabled, not, active, hover, focus</a><span>2019/12/10 07:31:28</span></li><li><a href='https://www.nowonbun.com/125.html'>[CSS] 疑似要素選択子 - fist-line, first-letter, before, after</a><span>2019/12/09 07:28:27</span></li><li><a href='https://www.nowonbun.com/124.html'>[CSS] 属性選択子</a><span>2019/12/06 07:27:36</span></li><li><a href='https://www.nowonbun.com/123.html'>[CSS] 疑似クラス - only-child, only-of-type, empty, empty, root</a><span>2019/12/05 07:29:15</span></li><li><a href='https://www.nowonbun.com/122.html'>[CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type</a><span>2019/12/04 07:28:37</span></li><li><a href='https://www.nowonbun.com/121.html'>[CSS] 疑似クラス - nth-child, nth-of-type, nth-last-child, nth-last-of-type</a><span>2019/12/03 07:21:20</span></li><li><a href='https://www.nowonbun.com/120.html'>[CSS] 属性選択子</a><span>2019/12/02 07:32:37</span></li><li><a href='https://www.nowonbun.com/119.html'>[C#] Selector(選択子)</a><span>2019/11/28 07:28:03</span></li><li><a href='https://www.nowonbun.com/118.html'>[CSS] CSS Stylesとは？</a><span>2019/11/27 07:30:30</span></li><li><a href='https://www.nowonbun.com/117.html'>[HTML] Open graph(ogタグ)</a><span>2019/11/26 07:42:20</span></li><li><a href='https://www.nowonbun.com/116.html'>[HTML] Metaタグに関して(SEO最適化)</a><span>2019/11/25 20:16:18</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/130.html'>[CSS] 整列スタイル (float)</a><span>2019/12/17 00:08:54</span></li><li><a href='https://www.nowonbun.com/129.html'>[CSS] 位置(position),表示(display)スタイル</a><span>2019/12/13 20:08:50</span></li><li><a href='https://www.nowonbun.com/128.html'>[CSS] border(枠)、余白スタイル - border, margin, padding</a><span>2019/12/12 20:16:43</span></li><li><a href='https://www.nowonbun.com/127.html'>[CSS] 文字スタイル</a><span>2019/12/11 21:13:22</span></li><li><a href='https://www.nowonbun.com/126.html'>[CSS] その他の疑似選択子 - link, visited, target, enabled, disabled, not, active, hover, focus</a><span>2019/12/10 07:31:28</span></li><li><a href='https://www.nowonbun.com/125.html'>[CSS] 疑似要素選択子 - fist-line, first-letter, before, after</a><span>2019/12/09 07:28:27</span></li><li><a href='https://www.nowonbun.com/124.html'>[CSS] 属性選択子</a><span>2019/12/06 07:27:36</span></li><li><a href='https://www.nowonbun.com/123.html'>[CSS] 疑似クラス - only-child, only-of-type, empty, empty, root</a><span>2019/12/05 07:29:15</span></li><li><a href='https://www.nowonbun.com/122.html'>[CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type</a><span>2019/12/04 07:28:37</span></li><li><a href='https://www.nowonbun.com/121.html'>[CSS] 疑似クラス - nth-child, nth-of-type, nth-last-child, nth-last-of-type</a><span>2019/12/03 07:21:20</span></li><li><a href='https://www.nowonbun.com/120.html'>[CSS] 属性選択子</a><span>2019/12/02 07:32:37</span></li><li><a href='https://www.nowonbun.com/119.html'>[C#] Selector(選択子)</a><span>2019/11/28 07:28:03</span></li><li><a href='https://www.nowonbun.com/118.html'>[CSS] CSS Stylesとは？</a><span>2019/11/27 07:30:30</span></li><li><a href='https://www.nowonbun.com/117.html'>[HTML] Open graph(ogタグ)</a><span>2019/11/26 07:42:20</span></li><li><a href='https://www.nowonbun.com/116.html'>[HTML] Metaタグに関して(SEO最適化)</a><span>2019/11/25 20:16:18</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
