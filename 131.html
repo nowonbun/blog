@@ -34,31 +34,31 @@ body{
 <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-<meta name="keywords" content="Devlopment note / Linux" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。今回はcentosでmariadbをインストールしましょう。mariadbは旧mysqlと同じですが、mysqlがoracle社に買収されて配布しましたが、最近mysqlも無料ではなく、一部有料政策に変わって最初開発者が退職して無料sqlを作ったことがmaraidbです。なので、mariadbをcentosにインストールしましょう。mariadbをインストールする方法で様々がありますが、sourceで直接にコンパイルする方法、binaryでインストールする方法、yumを利用してインストールする方法があります。筆者の場合は別に基本設定で使うつもりなので、管理がしやすいなyumでインストールします。上のリストの中で「mariadb-server.x86_64」をインストールします。インストールが終わったらmariadbの環境設定しましょう。環境設定ファイルは「/etc/my.cnf」であります。設定が完了したら起動設定に登録しましょう。ここまでサーバ側の設定は完了しました。内部データベースのユーザ追加とパスワード設定をしなければならないです。一応、mysqlを接続してmysql dbでユーザテーブルを確認します。見るとパスワードが設定されてないです。一応、パスワード全体を設定しましょう。上の場合は「root」ユーザはサーバローカルの場合はよいですが、外部だと接続ができません。でもrootのidを外部で公開する方はセキュリティの考えでは嫌ですね。それでユーザを追加しましょう。筆者の場合はcクラス192.168.0.%で公開しましたが、全体公開はただ「%」で設定すると全「ip」で公開されます。最後でファイアウォールを開放しましょう。サーバではなく、自分のパソコンでsql編集ツールを利用して接続しましょう。]]>" />
+<meta name="keywords" content="Study / Javascript, Jquery, Css" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。今回はcolumn要素に関して調べます。column要素は筆者もよく使わない機能ですが、仕様によって使うところもあると思うのでまとめておきました。スタイル種類は下記とおりになります。                    スタイル        説明                            column-count        カラムの列数を指定する。                    column-width        カラムの列幅を指定する（実際の列の幅は、領域のサイズに応じて変化）                    columns: -width -count        上記2つのスタイルのshorthandスタイル                    column-gap        カラムの間の間隔                    column-span        複数のカラムを横断要素                    column-rule-width        各列を区別する線の太さ                    column-rule-style        各列を区切る線の種類                    column-rule-color        各列を区切る線の色                    column-rule        上記3つのshorthandスタイル                    break-before        ページ指定のスタイル（前）                    break-after        ページ指定のスタイル（後）                    break-inside        ページの指定のスタイル            columnsのサイズはブラウザの幅によって変更するので、calc(10vw)に設定しても幅の(30%)になると思います。カラム数を3で設定しましたので、三つが表示されました。column-gapは線の基準で余白設定です。線は2pxで実線、青色で設定しました。h1タグの場合はcolumn要素を無視して表示することです。hrタグで次のカラムから作成の意味です。筆者がcolumn例を作]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [CentOS] MariaDB(Mysql)をインストール" />
-<link rel="canonical" href="https://www.nowonbun.com/106.html" />
+<meta name="title" content="明月の開発ストーリ :: [CSS] Columnスタイル" />
+<link rel="canonical" href="https://www.nowonbun.com/131.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [CentOS] MariaDB(Mysql)をインストール" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。今回はcentosでmariadbをインストールしましょう。mariadbは旧mysqlと同じですが、mysqlがoracle社に買収されて配布しましたが、最近mysqlも無料ではなく、一部有料政策に変わって最初開発者が退職して無料sqlを作ったことがmaraidbです。なので、mariadbをcentosにインストールしましょう。mariadbをインストールする方法で様々がありますが、sourceで直接にコンパイルする方法、binaryでインストールする方法、yumを利用してインストールする方法があります。筆者の場合は別に基本設定で使うつもりなので、管理がしやすいなyumでインストールします。上のリストの中で「mariadb-server.x86_64」をインストールします。インストールが終わったらmariadbの環境設定しましょう。環境設定ファイルは「/etc/my.cnf」であります。設定が完了したら起動設定に登録しましょう。ここまでサーバ側の設定は完了しました。内部データベースのユーザ追加とパスワード設定をしなければならないです。一応、mysqlを接続してmysql dbでユーザテーブルを確認します。見るとパスワードが設定されてないです。一応、パスワード全体を設定しましょう。上の場合は「root」ユーザはサーバローカルの場合はよいですが、外部だと接続ができません。でもrootのidを外部で公開する方はセキュリティの考えでは嫌ですね。それでユーザを追加しましょう。筆者の場合はcクラス192.168.0.%で公開しましたが、全体公開はただ「%」で設定すると全「ip」で公開されます。最後でファイアウォールを開放しましょう。サーバではなく、自分のパソコンでsql編集ツールを利用して接続しましょう。]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [CSS] Columnスタイル" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。今回はcolumn要素に関して調べます。column要素は筆者もよく使わない機能ですが、仕様によって使うところもあると思うのでまとめておきました。スタイル種類は下記とおりになります。                    スタイル        説明                            column-count        カラムの列数を指定する。                    column-width        カラムの列幅を指定する（実際の列の幅は、領域のサイズに応じて変化）                    columns: -width -count        上記2つのスタイルのshorthandスタイル                    column-gap        カラムの間の間隔                    column-span        複数のカラムを横断要素                    column-rule-width        各列を区別する線の太さ                    column-rule-style        各列を区切る線の種類                    column-rule-color        各列を区切る線の色                    column-rule        上記3つのshorthandスタイル                    break-before        ページ指定のスタイル（前）                    break-after        ページ指定のスタイル（後）                    break-inside        ページの指定のスタイル            columnsのサイズはブラウザの幅によって変更するので、calc(10vw)に設定しても幅の(30%)になると思います。カラム数を3で設定しましたので、三つが表示されました。column-gapは線の基準で余白設定です。線は2pxで実線、青色で設定しました。h1タグの場合はcolumn要素を無視して表示することです。hrタグで次のカラムから作成の意味です。筆者がcolumn例を作]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/106.html" />
+<meta property="og:url" content="https://www.nowonbun.com/131.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [CentOS] MariaDB(Mysql)をインストール" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今回はcentosでmariadbをインストールしましょう。mariadbは旧mysqlと同じですが、mysqlがoracle社に買収されて配布しましたが、最近mysqlも無料ではなく、一部有料政策に変わって最初開発者が退職して無料sqlを作ったことがmaraidbです。なので、mariadbをcentosにインストールしましょう。mariadbをインストールする方法で様々がありますが、sourceで直接にコンパイルする方法、binaryでインストールする方法、yumを利用してインストールする方法があります。筆者の場合は別に基本設定で使うつもりなので、管理がしやすいなyumでインストールします。上のリストの中で「mariadb-server.x86_64」をインストールします。インストールが終わったらmariadbの環境設定しましょう。環境設定ファイルは「/etc/my.cnf」であります。設定が完了したら起動設定に登録しましょう。ここまでサーバ側の設定は完了しました。内部データベースのユーザ追加とパスワード設定をしなければならないです。一応、mysqlを接続してmysql dbでユーザテーブルを確認します。見るとパスワードが設定されてないです。一応、パスワード全体を設定しましょう。上の場合は「root」ユーザはサーバローカルの場合はよいですが、外部だと接続ができません。でもrootのidを外部で公開する方はセキュリティの考えでは嫌ですね。それでユーザを追加しましょう。筆者の場合はcクラス192.168.0.%で公開しましたが、全体公開はただ「%」で設定すると全「ip」で公開されます。最後でファイアウォールを開放しましょう。サーバではなく、自分のパソコンでsql編集ツールを利用して接続しましょう。]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] Columnスタイル" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今回はcolumn要素に関して調べます。column要素は筆者もよく使わない機能ですが、仕様によって使うところもあると思うのでまとめておきました。スタイル種類は下記とおりになります。                    スタイル        説明                            column-count        カラムの列数を指定する。                    column-width        カラムの列幅を指定する（実際の列の幅は、領域のサイズに応じて変化）                    columns: -width -count        上記2つのスタイルのshorthandスタイル                    column-gap        カラムの間の間隔                    column-span        複数のカラムを横断要素                    column-rule-width        各列を区別する線の太さ                    column-rule-style        各列を区切る線の種類                    column-rule-color        各列を区切る線の色                    column-rule        上記3つのshorthandスタイル                    break-before        ページ指定のスタイル（前）                    break-after        ページ指定のスタイル（後）                    break-inside        ページの指定のスタイル            columnsのサイズはブラウザの幅によって変更するので、calc(10vw)に設定しても幅の(30%)になると思います。カラム数を3で設定しましたので、三つが表示されました。column-gapは線の基準で余白設定です。線は2pxで実線、青色で設定しました。h1タグの場合はcolumn要素を無視して表示することです。hrタグで次のカラムから作成の意味です。筆者がcolumn例を作]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [CentOS] MariaDB(Mysql)をインストール</title>
+<title>明月の開発ストーリ :: [CSS] Columnスタイル</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[CentOS] MariaDB(Mysql)をインストール</h1>
+					<h1 id="titleTxt">[CSS] Columnスタイル</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0106">Devlopment note / Linux</a>    作成日付 : 2019/11/04 18:35:10   修正日付 : 2019/11/04 18:36:24
+					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/17 19:52:56   修正日付 : 2019/12/17 19:52:56
 				</div>
 			</div>
 			<div class="article">
@@ -137,67 +137,120 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>今回はCentOSでMariaDBをインストールしましょう。MariaDBは旧mysqlと同じですが、mysqlがOracle社に買収されて配布しましたが、最近mysqlも無料ではなく、一部有料政策に変わって最初開発者が退職して無料sqlを作ったことがmaraiDBです。</p> 
-  <p>なので、mariaDBをCentOSにインストールしましょう。</p> 
+  <p>今回はColumn要素に関して調べます。</p> 
+  <p>Column要素は筆者もよく使わない機能ですが、仕様によって使うところもあると思うのでまとめておきました。</p> 
+  <p>スタイル種類は下記とおりになります。</p> 
+  <div class="table-responsive"> 
+   <table class="table table-striped table-bordered table-condensed"> 
+    <thead> 
+     <tr style="background-color:#DAD7D7"> 
+      <th style="white-space: nowrap;">スタイル</th> 
+      <th>説明</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="white-space: nowrap;">column-count</td> 
+      <td>カラムの列数を指定する。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">column-width</td> 
+      <td>カラムの列幅を指定する（実際の列の幅は、領域のサイズに応じて変化）</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">columns: -width -count</td> 
+      <td>上記2つのスタイルのShorthandスタイル</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">column-gap</td> 
+      <td>カラムの間の間隔</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">column-span</td> 
+      <td>複数のカラムを横断要素</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">column-rule-width</td> 
+      <td>各列を区別する線の太さ</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">column-rule-style</td> 
+      <td>各列を区切る線の種類</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">column-rule-color</td> 
+      <td>各列を区切る線の色</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">column-rule</td> 
+      <td>上記3つのShorthandスタイル</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">break-before</td> 
+      <td>ページ指定のスタイル（前）</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">break-after</td> 
+      <td>ページ指定のスタイル（後）</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">break-inside</td> 
+      <td>ページの指定のスタイル</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <pre><code class="html" data-type="index.html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;div&gt;
+      &lt;h1&gt;CSSカラムスタイルの例&lt;/h1&gt;
+      こんにちは。CSSのカラムスタイルに関して説明しています。これは例のための文言です。ありがとうございます。こんにちは。CSSのカラムスタイルに関して説明しています。これは例のための文言です。ありがとうございます。こんにちは。CSSのカラムスタイルに関して説明しています。これは例のための文言です。ありがとうございます。こんにちは。CSSのカラムスタイルに関して説明しています。これは例のための文言です。ありがとうございます。
+      &lt;hr /&gt;
+      こんにちは。CSSのカラムスタイルに関して説明しています。これは例のための文言です。ありがとうございます。こんにちは。CSSのカラムスタイルに関して説明しています。これは例のための文言です。ありがとうございます。
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <pre><code class="css" data-type="style.css">div{
+  height:calc(80vh);
+  /* カラムを三つを作る。幅とカラム数を指定 */
+  columns:calc(10vw) 3;
+  /* カラム間の間隔 */
+  column-gap:50px;
+  /* カラムを区分する線の太さ、タイプ、色 */
+  column-rule:2px solid blue;  
+}
+div &gt; h1{
+　　/* カラムを横断要素 */
+  column-span:all;
+  text-align:center;
+}
+div &gt; hr{
+  column-break-after:always;
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/131/693_001.png" data-filename="001.png" style="width: 848px;"><br></p> 
+  <p>columnsのサイズはブラウザの幅によって変更するので、calc(10vw)に設定しても幅の(30%)になると思います。カラム数を3で設定しましたので、三つが表示されました。</p> 
+  <p>column-gapは線の基準で余白設定です。線は2pxで実線、青色で設定しました。</p> 
   <p><br></p> 
-  <p>mariaDBをインストールする方法で様々がありますが、sourceで直接にコンパイルする方法、binaryでインストールする方法、yumを利用してインストールする方法があります。</p> 
-  <p>筆者の場合は別に基本設定で使うつもりなので、管理がしやすいなyumでインストールします。</p> 
-  <pre><code class="shell" data-type="yum install">yum list mariadb*
-yum install mariadb-server.x86_64
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/106/590_001.png" data-filename="001.png" style="width: 739px;"></p> 
-  <p>上のリストの中で「mariadb-server.x86_64」をインストールします。</p> 
-  <p style="text-align:left;"><img src="./contents/106/592_002.png" data-filename="002.png" style="width: 739px;"><br></p> 
-  <p>インストールが終わったらmariaDBの環境設定しましょう。環境設定ファイルは「/etc/my.cnf」であります。</p> 
-  <pre><code class="cnf" data-type="/etc/my.cnf">[mysqld]
-init_connect=SET collation_connection = utf8_general_ci
-init_connect=SET NAMES utf8
-character-set-server=utf8
-collation-server=utf8_general_ci
-lower_case_table_names = 1
-[client]
-default-character-set=utf8
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/106/596_003.png" data-filename="003.png" style="width: 848px;"></p> 
-  <p>設定が完了したら起動設定に登録しましょう。</p> 
-  <pre><code class="shell" data-type="起動設定">systemctl start mariadb
-systemctl enable mariadb
-</code></pre> 
-  <p>ここまでサーバ側の設定は完了しました。</p> 
-  <p>内部データベースのユーザ追加とパスワード設定をしなければならないです。</p> 
-  <p>一応、mysqlを接続してmysql dbでユーザテーブルを確認します。</p> 
-  <p style="text-align:left;"><img src="./contents/106/593_004.png" data-filename="004.png" style="width: 848px;"></p> 
-  <p>見るとパスワードが設定されてないです。</p> 
-  <p>一応、パスワード全体を設定しましょう。</p> 
-  <pre><code class="sql" data-type="パスワード設定">update user set password=password('***') where user='root'
-</code></pre> 
-  <p>上の場合は「root」ユーザはサーバローカルの場合はよいですが、外部だと接続ができません。でもrootのIDを外部で公開する方はセキュリティの考えでは嫌ですね。</p> 
-  <p>それでユーザを追加しましょう。</p> 
-  <pre><code class="sql" data-type="ID生成">create user '生成するID'@'192.168.0.%(公開するIP)' identified by '***';
-update user set password=password('***') where user='生成するID';
-grant all privileges on *.* to '生成するID'@'192.168.0.%(公開するIP)';
-flush privileges;
-</code></pre> 
-  <p>筆者の場合はCクラス192.168.0.%で公開しましたが、全体公開はただ「%」で設定すると全「IP」で公開されます。</p> 
-  <p style="text-align:left;"><img src="./contents/106/594_005.png" data-filename="005.png" style="width: 848px;"></p> 
-  <p>最後でファイアウォールを開放しましょう。</p> 
-  <pre><code class="shell" data-type="firewall設定">firewall-cmd --permanent --zone=public --add-port=3306/tcp
-firewall-cmd --reload
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/106/591_006.png" data-filename="006.png" style="width: 848px;"></p> 
-  <p>サーバではなく、自分のパソコンでsql編集ツールを利用して接続しましょう。</p> 
-  <p style="text-align:left;"><img src="./contents/106/595_007.png" data-filename="007.png" style="width: 848px;"></p>
+  <p>h1タグの場合はcolumn要素を無視して表示することです。</p> 
+  <p>hrタグで次のカラムから作成の意味です。</p> 
+  <p><br></p> 
+  <p>筆者がColumn例を作りながら、いろいろテストしましたが、カラム別のスタイル適用か段落でスタイルことで使いにくいですね。</p> 
+  <p>イメージで使うといいと思いますが、divタグで個別スタイルが扱いやすいと思います。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=centos>#centos</a>,<a href=./search.html?query=mariadb>#mariadb</a>,<a href=./search.html?query=mysql>#mysql</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=css>#css</a>,<a href=./search.html?query=column>#column</a> </span>
 				</div>
 				<div class="other-category">
-					<div class="list-title">「<a href="./?category=0106">Devlopment note / Linux</a>」の他投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/114.html'>[Ubuntu] PHPをインストール、Composer設定する方法</a><span>2019/11/13 07:32:21</span></li><li><a href='https://www.nowonbun.com/113.html'>[Ubuntu] テーマ(Arc)を変更する方法(tweak)</a><span>2019/11/12 07:32:13</span></li><li><a href='https://www.nowonbun.com/112.html'>[Ubuntu] Apache2をインストールする方法</a><span>2019/11/11 07:28:28</span></li><li><a href='https://www.nowonbun.com/111.html'>[Ubuntu] 「acquire the dpkg frontend lock」のエラーを解決方法</a><span>2019/11/10 22:19:34</span></li><li><a href='https://www.nowonbun.com/110.html'>[Ubuntu] JavaインストールとEclipseをインストールする方法</a><span>2019/11/08 07:29:55</span></li><li><a href='https://www.nowonbun.com/109.html'>[Ubuntu] MariaDB(Mysql)をインストールする方法</a><span>2019/11/07 07:50:58</span></li><li><a href='https://www.nowonbun.com/108.html'>[Ubuntu] Chromeをインストールする方法</a><span>2019/11/06 19:48:19</span></li><li><a href='https://www.nowonbun.com/107.html'>[CentOS] YUMについて、YUMが出来ない場合処理方法</a><span>2019/11/05 07:17:58</span></li><li><a href='https://www.nowonbun.com/106.html'>[CentOS] MariaDB(Mysql)をインストール</a><span>2019/11/04 18:35:10</span></li><li><a href='https://www.nowonbun.com/105.html'>[CentOS] FTPインストールする方法(vsftpd)</a><span>2019/11/01 07:29:57</span></li><li><a href='https://www.nowonbun.com/104.html'>[CentOS] SAMBAインストール方法</a><span>2019/10/30 07:38:57</span></li><li><a href='https://www.nowonbun.com/103.html'>[CentOS] PHPインストールする方法</a><span>2019/10/29 20:09:03</span></li><li><a href='https://www.nowonbun.com/102.html'>[CentOS] ApacheとTomcatの連携</a><span>2019/10/29 07:28:33</span></li><li><a href='https://www.nowonbun.com/101.html'>[CentOS] Tomcat インストール方法</a><span>2019/10/28 22:38:56</span></li><li><a href='https://www.nowonbun.com/100.html'>[CentOS] Java インストール</a><span>2019/10/28 00:22:32</span></li></ul>
+					<div class="list-title">「<a href="./?category=0204">Study / Javascript, Jquery, Css</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/131.html'>[CSS] Columnスタイル</a><span>2019/12/17 19:52:56</span></li><li><a href='https://www.nowonbun.com/130.html'>[CSS] 整列スタイル (float)</a><span>2019/12/17 00:08:54</span></li><li><a href='https://www.nowonbun.com/129.html'>[CSS] 位置(position),表示(display)スタイル</a><span>2019/12/13 20:08:50</span></li><li><a href='https://www.nowonbun.com/128.html'>[CSS] border(枠)、余白スタイル - border, margin, padding</a><span>2019/12/12 20:16:43</span></li><li><a href='https://www.nowonbun.com/127.html'>[CSS] 文字スタイル</a><span>2019/12/11 21:13:22</span></li><li><a href='https://www.nowonbun.com/126.html'>[CSS] その他の疑似選択子 - link, visited, target, enabled, disabled, not, active, hover, focus</a><span>2019/12/10 07:31:28</span></li><li><a href='https://www.nowonbun.com/125.html'>[CSS] 疑似要素選択子 - fist-line, first-letter, before, after</a><span>2019/12/09 07:28:27</span></li><li><a href='https://www.nowonbun.com/124.html'>[CSS] 属性選択子</a><span>2019/12/06 07:27:36</span></li><li><a href='https://www.nowonbun.com/123.html'>[CSS] 疑似クラス - only-child, only-of-type, empty, empty, root</a><span>2019/12/05 07:29:15</span></li><li><a href='https://www.nowonbun.com/122.html'>[CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type</a><span>2019/12/04 07:28:37</span></li><li><a href='https://www.nowonbun.com/121.html'>[CSS] 疑似クラス - nth-child, nth-of-type, nth-last-child, nth-last-of-type</a><span>2019/12/03 07:21:20</span></li><li><a href='https://www.nowonbun.com/120.html'>[CSS] 属性選択子</a><span>2019/12/02 07:32:37</span></li><li><a href='https://www.nowonbun.com/119.html'>[C#] Selector(選択子)</a><span>2019/11/28 07:28:03</span></li><li><a href='https://www.nowonbun.com/118.html'>[CSS] CSS Stylesとは？</a><span>2019/11/27 07:30:30</span></li><li><a href='https://www.nowonbun.com/117.html'>[HTML] Open graph(ogタグ)</a><span>2019/11/26 07:42:20</span></li></ul>
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
