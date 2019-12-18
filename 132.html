@@ -35,30 +35,30 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / Javascript, Jquery, Css" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。cssのスタイルと言うと基本的に文字列、余白、枠、位置、状態のスタイルが基本だと思います。文字列は前述で説明しましたから、今回は枠(border)と余白に関して調べてみます。htmlタグでよく使うダグだというと「div」タグと「table」タグだと思います。そのところで「table」タグで例を作ります。上をみれば、例としてテーブルを作ってヘッダとボディを分けてテーブルのタイトルと内容を分けてタグを作成しました。スタイルを何もない状況でウェブブラウザに見るとテーブルで作成したとは感じられません。タグだけではテーブルスタイルができないですね。そうするとcssスタイルでテーブルみたいに修正しましょう。今回は「table」タグではなく「span」タグでスタイルを付けましょう。上の例では「div」タグの中で「span」タグを入れました。「div」タグは基本スタイルが「width:100%」です。それは「display:block」タイプですが、「display」タイプには次の投稿で説明します。そのことで高さ、枠を設定しました。「padding」のスタイルがありますね。「padding」は内余白、「margin」は外余白です。例えば「div」と「span」の左の余白は「div」の内余白(padding)の「10px」と「span」の外余白(margin)の「30px」で全て「40px」の余白があります。また「span」の「width」と「height」で「vw」は「vh」単位があります。「vw」はブラウザの画面コントロールにのサイズによって「70vw」は幅の「70%」という意味です。「vh」は縦のサイズによって何パーセントと意味ですね。また、「calc()」でプログラムで関数みたいな文法がありますね。それは括弧の内を計算してって意味です。つまり、cal(70vw-10px)と意味はブラウザの幅の70パーセントサイズで10pxを引くことですね。「margin」や「padding」、「border」の場合は「right」、「left」、「top」、「bottom」の小スタイルを持っています。「radius」の場合は長方形の角を丸くするスタイルです。「box-shadow」の場合は要素の影を描くスタイルですね。]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。cssのトランジション(transition)とは属性変更時に変更の速度を調節すること、変更のサイクルを設定することだと思われます。例えば、「div」タグの背景色を黄色にしてマウスを置く(hover)と緑色になることに設定すると思うと実際にタグで設定するとあっというまで処理されますね。例    .example-1 .item{        background-color: yellow;        height: 50px;    }    .example-1 .item:hover{        background-color: green;    }    マウスを上に置いてください。でもユーザによってこの変更することをスムースにアニメーションのようなアクションを与えたい人が言うと思います。その時にトランジション(transition)を利用すると設定ができます。例    .example-2 .item{        background-color: yellow;        height: 50px;        transition: background-color 2s ease-out 50ms;    }    .example-2 .item:hover{        background-color: green;        transition: background-color 2s ease-out 50ms;    }    マウスを上に置いてください。トランジションは４つのスタイル属性があります。４つと言ってもdelayの属性以外にはすべて設定しなければ作動しないですね。「transition-property」はトランジションの属性を与えるcssスタイル名です。上の例では「background-color」に効果を与えますね。「transition-duration」は変換する時間です。上の例とは黄色から緑色に変換することで2秒かかりますということですね。「transition-timing-function」は変換のタイプですが、「ease-out」は初めは遅くて早く変換するタイプ、「ease-in」は初めは早くて遅く変換するタイプ、「ease-in-out」は初めは早くて遅くなるがまた、早く変換するタイプ、「lin]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [CSS] border(枠)、余白スタイル - border, margin, padding" />
-<link rel="canonical" href="https://www.nowonbun.com/128.html" />
+<meta name="title" content="明月の開発ストーリ :: [CSS] トランジション(transition)" />
+<link rel="canonical" href="https://www.nowonbun.com/132.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [CSS] border(枠)、余白スタイル - border, margin, padding" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。cssのスタイルと言うと基本的に文字列、余白、枠、位置、状態のスタイルが基本だと思います。文字列は前述で説明しましたから、今回は枠(border)と余白に関して調べてみます。htmlタグでよく使うダグだというと「div」タグと「table」タグだと思います。そのところで「table」タグで例を作ります。上をみれば、例としてテーブルを作ってヘッダとボディを分けてテーブルのタイトルと内容を分けてタグを作成しました。スタイルを何もない状況でウェブブラウザに見るとテーブルで作成したとは感じられません。タグだけではテーブルスタイルができないですね。そうするとcssスタイルでテーブルみたいに修正しましょう。今回は「table」タグではなく「span」タグでスタイルを付けましょう。上の例では「div」タグの中で「span」タグを入れました。「div」タグは基本スタイルが「width:100%」です。それは「display:block」タイプですが、「display」タイプには次の投稿で説明します。そのことで高さ、枠を設定しました。「padding」のスタイルがありますね。「padding」は内余白、「margin」は外余白です。例えば「div」と「span」の左の余白は「div」の内余白(padding)の「10px」と「span」の外余白(margin)の「30px」で全て「40px」の余白があります。また「span」の「width」と「height」で「vw」は「vh」単位があります。「vw」はブラウザの画面コントロールにのサイズによって「70vw」は幅の「70%」という意味です。「vh」は縦のサイズによって何パーセントと意味ですね。また、「calc()」でプログラムで関数みたいな文法がありますね。それは括弧の内を計算してって意味です。つまり、cal(70vw-10px)と意味はブラウザの幅の70パーセントサイズで10pxを引くことですね。「margin」や「padding」、「border」の場合は「right」、「left」、「top」、「bottom」の小スタイルを持っています。「radius」の場合は長方形の角を丸くするスタイルです。「box-shadow」の場合は要素の影を描くスタイルですね。]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [CSS] トランジション(transition)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。cssのトランジション(transition)とは属性変更時に変更の速度を調節すること、変更のサイクルを設定することだと思われます。例えば、「div」タグの背景色を黄色にしてマウスを置く(hover)と緑色になることに設定すると思うと実際にタグで設定するとあっというまで処理されますね。例    .example-1 .item{        background-color: yellow;        height: 50px;    }    .example-1 .item:hover{        background-color: green;    }    マウスを上に置いてください。でもユーザによってこの変更することをスムースにアニメーションのようなアクションを与えたい人が言うと思います。その時にトランジション(transition)を利用すると設定ができます。例    .example-2 .item{        background-color: yellow;        height: 50px;        transition: background-color 2s ease-out 50ms;    }    .example-2 .item:hover{        background-color: green;        transition: background-color 2s ease-out 50ms;    }    マウスを上に置いてください。トランジションは４つのスタイル属性があります。４つと言ってもdelayの属性以外にはすべて設定しなければ作動しないですね。「transition-property」はトランジションの属性を与えるcssスタイル名です。上の例では「background-color」に効果を与えますね。「transition-duration」は変換する時間です。上の例とは黄色から緑色に変換することで2秒かかりますということですね。「transition-timing-function」は変換のタイプですが、「ease-out」は初めは遅くて早く変換するタイプ、「ease-in」は初めは早くて遅く変換するタイプ、「ease-in-out」は初めは早くて遅くなるがまた、早く変換するタイプ、「lin]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/128.html" />
+<meta property="og:url" content="https://www.nowonbun.com/132.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] border(枠)、余白スタイル - border, margin, padding" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。cssのスタイルと言うと基本的に文字列、余白、枠、位置、状態のスタイルが基本だと思います。文字列は前述で説明しましたから、今回は枠(border)と余白に関して調べてみます。htmlタグでよく使うダグだというと「div」タグと「table」タグだと思います。そのところで「table」タグで例を作ります。上をみれば、例としてテーブルを作ってヘッダとボディを分けてテーブルのタイトルと内容を分けてタグを作成しました。スタイルを何もない状況でウェブブラウザに見るとテーブルで作成したとは感じられません。タグだけではテーブルスタイルができないですね。そうするとcssスタイルでテーブルみたいに修正しましょう。今回は「table」タグではなく「span」タグでスタイルを付けましょう。上の例では「div」タグの中で「span」タグを入れました。「div」タグは基本スタイルが「width:100%」です。それは「display:block」タイプですが、「display」タイプには次の投稿で説明します。そのことで高さ、枠を設定しました。「padding」のスタイルがありますね。「padding」は内余白、「margin」は外余白です。例えば「div」と「span」の左の余白は「div」の内余白(padding)の「10px」と「span」の外余白(margin)の「30px」で全て「40px」の余白があります。また「span」の「width」と「height」で「vw」は「vh」単位があります。「vw」はブラウザの画面コントロールにのサイズによって「70vw」は幅の「70%」という意味です。「vh」は縦のサイズによって何パーセントと意味ですね。また、「calc()」でプログラムで関数みたいな文法がありますね。それは括弧の内を計算してって意味です。つまり、cal(70vw-10px)と意味はブラウザの幅の70パーセントサイズで10pxを引くことですね。「margin」や「padding」、「border」の場合は「right」、「left」、「top」、「bottom」の小スタイルを持っています。「radius」の場合は長方形の角を丸くするスタイルです。「box-shadow」の場合は要素の影を描くスタイルですね。]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] トランジション(transition)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。cssのトランジション(transition)とは属性変更時に変更の速度を調節すること、変更のサイクルを設定することだと思われます。例えば、「div」タグの背景色を黄色にしてマウスを置く(hover)と緑色になることに設定すると思うと実際にタグで設定するとあっというまで処理されますね。例    .example-1 .item{        background-color: yellow;        height: 50px;    }    .example-1 .item:hover{        background-color: green;    }    マウスを上に置いてください。でもユーザによってこの変更することをスムースにアニメーションのようなアクションを与えたい人が言うと思います。その時にトランジション(transition)を利用すると設定ができます。例    .example-2 .item{        background-color: yellow;        height: 50px;        transition: background-color 2s ease-out 50ms;    }    .example-2 .item:hover{        background-color: green;        transition: background-color 2s ease-out 50ms;    }    マウスを上に置いてください。トランジションは４つのスタイル属性があります。４つと言ってもdelayの属性以外にはすべて設定しなければ作動しないですね。「transition-property」はトランジションの属性を与えるcssスタイル名です。上の例では「background-color」に効果を与えますね。「transition-duration」は変換する時間です。上の例とは黄色から緑色に変換することで2秒かかりますということですね。「transition-timing-function」は変換のタイプですが、「ease-out」は初めは遅くて早く変換するタイプ、「ease-in」は初めは早くて遅く変換するタイプ、「ease-in-out」は初めは早くて遅くなるがまた、早く変換するタイプ、「lin]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [CSS] border(枠)、余白スタイル - border, margin, padding</title>
+<title>明月の開発ストーリ :: [CSS] トランジション(transition)</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[CSS] border(枠)、余白スタイル - border, margin, padding</h1>
+					<h1 id="titleTxt">[CSS] トランジション(transition)</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/12 20:16:43   修正日付 : 2019/12/12 20:17:24
+					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/18 20:33:57   修正日付 : 2019/12/18 20:35:20
 				</div>
 			</div>
 			<div class="article">
@@ -137,127 +137,131 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>CSSのスタイルと言うと基本的に文字列、余白、枠、位置、状態のスタイルが基本だと思います。</p> 
-  <p>文字列は前述で説明しましたから、今回は枠(border)と余白に関して調べてみます。</p> 
-  <p><br></p> 
-  <p>HTMLタグでよく使うダグだというと「div」タグと「table」タグだと思います。</p> 
-  <p>そのところで「table」タグで例を作ります。</p> 
-  <pre><code class="html" data-type="example.html">&lt;!DOCTYPE html&gt;
+  <p>CSSのトランジション(transition)とは属性変更時に変更の速度を調節すること、変更のサイクルを設定することだと思われます。</p> 
+  <p>例えば、「div」タグの背景色を黄色にしてマウスを置く(hover)と緑色になることに設定すると思うと実際にタグで設定するとあっというまで処理されますね。</p> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <p>例</p> 
+   <style>
+    .example-1 .item{
+        background-color: yellow;
+        height: 50px;
+    }
+    .example-1 .item:hover{
+        background-color: green;
+    }
+</style> 
+   <div class="example-1"> 
+    <div class="item">
+     マウスを上に置いてください。
+    </div> 
+   </div> 
+  </blockquote> 
+  <p>でもユーザによってこの変更することをスムースにアニメーションのようなアクションを与えたい人が言うと思います。</p> 
+  <p>その時にトランジション(transition)を利用すると設定ができます。</p> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <p>例</p> 
+   <style>
+    .example-2 .item{
+        background-color: yellow;
+        height: 50px;
+        transition: background-color 2s ease-out 50ms;
+    }
+    .example-2 .item:hover{
+        background-color: green;
+        transition: background-color 2s ease-out 50ms;
+    }
+</style> 
+   <div class="example-2"> 
+    <div class="item">
+     マウスを上に置いてください。
+    </div> 
+   </div> 
+  </blockquote> 
+  <pre><code class="html" data-type="index.html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;&lt;/head&gt;
   &lt;body&gt;
-    &lt;div&gt;
-      &lt;table&gt;
-        &lt;thead&gt;
-          &lt;tr&gt;
-            &lt;td&gt;title&lt;/td&gt;
-            &lt;td&gt;description&lt;/td&gt;
-          &lt;/tr&gt;
-        &lt;/thead&gt;
-        &lt;tbody&gt;
-          &lt;tr&gt;
-            &lt;td&gt;test1&lt;/td&gt;
-            &lt;td&gt;data1&lt;/td&gt;
-          &lt;/tr&gt;
-          &lt;tr&gt;
-            &lt;td&gt;test2&lt;/td&gt;
-            &lt;td&gt;data2&lt;/td&gt;
-          &lt;/tr&gt;
-        &lt;/tbody&gt;
-      &lt;/table&gt;
-    &lt;/div&gt;
+    &lt;div&gt;マウスを上に置いてください。&lt;/div&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre> 
-  <p>上をみれば、例としてテーブルを作ってヘッダとボディを分けてテーブルのタイトルと内容を分けてタグを作成しました。スタイルを何もない状況でウェブブラウザに見るとテーブルで作成したとは感じられません。</p> 
-  <p style="text-align:left;"><img src="./contents/128/684_001.png" data-filename="001.png" style="width: 221px;"></p> 
-  <p>タグだけではテーブルスタイルができないですね。そうするとCSSスタイルでテーブルみたいに修正しましょう。</p> 
-  <pre><code class="css" data-type="example.css">table {
-    /*テーブル内の枠スタイルですが、collapse設定をしないと二重線で表示される。*/
-    border-collapse: collapse;
-    width: 500px;
+  <pre><code class="css" data-type="style.css">div {
+  background-color: yellow;
+  transition-property:background-color;
+  transition-duration:2s;
+  transition-timing-function:ease-out;
+  transition-delay:50ms  
 }
-/*tableタグの中でthタグとtableタグの中でtdタグ*/
-table th, table td{
-    /*枠の線の太さ*/
-    border-width: 1px;
-    /*枠の線のスタイル - solid:実線、dotted:点線など。。*/
-    border-style: solid;
-    /*枠の線の色*/
-    border-color: black;
-    /*線の太さ、スタイル、色順で表示できる。*/
-    border: 1px solid black;
-    /*要素基準の左線の修正 - 右、上、下も可能 border-right, border-top, border-bottom*/
-    border-left: 2px dotted red;
-    /*幅のサイズ*/
-    width: 50px;
-    /*高さのサイズ*/
-    height: 30px;
-    /*テキスト整列*/
-    text-align: center;
+div:hover {
+  background-color: green;
+  transition: background-color 2s ease-out 50ms;
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/128/685_002.png" data-filename="002.png" style="width: 524px;"></p> 
-  <p>今回は「table」タグではなく「span」タグでスタイルを付けましょう。</p> 
-  <pre><code class="html" data-type="example.html">&lt;!DOCTYPE html&gt;
+  <p>トランジションは４つのスタイル属性があります。４つと言ってもdelayの属性以外にはすべて設定しなければ作動しないですね。</p> 
+  <p><br></p> 
+  <p>「transition-property」はトランジションの属性を与えるCSSスタイル名です。上の例では「background-color」に効果を与えますね。</p> 
+  <p>「transition-duration」は変換する時間です。上の例とは黄色から緑色に変換することで2秒かかりますということですね。</p> 
+  <p>「transition-timing-function」は変換のタイプですが、「ease-out」は初めは遅くて早く変換するタイプ、「ease-in」は初めは早くて遅く変換するタイプ、「ease-in-out」は初めは早くて遅くなるがまた、早く変換するタイプ、「linear」は一定な速度で変換するタイプ、「cubic-bezier(n,n,n,n)」は直接に変換速度を指定するタイプがあります。</p> 
+  <p>「transition-delay」は初めから変換ではなく、指定した時間の後で変換することです。</p> 
+  <p><br></p> 
+  <p>上のことは黄色から緑色に変換することで0.5秒あと2秒間に初めは遅く早く変換するスタイルです。</p> 
+  <p><br></p> 
+  <p>その以外にテキストにもアクションを上げることが出来ます。</p> 
+  <pre><code class="html" data-type="index.html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;style&gt;
-      div.background {
-        /*　高さのサイズ */
-        height: 100px;
-        /* 枠のサイズ、スタイル、色 */
-        border: 3px solid blue;
-        /* これはない余白 */
-        padding: 10px;
-        /* バックグラウンド色 */
-        background: red;
+      textarea {
+        width: 100%;
+        height: 50px;
+        transition-property: height;
+        transition-duration: 1s;
+        transition-timing-function: ease-out;
       }
-      span.item {
-        /*　要素表示タイプ */
-        display: inherit;
-        /* 幅のサイズ */
-        width: calc(70vw);
-        /* 高しのサイズ */
-        height: calc(10vh);
-        /* バックグラウンド色 */
-        background: yellow;
-        margin-left: 30px;
-        border-top-right-radius: 50px;
-        border: 3px dotted blue;
-        box-shadow: blue 4px 8px 16px 0px;  
+      textarea: focus {
+        height: 200px;
+        transition-property: height;
+        transition-duration: 5s;
+        transition-timing-function: ease-in-out;
       }
     &lt;/style&gt;
   &lt;/head&gt;
   &lt;body&gt;
-    &lt;div class="background"&gt;
-      &lt;span class="item"&gt;Hello world!!&lt;/span&gt;
-    &lt;/div&gt;
+    &lt;textarea placeholder="please input text!"&gt;&lt;/textarea&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/128/686_003.png" data-filename="003.png" style="width: 848px;"></p> 
-  <p>上の例では「div」タグの中で「span」タグを入れました。</p> 
-  <p>「div」タグは基本スタイルが「width:100%」です。それは「display:block」タイプですが、「display」タイプには次の投稿で説明します。</p> 
-  <p>そのことで高さ、枠を設定しました。「padding」のスタイルがありますね。</p> 
-  <p>「padding」は内余白、「margin」は外余白です。</p> 
-  <p>例えば「div」と「span」の左の余白は「div」の内余白(padding)の「10px」と「span」の外余白(margin)の「30px」で全て「40px」の余白があります。</p> 
-  <p>また「span」の「width」と「height」で「vw」は「vh」単位があります。</p> 
-  <p>「vw」はブラウザの画面コントロールにのサイズによって「70vw」は幅の「70%」という意味です。「vh」は縦のサイズによって何パーセントと意味ですね。</p> 
-  <p>また、「calc()」でプログラムで関数みたいな文法がありますね。それは括弧の内を計算してって意味です。</p> 
-  <p>つまり、cal(70vw-10px)と意味はブラウザの幅の70パーセントサイズで10pxを引くことですね。</p> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <p>例</p> 
+   <style>
+      textarea.example-textarea {
+        width: 100%;
+        height: 50px;
+        transition-property: height;
+        transition-duration: 1s;
+        transition-timing-function: ease-out;
+      }
+      textarea.example-textarea:focus {
+        height: 200px;
+        transition-property: height;
+        transition-duration: 5s;
+        transition-timing-function: ease-in-out;
+      }
+    </style> 
+   <div> 
+    <textarea class="example-textarea" placeholder="please input text!"></textarea> 
+   </div> 
+  </blockquote> 
+  <p>実際にウェブサービスでも、色々アクションや広告などのフォーカスを与え視線を集めるようにする方法でよく使っているスタイプです。</p> 
   <p><br></p> 
-  <p>「margin」や「padding」、「border」の場合は「right」、「left」、「top」、「bottom」の小スタイルを持っています。</p> 
-  <p>「radius」の場合は長方形の角を丸くするスタイルです。</p> 
-  <p><br></p> 
-  <p>「box-shadow」の場合は要素の影を描くスタイルですね。</p>
+  <p>でも、逆にウェブページでトランジションが多ければ集中度を落とす逆効果もあります。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=css>#css</a>,<a href=./search.html?query=style>#style</a>,<a href=./search.html?query=border>#border</a>,<a href=./search.html?query=margin>#margin</a>,<a href=./search.html?query=padding>#padding</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=css>#css</a>,<a href=./search.html?query=transition>#transition</a> </span>
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0204">Study / Javascript, Jquery, Css</a>」の他投稿</div>
@@ -271,7 +275,7 @@ table th, table td{
 		</article>
 		<script type="text/javascript" src="./js/postscreen.js"></script>
 		<div id="disqus_thread"></div>
-		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/128.html';this.page.identifier = 'NOWONBUN00128';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/132.html';this.page.identifier = 'NOWONBUN00132';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
 		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	</div>
 	<footer>
