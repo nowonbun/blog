@@ -125,7 +125,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/19 13:00:26   修正日付 : 2019/12/19 13:13:18
+					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/19 13:00:26   修正日付 : 2019/12/19 13:17:07
 				</div>
 			</div>
 			<div class="article">
@@ -410,17 +410,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     div#exam1 {
       background-color: blue;
       width: 100%;
-      font-size: 20px;
+      font-size: 15px;
       color: white;
       padding: 100px;
     }
-    div#exam1.off {
+    div#exam1.off1 {
       transition-property: transform;
       transition-duration: 1s;
       transform: perspective(100px) rotateX(-90deg);
       transform-origin: top;
     }
-    div#exam1.on {
+    div#exam1.on1 {
       transition-property: transform;
       transition-duration: 1s;
       transform: rotateX(0deg);
@@ -429,17 +429,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </style> 
     <script>
     function exam1() {
-      if ($("div#exam1").hasClass("on")) {
-        $("div#exam1").removeClass("on");
-        $("div#exam1").addClass("off");
+      if ($("div#exam1").hasClass("on1")) {
+        $("div#exam1").removeClass("on1");
+        $("div#exam1").addClass("off1");
         return;
       }
-      $("div#exam1").removeClass("off");
-      $("div#exam1").addClass("on");
+      $("div#exam1").removeClass("off1");
+      $("div#exam1").addClass("on1");
       return;
     }
   </script> 
-    <div id="exam1" class="off">
+    <div id="exam1" class="off1">
       こんにちは。 
     </div> 
     <input type="button" value="押してください。" style="width:100%;" onclick="exam1()"> 
