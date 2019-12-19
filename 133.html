@@ -35,30 +35,30 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / Javascript, Jquery, Css" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。cssのトランジション(transition)とは属性変更時に変更の速度を調節すること、変更のサイクルを設定することだと思われます。例えば、「div」タグの背景色を黄色にしてマウスを置く(hover)と緑色になることに設定すると思うと実際にタグで設定するとあっというまで処理されますね。例    .example-1 .item{        background-color: yellow;        height: 50px;    }    .example-1 .item:hover{        background-color: green;    }    マウスを上に置いてください。でもユーザによってこの変更することをスムースにアニメーションのようなアクションを与えたい人が言うと思います。その時にトランジション(transition)を利用すると設定ができます。例    .example-2 .item{        background-color: yellow;        height: 50px;        transition: background-color 2s ease-out 50ms;    }    .example-2 .item:hover{        background-color: green;        transition: background-color 2s ease-out 50ms;    }    マウスを上に置いてください。トランジションは４つのスタイル属性があります。４つと言ってもdelayの属性以外にはすべて設定しなければ作動しないですね。「transition-property」はトランジションの属性を与えるcssスタイル名です。上の例では「background-color」に効果を与えますね。「transition-duration」は変換する時間です。上の例とは黄色から緑色に変換することで2秒かかりますということですね。「transition-timing-function」は変換のタイプですが、「ease-out」は初めは遅くて早く変換するタイプ、「ease-in」は初めは早くて遅く変換するタイプ、「ease-in-out」は初めは早くて遅くなるがまた、早く変換するタイプ、「lin]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。トランスフォームとは3dな表現するように回転、拡大、縮小するスタイルといいます。何かというと下記の形です。      p.sample{      border: 1px solid #000;      width: 300px;      height: 70px;      font-size: 20px;      margin-left: 50px;      margin-top: -40px;      transform: translate(50px,50px) skew(200deg,-5deg);    }    おはようございます。こんにちは。こんばんは。トランスフォーム属性は「transform」,「transform-origin」,「perspective」,「transform-style」,「perspective-origin」,「backface-visibility」の６つがあります。「transform」の属性は変更スタイルを指定することです。回転しようか(rotate)、移動するか(translate),3d軸で移動(translate3d)するオプションもあります。心痛なオプション(scew)、拡大、縮小(scale)、3d的な拡大、縮小(scake)もあります。参照 - https://www.w3schools.com/cssref/css3_pr_transform.asp参照 - https://www.w3.org/talks/2012/0416-css-www2012/demos/transforms/demo-translate3d-cube.html「transform-origin」は回転の軸を決定するもので基本値は「transform-origin: center center」です。回転、拡大、縮小、心痛で使います。「perspective」は遠近感の設定です。「perspective-origin」は上の遠近感の設定する時に位置になります。「perspective-origin:top left;perspective:100px」なら上左の基準で100px距離の遠近感に表示することです。「transform-style」は上の「perspective」と「perspective-origin」をしようとすると設定]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [CSS] トランジション(transition)" />
-<link rel="canonical" href="https://www.nowonbun.com/132.html" />
+<meta name="title" content="明月の開発ストーリ :: [CSS] トランスフォーム (transform)" />
+<link rel="canonical" href="https://www.nowonbun.com/133.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [CSS] トランジション(transition)" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。cssのトランジション(transition)とは属性変更時に変更の速度を調節すること、変更のサイクルを設定することだと思われます。例えば、「div」タグの背景色を黄色にしてマウスを置く(hover)と緑色になることに設定すると思うと実際にタグで設定するとあっというまで処理されますね。例    .example-1 .item{        background-color: yellow;        height: 50px;    }    .example-1 .item:hover{        background-color: green;    }    マウスを上に置いてください。でもユーザによってこの変更することをスムースにアニメーションのようなアクションを与えたい人が言うと思います。その時にトランジション(transition)を利用すると設定ができます。例    .example-2 .item{        background-color: yellow;        height: 50px;        transition: background-color 2s ease-out 50ms;    }    .example-2 .item:hover{        background-color: green;        transition: background-color 2s ease-out 50ms;    }    マウスを上に置いてください。トランジションは４つのスタイル属性があります。４つと言ってもdelayの属性以外にはすべて設定しなければ作動しないですね。「transition-property」はトランジションの属性を与えるcssスタイル名です。上の例では「background-color」に効果を与えますね。「transition-duration」は変換する時間です。上の例とは黄色から緑色に変換することで2秒かかりますということですね。「transition-timing-function」は変換のタイプですが、「ease-out」は初めは遅くて早く変換するタイプ、「ease-in」は初めは早くて遅く変換するタイプ、「ease-in-out」は初めは早くて遅くなるがまた、早く変換するタイプ、「lin]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [CSS] トランスフォーム (transform)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。トランスフォームとは3dな表現するように回転、拡大、縮小するスタイルといいます。何かというと下記の形です。      p.sample{      border: 1px solid #000;      width: 300px;      height: 70px;      font-size: 20px;      margin-left: 50px;      margin-top: -40px;      transform: translate(50px,50px) skew(200deg,-5deg);    }    おはようございます。こんにちは。こんばんは。トランスフォーム属性は「transform」,「transform-origin」,「perspective」,「transform-style」,「perspective-origin」,「backface-visibility」の６つがあります。「transform」の属性は変更スタイルを指定することです。回転しようか(rotate)、移動するか(translate),3d軸で移動(translate3d)するオプションもあります。心痛なオプション(scew)、拡大、縮小(scale)、3d的な拡大、縮小(scake)もあります。参照 - https://www.w3schools.com/cssref/css3_pr_transform.asp参照 - https://www.w3.org/talks/2012/0416-css-www2012/demos/transforms/demo-translate3d-cube.html「transform-origin」は回転の軸を決定するもので基本値は「transform-origin: center center」です。回転、拡大、縮小、心痛で使います。「perspective」は遠近感の設定です。「perspective-origin」は上の遠近感の設定する時に位置になります。「perspective-origin:top left;perspective:100px」なら上左の基準で100px距離の遠近感に表示することです。「transform-style」は上の「perspective」と「perspective-origin」をしようとすると設定]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/132.html" />
+<meta property="og:url" content="https://www.nowonbun.com/133.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] トランジション(transition)" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。cssのトランジション(transition)とは属性変更時に変更の速度を調節すること、変更のサイクルを設定することだと思われます。例えば、「div」タグの背景色を黄色にしてマウスを置く(hover)と緑色になることに設定すると思うと実際にタグで設定するとあっというまで処理されますね。例    .example-1 .item{        background-color: yellow;        height: 50px;    }    .example-1 .item:hover{        background-color: green;    }    マウスを上に置いてください。でもユーザによってこの変更することをスムースにアニメーションのようなアクションを与えたい人が言うと思います。その時にトランジション(transition)を利用すると設定ができます。例    .example-2 .item{        background-color: yellow;        height: 50px;        transition: background-color 2s ease-out 50ms;    }    .example-2 .item:hover{        background-color: green;        transition: background-color 2s ease-out 50ms;    }    マウスを上に置いてください。トランジションは４つのスタイル属性があります。４つと言ってもdelayの属性以外にはすべて設定しなければ作動しないですね。「transition-property」はトランジションの属性を与えるcssスタイル名です。上の例では「background-color」に効果を与えますね。「transition-duration」は変換する時間です。上の例とは黄色から緑色に変換することで2秒かかりますということですね。「transition-timing-function」は変換のタイプですが、「ease-out」は初めは遅くて早く変換するタイプ、「ease-in」は初めは早くて遅く変換するタイプ、「ease-in-out」は初めは早くて遅くなるがまた、早く変換するタイプ、「lin]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] トランスフォーム (transform)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。トランスフォームとは3dな表現するように回転、拡大、縮小するスタイルといいます。何かというと下記の形です。      p.sample{      border: 1px solid #000;      width: 300px;      height: 70px;      font-size: 20px;      margin-left: 50px;      margin-top: -40px;      transform: translate(50px,50px) skew(200deg,-5deg);    }    おはようございます。こんにちは。こんばんは。トランスフォーム属性は「transform」,「transform-origin」,「perspective」,「transform-style」,「perspective-origin」,「backface-visibility」の６つがあります。「transform」の属性は変更スタイルを指定することです。回転しようか(rotate)、移動するか(translate),3d軸で移動(translate3d)するオプションもあります。心痛なオプション(scew)、拡大、縮小(scale)、3d的な拡大、縮小(scake)もあります。参照 - https://www.w3schools.com/cssref/css3_pr_transform.asp参照 - https://www.w3.org/talks/2012/0416-css-www2012/demos/transforms/demo-translate3d-cube.html「transform-origin」は回転の軸を決定するもので基本値は「transform-origin: center center」です。回転、拡大、縮小、心痛で使います。「perspective」は遠近感の設定です。「perspective-origin」は上の遠近感の設定する時に位置になります。「perspective-origin:top left;perspective:100px」なら上左の基準で100px距離の遠近感に表示することです。「transform-style」は上の「perspective」と「perspective-origin」をしようとすると設定]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [CSS] トランジション(transition)</title>
+<title>明月の開発ストーリ :: [CSS] トランスフォーム (transform)</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[CSS] トランジション(transition)</h1>
+					<h1 id="titleTxt">[CSS] トランスフォーム (transform)</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/18 20:33:57   修正日付 : 2019/12/18 20:35:20
+					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/19 13:00:26   修正日付 : 2019/12/19 13:13:18
 				</div>
 			</div>
 			<div class="article">
@@ -137,131 +137,325 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>CSSのトランジション(transition)とは属性変更時に変更の速度を調節すること、変更のサイクルを設定することだと思われます。</p> 
-  <p>例えば、「div」タグの背景色を黄色にしてマウスを置く(hover)と緑色になることに設定すると思うと実際にタグで設定するとあっというまで処理されますね。</p> 
-  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
-   <p>例</p> 
-   <style>
-    .example-1 .item{
-        background-color: yellow;
-        height: 50px;
+  <p>トランスフォームとは3Dな表現するように回転、拡大、縮小するスタイルといいます。</p> 
+  <p>何かというと下記の形です。</p> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;height:110px;"> 
+   <div> 
+    <style scoped="scoped">
+    p.sample{
+      border: 1px solid #000;
+      width: 300px;
+      height: 70px;
+      font-size: 20px;
+      margin-left: 50px;
+      margin-top: -40px;
+      transform: translate(50px,50px) skew(200deg,-5deg);
     }
-    .example-1 .item:hover{
-        background-color: green;
-    }
-</style> 
-   <div class="example-1"> 
-    <div class="item">
-     マウスを上に置いてください。
-    </div> 
+  </style> 
+    <p class="sample">おはようございます。こんにちは。こんばんは。</p> 
    </div> 
   </blockquote> 
-  <p>でもユーザによってこの変更することをスムースにアニメーションのようなアクションを与えたい人が言うと思います。</p> 
-  <p>その時にトランジション(transition)を利用すると設定ができます。</p> 
-  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
-   <p>例</p> 
-   <style>
-    .example-2 .item{
-        background-color: yellow;
-        height: 50px;
-        transition: background-color 2s ease-out 50ms;
-    }
-    .example-2 .item:hover{
-        background-color: green;
-        transition: background-color 2s ease-out 50ms;
-    }
-</style> 
-   <div class="example-2"> 
-    <div class="item">
-     マウスを上に置いてください。
-    </div> 
-   </div> 
-  </blockquote> 
+  <p>トランスフォーム属性は「transform」,「transform-origin」,「perspective」,「transform-style」,「perspective-origin」,「backface-visibility」の６つがあります。</p> 
+  <p>「transform」の属性は変更スタイルを指定することです。回転しようか(rotate)、移動するか(translate),3D軸で移動(translate3d)するオプションもあります。</p> 
+  <p>心痛なオプション(scew)、拡大、縮小(scale)、3D的な拡大、縮小(scake)もあります。</p> 
+  <p>参照 - <a href="https://www.w3schools.com/cssref/css3_pr_transform.asp" target="_blank">https://www.w3schools.com/cssref/css3_pr_transform.asp</a></p> 
+  <p>参照 - <a href="https://www.w3.org/Talks/2012/0416-CSS-WWW2012/Demos/transforms/demo-translate3d-cube.html" target="_blank">https://www.w3.org/Talks/2012/0416-CSS-WWW2012/Demos/transforms/demo-translate3d-cube.html</a></p> 
+  <p>「transform-origin」は回転の軸を決定するもので基本値は「transform-origin: center center」です。回転、拡大、縮小、心痛で使います。</p> 
+  <p>「perspective」は遠近感の設定です。「perspective-origin」は上の遠近感の設定する時に位置になります。</p> 
+  <p>「perspective-origin:top left;perspective:100px」なら上左の基準で100px距離の遠近感に表示することです。</p> 
+  <p>「transform-style」は上の「perspective」と「perspective-origin」をしようとすると設定する属性です。値は「transform-style: preserve-3d;」だけです。</p> 
   <pre><code class="html" data-type="index.html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
-  &lt;head&gt;&lt;/head&gt;
-  &lt;body&gt;
-    &lt;div&gt;マウスを上に置いてください。&lt;/div&gt;
-  &lt;/body&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    .cube {
+      perspective-origin: 300px 300px;
+      perspective: 300px;
+      transform-style: preserve-3d;
+      margin-top: 400px;
+      margin-left: 400px;
+    }
+
+    .cube .face {
+      display: block;
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      color: white;
+      text-align: center;
+    }
+
+    .cube .front {
+      background: rgba(0, 0, 0, 0.3);
+      transform: translateZ(50px);
+    }
+
+    .cube .back {
+      background: rgba(0, 255, 0, 1);
+      color: black;
+      transform: rotateY(180deg) translateZ(50px);
+    }
+
+    .cube .right {
+      background: rgba(196, 0, 0, 0.7);
+      transform: rotateY(90deg) translateZ(50px);
+    }
+
+    .cube .left {
+      background: rgba(0, 0, 196, 0.7);
+      transform: rotateY(-90deg) translateZ(50px);
+    }
+
+    .cube .top {
+      background: rgba(196, 196, 0, 0.7);
+      transform: rotateX(90deg) translateZ(50px);
+    }
+
+    .cube .bottom {
+      background: rgba(196, 0, 196, 0.7);
+      transform: rotateX(-90deg) translateZ(50px);
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="cube"&gt;
+    &lt;div class="face front"&gt;1&lt;/div&gt;
+    &lt;div class="face back"&gt;2&lt;/div&gt;
+    &lt;div class="face right"&gt;3&lt;/div&gt;
+    &lt;div class="face left"&gt;4&lt;/div&gt;
+    &lt;div class="face top"&gt;5&lt;/div&gt;
+    &lt;div class="face bottom"&gt;6&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
 &lt;/html&gt;
 </code></pre> 
-  <pre><code class="css" data-type="style.css">div {
-  background-color: yellow;
-  transition-property:background-color;
-  transition-duration:2s;
-  transition-timing-function:ease-out;
-  transition-delay:50ms  
+  <blockquote style="border: 1px solid;border-left: 5px solid;height:250px;"> 
+   <style scoped="scoped">
+.cube {
+    perspective-origin: 300px 300px;
+    perspective: 300px;
+    transform-style: preserve-3d;
+    margin-left:100px;
+    margin-top: 100px;
 }
-div:hover {
-  background-color: green;
-  transition: background-color 2s ease-out 50ms;
+.cube .face {
+  display: block;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  color: white;
+  text-align: center;
 }
-</code></pre> 
-  <p>トランジションは４つのスタイル属性があります。４つと言ってもdelayの属性以外にはすべて設定しなければ作動しないですね。</p> 
-  <p><br></p> 
-  <p>「transition-property」はトランジションの属性を与えるCSSスタイル名です。上の例では「background-color」に効果を与えますね。</p> 
-  <p>「transition-duration」は変換する時間です。上の例とは黄色から緑色に変換することで2秒かかりますということですね。</p> 
-  <p>「transition-timing-function」は変換のタイプですが、「ease-out」は初めは遅くて早く変換するタイプ、「ease-in」は初めは早くて遅く変換するタイプ、「ease-in-out」は初めは早くて遅くなるがまた、早く変換するタイプ、「linear」は一定な速度で変換するタイプ、「cubic-bezier(n,n,n,n)」は直接に変換速度を指定するタイプがあります。</p> 
-  <p>「transition-delay」は初めから変換ではなく、指定した時間の後で変換することです。</p> 
-  <p><br></p> 
-  <p>上のことは黄色から緑色に変換することで0.5秒あと2秒間に初めは遅く早く変換するスタイルです。</p> 
-  <p><br></p> 
-  <p>その以外にテキストにもアクションを上げることが出来ます。</p> 
+.cube .front {
+    background: rgba(0, 0, 0, 0.3);
+    transform: translateZ(50px);
+}
+.cube .back {
+    background: rgba(0, 255, 0, 1);
+    color: black;
+    transform: rotateY(180deg) translateZ(50px);
+}
+.cube .right {
+  background: rgba(196, 0, 0, 0.7);
+  transform: rotateY(90deg) translateZ(50px);
+}
+.cube .left {
+    background: rgba(0, 0, 196, 0.7);
+    transform: rotateY(-90deg) translateZ(50px);
+}
+.cube .top {
+    background: rgba(196, 196, 0, 0.7);
+    transform: rotateX(90deg) translateZ(50px);
+}
+.cube .bottom {
+    background: rgba(196, 0, 196, 0.7);
+    transform: rotateX(-90deg) translateZ(50px);
+}
+</style> 
+   <div class="cube"> 
+    <div class="face front">
+     1
+    </div> 
+    <div class="face back">
+     2
+    </div> 
+    <div class="face right">
+     3
+    </div> 
+    <div class="face left">
+     4
+    </div> 
+    <div class="face top">
+     5
+    </div> 
+    <div class="face bottom">
+     6
+    </div> 
+   </div> 
+  </blockquote> 
+  <p>「backface-visibility」の場合は「transform」要素で裏面になると見えるかどうかの設定です。</p> 
   <pre><code class="html" data-type="index.html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
   &lt;head&gt;
     &lt;style&gt;
-      textarea {
-        width: 100%;
-        height: 50px;
-        transition-property: height;
-        transition-duration: 1s;
-        transition-timing-function: ease-out;
+      .item {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        background-color: blue;
+        transition: 2s;
+        color:white;
       }
-      textarea: focus {
-        height: 200px;
-        transition-property: height;
-        transition-duration: 5s;
-        transition-timing-function: ease-in-out;
+      .item-1 {
+        backface-visibility: visible;
+      }
+      .item-2 {
+        backface-visibility: hidden;
+      }
+      .item-test-checkbox:checked ~ .item {
+        transform: rotateY( 180deg );
       }
     &lt;/style&gt;
   &lt;/head&gt;
-  &lt;body&gt;
-    &lt;textarea placeholder="please input text!"&gt;&lt;/textarea&gt;
-  &lt;/body&gt;
+&lt;body&gt;
+  &lt;input type="checkbox" class="item-test-checkbox"&gt;click!&lt;br /&gt;
+  &lt;div class="item item-1"&gt;テスト&lt;/div&gt;
+  &lt;div class="item item-2"&gt;テスト&lt;/div&gt;
+&lt;/body&gt;
 &lt;/html&gt;
 </code></pre> 
   <blockquote style="border: 1px solid;border-left: 5px solid;"> 
-   <p>例</p> 
    <style>
-      textarea.example-textarea {
-        width: 100%;
-        height: 50px;
-        transition-property: height;
-        transition-duration: 1s;
-        transition-timing-function: ease-out;
+.item {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-color: blue;
+    transition: 2s;
+    color:white;
+}
+.item-1 {
+    backface-visibility: visible;
+}
+.item-2 {
+    backface-visibility: hidden;
+}
+.item-test-checkbox:checked ~ .item {
+    transform: rotateY( 180deg )
+}
+</style> 
+   <input type="checkbox" class="item-test-checkbox">click!
+   <br> 
+   <div class="item item-1">
+    テスト
+   </div> 
+   <div class="item item-2">
+    テスト
+   </div> 
+  </blockquote> 最後にウェブサイトなどでよく使える簡単なtrasitionの例を作ります。 
+  <pre><code class="html" data-type="index.html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;style scoped="scoped"&gt;
+    div#exam1 {
+      background-color: blue;
+      width: 100%;
+      font-size: 20px;
+      color: white;
+      padding: 100px;
+    }
+    div#exam1.off {
+      transition-property: transform;
+      transition-duration: 1s;
+      transform: perspective(100px) rotateX(-90deg);
+      transform-origin: top;
+    }
+    div#exam1.on {
+      transition-property: transform;
+      transition-duration: 1s;
+      transform: rotateX(0deg);
+      transform-origin: top;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.3.1.min.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    function exam1() {
+      if ($("div#exam1").hasClass("on")) {
+        $("div#exam1").removeClass("on");
+        $("div#exam1").addClass("off");
+        return;
       }
-      textarea.example-textarea:focus {
-        height: 200px;
-        transition-property: height;
-        transition-duration: 5s;
-        transition-timing-function: ease-in-out;
+      $("div#exam1").removeClass("off");
+      $("div#exam1").addClass("on");
+      return;
+    }
+  &lt;/script&gt;
+  &lt;div id="exam1" class="off"&gt;
+    こんにちは。
+  &lt;/div&gt;
+  &lt;input type="button" value="押してください。" style="width:100%;" onclick="exam1()"&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <div style="max-width: 300px;border:1px solid #000;"> 
+    <style>
+    div#exam1 {
+      background-color: blue;
+      width: 100%;
+      font-size: 20px;
+      color: white;
+      padding: 100px;
+    }
+    div#exam1.off {
+      transition-property: transform;
+      transition-duration: 1s;
+      transform: perspective(100px) rotateX(-90deg);
+      transform-origin: top;
+    }
+    div#exam1.on {
+      transition-property: transform;
+      transition-duration: 1s;
+      transform: rotateX(0deg);
+      transform-origin: top;
+    }
+  </style> 
+    <script>
+    function exam1() {
+      if ($("div#exam1").hasClass("on")) {
+        $("div#exam1").removeClass("on");
+        $("div#exam1").addClass("off");
+        return;
       }
-    </style> 
-   <div> 
-    <textarea class="example-textarea" placeholder="please input text!"></textarea> 
+      $("div#exam1").removeClass("off");
+      $("div#exam1").addClass("on");
+      return;
+    }
+  </script> 
+    <div id="exam1" class="off">
+      こんにちは。 
+    </div> 
+    <input type="button" value="押してください。" style="width:100%;" onclick="exam1()"> 
    </div> 
   </blockquote> 
-  <p>実際にウェブサービスでも、色々アクションや広告などのフォーカスを与え視線を集めるようにする方法でよく使っているスタイプです。</p> 
+  <p>何処かで上の似てるな効果を見たことありますが、真似して作ってみました。</p> 
   <p><br></p> 
-  <p>でも、逆にウェブページでトランジションが多ければ集中度を落とす逆効果もあります。</p>
+  <p>筆者の場合はウェブサイトで様々なアクションがあることを別に好きではないです。</p> 
+  <p>アクションが多ければ、コンテンツ集中度が落ちるからです。でも、逆にポイントなどの効果を与える時には良いと思いますね。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=css>#css</a>,<a href=./search.html?query=transition>#transition</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=css>#css</a>,<a href=./search.html?query=transform>#transform</a> </span>
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0204">Study / Javascript, Jquery, Css</a>」の他投稿</div>
@@ -275,7 +469,7 @@ div:hover {
 		</article>
 		<script type="text/javascript" src="./js/postscreen.js"></script>
 		<div id="disqus_thread"></div>
-		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/132.html';this.page.identifier = 'NOWONBUN00132';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/133.html';this.page.identifier = 'NOWONBUN00133';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
 		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	</div>
 	<footer>
