@@ -35,30 +35,30 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / Javascript, Jquery, Css" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。cssのトランジション(transition)とは属性変更時に変更の速度を調節すること、変更のサイクルを設定することだと思われます。例えば、「div」タグの背景色を黄色にしてマウスを置く(hover)と緑色になることに設定すると思うと実際にタグで設定するとあっというまで処理されますね。例    .example-1 .item{        background-color: yellow;        height: 50px;    }    .example-1 .item:hover{        background-color: green;    }    マウスを上に置いてください。でもユーザによってこの変更することをスムースにアニメーションのようなアクションを与えたい人が言うと思います。その時にトランジション(transition)を利用すると設定ができます。例    .example-2 .item{        background-color: yellow;        height: 50px;        transition: background-color 2s ease-out 50ms;    }    .example-2 .item:hover{        background-color: green;        transition: background-color 2s ease-out 50ms;    }    マウスを上に置いてください。トランジションは４つのスタイル属性があります。４つと言ってもdelayの属性以外にはすべて設定しなければ作動しないですね。「transition-property」はトランジションの属性を与えるcssスタイル名です。上の例では「background-color」に効果を与えますね。「transition-duration」は変換する時間です。上の例とは黄色から緑色に変換することで2秒かかりますということですね。「transition-timing-function」は変換のタイプですが、「ease-out」は初めは遅くて早く変換するタイプ、「ease-in」は初めは早くて遅く変換するタイプ、「ease-in-out」は初めは早くて遅くなるがまた、早く変換するタイプ、「lin]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。アニメーションスタイルは前述で紹介したトランジションと似ているな効果になります。link - [css] トランジション(transition)様々な要素を動的に動く効果と関係があることですね。差異というとトランジション(transition)の場合は指定したcssスタイルによる効果を制御するが、アニメーションの場合は様々なアクションをもっと複雑な効果ができることだといいます。複雑な効果というとトランジション(transition)の場合はスタイルで色の変換、要素移動する時に遅くしたり、早くしたりする制御ですが、アニメーションは要素を回しながら色をキラキラすることができると意味です。私の場合は「loading」イメージやコンテンツの効果よりアイコン要素で動的要素を作る時によく使います。@keyframes test-animation{	    0% {	        min-width:0%;	        background-color:red;	    }	    50%	{	        min-width:50%;	        background-color:blue;	        color:white;	    }	    100% {	        min-width:100%;	        background-color:green;	        color:white;	    }	}	div.example-box {	    display:inline-block;	    animation-name : test-animation;	    animation-duration :3s;	    animation-delay:1s;	    animation-timing-function:linear;	    animation-fill-mode:both;	    animation-iteration-count: infinite;	    animation-direction:reverse;	}	div.example-box:hover {	    animation-play-state:paused;	}マウスをバーの上に置いてみてくたさい。アニメーションスタイルをみれば、ほぼトランジションと似]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [CSS] トランジション(transition)" />
-<link rel="canonical" href="https://www.nowonbun.com/132.html" />
+<meta name="title" content="明月の開発ストーリ :: [CSS] アニメーション (animation)" />
+<link rel="canonical" href="https://www.nowonbun.com/134.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [CSS] トランジション(transition)" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。cssのトランジション(transition)とは属性変更時に変更の速度を調節すること、変更のサイクルを設定することだと思われます。例えば、「div」タグの背景色を黄色にしてマウスを置く(hover)と緑色になることに設定すると思うと実際にタグで設定するとあっというまで処理されますね。例    .example-1 .item{        background-color: yellow;        height: 50px;    }    .example-1 .item:hover{        background-color: green;    }    マウスを上に置いてください。でもユーザによってこの変更することをスムースにアニメーションのようなアクションを与えたい人が言うと思います。その時にトランジション(transition)を利用すると設定ができます。例    .example-2 .item{        background-color: yellow;        height: 50px;        transition: background-color 2s ease-out 50ms;    }    .example-2 .item:hover{        background-color: green;        transition: background-color 2s ease-out 50ms;    }    マウスを上に置いてください。トランジションは４つのスタイル属性があります。４つと言ってもdelayの属性以外にはすべて設定しなければ作動しないですね。「transition-property」はトランジションの属性を与えるcssスタイル名です。上の例では「background-color」に効果を与えますね。「transition-duration」は変換する時間です。上の例とは黄色から緑色に変換することで2秒かかりますということですね。「transition-timing-function」は変換のタイプですが、「ease-out」は初めは遅くて早く変換するタイプ、「ease-in」は初めは早くて遅く変換するタイプ、「ease-in-out」は初めは早くて遅くなるがまた、早く変換するタイプ、「lin]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [CSS] アニメーション (animation)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。アニメーションスタイルは前述で紹介したトランジションと似ているな効果になります。link - [css] トランジション(transition)様々な要素を動的に動く効果と関係があることですね。差異というとトランジション(transition)の場合は指定したcssスタイルによる効果を制御するが、アニメーションの場合は様々なアクションをもっと複雑な効果ができることだといいます。複雑な効果というとトランジション(transition)の場合はスタイルで色の変換、要素移動する時に遅くしたり、早くしたりする制御ですが、アニメーションは要素を回しながら色をキラキラすることができると意味です。私の場合は「loading」イメージやコンテンツの効果よりアイコン要素で動的要素を作る時によく使います。@keyframes test-animation{	    0% {	        min-width:0%;	        background-color:red;	    }	    50%	{	        min-width:50%;	        background-color:blue;	        color:white;	    }	    100% {	        min-width:100%;	        background-color:green;	        color:white;	    }	}	div.example-box {	    display:inline-block;	    animation-name : test-animation;	    animation-duration :3s;	    animation-delay:1s;	    animation-timing-function:linear;	    animation-fill-mode:both;	    animation-iteration-count: infinite;	    animation-direction:reverse;	}	div.example-box:hover {	    animation-play-state:paused;	}マウスをバーの上に置いてみてくたさい。アニメーションスタイルをみれば、ほぼトランジションと似]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/132.html" />
+<meta property="og:url" content="https://www.nowonbun.com/134.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] トランジション(transition)" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。cssのトランジション(transition)とは属性変更時に変更の速度を調節すること、変更のサイクルを設定することだと思われます。例えば、「div」タグの背景色を黄色にしてマウスを置く(hover)と緑色になることに設定すると思うと実際にタグで設定するとあっというまで処理されますね。例    .example-1 .item{        background-color: yellow;        height: 50px;    }    .example-1 .item:hover{        background-color: green;    }    マウスを上に置いてください。でもユーザによってこの変更することをスムースにアニメーションのようなアクションを与えたい人が言うと思います。その時にトランジション(transition)を利用すると設定ができます。例    .example-2 .item{        background-color: yellow;        height: 50px;        transition: background-color 2s ease-out 50ms;    }    .example-2 .item:hover{        background-color: green;        transition: background-color 2s ease-out 50ms;    }    マウスを上に置いてください。トランジションは４つのスタイル属性があります。４つと言ってもdelayの属性以外にはすべて設定しなければ作動しないですね。「transition-property」はトランジションの属性を与えるcssスタイル名です。上の例では「background-color」に効果を与えますね。「transition-duration」は変換する時間です。上の例とは黄色から緑色に変換することで2秒かかりますということですね。「transition-timing-function」は変換のタイプですが、「ease-out」は初めは遅くて早く変換するタイプ、「ease-in」は初めは早くて遅く変換するタイプ、「ease-in-out」は初めは早くて遅くなるがまた、早く変換するタイプ、「lin]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] アニメーション (animation)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。アニメーションスタイルは前述で紹介したトランジションと似ているな効果になります。link - [css] トランジション(transition)様々な要素を動的に動く効果と関係があることですね。差異というとトランジション(transition)の場合は指定したcssスタイルによる効果を制御するが、アニメーションの場合は様々なアクションをもっと複雑な効果ができることだといいます。複雑な効果というとトランジション(transition)の場合はスタイルで色の変換、要素移動する時に遅くしたり、早くしたりする制御ですが、アニメーションは要素を回しながら色をキラキラすることができると意味です。私の場合は「loading」イメージやコンテンツの効果よりアイコン要素で動的要素を作る時によく使います。@keyframes test-animation{	    0% {	        min-width:0%;	        background-color:red;	    }	    50%	{	        min-width:50%;	        background-color:blue;	        color:white;	    }	    100% {	        min-width:100%;	        background-color:green;	        color:white;	    }	}	div.example-box {	    display:inline-block;	    animation-name : test-animation;	    animation-duration :3s;	    animation-delay:1s;	    animation-timing-function:linear;	    animation-fill-mode:both;	    animation-iteration-count: infinite;	    animation-direction:reverse;	}	div.example-box:hover {	    animation-play-state:paused;	}マウスをバーの上に置いてみてくたさい。アニメーションスタイルをみれば、ほぼトランジションと似]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [CSS] トランジション(transition)</title>
+<title>明月の開発ストーリ :: [CSS] アニメーション (animation)</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[CSS] トランジション(transition)</h1>
+					<h1 id="titleTxt">[CSS] アニメーション (animation)</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/18 20:33:57   修正日付 : 2019/12/18 20:35:20
+					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/20 20:51:38   修正日付 : 2019/12/23 07:44:49
 				</div>
 			</div>
 			<div class="article">
@@ -137,131 +137,338 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>CSSのトランジション(transition)とは属性変更時に変更の速度を調節すること、変更のサイクルを設定することだと思われます。</p> 
-  <p>例えば、「div」タグの背景色を黄色にしてマウスを置く(hover)と緑色になることに設定すると思うと実際にタグで設定するとあっというまで処理されますね。</p> 
-  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
-   <p>例</p> 
-   <style>
-    .example-1 .item{
-        background-color: yellow;
-        height: 50px;
-    }
-    .example-1 .item:hover{
-        background-color: green;
-    }
-</style> 
-   <div class="example-1"> 
-    <div class="item">
-     マウスを上に置いてください。
-    </div> 
-   </div> 
-  </blockquote> 
-  <p>でもユーザによってこの変更することをスムースにアニメーションのようなアクションを与えたい人が言うと思います。</p> 
-  <p>その時にトランジション(transition)を利用すると設定ができます。</p> 
-  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
-   <p>例</p> 
-   <style>
-    .example-2 .item{
-        background-color: yellow;
-        height: 50px;
-        transition: background-color 2s ease-out 50ms;
-    }
-    .example-2 .item:hover{
-        background-color: green;
-        transition: background-color 2s ease-out 50ms;
-    }
-</style> 
-   <div class="example-2"> 
-    <div class="item">
-     マウスを上に置いてください。
-    </div> 
-   </div> 
-  </blockquote> 
-  <pre><code class="html" data-type="index.html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;&lt;/head&gt;
-  &lt;body&gt;
-    &lt;div&gt;マウスを上に置いてください。&lt;/div&gt;
-  &lt;/body&gt;
+  <p>アニメーションスタイルは前述で紹介したトランジションと似ているな効果になります。</p> 
+  <p>link - <a href="https://www.nowonbun.com/132.html" target="_blank">[CSS] トランジション(transition)</a></p> 
+  <p><br></p> 
+  <p>様々な要素を動的に動く効果と関係があることですね。差異というとトランジション(transition)の場合は指定したCSSスタイルによる効果を制御するが、アニメーションの場合は様々なアクションをもっと複雑な効果ができることだといいます。</p> 
+  <p>複雑な効果というとトランジション(transition)の場合はスタイルで色の変換、要素移動する時に遅くしたり、早くしたりする制御ですが、アニメーションは要素を回しながら色をキラキラすることができると意味です。</p> 
+  <p><br></p> 
+  <p>私の場合は「loading」イメージやコンテンツの効果よりアイコン要素で動的要素を作る時によく使います。</p> 
+  <pre><code class="html" data-type="index.html">&lt;!DOCTYPE html&gt;	
+&lt;html&gt;	
+ &lt;head&gt;	
+  &lt;style&gt;
+    /* アニメーションプロパティ*/
+    @keyframes test-animation{	
+      0% {	
+        min-width:0%;	
+        background-color:red;	
+      }	
+      50%	{	
+        min-width:50%;	
+        background-color:blue;	
+        color:white;	
+      }	
+      100% {	
+        min-width:100%;	
+        background-color:green;	
+        color:white;	
+      }	
+    }	
+    div.box {	
+      display:inline-block;	
+      /* アニメーションプロパティ設定*/
+      animation-name : test-animation;	
+      /* アニメーションが開始から終了までかかる時間 */
+      animation-duration :3s;
+      /* アニメーション開始タイミング */
+      animation-delay:1s;
+      /* アニメーション変換タイプ */
+      animation-timing-function:linear;	
+      /* アニメーションが完了した時の形 */
+      animation-fill-mode:both;	
+      /* アニメーションの繰り返し回数 */
+      animation-iteration-count: infinite;	
+      /* アニメーションの流れタイプ */
+      animation-direction:reverse;	
+    }	
+    div.box:hover{
+      /* アニメーション状況設定 */
+      animation-play-state:paused;	
+    }	
+  &lt;/style&gt;	
+ &lt;/head&gt;	
+ &lt;body&gt;	
+  &lt;div class="box"&gt;	
+    マウスをバーの上に置いてみてくたさい。
+  &lt;/div&gt;	
+ &lt;/body&gt;	
 &lt;/html&gt;
 </code></pre> 
-  <pre><code class="css" data-type="style.css">div {
-  background-color: yellow;
-  transition-property:background-color;
-  transition-duration:2s;
-  transition-timing-function:ease-out;
-  transition-delay:50ms  
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <style>
+@keyframes test-animation{	
+    0% {	
+        min-width:0%;	
+        background-color:red;	
+    }	
+    50%	{	
+        min-width:50%;	
+        background-color:blue;	
+        color:white;	
+    }	
+    100% {	
+        min-width:100%;	
+        background-color:green;	
+        color:white;	
+    }	
+}	
+div.example-box {	
+    display:inline-block;	
+    animation-name : test-animation;	
+    animation-duration :3s;	
+    animation-delay:1s;	
+    animation-timing-function:linear;	
+    animation-fill-mode:both;	
+    animation-iteration-count: infinite;	
+    animation-direction:reverse;	
+}	
+div.example-box:hover {	
+    animation-play-state:paused;	
 }
-div:hover {
-  background-color: green;
-  transition: background-color 2s ease-out 50ms;
-}
-</code></pre> 
-  <p>トランジションは４つのスタイル属性があります。４つと言ってもdelayの属性以外にはすべて設定しなければ作動しないですね。</p> 
+</style> 
+   <div class="example-box">
+    マウスをバーの上に置いてみてくたさい。
+   </div> 
+  </blockquote> 
+  <p>アニメーションスタイルをみれば、ほぼトランジションと似てますね。</p> 
+  <p>「animation-name」はアニメーションスタイルのプロパティを設定することができます。アニメーションプロパティは「@keyframes プロパティ名」形式で作成できます。</p> 
+  <p>プロパティをみれば「0%」、「50%」、「100%」の表現があります。「0%」アニメーションの初期の状況、「100%」は完了した時の状況、50％は「duration」を3sに設定しましたが、アニメーションが開始してから1.5秒後の状況になります。</p> 
+  <p>そして「delay」はアニメーションがローディングされて何秒後から開始するかの設定する項目です。</p> 
+  <p>「animaion-timing-function」はトランジションと同じオプションで「linear」は一定な速度、ease-inは遅くなる速度、ease-outは早くなる速度、ease-in-out遅くなってまた早くなる速度、cubic-bezier(n,n,n,n)速度指定があります。</p> 
+  <p>そして「fill-mode」はアニメーションが終わった時に状況ですが、「animation-iteration-count」で「infinite」で設定しましたので、アニメーションが終わらない設定になっていますね。</p> 
+  <p>もし、「both」ということで設定すると「100%」の状況で残っています。その以外に「initial」に設定すると「0%」に戻りますね。</p> 
+  <p>「animation-direction」はなれるのタイプですが、「reverse」を設定すると「0→100%」ではなく、「100%→0%」に動きます。</p> 
   <p><br></p> 
-  <p>「transition-property」はトランジションの属性を与えるCSSスタイル名です。上の例では「background-color」に効果を与えますね。</p> 
-  <p>「transition-duration」は変換する時間です。上の例とは黄色から緑色に変換することで2秒かかりますということですね。</p> 
-  <p>「transition-timing-function」は変換のタイプですが、「ease-out」は初めは遅くて早く変換するタイプ、「ease-in」は初めは早くて遅く変換するタイプ、「ease-in-out」は初めは早くて遅くなるがまた、早く変換するタイプ、「linear」は一定な速度で変換するタイプ、「cubic-bezier(n,n,n,n)」は直接に変換速度を指定するタイプがあります。</p> 
-  <p>「transition-delay」は初めから変換ではなく、指定した時間の後で変換することです。</p> 
-  <p><br></p> 
-  <p>上のことは黄色から緑色に変換することで0.5秒あと2秒間に初めは遅く早く変換するスタイルです。</p> 
-  <p><br></p> 
-  <p>その以外にテキストにもアクションを上げることが出来ます。</p> 
-  <pre><code class="html" data-type="index.html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
+  <p>最後「hover」オプションで「animation-play-state」でアニメーションを止まる効果も付けました。</p> 
+  <pre><code class="html" data-type="index.html">&lt;!DOCTYPE html&gt;	
+  &lt;html&gt;
+    &lt;head&gt;&lt;/head&gt;
+    &lt;body&gt;
     &lt;style&gt;
-      textarea {
-        width: 100%;
-        height: 50px;
-        transition-property: height;
-        transition-duration: 1s;
-        transition-timing-function: ease-out;
+      @keyframes uil-battery-demo-anim4 {
+        0% {
+          opacity: 0;
+        }
+        10% {
+          opacity: 0;
+        }
+        30% {
+          opacity: 1;
+        }
       }
-      textarea: focus {
-        height: 200px;
-        transition-property: height;
-        transition-duration: 5s;
-        transition-timing-function: ease-in-out;
+      @keyframes uil-battery-demo-anim3 {
+        0% {
+          opacity: 0;
+        }
+        30% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @keyframes uil-battery-demo-anim2 {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0;
+        }
+        70% {
+          opacity: 1;
+        }
+      }
+      @keyframes uil-battery-demo-anim1 {
+        0% {
+          opacity: 0;
+        }
+        70% {
+          opacity: 0;
+        }
+        90% {
+          opacity: 1;
+        }
+      }
+      .uil-battery-demo-css .outer {
+        position: relative;
+        width: 80px;
+        border: 13px solid #0d8c30;
+        height: 120px;
+        top: 50px;
+        left: 20px;
+        border-radius: 10px;
+      }
+      .uil-battery-demo-css .outer:after {
+        content: " ";
+        display: block;
+        position: absolute;
+        top: -33px;
+        left: 0px;
+        width: 52px;
+        height: 32px;
+        border-radius: 10px;
+        background: #0d8c30;
+      }
+      .uil-battery-demo-css .inner {
+        position: relative;
+        width: 45px;
+        height: 19px;
+        left: 38px;
+        background: #00f1ff;
+      }
+      .uil-battery-demo-css .inner:nth-of-type(2) {
+        top: -53px;
+        animation: uil-battery-demo-anim1 1.5s linear infinite;
+      }
+      .uil-battery-demo-css .inner:nth-of-type(3) {
+        top: -50px;
+        animation: uil-battery-demo-anim2 1.5s linear infinite;
+      }
+      .uil-battery-demo-css .inner:nth-of-type(4) {
+        top: -47px;
+        animation: uil-battery-demo-anim3 1.5s linear infinite;
+      }
+      .uil-battery-demo-css .inner:nth-of-type(5) {
+        top: -44px;
+        animation: uil-battery-demo-anim4 1.5s linear infinite;
+      }
+      .uil-battery-demo-css{
+        display: inline-block;
       }
     &lt;/style&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;textarea placeholder="please input text!"&gt;&lt;/textarea&gt;
+    &lt;div class='uil-battery-demo-css'&gt;
+      &lt;div class="outer"&gt;&lt;/div&gt;
+      &lt;div class="inner"&gt;&lt;/div&gt;
+      &lt;div class="inner"&gt;&lt;/div&gt;
+      &lt;div class="inner"&gt;&lt;/div&gt;
+      &lt;div class="inner"&gt;&lt;/div&gt;
+    &lt;/div&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre> 
   <blockquote style="border: 1px solid;border-left: 5px solid;"> 
-   <p>例</p> 
    <style>
-      textarea.example-textarea {
-        width: 100%;
-        height: 50px;
-        transition-property: height;
-        transition-duration: 1s;
-        transition-timing-function: ease-out;
-      }
-      textarea.example-textarea:focus {
-        height: 200px;
-        transition-property: height;
-        transition-duration: 5s;
-        transition-timing-function: ease-in-out;
-      }
-    </style> 
-   <div> 
-    <textarea class="example-textarea" placeholder="please input text!"></textarea> 
+@keyframes uil-battery-demo-anim4 {
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+}
+
+@keyframes uil-battery-demo-anim3 {
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes uil-battery-demo-anim2 {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+    }
+}
+
+@keyframes uil-battery-demo-anim1 {
+    0% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 1;
+    }
+}
+.uil-battery-demo-css .outer {
+  position: relative;
+  width: 80px;
+  border: 13px solid #0d8c30;
+  height: 120px;
+  top: 50px;
+  left: 20px;
+  border-radius: 10px;
+}
+.uil-battery-demo-css .outer:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: -33px;
+  left: 0px;
+  width: 52px;
+  height: 32px;
+  border-radius: 10px;
+  background: #0d8c30;
+}
+.uil-battery-demo-css .inner {
+  position: relative;
+  width: 45px;
+  height: 19px;
+  left: 38px;
+  background: #00f1ff;
+}
+.uil-battery-demo-css .inner:nth-of-type(2) {
+  top: -53px;
+  animation: uil-battery-demo-anim1 1.5s linear infinite;
+}
+.uil-battery-demo-css .inner:nth-of-type(3) {
+  top: -50px;
+  animation: uil-battery-demo-anim2 1.5s linear infinite;
+}
+.uil-battery-demo-css .inner:nth-of-type(4) {
+  top: -47px;
+  animation: uil-battery-demo-anim3 1.5s linear infinite;
+}
+.uil-battery-demo-css .inner:nth-of-type(5) {
+  top: -44px;
+  animation: uil-battery-demo-anim4 1.5s linear infinite;
+}
+.uil-battery-demo-css{
+  display: inline-block;
+}
+</style> 
+   <div class="uil-battery-demo-css"> 
+    <div class="outer"></div> 
+    <div class="inner"></div> 
+    <div class="inner"></div> 
+    <div class="inner"></div> 
+    <div class="inner"></div> 
    </div> 
   </blockquote> 
-  <p>実際にウェブサービスでも、色々アクションや広告などのフォーカスを与え視線を集めるようにする方法でよく使っているスタイプです。</p> 
+  <p>上の例ではアニメーションタグだけの電池のマークを付けってみました。</p> 
   <p><br></p> 
-  <p>でも、逆にウェブページでトランジションが多ければ集中度を落とす逆効果もあります。</p>
+  <p>このアニメーションタグもトランジションと同じ効果で静的なウェブサイトで動的な感じを与える機能ですね。でも、多く使えば、コンテンツの集中度を落としサイトが乱雑になる傾向があるので、適切に使えなければならないと思います。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=css>#css</a>,<a href=./search.html?query=transition>#transition</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=css>#css</a>,<a href=./search.html?query=animation>#animation</a> </span>
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0204">Study / Javascript, Jquery, Css</a>」の他投稿</div>
@@ -275,7 +482,7 @@ div:hover {
 		</article>
 		<script type="text/javascript" src="./js/postscreen.js"></script>
 		<div id="disqus_thread"></div>
-		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/132.html';this.page.identifier = 'NOWONBUN00132';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/134.html';this.page.identifier = 'NOWONBUN00134';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
 		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	</div>
 	<footer>
