@@ -35,30 +35,30 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / Javascript, Jquery, Css" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。前述までhtmlに関して説明しました。これからcssに関して調べてみます。cssは簡単にいうとhtmlタグでドキュメントを作成したらcss styleでドキュメントにスタイルを付けることかな。cssを反映するように先にhtmlを作成しましょう。上の例はただhtmlだけ作成しました。htmlタグだけでもウェブドキュメントが作成できますが、何か我々が使う一般ウェブスタイルではないですね。ここでcss styleを入れます。一応、cssのスタイルを付けるようにはcss selecterを理解しなければならないですが、それは少し複雑なので別途の投稿で説明します。簡単に見ると「h1」や「li」はタグ名です。「li &amp;gt; a」の場合は「li」タグ直下派生の「a」タグです。つまり「&amp;lt;li&amp;gt;&amp;lt;a&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;li&amp;gt;」の「a」タグですね。スペースがある場合(「div div」)はdivタグの派生タグの中で全ての「div」です。上の選択になります。各タグを指定して括弧の中がスタイル形式です。スタイルに関しても量が多いので別途の投稿で説明します。上のスタイルをhtmlのドキュメントの「head」タグの中でいれましょう。また、ブラウザを再更新すると上の結果になります。htmlタグだけで作られるウェブドキュメントより少し華やかになりました。これからcssに関してもっと詳しく調べてみましょう。]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。cssで色のスタイルは色名で設定することもできるし、rgb表現式で設定もできるし、hexの値で設定もできます。/*色名設定*/.color-1{  color:blue;}/*rgb表現式*/.color-2{  /*赤、緑、青*/  color:rgb(255,0,0);}.color-3{  color: #008000;}color-1color-2color-3色の参照は下記のurlで参考できます。link - https://www.w3schools.com/cssref/css_colors.aspこの投稿では基本色設定ではなく、グラデーションに関して調べてみました。初めのdivタグのlinear-gradientは線形のグラデーションです。パラメータはグラデーションの変換角度で180度で設定すれば水平で上から下の段階でシルバー色から紫色に変わると意味で色の設定です。二つ目は上右から下左の角度ですが、角度では45度ですね。初めは赤色で、真中は白色、最後は青色に設定されます。三つ目のradial-gradientは丸系のグラデーションです。パラメータはcircle設定ですが初めは真中から外側に黄色から緑色に設定することです。四つ目は丸の設定ですが、丸のサイズが横50px、縦50pxです。「at」の後は丸の位置ですね。右から80px、上から30pxの中心であずき色、オリーブ色、アクア色順になります。五つ目のネイビー色20%、teal色80%、水平(0deg,180deg)角度で繰り返いしてグラデーションになります。六つ目の角度(-45deg = 315deg)で繰り返いして初め白色から白色まで5px、黒色5pxから黒色10pxまでグラデーションになります。七つ目のrepeating-radial-gradientは繰り返し丸系のグラデーションです。ここのキーワードは四つがありますが、closest-side、closest-corner、farthest-side、farthest-cornerがありますね。                    キーワード        説明                            closest-side        グラデーションの終了形状は、その中心に最も近いボックスの側面（円の場合）または中心に最も近い垂直および水]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [CSS] CSS Stylesとは？" />
-<link rel="canonical" href="https://www.nowonbun.com/118.html" />
+<meta name="title" content="明月の開発ストーリ :: [CSS] 色スタイル、グラデーション" />
+<link rel="canonical" href="https://www.nowonbun.com/135.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [CSS] CSS Stylesとは？" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。前述までhtmlに関して説明しました。これからcssに関して調べてみます。cssは簡単にいうとhtmlタグでドキュメントを作成したらcss styleでドキュメントにスタイルを付けることかな。cssを反映するように先にhtmlを作成しましょう。上の例はただhtmlだけ作成しました。htmlタグだけでもウェブドキュメントが作成できますが、何か我々が使う一般ウェブスタイルではないですね。ここでcss styleを入れます。一応、cssのスタイルを付けるようにはcss selecterを理解しなければならないですが、それは少し複雑なので別途の投稿で説明します。簡単に見ると「h1」や「li」はタグ名です。「li &amp;gt; a」の場合は「li」タグ直下派生の「a」タグです。つまり「&amp;lt;li&amp;gt;&amp;lt;a&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;li&amp;gt;」の「a」タグですね。スペースがある場合(「div div」)はdivタグの派生タグの中で全ての「div」です。上の選択になります。各タグを指定して括弧の中がスタイル形式です。スタイルに関しても量が多いので別途の投稿で説明します。上のスタイルをhtmlのドキュメントの「head」タグの中でいれましょう。また、ブラウザを再更新すると上の結果になります。htmlタグだけで作られるウェブドキュメントより少し華やかになりました。これからcssに関してもっと詳しく調べてみましょう。]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [CSS] 色スタイル、グラデーション" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。cssで色のスタイルは色名で設定することもできるし、rgb表現式で設定もできるし、hexの値で設定もできます。/*色名設定*/.color-1{  color:blue;}/*rgb表現式*/.color-2{  /*赤、緑、青*/  color:rgb(255,0,0);}.color-3{  color: #008000;}color-1color-2color-3色の参照は下記のurlで参考できます。link - https://www.w3schools.com/cssref/css_colors.aspこの投稿では基本色設定ではなく、グラデーションに関して調べてみました。初めのdivタグのlinear-gradientは線形のグラデーションです。パラメータはグラデーションの変換角度で180度で設定すれば水平で上から下の段階でシルバー色から紫色に変わると意味で色の設定です。二つ目は上右から下左の角度ですが、角度では45度ですね。初めは赤色で、真中は白色、最後は青色に設定されます。三つ目のradial-gradientは丸系のグラデーションです。パラメータはcircle設定ですが初めは真中から外側に黄色から緑色に設定することです。四つ目は丸の設定ですが、丸のサイズが横50px、縦50pxです。「at」の後は丸の位置ですね。右から80px、上から30pxの中心であずき色、オリーブ色、アクア色順になります。五つ目のネイビー色20%、teal色80%、水平(0deg,180deg)角度で繰り返いしてグラデーションになります。六つ目の角度(-45deg = 315deg)で繰り返いして初め白色から白色まで5px、黒色5pxから黒色10pxまでグラデーションになります。七つ目のrepeating-radial-gradientは繰り返し丸系のグラデーションです。ここのキーワードは四つがありますが、closest-side、closest-corner、farthest-side、farthest-cornerがありますね。                    キーワード        説明                            closest-side        グラデーションの終了形状は、その中心に最も近いボックスの側面（円の場合）または中心に最も近い垂直および水]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/118.html" />
+<meta property="og:url" content="https://www.nowonbun.com/135.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] CSS Stylesとは？" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。前述までhtmlに関して説明しました。これからcssに関して調べてみます。cssは簡単にいうとhtmlタグでドキュメントを作成したらcss styleでドキュメントにスタイルを付けることかな。cssを反映するように先にhtmlを作成しましょう。上の例はただhtmlだけ作成しました。htmlタグだけでもウェブドキュメントが作成できますが、何か我々が使う一般ウェブスタイルではないですね。ここでcss styleを入れます。一応、cssのスタイルを付けるようにはcss selecterを理解しなければならないですが、それは少し複雑なので別途の投稿で説明します。簡単に見ると「h1」や「li」はタグ名です。「li &amp;gt; a」の場合は「li」タグ直下派生の「a」タグです。つまり「&amp;lt;li&amp;gt;&amp;lt;a&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;li&amp;gt;」の「a」タグですね。スペースがある場合(「div div」)はdivタグの派生タグの中で全ての「div」です。上の選択になります。各タグを指定して括弧の中がスタイル形式です。スタイルに関しても量が多いので別途の投稿で説明します。上のスタイルをhtmlのドキュメントの「head」タグの中でいれましょう。また、ブラウザを再更新すると上の結果になります。htmlタグだけで作られるウェブドキュメントより少し華やかになりました。これからcssに関してもっと詳しく調べてみましょう。]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] 色スタイル、グラデーション" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。cssで色のスタイルは色名で設定することもできるし、rgb表現式で設定もできるし、hexの値で設定もできます。/*色名設定*/.color-1{  color:blue;}/*rgb表現式*/.color-2{  /*赤、緑、青*/  color:rgb(255,0,0);}.color-3{  color: #008000;}color-1color-2color-3色の参照は下記のurlで参考できます。link - https://www.w3schools.com/cssref/css_colors.aspこの投稿では基本色設定ではなく、グラデーションに関して調べてみました。初めのdivタグのlinear-gradientは線形のグラデーションです。パラメータはグラデーションの変換角度で180度で設定すれば水平で上から下の段階でシルバー色から紫色に変わると意味で色の設定です。二つ目は上右から下左の角度ですが、角度では45度ですね。初めは赤色で、真中は白色、最後は青色に設定されます。三つ目のradial-gradientは丸系のグラデーションです。パラメータはcircle設定ですが初めは真中から外側に黄色から緑色に設定することです。四つ目は丸の設定ですが、丸のサイズが横50px、縦50pxです。「at」の後は丸の位置ですね。右から80px、上から30pxの中心であずき色、オリーブ色、アクア色順になります。五つ目のネイビー色20%、teal色80%、水平(0deg,180deg)角度で繰り返いしてグラデーションになります。六つ目の角度(-45deg = 315deg)で繰り返いして初め白色から白色まで5px、黒色5pxから黒色10pxまでグラデーションになります。七つ目のrepeating-radial-gradientは繰り返し丸系のグラデーションです。ここのキーワードは四つがありますが、closest-side、closest-corner、farthest-side、farthest-cornerがありますね。                    キーワード        説明                            closest-side        グラデーションの終了形状は、その中心に最も近いボックスの側面（円の場合）または中心に最も近い垂直および水]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [CSS] CSS Stylesとは？</title>
+<title>明月の開発ストーリ :: [CSS] 色スタイル、グラデーション</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[CSS] CSS Stylesとは？</h1>
+					<h1 id="titleTxt">[CSS] 色スタイル、グラデーション</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/11/27 07:30:30   修正日付 : 2019/11/27 07:31:26
+					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/24 07:37:22   修正日付 : 2019/12/24 07:39:42
 				</div>
 			</div>
 			<div class="article">
@@ -137,107 +137,209 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>前述までHTMLに関して説明しました。これからCSSに関して調べてみます。</p> 
-  <p>CSSは簡単にいうとHTMLタグでドキュメントを作成したらCSS styleでドキュメントにスタイルを付けることかな。</p> 
-  <p><br></p> 
-  <p>CSSを反映するように先にHTMLを作成しましょう。</p> 
-  <pre><code class="html" data-type="only html tag">&lt;!doctype html&gt;
-  &lt;html&gt;
-    &lt;head&gt;&lt;title&gt;ドキュメント例&lt;/title&gt; &lt;/head&gt;
-    &lt;body&gt;
-      &lt;h1&gt;開発企画書&lt;/h1&gt;
-      &lt;h2&gt;目次&lt;/h2&gt;
-      &lt;ol&gt;
-        &lt;li&gt;&lt;a href="#intro"&gt;概要&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#contents"&gt;開発内容&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#period"&gt;開発期間&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#person"&gt;開発人数&lt;/a&gt;&lt;/li&gt;
-      &lt;/ol&gt;
-      &lt;hr&gt;
-      &lt;div&gt;
-        &lt;h3&gt;概要&lt;/h3&gt;
-        &lt;div&gt;このとキュメンとはただ作成しました。&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-        &lt;h3&gt;開発内容&lt;/h3&gt;
-        &lt;div&gt;アイアンマンを作るような戦略を立ち上げ&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-        &lt;h3&gt;開発期間&lt;/h3&gt;
-        &lt;div&gt;一日で十分&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-        &lt;h3&gt;開発内容&lt;/h3&gt;
-        &lt;div&gt;私に任せよう。&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/body&gt;
+  <p>CSSで色のスタイルは色名で設定することもできるし、RGB表現式で設定もできるし、HEXの値で設定もできます。</p> 
+  <pre><code class="html" data-type="index.html">&lt;!DOCTYPE html&gt;	
+&lt;html&gt;	
+  &lt;head&gt;
+    &lt;style&gt;
+      /*色名設定*/
+      .color-1{
+        color:blue;
+      }
+      /*RGB表現式*/
+      .color-2{
+        /*赤、グリーン、青*/
+        color:RGB(255,0,0);
+      }
+      /*HEX表現式*/
+      .color-3{
+        color: #008000;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class="color-1"&gt;color-1&lt;/div&gt;
+    &lt;div class="color-2"&gt;color-2&lt;/div&gt;
+    &lt;div class="color-3"&gt;color-3&lt;/div&gt;
+  &lt;/body&gt;
 &lt;/html&gt;
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/118/665_001.png" data-filename="001.png" style="width: 777px;"></p> 
-  <p>上の例はただHTMLだけ作成しました。HTMLタグだけでもウェブドキュメントが作成できますが、何か我々が使う一般ウェブスタイルではないですね。ここでCSS styleを入れます。</p> 
-  <pre><code class="css" data-type="css style">&lt;style&gt;
-  /* h1タグ */
-  h1 {
-    color:green;
-    text-align:center;
-  }
-  /* h2タグ */
-  h2 {
-    padding-left : 20px;
-    border-bottom : 3px solid #000;
-  }
-  /* liタグ */
-  li {
-    background-color:green;
-    border-bottom : 1px solid #000;
-    font-size : 20px;
-    height:30px;
-    padding-top:10px;
-  }
-  /* liタグの直下派生のaタグ */
-  li &gt; a {
-    text-decoration:none;
-    color:white;
-  }
-  /* bodyタグの直下派生のdivタグ */
-  body &gt; div {
-    border:1px solid red;
-    margin:2px;
-  }
-  /* bodyタグの直下派生のdivタグの派生div */
-  body &gt; div div {
-    height:100px;
-  }
-&lt;/style&gt;
-</code></pre> 
-  <p>一応、CSSのスタイルを付けるようにはCSS Selecterを理解しなければならないですが、それは少し複雑なので別途の投稿で説明します。</p> 
-  <p>簡単に見ると「h1」や「li」はタグ名です。「li &gt; a」の場合は「li」タグ直下派生の「a」タグです。つまり「&lt;li&gt;&lt;a&gt;&lt;/a&gt;&lt;li&gt;」の「a」タグですね。</p> 
-  <p>スペースがある場合(「div div」)はdivタグの派生タグの中で全ての「div」です。</p> 
-  <pre><code class="html" data-type="tag selector">&lt;div&gt;
-  &lt;div&gt;対象&lt;/div&gt;
-&lt;/div&gt;
-&lt;div&gt;
-  &lt;section&gt;
-    &lt;div&gt;対象&lt;/div&gt;
-  &lt;/section&gt;
-&lt;/div&gt;
-</code></pre> 
-  <p>上の選択になります。</p> 
-  <p>各タグを指定して括弧の中がスタイル形式です。スタイルに関しても量が多いので別途の投稿で説明します。</p> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <style>
+/*色名設定*/
+.color-1{
+  color:blue;
+}
+/*RGB表現式*/
+.color-2{
+  /*赤、緑、青*/
+  color:RGB(255,0,0);
+}
+.color-3{
+  color: #008000;
+}
+</style> 
+   <div class="color-1">
+    color-1
+   </div> 
+   <div class="color-2">
+    color-2
+   </div> 
+   <div class="color-3">
+    color-3
+   </div> 
+  </blockquote> 
+  <p>色の参照は下記のURLで参考できます。</p> 
+  <p>link - <a href="https://www.w3schools.com/cssref/css_colors.asp" target="_blank">https://www.w3schools.com/cssref/css_colors.asp</a></p> 
   <p><br></p> 
-  <p>上のスタイルをHTMLのドキュメントの「head」タグの中でいれましょう。</p> 
-  <p style="text-align:left;"><img src="./contents/118/666_002.png" data-filename="002.png" style="width: 767px;"></p> 
-  <p>また、ブラウザを再更新すると上の結果になります。</p> 
-  <p><br></p> 
-  <p>HTMLタグだけで作られるウェブドキュメントより少し華やかになりました。</p> 
-  <p>これからCSSに関してもっと詳しく調べてみましょう。</p>
+  <p>この投稿では基本色設定ではなく、グラデーションに関して調べてみました。</p> 
+  <pre><code class="html" data-type="index.html">&lt;!DOCTYPE html&gt;	
+&lt;html&gt;	
+  &lt;head&gt;	
+    &lt;style&gt;	
+      div.exam{	
+        display:inline-block;	
+        width:9%;	
+        height:100px;	
+        border:1px solid #000;	
+        float:left;	
+      }	
+      div.exam:nth-of-type(1){	
+        /*線系のグラデーション*/
+        background:linear-gradient(180deg,silver,purple);	
+      }	
+      div.exam:nth-of-type(2){
+        /*線系のグラデーション*/
+        background:linear-gradient(to top right,red 0%,white 50%,blue 100%);	
+      }	
+      div.exam:nth-of-type(3){	
+        /*丸系のグラデーション*/
+        background:radial-gradient(circle,yellow,green);	
+      }	
+      div.exam:nth-of-type(4){
+        /*丸系のグラデーション*/
+        background:radial-gradient(50px 50px at 80px 30px,maroon,olive,あ);	
+      }	
+      div.exam:nth-of-type(5){
+        /*繰り返し線系のグラデーション*/
+        background:repeating-linear-gradient(navy 20%,teal 80%);	
+      }	
+      div.exam:nth-of-type(6){
+        /*繰り返し線系のグラデーション*/
+        background:repeating-linear-gradient(-45deg,white, white 5px,black 5px,black 10px);	
+      }	
+      div.exam:nth-of-type(7){
+        /*繰り返し丸系のグラデーション*/
+        background:repeating-radial-gradient(circle closest-side,gray 0px, lime 20px);	
+      }	
+      /*繰り返し丸系のグラデーション*/
+      div.exam:nth-of-type(8){	
+        background:repeating-radial-gradient(circle,transparent, white 5px,fuchsia 5px,fuchsia 10px);	
+      }	
+    &lt;/style&gt;	
+  &lt;/head&gt;	
+  &lt;body&gt;	
+    &lt;div class="exam"&gt;&lt;/div&gt;	
+    &lt;div class="exam"&gt;&lt;/div&gt;	
+    &lt;div class="exam"&gt;&lt;/div&gt;	
+    &lt;div class="exam"&gt;&lt;/div&gt;	
+    &lt;div class="exam"&gt;&lt;/div&gt;	
+    &lt;div class="exam"&gt;&lt;/div&gt;	
+    &lt;div class="exam"&gt;&lt;/div&gt;	
+    &lt;div class="exam"&gt;&lt;/div&gt;	
+  &lt;/body&gt;	
+&lt;/html&gt;
+</code></pre> 
+  <p>初めのdivタグのlinear-gradientは線形のグラデーションです。パラメータはグラデーションの変換角度で180度で設定すれば水平で上から下の段階でシルバー色から紫色に変わると意味で色の設定です。</p> 
+  <p>二つ目は上右から下左の角度ですが、角度では45度ですね。初めは赤色で、真中は白色、最後は青色に設定されます。</p> 
+  <p>三つ目のradial-gradientは丸系のグラデーションです。パラメータはcircle設定ですが初めは真中から外側に黄色から緑色に設定することです。</p> 
+  <p>四つ目は丸の設定ですが、丸のサイズが横50px、縦50pxです。「at」の後は丸の位置ですね。右から80px、上から30pxの中心であずき色、オリーブ色、アクア色順になります。</p> 
+  <p>五つ目のネイビー色20%、teal色80%、水平(0deg,180deg)角度で繰り返いしてグラデーションになります。</p> 
+  <p>六つ目の角度(-45deg = 315deg)で繰り返いして初め白色から白色まで5px、黒色5pxから黒色10pxまでグラデーションになります。</p> 
+  <p>七つ目のrepeating-radial-gradientは繰り返し丸系のグラデーションです。</p> 
+  <p>ここのキーワードは四つがありますが、closest-side、closest-corner、farthest-side、farthest-cornerがありますね。</p> 
+  <div class="table-responsive"> 
+   <table class="table table-striped table-bordered table-condensed"> 
+    <thead> 
+     <tr style="background-color:#DAD7D7"> 
+      <th style="white-space: nowrap;">キーワード</th> 
+      <th>説明</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr style="background-color:#DAD7D7"> 
+      <td style="white-space: nowrap;">closest-side</td> 
+      <td>グラデーションの終了形状は、その中心に最も近いボックスの側面（円の場合）または中心に最も近い垂直および水平の両方の辺（楕円の場合）に一致します。</td> 
+     </tr> 
+     <tr style="background-color:#DAD7D7"> 
+      <td style="white-space: nowrap;">closest-corner</td> 
+      <td>グラデーションの終了形状は、ボックスの中心から最も近い角に正確に合うようにサイズ設定されます。</td> 
+     </tr> 
+     <tr style="background-color:#DAD7D7"> 
+      <td style="white-space: nowrap;">farthest-side</td> 
+      <td>最も近い側に似ていますが、終了形状は、ボックスの中心から最も遠い側（または垂直および水平側）に合うサイズになっています。</td> 
+     </tr> 
+     <tr style="background-color:#DAD7D7"> 
+      <td style="white-space: nowrap;">farthest-corner</td> 
+      <td>グラデーションの終了形状は、ボックスの中心から最も遠いコーナーに正確に合うようにサイズが設定されます。</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <p>筆者の場合はclosest-sideの設定なので、丸が繰り返して広がるこです。グレー色0pxからライム色20pxほど丸ができます。</p> 
+  <p>最後は透明色から白色5px,フクシア色5pxからフクシア色10pxにグラデーションすることです。</p> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;height: 110px;"> 
+   <style>	
+div.exam{	
+  display:inline-block;
+  width:9%;	
+  height:100px;	
+  border:1px solid #000;	
+  float:left;	
+}	
+div.exam:nth-of-type(1){	
+  background:linear-gradient(180deg,silver,purple);	
+}	
+div.exam:nth-of-type(2){
+  background:linear-gradient(to top right,red 0%,white 50%,blue 100%);	
+}	
+div.exam:nth-of-type(3){	
+  background:radial-gradient(circle,yellow,green);	
+}	
+div.exam:nth-of-type(4){
+  background:radial-gradient(50px 50px at 80px 30px,maroon,olive,あ);	
+}	
+div.exam:nth-of-type(5){
+  background:repeating-linear-gradient(navy 20%,teal 80%);	
+}	
+div.exam:nth-of-type(6){
+  background:repeating-linear-gradient(-45deg,white, white 5px,black 5px,black 10px);	
+}	
+div.exam:nth-of-type(7){
+  background:repeating-radial-gradient(circle closest-side,gray 0px, lime 20px);	
+}	
+div.exam:nth-of-type(8){	
+  background:repeating-radial-gradient(circle,transparent, white 5px,fuchsia 5px,fuchsia 10px);	
+}	
+</style> 
+   <div class="exam"></div> 
+   <div class="exam"></div> 
+   <div class="exam"></div> 
+   <div class="exam"></div> 
+   <div class="exam"></div> 
+   <div class="exam"></div> 
+   <div class="exam"></div> 
+   <div class="exam"></div> 
+  </blockquote> 
+  <p>グラデーションは様々ところでよく使う色ですが、たくさん使うとやはりコンテンツの集中度を落とす効果が発生します。</p> 
+  <p>色やポイントを与える時、広告する時には良いと思います。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=css>#css</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=css>#css</a>,<a href=./search.html?query=gradation>#gradation</a> </span>
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0204">Study / Javascript, Jquery, Css</a>」の他投稿</div>
@@ -251,7 +353,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</article>
 		<script type="text/javascript" src="./js/postscreen.js"></script>
 		<div id="disqus_thread"></div>
-		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/118.html';this.page.identifier = 'NOWONBUN00118';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/135.html';this.page.identifier = 'NOWONBUN00135';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
 		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	</div>
 	<footer>
