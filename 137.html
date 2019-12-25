@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / PHP" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。ネットサーフィンすれば、「java vs c#」、「php vs java」、「php　vs c#」など、言語の優秀性、性能、短所などを比較して書いた投稿が多いです。筆者の場合はプログラム言語を3～4個の言語を運用が可能ですが、言語の間に比較するのは意味がないと思います。例えば、リンゴとミカンがあります。リンゴが栄養が多いか？ミカンが栄養が多いか？健康にいいものか？どの果物がもっといいかというとみんなリンゴはリンゴの味で美味しいし必要な栄養があるし、ミカンはミカンで美味しいし栄養がありますといいますね。プログラム言語も同じです。これから紹介するphpはウェブスクリプトですが、javaとc#の比べてphpだけの魅力があるプログラム言語です。それで意味がない比較を少ししてphpの特性を説明します。phpとjavaを比べるとphpはjavaより基本環境設定が簡単です。「php+apache+db」の設定で終わります。javaの場合は「apache+tomcat+java+db」です。そういえば、「tomcat」だけ追加されたですね。phpの場合はコンパイル言語ではなく、スクリプト言語なので、ソース修正する時に、別途のコンパイルの手続きが要らなく、画面ページに反映が早いですが、javaの場合は再コンパイル、サーバ再起動などの手続きが必要なので修正から反映までphpの開発時間が圧倒的に早いです。プログラムのパフォーマンスはプログラム言語の性能もありますが、開発する人(デベロッパー)の能力の比重が多いので、省略します。まだ、プロぐジェクト管理能力に関してもphpが大きいプロジェクトには悪く、javaが大きいプロジェクトでよいといいますが、これも設計、環境設定なのによって差があるので、どっちがいいかとは言えません。オープンソースはコミュニティに関してはjavaの方が大きいではないかと思います。でもphpコミュニティも小さくなく、すごく大きいです。筆者はメイン言語がphpよりjavaなので筆者の感じだけの可能性もあります。上の状況だけみればphpがjavaよりいい言語みたいに見えます。phpの場合はスレッド処理が難しいです。例えば、phpではゲームサーバーを作られないです。正確には出来ないことではなく、難しいというのが正確だと思います。javaの場合はthreadpoolを利用してソケットサーバーを]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [PHP] PHP 開発環境設定とEclipse(IDE)の設定" />
+<link rel="canonical" href="https://www.nowonbun.com/137.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [PHP] PHP 開発環境設定とEclipse(IDE)の設定" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。ネットサーフィンすれば、「java vs c#」、「php vs java」、「php　vs c#」など、言語の優秀性、性能、短所などを比較して書いた投稿が多いです。筆者の場合はプログラム言語を3～4個の言語を運用が可能ですが、言語の間に比較するのは意味がないと思います。例えば、リンゴとミカンがあります。リンゴが栄養が多いか？ミカンが栄養が多いか？健康にいいものか？どの果物がもっといいかというとみんなリンゴはリンゴの味で美味しいし必要な栄養があるし、ミカンはミカンで美味しいし栄養がありますといいますね。プログラム言語も同じです。これから紹介するphpはウェブスクリプトですが、javaとc#の比べてphpだけの魅力があるプログラム言語です。それで意味がない比較を少ししてphpの特性を説明します。phpとjavaを比べるとphpはjavaより基本環境設定が簡単です。「php+apache+db」の設定で終わります。javaの場合は「apache+tomcat+java+db」です。そういえば、「tomcat」だけ追加されたですね。phpの場合はコンパイル言語ではなく、スクリプト言語なので、ソース修正する時に、別途のコンパイルの手続きが要らなく、画面ページに反映が早いですが、javaの場合は再コンパイル、サーバ再起動などの手続きが必要なので修正から反映までphpの開発時間が圧倒的に早いです。プログラムのパフォーマンスはプログラム言語の性能もありますが、開発する人(デベロッパー)の能力の比重が多いので、省略します。まだ、プロぐジェクト管理能力に関してもphpが大きいプロジェクトには悪く、javaが大きいプロジェクトでよいといいますが、これも設計、環境設定なのによって差があるので、どっちがいいかとは言えません。オープンソースはコミュニティに関してはjavaの方が大きいではないかと思います。でもphpコミュニティも小さくなく、すごく大きいです。筆者はメイン言語がphpよりjavaなので筆者の感じだけの可能性もあります。上の状況だけみればphpがjavaよりいい言語みたいに見えます。phpの場合はスレッド処理が難しいです。例えば、phpではゲームサーバーを作られないです。正確には出来ないことではなく、難しいというのが正確だと思います。javaの場合はthreadpoolを利用してソケットサーバーを]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/137.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [PHP] PHP 開発環境設定とEclipse(IDE)の設定" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。ネットサーフィンすれば、「java vs c#」、「php vs java」、「php　vs c#」など、言語の優秀性、性能、短所などを比較して書いた投稿が多いです。筆者の場合はプログラム言語を3～4個の言語を運用が可能ですが、言語の間に比較するのは意味がないと思います。例えば、リンゴとミカンがあります。リンゴが栄養が多いか？ミカンが栄養が多いか？健康にいいものか？どの果物がもっといいかというとみんなリンゴはリンゴの味で美味しいし必要な栄養があるし、ミカンはミカンで美味しいし栄養がありますといいますね。プログラム言語も同じです。これから紹介するphpはウェブスクリプトですが、javaとc#の比べてphpだけの魅力があるプログラム言語です。それで意味がない比較を少ししてphpの特性を説明します。phpとjavaを比べるとphpはjavaより基本環境設定が簡単です。「php+apache+db」の設定で終わります。javaの場合は「apache+tomcat+java+db」です。そういえば、「tomcat」だけ追加されたですね。phpの場合はコンパイル言語ではなく、スクリプト言語なので、ソース修正する時に、別途のコンパイルの手続きが要らなく、画面ページに反映が早いですが、javaの場合は再コンパイル、サーバ再起動などの手続きが必要なので修正から反映までphpの開発時間が圧倒的に早いです。プログラムのパフォーマンスはプログラム言語の性能もありますが、開発する人(デベロッパー)の能力の比重が多いので、省略します。まだ、プロぐジェクト管理能力に関してもphpが大きいプロジェクトには悪く、javaが大きいプロジェクトでよいといいますが、これも設計、環境設定なのによって差があるので、どっちがいいかとは言えません。オープンソースはコミュニティに関してはjavaの方が大きいではないかと思います。でもphpコミュニティも小さくなく、すごく大きいです。筆者はメイン言語がphpよりjavaなので筆者の感じだけの可能性もあります。上の状況だけみればphpがjavaよりいい言語みたいに見えます。phpの場合はスレッド処理が難しいです。例えば、phpではゲームサーバーを作られないです。正確には出来ないことではなく、難しいというのが正確だと思います。javaの場合はthreadpoolを利用してソケットサーバーを]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [PHP] PHP 開発環境設定とEclipse(IDE)の設定</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(23)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(114)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[PHP] PHP 開発環境設定とEclipse(IDE)の設定</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0205">Study / PHP</a>    作成日付 : 2019/12/26 07:36:47   修正日付 : 2019/12/26 07:36:47
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>ネットサーフィンすれば、「Java vs C#」、「PHP vs Java」、「PHP　vs C#」など、言語の優秀性、性能、短所などを比較して書いた投稿が多いです。</p> 
+  <p>筆者の場合はプログラム言語を3～4個の言語を運用が可能ですが、言語の間に比較するのは意味がないと思います。</p> 
+  <p>例えば、リンゴとミカンがあります。リンゴが栄養が多いか？ミカンが栄養が多いか？健康にいいものか？どの果物がもっといいかというとみんなリンゴはリンゴの味で美味しいし必要な栄養があるし、ミカンはミカンで美味しいし栄養がありますといいますね。</p> 
+  <p><br></p> 
+  <p>プログラム言語も同じです。これから紹介するPHPはウェブスクリプトですが、JavaとC#の比べてPHPだけの魅力があるプログラム言語です。</p> 
+  <p>それで意味がない比較を少ししてPHPの特性を説明します。</p> 
+  <p>PHPとJavaを比べるとPHPはJavaより基本環境設定が簡単です。「PHP+apache+DB」の設定で終わります。Javaの場合は「apache+tomcat+java+DB」です。そういえば、「tomcat」だけ追加されたですね。</p> 
+  <p>PHPの場合はコンパイル言語ではなく、スクリプト言語なので、ソース修正する時に、別途のコンパイルの手続きが要らなく、画面ページに反映が早いですが、Javaの場合は再コンパイル、サーバ再起動などの手続きが必要なので修正から反映までPHPの開発時間が圧倒的に早いです。</p> 
+  <p>プログラムのパフォーマンスはプログラム言語の性能もありますが、開発する人(デベロッパー)の能力の比重が多いので、省略します。</p> 
+  <p>まだ、プロぐジェクト管理能力に関してもPHPが大きいプロジェクトには悪く、Javaが大きいプロジェクトでよいといいますが、これも設計、環境設定なのによって差があるので、どっちがいいかとは言えません。</p> 
+  <p>オープンソースはコミュニティに関してはJavaの方が大きいではないかと思います。でもPHPコミュニティも小さくなく、すごく大きいです。筆者はメイン言語がPHPよりJavaなので筆者の感じだけの可能性もあります。</p> 
+  <p><br></p> 
+  <p>上の状況だけみればPHPがJavaよりいい言語みたいに見えます。</p> 
+  <p>PHPの場合はスレッド処理が難しいです。例えば、PHPではゲームサーバーを作られないです。正確には出来ないことではなく、難しいというのが正確だと思います。Javaの場合はThreadPoolを利用してソケットサーバーを作ればそれがアプリケーションサーバーになりますね。</p> 
+  <p><br></p> 
+  <p>それで私の場合は単純な「ウェブ-DB」ならPHPを利用するし、「ウェブ-バッチ-コアー-DB」の場合はJavaを、Windowアプリの場合はC#を利用しますね。</p> 
+  <p><br></p> 
+  <p>これからPHPを説明する前にApacheとPHPをインストールしましょう。</p> 
+  <p>link - <a href="https://www.nowonbun.com/103.html" target="_blank">[CentOS] PHPインストールする方法</a></p> 
+  <p>link - <a href="https://www.nowonbun.com/93.html" target="_blank">[Window] Apacheをインストール方法、サービスに登録する方法。</a></p> 
+  <p><br></p> 
+  <p>筆者はWindow基準で説明します。</p> 
+  <p>上のリンクをみてapacheをインストールしましょう。開発環境を作ることなので、サービス登録まではいらないです。</p> 
+  <p style="text-align:left;"><img src="./contents/137/701_001.png" data-filename="001.png" style="width: 566px;"><br></p> 
+  <p>筆者は「Dローカルディスク」の「apachephp」のフォルダにインストールしました。</p> 
+  <p><br></p> 
+  <p>そしてPHPをダウンロードしましょう。</p> 
+  <p>link - <a href="https://www.php.net/downloads.php" target="_blank">https://www.php.net/downloads.php</a></p> 
+  <p style="text-align:left;"><img src="./contents/137/707_002.png" data-filename="002.png" style="width: 848px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/137/718_003.png" data-filename="003.png" style="width: 637px;"><br></p> 
+  <p>筆者の場合は「7.3.9」バージョンをダウンロードしました。注意点は「None Thread Safe」ではなく、「Thread Safe」バージョンをダウンロードしなければならないです。</p> 
+  <p>Zipファイルをダウンロードして「apachephp」の下位フォルダの「php」を生成して圧縮を解凍しました。</p> 
+  <p style="text-align:left;"><img src="./contents/137/719_004.png" data-filename="004.png" style="width: 597px;"><br></p> 
+  <p>「php」フォルダにいってみれば、「php.ini-development」のファイルがありますが、「php.ini」ファイルに変更します。</p> 
+  <p style="text-align:left;"><img src="./contents/137/716_005.png" data-filename="005.png" style="width: 595px;"><br></p> 
+  <p>そしてメモ帳でphp.iniファイルを開いて「 ;extension_dir = "./" 」の部分を探します。</p> 
+  <p style="text-align:left;"><img src="./contents/137/706_006.png" data-filename="006.png" style="width: 663px;"><br></p> 
+  <p>ここのコメントを解除して「phpフォルダ+/ext」や「./ext」で修正しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/137/709_007.png" data-filename="007.png" style="width: 718px;"><br></p> 
+  <p>そしてapache設定ファイル「conf/http.conf」ファイルに行って下記の内容を追加しましょう。</p> 
+  <pre><code class="conf" data-type="conf/http.conf">PHPIniDir "d:/apachephp/php"
+LoadModule php7_module "d:/apachephp/php/php7apache2_4.dll"
+AddType application/x-httpd-php .html .php
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/137/715_008.png" data-filename="008.png" style="width: 793px;"><br></p> 
+  <p>そして開始ページをindex.htmlからindex.phpに修正します。</p> 
+  <p style="text-align:left;"><img src="./contents/137/708_009.png" data-filename="009.png" style="width: 474px;"><br></p> 
+  <p>ここまで設定が完了すればPHPインストールは完了しました。起動しましょう。</p> 
+  <p><br></p> 
+  <p>先、apacheフォルダのhtdocsフォルダの中に「index.php」ファイルを生成して「&lt;?php phpinfo()?&gt;」を追加します。</p> 
+  <p>(※既存にあったindex.htmlファイルは削除しましょう。)</p> 
+  <p style="text-align:left;"><img src="./contents/137/704_010.png" data-filename="010.png" style="width: 598px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/137/702_011.png" data-filename="011.png" style="width: 474px;"><br></p> 
+  <p>apacheフォルダのbinフォルダに移動してapacheを起動しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/137/703_012.png" data-filename="012.png" style="width: 467px;"><br></p> 
+  <p>ブラウザでlocalhostで接続しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/137/720_013.png" data-filename="013.png" style="width: 848px;"><br></p> 
+  <p>上のPHP情報画面が出ると開発設定は完了しました。</p> 
+  <p><br></p> 
+  <p>これからはPHPを開発するように開発ツール(IDE)をインストールしましょう。</p> 
+  <p>PHP IDEに関して様々なツールがありますが、筆者の場合は「eclipse」が慣れているので「eclipse」をインストールしてみましょう。</p> 
+  <p><br></p> 
+  <p>「eclipse」ホームページに接続します。</p> 
+  <p>link - <a href="https://www.eclipse.org/downloads/?FEATURED_STORY" target="_blank">https://www.eclipse.org/downloads/?FEATURED_STORY</a></p> 
+  <p><br></p> 
+  <p>タウンロードページに移動すると下記のイメージみたいに「Download Package」があります。</p> 
+  <p style="text-align:left;"><img src="./contents/137/710_014.png" data-filename="014.png" style="width: 387px;"><br></p> 
+  <p>link - <a href="https://www.eclipse.org/downloads/packages/" target="_blank">https://www.eclipse.org/downloads/packages/</a></p> 
+  <p style="text-align:left;"><img src="./contents/137/721_015.png" data-filename="015.png" style="width: 848px;"><br></p> 
+  <p>パッケージページをみれば「php開発用」があります。(参考にeclipseを使うようにはjavaがインストールされなければならないです。)</p> 
+  <p>link - <a href="https://www.nowonbun.com/41.html" target="_blank">[Java スタディ - 1] Javaとは？、Javaインストール、Eclipseインストール</a></p> 
+  <p><br></p> 
+  <p>ダウンロードをして適当なところで圧縮を解凍して「eclipse」を起動しましょう。</p> 
+  <p>起動すると「workspace」を設定するウィンドウがでますが、適当なところを設定しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/137/712_016.png" data-filename="016.png" style="width: 615px;"><br></p> 
+  <p>私の場合は「apachephp」の「workspace」に設定しました。</p> 
+  <p>起動した後で「create project」を選択します。</p> 
+  <p style="text-align:left;"><img src="./contents/137/714_017.png" data-filename="017.png" style="width: 605px;"><br></p> 
+  <p>そしてプロジェクト名前を適当に決めてprojectフォrだを「apachephp\htdocs」に設定します。</p> 
+  <p>つまり、apacheサーバのドキュメントルートを設定することです。</p> 
+  <p style="text-align:left;"><img src="./contents/137/717_018.png" data-filename="018.png" style="width: 652px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/137/713_019.png" data-filename="019.png" style="width: 821px;"><br></p> 
+  <p>そしたら先に作成した「index.php」がロードされることを確認できます。</p> 
+  <p>ここに「hello.php」を作成して「hello world」を作成してみます。</p> 
+  <p style="text-align:left;"><img src="./contents/137/711_020.png" data-filename="020.png" style="width: 745px;"><br></p> 
+  <p>PHPは別にコンパイルが要らないので、そのままブラウザに「localhost/hello.php」に接続しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/137/705_021.png" data-filename="021.png" style="width: 447px;"><br></p> 
+  <p>上の画面まで出るとPHPのインストールからIDEのインストールまで完了できました。</p> 
+  <p>これからPHP開発する準備が終わりましたね。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=php>#php</a>,<a href=./search.html?query=install>#install</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0205">Study / PHP</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/137.html'>[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a><span>2019/12/26 07:36:47</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/137.html'>[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a><span>2019/12/26 07:36:47</span></li><li><a href='https://www.nowonbun.com/136.html'>[CSS] ブラウザから開発する方法 (developer mode)</a><span>2019/12/25 07:54:31</span></li><li><a href='https://www.nowonbun.com/135.html'>[CSS] 色スタイル、グラデーション</a><span>2019/12/24 07:37:22</span></li><li><a href='https://www.nowonbun.com/134.html'>[CSS] アニメーション (animation)</a><span>2019/12/20 20:51:38</span></li><li><a href='https://www.nowonbun.com/133.html'>[CSS] トランスフォーム (transform)</a><span>2019/12/19 13:00:26</span></li><li><a href='https://www.nowonbun.com/132.html'>[CSS] トランジション(transition)</a><span>2019/12/18 20:33:57</span></li><li><a href='https://www.nowonbun.com/131.html'>[CSS] Columnスタイル</a><span>2019/12/17 19:52:56</span></li><li><a href='https://www.nowonbun.com/130.html'>[CSS] 整列スタイル (float)</a><span>2019/12/17 00:08:54</span></li><li><a href='https://www.nowonbun.com/129.html'>[CSS] 位置(position),表示(display)スタイル</a><span>2019/12/13 20:08:50</span></li><li><a href='https://www.nowonbun.com/128.html'>[CSS] border(枠)、余白スタイル - border, margin, padding</a><span>2019/12/12 20:16:43</span></li><li><a href='https://www.nowonbun.com/127.html'>[CSS] 文字スタイル</a><span>2019/12/11 21:13:22</span></li><li><a href='https://www.nowonbun.com/126.html'>[CSS] その他の疑似選択子 - link, visited, target, enabled, disabled, not, active, hover, focus</a><span>2019/12/10 07:31:28</span></li><li><a href='https://www.nowonbun.com/125.html'>[CSS] 疑似要素選択子 - fist-line, first-letter, before, after</a><span>2019/12/09 07:28:27</span></li><li><a href='https://www.nowonbun.com/124.html'>[CSS] 属性選択子</a><span>2019/12/06 07:27:36</span></li><li><a href='https://www.nowonbun.com/123.html'>[CSS] 疑似クラス - only-child, only-of-type, empty, empty, root</a><span>2019/12/05 07:29:15</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/137.html';this.page.identifier = 'NOWONBUN00137';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
