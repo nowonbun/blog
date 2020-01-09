@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / PHP" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。phpは基本的にスクリプト言語なので、javascriptみたいに「function」と「class」を宣言しなくてもphpページを作ることができます。でも、最近ウェブプログラムはデータベースからデータを読み込んでそのままにウェブサービスに書き出すことではなく、複雑な計算と様々なデータを総合的に見せるポータルプログラム形式が多いのでかなり複雑に作成することになります。その時に単純にデータベースあるいはファイルなどからデータを読み込んで計算しながらウェブページに掲示すればプログラムがかなり複雑になるし再使用性がたくさん落ちることになります。それでfunction(関数)やclass形式な構造が必要です。先、functionの構造は「java」と「c#」みたいに返却タイプがあることではなく、「javascript」みたいにないですね。初めからphpは変数宣言する時もデータタイプを宣言することではないからだと思いますね。「javascript」と似てるな構造になります。phpでクラスの構造は一般oopプログラムと似てます。メンバー変数があるし、関数がある構造になります。ここでメンバー変数で「private」というアクセス修飾子を使いました。クラス内部の関数の場合はアクセス修飾子が必須ではないですが、メンバー変数には必ずアクセス修飾子が必要です。アクセス修飾子は「private」、「protected」、「public」があります。「private」の場合はインスタント外部でアクセス禁止、「protected」の場合はインスタントの内部、派生クラスの関数だけでアクセスができます。「public」の場合はインスタントの外部、内部でとこでもアクセスができます。	                  区分        アクセス修飾子        説明            	  					アクセス権限  			public  			すべてクラスでアクセスが可能です。  		  		  			private  			クラス内だけアクセスが可能です。  		  		  			protected  			クラスと派生クラス関係のクラスによってアクセスが可能です。  		  	  link - [java スタディ - 11] アクセス修飾子link - [c# スタディ - 13] アクセス修飾子(p]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [PHP] functionとclass使用方法、アクセス修飾子、そしてstatic" />
+<link rel="canonical" href="https://www.nowonbun.com/140.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [PHP] functionとclass使用方法、アクセス修飾子、そしてstatic" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。phpは基本的にスクリプト言語なので、javascriptみたいに「function」と「class」を宣言しなくてもphpページを作ることができます。でも、最近ウェブプログラムはデータベースからデータを読み込んでそのままにウェブサービスに書き出すことではなく、複雑な計算と様々なデータを総合的に見せるポータルプログラム形式が多いのでかなり複雑に作成することになります。その時に単純にデータベースあるいはファイルなどからデータを読み込んで計算しながらウェブページに掲示すればプログラムがかなり複雑になるし再使用性がたくさん落ちることになります。それでfunction(関数)やclass形式な構造が必要です。先、functionの構造は「java」と「c#」みたいに返却タイプがあることではなく、「javascript」みたいにないですね。初めからphpは変数宣言する時もデータタイプを宣言することではないからだと思いますね。「javascript」と似てるな構造になります。phpでクラスの構造は一般oopプログラムと似てます。メンバー変数があるし、関数がある構造になります。ここでメンバー変数で「private」というアクセス修飾子を使いました。クラス内部の関数の場合はアクセス修飾子が必須ではないですが、メンバー変数には必ずアクセス修飾子が必要です。アクセス修飾子は「private」、「protected」、「public」があります。「private」の場合はインスタント外部でアクセス禁止、「protected」の場合はインスタントの内部、派生クラスの関数だけでアクセスができます。「public」の場合はインスタントの外部、内部でとこでもアクセスができます。	                  区分        アクセス修飾子        説明            	  					アクセス権限  			public  			すべてクラスでアクセスが可能です。  		  		  			private  			クラス内だけアクセスが可能です。  		  		  			protected  			クラスと派生クラス関係のクラスによってアクセスが可能です。  		  	  link - [java スタディ - 11] アクセス修飾子link - [c# スタディ - 13] アクセス修飾子(p]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/140.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [PHP] functionとclass使用方法、アクセス修飾子、そしてstatic" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。phpは基本的にスクリプト言語なので、javascriptみたいに「function」と「class」を宣言しなくてもphpページを作ることができます。でも、最近ウェブプログラムはデータベースからデータを読み込んでそのままにウェブサービスに書き出すことではなく、複雑な計算と様々なデータを総合的に見せるポータルプログラム形式が多いのでかなり複雑に作成することになります。その時に単純にデータベースあるいはファイルなどからデータを読み込んで計算しながらウェブページに掲示すればプログラムがかなり複雑になるし再使用性がたくさん落ちることになります。それでfunction(関数)やclass形式な構造が必要です。先、functionの構造は「java」と「c#」みたいに返却タイプがあることではなく、「javascript」みたいにないですね。初めからphpは変数宣言する時もデータタイプを宣言することではないからだと思いますね。「javascript」と似てるな構造になります。phpでクラスの構造は一般oopプログラムと似てます。メンバー変数があるし、関数がある構造になります。ここでメンバー変数で「private」というアクセス修飾子を使いました。クラス内部の関数の場合はアクセス修飾子が必須ではないですが、メンバー変数には必ずアクセス修飾子が必要です。アクセス修飾子は「private」、「protected」、「public」があります。「private」の場合はインスタント外部でアクセス禁止、「protected」の場合はインスタントの内部、派生クラスの関数だけでアクセスができます。「public」の場合はインスタントの外部、内部でとこでもアクセスができます。	                  区分        アクセス修飾子        説明            	  					アクセス権限  			public  			すべてクラスでアクセスが可能です。  		  		  			private  			クラス内だけアクセスが可能です。  		  		  			protected  			クラスと派生クラス関係のクラスによってアクセスが可能です。  		  	  link - [java スタディ - 11] アクセス修飾子link - [c# スタディ - 13] アクセス修飾子(p]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(23)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(117)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(4)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0205">Study / PHP</a>    作成日付 : 2020/01/09 23:35:27   修正日付 : 2020/01/09 23:32:40
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p>PHPは基本的にスクリプト言語なので、javascriptみたいに「function」と「class」を宣言しなくてもPHPページを作ることができます。</p> 
+  <p>でも、最近ウェブプログラムはデータベースからデータを読み込んでそのままにウェブサービスに書き出すことではなく、複雑な計算と様々なデータを総合的に見せるポータルプログラム形式が多いのでかなり複雑に作成することになります。</p> 
+  <p>その時に単純にデータベースあるいはファイルなどからデータを読み込んで計算しながらウェブページに掲示すればプログラムがかなり複雑になるし再使用性がたくさん落ちることになります。</p> 
+  <p><br></p> 
+  <p>それでfunction(関数)やclass形式な構造が必要です。</p> 
+  <p>先、functionの構造は「java」と「C#」みたいに返却タイプがあることではなく、「javascript」みたいにないですね。初めからphpは変数宣言する時もデータタイプを宣言することではないからだと思いますね。</p> 
+  <p>「javascript」と似てるな構造になります。</p> 
+  <pre><code class="php" data-type="index.php">&lt;?php	
+  $title = "title";	
+ 	
+  // 関数はfunctionで始まって別に返却データタイプを設定しない。
+  function sum($a, $b) {	
+    return $a + $b;	
+  }	
+  	
+  // 関数を使って結果は「3」になる。
+  $data = sum(1,2);    	
+?&gt;	
+&lt;!DOCTYPE html&gt;	
+&lt;html&gt;	
+&lt;head&gt;	
+&lt;title&gt;	
+    &lt;?=$title?&gt;	
+  &lt;/title&gt;	
+&lt;/head&gt;	
+&lt;body&gt;	
+  &lt;?=$data?&gt;	
+&lt;/body&gt;	
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/140/739_001.png" data-filename="001.png" style="width: 461px;"><br></p> 
+  <p>PHPでクラスの構造は一般OOPプログラムと似てます。メンバー変数があるし、関数がある構造になります。</p> 
+  <pre><code class="php" data-type="index.php">&lt;?php	
+  $title = "title";	
+    	
+  class Test {	
+    // メンバー変数 (アクセス修飾子が必須)	
+    private $data;	
+    // コンストラクタ (他の言語みたいにクラス名と同じ名ではなく、「__construct」の関数名で決めている。)	
+    function __construct() {	
+      //メンバー変数にアクセス (必ず$thisが必要。$dataで宣言すれば内部ローカル変数になる。)	
+      $this-&gt;data = "init";	
+    }	
+    // 関数
+    public function setData($value) {	
+      //　内部ローカル変数
+      $data = $value;	
+    }	
+    // 関数
+    public function print(){	
+      echo $this-&gt;data;	
+    }	
+  }	
+  $obj = new Test();	
+  //　コンストラクタパラメータがなければ、()は省略可能
+  $obj1 = new Test;	
+  // 内部ローカル変数にデータを入れたので、print関数を呼び出しても「init」で出力する。
+  $obj1-&gt;setData("hello world");	
+?&gt;	
+&lt;!DOCTYPE html&gt;	
+&lt;html&gt;	
+&lt;head&gt;	
+&lt;title&gt;	
+    &lt;?=$title?&gt;	
+  &lt;/title&gt;	
+&lt;/head&gt;	
+&lt;body&gt;	
+  &lt;?=$obj-&gt;print()?&gt;	
+  &lt;br /&gt;	
+  &lt;?=$obj1-&gt;print()?&gt;	
+&lt;/body&gt;	
+&lt;/html&gt;
+</code></pre> 
+  <p>ここでメンバー変数で「private」というアクセス修飾子を使いました。クラス内部の関数の場合はアクセス修飾子が必須ではないですが、メンバー変数には必ずアクセス修飾子が必要です。</p> 
+  <p>アクセス修飾子は「private」、「protected」、「public」があります。「private」の場合はインスタント外部でアクセス禁止、「protected」の場合はインスタントの内部、派生クラスの関数だけでアクセスができます。「public」の場合はインスタントの外部、内部でとこでもアクセスができます。</p> 
+  <div class="table-responsive"> 
+   <table class="table table-striped table-bordered table-condensed"> 
+    <thead> 
+     <tr style="background-color:#DAD7D7"> 
+      <th style="white-space: nowrap;">区分</th> 
+      <th style="white-space: nowrap;">アクセス修飾子</th> 
+      <th style="white-space: nowrap;">説明</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td rowspan="3" style="background-color:#C5FDFD;text-align:center;white-space: nowrap;">アクセス権限</td> 
+      <td style="white-space: nowrap;">public</td> 
+      <td>すべてクラスでアクセスが可能です。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">private</td> 
+      <td>クラス内だけアクセスが可能です。</td> 
+     </tr> 
+     <tr> 
+      <td>protected</td> 
+      <td>クラスと派生クラス関係のクラスによってアクセスが可能です。</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <p>link - <a href="https://www.nowonbun.com/51.html" target="_blank">[Java スタディ - 11] アクセス修飾子</a></p> 
+  <p>link - <a href="https://www.nowonbun.com/14.html" target="_blank">[C# スタディ - 13] アクセス修飾子(public, private, protected)</a></p> 
+  <p><br></p> 
+  <p>関数の場合はアクセス修飾子が必須ではないですが、クラスのカプセル化で構成するようにはアクセス修飾子が必要です。</p> 
+  <p>クラスのコンストラクタはJavaやC#みたいにクラスと同名で作成することではなく、__constructの関数名が定義されています。</p> 
+  <p><br></p> 
+  <p>そして関数の内でメンバー変数をアクセスするようには必ず「$this」のキーワードを使用して「$this-&gt;変数名」でアクセスすればよいです。</p> 
+  <p>PHPには別に変数宣言方法がないので、「$this」を省略することになるとローカル変数になります。筆者もたまにミスする領域ですが、変数を間違って参照してバグが発生する時があります。</p> 
+  <p><br></p> 
+  <p>インスタンスを生成する時にはコンストラクトがない場合は「()」を省略してもよいですが、ソースの可読性のため、必ず書いているのが良いと思います。</p> 
+  <p style="text-align:left;"><img src="./contents/140/740_002.png" data-filename="002.png" style="width: 540px;"><br></p> 
+  <p>PHPでもインスタンスを生成するのは「new」キーワードで生成します。OOPと似ているな構造になりますね。</p> 
+  <p>しかし内部的には「OOP」と動作方法は差がありますが、実装する形は似ているので初心者がPHPを初めに勉強するのはしやすいと思います。</p> 
+  <pre><code class="php" data-type="index.php">&lt;?php	
+  $title = "title";	
+  class Test {	
+    private static $data;	
+    	
+    public static function setData($value) {	
+      // メンバー変数ではないので、staticでアクセスする。
+      Test::$data = $value;	
+    }	
+    public static function print(){	
+      echo Test::$data;	
+    }	
+  }	
+  // staticはインスタンスによってアクセスではないので、「クラス名::関数名あるいは変数名」でアクセスする。
+  Test::setData("hello world");	
+?&gt;	
+&lt;!DOCTYPE html&gt;	
+&lt;html&gt;	
+&lt;head&gt;	
+  &lt;title&gt;	
+    &lt;?=$title?&gt;	
+  &lt;/title&gt;	
+&lt;/head&gt;	
+&lt;body&gt;	
+  &lt;?=Test::print()?&gt;	
+&lt;/body&gt;	
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/140/741_003.png" data-filename="003.png" style="width: 592px;"><br></p> 
+  <p>上の例をみればstaticもparentと似ている構造でアクセスします。「クラス名::変数名」あるいは「クラス名::関数名」でアクセスします。</p> 
+  <p>上の例は「static」変数でもアクセス修飾子が「private」なので、インスタンス内部だけでアクセスできますね。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=php>#php</a>,<a href=./search.html?query=function>#function</a>,<a href=./search.html?query=class>#class</a>,<a href=./search.html?query=static>#static</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0205">Study / PHP</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/140.html'>[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a><span>2020/01/09 23:35:27</span></li><li><a href='https://www.nowonbun.com/139.html'>[PHP] 基本ページ作成方法と変数使用方法</a><span>2020/01/06 23:44:20</span></li><li><a href='https://www.nowonbun.com/138.html'>[PHP] Composer設定</a><span>2019/12/27 08:49:09</span></li><li><a href='https://www.nowonbun.com/137.html'>[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a><span>2019/12/26 07:36:47</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/140.html'>[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a><span>2020/01/09 23:35:27</span></li><li><a href='https://www.nowonbun.com/139.html'>[PHP] 基本ページ作成方法と変数使用方法</a><span>2020/01/06 23:44:20</span></li><li><a href='https://www.nowonbun.com/138.html'>[PHP] Composer設定</a><span>2019/12/27 08:49:09</span></li><li><a href='https://www.nowonbun.com/137.html'>[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a><span>2019/12/26 07:36:47</span></li><li><a href='https://www.nowonbun.com/136.html'>[CSS] ブラウザから開発する方法 (developer mode)</a><span>2019/12/25 07:54:31</span></li><li><a href='https://www.nowonbun.com/135.html'>[CSS] 色スタイル、グラデーション</a><span>2019/12/24 07:37:22</span></li><li><a href='https://www.nowonbun.com/134.html'>[CSS] アニメーション (animation)</a><span>2019/12/20 20:51:38</span></li><li><a href='https://www.nowonbun.com/133.html'>[CSS] トランスフォーム (transform)</a><span>2019/12/19 13:00:26</span></li><li><a href='https://www.nowonbun.com/132.html'>[CSS] トランジション(transition)</a><span>2019/12/18 20:33:57</span></li><li><a href='https://www.nowonbun.com/131.html'>[CSS] Columnスタイル</a><span>2019/12/17 19:52:56</span></li><li><a href='https://www.nowonbun.com/130.html'>[CSS] 整列スタイル (float)</a><span>2019/12/17 00:08:54</span></li><li><a href='https://www.nowonbun.com/129.html'>[CSS] 位置(position),表示(display)スタイル</a><span>2019/12/13 20:08:50</span></li><li><a href='https://www.nowonbun.com/128.html'>[CSS] border(枠)、余白スタイル - border, margin, padding</a><span>2019/12/12 20:16:43</span></li><li><a href='https://www.nowonbun.com/127.html'>[CSS] 文字スタイル</a><span>2019/12/11 21:13:22</span></li><li><a href='https://www.nowonbun.com/126.html'>[CSS] その他の疑似選択子 - link, visited, target, enabled, disabled, not, active, hover, focus</a><span>2019/12/10 07:31:28</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/140.html';this.page.identifier = 'NOWONBUN00140';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
