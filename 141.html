@@ -34,31 +34,31 @@ body{
 <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-<meta name="keywords" content="Study / Javascript, Jquery, Css" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。前述まで疑似クラスに関して説明しました。これからは属性選択子を調べてみます。cssの選択子で一番良く使う選択子はタグによって、「id」によって(#id)、「class」によって(.class)が一番良く使う選択子で次がこの属性選択子ではないかと思います。htmlタグではタグ名があるし、タグテキストがあります。そして属性(アトリビュート)がありますね。タグで見ると「id」や「class」も属性ですね。上の例をみればbodyの中でタグは全て７つがあります。inputタグは４つで、aタグが３つがあります。属性選択子はブランケット([])で選択します。上の通りで一番上のテキストボックスは枠が黒くなりますね。２つ目のスタイルはボタンタイプのinputタグの枠が赤になります。３つ目はvalue属性、つまり、値がsubmitを含めているボタンは枠が青になります。４つ目はhrefの属性が「https」で始まる「a」タグの文字が緑になります。５つ目はhrefの属性が「localhost」で終わる「a」タグの文字がグレーになります。]]>" />
+<meta name="keywords" content="Study / PHP" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。前述でphpのclassを宣言して使う方法に関して説明しました。link - [php] functionとclass使用方法、アクセス修飾子、そしてstaticphpもクラスがあるのでインタフェース(interface)と抽象クラス(abstract class)があります。個人的な考えはphpにはデータタイプの指示子がないのでインタフェース役がコンパイル言語(javaやc#)より活用性が少ないではないかと思います。筆者も実際にphpでinterfaceを使ったことがないですね。でも抽象クラスはよく使います。上の例をみればitestインタフェースとabstract抽象クラスとtestクラスがあります。依存層は「itest -&amp;gt; abstracttest -&amp;gt; test」でなっています。それでtestを宣言してrunを実行すればabstracttestのrunメソッドが実行してrunメソッド中では派生クラスの「print()」関数を呼び出す結果は「helloworld」になります。ここでparentとthisの概念ですね。$thisの場合は実行しているクラスのメンバーをさしています。すなわち、メンバー変数か関数を指しています。$thisの場合はc++のポインタの形で矢印で指示(-&amp;gt;)をしています。しかしparentの場合はparent::の形で指しています。&amp;amp;parent-&amp;gt;の形ではエラーが発生します。文法が面白いですね。上の例はobj-&amp;gt;runを通ってabstracttestのrunが呼び出してrun関数で抽象メソッドprintが呼び出します。抽象メソッドprintが呼び出したのでtestクラスのprintが呼び出してprint関数で上位クラスのsetdataにデータを入れてgetdataでデータを持ってきて変換する形です。私がデータを「hello world」を入れたので結果は「hello world」が出ます。]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [CSS] 属性選択子" />
-<link rel="canonical" href="https://www.nowonbun.com/124.html" />
+<meta name="title" content="明月の開発ストーリ :: [PHP] インタフェースと抽象クラス、クラス継承、parent、this" />
+<link rel="canonical" href="https://www.nowonbun.com/141.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [CSS] 属性選択子" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。前述まで疑似クラスに関して説明しました。これからは属性選択子を調べてみます。cssの選択子で一番良く使う選択子はタグによって、「id」によって(#id)、「class」によって(.class)が一番良く使う選択子で次がこの属性選択子ではないかと思います。htmlタグではタグ名があるし、タグテキストがあります。そして属性(アトリビュート)がありますね。タグで見ると「id」や「class」も属性ですね。上の例をみればbodyの中でタグは全て７つがあります。inputタグは４つで、aタグが３つがあります。属性選択子はブランケット([])で選択します。上の通りで一番上のテキストボックスは枠が黒くなりますね。２つ目のスタイルはボタンタイプのinputタグの枠が赤になります。３つ目はvalue属性、つまり、値がsubmitを含めているボタンは枠が青になります。４つ目はhrefの属性が「https」で始まる「a」タグの文字が緑になります。５つ目はhrefの属性が「localhost」で終わる「a」タグの文字がグレーになります。]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [PHP] インタフェースと抽象クラス、クラス継承、parent、this" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。前述でphpのclassを宣言して使う方法に関して説明しました。link - [php] functionとclass使用方法、アクセス修飾子、そしてstaticphpもクラスがあるのでインタフェース(interface)と抽象クラス(abstract class)があります。個人的な考えはphpにはデータタイプの指示子がないのでインタフェース役がコンパイル言語(javaやc#)より活用性が少ないではないかと思います。筆者も実際にphpでinterfaceを使ったことがないですね。でも抽象クラスはよく使います。上の例をみればitestインタフェースとabstract抽象クラスとtestクラスがあります。依存層は「itest -&amp;gt; abstracttest -&amp;gt; test」でなっています。それでtestを宣言してrunを実行すればabstracttestのrunメソッドが実行してrunメソッド中では派生クラスの「print()」関数を呼び出す結果は「helloworld」になります。ここでparentとthisの概念ですね。$thisの場合は実行しているクラスのメンバーをさしています。すなわち、メンバー変数か関数を指しています。$thisの場合はc++のポインタの形で矢印で指示(-&amp;gt;)をしています。しかしparentの場合はparent::の形で指しています。&amp;amp;parent-&amp;gt;の形ではエラーが発生します。文法が面白いですね。上の例はobj-&amp;gt;runを通ってabstracttestのrunが呼び出してrun関数で抽象メソッドprintが呼び出します。抽象メソッドprintが呼び出したのでtestクラスのprintが呼び出してprint関数で上位クラスのsetdataにデータを入れてgetdataでデータを持ってきて変換する形です。私がデータを「hello world」を入れたので結果は「hello world」が出ます。]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/124.html" />
+<meta property="og:url" content="https://www.nowonbun.com/141.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] 属性選択子" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。前述まで疑似クラスに関して説明しました。これからは属性選択子を調べてみます。cssの選択子で一番良く使う選択子はタグによって、「id」によって(#id)、「class」によって(.class)が一番良く使う選択子で次がこの属性選択子ではないかと思います。htmlタグではタグ名があるし、タグテキストがあります。そして属性(アトリビュート)がありますね。タグで見ると「id」や「class」も属性ですね。上の例をみればbodyの中でタグは全て７つがあります。inputタグは４つで、aタグが３つがあります。属性選択子はブランケット([])で選択します。上の通りで一番上のテキストボックスは枠が黒くなりますね。２つ目のスタイルはボタンタイプのinputタグの枠が赤になります。３つ目はvalue属性、つまり、値がsubmitを含めているボタンは枠が青になります。４つ目はhrefの属性が「https」で始まる「a」タグの文字が緑になります。５つ目はhrefの属性が「localhost」で終わる「a」タグの文字がグレーになります。]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [PHP] インタフェースと抽象クラス、クラス継承、parent、this" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。前述でphpのclassを宣言して使う方法に関して説明しました。link - [php] functionとclass使用方法、アクセス修飾子、そしてstaticphpもクラスがあるのでインタフェース(interface)と抽象クラス(abstract class)があります。個人的な考えはphpにはデータタイプの指示子がないのでインタフェース役がコンパイル言語(javaやc#)より活用性が少ないではないかと思います。筆者も実際にphpでinterfaceを使ったことがないですね。でも抽象クラスはよく使います。上の例をみればitestインタフェースとabstract抽象クラスとtestクラスがあります。依存層は「itest -&amp;gt; abstracttest -&amp;gt; test」でなっています。それでtestを宣言してrunを実行すればabstracttestのrunメソッドが実行してrunメソッド中では派生クラスの「print()」関数を呼び出す結果は「helloworld」になります。ここでparentとthisの概念ですね。$thisの場合は実行しているクラスのメンバーをさしています。すなわち、メンバー変数か関数を指しています。$thisの場合はc++のポインタの形で矢印で指示(-&amp;gt;)をしています。しかしparentの場合はparent::の形で指しています。&amp;amp;parent-&amp;gt;の形ではエラーが発生します。文法が面白いですね。上の例はobj-&amp;gt;runを通ってabstracttestのrunが呼び出してrun関数で抽象メソッドprintが呼び出します。抽象メソッドprintが呼び出したのでtestクラスのprintが呼び出してprint関数で上位クラスのsetdataにデータを入れてgetdataでデータを持ってきて変換する形です。私がデータを「hello world」を入れたので結果は「hello world」が出ます。]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [CSS] 属性選択子</title>
+<title>明月の開発ストーリ :: [PHP] インタフェースと抽象クラス、クラス継承、parent、this</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[CSS] 属性選択子</h1>
+					<h1 id="titleTxt">[PHP] インタフェースと抽象クラス、クラス継承、parent、this</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/06 07:27:36   修正日付 : 2019/12/06 07:28:07
+					<a href="./?category=0205">Study / PHP</a>    作成日付 : 2020/01/13 03:00:00   修正日付 : 2020/01/13 03:00:00
 				</div>
 			</div>
 			<div class="article">
@@ -137,77 +137,114 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>前述まで疑似クラスに関して説明しました。</p> 
-  <p>これからは属性選択子を調べてみます。</p> 
+  <p>前述でPHPのClassを宣言して使う方法に関して説明しました。</p> 
+  <p>link - <a href="https://www.nowonbun.com/140.html" target="_blank">[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a></p> 
   <p><br></p> 
-  <p>CSSの選択子で一番良く使う選択子はタグによって、「id」によって(#id)、「class」によって(.class)が一番良く使う選択子で次がこの属性選択子ではないかと思います。</p> 
-  <p>Htmlタグではタグ名があるし、タグテキストがあります。そして属性(アトリビュート)がありますね。</p> 
-  <pre><code class="html" data-type="tag">&lt;tag attribute="属性"&gt;タグテキスト&lt;/tag&gt;
-</code></pre> 
-  <p>タグで見ると「id」や「class」も属性ですね。</p> 
-  <pre><code class="html" data-type="html example">&lt;!DOCTYPE&gt;
-&lt;html&gt;
- &lt;head&gt;
-  &lt;title&gt; New Document &lt;/title&gt;
-  &lt;style&gt;
-    input,a{
-      width: 100px;
-      height: 50px;
-      margin:10px;
+  <p>PHPもクラスがあるのでインタフェース(interface)と抽象クラス(abstract class)があります。</p> 
+  <p>個人的な考えはPHPにはデータタイプの指示子がないのでインタフェース役がコンパイル言語(javaやC#)より活用性が少ないではないかと思います。筆者も実際にPHPでInterfaceを使ったことがないですね。</p> 
+  <p>でも抽象クラスはよく使います。</p> 
+  <pre><code class="php" data-type="index.php">&lt;?php
+  $title = "title";
+  // インタフェース
+  interface ITest {
+    function run();
+  }
+  // 抽象クラス(インタフェースITestを継承した。)
+  abstract class AbstractTest implements ITest {
+  // ITest インタフェースを継承したので、run関数を必ず宣言しなければならない。
+  public function run() {
+    return $this-&gt;print();
+  }
+  // 抽象メソッド
+  protected abstract function print();
+  }
+  // 抽象クラス
+  class Test extends AbstractTest {
+    // AbstractTest 抽象クラスを継承したので「print」関数を必ず宣言しなければならない。
+    protected function print() {
+      return "Hello world";
     }
-  &lt;/style&gt;
- &lt;/head&gt;
- &lt;body&gt;
-  &lt;input type="textbox" readonly="readonly" value="readonly"&gt;&lt;br /&gt;
-  &lt;input type="textbox" value="normal"&gt;&lt;br /&gt;
-  &lt;input type="button" value="button"&gt;&lt;br /&gt;
-  &lt;input type="submit" value="submit button"&gt;&lt;br /&gt;
-  &lt;a href="http://www.nowonbun.com" style="display:block;"&gt;明月の開発ストーリ&lt;/a&gt;&lt;br /&gt;
-  &lt;a href="https://www.nowonbun.com" style="display:block;"&gt;明月の開発ストーリ&lt;/a&gt;&lt;br /&gt;
-  &lt;a href="http://localhost" style="display:block;"&gt;明月の開発ストーリ&lt;/a&gt;&lt;br /&gt;
- &lt;/body&gt;
+  }
+  $obj = new Test;
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;
+  &lt;?=$title?&gt;
+  &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;?=$obj-&gt;run()?&gt;
+&lt;/body&gt;
 &lt;/html&gt;
 </code></pre> 
-  <pre><code class="css" data-type="CSS example">/*inputタグでreadonly属性がある要素*/
-input[readonly]{
-  border:1px solid #000;
-}
-/*inputタグでtypeの属性がbuttonの要素*/
-input[type="button"]{
-  border:1px solid red;
-}
-/*inputタグでvalueの属性がsubmitの文字で含めている要素*/
-input[value~="submit"]{
-  border:1px solid blue;
-}
-/*inputタグでhrefの属性がhttpsで始まる要素*/
-a[href^="https"]{
-  color:green;
-}
-/*inputタグでhrefの属性がlocalhostで終わる要素*/
-a[href$="localhost"]{
-  color:gray;
-}
+  <p style="text-align:left;"><img src="./contents/141/743_001.png" data-filename="001.png" style="width: 543px;"><br></p> 
+  <p>上の例をみればITestインタフェースとAbstract抽象クラスとTestクラスがあります。</p> 
+  <p>依存層は「ITest -&gt; AbstractTest -&gt; Test」でなっています。それでTestを宣言してrunを実行すればAbstractTestのrunメソッドが実行してrunメソッド中では派生クラスの「print()」関数を呼び出す結果は「Helloworld」になります。</p> 
+  <p><br></p> 
+  <p>ここでparentとthisの概念ですね。</p> 
+  <pre><code class="php" data-type="index.php">&lt;?php
+  $title = "title";
+  interface ITest {
+    function run();
+  }
+  abstract class AbstractTest implements ITest {
+    private $data;
+    public function run() {
+      // $thisは実行しているクラスのメンバータイプ、つまりprint()関数が呼び出すこと
+      return $this-&gt;print();
+    }
+    protected function setData($data) {
+      // $this-&gt;dataはメンバー変数dataで$dataはパラメータdataだ。
+      $this-&gt;data = $data;
+    }
+    protected function getData() {
+      return $this-&gt;data;
+    }
+    protected abstract function print();
+  }
+  class Test extends AbstractTest {
+    protected function print() {
+      // 上位クラスのsetDataを呼び出す。
+      // 参考でsetDataはprotectedタイプなので、派生クラスだけで参照が可能して外部では参照が不可能。
+      parent::setData("Hello world");
+      return parent::getData();
+    }
+  }
+  $obj = new Test;
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;
+    &lt;?=$title?&gt;
+  &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;?=$obj-&gt;run()?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre> 
-  <p>上の例をみればBodyの中でタグは全て７つがあります。inputタグは４つで、aタグが３つがあります。</p> 
-  <p>属性選択子はブランケット([])で選択します。</p> 
-  <p>上の通りで一番上のテキストボックスは枠が黒くなりますね。</p> 
-  <p>２つ目のスタイルはボタンタイプのinputタグの枠が赤になります。</p> 
-  <p>３つ目はvalue属性、つまり、値がsubmitを含めているボタンは枠が青になります。</p> 
-  <p>４つ目はhrefの属性が「https」で始まる「a」タグの文字が緑になります。</p> 
-  <p>５つ目はhrefの属性が「localhost」で終わる「a」タグの文字がグレーになります。</p> 
-  <p style="text-align:left;"><img src="./contents/124/680_001.png" data-filename="001.png" style="width: 360px;"></p>
+  <p style="text-align:left;"><img src="./contents/141/742_002.png" data-filename="002.png" style="width: 543px;"><br></p> 
+  <p>$thisの場合は実行しているクラスのメンバーをさしています。すなわち、メンバー変数か関数を指しています。$thisの場合はC++のポインタの形で矢印で指示(-&gt;)をしています。</p> 
+  <p>しかしparentの場合はparent::の形で指しています。&amp;parent-&gt;の形ではエラーが発生します。文法が面白いですね。</p> 
+  <p><br></p> 
+  <p>上の例はobj-&gt;runを通ってAbstractTestのrunが呼び出してrun関数で抽象メソッドprintが呼び出します。</p> 
+  <p>抽象メソッドprintが呼び出したのでTestクラスのprintが呼び出してprint関数で上位クラスのsetDataにデータを入れてgetDataでデータを持ってきて変換する形です。</p> 
+  <p><br></p> 
+  <p>私がデータを「Hello world」を入れたので結果は「Hello world」が出ます。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=css>#css</a>,<a href=./search.html?query=selecteor>#selecteor</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=php>#php</a>,<a href=./search.html?query=interface>#interface</a>,<a href=./search.html?query=abstract>#abstract</a>,<a href=./search.html?query=parent>#parent</a>,<a href=./search.html?query=this>#this</a> </span>
 				</div>
 				<div class="other-category">
-					<div class="list-title">「<a href="./?category=0204">Study / Javascript, Jquery, Css</a>」の他投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/136.html'>[CSS] ブラウザから開発する方法 (developer mode)</a><span>2019/12/25 07:54:31</span></li><li><a href='https://www.nowonbun.com/135.html'>[CSS] 色スタイル、グラデーション</a><span>2019/12/24 07:37:22</span></li><li><a href='https://www.nowonbun.com/134.html'>[CSS] アニメーション (animation)</a><span>2019/12/20 20:51:38</span></li><li><a href='https://www.nowonbun.com/133.html'>[CSS] トランスフォーム (transform)</a><span>2019/12/19 13:00:26</span></li><li><a href='https://www.nowonbun.com/132.html'>[CSS] トランジション(transition)</a><span>2019/12/18 20:33:57</span></li><li><a href='https://www.nowonbun.com/131.html'>[CSS] Columnスタイル</a><span>2019/12/17 19:52:56</span></li><li><a href='https://www.nowonbun.com/130.html'>[CSS] 整列スタイル (float)</a><span>2019/12/17 00:08:54</span></li><li><a href='https://www.nowonbun.com/129.html'>[CSS] 位置(position),表示(display)スタイル</a><span>2019/12/13 20:08:50</span></li><li><a href='https://www.nowonbun.com/128.html'>[CSS] border(枠)、余白スタイル - border, margin, padding</a><span>2019/12/12 20:16:43</span></li><li><a href='https://www.nowonbun.com/127.html'>[CSS] 文字スタイル</a><span>2019/12/11 21:13:22</span></li><li><a href='https://www.nowonbun.com/126.html'>[CSS] その他の疑似選択子 - link, visited, target, enabled, disabled, not, active, hover, focus</a><span>2019/12/10 07:31:28</span></li><li><a href='https://www.nowonbun.com/125.html'>[CSS] 疑似要素選択子 - fist-line, first-letter, before, after</a><span>2019/12/09 07:28:27</span></li><li><a href='https://www.nowonbun.com/124.html'>[CSS] 属性選択子</a><span>2019/12/06 07:27:36</span></li><li><a href='https://www.nowonbun.com/123.html'>[CSS] 疑似クラス - only-child, only-of-type, empty, empty, root</a><span>2019/12/05 07:29:15</span></li><li><a href='https://www.nowonbun.com/122.html'>[CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type</a><span>2019/12/04 07:28:37</span></li></ul>
+					<div class="list-title">「<a href="./?category=0205">Study / PHP</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/141.html'>[PHP] インタフェースと抽象クラス、クラス継承、parent、this</a><span>2020/01/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/140.html'>[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a><span>2020/01/09 23:35:27</span></li><li><a href='https://www.nowonbun.com/139.html'>[PHP] 基本ページ作成方法と変数使用方法</a><span>2020/01/06 23:44:20</span></li><li><a href='https://www.nowonbun.com/138.html'>[PHP] Composer設定</a><span>2019/12/27 08:49:09</span></li><li><a href='https://www.nowonbun.com/137.html'>[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a><span>2019/12/26 07:36:47</span></li></ul>
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
@@ -217,7 +254,7 @@ a[href$="localhost"]{
 		</article>
 		<script type="text/javascript" src="./js/postscreen.js"></script>
 		<div id="disqus_thread"></div>
-		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/124.html';this.page.identifier = 'NOWONBUN00124';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/141.html';this.page.identifier = 'NOWONBUN00141';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
 		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	</div>
 	<footer>
