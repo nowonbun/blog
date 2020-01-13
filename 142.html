@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / PHP" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。javaやc#で配列とリスト(list)は別の文法です。array(配列)の場合はその個数を決めてデータを入れるし、配列の個数を減らしたり増えたりするのが出来ないです。list(リスト)の場合は連結リストアルゴリズムでなっている構造でポインタを連携しながら追加したり削除したりする資料構造になっています。phpではその配列とリストの区分が別に分けていることではなく、arraryで宣言してリストみたいに追加や削除ができる構造になっています。そしてphpには連関配列ということでマップやディクショナリみたいに使う配列があります。連関配列は上の配列でインデックスの数代わりに文字を入れると連関配列になります。ここまで配列(リスト)の定義を確認しました。それでデータを追加や削除に関して確認しましょう。関数としてはarray_pushとarray_pop関数があります。array_pushは配列のデータを続けて入れることです。つまり、上の例で[3]までデータを入れたら[4]にデータを入れることですね。array_popは最後のデータ[4]までデータを入れたら[4]データをリターンして削除する関数です。link - https://www.php.net/manual/en/function.array-push.phplink - https://www.php.net/manual/en/function.array-pop.phparray_popの場合は最後でデータを取り除きますが、最初のデータを取り除き関数(array_shift)もあります。link - https://www.php.net/manual/en/function.array-shift.php今回は配列の中でデータを入れる関数(array_splice)です。array_spliceは一つのデータを入れることより、２つの配列を合わせることと同じです。link - https://www.php.net/manual/en/function.array-splice.phpその後、sort関数、extract関数、array_walk関数がありますが、sortの場合は整列、extractは抽出ですが、あまり使わないですね。sortの場合はリストの数字の対象なので、クラスやオブジェクトタイプならsort関数を作らなければなら]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [PHP] 配列とリスト(list)" />
+<link rel="canonical" href="https://www.nowonbun.com/142.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [PHP] 配列とリスト(list)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。javaやc#で配列とリスト(list)は別の文法です。array(配列)の場合はその個数を決めてデータを入れるし、配列の個数を減らしたり増えたりするのが出来ないです。list(リスト)の場合は連結リストアルゴリズムでなっている構造でポインタを連携しながら追加したり削除したりする資料構造になっています。phpではその配列とリストの区分が別に分けていることではなく、arraryで宣言してリストみたいに追加や削除ができる構造になっています。そしてphpには連関配列ということでマップやディクショナリみたいに使う配列があります。連関配列は上の配列でインデックスの数代わりに文字を入れると連関配列になります。ここまで配列(リスト)の定義を確認しました。それでデータを追加や削除に関して確認しましょう。関数としてはarray_pushとarray_pop関数があります。array_pushは配列のデータを続けて入れることです。つまり、上の例で[3]までデータを入れたら[4]にデータを入れることですね。array_popは最後のデータ[4]までデータを入れたら[4]データをリターンして削除する関数です。link - https://www.php.net/manual/en/function.array-push.phplink - https://www.php.net/manual/en/function.array-pop.phparray_popの場合は最後でデータを取り除きますが、最初のデータを取り除き関数(array_shift)もあります。link - https://www.php.net/manual/en/function.array-shift.php今回は配列の中でデータを入れる関数(array_splice)です。array_spliceは一つのデータを入れることより、２つの配列を合わせることと同じです。link - https://www.php.net/manual/en/function.array-splice.phpその後、sort関数、extract関数、array_walk関数がありますが、sortの場合は整列、extractは抽出ですが、あまり使わないですね。sortの場合はリストの数字の対象なので、クラスやオブジェクトタイプならsort関数を作らなければなら]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/142.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [PHP] 配列とリスト(list)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。javaやc#で配列とリスト(list)は別の文法です。array(配列)の場合はその個数を決めてデータを入れるし、配列の個数を減らしたり増えたりするのが出来ないです。list(リスト)の場合は連結リストアルゴリズムでなっている構造でポインタを連携しながら追加したり削除したりする資料構造になっています。phpではその配列とリストの区分が別に分けていることではなく、arraryで宣言してリストみたいに追加や削除ができる構造になっています。そしてphpには連関配列ということでマップやディクショナリみたいに使う配列があります。連関配列は上の配列でインデックスの数代わりに文字を入れると連関配列になります。ここまで配列(リスト)の定義を確認しました。それでデータを追加や削除に関して確認しましょう。関数としてはarray_pushとarray_pop関数があります。array_pushは配列のデータを続けて入れることです。つまり、上の例で[3]までデータを入れたら[4]にデータを入れることですね。array_popは最後のデータ[4]までデータを入れたら[4]データをリターンして削除する関数です。link - https://www.php.net/manual/en/function.array-push.phplink - https://www.php.net/manual/en/function.array-pop.phparray_popの場合は最後でデータを取り除きますが、最初のデータを取り除き関数(array_shift)もあります。link - https://www.php.net/manual/en/function.array-shift.php今回は配列の中でデータを入れる関数(array_splice)です。array_spliceは一つのデータを入れることより、２つの配列を合わせることと同じです。link - https://www.php.net/manual/en/function.array-splice.phpその後、sort関数、extract関数、array_walk関数がありますが、sortの場合は整列、extractは抽出ですが、あまり使わないですね。sortの場合はリストの数字の対象なので、クラスやオブジェクトタイプならsort関数を作らなければなら]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [PHP] 配列とリスト(list)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(23)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(119)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(6)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[PHP] 配列とリスト(list)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0205">Study / PHP</a>    作成日付 : 2020/01/14 03:00:00   修正日付 : 2020/01/14 03:00:00
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>JavaやC#で配列とリスト(list)は別の文法です。Array(配列)の場合はその個数を決めてデータを入れるし、配列の個数を減らしたり増えたりするのが出来ないです。</p> 
+  <p>List(リスト)の場合は連結リストアルゴリズムでなっている構造でポインタを連携しながら追加したり削除したりする資料構造になっています。</p> 
+  <p>PHPではその配列とリストの区分が別に分けていることではなく、arraryで宣言してリストみたいに追加や削除ができる構造になっています。</p> 
+  <pre><code class="php" data-type="index.php">&lt;?php
+  $title = "title";
+  // type1はarray関数を利用する。
+  $type1 = array("Test", "Hello", "World");
+
+  // 括弧([])で宣言する。
+  $type2[0] = "Test";
+  // 配列(リスト)を追加する時には別の関数が要らなく、ただ括弧([])宣言でできる。
+  $type2[1] = "Hello";
+  $type2[2] = "World";
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;
+    &lt;?=$title?&gt;
+  &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;?php
+    foreach($type1 as $item) {
+      echo $item." ";
+    }
+  ?&gt;
+  &lt;br /&gt;
+  &lt;?php
+    foreach($type2 as $item) {
+      echo $item." ";
+    }
+  ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/142/744_001.png" data-filename="001.png" style="width: 592px;"><br></p> 
+  <p>そしてPHPには連関配列ということでマップやディクショナリみたいに使う配列があります。</p> 
+  <p>連関配列は上の配列でインデックスの数代わりに文字を入れると連関配列になります。</p> 
+  <pre><code class="php" data-type="index.php">&lt;?php
+  $title = "title";
+  // array関数を利用して宣言する方法
+  $type1 = array(
+           "First" =&gt; "Test",
+           "Second" =&gt; "Hello",
+           "Third" =&gt; "World"
+         );
+
+  // 配列みたいに別の宣言なしで([])を利用して宣言する方法
+  $type2["First"] = "Test";
+  $type2["Second"] = "Hello";
+  $type2["Third"] = "World";
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;
+    &lt;?=$title?&gt;
+  &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;	
+  &lt;?php
+    foreach($type1 as $key =&gt; $value) {
+      echo $key." =&gt; ".$value."&lt;br /&gt;";
+    }
+  ?&gt;
+  &lt;br /&gt;
+  &lt;br /&gt;
+  &lt;br /&gt;
+  &lt;?php
+    foreach($type2 as $key =&gt; $value) {
+      echo $key." =&gt; ".$value."&lt;br /&gt;";
+    }
+  ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/142/747_002.png" data-filename="002.png" style="width: 640px;"><br></p> 
+  <p>ここまで配列(リスト)の定義を確認しました。それでデータを追加や削除に関して確認しましょう。</p> 
+  <p>関数としてはarray_pushとarray_pop関数があります。array_pushは配列のデータを続けて入れることです。つまり、上の例で[3]までデータを入れたら[4]にデータを入れることですね。</p> 
+  <p>array_popは最後のデータ[4]までデータを入れたら[4]データをリターンして削除する関数です。</p> 
+  <p>link - <a href="https://www.php.net/manual/en/function.array-push.php" target="_blank">https://www.php.net/manual/en/function.array-push.php</a></p> 
+  <p>link - <a href="https://www.php.net/manual/en/function.array-pop.php" target="_blank">https://www.php.net/manual/en/function.array-pop.php</a></p> 
+  <pre><code class="php" data-type="index.php">&lt;?php
+  $title = "title";
+  $type1 = array("Test", "Hello", "World");
+  // [4] 配列にpushを利用してデータを入れる。
+  array_push($type1,"push");
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;
+    &lt;?=$title?&gt;
+  &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;?php
+    foreach($type1 as $key =&gt; $value) {
+      echo $key." =&gt; ".$value."&lt;br /&gt;";
+    }
+  ?&gt;
+  &lt;br /&gt;
+  &lt;br /&gt;
+  &lt;br /&gt;
+  &lt;?php
+    // [4]配列を削除する。
+    array_pop($type1);
+  ?&gt;
+  &lt;br /&gt;
+  &lt;?php
+    foreach($type1 as $key =&gt; $value) {
+      echo $key." =&gt; ".$value."&lt;br /&gt;";
+    }
+  ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/142/748_003.png" data-filename="003.png" style="width: 594px;"><br></p> 
+  <p>array_popの場合は最後でデータを取り除きますが、最初のデータを取り除き関数(array_shift)もあります。</p> 
+  <p>link - <a href="https://www.php.net/manual/en/function.array-shift.php" target="_blank">https://www.php.net/manual/en/function.array-shift.php</a></p> 
+  <pre><code class="php" data-type="index.php">&lt;?php
+  $title = "title";
+  $type1 = array("Test", "Hello", "World");
+
+  array_push($type1,"push");
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;
+    &lt;?=$title?&gt;
+  &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;	
+  &lt;?php
+    foreach($type1 as $key =&gt; $value) {
+      echo $key." =&gt; ".$value."&lt;br /&gt;";
+    }
+  ?&gt;
+  &lt;br /&gt;
+  &lt;br /&gt;
+  &lt;br /&gt;
+  &lt;?php
+    // 最初の配列を取り除く。
+    array_shift($type1);
+  ?&gt;
+  &lt;br /&gt;
+  &lt;?php
+    foreach($type1 as $key =&gt; $value) {
+      echo $key." =&gt; ".$value."&lt;br /&gt;";
+    }
+  ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/142/745_004.png" data-filename="004.png" style="width: 587px;"><br></p> 
+  <p>今回は配列の中でデータを入れる関数(array_splice)です。</p> 
+  <p>array_spliceは一つのデータを入れることより、２つの配列を合わせることと同じです。</p> 
+  <p>link - <a href="https://www.php.net/manual/en/function.array-splice.php" target="_blank">https://www.php.net/manual/en/function.array-splice.php</a></p> 
+  <pre><code class="php" data-type="index.php">&lt;?php
+  $title = "title";
+  $type1 = array("Test", "Hello", "World");
+  $type2 = array("push");
+  // 配列を合わせることも可能
+  array_splice($type1, 2, 0, $type2);
+  // そのままデータを入れることも可能
+  array_splice($type1 , 3, 0, "push2");
+  // パラメタは初めがあわせような配列、２つ目が位置、３つ目が削除配列数、４つ目が合わせる配列になる。
+  // つまり、上の$type1は$type2を「2」番目に入れたので「Test - 0, Hello - 1, push - 2, World -3」になる。
+  // "push2"を3番目に入れるので「Test - 0, Hello - 1, push - 2, push2 - 3,World - 4」になる。
+  //　もし、３つ目が「0」ではなく、「1」の場合は「World」が削除される。「-1」の場合は「push」が削除される。「-2」の場合は「Hello, push」が削除される。
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;
+    &lt;?=$title?&gt;
+  &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;?php
+    foreach($type1 as $key =&gt; $value) {
+      echo $key." =&gt; ".$value."&lt;br /&gt;";
+    }
+  ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/142/746_005.png" data-filename="005.png" style="width: 584px;"><br></p> 
+  <p>その後、sort関数、extract関数、array_walk関数がありますが、sortの場合は整列、extractは抽出ですが、あまり使わないですね。</p> 
+  <p>sortの場合はリストの数字の対象なので、クラスやオブジェクトタイプならsort関数を作らなければならないと思います。</p> 
+  <p>link - <a href="https://www.php.net/manual/en/function.sort.php" target="_blank">https://www.php.net/manual/en/function.sort.php</a></p> 
+  <p>link - <a href="https://www.php.net/manual/en/function.extract.php" target="_blank">https://www.php.net/manual/en/function.extract.php</a></p> 
+  <p>link - <a href="https://www.php.net/manual/en/function.array-walk.php" target="_blank">https://www.php.net/manual/en/function.array-walk.php</a></p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=php>#php</a>,<a href=./search.html?query=array>#array</a>,<a href=./search.html?query=list>#list</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0205">Study / PHP</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/142.html'>[PHP] 配列とリスト(list)</a><span>2020/01/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/141.html'>[PHP] インタフェースと抽象クラス、クラス継承、parent、this</a><span>2020/01/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/140.html'>[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a><span>2020/01/09 23:35:27</span></li><li><a href='https://www.nowonbun.com/139.html'>[PHP] 基本ページ作成方法と変数使用方法</a><span>2020/01/06 23:44:20</span></li><li><a href='https://www.nowonbun.com/138.html'>[PHP] Composer設定</a><span>2019/12/27 08:49:09</span></li><li><a href='https://www.nowonbun.com/137.html'>[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a><span>2019/12/26 07:36:47</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/142.html'>[PHP] 配列とリスト(list)</a><span>2020/01/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/141.html'>[PHP] インタフェースと抽象クラス、クラス継承、parent、this</a><span>2020/01/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/140.html'>[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a><span>2020/01/09 23:35:27</span></li><li><a href='https://www.nowonbun.com/139.html'>[PHP] 基本ページ作成方法と変数使用方法</a><span>2020/01/06 23:44:20</span></li><li><a href='https://www.nowonbun.com/138.html'>[PHP] Composer設定</a><span>2019/12/27 08:49:09</span></li><li><a href='https://www.nowonbun.com/137.html'>[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a><span>2019/12/26 07:36:47</span></li><li><a href='https://www.nowonbun.com/136.html'>[CSS] ブラウザから開発する方法 (developer mode)</a><span>2019/12/25 07:54:31</span></li><li><a href='https://www.nowonbun.com/135.html'>[CSS] 色スタイル、グラデーション</a><span>2019/12/24 07:37:22</span></li><li><a href='https://www.nowonbun.com/134.html'>[CSS] アニメーション (animation)</a><span>2019/12/20 20:51:38</span></li><li><a href='https://www.nowonbun.com/133.html'>[CSS] トランスフォーム (transform)</a><span>2019/12/19 13:00:26</span></li><li><a href='https://www.nowonbun.com/132.html'>[CSS] トランジション(transition)</a><span>2019/12/18 20:33:57</span></li><li><a href='https://www.nowonbun.com/131.html'>[CSS] Columnスタイル</a><span>2019/12/17 19:52:56</span></li><li><a href='https://www.nowonbun.com/130.html'>[CSS] 整列スタイル (float)</a><span>2019/12/17 00:08:54</span></li><li><a href='https://www.nowonbun.com/129.html'>[CSS] 位置(position),表示(display)スタイル</a><span>2019/12/13 20:08:50</span></li><li><a href='https://www.nowonbun.com/128.html'>[CSS] border(枠)、余白スタイル - border, margin, padding</a><span>2019/12/12 20:16:43</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/142.html';this.page.identifier = 'NOWONBUN00142';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
