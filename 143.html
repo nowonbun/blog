@@ -34,31 +34,31 @@ body{
 <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-<meta name="keywords" content="Study / Java" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。以前、初めにプロジェクトを立ち上がることに関して説明しなければならなかったですが、漏れがありまして追加します。一応ウェブサービスの流れと言うとブラウザから要請するとウェブサーバは要請されたホスト名とパラメタによって応答ヘッダやhtmlデータを作成して返事します。サーバからブラウザに返事する時に文字エンコードは「jsp」で設定するので、問題ないですが、ブラウザからサーバに要請する時には別途で設定しないと文字化けになります。上の例で「こんにちは」と日本語でsubmitしましたが、結果は文字化けになりました。「結果 - 」と言うことは文字化けしなく、綺麗に表示されますね。その理由はサーバからブラウザは文字化けがないですが、ブラウザからサーバ側に送信する時文字化けになると意味です。「web.xml」の設定をみましょう。上のフィルタを追加しましょう。前日でフィルタに関して説明しました。link - [javaスタディ- 50] web spring frameworkでfilter設定フィルタで適用するので全コントローラに反映しますね。「url-pattern」で「*」をしましたが、必要ならパターン別でエンコーディングを変わることも出来ます。パラメタでは「utf-8」を入れました。文字化けがなくなりました。]]>" />
+<meta name="keywords" content="Study / PHP" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。プログラミングで例外処理は重要です。例外処理はプログラムロジックで開発者が考えられなかったこと、ユーザから可笑しいデータを受け取ったものを処理する文法です。link - [c# スタディ - 23] 例外処理(try〜catch,throwそしてfinally)link - [java スタディ - 19] 例外処理( try ~ catch)特に「php」で他の言語と差別性があることではないです。link - https://www.php.net/manual/en/language.exceptions.php上の例をみれば、example関数は呼び出せたらthrowでexceptionが発生します。メインロジックで「try ~ catch ~ finally」の構文でtryの領域でexample関数を呼出します。example関数ではexceptionで例外が発生して、catch領域に移動し、＄errormessageの変数にエラーメッセージのデータを入れます。最終的に「try ~ catch」構文の関係なずに、finallyの領域に移動しますが、$checkデータを「1」を加算しますね。結果をみるとエラーメッセージと$checkの値が「1」になることを確認できます。ここで確認ポイントはtry領域でexample()関数を呼出した後checkの変数が加算するところがありますが、example関数でエラーが発生しましたので、checkの加算は実施してないです。基本的にthrowを発生すると処理インタラプトの「try ~ catch」に移動しますが、exceptionを継承してcatchを種類別で処理することもできます。example関数に「1」という値をいれて「myexception1」を発生する。catchでは「myexception1」、「myexception2」、「exception」の例外を設定してエラー別で処理領域を分離しました。結果をみれば「101」になりましたので、「myexcepion1」が呼び出せ、finallyの領域に移動したことを確認できますね。参考で文字上の例で「myexception1」が設定してない場合は「exception」のエラーが発生されます。「exception」の領域が一番上に設定すると区分なしですべてのエラーがexceptionに通るの]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定" />
-<link rel="canonical" href="https://www.nowonbun.com/91.html" />
+<meta name="title" content="明月の開発ストーリ :: [PHP] 例外処理(try ~ catch ~ finally)" />
+<link rel="canonical" href="https://www.nowonbun.com/143.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。以前、初めにプロジェクトを立ち上がることに関して説明しなければならなかったですが、漏れがありまして追加します。一応ウェブサービスの流れと言うとブラウザから要請するとウェブサーバは要請されたホスト名とパラメタによって応答ヘッダやhtmlデータを作成して返事します。サーバからブラウザに返事する時に文字エンコードは「jsp」で設定するので、問題ないですが、ブラウザからサーバに要請する時には別途で設定しないと文字化けになります。上の例で「こんにちは」と日本語でsubmitしましたが、結果は文字化けになりました。「結果 - 」と言うことは文字化けしなく、綺麗に表示されますね。その理由はサーバからブラウザは文字化けがないですが、ブラウザからサーバ側に送信する時文字化けになると意味です。「web.xml」の設定をみましょう。上のフィルタを追加しましょう。前日でフィルタに関して説明しました。link - [javaスタディ- 50] web spring frameworkでfilter設定フィルタで適用するので全コントローラに反映しますね。「url-pattern」で「*」をしましたが、必要ならパターン別でエンコーディングを変わることも出来ます。パラメタでは「utf-8」を入れました。文字化けがなくなりました。]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [PHP] 例外処理(try ~ catch ~ finally)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。プログラミングで例外処理は重要です。例外処理はプログラムロジックで開発者が考えられなかったこと、ユーザから可笑しいデータを受け取ったものを処理する文法です。link - [c# スタディ - 23] 例外処理(try〜catch,throwそしてfinally)link - [java スタディ - 19] 例外処理( try ~ catch)特に「php」で他の言語と差別性があることではないです。link - https://www.php.net/manual/en/language.exceptions.php上の例をみれば、example関数は呼び出せたらthrowでexceptionが発生します。メインロジックで「try ~ catch ~ finally」の構文でtryの領域でexample関数を呼出します。example関数ではexceptionで例外が発生して、catch領域に移動し、＄errormessageの変数にエラーメッセージのデータを入れます。最終的に「try ~ catch」構文の関係なずに、finallyの領域に移動しますが、$checkデータを「1」を加算しますね。結果をみるとエラーメッセージと$checkの値が「1」になることを確認できます。ここで確認ポイントはtry領域でexample()関数を呼出した後checkの変数が加算するところがありますが、example関数でエラーが発生しましたので、checkの加算は実施してないです。基本的にthrowを発生すると処理インタラプトの「try ~ catch」に移動しますが、exceptionを継承してcatchを種類別で処理することもできます。example関数に「1」という値をいれて「myexception1」を発生する。catchでは「myexception1」、「myexception2」、「exception」の例外を設定してエラー別で処理領域を分離しました。結果をみれば「101」になりましたので、「myexcepion1」が呼び出せ、finallyの領域に移動したことを確認できますね。参考で文字上の例で「myexception1」が設定してない場合は「exception」のエラーが発生されます。「exception」の領域が一番上に設定すると区分なしですべてのエラーがexceptionに通るの]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/91.html" />
+<meta property="og:url" content="https://www.nowonbun.com/143.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。以前、初めにプロジェクトを立ち上がることに関して説明しなければならなかったですが、漏れがありまして追加します。一応ウェブサービスの流れと言うとブラウザから要請するとウェブサーバは要請されたホスト名とパラメタによって応答ヘッダやhtmlデータを作成して返事します。サーバからブラウザに返事する時に文字エンコードは「jsp」で設定するので、問題ないですが、ブラウザからサーバに要請する時には別途で設定しないと文字化けになります。上の例で「こんにちは」と日本語でsubmitしましたが、結果は文字化けになりました。「結果 - 」と言うことは文字化けしなく、綺麗に表示されますね。その理由はサーバからブラウザは文字化けがないですが、ブラウザからサーバ側に送信する時文字化けになると意味です。「web.xml」の設定をみましょう。上のフィルタを追加しましょう。前日でフィルタに関して説明しました。link - [javaスタディ- 50] web spring frameworkでfilter設定フィルタで適用するので全コントローラに反映しますね。「url-pattern」で「*」をしましたが、必要ならパターン別でエンコーディングを変わることも出来ます。パラメタでは「utf-8」を入れました。文字化けがなくなりました。]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [PHP] 例外処理(try ~ catch ~ finally)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。プログラミングで例外処理は重要です。例外処理はプログラムロジックで開発者が考えられなかったこと、ユーザから可笑しいデータを受け取ったものを処理する文法です。link - [c# スタディ - 23] 例外処理(try〜catch,throwそしてfinally)link - [java スタディ - 19] 例外処理( try ~ catch)特に「php」で他の言語と差別性があることではないです。link - https://www.php.net/manual/en/language.exceptions.php上の例をみれば、example関数は呼び出せたらthrowでexceptionが発生します。メインロジックで「try ~ catch ~ finally」の構文でtryの領域でexample関数を呼出します。example関数ではexceptionで例外が発生して、catch領域に移動し、＄errormessageの変数にエラーメッセージのデータを入れます。最終的に「try ~ catch」構文の関係なずに、finallyの領域に移動しますが、$checkデータを「1」を加算しますね。結果をみるとエラーメッセージと$checkの値が「1」になることを確認できます。ここで確認ポイントはtry領域でexample()関数を呼出した後checkの変数が加算するところがありますが、example関数でエラーが発生しましたので、checkの加算は実施してないです。基本的にthrowを発生すると処理インタラプトの「try ~ catch」に移動しますが、exceptionを継承してcatchを種類別で処理することもできます。example関数に「1」という値をいれて「myexception1」を発生する。catchでは「myexception1」、「myexception2」、「exception」の例外を設定してエラー別で処理領域を分離しました。結果をみれば「101」になりましたので、「myexcepion1」が呼び出せ、finallyの領域に移動したことを確認できますね。参考で文字上の例で「myexception1」が設定してない場合は「exception」のエラーが発生されます。「exception」の領域が一番上に設定すると区分なしですべてのエラーがexceptionに通るの]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定</title>
+<title>明月の開発ストーリ :: [PHP] 例外処理(try ~ catch ~ finally)</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定</h1>
+					<h1 id="titleTxt">[PHP] 例外処理(try ~ catch ~ finally)</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0203">Study / Java</a>    作成日付 : 2019/10/16 07:32:55   修正日付 : 2019/10/16 07:33:49
+					<a href="./?category=0205">Study / PHP</a>    作成日付 : 2020/01/15 03:00:00   修正日付 : 2020/01/15 03:00:00
 				</div>
 			</div>
 			<div class="article">
@@ -137,93 +137,123 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>以前、初めにプロジェクトを立ち上がることに関して説明しなければならなかったですが、漏れがありまして追加します。</p> 
+  <p>プログラミングで例外処理は重要です。例外処理はプログラムロジックで開発者が考えられなかったこと、ユーザから可笑しいデータを受け取ったものを処理する文法です。</p> 
+  <p>link - <a href="https://www.nowonbun.com/24.html" target="_blank">[C# スタディ - 23] 例外処理(try〜catch,throwそしてfinally)</a></p> 
+  <p>link - <a href="https://www.nowonbun.com/59.html" target="_blank">[Java スタディ - 19] 例外処理( try ~ catch)</a></p> 
   <p><br></p> 
-  <p>一応ウェブサービスの流れと言うとブラウザから要請するとウェブサーバは要請されたホスト名とパラメタによって応答ヘッダやHtmlデータを作成して返事します。</p> 
-  <p>サーバからブラウザに返事する時に文字エンコードは「jsp」で設定するので、問題ないですが、ブラウザからサーバに要請する時には別途で設定しないと文字化けになります。</p> 
-  <pre><code class="jsp" data-type="index.jsp">&lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%&gt;
-&lt;!-- サーバからブラウザにエンコーディングする設定はここでします。 --&gt;
+  <p>特に「PHP」で他の言語と差別性があることではないです。</p> 
+  <p>link - <a href="https://www.php.net/manual/en/language.exceptions.php" target="_blank">https://www.php.net/manual/en/language.exceptions.php</a></p> 
+  <pre><code class="html" data-type="index.php">&lt;?php
+  $title = "title";
+  function example() {
+    throw new Exception('Exception!!!');
+  }
+  $errorMessage = "";
+  $check = 0;
+  try {
+    example();
+    // checkの値に「1」を加算する。
+    $check += 1;
+  } catch(Exception $e) {
+    $errorMessage = $e;
+  } finally {
+    // checkの値を「1」を加算する。
+    $check += 1;
+  }
+?&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-&lt;meta charset="UTF-8"&gt;
-&lt;title&gt;Insert title here&lt;/title&gt;
+  &lt;title&gt;
+    &lt;?=$title?&gt;
+  &lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;form method="post"&gt;
-    &lt;input type="text" name="paramdata"&gt;&lt;br /&gt;
-    &lt;input type="submit"&gt;
-  &lt;/form&gt;
-  結果 - ${Data} 
+  &lt;?=$errorMessage?&gt;
+  &lt;br /&gt;
+  &lt;!-- $checkの値を出力する。 --&gt;
+  &lt;?=$check?&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre> 
-  <pre><code class="java" data-type="Main.java">package controller;
-
-import javax.servlet.http.*;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-
-@Controller
-public class Main {
-	@RequestMapping(value = "/index.html", method = RequestMethod.GET)
-	public String indexget(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
-        //GETタイプの場合は「Data」パラメタに空を送る。
-		modelmap.addAttribute("Data", "");
-		return "index";
-	}
-
-	@RequestMapping(value = "/index.html", method = RequestMethod.POST)
-	public String indexpost(@RequestParam String paramdata, ModelMap modelmap, HttpSession session,　HttpServletRequest req, HttpServletResponse res) {
-        // POSTタイプの場合はSubmitされたデータを「Data」パラメタに送る。
-		modelmap.addAttribute("Data", paramdata);
-		return "index";
-	}
-}
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/91/463_001.jpg" data-filename="001.jpg" style="width: 547px;"></p> 
-  <p style="text-align:left;"><img src="./contents/91/464_002.jpg" data-filename="002.jpg" style="width: 549px;"></p> 
-  <p>上の例で「こんにちは」と日本語でSubmitしましたが、結果は文字化けになりました。「結果 - 」と言うことは文字化けしなく、綺麗に表示されますね。</p> 
-  <p>その理由はサーバからブラウザは文字化けがないですが、ブラウザからサーバ側に送信する時文字化けになると意味です。</p> 
+  <p style="text-align:left;"><img src="./contents/143/750_001.png" data-filename="001.png" style="width: 848px;"><br></p> 
+  <p>上の例をみれば、example関数は呼び出せたらthrowでexceptionが発生します。メインロジックで「try ~ catch ~ finally」の構文でtryの領域でexample関数を呼出します。</p> 
+  <p>example関数ではExceptionで例外が発生して、catch領域に移動し、＄errorMessageの変数にエラーメッセージのデータを入れます。</p> 
+  <p>最終的に「try ~ catch」構文の関係なずに、finallyの領域に移動しますが、$checkデータを「1」を加算しますね。</p> 
   <p><br></p> 
-  <p>「web.xml」の設定をみましょう。</p> 
-  <p style="text-align:left;"><img src="./contents/91/466_003.png" data-filename="003.png" style="width: 848px;"></p> 
-  <pre><code class="xml" data-type="web.xml">&lt;filter&gt;
-  &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;
-  &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;
-  &lt;init-param&gt;
-    &lt;param-name&gt;encoding&lt;/param-name&gt;
-    &lt;param-value&gt;UTF-8&lt;/param-value&gt;
-  &lt;/init-param&gt;
-  &lt;init-param&gt;
-    &lt;param-name&gt;forceEncoding&lt;/param-name&gt;
-    &lt;param-value&gt;true&lt;/param-value&gt;
-  &lt;/init-param&gt;
-&lt;/filter&gt;
-&lt;filter-mapping&gt;
-  &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;
-  &lt;url-pattern&gt;*&lt;/url-pattern&gt;
-&lt;/filter-mapping&gt;
-</code></pre> 
-  <p>上のフィルタを追加しましょう。前日でフィルタに関して説明しました。</p> 
-  <p>link - <a href="https://www.nowonbun.com/90.html" target="_blank">[Javaスタディ- 50] Web Spring frameworkでfilter設定</a></p> 
+  <p>結果をみるとエラーメッセージと$checkの値が「1」になることを確認できます。</p> 
+  <p>ここで確認ポイントはtry領域でexample()関数を呼出した後checkの変数が加算するところがありますが、example関数でエラーが発生しましたので、checkの加算は実施してないです。</p> 
   <p><br></p> 
-  <p>フィルタで適用するので全コントローラに反映しますね。「url-pattern」で「*」をしましたが、必要ならパターン別でエンコーディングを変わることも出来ます。</p> 
-  <p>パラメタでは「UTF-8」を入れました。</p> 
-  <p style="text-align:left;"><img src="./contents/91/465_004.jpg" data-filename="004.jpg" style="width: 537px;"></p> 
-  <p>文字化けがなくなりました。</p>
+  <p>基本的にthrowを発生すると処理インタラプトの「try ~ catch」に移動しますが、Exceptionを継承してcatchを種類別で処理することもできます。</p> 
+  <pre><code class="html" data-type="index.php">&lt;?php
+  // Exceptionを継承する。
+  class MyException1 extends Exception { }
+  class MyException2 extends Exception { }
+
+  $title = "title";
+  function example($type) {
+    // MyException1のエラーを発生する。
+    if($type == 1 ){
+      throw new MyException1('MyException1!!!');
+    }
+    // MyException2のエラーを発生する。
+    if($type == 2){
+      throw new MyException2('MyException2!!!');
+    }
+    // 一般エラーを発生する。
+    throw new Exception('Exception!!!');
+  }
+  $errorMessage = "";
+  $check = 0;
+  try{
+    // $typeのパラメタに「1」が入れることでMyException1のエラーが発生する。
+    example(1);
+    $check += 1;
+  } catch(MyException1 $e) {
+    $errorMessage = $e;
+    $check = 100;
+  } catch(MyException2 $e){
+    $errorMessage = $e;
+    $check = 1000;
+  } catch(Exception $e){
+    $errorMessage = $e;
+  } finally {
+    $check += 1;
+  }
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;
+    &lt;?=$title?&gt;
+  &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;?=$errorMessage?&gt;
+  &lt;br /&gt;
+  &lt;!-- $checkは 100 + 1で　101が出力する。 --&gt;
+  &lt;?=$check?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/143/749_002.png" data-filename="002.png" style="width: 848px;"><br></p> 
+  <p>example関数に「1」という値をいれて「MyException1」を発生する。</p> 
+  <p>catchでは「MyException1」、「MyException2」、「Exception」の例外を設定してエラー別で処理領域を分離しました。</p> 
+  <p>結果をみれば「101」になりましたので、「MyExcepion1」が呼び出せ、finallyの領域に移動したことを確認できますね。</p> 
+  <p><br></p> 
+  <p>参考で文字上の例で「MyException1」が設定してない場合は「Exception」のエラーが発生されます。</p> 
+  <p>「Exception」の領域が一番上に設定すると区分なしですべてのエラーがExceptionに通るので、一番下に配置しなければならないです。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag">  </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=php>#php</a>,<a href=./search.html?query=try>#try</a>,<a href=./search.html?query=catch>#catch</a>,<a href=./search.html?query=finallly>#finallly</a> </span>
 				</div>
 				<div class="other-category">
-					<div class="list-title">「<a href="./?category=0203">Study / Java</a>」の他投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/92.html'>[Javaスタディ- 52] Java servletでインスタンスを初期する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Javaスタディ- 51] Spring web frameworkで発生する文字化けのEncoding設定</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Javaスタディ- 50] Web Spring frameworkでfilter設定</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Javaスタディ- 49] Web serviceのweb.xmlでエラーページ設定</a><span>2019/10/14 20:13:44</span></li><li><a href='https://www.nowonbun.com/88.html'>[Javaスタディ- 48] JPAのDAOをFactoryパターンで管理する方法</a><span>2019/10/13 22:55:52</span></li><li><a href='https://www.nowonbun.com/87.html'>[Java スタディ - 47] JPAのSpring frameworkで依存性注入する方法</a><span>2019/10/13 00:40:08</span></li><li><a href='https://www.nowonbun.com/86.html'>[Java スタディ - 46] JPAでDAOを生成する方法</a><span>2019/10/11 07:30:14</span></li><li><a href='https://www.nowonbun.com/85.html'>[Java スタディ - 45] JPAでトランザクションの使用方法とオブサーバーパターンで共通トランザクション関数を作り方</a><span>2019/10/10 07:29:43</span></li><li><a href='https://www.nowonbun.com/84.html'>[Java スタディ - 44]  JPAのQuery を作り方</a><span>2019/10/09 07:34:08</span></li><li><a href='https://www.nowonbun.com/83.html'>[Java スタディ - 43] JPAのEntityクラス設定(Cascade, fetch)</a><span>2019/10/08 07:43:33</span></li><li><a href='https://www.nowonbun.com/82.html'>[Java スタディ - 42] JPAでpersistance.xml設定とentityクラス設定(@GeneratedValue設定)</a><span>2019/10/07 07:38:13</span></li><li><a href='https://www.nowonbun.com/81.html'>[Java スタディ - 41] EclipseでJPAフレームワーク設定する方法</a><span>2019/10/04 19:24:43</span></li><li><a href='https://www.nowonbun.com/80.html'>[Java スタディ - 40] Web spring frameworkのJSPで使う言語 JSTL - XML</a><span>2019/10/03 20:02:06</span></li><li><a href='https://www.nowonbun.com/79.html'>[Java スタディ - 39] Web spring frameworkのJSPで使う言語 JSTL - 関数、データベース</a><span>2019/10/02 21:00:22</span></li><li><a href='https://www.nowonbun.com/78.html'>[Java スタディ - 38] Web spring frameworkのJSPで使う言語 JSTL - コアー、フォーマッティング</a><span>2019/10/01 21:48:08</span></li></ul>
+					<div class="list-title">「<a href="./?category=0205">Study / PHP</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/143.html'>[PHP] 例外処理(try ~ catch ~ finally)</a><span>2020/01/15 03:00:00</span></li><li><a href='https://www.nowonbun.com/142.html'>[PHP] 配列とリスト(list)</a><span>2020/01/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/141.html'>[PHP] インタフェースと抽象クラス、クラス継承、parent、this</a><span>2020/01/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/140.html'>[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a><span>2020/01/09 23:35:27</span></li><li><a href='https://www.nowonbun.com/139.html'>[PHP] 基本ページ作成方法と変数使用方法</a><span>2020/01/06 23:44:20</span></li><li><a href='https://www.nowonbun.com/138.html'>[PHP] Composer設定</a><span>2019/12/27 08:49:09</span></li><li><a href='https://www.nowonbun.com/137.html'>[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a><span>2019/12/26 07:36:47</span></li></ul>
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
@@ -233,7 +263,7 @@ public class Main {
 		</article>
 		<script type="text/javascript" src="./js/postscreen.js"></script>
 		<div id="disqus_thread"></div>
-		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/91.html';this.page.identifier = 'NOWONBUN00091';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/143.html';this.page.identifier = 'NOWONBUN00143';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
 		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	</div>
 	<footer>

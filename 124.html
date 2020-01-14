@@ -35,17 +35,17 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / Javascript, Jquery, Css" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。前述まで疑似クラスに関して説明しました。これからは属性選択子を調べてみます。cssの選択子で一番良く使う選択子はタグによって、「id」によって(#id)、「class」によって(.class)が一番良く使う選択子で次がこの属性選択子ではないかと思います。htmlタグではタグ名があるし、タグテキストがあります。そして属性(アトリビュート)がありますね。タグで見ると「id」や「class」も属性ですね。上の例をみればbodyの中でタグは全て７つがあります。inputタグは４つで、aタグが３つがあります。属性選択子はブランケット([])で選択します。上の通りで一番上のテキストボックスは枠が黒くなりますね。２つ目のスタイルはボタンタイプのinputタグの枠が赤になります。３つ目はvalue属性、つまり、値がsubmitを含めているボタンは枠が青になります。４つ目はhrefの属性が「https」で始まる「a」タグの文字が緑になります。５つ目はhrefの属性が「localhost」で終わる「a」タグの文字がグレーになります。]]>" />
+<meta name="description" content="<![CDATA[選択された要素の基準で隣接された要素や派生(下位)要素を選択する方法に関する記述です。styleでアスタリスクマーク(*)はすべての要素を選択する方法です。すべての要素はfont-styleや基本padding、marginを設定する時に使いますが、すべての要素に反映があるのでよく使わない選択子です。そしてstyle設定でタグあるいはidやclass、属性で要素を選択しますが、コンマ(,)を使えば複数選択も可能です。例えば「p, div」といえばpタグとdivタグを選択することです。そして孫選択子、子選択子の意味は孫選択子の場合、選択要素の中であるすべての派生タグをいうことで子選択子は選択した直下の派生タグを選択することです。上の条件の構造でhtmlが作成したと思えば、aタグの孫要素は「b, c, d, e」タグになるし、子要素は「b, c」にあんることです。つまり、「a d」の指定みたいに、aとd間にスペースを置くと、aタグの孫要素のdタグを選択することです。子要素でみると「a &amp;gt; b &amp;gt; d」の選択子になります。隣接選択子で「+」を使用すれば同じレベルの要素で次(派生ではない)に配置された要素、つまり「b + c」で設定するえば「c」を選択することです。「b + f」の場合はbタグすぐあとで「f」タグがないので何も選択されない結果になります。「~」の場合は「+」みたいに派生ではなく同じレベルの後で配置された要素ですが、すぐ後ろふくめすべての要素ですね。上の例をみれば初めは孫要素を選択するので.p1のh1と.p3のh3になります。でも.p2のh2の場合は.p2の子要素なので.p4のh2タグは当該事項ではありません。~を使って+をつかったので先にクラスが.p1タグの後のdivタグの背景をすべて黄色に設定して、p1タグの次の要素を赤色に設定しますね。]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [CSS] 属性選択子" />
+<meta name="title" content="明月の開発ストーリ :: [CSS] 範囲と指定に関する選択子(全体選択子、要素選択子、孫選択子、子選択子、隣接選択子)" />
 <link rel="canonical" href="https://www.nowonbun.com/124.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [CSS] 属性選択子" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。前述まで疑似クラスに関して説明しました。これからは属性選択子を調べてみます。cssの選択子で一番良く使う選択子はタグによって、「id」によって(#id)、「class」によって(.class)が一番良く使う選択子で次がこの属性選択子ではないかと思います。htmlタグではタグ名があるし、タグテキストがあります。そして属性(アトリビュート)がありますね。タグで見ると「id」や「class」も属性ですね。上の例をみればbodyの中でタグは全て７つがあります。inputタグは４つで、aタグが３つがあります。属性選択子はブランケット([])で選択します。上の通りで一番上のテキストボックスは枠が黒くなりますね。２つ目のスタイルはボタンタイプのinputタグの枠が赤になります。３つ目はvalue属性、つまり、値がsubmitを含めているボタンは枠が青になります。４つ目はhrefの属性が「https」で始まる「a」タグの文字が緑になります。５つ目はhrefの属性が「localhost」で終わる「a」タグの文字がグレーになります。]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [CSS] 範囲と指定に関する選択子(全体選択子、要素選択子、孫選択子、子選択子、隣接選択子)" />
+<meta property="og:description" content="<![CDATA[選択された要素の基準で隣接された要素や派生(下位)要素を選択する方法に関する記述です。styleでアスタリスクマーク(*)はすべての要素を選択する方法です。すべての要素はfont-styleや基本padding、marginを設定する時に使いますが、すべての要素に反映があるのでよく使わない選択子です。そしてstyle設定でタグあるいはidやclass、属性で要素を選択しますが、コンマ(,)を使えば複数選択も可能です。例えば「p, div」といえばpタグとdivタグを選択することです。そして孫選択子、子選択子の意味は孫選択子の場合、選択要素の中であるすべての派生タグをいうことで子選択子は選択した直下の派生タグを選択することです。上の条件の構造でhtmlが作成したと思えば、aタグの孫要素は「b, c, d, e」タグになるし、子要素は「b, c」にあんることです。つまり、「a d」の指定みたいに、aとd間にスペースを置くと、aタグの孫要素のdタグを選択することです。子要素でみると「a &amp;gt; b &amp;gt; d」の選択子になります。隣接選択子で「+」を使用すれば同じレベルの要素で次(派生ではない)に配置された要素、つまり「b + c」で設定するえば「c」を選択することです。「b + f」の場合はbタグすぐあとで「f」タグがないので何も選択されない結果になります。「~」の場合は「+」みたいに派生ではなく同じレベルの後で配置された要素ですが、すぐ後ろふくめすべての要素ですね。上の例をみれば初めは孫要素を選択するので.p1のh1と.p3のh3になります。でも.p2のh2の場合は.p2の子要素なので.p4のh2タグは当該事項ではありません。~を使って+をつかったので先にクラスが.p1タグの後のdivタグの背景をすべて黄色に設定して、p1タグの次の要素を赤色に設定しますね。]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta property="og:url" content="https://www.nowonbun.com/124.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
@@ -53,12 +53,12 @@ body{
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] 属性選択子" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。前述まで疑似クラスに関して説明しました。これからは属性選択子を調べてみます。cssの選択子で一番良く使う選択子はタグによって、「id」によって(#id)、「class」によって(.class)が一番良く使う選択子で次がこの属性選択子ではないかと思います。htmlタグではタグ名があるし、タグテキストがあります。そして属性(アトリビュート)がありますね。タグで見ると「id」や「class」も属性ですね。上の例をみればbodyの中でタグは全て７つがあります。inputタグは４つで、aタグが３つがあります。属性選択子はブランケット([])で選択します。上の通りで一番上のテキストボックスは枠が黒くなりますね。２つ目のスタイルはボタンタイプのinputタグの枠が赤になります。３つ目はvalue属性、つまり、値がsubmitを含めているボタンは枠が青になります。４つ目はhrefの属性が「https」で始まる「a」タグの文字が緑になります。５つ目はhrefの属性が「localhost」で終わる「a」タグの文字がグレーになります。]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] 範囲と指定に関する選択子(全体選択子、要素選択子、孫選択子、子選択子、隣接選択子)" />
+<meta name="twitter:description" content="<![CDATA[選択された要素の基準で隣接された要素や派生(下位)要素を選択する方法に関する記述です。styleでアスタリスクマーク(*)はすべての要素を選択する方法です。すべての要素はfont-styleや基本padding、marginを設定する時に使いますが、すべての要素に反映があるのでよく使わない選択子です。そしてstyle設定でタグあるいはidやclass、属性で要素を選択しますが、コンマ(,)を使えば複数選択も可能です。例えば「p, div」といえばpタグとdivタグを選択することです。そして孫選択子、子選択子の意味は孫選択子の場合、選択要素の中であるすべての派生タグをいうことで子選択子は選択した直下の派生タグを選択することです。上の条件の構造でhtmlが作成したと思えば、aタグの孫要素は「b, c, d, e」タグになるし、子要素は「b, c」にあんることです。つまり、「a d」の指定みたいに、aとd間にスペースを置くと、aタグの孫要素のdタグを選択することです。子要素でみると「a &amp;gt; b &amp;gt; d」の選択子になります。隣接選択子で「+」を使用すれば同じレベルの要素で次(派生ではない)に配置された要素、つまり「b + c」で設定するえば「c」を選択することです。「b + f」の場合はbタグすぐあとで「f」タグがないので何も選択されない結果になります。「~」の場合は「+」みたいに派生ではなく同じレベルの後で配置された要素ですが、すぐ後ろふくめすべての要素ですね。上の例をみれば初めは孫要素を選択するので.p1のh1と.p3のh3になります。でも.p2のh2の場合は.p2の子要素なので.p4のh2タグは当該事項ではありません。~を使って+をつかったので先にクラスが.p1タグの後のdivタグの背景をすべて黄色に設定して、p1タグの次の要素を赤色に設定しますね。]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [CSS] 属性選択子</title>
+<title>明月の開発ストーリ :: [CSS] 範囲と指定に関する選択子(全体選択子、要素選択子、孫選択子、子選択子、隣接選択子)</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -111,7 +111,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
 		</div>
 		<div class="side-list">
-			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(23)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(119)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(6)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(23)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(120)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(7)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
 			</ul>
 		</div>
 	</aside>
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[CSS] 属性選択子</h1>
+					<h1 id="titleTxt">[CSS] 範囲と指定に関する選択子(全体選択子、要素選択子、孫選択子、子選択子、隣接選択子)</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/06 07:27:36   修正日付 : 2019/12/06 07:28:07
+					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/06 07:27:36   修正日付 : 2020/01/14 18:04:37
 				</div>
 			</div>
 			<div class="article">
@@ -135,68 +135,70 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				<div class="tt_article_useless_p_margin" id="article_contents">
  
  
-  <p>こんにちは。明月です。</p> 
-  <p><br></p> 
-  <p>前述まで疑似クラスに関して説明しました。</p> 
-  <p>これからは属性選択子を調べてみます。</p> 
-  <p><br></p> 
-  <p>CSSの選択子で一番良く使う選択子はタグによって、「id」によって(#id)、「class」によって(.class)が一番良く使う選択子で次がこの属性選択子ではないかと思います。</p> 
-  <p>Htmlタグではタグ名があるし、タグテキストがあります。そして属性(アトリビュート)がありますね。</p> 
-  <pre><code class="html" data-type="tag">&lt;tag attribute="属性"&gt;タグテキスト&lt;/tag&gt;
+  <p>選択された要素の基準で隣接された要素や派生(下位)要素を選択する方法に関する記述です。</p> 
+  <p>styleでアスタリスクマーク(*)はすべての要素を選択する方法です。すべての要素はfont-styleや基本padding、marginを設定する時に使いますが、すべての要素に反映があるのでよく使わない選択子です。</p> 
+  <p>そしてstyle設定でタグあるいはidやclass、属性で要素を選択しますが、コンマ(,)を使えば複数選択も可能です。</p> 
+  <p>例えば「p, div」といえばpタグとdivタグを選択することです。</p> 
+  <p>そして孫選択子、子選択子の意味は孫選択子の場合、選択要素の中であるすべての派生タグをいうことで子選択子は選択した直下の派生タグを選択することです。</p> 
+  <pre><code class="xml" data-type="example">&lt;a&gt;
+  &lt;b&gt;
+    &lt;d&gt;&lt;/d&gt;
+  &lt;/b&gt;
+  &lt;c&gt;
+    &lt;e&gt;&lt;/e&gt;
+  &lt;/c&gt;
+  &lt;f&gt;&lt;/f&gt;
+&lt;/a&gt;
 </code></pre> 
-  <p>タグで見ると「id」や「class」も属性ですね。</p> 
-  <pre><code class="html" data-type="html example">&lt;!DOCTYPE&gt;
+  <p>上の条件の構造でhtmlが作成したと思えば、aタグの孫要素は「b, c, d, e」タグになるし、子要素は「b, c」にあんることです。</p> 
+  <p>つまり、「a d」の指定みたいに、aとd間にスペースを置くと、aタグの孫要素のdタグを選択することです。</p> 
+  <p>子要素でみると「a &gt; b &gt; d」の選択子になります。</p> 
+  <p><br></p> 
+  <p>隣接選択子で「+」を使用すれば同じレベルの要素で次(派生ではない)に配置された要素、つまり「b + c」で設定するえば「c」を選択することです。「b + f」の場合はbタグすぐあとで「f」タグがないので何も選択されない結果になります。</p> 
+  <p>「~」の場合は「+」みたいに派生ではなく同じレベルの後で配置された要素ですが、すぐ後ろふくめすべての要素ですね。</p> 
+  <pre><code class="html" data-type="example.html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
- &lt;head&gt;
-  &lt;title&gt; New Document &lt;/title&gt;
-  &lt;style&gt;
-    input,a{
-      width: 100px;
-      height: 50px;
-      margin:10px;
-    }
-  &lt;/style&gt;
- &lt;/head&gt;
- &lt;body&gt;
-  &lt;input type="textbox" readonly="readonly" value="readonly"&gt;&lt;br /&gt;
-  &lt;input type="textbox" value="normal"&gt;&lt;br /&gt;
-  &lt;input type="button" value="button"&gt;&lt;br /&gt;
-  &lt;input type="submit" value="submit button"&gt;&lt;br /&gt;
-  &lt;a href="http://www.nowonbun.com" style="display:block;"&gt;明月の開発ストーリ&lt;/a&gt;&lt;br /&gt;
-  &lt;a href="https://www.nowonbun.com" style="display:block;"&gt;明月の開発ストーリ&lt;/a&gt;&lt;br /&gt;
-  &lt;a href="http://localhost" style="display:block;"&gt;明月の開発ストーリ&lt;/a&gt;&lt;br /&gt;
- &lt;/body&gt;
+&lt;head&gt;
+  &lt;title&gt;title&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="test"&gt;
+  &lt;!--　初めの要素 --&gt;
+  &lt;div class="p1"&gt;&lt;h1&gt;p1&lt;/h1&gt;&lt;/div&gt;
+  &lt;!-- 二つ目の要素 --&gt;
+  &lt;div class="p2"&gt;&lt;h2&gt;p2&lt;/h2&gt;&lt;/div&gt;
+  &lt;!-- 三つ目の要素 --&gt;
+  &lt;div class="p3"&gt;&lt;h1&gt;p3&lt;/h1&gt;&lt;/div&gt;
+  &lt;!-- 四つ目の要素 --&gt;
+  &lt;div class="p4"&gt;&lt;h2&gt;p4&lt;/h2&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/body&gt;
 &lt;/html&gt;
 </code></pre> 
-  <pre><code class="css" data-type="CSS example">/*inputタグでreadonly属性がある要素*/
-input[readonly]{
-  border:1px solid #000;
+  <pre><code class="css" data-type="style.css">/* idがtestのdivタグの孫要素のh1タグ */
+div#test h1 {
+  color: red;
 }
-/*inputタグでtypeの属性がbuttonの要素*/
-input[type="button"]{
-  border:1px solid red;
+/* idがtestのdivタグのクラスがp2の子要素のh2タグ */
+div#test &gt; .p2 &gt; h2 {
+  color: blue;
 }
-/*inputタグでvalueの属性がsubmitの文字で含めている要素*/
-input[value~="submit"]{
-  border:1px solid blue;
+/* クラスがp2とp4の要素 */
+.p2, .p4 {
+  border: 1px solid #000;
 }
-/*inputタグでhrefの属性がhttpsで始まる要素*/
-a[href^="https"]{
-  color:green;
+/* クラスがp1要素の後にあるdivタグの要素 */
+.p1 ~ div {
+  background: yellow;
 }
-/*inputタグでhrefの属性がlocalhostで終わる要素*/
-a[href$="localhost"]{
-  color:gray;
+/* クラスがp1要素の次にあるdivタグの要素*/
+.p1 + div{
+  background: red;
 }
 </code></pre> 
-  <p>上の例をみればBodyの中でタグは全て７つがあります。inputタグは４つで、aタグが３つがあります。</p> 
-  <p>属性選択子はブランケット([])で選択します。</p> 
-  <p>上の通りで一番上のテキストボックスは枠が黒くなりますね。</p> 
-  <p>２つ目のスタイルはボタンタイプのinputタグの枠が赤になります。</p> 
-  <p>３つ目はvalue属性、つまり、値がsubmitを含めているボタンは枠が青になります。</p> 
-  <p>４つ目はhrefの属性が「https」で始まる「a」タグの文字が緑になります。</p> 
-  <p>５つ目はhrefの属性が「localhost」で終わる「a」タグの文字がグレーになります。</p> 
-  <p style="text-align:left;"><img src="./contents/124/680_001.png" data-filename="001.png" style="width: 360px;"></p>
+  <p style="text-align:left;"><img src="./contents/124/751_001.png" data-filename="001.png" style="width: 674px;"><br></p> 
+  <p>上の例をみれば初めは孫要素を選択するので.p1のh1と.p3のh3になります。でも.p2のh2の場合は.p2の子要素なので.p4のh2タグは当該事項ではありません。</p> 
+  <p>~を使って+をつかったので先にクラスが.p1タグの後のdivタグの背景をすべて黄色に設定して、p1タグの次の要素を赤色に設定しますね。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
@@ -207,11 +209,11 @@ a[href$="localhost"]{
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0204">Study / Javascript, Jquery, Css</a>」の他投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/136.html'>[CSS] ブラウザから開発する方法 (developer mode)</a><span>2019/12/25 07:54:31</span></li><li><a href='https://www.nowonbun.com/135.html'>[CSS] 色スタイル、グラデーション</a><span>2019/12/24 07:37:22</span></li><li><a href='https://www.nowonbun.com/134.html'>[CSS] アニメーション (animation)</a><span>2019/12/20 20:51:38</span></li><li><a href='https://www.nowonbun.com/133.html'>[CSS] トランスフォーム (transform)</a><span>2019/12/19 13:00:26</span></li><li><a href='https://www.nowonbun.com/132.html'>[CSS] トランジション(transition)</a><span>2019/12/18 20:33:57</span></li><li><a href='https://www.nowonbun.com/131.html'>[CSS] Columnスタイル</a><span>2019/12/17 19:52:56</span></li><li><a href='https://www.nowonbun.com/130.html'>[CSS] 整列スタイル (float)</a><span>2019/12/17 00:08:54</span></li><li><a href='https://www.nowonbun.com/129.html'>[CSS] 位置(position),表示(display)スタイル</a><span>2019/12/13 20:08:50</span></li><li><a href='https://www.nowonbun.com/128.html'>[CSS] border(枠)、余白スタイル - border, margin, padding</a><span>2019/12/12 20:16:43</span></li><li><a href='https://www.nowonbun.com/127.html'>[CSS] 文字スタイル</a><span>2019/12/11 21:13:22</span></li><li><a href='https://www.nowonbun.com/126.html'>[CSS] その他の疑似選択子 - link, visited, target, enabled, disabled, not, active, hover, focus</a><span>2019/12/10 07:31:28</span></li><li><a href='https://www.nowonbun.com/125.html'>[CSS] 疑似要素選択子 - fist-line, first-letter, before, after</a><span>2019/12/09 07:28:27</span></li><li><a href='https://www.nowonbun.com/124.html'>[CSS] 属性選択子</a><span>2019/12/06 07:27:36</span></li><li><a href='https://www.nowonbun.com/123.html'>[CSS] 疑似クラス - only-child, only-of-type, empty, empty, root</a><span>2019/12/05 07:29:15</span></li><li><a href='https://www.nowonbun.com/122.html'>[CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type</a><span>2019/12/04 07:28:37</span></li></ul>
+					<ul><li><a href='https://www.nowonbun.com/136.html'>[CSS] ブラウザから開発する方法 (developer mode)</a><span>2019/12/25 07:54:31</span></li><li><a href='https://www.nowonbun.com/135.html'>[CSS] 色スタイル、グラデーション</a><span>2019/12/24 07:37:22</span></li><li><a href='https://www.nowonbun.com/134.html'>[CSS] アニメーション (animation)</a><span>2019/12/20 20:51:38</span></li><li><a href='https://www.nowonbun.com/133.html'>[CSS] トランスフォーム (transform)</a><span>2019/12/19 13:00:26</span></li><li><a href='https://www.nowonbun.com/132.html'>[CSS] トランジション(transition)</a><span>2019/12/18 20:33:57</span></li><li><a href='https://www.nowonbun.com/131.html'>[CSS] Columnスタイル</a><span>2019/12/17 19:52:56</span></li><li><a href='https://www.nowonbun.com/130.html'>[CSS] 整列スタイル (float)</a><span>2019/12/17 00:08:54</span></li><li><a href='https://www.nowonbun.com/129.html'>[CSS] 位置(position),表示(display)スタイル</a><span>2019/12/13 20:08:50</span></li><li><a href='https://www.nowonbun.com/128.html'>[CSS] border(枠)、余白スタイル - border, margin, padding</a><span>2019/12/12 20:16:43</span></li><li><a href='https://www.nowonbun.com/127.html'>[CSS] 文字スタイル</a><span>2019/12/11 21:13:22</span></li><li><a href='https://www.nowonbun.com/126.html'>[CSS] その他の疑似選択子 - link, visited, target, enabled, disabled, not, active, hover, focus</a><span>2019/12/10 07:31:28</span></li><li><a href='https://www.nowonbun.com/125.html'>[CSS] 疑似要素選択子 - fist-line, first-letter, before, after</a><span>2019/12/09 07:28:27</span></li><li><a href='https://www.nowonbun.com/124.html'>[CSS] 範囲と指定に関する選択子(全体選択子、要素選択子、孫選択子、子選択子、隣接選択子)</a><span>2019/12/06 07:27:36</span></li><li><a href='https://www.nowonbun.com/123.html'>[CSS] 疑似クラス - only-child, only-of-type, empty, empty, root</a><span>2019/12/05 07:29:15</span></li><li><a href='https://www.nowonbun.com/122.html'>[CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type</a><span>2019/12/04 07:28:37</span></li></ul>
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/142.html'>[PHP] 配列とリスト(list)</a><span>2020/01/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/141.html'>[PHP] インタフェースと抽象クラス、クラス継承、parent、this</a><span>2020/01/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/140.html'>[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a><span>2020/01/09 23:35:27</span></li><li><a href='https://www.nowonbun.com/139.html'>[PHP] 基本ページ作成方法と変数使用方法</a><span>2020/01/06 23:44:20</span></li><li><a href='https://www.nowonbun.com/138.html'>[PHP] Composer設定</a><span>2019/12/27 08:49:09</span></li><li><a href='https://www.nowonbun.com/137.html'>[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a><span>2019/12/26 07:36:47</span></li><li><a href='https://www.nowonbun.com/136.html'>[CSS] ブラウザから開発する方法 (developer mode)</a><span>2019/12/25 07:54:31</span></li><li><a href='https://www.nowonbun.com/135.html'>[CSS] 色スタイル、グラデーション</a><span>2019/12/24 07:37:22</span></li><li><a href='https://www.nowonbun.com/134.html'>[CSS] アニメーション (animation)</a><span>2019/12/20 20:51:38</span></li><li><a href='https://www.nowonbun.com/133.html'>[CSS] トランスフォーム (transform)</a><span>2019/12/19 13:00:26</span></li><li><a href='https://www.nowonbun.com/132.html'>[CSS] トランジション(transition)</a><span>2019/12/18 20:33:57</span></li><li><a href='https://www.nowonbun.com/131.html'>[CSS] Columnスタイル</a><span>2019/12/17 19:52:56</span></li><li><a href='https://www.nowonbun.com/130.html'>[CSS] 整列スタイル (float)</a><span>2019/12/17 00:08:54</span></li><li><a href='https://www.nowonbun.com/129.html'>[CSS] 位置(position),表示(display)スタイル</a><span>2019/12/13 20:08:50</span></li><li><a href='https://www.nowonbun.com/128.html'>[CSS] border(枠)、余白スタイル - border, margin, padding</a><span>2019/12/12 20:16:43</span></li></ul>
+					<ul><li><a href='https://www.nowonbun.com/143.html'>[PHP] 例外処理(try ~ catch ~ finally)</a><span>2020/01/15 03:00:00</span></li><li><a href='https://www.nowonbun.com/142.html'>[PHP] 配列とリスト(list)</a><span>2020/01/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/141.html'>[PHP] インタフェースと抽象クラス、クラス継承、parent、this</a><span>2020/01/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/140.html'>[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a><span>2020/01/09 23:35:27</span></li><li><a href='https://www.nowonbun.com/139.html'>[PHP] 基本ページ作成方法と変数使用方法</a><span>2020/01/06 23:44:20</span></li><li><a href='https://www.nowonbun.com/138.html'>[PHP] Composer設定</a><span>2019/12/27 08:49:09</span></li><li><a href='https://www.nowonbun.com/137.html'>[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a><span>2019/12/26 07:36:47</span></li><li><a href='https://www.nowonbun.com/136.html'>[CSS] ブラウザから開発する方法 (developer mode)</a><span>2019/12/25 07:54:31</span></li><li><a href='https://www.nowonbun.com/135.html'>[CSS] 色スタイル、グラデーション</a><span>2019/12/24 07:37:22</span></li><li><a href='https://www.nowonbun.com/134.html'>[CSS] アニメーション (animation)</a><span>2019/12/20 20:51:38</span></li><li><a href='https://www.nowonbun.com/133.html'>[CSS] トランスフォーム (transform)</a><span>2019/12/19 13:00:26</span></li><li><a href='https://www.nowonbun.com/132.html'>[CSS] トランジション(transition)</a><span>2019/12/18 20:33:57</span></li><li><a href='https://www.nowonbun.com/131.html'>[CSS] Columnスタイル</a><span>2019/12/17 19:52:56</span></li><li><a href='https://www.nowonbun.com/130.html'>[CSS] 整列スタイル (float)</a><span>2019/12/17 00:08:54</span></li><li><a href='https://www.nowonbun.com/129.html'>[CSS] 位置(position),表示(display)スタイル</a><span>2019/12/13 20:08:50</span></li></ul>
 				</div>
 			</div>
 		</article>
