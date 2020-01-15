@@ -35,30 +35,30 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / PHP" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。phpのcomposerとはjavaのmaven、c#のnugetと同じ機能で、パッケージ間の依存性を管理するし、ライブラリをダウンロード及びリンクを管理するモジュールです。先、composerをインストールするように「php.ini」を設定しなければならないです。以前にインストールした「php」フォルダに移動しましょう。link - [php] php 開発環境設定とeclipse(ide)の設定上の設定ファイルの中でextension=opensslのモジュールがありますがセミコロン(;)でコメント処理になっております。このセミコロンを削除しましょう。そしてコマンドで「php」がインストールされたフォルダに移動しましょう。(※参考に私の場合は今プロクシ設定している環境で使っているので「-x -u」オプションでプロクシ設定しましたが、この部分は省略してもよいです。)インストールが完了しました。というメッセージが表示されました。その後、composerバッチファイルを作成しましょう。そしてコマンドで「composer」ということで入れたら、下記とおりの画面がでます。ここまでcomposerがインストールが終わって設定が完了しました。link - https://packagist.org/javaのmavenレポジトリより少し整理されてない雰囲気ですが、必要な情報はあるのでかなり便利です。検索テキストで「carbon」ということで入れて検索しましょう。参考に「carbon」はデートフォーマット関連ライブラリです。そうしたらよく使う順番で検索されますが、一番上の結果を選択しましょう。様々な説明がありますが、時間があれば詳しくみるのはよいですね。でも、我々はライブラリリンクするのが目的なので、下の「installation」の項目をみましょう。リンク情報を得たのでドキュメントルートのフォルダに移動しましょう。ここで「composer.json」ファイルを生成しましょう。そしてリンク情報を入力しましょう。composerを実行すればよいですが、筆者の場合はcomposerバッチがあるところをシステムパス設定をしなかったので、直接に絶対パスで実行しました。ライブラリがタウンロードさせてリンクが完了しました。これからダウンロードしたライブラリを使ってみましょう。eclipseを起動してproj]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。プログラムを開発する時にデータの流れを確認しなければならない時があります。その流れのポイントを取って確認する作業をデバッグと言います。簡単なウェブページを作成することならデバッグなしでも値の流れを確認できて、作業ができるかもしれませんが、データベースからデータを検索して取得する流れだと思えば、データの中間でデータが上手く入れ込むか、上手く取得するかを確認することや、もし予想以外のデータがあり、途中で何が間違っているかの確認が必要な時がありますね。javaやc#の場合はいい開発ツール(ide)があり、breakpointでデータ追跡が可能ですが、phpの場合はスクリプト言語なので、デバックができるいい開発ツールがないと思います。先にグーグルで検索してみたらzendstudioがありますね。まだ使ったことがないのでどうかなよく知りません。link - https://www.zend.com/en/downloads今はphpのideツールではjavaでも使うideツールのeclipseを使っていますが、これがphpのデバックができないです。正確に言うとできないことではないですが、筆者の場合は使ったことがないです。link - https://xdebug.org/link - https://wiki.eclipse.org/debugging_using_xdebuglink - https://yard.tistory.com/entry/eclipse-php-debug-私もデバックができるように設定してみましたが、結局失敗しました。stack-overflowの説明とおりだと、eclipse自体にバッグがありそうですね。もし、できる方がいらっしゃいなら教えてください。後でzendstudioで挑戦してみなければならないですね。(zendstudioが無料ではなく、有料です。)筆者の場合は今までphpを開発する時に別にデバックをしながら開発したことではないです。今はeclipseが慣れているから使いますが、10年前はただnotepad++で開発しました。phpはスクリプトなので、ソース修正が簡単だし、すぐ確認できるので「var_dump」の関数を利用して確認ができます。一応、文字がすごく小さく表示されますが、index.phpの8行目、intタイプの値が101ということで表示さ]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [PHP] Composer設定" />
-<link rel="canonical" href="https://www.nowonbun.com/138.html" />
+<meta name="title" content="明月の開発ストーリ :: [PHP] データ確認関数(var_dump, debug_zval_dump, print_r)" />
+<link rel="canonical" href="https://www.nowonbun.com/144.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [PHP] Composer設定" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。phpのcomposerとはjavaのmaven、c#のnugetと同じ機能で、パッケージ間の依存性を管理するし、ライブラリをダウンロード及びリンクを管理するモジュールです。先、composerをインストールするように「php.ini」を設定しなければならないです。以前にインストールした「php」フォルダに移動しましょう。link - [php] php 開発環境設定とeclipse(ide)の設定上の設定ファイルの中でextension=opensslのモジュールがありますがセミコロン(;)でコメント処理になっております。このセミコロンを削除しましょう。そしてコマンドで「php」がインストールされたフォルダに移動しましょう。(※参考に私の場合は今プロクシ設定している環境で使っているので「-x -u」オプションでプロクシ設定しましたが、この部分は省略してもよいです。)インストールが完了しました。というメッセージが表示されました。その後、composerバッチファイルを作成しましょう。そしてコマンドで「composer」ということで入れたら、下記とおりの画面がでます。ここまでcomposerがインストールが終わって設定が完了しました。link - https://packagist.org/javaのmavenレポジトリより少し整理されてない雰囲気ですが、必要な情報はあるのでかなり便利です。検索テキストで「carbon」ということで入れて検索しましょう。参考に「carbon」はデートフォーマット関連ライブラリです。そうしたらよく使う順番で検索されますが、一番上の結果を選択しましょう。様々な説明がありますが、時間があれば詳しくみるのはよいですね。でも、我々はライブラリリンクするのが目的なので、下の「installation」の項目をみましょう。リンク情報を得たのでドキュメントルートのフォルダに移動しましょう。ここで「composer.json」ファイルを生成しましょう。そしてリンク情報を入力しましょう。composerを実行すればよいですが、筆者の場合はcomposerバッチがあるところをシステムパス設定をしなかったので、直接に絶対パスで実行しました。ライブラリがタウンロードさせてリンクが完了しました。これからダウンロードしたライブラリを使ってみましょう。eclipseを起動してproj]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [PHP] データ確認関数(var_dump, debug_zval_dump, print_r)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。プログラムを開発する時にデータの流れを確認しなければならない時があります。その流れのポイントを取って確認する作業をデバッグと言います。簡単なウェブページを作成することならデバッグなしでも値の流れを確認できて、作業ができるかもしれませんが、データベースからデータを検索して取得する流れだと思えば、データの中間でデータが上手く入れ込むか、上手く取得するかを確認することや、もし予想以外のデータがあり、途中で何が間違っているかの確認が必要な時がありますね。javaやc#の場合はいい開発ツール(ide)があり、breakpointでデータ追跡が可能ですが、phpの場合はスクリプト言語なので、デバックができるいい開発ツールがないと思います。先にグーグルで検索してみたらzendstudioがありますね。まだ使ったことがないのでどうかなよく知りません。link - https://www.zend.com/en/downloads今はphpのideツールではjavaでも使うideツールのeclipseを使っていますが、これがphpのデバックができないです。正確に言うとできないことではないですが、筆者の場合は使ったことがないです。link - https://xdebug.org/link - https://wiki.eclipse.org/debugging_using_xdebuglink - https://yard.tistory.com/entry/eclipse-php-debug-私もデバックができるように設定してみましたが、結局失敗しました。stack-overflowの説明とおりだと、eclipse自体にバッグがありそうですね。もし、できる方がいらっしゃいなら教えてください。後でzendstudioで挑戦してみなければならないですね。(zendstudioが無料ではなく、有料です。)筆者の場合は今までphpを開発する時に別にデバックをしながら開発したことではないです。今はeclipseが慣れているから使いますが、10年前はただnotepad++で開発しました。phpはスクリプトなので、ソース修正が簡単だし、すぐ確認できるので「var_dump」の関数を利用して確認ができます。一応、文字がすごく小さく表示されますが、index.phpの8行目、intタイプの値が101ということで表示さ]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/138.html" />
+<meta property="og:url" content="https://www.nowonbun.com/144.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [PHP] Composer設定" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。phpのcomposerとはjavaのmaven、c#のnugetと同じ機能で、パッケージ間の依存性を管理するし、ライブラリをダウンロード及びリンクを管理するモジュールです。先、composerをインストールするように「php.ini」を設定しなければならないです。以前にインストールした「php」フォルダに移動しましょう。link - [php] php 開発環境設定とeclipse(ide)の設定上の設定ファイルの中でextension=opensslのモジュールがありますがセミコロン(;)でコメント処理になっております。このセミコロンを削除しましょう。そしてコマンドで「php」がインストールされたフォルダに移動しましょう。(※参考に私の場合は今プロクシ設定している環境で使っているので「-x -u」オプションでプロクシ設定しましたが、この部分は省略してもよいです。)インストールが完了しました。というメッセージが表示されました。その後、composerバッチファイルを作成しましょう。そしてコマンドで「composer」ということで入れたら、下記とおりの画面がでます。ここまでcomposerがインストールが終わって設定が完了しました。link - https://packagist.org/javaのmavenレポジトリより少し整理されてない雰囲気ですが、必要な情報はあるのでかなり便利です。検索テキストで「carbon」ということで入れて検索しましょう。参考に「carbon」はデートフォーマット関連ライブラリです。そうしたらよく使う順番で検索されますが、一番上の結果を選択しましょう。様々な説明がありますが、時間があれば詳しくみるのはよいですね。でも、我々はライブラリリンクするのが目的なので、下の「installation」の項目をみましょう。リンク情報を得たのでドキュメントルートのフォルダに移動しましょう。ここで「composer.json」ファイルを生成しましょう。そしてリンク情報を入力しましょう。composerを実行すればよいですが、筆者の場合はcomposerバッチがあるところをシステムパス設定をしなかったので、直接に絶対パスで実行しました。ライブラリがタウンロードさせてリンクが完了しました。これからダウンロードしたライブラリを使ってみましょう。eclipseを起動してproj]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [PHP] データ確認関数(var_dump, debug_zval_dump, print_r)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。プログラムを開発する時にデータの流れを確認しなければならない時があります。その流れのポイントを取って確認する作業をデバッグと言います。簡単なウェブページを作成することならデバッグなしでも値の流れを確認できて、作業ができるかもしれませんが、データベースからデータを検索して取得する流れだと思えば、データの中間でデータが上手く入れ込むか、上手く取得するかを確認することや、もし予想以外のデータがあり、途中で何が間違っているかの確認が必要な時がありますね。javaやc#の場合はいい開発ツール(ide)があり、breakpointでデータ追跡が可能ですが、phpの場合はスクリプト言語なので、デバックができるいい開発ツールがないと思います。先にグーグルで検索してみたらzendstudioがありますね。まだ使ったことがないのでどうかなよく知りません。link - https://www.zend.com/en/downloads今はphpのideツールではjavaでも使うideツールのeclipseを使っていますが、これがphpのデバックができないです。正確に言うとできないことではないですが、筆者の場合は使ったことがないです。link - https://xdebug.org/link - https://wiki.eclipse.org/debugging_using_xdebuglink - https://yard.tistory.com/entry/eclipse-php-debug-私もデバックができるように設定してみましたが、結局失敗しました。stack-overflowの説明とおりだと、eclipse自体にバッグがありそうですね。もし、できる方がいらっしゃいなら教えてください。後でzendstudioで挑戦してみなければならないですね。(zendstudioが無料ではなく、有料です。)筆者の場合は今までphpを開発する時に別にデバックをしながら開発したことではないです。今はeclipseが慣れているから使いますが、10年前はただnotepad++で開発しました。phpはスクリプトなので、ソース修正が簡単だし、すぐ確認できるので「var_dump」の関数を利用して確認ができます。一応、文字がすごく小さく表示されますが、index.phpの8行目、intタイプの値が101ということで表示さ]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [PHP] Composer設定</title>
+<title>明月の開発ストーリ :: [PHP] データ確認関数(var_dump, debug_zval_dump, print_r)</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[PHP] Composer設定</h1>
+					<h1 id="titleTxt">[PHP] データ確認関数(var_dump, debug_zval_dump, print_r)</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0205">Study / PHP</a>    作成日付 : 2019/12/27 08:49:09   修正日付 : 2019/12/27 08:52:22
+					<a href="./?category=0205">Study / PHP</a>    作成日付 : 2020/01/16 03:00:00   修正日付 : 2020/01/16 03:00:00
 				</div>
 			</div>
 			<div class="article">
@@ -137,71 +137,111 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>PHPのcomposerとはJavaのMaven、C#のNugetと同じ機能で、パッケージ間の依存性を管理するし、ライブラリをダウンロード及びリンクを管理するモジュールです。</p> 
+  <p>プログラムを開発する時にデータの流れを確認しなければならない時があります。その流れのポイントを取って確認する作業をデバッグと言います。</p> 
+  <p>簡単なウェブページを作成することならデバッグなしでも値の流れを確認できて、作業ができるかもしれませんが、データベースからデータを検索して取得する流れだと思えば、データの中間でデータが上手く入れ込むか、上手く取得するかを確認することや、もし予想以外のデータがあり、途中で何が間違っているかの確認が必要な時がありますね。</p> 
   <p><br></p> 
-  <p>先、composerをインストールするように「php.ini」を設定しなければならないです。</p> 
-  <p>以前にインストールした「php」フォルダに移動しましょう。</p> 
-  <p>link - <a href="https://www.nowonbun.com/137.html" target="_blank">[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a></p> 
-  <p style="text-align:left;"><img src="./contents/138/724_001.png" data-filename="001.png" style="width: 775px;"><br></p> 
-  <p>上の設定ファイルの中でextension=opensslのモジュールがありますがセミコロン(;)でコメント処理になっております。このセミコロンを削除しましょう。</p> 
+  <p>JavaやC#の場合はいい開発ツール(IDE)があり、BreakPointでデータ追跡が可能ですが、PHPの場合はスクリプト言語なので、デバックができるいい開発ツールがないと思います。</p> 
+  <p>先にグーグルで検索してみたらZendStudioがありますね。まだ使ったことがないのでどうかなよく知りません。</p> 
+  <p>link - <a href="https://www.zend.com/en/downloads" target="_blank">https://www.zend.com/en/downloads</a></p> 
   <p><br></p> 
-  <p>そしてコマンドで「php」がインストールされたフォルダに移動しましょう。</p> 
-  <pre><code class="cmd" data-type="composer install">curl -sS https://getcomposer.org/installer | php
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/138/722_002.png" data-filename="002.png" style="width: 848px;"><br></p> 
-  <p>(※参考に私の場合は今プロクシ設定している環境で使っているので「-x -U」オプションでプロクシ設定しましたが、この部分は省略してもよいです。)</p> 
+  <p>今はPHPのIDEツールではJavaでも使うIDEツールのeclipseを使っていますが、これがPHPのデバックができないです。</p> 
+  <p>正確に言うとできないことではないですが、筆者の場合は使ったことがないです。</p> 
+  <p>link - <a href="https://xdebug.org/" target="_blank">https://xdebug.org/</a></p> 
+  <p>link - <a href="https://wiki.eclipse.org/Debugging_using_XDebug" target="_blank">https://wiki.eclipse.org/Debugging_using_XDebug</a></p> 
+  <p>link - <a href="https://yard.tistory.com/entry/Eclipse-PHP-Debug-" target="_blank">https://yard.tistory.com/entry/Eclipse-PHP-Debug-</a></p> 
+  <p style="text-align:left;"><img src="./contents/144/752_001.png" data-filename="001.png" style="width: 364px;"><br></p> 
+  <p>私もデバックができるように設定してみましたが、結局失敗しました。</p> 
+  <p>stack-overflowの説明とおりだと、eclipse自体にバッグがありそうですね。もし、できる方がいらっしゃいなら教えてください。</p> 
+  <p>後でZendStudioで挑戦してみなければならないですね。(ZendStudioが無料ではなく、有料です。)</p> 
   <p><br></p> 
-  <p>インストールが完了しました。というメッセージが表示されました。</p> 
-  <p>その後、composerバッチファイルを作成しましょう。</p> 
-  <p style="text-align:left;"><img src="./contents/138/723_003.png" data-filename="003.png" style="width: 583px;"><br></p> 
-  <p>そしてコマンドで「composer」ということで入れたら、下記とおりの画面がでます。</p> 
-  <p style="text-align:left;"><img src="./contents/138/727_004.png" data-filename="004.png" style="width: 848px;"><br></p> 
-  <p>ここまでcomposerがインストールが終わって設定が完了しました。</p> 
-  <p>link - <a href="https://packagist.org/" target="_blank">https://packagist.org/</a></p> 
-  <p><br></p> 
-  <p>Javaのmavenレポジトリより少し整理されてない雰囲気ですが、必要な情報はあるのでかなり便利です。</p> 
-  <p><br></p> 
-  <p>検索テキストで「Carbon」ということで入れて検索しましょう。参考に「Carbon」はデートフォーマット関連ライブラリです。</p> 
-  <p style="text-align:left;"><img src="./contents/138/732_005.png" data-filename="005.png" style="width: 848px;"><br></p> 
-  <p>そうしたらよく使う順番で検索されますが、一番上の結果を選択しましょう。</p> 
-  <p>様々な説明がありますが、時間があれば詳しくみるのはよいですね。でも、我々はライブラリリンクするのが目的なので、下の「Installation」の項目をみましょう。</p> 
-  <p style="text-align:left;"><img src="./contents/138/731_006.png" data-filename="006.png" style="width: 848px;"><br></p> 
-  <p>リンク情報を得たのでドキュメントルートのフォルダに移動しましょう。</p> 
-  <p>ここで「composer.json」ファイルを生成しましょう。</p> 
-  <p style="text-align:left;"><img src="./contents/138/726_007.png" data-filename="007.png" style="width: 459px;"><br></p> 
-  <p>そしてリンク情報を入力しましょう。</p> 
-  <p style="text-align:left;"><img src="./contents/138/725_008.png" data-filename="008.png" style="width: 425px;"><br></p> 
-  <p>composerを実行すればよいですが、筆者の場合はcomposerバッチがあるところをシステムパス設定をしなかったので、直接に絶対パスで実行しました。</p> 
-  <p style="text-align:left;"><img src="./contents/138/730_009.png" data-filename="009.png" style="width: 848px;"><br></p> 
-  <p>ライブラリがタウンロードさせてリンクが完了しました。</p> 
-  <p>これからダウンロードしたライブラリを使ってみましょう。</p> 
-  <p style="text-align:left;"><img src="./contents/138/729_009.png" data-filename="009.png" style="width: 848px;"><br></p> 
-  <p>eclipseを起動してproject explorerを見ると「vendor」フォルダが生成されています。ここでライブラリがダウンロードされたことです。</p> 
-  <p style="text-align:left;"><img src="./contents/138/728_010.png" data-filename="010.png" style="width: 766px;"><br></p> 
-  <p>ここで全てのライブラリに「require」宣言する必要がなしで、「autoload.php」だけ宣言すると使えます。</p> 
-  <pre><code class="php" data-type="index.php">&lt;?php
-  // ライブラリ連携
-  require_once 'vendor/autoload.php';	
-  // ライブラリネームスペース宣言
-  use Carbon\Carbon;	
-  // Carbonクラスから現在時間を取得する。
-  $dt = Carbon::now();
-  // Carbonライブラリのフォーマット変換を使って出力する。
-  $format = Carbon::createFromFormat('Y-m-d H:i:s', $dt);	
-  	
-  echo $format;	
+  <p>筆者の場合は今までPHPを開発する時に別にデバックをしながら開発したことではないです。今はeclipseが慣れているから使いますが、10年前はただnotepad++で開発しました。</p> 
+  <p>PHPはスクリプトなので、ソース修正が簡単だし、すぐ確認できるので「var_dump」の関数を利用して確認ができます。</p> 
+  <pre><code class="html" data-type="index.php">&lt;?php
+  $title = "title";
+  $data = 1;
+  for($i = 0; $i &lt; 100; $i++) {
+    $data++;
+  }
+  // $dataの値を確認しましょう。
+  var_dump($data);
 ?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;
+  &lt;?=$title?&gt;
+  &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;?=$data?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/138/733_011.png" data-filename="011.png" style="width: 449px;"><br></p> 
-  <p>現在時間が朝1時に出力しました。これはCarbonライブラリ問題ではなく、ローカル時間設定の問題です。</p> 
-  <p>composerを利用してライブラリをダウンロード、使用することまで完了しました。</p>
+  <p style="text-align:left;"><img src="./contents/144/753_002.png" data-filename="002.png" style="width: 377px;"><br></p> 
+  <p>一応、文字がすごく小さく表示されますが、index.phpの8行目、intタイプの値が101ということで表示されますね。PHPでデータタイプのことを別に気にしませんが、var_dumpではデータタイプも表示しますね。</p> 
+  <p>筆者の場合は普通でvar_dumpを利用しますが、それと似ているな「debug_zval_dump」、「print_r」という関数もあります。</p> 
+  <pre><code class="html" data-type="index.php">&lt;?php
+  $title = "title";
+  //一般データ
+  $data = 101;
+  //配列データ
+  $data2 = array("Hello", "world", "Good");
+  //連関配列データ
+  $data3["First"] = "Test";
+  $data3["Second"] = "Hello";
+  $data3["Third"] = "World";
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;
+  &lt;?=$title?&gt;
+  &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;?php
+    //var_dumpの例 
+    var_dump($data);
+    echo "&lt;br&gt;";
+    var_dump($data2);
+    echo "&lt;br&gt;";
+    var_dump($data3);
+
+    echo "&lt;br&gt;";
+    echo "&lt;br&gt;";
+    echo "&lt;br&gt;";
+    //debug_zval_dumpの例
+    debug_zval_dump($data);
+    echo "&lt;br&gt;";
+    debug_zval_dump($data2);
+    echo "&lt;br&gt;";
+    debug_zval_dump($data3);
+
+    echo "&lt;br&gt;";
+    echo "&lt;br&gt;";
+    echo "&lt;br&gt;";
+    // print_rの例
+    print_r($data);
+    echo "&lt;br&gt;";
+    print_r($data2);
+    echo "&lt;br&gt;";
+    print_r($data3);
+  ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/144/754_003.png" data-filename="003.png" style="width: 848px;"><br></p> 
+  <p>上の例をみればデータを確認することでは「var_dump」がみやすいですね。しかし「debug_zval_dump」、「print_r」も悪くなさそうなので、簡単に値を確認する状況なら使ってみるのも悪くないと思います。</p> 
+  <p>link - <a href="https://www.php.net/manual/en/function.var-dump.php" target="_blank">https://www.php.net/manual/en/function.var-dump.php</a></p> 
+  <p>link - <a href="https://www.php.net/manual/en/function.debug-zval-dump.php" target="_blank">https://www.php.net/manual/en/function.debug-zval-dump.php</a></p> 
+  <p>link - <a href="https://www.php.net/manual/en/function.print-r.php" target="_blank">https://www.php.net/manual/en/function.print-r.php</a></p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=php>#php</a>,<a href=./search.html?query=composer>#composer</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=php>#php</a>,<a href=./search.html?query=var_dump>#var_dump</a> </span>
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0205">Study / PHP</a>」の他投稿</div>
@@ -215,7 +255,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</article>
 		<script type="text/javascript" src="./js/postscreen.js"></script>
 		<div id="disqus_thread"></div>
-		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/138.html';this.page.identifier = 'NOWONBUN00138';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/144.html';this.page.identifier = 'NOWONBUN00144';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
 		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	</div>
 	<footer>
