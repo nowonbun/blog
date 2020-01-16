@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / PHP" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。phpのはウェブスクリプト言語です。ウェブサービスを立ち上がってウェブブラウザと連携すれば様々な情報をブラウザから受け取ります。例えば、ウェブサービスの環境情報やブラウザからのrequest情報、セッション、クッキーなどの情報がありますね。それをphpは「$_server, $globals, $_get, $_post, $_request, $_cookie, $_session, $_files, $_env(getenv())」の変数でサーバとクライアント間で発生した情報を取得するのができます。上の変数を理解するようにはウェブ環境の理解が少し必要です。ウェブとは簡単に考えるとウェブサーバとブラウザ間で非同期通信するプログラムです。ブラウザからurlのアドレスでウェブページをサーバに要請(request)するとサーバの場合はその要請によってhtmlファイルを作成してブラウザに応答(response)します。すごくシンプルな形式でその以外のファイルはファイルサーバみたいにイメージやjavascriptファイル(.js)、style sheetファイル(.css)をダウンロードして、ブラウザで動作するし(javascript)、デザインを描画(styel sheet)、イメージを表示するなどの動作します。ブラウザからウェブサーバに要請するタイプは２つがあります。それはget方式とpost方式があります。getの場合はブラウザのurlの中でクエスチョンマークの区切りでデータをurlに付けサーバに要請するタイプです。postの場合はデータをプロトコールのヘッダに含めて要請するタイプですね。各サーバとブラウザにはプログラム実行中でデータを格納して使っていますが、ブラウザ側でデータを持っていることをクッキー(cookie)というし、サーバ側にデータを持っているのはセッション(session)といいます。しかしブラウザ単位でどのセッションを使うかの設定はブラウザ側のクッキーの格納して要請するたびにセッションキーでサーバ側のセッションを持って来て使う流れで運用しています。すごくシンプルに説明しましたが、詳細のは下記のところで確認してください。link - https://developer.mozilla.org/ja/docs/web/http/overview$_serverlink - ]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [PHP] $_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())" />
+<link rel="canonical" href="https://www.nowonbun.com/145.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [PHP] $_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。phpのはウェブスクリプト言語です。ウェブサービスを立ち上がってウェブブラウザと連携すれば様々な情報をブラウザから受け取ります。例えば、ウェブサービスの環境情報やブラウザからのrequest情報、セッション、クッキーなどの情報がありますね。それをphpは「$_server, $globals, $_get, $_post, $_request, $_cookie, $_session, $_files, $_env(getenv())」の変数でサーバとクライアント間で発生した情報を取得するのができます。上の変数を理解するようにはウェブ環境の理解が少し必要です。ウェブとは簡単に考えるとウェブサーバとブラウザ間で非同期通信するプログラムです。ブラウザからurlのアドレスでウェブページをサーバに要請(request)するとサーバの場合はその要請によってhtmlファイルを作成してブラウザに応答(response)します。すごくシンプルな形式でその以外のファイルはファイルサーバみたいにイメージやjavascriptファイル(.js)、style sheetファイル(.css)をダウンロードして、ブラウザで動作するし(javascript)、デザインを描画(styel sheet)、イメージを表示するなどの動作します。ブラウザからウェブサーバに要請するタイプは２つがあります。それはget方式とpost方式があります。getの場合はブラウザのurlの中でクエスチョンマークの区切りでデータをurlに付けサーバに要請するタイプです。postの場合はデータをプロトコールのヘッダに含めて要請するタイプですね。各サーバとブラウザにはプログラム実行中でデータを格納して使っていますが、ブラウザ側でデータを持っていることをクッキー(cookie)というし、サーバ側にデータを持っているのはセッション(session)といいます。しかしブラウザ単位でどのセッションを使うかの設定はブラウザ側のクッキーの格納して要請するたびにセッションキーでサーバ側のセッションを持って来て使う流れで運用しています。すごくシンプルに説明しましたが、詳細のは下記のところで確認してください。link - https://developer.mozilla.org/ja/docs/web/http/overview$_serverlink - ]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/145.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [PHP] $_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。phpのはウェブスクリプト言語です。ウェブサービスを立ち上がってウェブブラウザと連携すれば様々な情報をブラウザから受け取ります。例えば、ウェブサービスの環境情報やブラウザからのrequest情報、セッション、クッキーなどの情報がありますね。それをphpは「$_server, $globals, $_get, $_post, $_request, $_cookie, $_session, $_files, $_env(getenv())」の変数でサーバとクライアント間で発生した情報を取得するのができます。上の変数を理解するようにはウェブ環境の理解が少し必要です。ウェブとは簡単に考えるとウェブサーバとブラウザ間で非同期通信するプログラムです。ブラウザからurlのアドレスでウェブページをサーバに要請(request)するとサーバの場合はその要請によってhtmlファイルを作成してブラウザに応答(response)します。すごくシンプルな形式でその以外のファイルはファイルサーバみたいにイメージやjavascriptファイル(.js)、style sheetファイル(.css)をダウンロードして、ブラウザで動作するし(javascript)、デザインを描画(styel sheet)、イメージを表示するなどの動作します。ブラウザからウェブサーバに要請するタイプは２つがあります。それはget方式とpost方式があります。getの場合はブラウザのurlの中でクエスチョンマークの区切りでデータをurlに付けサーバに要請するタイプです。postの場合はデータをプロトコールのヘッダに含めて要請するタイプですね。各サーバとブラウザにはプログラム実行中でデータを格納して使っていますが、ブラウザ側でデータを持っていることをクッキー(cookie)というし、サーバ側にデータを持っているのはセッション(session)といいます。しかしブラウザ単位でどのセッションを使うかの設定はブラウザ側のクッキーの格納して要請するたびにセッションキーでサーバ側のセッションを持って来て使う流れで運用しています。すごくシンプルに説明しましたが、詳細のは下記のところで確認してください。link - https://developer.mozilla.org/ja/docs/web/http/overview$_serverlink - ]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [PHP] $_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(23)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(122)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(9)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[PHP] $_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0205">Study / PHP</a>    作成日付 : 2020/01/17 03:00:00   修正日付 : 2020/01/17 03:00:00
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>PHPのはウェブスクリプト言語です。ウェブサービスを立ち上がってウェブブラウザと連携すれば様々な情報をブラウザから受け取ります。</p> 
+  <p>例えば、ウェブサービスの環境情報やブラウザからのrequest情報、セッション、クッキーなどの情報がありますね。</p> 
+  <p><br></p> 
+  <p>それをPHPは「$_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())」の変数でサーバとクライアント間で発生した情報を取得するのができます。</p> 
+  <p>上の変数を理解するようにはウェブ環境の理解が少し必要です。</p> 
+  <p><br></p> 
+  <p>ウェブとは簡単に考えるとウェブサーバとブラウザ間で非同期通信するプログラムです。ブラウザからurlのアドレスでウェブページをサーバに要請(request)するとサーバの場合はその要請によってhtmlファイルを作成してブラウザに応答(response)します。</p> 
+  <p>すごくシンプルな形式でその以外のファイルはファイルサーバみたいにイメージやjavascriptファイル(.js)、Style Sheetファイル(.css)をダウンロードして、ブラウザで動作するし(javascript)、デザインを描画(styel sheet)、イメージを表示するなどの動作します。</p> 
+  <p><br></p> 
+  <p>ブラウザからウェブサーバに要請するタイプは２つがあります。それはGET方式とPOST方式があります。GETの場合はブラウザのURLの中でクエスチョンマークの区切りでデータをURLに付けサーバに要請するタイプです。</p> 
+  <p>POSTの場合はデータをプロトコールのヘッダに含めて要請するタイプですね。</p> 
+  <p>各サーバとブラウザにはプログラム実行中でデータを格納して使っていますが、ブラウザ側でデータを持っていることをクッキー(Cookie)というし、サーバ側にデータを持っているのはセッション(session)といいます。</p> 
+  <p>しかしブラウザ単位でどのセッションを使うかの設定はブラウザ側のクッキーの格納して要請するたびにセッションキーでサーバ側のセッションを持って来て使う流れで運用しています。</p> 
+  <p><br></p> 
+  <p>すごくシンプルに説明しましたが、詳細のは下記のところで確認してください。</p> 
+  <p>link - <a href="https://developer.mozilla.org/ja/docs/Web/HTTP/Overview" target="_blank">https://developer.mozilla.org/ja/docs/Web/HTTP/Overview</a></p> 
+  <p><br></p> 
+  <h2><b><span>$_SERVER</span></b></h2> 
+  <p>link - <a href="https://www.php.net/manual/en/reserved.variables.server.php" target="_blank">https://www.php.net/manual/en/reserved.variables.server.php</a></p> 
+  <p><br></p> 
+  <p>$_SERVERの変数ではサーバの環境設定に関するデータがあります。</p> 
+  <pre><code class="html" data-type="index.php">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- $_SERVER変数をデバッグ関数で出力する。 --&gt;
+  &lt;?php var_dump($_SERVER);?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/145/758_001.png" data-filename="001.png" style="width: 848px;"><br></p> 
+  <p>$_SERVER変数をvar_dumpに確認するとデータが多いですね。</p> 
+  <p>この中でよく使えるデータは「DOCUMENT_ROOT」と「SERVER_NAME」、「HTTP_HOST」、「HTTP_ACCEPT」などがありますね。特に「$_SERVER["DOCUMENT_ROOT"]」の場合は物理的にサーバの中のファイルを読み出す時やPHPファイルincludeなどをする時によく使います。</p> 
+  <p>OS情報があれば良いと思いますが、OS情報はないですね。</p> 
+  <p><br></p> 
+  <h2><b><span>$GLOBALS</span></b></h2> 
+  <p>link - <a href="https://www.php.net/manual/en/language.variables.superglobals.php" target="_blank">https://www.php.net/manual/en/language.variables.superglobals.php</a></p> 
+  <p><br></p> 
+  <p>$GLOBALSは流れているセッションのステップで宣言されている全ての変数です。</p> 
+  <pre><code class="html" data-type="index.php">&lt;?php
+  // $dataを宣言
+  $data = "test";
+  class Test {
+    private $data = "class variable";
+    public function setData() {
+      $abc = "function variable";
+    }
+  }
+  // テストクラスを宣言
+  $obj = new Test();
+  $obj-&gt;setData();
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- $GLOBALS変数をデバッグ関数で出力する。 --&gt;
+  &lt;?php var_dump($GLOBALS);?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/145/767_002.png" data-filename="002.png" style="width: 848px;"><br></p> 
+  <p>上の出力結果をみれば、$_SERVERのデータもあります。そして$dataとTestクラスを$objで宣言しましたので、それも$GLOBALSの変数で確認できますね。</p> 
+  <p>クラスのprivateの値まで確認できます。率直に全てのデータがみえる変数なのでセキュリティとしてはかなり危ない変数ですね。</p> 
+  <p>この変数を間違って使用して本番ウェブサイトなどで出力されたらパスワードやサーバ情報が漏れになる可能性があります。</p> 
+  <p><br></p> 
+  <p>$GLOBALSの変数は連関配列タイプなので$GLOBALS["data"]みたいの形式でデータを読込みや書込みができます。</p> 
+  <p><br></p> 
+  <h2><b><span>$_GET</span></b></h2> 
+  <p>link - <a href="https://www.php.net/manual/en/reserved.variables.get.php" target="_blank">https://www.php.net/manual/en/reserved.variables.get.php</a></p> 
+  <p><br></p> 
+  <p>$_GETはブラウザからGET方式で要請する時にパラメタ値を取得する変数です。</p> 
+  <pre><code class="html" data-type="index.php">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- $_GET変数をデバッグ関数で出力する。 --&gt;
+  &lt;?php var_dump($_GET);?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/145/755_003.png" data-filename="003.png" style="width: 509px;"><br></p> 
+  <p>上の例でみるとブラウザのURLで「localhost/index.php?data=1&amp;test=helloworld」で要請しました。</p> 
+  <p>意味はlocalhostのホストサーバでindex.phpを要請します。後「?」の区切りでGET方式のパラメタデータをサーバに送ることです。</p> 
+  <p><br></p> 
+  <p>変数の区切りは「&amp;」で「data」の値は「1」、「test」の値は「helloworld」になります。ここで注意点はGETのデータは全て文字列です。</p> 
+  <p>つまり「data」の値が「1」ですが、数のデータの「1」ではなく、文字列としての「1」です。PHP側で定数値で使いたいならデータタイプ変換が必要です。</p> 
+  <p><br></p> 
+  <h2><b><span>$_POST</span></b></h2> 
+  <p>link - <a href="https://www.php.net/manual/en/reserved.variables.post.php" target="_blank">https://www.php.net/manual/en/reserved.variables.post.php</a></p> 
+  <p><br></p> 
+  <p>要請方式でGETの場合はURLで含めて要請することならPOSTの場合はHTTPプロトコールでデータ値を含めて要請することです。</p> 
+  <p>ウェブでPOSTタイプで要請するのを再現したいなら「form」タグを生成してメソッドを「POST」で設定します。「form」タグの中で「input」タグの値(value)をいれてサブミット(submit)するとPOSTタイプに要請します。</p> 
+  <pre><code class="html" data-type="index.php">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- $_GET変数をデバッグ関数で出力する。 --&gt;
+  &lt;?php var_dump($_POST);?&gt;
+  &lt;!-- index.phpにPOST方式で要請する。 --&gt;
+  &lt;form method="post" action="index.php"&gt;
+    &lt;!-- パラメタデータでdataとtestがある。 --&gt;
+    &lt;input type="text" name="data"&gt;
+    &lt;input type="text" name="test"&gt;
+    &lt;!-- サブミット(submit)ボタンを押下すると要請開始 --&gt;
+    &lt;input type="submit" value="go!"&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/145/756_004.png" data-filename="004.png" style="width: 482px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/145/768_005.png" data-filename="005.png" style="width: 848px;"><br></p> 
+  <p>上の例をみれば初めのイメージの結果はGET方式でウェブサイトに接続しましたので、$_POSTの値がありません。テキストボックスにデータをいれてサブミットボタンを押下するとそのデータがPOST形式でサーバに要請するのでデータが表示されることを確認できます。</p> 
+  <p>POSTで変数名はinputのnameの属性で決めることになります。つまり、初めのテキストボックスはnameが「data」なので「data=1」、次は「test」なので「test=hello world」に転送します。</p> 
+  <p><br></p> 
+  <h2><b><span>$_REQUEST</span></b></h2> 
+  <p>link - <a href="https://www.php.net/manual/en/reserved.variables.request.php" target="_blank">https://www.php.net/manual/en/reserved.variables.request.php</a></p> 
+  <p><br></p> 
+  <p>上で$_GETと$_POSTを区分してデータを取得しましたが、$_REQUESTはGET、POSTと関係しずにパラメタデータを取得する変数です。</p> 
+  <p>(PHPマニュアルでは$_REQUESTで$_COOKIEの値も出ると説明していますが、筆者が確認したところでCOOKIEはでないですね。)</p> 
+  <pre><code class="html" data-type="index.php">&lt;!DOCTYPE html&gt;	
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;?php var_dump($_GET);?&gt;
+  &lt;?php var_dump($_POST);?&gt;
+  &lt;?php var_dump($_REQUEST);?&gt;
+  &lt;form method="post" action="index.php?data=1&amp;test1=helloworld"&gt;
+    &lt;input type="text" name="data"&gt;
+    &lt;input type="text" name="posttest"&gt;
+    &lt;input type="submit" value="go!"&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/145/759_006.png" data-filename="006.png" style="width: 506px;"><br></p> 
+  <p>上のテキストデータで初めは「test」、２つめは「aaaa」のデータを入れてサブミットボタンを押下しました。</p> 
+  <p>結果はGETデータ「data=1&amp;test1=helloworld」とPOSTデータ「data=test&amp;posttest=aaaa」にサーバに転送しますね。</p> 
+  <p>$_REQUESTのけっかは「data」の場合はGETとPOSTの両方データがありますが、POSTの値がありますね。GETのtest1とPOSTのposttestがあります。</p> 
+  <p>$_REQUESTの場合は要請方法に関係しずにデータを読み込むのができるので楽だと思いますが、POSTの値をGETのパラメタで変調が可能にみえるのでセキュリティとしてはよくないですね。</p> 
+  <p>筆者もPOST、GETを使うことが楽でREQUEST変数はよく使わないですね。</p> 
+  <p><br></p> 
+  <h2><b><span>$_COOKIE</span></b></h2> 
+  <p>link - <a href="https://www.php.net/manual/en/reserved.variables.cookies.php" target="_blank">https://www.php.net/manual/en/reserved.variables.cookies.php</a></p> 
+  <p><br></p> 
+  <p>cookieやsessionを理解するようにはウェブ構造に関して調べなければならないです。ここではcookieとsessionの概念を知ることで説明します。</p> 
+  <p><br></p> 
+  <p>ブラウザのcookieの値はGETやPOSTで要請する時にサーバ側に全てヘッダにつけて転送します。(ブラウザの仕様)なのでサーバ側にはクライアントのcookieの値を確認できます。</p> 
+  <pre><code class="html" data-type="index.html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;	
+&lt;body&gt;
+  &lt;?php var_dump($_COOKIE);?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/145/764_007.png" data-filename="007.png" style="width: 848px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/145/763_008.png" data-filename="008.png" style="width: 848px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/145/766_009.png" data-filename="009.png" style="width: 848px;"><br></p> 
+  <p>Javascriptでcookie設定が可能ですが、そうするとプログラムが複雑になるので、一応ブラウザのapplicationタブでcookie設定ができるので、ブラウザで設定しました。</p> 
+  <p>初めのページ要請する時にはcookieの値がなかったのでnullになりましたが、dataとtestのデータを入れたら$_COOKIEの変数でデータがあることを確認できます。</p> 
+  <p><br></p> 
+  <h2><b><span>$_SESSION</span></b></h2> 
+  <p>link - <a href="https://www.php.net/manual/en/reserved.variables.session.php" target="_blank">https://www.php.net/manual/en/reserved.variables.session.php</a></p> 
+  <p><br></p> 
+  <p>server-clientのセッション間でブラウザ側に格納するデータはcookieだと思うとsessionはサーバ側に格納するデータです。</p> 
+  <p>session値はブラウザ側のcookieにあるセッションキーによってサーバ側に格納します。</p> 
+  <pre><code class="html" data-type="index.php">&lt;?php
+  session_start();
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;?php var_dump($_SESSION);?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+&lt;?php 
+  $_SESSION["sessionTest"] = "good job";
+?&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/145/770_010.png" data-filename="010.png" style="width: 848px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/145/765_011.png" data-filename="011.png" style="width: 848px;"><br></p> 
+  <p>PHPでsessionを使うようにはsession_start()関数を呼び出さなければならないです。session_start()関数はブラウザのcookieにセッションキーを与えてサーバ側でsessionデータを使えるように設定する役の関数です。</p> 
+  <p>初めの結果イメージをみればresponseのヘッダで「Set-Cookie」にセッションキーが設定することをみれます。</p> 
+  <p>link - <a href="https://www.php.net/manual/en/function.session-start.php" target="_blank">https://www.php.net/manual/en/function.session-start.php</a></p> 
+  <p><br></p> 
+  <p>それをウェブページを再要請するとsessionの「sessionTest」キーで「good job」のデータがあることを確認できます。</p> 
+  <p>sessionの値はサーバ側でデータを削除するかsessionがexpireになるとなくなります。</p> 
+  <p><br></p> 
+  <h2><b><span>$_FILES</span></b></h2> 
+  <p>link - <a href="https://www.php.net/manual/en/reserved.variables.files.php" target="_blank">https://www.php.net/manual/en/reserved.variables.files.php</a></p> 
+  <p><br></p> 
+  <p>$_FILESの場合はブラウザからファイルをアップロードする時にファイルの情報がある変数です。</p> 
+  <pre><code class="html" data-type="index.php">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;?php var_dump($_FILES);?&gt;
+  &lt;form method="post" enctype="multipart/form-data"&gt;
+    &lt;input type="file" name="data"&gt;
+    &lt;input type="submit" value="go!"&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/145/757_012.png" data-filename="012.png" style="width: 542px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/145/760_013.png" data-filename="013.png" style="width: 737px;"><br></p> 
+  <p>上のタイプがfileに設定したinputオブジェクトにデータを設定してサブミットボタンを押下するとブラウザからウェブサーバにファイルをアップロードします。</p> 
+  <p>実際にアップロードしたデータは$_FILES["tmp_name"]で確認すると任意フォルダに格納されますが、そこからデータをファイルコピーやファイル移動すればよいです。</p> 
+  <p>詳しい説明はPHPのIOを説明する時に詳細に調べます。</p> 
+  <p><br></p> 
+  <h2><b><span>$_ENV</span></b></h2> 
+  <p>link - <a href="https://www.php.net/manual/en/reserved.variables.environment.php" target="_blank">https://www.php.net/manual/en/reserved.variables.environment.php</a></p> 
+  <p><br></p> 
+  <p>$_ENVに関してマニュアルを確認すると環境変数の設定値がある変数だと説明していますが、自分の場合は「null」がでますね。</p> 
+  <p>グーグルで調べてみますが、正確な情報がないですね。</p> 
+  <p><br></p> 
+  <p>マニュアルで$_ENVとgetenv()関数は同じ役で結果も同じだと書いていますが、getenv()は値があるのに$_ENVがnull理由を分からないですね。</p> 
+  <pre><code class="html" data-type="index.php">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;?php var_dump($_ENV);?&gt;
+  &lt;?php var_dump(getenv());?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/145/769_014.png" data-filename="014.png" style="width: 848px;"><br></p> 
+  <p>一応、個人情報がでるのでデータをブロックしましたが、ロカールのシステム環境変数データが表示されます。</p> 
+  <p>環境変数データはシステム環境変数をいうことです。</p> 
+  <p style="text-align:left;"><img src="./contents/145/762_015.png" data-filename="015.png" style="width: 493px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/145/761_016.png" data-filename="016.png" style="width: 457px;"><br></p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=php>#php</a>,<a href=./search.html?query=%24_SERVER>#$_SERVER</a>,<a href=./search.html?query=%24GLOBALS>#$GLOBALS</a>,<a href=./search.html?query=%24_GET>#$_GET</a>,<a href=./search.html?query=%24_POST>#$_POST</a>,<a href=./search.html?query=%24_REQUEST>#$_REQUEST</a>,<a href=./search.html?query=%24_COOKIE>#$_COOKIE</a>,<a href=./search.html?query=%24_SESSION>#$_SESSION</a>,<a href=./search.html?query=%24_FILES>#$_FILES</a>,<a href=./search.html?query=%24_ENV>#$_ENV</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0205">Study / PHP</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/145.html'>[PHP] $_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())</a><span>2020/01/17 03:00:00</span></li><li><a href='https://www.nowonbun.com/144.html'>[PHP] データ確認関数(var_dump, debug_zval_dump, print_r)</a><span>2020/01/16 03:00:00</span></li><li><a href='https://www.nowonbun.com/143.html'>[PHP] 例外処理(try ~ catch ~ finally)</a><span>2020/01/15 03:00:00</span></li><li><a href='https://www.nowonbun.com/142.html'>[PHP] 配列とリスト(list)</a><span>2020/01/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/141.html'>[PHP] インタフェースと抽象クラス、クラス継承、parent、this</a><span>2020/01/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/140.html'>[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a><span>2020/01/09 23:35:27</span></li><li><a href='https://www.nowonbun.com/139.html'>[PHP] 基本ページ作成方法と変数使用方法</a><span>2020/01/06 23:44:20</span></li><li><a href='https://www.nowonbun.com/138.html'>[PHP] Composer設定</a><span>2019/12/27 08:49:09</span></li><li><a href='https://www.nowonbun.com/137.html'>[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a><span>2019/12/26 07:36:47</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/145.html'>[PHP] $_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())</a><span>2020/01/17 03:00:00</span></li><li><a href='https://www.nowonbun.com/144.html'>[PHP] データ確認関数(var_dump, debug_zval_dump, print_r)</a><span>2020/01/16 03:00:00</span></li><li><a href='https://www.nowonbun.com/143.html'>[PHP] 例外処理(try ~ catch ~ finally)</a><span>2020/01/15 03:00:00</span></li><li><a href='https://www.nowonbun.com/142.html'>[PHP] 配列とリスト(list)</a><span>2020/01/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/141.html'>[PHP] インタフェースと抽象クラス、クラス継承、parent、this</a><span>2020/01/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/140.html'>[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a><span>2020/01/09 23:35:27</span></li><li><a href='https://www.nowonbun.com/139.html'>[PHP] 基本ページ作成方法と変数使用方法</a><span>2020/01/06 23:44:20</span></li><li><a href='https://www.nowonbun.com/138.html'>[PHP] Composer設定</a><span>2019/12/27 08:49:09</span></li><li><a href='https://www.nowonbun.com/137.html'>[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a><span>2019/12/26 07:36:47</span></li><li><a href='https://www.nowonbun.com/136.html'>[CSS] ブラウザから開発する方法 (developer mode)</a><span>2019/12/25 07:54:31</span></li><li><a href='https://www.nowonbun.com/135.html'>[CSS] 色スタイル、グラデーション</a><span>2019/12/24 07:37:22</span></li><li><a href='https://www.nowonbun.com/134.html'>[CSS] アニメーション (animation)</a><span>2019/12/20 20:51:38</span></li><li><a href='https://www.nowonbun.com/133.html'>[CSS] トランスフォーム (transform)</a><span>2019/12/19 13:00:26</span></li><li><a href='https://www.nowonbun.com/132.html'>[CSS] トランジション(transition)</a><span>2019/12/18 20:33:57</span></li><li><a href='https://www.nowonbun.com/131.html'>[CSS] Columnスタイル</a><span>2019/12/17 19:52:56</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/145.html';this.page.identifier = 'NOWONBUN00145';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
