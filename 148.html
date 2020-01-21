@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / PHP" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。プログラムプロジェクトを管理するようにはディレクトリやファイルの構成を設定することも重要な部分です。例えば、javaの場合はパッケージネームがディレクトリ構造でクラス名とファイル名を一致させておいてクラスを早く探せるように設定します。c#の場合もnamespaceがディレクトリ構造でクラス名がファイル名と一致させます。上のルールは必ずではないけど、できれば守らなければならないです。phpの場合は.phpがウェブページなのでクラス名とファイル名を一致することで少し難しい部分があります。でも、できれば合わせることは将来に可読性のため必要です。そして、最近のプロジェクトは.phpで全開することではなく、.htaccessを利用してmvcモデルに構成するのでクラスようなファイル(.php)とビューファイル(.tpl)を分けることにしますね。なので、phpもクラス名とファイル名、ディレクトリ名とnamespace名に分けることができます。そうしたら２つのウェブページを生成して一つのresponseに作りましょう。index.phpファイルとextension.phpファイルを生成しました。index.phpファイルで「require」関数を利用してextension.phpファイルを読込みました。extension.phpファイルはクラスしかないので、ブラウザで「localhost/extension.php」に接続しても空ページが表示されます。しかしindex.phpではextensionクラスを宣言してgetdata関数を呼出すので、「localhost/index.php」では結果が「hello world」が表示されますね。そうすると「require」の使用方法に関しては理解しました。上のindex.phpで「require」キーワード代わりに「include」を入れても同じ結果ができます。「require」と「include」の使用方法と結果は同じです。でも、includeする時あるいはrequireする時にファイルがあるかどうかでエラーの差があります。上の場合はブラウザで「localhost/index.php」に接続するとエラーが発生します。fatalエラーなのでスクリプト解析が止まるのでbodyにある「go!!」も文言が表示されないです。includeの場合はエラーではなく、警]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [PHP] requireとinclude、そして「@」の使用方法" />
+<link rel="canonical" href="https://www.nowonbun.com/148.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [PHP] requireとinclude、そして「@」の使用方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。プログラムプロジェクトを管理するようにはディレクトリやファイルの構成を設定することも重要な部分です。例えば、javaの場合はパッケージネームがディレクトリ構造でクラス名とファイル名を一致させておいてクラスを早く探せるように設定します。c#の場合もnamespaceがディレクトリ構造でクラス名がファイル名と一致させます。上のルールは必ずではないけど、できれば守らなければならないです。phpの場合は.phpがウェブページなのでクラス名とファイル名を一致することで少し難しい部分があります。でも、できれば合わせることは将来に可読性のため必要です。そして、最近のプロジェクトは.phpで全開することではなく、.htaccessを利用してmvcモデルに構成するのでクラスようなファイル(.php)とビューファイル(.tpl)を分けることにしますね。なので、phpもクラス名とファイル名、ディレクトリ名とnamespace名に分けることができます。そうしたら２つのウェブページを生成して一つのresponseに作りましょう。index.phpファイルとextension.phpファイルを生成しました。index.phpファイルで「require」関数を利用してextension.phpファイルを読込みました。extension.phpファイルはクラスしかないので、ブラウザで「localhost/extension.php」に接続しても空ページが表示されます。しかしindex.phpではextensionクラスを宣言してgetdata関数を呼出すので、「localhost/index.php」では結果が「hello world」が表示されますね。そうすると「require」の使用方法に関しては理解しました。上のindex.phpで「require」キーワード代わりに「include」を入れても同じ結果ができます。「require」と「include」の使用方法と結果は同じです。でも、includeする時あるいはrequireする時にファイルがあるかどうかでエラーの差があります。上の場合はブラウザで「localhost/index.php」に接続するとエラーが発生します。fatalエラーなのでスクリプト解析が止まるのでbodyにある「go!!」も文言が表示されないです。includeの場合はエラーではなく、警]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/148.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [PHP] requireとinclude、そして「@」の使用方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。プログラムプロジェクトを管理するようにはディレクトリやファイルの構成を設定することも重要な部分です。例えば、javaの場合はパッケージネームがディレクトリ構造でクラス名とファイル名を一致させておいてクラスを早く探せるように設定します。c#の場合もnamespaceがディレクトリ構造でクラス名がファイル名と一致させます。上のルールは必ずではないけど、できれば守らなければならないです。phpの場合は.phpがウェブページなのでクラス名とファイル名を一致することで少し難しい部分があります。でも、できれば合わせることは将来に可読性のため必要です。そして、最近のプロジェクトは.phpで全開することではなく、.htaccessを利用してmvcモデルに構成するのでクラスようなファイル(.php)とビューファイル(.tpl)を分けることにしますね。なので、phpもクラス名とファイル名、ディレクトリ名とnamespace名に分けることができます。そうしたら２つのウェブページを生成して一つのresponseに作りましょう。index.phpファイルとextension.phpファイルを生成しました。index.phpファイルで「require」関数を利用してextension.phpファイルを読込みました。extension.phpファイルはクラスしかないので、ブラウザで「localhost/extension.php」に接続しても空ページが表示されます。しかしindex.phpではextensionクラスを宣言してgetdata関数を呼出すので、「localhost/index.php」では結果が「hello world」が表示されますね。そうすると「require」の使用方法に関しては理解しました。上のindex.phpで「require」キーワード代わりに「include」を入れても同じ結果ができます。「require」と「include」の使用方法と結果は同じです。でも、includeする時あるいはrequireする時にファイルがあるかどうかでエラーの差があります。上の場合はブラウザで「localhost/index.php」に接続するとエラーが発生します。fatalエラーなのでスクリプト解析が止まるのでbodyにある「go!!」も文言が表示されないです。includeの場合はエラーではなく、警]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [PHP] requireとinclude、そして「@」の使用方法</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(23)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(125)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(12)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[PHP] requireとinclude、そして「@」の使用方法</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0205">Study / PHP</a>    作成日付 : 2020/01/22 03:00:00   修正日付 : 2020/01/22 03:00:00
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>プログラムプロジェクトを管理するようにはディレクトリやファイルの構成を設定することも重要な部分です。</p> 
+  <p>例えば、Javaの場合はパッケージネームがディレクトリ構造でクラス名とファイル名を一致させておいてクラスを早く探せるように設定します。</p> 
+  <p>C#の場合もnamespaceがディレクトリ構造でクラス名がファイル名と一致させます。</p> 
+  <p>上のルールは必ずではないけど、できれば守らなければならないです。</p> 
+  <p><br></p> 
+  <p>PHPの場合は.phpがウェブページなのでクラス名とファイル名を一致することで少し難しい部分があります。でも、できれば合わせることは将来に可読性のため必要です。</p> 
+  <p>そして、最近のプロジェクトは.phpで全開することではなく、.htaccessを利用してMVCモデルに構成するのでクラスようなファイル(.php)とビューファイル(.tpl)を分けることにしますね。</p> 
+  <p>なので、phpもクラス名とファイル名、ディレクトリ名とnamespace名に分けることができます。</p> 
+  <p><br></p> 
+  <p>そうしたら２つのウェブページを生成して一つのresponseに作りましょう。</p> 
+  <pre><code class="html" data-type="index.php">&lt;?php
+  // extension.phpファイルを読み込む。
+  require 'extension.php';
+  // extension.phpの中にあるExtensionクラスを宣言する。
+  $obj = new Extension();
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;-- Extensionクラスの getData関数を呼出す。 --&gt;
+  &lt;?=$obj-&gt;getData()?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <pre><code class="html" data-type="extension.php">&lt;?php
+  // クラスファイルです。
+  class Extension {
+    private $data;
+    public function __construct() {
+      $this-&gt;data = "hello world";
+    }
+    public function getData() {
+      return $this-&gt;data;
+    }
+  }
+?&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/148/789_001.png" data-filename="001.png" style="width: 424px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/148/790_002.png" data-filename="002.png" style="width: 491px;"><br></p> 
+  <p>index.phpファイルとextension.phpファイルを生成しました。index.phpファイルで「require」関数を利用してextension.phpファイルを読込みました。</p> 
+  <p>extension.phpファイルはクラスしかないので、ブラウザで「localhost/extension.php」に接続しても空ページが表示されます。</p> 
+  <p><br></p> 
+  <p>しかしindex.phpではExtensionクラスを宣言してgetData関数を呼出すので、「localhost/index.php」では結果が「hello world」が表示されますね。</p> 
+  <p>そうすると「require」の使用方法に関しては理解しました。上のindex.phpで「require」キーワード代わりに「include」を入れても同じ結果ができます。</p> 
+  <p>「require」と「include」の使用方法と結果は同じです。</p> 
+  <p>でも、includeする時あるいはrequireする時にファイルがあるかどうかでエラーの差があります。</p> 
+  <pre><code class="html" data-type="index.php">&lt;?php
+  // 実際に存在しないファイルです。
+  require 'extension1.php';
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;	
+&lt;body&gt;
+  GO!!	
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/148/791_003.png" data-filename="003.png" style="width: 424px;"><br></p> 
+  <p>上の場合はブラウザで「localhost/index.php」に接続するとエラーが発生します。</p> 
+  <p style="text-align:left;"><img src="./contents/148/792_004.png" data-filename="004.png" style="width: 848px;"><br></p> 
+  <p>Fatalエラーなのでスクリプト解析が止まるのでbodyにある「GO!!」も文言が表示されないです。</p> 
+  <pre><code class="html" data-type="index.php">&lt;?php
+  // require代わりにincludeでextension1.phpを読み込む。
+  include 'extension1.php';
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;	
+&lt;body&gt;
+  GO!!	
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/148/796_005.png" data-filename="005.png" style="width: 848px;"><br></p> 
+  <p>includeの場合はエラーではなく、警告(Warning)ですね。なので、スクリプトが止まらないので、最後「GO!!」メッセージまで表示されることを確認できます。</p> 
+  <p>前述でエラーメッセージを設定する方法に関して説明したことがあります。Warningメッセージなのでメッセージが見えないようにするとincludeで宣言したページがなくてもエラーメッセージが表示されなくて続けてページが処理します。</p> 
+  <p>link - <a href="https://www.nowonbun.com/147.html" target="_blank">[PHP] Fatal及びNotice,、Warningメッセージ処理する方法</a></p> 
+  <pre><code class="html" data-type="index.php">&lt;?php
+  // Warningのメッセージは表示しないように設定する。
+  error_reporting(E_ALL&amp;~E_WARNING);
+  // 実際にファイルがないことをincludeする。
+  include 'extension1.php';
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  GO!!
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/148/793_006.png" data-filename="006.png" style="width: 486px;"><br></p> 
+  <p>でも、エラーや警告の場合はただメッセージがでないように設定することで解決したことではないです。逆にエラーや警告を隠したら本当にエラーになる時に原因を調べることも難しいし、includeやrequireしたページが重要な部分だと思えばWarningだけではなく、requireで宣言してFATALのエラーが発生するようにした方が良いと思います。</p> 
+  <p>その理由で「require」を使います。でも、「include」も必ずエラーではなく、動的要請する時には「include」が使います。</p> 
+  <pre><code class="html" data-type="index.php">&lt;?php
+  // GET方式(URLからパラメータの値を受取る)でpageの値でページを読み込む。
+  $pagename = 'extension'.$_GET["page"].'.php';
+  // 「@」を付けるとWarningが発生すれば「false」、正常なら「true」で処理する。
+  if(@include $pagename) {
+    echo "It was loaded";
+  } else {
+    echo "It was not loaded";
+  }
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p>上の例はincludeページをGET方式のパラメータで受け取ります。なので、ユーザから受取るパラメータで存在しないページがある可能性がありますね。</p> 
+  <p style="text-align:left;"><img src="./contents/148/795_008.png" data-filename="008.png" style="width: 421px;"><br></p> 
+  <p>extension1.phpファイルは存在しないので「It was not loaded」メッセージがでます。</p> 
+  <p style="text-align:left;"><img src="./contents/148/794_007.png" data-filename="007.png" style="width: 505px;"><br></p> 
+  <p>パラメータがない場合はextension.phpファイルを読み込むので「it was loaded」がでますね。</p> 
+  <p><br></p> 
+  <p>上の例でincludeを変わりにrequireを使うとFatalエラーが発生するので、上の処理ができないです。</p> 
+  <p><br></p> 
+  <p>ここで「@」を使いましたが説明します。</p> 
+  <p>「@」の場合はページ内でWarningが発生する時にboolデータ(true or false)に受け取ります。</p> 
+  <p>つまり、Warningが発生すると「false」、Warningが発生しないと「true」をリターンします。</p> 
+  <p><br></p> 
+  <p><b>「@」マークの場合はPHP内で宣言しない変数を参照することや0で割り算することやIOのファイル読み込み中でファイルが存在しないことなどでWarningが発生しますが、その時に使うとよいキーワードです。</b></p> 
+  <p><br></p> 
+  <p>includeとrequireの場合は各include_onceがあるしrequire_onceがあります。</p> 
+  <p>この意味はソースの中で一回に呼出したら次は読み込まないようにするキーワードです。</p> 
+  <pre><code class="html" data-type="index.php">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;?php
+      // extension.phpが呼出したことがないので読み込む。
+      require_once 'extension.php';
+    ?&gt;
+    &lt;br /&gt;
+    &lt;?php
+      // 上でextension.phpが呼出したので、読み込まない。
+      require_once 'extension.php';
+    ?&gt;
+    &lt;br /&gt;
+    &lt;?php
+      // 上でrequireで呼出したけど、呼出したことがあるので、読み込まない。
+      include_once 'extension.php';
+    ?&gt;
+    &lt;br /&gt;
+    &lt;?php
+      // onceがないので、呼び出しした可否なしで読み込む。
+      include 'extension.php';
+    ?&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <pre><code class="html" data-type="extension.php">&lt;?php
+  echo "hello world";
+?&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/148/797_009.png" data-filename="009.png" style="width: 394px;"><br></p> 
+  <p>上の例を見ればonceが付けるとincludeやrequireの関係しなずに、呼び出しした可否で読み込むか込まないかを決めます。</p> 
+  <p>つまりrequireで読み出しても、include_onceには読み込まないですね。</p> 
+  <p><br></p> 
+  <p>link - <a href="https://andy-carter.com/blog/difference-between-include-and-require-statements-in-php" target="_blank">https://andy-carter.com/blog/difference-between-include-and-require-statements-in-php</a></p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=php>#php</a>,<a href=./search.html?query=require>#require</a>,<a href=./search.html?query=include>#include</a>,<a href=./search.html?query=%40>#@</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0205">Study / PHP</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/148.html'>[PHP] requireとinclude、そして「@」の使用方法</a><span>2020/01/22 03:00:00</span></li><li><a href='https://www.nowonbun.com/147.html'>[PHP] Fatal及びNotice,、Warningメッセージ処理する方法</a><span>2020/01/19 03:00:00</span></li><li><a href='https://www.nowonbun.com/146.html'>[PHP] xDebug設定する方法</a><span>2020/01/18 03:00:00</span></li><li><a href='https://www.nowonbun.com/145.html'>[PHP] $_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())</a><span>2020/01/17 03:00:00</span></li><li><a href='https://www.nowonbun.com/144.html'>[PHP] データ確認関数(var_dump, debug_zval_dump, print_r)</a><span>2020/01/16 03:00:00</span></li><li><a href='https://www.nowonbun.com/143.html'>[PHP] 例外処理(try ~ catch ~ finally)</a><span>2020/01/15 03:00:00</span></li><li><a href='https://www.nowonbun.com/142.html'>[PHP] 配列とリスト(list)</a><span>2020/01/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/141.html'>[PHP] インタフェースと抽象クラス、クラス継承、parent、this</a><span>2020/01/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/140.html'>[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a><span>2020/01/09 23:35:27</span></li><li><a href='https://www.nowonbun.com/139.html'>[PHP] 基本ページ作成方法と変数使用方法</a><span>2020/01/06 23:44:20</span></li><li><a href='https://www.nowonbun.com/138.html'>[PHP] Composer設定</a><span>2019/12/27 08:49:09</span></li><li><a href='https://www.nowonbun.com/137.html'>[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a><span>2019/12/26 07:36:47</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/148.html'>[PHP] requireとinclude、そして「@」の使用方法</a><span>2020/01/22 03:00:00</span></li><li><a href='https://www.nowonbun.com/147.html'>[PHP] Fatal及びNotice,、Warningメッセージ処理する方法</a><span>2020/01/19 03:00:00</span></li><li><a href='https://www.nowonbun.com/146.html'>[PHP] xDebug設定する方法</a><span>2020/01/18 03:00:00</span></li><li><a href='https://www.nowonbun.com/145.html'>[PHP] $_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())</a><span>2020/01/17 03:00:00</span></li><li><a href='https://www.nowonbun.com/144.html'>[PHP] データ確認関数(var_dump, debug_zval_dump, print_r)</a><span>2020/01/16 03:00:00</span></li><li><a href='https://www.nowonbun.com/143.html'>[PHP] 例外処理(try ~ catch ~ finally)</a><span>2020/01/15 03:00:00</span></li><li><a href='https://www.nowonbun.com/142.html'>[PHP] 配列とリスト(list)</a><span>2020/01/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/141.html'>[PHP] インタフェースと抽象クラス、クラス継承、parent、this</a><span>2020/01/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/140.html'>[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a><span>2020/01/09 23:35:27</span></li><li><a href='https://www.nowonbun.com/139.html'>[PHP] 基本ページ作成方法と変数使用方法</a><span>2020/01/06 23:44:20</span></li><li><a href='https://www.nowonbun.com/138.html'>[PHP] Composer設定</a><span>2019/12/27 08:49:09</span></li><li><a href='https://www.nowonbun.com/137.html'>[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a><span>2019/12/26 07:36:47</span></li><li><a href='https://www.nowonbun.com/136.html'>[CSS] ブラウザから開発する方法 (developer mode)</a><span>2019/12/25 07:54:31</span></li><li><a href='https://www.nowonbun.com/135.html'>[CSS] 色スタイル、グラデーション</a><span>2019/12/24 07:37:22</span></li><li><a href='https://www.nowonbun.com/134.html'>[CSS] アニメーション (animation)</a><span>2019/12/20 20:51:38</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/148.html';this.page.identifier = 'NOWONBUN00148';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
