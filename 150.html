@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / PHP" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。ウェブサービスを開発すると思ったら当たり前にデータベースも使います。もちろん、データを必ずデータベースを使うことではなく、バイナリやエクセルなどでもデータを管理してウェブサービスを立ち上げられます。でも、データベースよりデータ管理しやすいものでは無いので、データベースをほとんど使うと思います。データベースの種類としてはoracleやsql server(mssql)、mysql、postgreなど様々な種類がありますが、ここではmariadb(mysql)を使います。mysqlのインストールは省略します。link - [ubuntu] mariadb(mysql)をインストールする方法link - [centos] mariadb(mysql)をインストールlink - window用ダウンロードsqlクエリは各キーワードは差がありますが、概念は同じです。phpでデータベースを使うようにはphp.iniを修正しなければならないです。php.iniの中で「extension=mysqli」がありますが、この部分のコメント(;)を除いてapacheを再起動します。そしてphpinfo()で確認すると「mysqli」がロードされたことを知ることができます。一応、phpからデータ取得するソースを実装するため、データベースにデータを挿入しましょう。データを作成しました。上のデータをphpからデータを取得しましょう。phpからデータベースを接続するようにはmysqli_connectでコネクションを作ります。データベースコネクションはioのコネクションみたいにリソースなので最後には必ずリソース返却(close)しなければならないです。コネクションを作った後、データベースを選択します。クエリでは「use データベース」と同じです。そして「mysqli_query」関数でクエリを送るし結果を受け取ります。この例ではmysqli_fetch_assoc関数を使っていますが、mysqli_fetch_rowでも受け取ることが出来ます。これは一般配列か、連関配列かの差ですが、mysqli_fetch_rowで一般配列(数字で探索)で結果を受け取られるし、mysqli_fetch_assocはカラム名のキーで連関配列で結果を受け取られます。phpでは連関配列でも一般配列みたいに数字でデータを取得することがで]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [PHP] データベース(mariaDB)を連結して使う方法" />
+<link rel="canonical" href="https://www.nowonbun.com/150.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [PHP] データベース(mariaDB)を連結して使う方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。ウェブサービスを開発すると思ったら当たり前にデータベースも使います。もちろん、データを必ずデータベースを使うことではなく、バイナリやエクセルなどでもデータを管理してウェブサービスを立ち上げられます。でも、データベースよりデータ管理しやすいものでは無いので、データベースをほとんど使うと思います。データベースの種類としてはoracleやsql server(mssql)、mysql、postgreなど様々な種類がありますが、ここではmariadb(mysql)を使います。mysqlのインストールは省略します。link - [ubuntu] mariadb(mysql)をインストールする方法link - [centos] mariadb(mysql)をインストールlink - window用ダウンロードsqlクエリは各キーワードは差がありますが、概念は同じです。phpでデータベースを使うようにはphp.iniを修正しなければならないです。php.iniの中で「extension=mysqli」がありますが、この部分のコメント(;)を除いてapacheを再起動します。そしてphpinfo()で確認すると「mysqli」がロードされたことを知ることができます。一応、phpからデータ取得するソースを実装するため、データベースにデータを挿入しましょう。データを作成しました。上のデータをphpからデータを取得しましょう。phpからデータベースを接続するようにはmysqli_connectでコネクションを作ります。データベースコネクションはioのコネクションみたいにリソースなので最後には必ずリソース返却(close)しなければならないです。コネクションを作った後、データベースを選択します。クエリでは「use データベース」と同じです。そして「mysqli_query」関数でクエリを送るし結果を受け取ります。この例ではmysqli_fetch_assoc関数を使っていますが、mysqli_fetch_rowでも受け取ることが出来ます。これは一般配列か、連関配列かの差ですが、mysqli_fetch_rowで一般配列(数字で探索)で結果を受け取られるし、mysqli_fetch_assocはカラム名のキーで連関配列で結果を受け取られます。phpでは連関配列でも一般配列みたいに数字でデータを取得することがで]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/150.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [PHP] データベース(mariaDB)を連結して使う方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。ウェブサービスを開発すると思ったら当たり前にデータベースも使います。もちろん、データを必ずデータベースを使うことではなく、バイナリやエクセルなどでもデータを管理してウェブサービスを立ち上げられます。でも、データベースよりデータ管理しやすいものでは無いので、データベースをほとんど使うと思います。データベースの種類としてはoracleやsql server(mssql)、mysql、postgreなど様々な種類がありますが、ここではmariadb(mysql)を使います。mysqlのインストールは省略します。link - [ubuntu] mariadb(mysql)をインストールする方法link - [centos] mariadb(mysql)をインストールlink - window用ダウンロードsqlクエリは各キーワードは差がありますが、概念は同じです。phpでデータベースを使うようにはphp.iniを修正しなければならないです。php.iniの中で「extension=mysqli」がありますが、この部分のコメント(;)を除いてapacheを再起動します。そしてphpinfo()で確認すると「mysqli」がロードされたことを知ることができます。一応、phpからデータ取得するソースを実装するため、データベースにデータを挿入しましょう。データを作成しました。上のデータをphpからデータを取得しましょう。phpからデータベースを接続するようにはmysqli_connectでコネクションを作ります。データベースコネクションはioのコネクションみたいにリソースなので最後には必ずリソース返却(close)しなければならないです。コネクションを作った後、データベースを選択します。クエリでは「use データベース」と同じです。そして「mysqli_query」関数でクエリを送るし結果を受け取ります。この例ではmysqli_fetch_assoc関数を使っていますが、mysqli_fetch_rowでも受け取ることが出来ます。これは一般配列か、連関配列かの差ですが、mysqli_fetch_rowで一般配列(数字で探索)で結果を受け取られるし、mysqli_fetch_assocはカラム名のキーで連関配列で結果を受け取られます。phpでは連関配列でも一般配列みたいに数字でデータを取得することがで]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [PHP] データベース(mariaDB)を連結して使う方法</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(23)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(127)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(14)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[PHP] データベース(mariaDB)を連結して使う方法</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0205">Study / PHP</a>    作成日付 : 2020/01/24 03:00:00   修正日付 : 2020/01/24 03:00:00
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>ウェブサービスを開発すると思ったら当たり前にデータベースも使います。もちろん、データを必ずデータベースを使うことではなく、バイナリやエクセルなどでもデータを管理してウェブサービスを立ち上げられます。</p> 
+  <p>でも、データベースよりデータ管理しやすいものでは無いので、データベースをほとんど使うと思います。</p> 
+  <p><br></p> 
+  <p>データベースの種類としてはOracleやSql server(MsSql)、mysql、postgreなど様々な種類がありますが、ここではmariaDB(mysql)を使います。</p> 
+  <p>Mysqlのインストールは省略します。</p> 
+  <p>link - <a href="https://www.nowonbun.com/109.html" target="_blank">[Ubuntu] MariaDB(Mysql)をインストールする方法</a></p> 
+  <p>link - <a href="https://www.nowonbun.com/106.html" target="_blank">[CentOS] MariaDB(Mysql)をインストール</a></p> 
+  <p>link - <a href="https://mariadb.org/" target="_blank">Window用ダウンロード</a></p> 
+  <p><br></p> 
+  <p>sqlクエリは各キーワードは差がありますが、概念は同じです。</p> 
+  <p>PHPでデータベースを使うようにはphp.iniを修正しなければならないです。</p> 
+  <p style="text-align:left;"><img src="./contents/150/804_001.png" data-filename="001.png" style="width: 431px;"><br></p> 
+  <p>php.iniの中で「extension=mysqli」がありますが、この部分のコメント(;)を除いてapacheを再起動します。</p> 
+  <p>そしてphpinfo()で確認すると「mysqli」がロードされたことを知ることができます。</p> 
+  <p style="text-align:left;"><img src="./contents/150/807_002.png" data-filename="002.png" style="width: 848px;"><br></p> 
+  <p>一応、PHPからデータ取得するソースを実装するため、データベースにデータを挿入しましょう。</p> 
+  <pre><code class="sql" data-type="test.sql">create database blogTest;
+use blogTest;
+create table testTable (
+  idx int auto_increment primary key,
+  data varchar(255)
+)
+
+insert into testTable (data) values ('TEST1');
+insert into testTable (data) values ('TEST2');
+insert into testTable (data) values ('TEST3');
+insert into testTable (data) values ('TEST4');
+
+select * from testTable;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/150/806_003.png" data-filename="003.png" style="width: 473px;"><br></p> 
+  <p>データを作成しました。上のデータをPHPからデータを取得しましょう。</p> 
+  <pre><code class="php" data-type="index.php">&lt;?php
+  // データベースから受取るデータをオブジェクトするクラス
+  class Node {
+    private $idx;
+    private $data;
+    // 割当て(new)する時に「idx」と「data」のデータを入れる。
+    public function __construct($idx, $data) {
+      $this-&gt;idx = $idx;
+      $this-&gt;data = $data;
+    }
+    // idxを取得するプロパティ
+    public function getIdx() {
+      return $this-&gt;idx;
+    }
+    // dataを取得するプロパティ
+    public function getData() {
+      return $this-&gt;data;
+    }
+  }
+
+  // データベース情報
+  $hostname = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "blogTest";
+
+  $rslt = array();
+
+  // mysqlを接続する。
+  $conn = mysqli_connect($hostname, $username, $password, $dbname);
+  try {
+    // データベースを選択する。
+    mysqli_select_db($conn,$dbname);
+    // クエリを送って結果を取得する。
+    $rs = mysqli_query($conn,"select * from testTable");
+    // 結果はiteratorタイプで受け取る。
+    while($rst = mysqli_fetch_assoc($rs)){
+      // クラスを生成してデータを入れて、リストに入れる。
+      array_push($rslt, new Node($rst["idx"], $rst["data"]));
+    }
+  } catch ( Exception $e ) {
+    die ( $e );
+  } finally {
+    mysqli_close($conn);
+  }
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;?php 
+      // リストからデータを出力する。
+      foreach($rslt as $value) {
+        echo $value;
+        echo "&lt;br /&gt;";
+      }
+    ?&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/150/805_004.png" data-filename="004.png" style="width: 508px;"><br></p> 
+  <p>PHPからデータベースを接続するようにはmysqli_connectでコネクションを作ります。データベースコネクションはIOのコネクションみたいにリソースなので最後には必ずリソース返却(close)しなければならないです。</p> 
+  <p>コネクションを作った後、データベースを選択します。クエリでは「use データベース」と同じです。</p> 
+  <p>そして「mysqli_query」関数でクエリを送るし結果を受け取ります。</p> 
+  <p><br></p> 
+  <p>この例ではmysqli_fetch_assoc関数を使っていますが、mysqli_fetch_rowでも受け取ることが出来ます。</p> 
+  <p>これは一般配列か、連関配列かの差ですが、mysqli_fetch_rowで一般配列(数字で探索)で結果を受け取られるし、mysqli_fetch_assocはカラム名のキーで連関配列で結果を受け取られます。</p> 
+  <p><br></p> 
+  <p>PHPでは連関配列でも一般配列みたいに数字でデータを取得することができるので、両方使える条件ならmysqli_fetch_rowよりmysqli_fetch_assocがいいじゃないかと思われます。</p> 
+  <p><br></p> 
+  <p>sqlコネクションはリソースなのでclose関数でリソースしなければならないです。</p> 
+  <p><br></p> 
+  <p>link - <a href="https://www.php.net/manual/en/function.mysqli-connect.php" target="_blank">https://www.php.net/manual/en/function.mysqli-connect.php</a></p> 
+  <p>link - <a href="https://www.php.net/manual/en/mysqli.select-db.php" target="_blank">https://www.php.net/manual/en/mysqli.select-db.php</a></p> 
+  <p>link - <a href="https://www.php.net/manual/en/mysqli.query.php" target="_blank">https://www.php.net/manual/en/mysqli.query.php</a></p> 
+  <p>link - <a href="https://www.php.net/manual/en/mysqli-result.fetch-assoc.php" target="_blank">https://www.php.net/manual/en/mysqli-result.fetch-assoc.php</a></p> 
+  <p>link - <a href="https://www.php.net/manual/en/mysqli.close.php" target="_blank">https://www.php.net/manual/en/mysqli.close.php</a></p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=php>#php</a>,<a href=./search.html?query=mariadb>#mariadb</a>,<a href=./search.html?query=db+connector>#db connector</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0205">Study / PHP</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/150.html'>[PHP] データベース(mariaDB)を連結して使う方法</a><span>2020/01/24 03:00:00</span></li><li><a href='https://www.nowonbun.com/149.html'>[PHP] IOに関して</a><span>2020/01/23 03:00:00</span></li><li><a href='https://www.nowonbun.com/148.html'>[PHP] requireとinclude、そして「@」の使用方法</a><span>2020/01/22 03:00:00</span></li><li><a href='https://www.nowonbun.com/147.html'>[PHP] Fatal及びNotice,、Warningメッセージ処理する方法</a><span>2020/01/19 03:00:00</span></li><li><a href='https://www.nowonbun.com/146.html'>[PHP] xDebug設定する方法</a><span>2020/01/18 03:00:00</span></li><li><a href='https://www.nowonbun.com/145.html'>[PHP] $_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())</a><span>2020/01/17 03:00:00</span></li><li><a href='https://www.nowonbun.com/144.html'>[PHP] データ確認関数(var_dump, debug_zval_dump, print_r)</a><span>2020/01/16 03:00:00</span></li><li><a href='https://www.nowonbun.com/143.html'>[PHP] 例外処理(try ~ catch ~ finally)</a><span>2020/01/15 03:00:00</span></li><li><a href='https://www.nowonbun.com/142.html'>[PHP] 配列とリスト(list)</a><span>2020/01/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/141.html'>[PHP] インタフェースと抽象クラス、クラス継承、parent、this</a><span>2020/01/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/140.html'>[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a><span>2020/01/09 23:35:27</span></li><li><a href='https://www.nowonbun.com/139.html'>[PHP] 基本ページ作成方法と変数使用方法</a><span>2020/01/06 23:44:20</span></li><li><a href='https://www.nowonbun.com/138.html'>[PHP] Composer設定</a><span>2019/12/27 08:49:09</span></li><li><a href='https://www.nowonbun.com/137.html'>[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a><span>2019/12/26 07:36:47</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/150.html'>[PHP] データベース(mariaDB)を連結して使う方法</a><span>2020/01/24 03:00:00</span></li><li><a href='https://www.nowonbun.com/149.html'>[PHP] IOに関して</a><span>2020/01/23 03:00:00</span></li><li><a href='https://www.nowonbun.com/148.html'>[PHP] requireとinclude、そして「@」の使用方法</a><span>2020/01/22 03:00:00</span></li><li><a href='https://www.nowonbun.com/147.html'>[PHP] Fatal及びNotice,、Warningメッセージ処理する方法</a><span>2020/01/19 03:00:00</span></li><li><a href='https://www.nowonbun.com/146.html'>[PHP] xDebug設定する方法</a><span>2020/01/18 03:00:00</span></li><li><a href='https://www.nowonbun.com/145.html'>[PHP] $_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())</a><span>2020/01/17 03:00:00</span></li><li><a href='https://www.nowonbun.com/144.html'>[PHP] データ確認関数(var_dump, debug_zval_dump, print_r)</a><span>2020/01/16 03:00:00</span></li><li><a href='https://www.nowonbun.com/143.html'>[PHP] 例外処理(try ~ catch ~ finally)</a><span>2020/01/15 03:00:00</span></li><li><a href='https://www.nowonbun.com/142.html'>[PHP] 配列とリスト(list)</a><span>2020/01/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/141.html'>[PHP] インタフェースと抽象クラス、クラス継承、parent、this</a><span>2020/01/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/140.html'>[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a><span>2020/01/09 23:35:27</span></li><li><a href='https://www.nowonbun.com/139.html'>[PHP] 基本ページ作成方法と変数使用方法</a><span>2020/01/06 23:44:20</span></li><li><a href='https://www.nowonbun.com/138.html'>[PHP] Composer設定</a><span>2019/12/27 08:49:09</span></li><li><a href='https://www.nowonbun.com/137.html'>[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a><span>2019/12/26 07:36:47</span></li><li><a href='https://www.nowonbun.com/136.html'>[CSS] ブラウザから開発する方法 (developer mode)</a><span>2019/12/25 07:54:31</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/150.html';this.page.identifier = 'NOWONBUN00150';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
