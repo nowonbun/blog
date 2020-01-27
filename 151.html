@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / PHP" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。前述まではブラウザでphpファイルを接続しようと思ったら「ホスト名+ファイル名」で接続しました。つまり「index.php」ファイルを作成したら「http://localhost/index.php」で接続しました。そのままにウェブサービスを開始しても問題ないですが、phpファイルでクラスだけあるファイルなら空ページが見えるし、ウェブサービス側のディレクトリが漏れるのでセキュリティに考えては良くないです。そうしたら直接にファイルを接続する方法ではなく、c#のmvcみたいにアドレスのディレクトリだけでphpを接続できるような設定ファイルがありますが、それが分散設定ファイル(.htaccess)です。link - https://httpd.apache.org/docs/2.4/en/howto/htaccess.html先に分散設定ファイルを使うように「.htaccess」の構造に関してしらべましょう。上のイメージみたいにファイル名はなしで拡張子だけ「.htaccess」に生成しましょう。options -multiviewsこのオプションはrequestデフォルト要請設定と関係があります。要請urlがルート(root)、つまり「ホスト名/」で要請すると「index.php」や「index.html」を探す機能です。そのデフォルトページは「httpd.conf」に設定しています。「options +multiviews」にすると当該な機能が設定されますが、「options -multiviews」にするとデフォルトページを探さないです。rewritebase /rewritebaseはサーバのルート(root)ディレクトリを設定することです。基本的に「httpd.conf」で設定されている「documentroot」でルートに設定されていますが、フレームワークによって下位ディレクトリに設定する場合に設定することです。上の例では詳細していますが、詳細した場合は「httpd.conf」に設定しているままで動きます。rewriteengine onrewriteengine onは既存のurlパス構造を再構成してurlからデータを受取ることです。例で「localhost/index.php?idx=1」のurl要請があります。index.phpページにget方式のidxパラメータに1を入れ]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [PHP] 分散設定ファイル(.htaccess) 使用方法" />
+<link rel="canonical" href="https://www.nowonbun.com/151.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [PHP] 分散設定ファイル(.htaccess) 使用方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。前述まではブラウザでphpファイルを接続しようと思ったら「ホスト名+ファイル名」で接続しました。つまり「index.php」ファイルを作成したら「http://localhost/index.php」で接続しました。そのままにウェブサービスを開始しても問題ないですが、phpファイルでクラスだけあるファイルなら空ページが見えるし、ウェブサービス側のディレクトリが漏れるのでセキュリティに考えては良くないです。そうしたら直接にファイルを接続する方法ではなく、c#のmvcみたいにアドレスのディレクトリだけでphpを接続できるような設定ファイルがありますが、それが分散設定ファイル(.htaccess)です。link - https://httpd.apache.org/docs/2.4/en/howto/htaccess.html先に分散設定ファイルを使うように「.htaccess」の構造に関してしらべましょう。上のイメージみたいにファイル名はなしで拡張子だけ「.htaccess」に生成しましょう。options -multiviewsこのオプションはrequestデフォルト要請設定と関係があります。要請urlがルート(root)、つまり「ホスト名/」で要請すると「index.php」や「index.html」を探す機能です。そのデフォルトページは「httpd.conf」に設定しています。「options +multiviews」にすると当該な機能が設定されますが、「options -multiviews」にするとデフォルトページを探さないです。rewritebase /rewritebaseはサーバのルート(root)ディレクトリを設定することです。基本的に「httpd.conf」で設定されている「documentroot」でルートに設定されていますが、フレームワークによって下位ディレクトリに設定する場合に設定することです。上の例では詳細していますが、詳細した場合は「httpd.conf」に設定しているままで動きます。rewriteengine onrewriteengine onは既存のurlパス構造を再構成してurlからデータを受取ることです。例で「localhost/index.php?idx=1」のurl要請があります。index.phpページにget方式のidxパラメータに1を入れ]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/151.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [PHP] 分散設定ファイル(.htaccess) 使用方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。前述まではブラウザでphpファイルを接続しようと思ったら「ホスト名+ファイル名」で接続しました。つまり「index.php」ファイルを作成したら「http://localhost/index.php」で接続しました。そのままにウェブサービスを開始しても問題ないですが、phpファイルでクラスだけあるファイルなら空ページが見えるし、ウェブサービス側のディレクトリが漏れるのでセキュリティに考えては良くないです。そうしたら直接にファイルを接続する方法ではなく、c#のmvcみたいにアドレスのディレクトリだけでphpを接続できるような設定ファイルがありますが、それが分散設定ファイル(.htaccess)です。link - https://httpd.apache.org/docs/2.4/en/howto/htaccess.html先に分散設定ファイルを使うように「.htaccess」の構造に関してしらべましょう。上のイメージみたいにファイル名はなしで拡張子だけ「.htaccess」に生成しましょう。options -multiviewsこのオプションはrequestデフォルト要請設定と関係があります。要請urlがルート(root)、つまり「ホスト名/」で要請すると「index.php」や「index.html」を探す機能です。そのデフォルトページは「httpd.conf」に設定しています。「options +multiviews」にすると当該な機能が設定されますが、「options -multiviews」にするとデフォルトページを探さないです。rewritebase /rewritebaseはサーバのルート(root)ディレクトリを設定することです。基本的に「httpd.conf」で設定されている「documentroot」でルートに設定されていますが、フレームワークによって下位ディレクトリに設定する場合に設定することです。上の例では詳細していますが、詳細した場合は「httpd.conf」に設定しているままで動きます。rewriteengine onrewriteengine onは既存のurlパス構造を再構成してurlからデータを受取ることです。例で「localhost/index.php?idx=1」のurl要請があります。index.phpページにget方式のidxパラメータに1を入れ]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [PHP] 分散設定ファイル(.htaccess) 使用方法</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(23)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(128)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(15)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[PHP] 分散設定ファイル(.htaccess) 使用方法</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0205">Study / PHP</a>    作成日付 : 2020/01/28 03:00:00   修正日付 : 2020/01/28 03:00:00
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>前述まではブラウザでPHPファイルを接続しようと思ったら「ホスト名+ファイル名」で接続しました。つまり「index.php」ファイルを作成したら「http://localhost/index.php」で接続しました。</p> 
+  <p>そのままにウェブサービスを開始しても問題ないですが、PHPファイルでクラスだけあるファイルなら空ページが見えるし、ウェブサービス側のディレクトリが漏れるのでセキュリティに考えては良くないです。</p> 
+  <p>そうしたら直接にファイルを接続する方法ではなく、C#のMVCみたいにアドレスのディレクトリだけでphpを接続できるような設定ファイルがありますが、それが分散設定ファイル(.htaccess)です。</p> 
+  <p>link - <a href="https://httpd.apache.org/docs/2.4/en/howto/htaccess.html" target="_blank">https://httpd.apache.org/docs/2.4/en/howto/htaccess.html</a></p> 
+  <p><br></p> 
+  <p>先に分散設定ファイルを使うように「.htaccess」の構造に関してしらべましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/151/808_001.png" data-filename="001.png" style="width: 400px;"><br></p> 
+  <p>上のイメージみたいにファイル名はなしで拡張子だけ「.htaccess」に生成しましょう。</p> 
+  <pre><code class="conf" data-type=".htaccess"># デフォルトのindexファイル設定(基本index.php)
+Options -MultiViews
+# アドレス再定義可否
+RewriteEngine On
+# ディレクトリ公開可否
+Options -Indexes
+# Rewriteフィルタ
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_URI} !(.js$)
+RewriteCond %{REQUEST_URI} !(.css$)
+RewriteCond %{REQUEST_URI} !(.ico$)
+# アドレスURL再定義ルール
+RewriteRule ^(.*)$ Index.php?htaccess=$1 [QSA,L]
+</code></pre> 
+  <h2><b><span>Options -MultiViews</span></b></h2> 
+  <p>このオプションはrequestデフォルト要請設定と関係があります。要請URLがルート(root)、つまり「ホスト名/」で要請すると「index.php」や「index.html」を探す機能です。</p> 
+  <p>そのデフォルトページは「httpd.conf」に設定しています。</p> 
+  <p>「Options +MultiViews」にすると当該な機能が設定されますが、「Options -MultiViews」にするとデフォルトページを探さないです。</p> 
+  <p><br></p> 
+  <h2><b><span>RewriteBase /</span></b></h2> 
+  <p>RewriteBaseはサーバのルート(root)ディレクトリを設定することです。</p> 
+  <p>基本的に「httpd.conf」で設定されている「DocumentRoot」でルートに設定されていますが、フレームワークによって下位ディレクトリに設定する場合に設定することです。</p> 
+  <p>上の例では詳細していますが、詳細した場合は「httpd.conf」に設定しているままで動きます。</p> 
+  <p><br></p> 
+  <h2><b><span>RewriteEngine On</span></b></h2> 
+  <p>RewriteEngine Onは既存のurlパス構造を再構成してurlからデータを受取ることです。</p> 
+  <p>例で「localhost/index.php?idx=1」のURL要請があります。</p> 
+  <p>index.phpページにGET方式のidxパラメータに1を入れるという意味です。</p> 
+  <p>でも、RewriteEngine On設定すれば「index.php」が「index.php」のページを開く意味ではなく、RewriteRuleによって意味が変わります。</p> 
+  <p><br></p> 
+  <h2><b><span>Options -Indexes</span></b></h2> 
+  <p>Options -Indexesの場合は要請ページがなければディレクト構造を見えるように設定することです。</p> 
+  <p>このオプションが省略するか「Options +Indexes」に設定した場合に要請ページがないとディレクト構造が見えます。</p> 
+  <p style="text-align:left;"><img src="./contents/151/810_002.png" data-filename="002.png" style="width: 398px;"><br></p> 
+  <p>imageフォルダにno_photo.pngファイルを入れてブラウザで「localhost/image」を接続すると下記の結果になります。</p> 
+  <p style="text-align:left;">##003##</p> 
+  <p><br></p> 
+  <h2><b><span>RewriteCond</span></b></h2> 
+  <p>RewriteCondは下のRewriteRuleのURL再設定になるようなフィルタの役です。</p> 
+  <p>つまり、「.htaccess」ファイルで上から下の方向で処理しますが、RewriteCondの結果がTrueになると「RewriteRule」で反映するし、Falseになると再設定なしで、URLアドレスままで読み込むことです。</p> 
+  <p><br></p> 
+  <p>例えば、すべてのURLのはRewriteRuleによって再設定するが、「phpinfo.php」ファイルだけ「RewriteRule」を再設定しなずに、そのまま「localhost/phpinfo.php」にしたいと思うと下記とおりに設定になります。</p> 
+  <pre><code class="conf" data-type=".htaccess">Options -MultiViews
+RewriteEngine On
+Options -Indexes
+# urlで正規表現と一致(phpinfo.phpで終わる場合)すると不正マークでFalseになる。
+RewriteCond %{REQUEST_URI} !(phpinfo.php$)
+RewriteRule ^(.*)$ index.php?htaccess=$1 [QSA,L]
+</code></pre> 
+  <p>RewriteCondのパラメタはサーバ変数、正規表現になります。</p> 
+  <p>使用可能なサーバ変数は下記のApacheマニュアルを参照してください。</p> 
+  <p>link - <a href="https://httpd.apache.org/docs/current/mod/mod_rewrite.html#RewriteCond" target="_blank">http://httpd.apache.org/docs/current/mod/mod_rewrite.html#RewriteCond</a></p> 
+  <p>様々な変数がありますが、筆者もすべて使ったことがありません。普通は「REQUEST_FILENAME」と「REQUEST_URL」が全てです。</p> 
+  <p><br></p> 
+  <p>REQUEST_URIの場合は要請されたURLのアドレス構成要素(例：/index.html)でGETの方法のQuery Stringは省略されます。</p> 
+  <p>つまり、「localhost/test.php?data=123」で要請されると「/test.php」に表示されます。</p> 
+  <p><br></p> 
+  <p>REQUEST_FILENAMEの場合は要請したURLと一致するファイルのパス及びスクリプトの全体ローカルパスです。</p> 
+  <p>REQUEST_FILENAMEの場合は検査式で正規表現ではなく、「-d」、「-f」、「-l」で表現しますが、「-d」はディレクトリ、「-f」はファイルの意味になります。</p> 
+  <p>上の例で「REQUEST_URI」でphpinfo.phpをフィルタしましたが、「RewriteCond %{REQUEST_FILENAME} !-f」でオプションを追加すると「phpinfo.php」ファイルが存在する場合にFalseになります。</p> 
+  <p>でも、この場合は特定なphpファイルだけではなく、すべてのphpファイルがフィルタに対象なので、少し意味が違いますね。</p> 
+  <p><br></p> 
+  <h2><b><span>RewriteRule</span></b></h2> 
+  <p>RewriteRuleとは分散設定ファイルで一番重要な要請URLを最高性することです。</p> 
+  <p>例えば、「localhost/123」ということで要請されると「localhost/index.php?index=123」みたいに要請ルールを変更することです。</p> 
+  <p>再構成しよう正規表現のパターンで分けるパターンの値が$1,$2,$3でデータが分けます。</p> 
+  <p>例えば、「^/([0-9]{4})([0-9]{2})/(.*)$」の式で作成すると「$1」は「([0-9]{4})」の「0かる9のデータで４桁」、「$2」は「([0-9]{2})」の「０から9のデータで2桁」、「$3」すべての文字列の設定になります。</p> 
+  <p><br></p> 
+  <p>後、「QSA,L」を付ける意味ではパラメタの変換ルールですが、?data=123のQuery Stringがある場合に「htaccess=test&amp;data=123」に変更することです。</p> 
+  <p><br></p> 
+  <p>上の設定を反映するようにはhttpd.confでmod_rewrite.soのモジュールを追加しなければならないです。</p> 
+  <p style="text-align:left;"><img src="./contents/151/811_004.png" data-filename="004.png" style="width: 746px;"><br></p> 
+  <p>その後、DocumentRootの権限でAllowOverrideをNoneからALLに修正します。</p> 
+  <p style="text-align:left;"><img src="./contents/151/812_005.png" data-filename="005.png" style="width: 848px;"><br></p> 
+  <p><br></p> 
+  <p>DocumentRootフォルダに「.htaccess」ファイルを作成しましょう。</p> 
+  <pre><code class="conf" data-type=".htaccess"># デフォルトフィアル検索機能をOFF
+Options -MultiViews
+# URL Rewriteエンジン起動
+RewriteEngine On
+# ファイルディレクトリ探索機能をOFF
+Options -Indexes
+# URLの「.js」、「.css」、「.ico」ファイルで終わる場合RewriteRuleに反映しない。
+RewriteCond %{REQUEST_URI} !(.js$)
+RewriteCond %{REQUEST_URI} !(.css$)
+RewriteCond %{REQUEST_URI} !(.ico$)
+RewriteRule ^(.*)$ index.php?htaccess=$1 [QSA,L]
+</code></pre> 
+  <p>サブフォルダ(image)に「.htaccess」ファイルを作成しましょう。</p> 
+  <pre><code class="conf" data-type=".htaccess">Options -MultiViews
+Options -Indexes
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+</code></pre> 
+  <p>.htaccessのファイルはフォルダ別で設定ができますが、rootに「.htaccess」ファイルがあっても上の「image」フォルダに「.htaccess」にいれると「localhost/image/...」には分散設定が再設定になります。</p> 
+  <p>つまり、Javascript(js)やスタイルシート(css)、イメージなどはディレクトリを生成して「.htaccess」を別に作成して設定すると「html」の中で設定される「link」を使うことができます。</p> 
+  <p>そして「index.php」で「.htaccess」を設定を確認しましょう。</p> 
+  <pre><code class="html" data-type="index.php">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- URLのパスがhtaccessのパラメータに変換する。 --&gt;
+  parameter = &lt;?=$_GET["htaccess"]?&gt;
+  &lt;!-- imageフォルダのno_photo.pngファイルを読み込む。 --&gt;
+  &lt;img src="/image/no_photo.png"&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/151/814_006.png" data-filename="006.png" style="width: 652px;"><br></p> 
+  <p>上の例は私が「localhost/helloworld」で接続しました。内部で「index.php/htaccess=helloworld」に変換されます。</p> 
+  <p>imageフォルダの場合は「image/.htaccess」によってファイルを読み込みました。「index.php?htaccess=image/no_photo.php」に呼ばれなかったです。</p> 
+  <p>その理由は「image」フォルダの「.htaccess」が反映されたからです。</p> 
+  <p style="text-align:left;"><img src="./contents/151/813_007.png" data-filename="007.png" style="width: 654px;"><br></p> 
+  <p>上の例は私が「localhost/data.php」で接続したことです。parameterが「data.php」に変換したことを確認できますね。</p> 
+  <p>link - <a href="https://httpd.apache.org/docs/2.2/en/howto/htaccess.html" target="_blank">https://httpd.apache.org/docs/2.2/en/howto/htaccess.html</a></p> 
+  <p>link - <a href="https://stackoverflow.com/questions/15850845/request-exceeded-the-limit-of-10-internal-redirects-due-to-probable-configuratio" target="_blank">https://stackoverflow.com/questions/15850845</a></p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=php>#php</a>,<a href=./search.html?query=.htaccess>#.htaccess</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0205">Study / PHP</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/151.html'>[PHP] 分散設定ファイル(.htaccess) 使用方法</a><span>2020/01/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/150.html'>[PHP] データベース(mariaDB)を連結して使う方法</a><span>2020/01/24 03:00:00</span></li><li><a href='https://www.nowonbun.com/149.html'>[PHP] IOに関して</a><span>2020/01/23 03:00:00</span></li><li><a href='https://www.nowonbun.com/148.html'>[PHP] requireとinclude、そして「@」の使用方法</a><span>2020/01/22 03:00:00</span></li><li><a href='https://www.nowonbun.com/147.html'>[PHP] Fatal及びNotice,、Warningメッセージ処理する方法</a><span>2020/01/19 03:00:00</span></li><li><a href='https://www.nowonbun.com/146.html'>[PHP] xDebug設定する方法</a><span>2020/01/18 03:00:00</span></li><li><a href='https://www.nowonbun.com/145.html'>[PHP] $_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())</a><span>2020/01/17 03:00:00</span></li><li><a href='https://www.nowonbun.com/144.html'>[PHP] データ確認関数(var_dump, debug_zval_dump, print_r)</a><span>2020/01/16 03:00:00</span></li><li><a href='https://www.nowonbun.com/143.html'>[PHP] 例外処理(try ~ catch ~ finally)</a><span>2020/01/15 03:00:00</span></li><li><a href='https://www.nowonbun.com/142.html'>[PHP] 配列とリスト(list)</a><span>2020/01/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/141.html'>[PHP] インタフェースと抽象クラス、クラス継承、parent、this</a><span>2020/01/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/140.html'>[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a><span>2020/01/09 23:35:27</span></li><li><a href='https://www.nowonbun.com/139.html'>[PHP] 基本ページ作成方法と変数使用方法</a><span>2020/01/06 23:44:20</span></li><li><a href='https://www.nowonbun.com/138.html'>[PHP] Composer設定</a><span>2019/12/27 08:49:09</span></li><li><a href='https://www.nowonbun.com/137.html'>[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a><span>2019/12/26 07:36:47</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/151.html'>[PHP] 分散設定ファイル(.htaccess) 使用方法</a><span>2020/01/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/150.html'>[PHP] データベース(mariaDB)を連結して使う方法</a><span>2020/01/24 03:00:00</span></li><li><a href='https://www.nowonbun.com/149.html'>[PHP] IOに関して</a><span>2020/01/23 03:00:00</span></li><li><a href='https://www.nowonbun.com/148.html'>[PHP] requireとinclude、そして「@」の使用方法</a><span>2020/01/22 03:00:00</span></li><li><a href='https://www.nowonbun.com/147.html'>[PHP] Fatal及びNotice,、Warningメッセージ処理する方法</a><span>2020/01/19 03:00:00</span></li><li><a href='https://www.nowonbun.com/146.html'>[PHP] xDebug設定する方法</a><span>2020/01/18 03:00:00</span></li><li><a href='https://www.nowonbun.com/145.html'>[PHP] $_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())</a><span>2020/01/17 03:00:00</span></li><li><a href='https://www.nowonbun.com/144.html'>[PHP] データ確認関数(var_dump, debug_zval_dump, print_r)</a><span>2020/01/16 03:00:00</span></li><li><a href='https://www.nowonbun.com/143.html'>[PHP] 例外処理(try ~ catch ~ finally)</a><span>2020/01/15 03:00:00</span></li><li><a href='https://www.nowonbun.com/142.html'>[PHP] 配列とリスト(list)</a><span>2020/01/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/141.html'>[PHP] インタフェースと抽象クラス、クラス継承、parent、this</a><span>2020/01/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/140.html'>[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a><span>2020/01/09 23:35:27</span></li><li><a href='https://www.nowonbun.com/139.html'>[PHP] 基本ページ作成方法と変数使用方法</a><span>2020/01/06 23:44:20</span></li><li><a href='https://www.nowonbun.com/138.html'>[PHP] Composer設定</a><span>2019/12/27 08:49:09</span></li><li><a href='https://www.nowonbun.com/137.html'>[PHP] PHP 開発環境設定とEclipse(IDE)の設定</a><span>2019/12/26 07:36:47</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/151.html';this.page.identifier = 'NOWONBUN00151';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
