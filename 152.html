@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / PHP" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。前述でphpでエラーメッセージを処理する方法に関して説明したことがあります。link - [php] fatal及びnotice,、warningメッセージ処理する方法プログラムを開発する時にはこのエラーメッセージは重要です。エラーメッセージを見て間違ったことを修正するし、予想以外が発生することを確認しなければならないです。でも、本番のサービスは違います。実際にインタネット上でエラーが発生することだと思えばログではエラーを残るけれども、画面上ではみえないようにしなければならないです。一番、いい条件は初めからエラーが発生しないことがよいですが、全てのユーザの行動パターンを予測できないし作業者のミスや様々な条件で、エラーが必ず発生します。なので、本番でエラーメッセージが見えることは実際にエラーメッセージでシステム情報や見えたらためな情報が見える可能性もあるし、ユーザがみて完成になれなかったことで見えるのでユーザによってサイトの信頼感が落ちることになります。サイト内でエラーが発生するとエラーページに遷移しなければならないですが、その設定を「.htaccess」で設定可能です。link - [php] 分散設定ファイル(.htaccess) 使用方法link - httpステータスコード(エラーコードをみながらみると理解しやすいです。)上のエラーは我々がよく知っている「404」エラーに関して対応しました。404エラーはウェブページで当該なページが無い場合に発生することです。先「.htaccess」をみれば「404」エラーが発生すると「/error?code=404」にrewriteします。また、rewriteruleによって「index.php?htaccess=error&amp;amp;code=404」に変換して遷移します。index.phpの中でエラーがある場合にエラーコードによってページを読み込んで画面に掲示します。imageフォルダ中で実際に「test」ファイルは存在しません。なので「404」エラーが発生します。上の例はサーバ上でエラーが発生したことで、ソース内部でエラーが発生する時の処理です。上の例はパラメータがnullかどうかでエラーが表示されるように実装しました。上の結果はdataのパラメータに「1」というデータを入れるとhttp statusが200になりますね。200は]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [PHP] エラーページ処理方法(追加: ob_cleanとdie関数使用方法)" />
+<link rel="canonical" href="https://www.nowonbun.com/152.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [PHP] エラーページ処理方法(追加: ob_cleanとdie関数使用方法)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。前述でphpでエラーメッセージを処理する方法に関して説明したことがあります。link - [php] fatal及びnotice,、warningメッセージ処理する方法プログラムを開発する時にはこのエラーメッセージは重要です。エラーメッセージを見て間違ったことを修正するし、予想以外が発生することを確認しなければならないです。でも、本番のサービスは違います。実際にインタネット上でエラーが発生することだと思えばログではエラーを残るけれども、画面上ではみえないようにしなければならないです。一番、いい条件は初めからエラーが発生しないことがよいですが、全てのユーザの行動パターンを予測できないし作業者のミスや様々な条件で、エラーが必ず発生します。なので、本番でエラーメッセージが見えることは実際にエラーメッセージでシステム情報や見えたらためな情報が見える可能性もあるし、ユーザがみて完成になれなかったことで見えるのでユーザによってサイトの信頼感が落ちることになります。サイト内でエラーが発生するとエラーページに遷移しなければならないですが、その設定を「.htaccess」で設定可能です。link - [php] 分散設定ファイル(.htaccess) 使用方法link - httpステータスコード(エラーコードをみながらみると理解しやすいです。)上のエラーは我々がよく知っている「404」エラーに関して対応しました。404エラーはウェブページで当該なページが無い場合に発生することです。先「.htaccess」をみれば「404」エラーが発生すると「/error?code=404」にrewriteします。また、rewriteruleによって「index.php?htaccess=error&amp;amp;code=404」に変換して遷移します。index.phpの中でエラーがある場合にエラーコードによってページを読み込んで画面に掲示します。imageフォルダ中で実際に「test」ファイルは存在しません。なので「404」エラーが発生します。上の例はサーバ上でエラーが発生したことで、ソース内部でエラーが発生する時の処理です。上の例はパラメータがnullかどうかでエラーが表示されるように実装しました。上の結果はdataのパラメータに「1」というデータを入れるとhttp statusが200になりますね。200は]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/152.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [PHP] エラーページ処理方法(追加: ob_cleanとdie関数使用方法)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。前述でphpでエラーメッセージを処理する方法に関して説明したことがあります。link - [php] fatal及びnotice,、warningメッセージ処理する方法プログラムを開発する時にはこのエラーメッセージは重要です。エラーメッセージを見て間違ったことを修正するし、予想以外が発生することを確認しなければならないです。でも、本番のサービスは違います。実際にインタネット上でエラーが発生することだと思えばログではエラーを残るけれども、画面上ではみえないようにしなければならないです。一番、いい条件は初めからエラーが発生しないことがよいですが、全てのユーザの行動パターンを予測できないし作業者のミスや様々な条件で、エラーが必ず発生します。なので、本番でエラーメッセージが見えることは実際にエラーメッセージでシステム情報や見えたらためな情報が見える可能性もあるし、ユーザがみて完成になれなかったことで見えるのでユーザによってサイトの信頼感が落ちることになります。サイト内でエラーが発生するとエラーページに遷移しなければならないですが、その設定を「.htaccess」で設定可能です。link - [php] 分散設定ファイル(.htaccess) 使用方法link - httpステータスコード(エラーコードをみながらみると理解しやすいです。)上のエラーは我々がよく知っている「404」エラーに関して対応しました。404エラーはウェブページで当該なページが無い場合に発生することです。先「.htaccess」をみれば「404」エラーが発生すると「/error?code=404」にrewriteします。また、rewriteruleによって「index.php?htaccess=error&amp;amp;code=404」に変換して遷移します。index.phpの中でエラーがある場合にエラーコードによってページを読み込んで画面に掲示します。imageフォルダ中で実際に「test」ファイルは存在しません。なので「404」エラーが発生します。上の例はサーバ上でエラーが発生したことで、ソース内部でエラーが発生する時の処理です。上の例はパラメータがnullかどうかでエラーが表示されるように実装しました。上の結果はdataのパラメータに「1」というデータを入れるとhttp statusが200になりますね。200は]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [PHP] エラーページ処理方法(追加: ob_cleanとdie関数使用方法)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(23)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(129)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(16)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[PHP] エラーページ処理方法(追加: ob_cleanとdie関数使用方法)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0205">Study / PHP</a>    作成日付 : 2020/01/29 03:00:00   修正日付 : 2020/01/29 03:00:00
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>前述でPHPでエラーメッセージを処理する方法に関して説明したことがあります。</p> 
+  <p>link - <a href="https://www.nowonbun.com/147.html" target="_blank">[PHP] Fatal及びNotice,、Warningメッセージ処理する方法</a></p> 
+  <p><br></p> 
+  <p>プログラムを開発する時にはこのエラーメッセージは重要です。エラーメッセージを見て間違ったことを修正するし、予想以外が発生することを確認しなければならないです。</p> 
+  <p>でも、本番のサービスは違います。実際にインタネット上でエラーが発生することだと思えばログではエラーを残るけれども、画面上ではみえないようにしなければならないです。</p> 
+  <p>一番、いい条件は初めからエラーが発生しないことがよいですが、全てのユーザの行動パターンを予測できないし作業者のミスや様々な条件で、エラーが必ず発生します。</p> 
+  <p><br></p> 
+  <p>なので、本番でエラーメッセージが見えることは実際にエラーメッセージでシステム情報や見えたらためな情報が見える可能性もあるし、ユーザがみて完成になれなかったことで見えるのでユーザによってサイトの信頼感が落ちることになります。</p> 
+  <p>サイト内でエラーが発生するとエラーページに遷移しなければならないですが、その設定を「.htaccess」で設定可能です。</p> 
+  <p>link - <a href="https://www.nowonbun.com/151.html" target="_blank">[PHP] 分散設定ファイル(.htaccess) 使用方法</a></p> 
+  <p>link - <a href="https://ja.wikipedia.org/wiki/HTTP%E3%82%B9%E3%83%86%E3%83%BC%E3%82%BF%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89" target="_blank">HTTPステータスコード</a></p> 
+  <p>(エラーコードをみながらみると理解しやすいです。)</p> 
+  <pre><code class="conf" data-type=".htaccess">Options -MultiViews
+RewriteEngine On
+Options -Indexes
+RewriteRule ^(.*)$ index.php?htaccess=$1 [QSA,L]
+
+# 404エラーが発生すると　/Error?code=404に遷移する。
+# RewriteRuleによってindex.php?htaccess=Error&amp;code=404に変換する。
+ErrorDocument 404 /Error?code=404
+</code></pre> 
+  <pre><code class="html" data-type="index.php">&lt;?php
+  // htaccessパラメータにERRORがあれば実行する。
+  if(strtoupper($_GET["htaccess"]) == "ERROR") {
+    // codeパラメータでエラーコードを取得する。
+    $code = $_GET["code"];
+    // codeパラメータがなければ$codeを404に設定する。
+    if(trim($code) == ""){
+      $code = "404";
+    }
+    // $code.phpつまり、404エラーの場合ｈ404.phpをインクルードする。
+    @include($_SERVER["DOCUMENT_ROOT"]."/".$code.".php");
+    // 実行を止まる。
+    die();
+  }
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  index.php
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <pre><code class="html" data-type="404.php">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  404 ERROR
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p>上のエラーは我々がよく知っている「404」エラーに関して対応しました。404エラーはウェブページで当該なページが無い場合に発生することです。</p> 
+  <p>先「.htaccess」をみれば「404」エラーが発生すると「/Error?code=404」にRewriteします。</p> 
+  <p>また、RewriteRuleによって「index.php?htaccess=Error&amp;code=404」に変換して遷移します。index.phpの中でエラーがある場合にエラーコードによってページを読み込んで画面に掲示します。</p> 
+  <p style="text-align:left;"><img src="./contents/152/817_001.png" data-filename="001.png" style="width: 848px;"><br></p> 
+  <p>imageフォルダ中で実際に「test」ファイルは存在しません。</p> 
+  <p style="text-align:left;"><img src="./contents/152/816_002.png" data-filename="002.png" style="width: 431px;"><br></p> 
+  <p>なので「404」エラーが発生します。</p> 
+  <p>上の例はサーバ上でエラーが発生したことで、ソース内部でエラーが発生する時の処理です。</p> 
+  <pre><code class="html" data-type="index.php">&lt;?php
+  // エラー関数呼出す。
+  function response_error($code) {
+    // response http statusを$codeによって呼出す。
+    http_response_code($code);
+    // 今まで、処理したhttp bodyバッファをクリアする。
+    ob_clean();
+    // $code.php、つまり404エラーの場合、404.phpを呼出す。
+    @include($_SERVER["DOCUMENT_ROOT"]."/".$code.".php");
+    // 実行を止まる。
+    die();
+  }
+  // GETパラメータにエラーがあれば下記の条件が実行する。
+  if(strtoupper($_GET["htaccess"]) == "ERROR"){
+    // パラメータcodeを取得する。
+    $code = $_GET["code"];
+    // パラメータcodeがなければ、$codeデータを404に設定する。
+    if(trim($code) == ""){
+      $code = "404";
+    }
+    // $code.php、つまり404エラーの場合、404.phpを呼出す。
+    @include($_SERVER["DOCUMENT_ROOT"]."/".$code.".php");
+    // 実行を止まる。
+    die();
+  }
+  // パラメータdataを取得する。
+  $data = $_GET["data"];
+  // データがなければ、
+  if($data == null){
+    // 404エラー関数を呼出す。
+    response_error(404);
+  }
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+  &lt;?=$data?&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p>上の例はパラメータがNULLかどうかでエラーが表示されるように実装しました。</p> 
+  <p style="text-align:left;"><img src="./contents/152/818_003.png" data-filename="003.png" style="width: 848px;"><br></p> 
+  <p>上の結果はdataのパラメータに「1」というデータを入れるとhttp statusが200になりますね。200は正常です。</p> 
+  <p>ウェブページも「1」という結果が表示されます。</p> 
+  <p style="text-align:left;"><img src="./contents/152/819_004.png" data-filename="004.png" style="width: 848px;"><br></p> 
+  <p>上の結果はdataのパラメータにNULLをいれる(何も入力してない状況)と「404」エラーになります。</p> 
+  <p>上のソースで「response_error」関数に404のデータを入力したから「404ERROR」ページが表示されます。</p> 
+  <p><br></p> 
+  <p>ここでPHP組込関数として「ob_clean」と「die」関数を使いました。</p> 
+  <p>PHPは「
+   <!--?hp ?-->」領域の以外にはHTMLマークで作成します。</p> 
+  <p>そのHTMLマークはサーバからResponseする時バッファにStringタイプで格納していますよ。なので途中でincludeやphp計算式でバッファにbodyデータを書き込むと上から順番処理で格納されることです。</p> 
+  <p>そのバッファをクリアする関数がob_cleanです。つまり、HTMLタグをたくさん書いてもPHPファイルの一番下に「ob_clean」を呼出すと空ページが表示されます。</p> 
+  <p><br></p> 
+  <p>「die」の場合は意味としてはエラーが発生するらしいな関数ですが、実は「die」が呼出したところで処理を止まって画面に表示するという意味です。</p> 
+  <p>link - <a href="https://www.php.net/manual/en/function.ob-clean.php" target="_blank">https://www.php.net/manual/en/function.ob-clean.php</a></p> 
+  <p>link - <a href="https://www.php.net/die" target="_blank">https://www.php.net/die</a></p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=php>#php</a>,<a href=./search.html?query=ob_clean>#ob_clean</a>,<a href=./search.html?query=die>#die</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0205">Study / PHP</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/152.html'>[PHP] エラーページ処理方法(追加: ob_cleanとdie関数使用方法)</a><span>2020/01/29 03:00:00</span></li><li><a href='https://www.nowonbun.com/151.html'>[PHP] 分散設定ファイル(.htaccess) 使用方法</a><span>2020/01/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/150.html'>[PHP] データベース(mariaDB)を連結して使う方法</a><span>2020/01/24 03:00:00</span></li><li><a href='https://www.nowonbun.com/149.html'>[PHP] IOに関して</a><span>2020/01/23 03:00:00</span></li><li><a href='https://www.nowonbun.com/148.html'>[PHP] requireとinclude、そして「@」の使用方法</a><span>2020/01/22 03:00:00</span></li><li><a href='https://www.nowonbun.com/147.html'>[PHP] Fatal及びNotice,、Warningメッセージ処理する方法</a><span>2020/01/19 03:00:00</span></li><li><a href='https://www.nowonbun.com/146.html'>[PHP] xDebug設定する方法</a><span>2020/01/18 03:00:00</span></li><li><a href='https://www.nowonbun.com/145.html'>[PHP] $_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())</a><span>2020/01/17 03:00:00</span></li><li><a href='https://www.nowonbun.com/144.html'>[PHP] データ確認関数(var_dump, debug_zval_dump, print_r)</a><span>2020/01/16 03:00:00</span></li><li><a href='https://www.nowonbun.com/143.html'>[PHP] 例外処理(try ~ catch ~ finally)</a><span>2020/01/15 03:00:00</span></li><li><a href='https://www.nowonbun.com/142.html'>[PHP] 配列とリスト(list)</a><span>2020/01/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/141.html'>[PHP] インタフェースと抽象クラス、クラス継承、parent、this</a><span>2020/01/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/140.html'>[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a><span>2020/01/09 23:35:27</span></li><li><a href='https://www.nowonbun.com/139.html'>[PHP] 基本ページ作成方法と変数使用方法</a><span>2020/01/06 23:44:20</span></li><li><a href='https://www.nowonbun.com/138.html'>[PHP] Composer設定</a><span>2019/12/27 08:49:09</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/152.html'>[PHP] エラーページ処理方法(追加: ob_cleanとdie関数使用方法)</a><span>2020/01/29 03:00:00</span></li><li><a href='https://www.nowonbun.com/151.html'>[PHP] 分散設定ファイル(.htaccess) 使用方法</a><span>2020/01/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/150.html'>[PHP] データベース(mariaDB)を連結して使う方法</a><span>2020/01/24 03:00:00</span></li><li><a href='https://www.nowonbun.com/149.html'>[PHP] IOに関して</a><span>2020/01/23 03:00:00</span></li><li><a href='https://www.nowonbun.com/148.html'>[PHP] requireとinclude、そして「@」の使用方法</a><span>2020/01/22 03:00:00</span></li><li><a href='https://www.nowonbun.com/147.html'>[PHP] Fatal及びNotice,、Warningメッセージ処理する方法</a><span>2020/01/19 03:00:00</span></li><li><a href='https://www.nowonbun.com/146.html'>[PHP] xDebug設定する方法</a><span>2020/01/18 03:00:00</span></li><li><a href='https://www.nowonbun.com/145.html'>[PHP] $_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())</a><span>2020/01/17 03:00:00</span></li><li><a href='https://www.nowonbun.com/144.html'>[PHP] データ確認関数(var_dump, debug_zval_dump, print_r)</a><span>2020/01/16 03:00:00</span></li><li><a href='https://www.nowonbun.com/143.html'>[PHP] 例外処理(try ~ catch ~ finally)</a><span>2020/01/15 03:00:00</span></li><li><a href='https://www.nowonbun.com/142.html'>[PHP] 配列とリスト(list)</a><span>2020/01/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/141.html'>[PHP] インタフェースと抽象クラス、クラス継承、parent、this</a><span>2020/01/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/140.html'>[PHP] functionとclass使用方法、アクセス修飾子、そしてstatic</a><span>2020/01/09 23:35:27</span></li><li><a href='https://www.nowonbun.com/139.html'>[PHP] 基本ページ作成方法と変数使用方法</a><span>2020/01/06 23:44:20</span></li><li><a href='https://www.nowonbun.com/138.html'>[PHP] Composer設定</a><span>2019/12/27 08:49:09</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/152.html';this.page.identifier = 'NOWONBUN00152';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
