@@ -35,7 +35,7 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / Javascript, Jquery, Css" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。前述からcssのスタイルに関して纏めています。今回は要素の表示タイプと位置(postision）に関して調べてみます。上の例を見ればスタイルで「display」を使いました。displayは要素のスタイルの形態を決めるものです。displayの要素の値には下記とおりにあります。                    値        説明                            inline        要素をインライン要素（など）として表示します。 高さと幅のプロパティは効果がありません。                    block        要素をブロック要素（など）として表示します。 新しい行から始まり、幅全体を占有します。                    contents        コンテナを非表示にし、要素の子要素をdomの次のレベルに上げます。                    flex        ブロックレベルのフレックスコンテナとして要素を表示します。                    grid        要素をブロックレベルのグリッドコンテナとして表示します。                    inline-block        要素をインラインレベルのブロックコンテナとして表示します。 要素自体はインライン要素としてフォーマットされますが、高さと幅の値を適用できます。                    inline-flex        要素をインラインレベルのフレックスコンテナとして表示します。                    inline-grid        要素をインラインレベルのグリッドコンテナとして表示します。                    inline-table        要素はインラインレベルの表として表示されます。                    list-item        要素を&amp;lt;li&amp;gt;要素のように動作させます。                    run-in        コンテキストに応じて、要素をブロックまたはインラインとして表示します。                    table        要素を]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。前述からcssのスタイルに関して纏めています。今回は要素の表示タイプと位置(postision）に関して調べてみます。上の例を見ればスタイルで「display」を使いました。displayは要素のスタイルの形態を決めるものです。displayの要素の値には下記とおりにあります。                    値        説明                            inline        要素をインライン要素（&amp;lt;span&amp;gt;など）として表示します。 高さと幅のプロパティは効果がありません。                    block        要素をブロック要素（&amp;lt;p&amp;gt;など）として表示します。 新しい行から始まり、幅全体を占有します。                    contents        コンテナを非表示にし、要素の子要素をdomの次のレベルに上げます。                    flex        ブロックレベルのフレックスコンテナとして要素を表示します。                    grid        要素をブロックレベルのグリッドコンテナとして表示します。                    inline-block        要素をインラインレベルのブロックコンテナとして表示します。 要素自体はインライン要素としてフォーマットされますが、高さと幅の値を適用できます。                    inline-flex        要素をインラインレベルのフレックスコンテナとして表示します。                    inline-grid        要素をインラインレベルのグリッドコンテナとして表示します。                    inline-table        要素はインラインレベルの表として表示されます。                    list-item        要素を&amp;lt;li&amp;gt;要素のように動作させます。                    run-in        コンテキストに応じて、要素をブロックまたはインラインとして表示します]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
@@ -45,7 +45,7 @@ body{
 
 <meta property="og:type" content="website" />
 <meta property="og:title" content="明月の開発ストーリ :: [CSS] 位置(position),表示(display)スタイル" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。前述からcssのスタイルに関して纏めています。今回は要素の表示タイプと位置(postision）に関して調べてみます。上の例を見ればスタイルで「display」を使いました。displayは要素のスタイルの形態を決めるものです。displayの要素の値には下記とおりにあります。                    値        説明                            inline        要素をインライン要素（など）として表示します。 高さと幅のプロパティは効果がありません。                    block        要素をブロック要素（など）として表示します。 新しい行から始まり、幅全体を占有します。                    contents        コンテナを非表示にし、要素の子要素をdomの次のレベルに上げます。                    flex        ブロックレベルのフレックスコンテナとして要素を表示します。                    grid        要素をブロックレベルのグリッドコンテナとして表示します。                    inline-block        要素をインラインレベルのブロックコンテナとして表示します。 要素自体はインライン要素としてフォーマットされますが、高さと幅の値を適用できます。                    inline-flex        要素をインラインレベルのフレックスコンテナとして表示します。                    inline-grid        要素をインラインレベルのグリッドコンテナとして表示します。                    inline-table        要素はインラインレベルの表として表示されます。                    list-item        要素を&amp;lt;li&amp;gt;要素のように動作させます。                    run-in        コンテキストに応じて、要素をブロックまたはインラインとして表示します。                    table        要素を]]>" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。前述からcssのスタイルに関して纏めています。今回は要素の表示タイプと位置(postision）に関して調べてみます。上の例を見ればスタイルで「display」を使いました。displayは要素のスタイルの形態を決めるものです。displayの要素の値には下記とおりにあります。                    値        説明                            inline        要素をインライン要素（&amp;lt;span&amp;gt;など）として表示します。 高さと幅のプロパティは効果がありません。                    block        要素をブロック要素（&amp;lt;p&amp;gt;など）として表示します。 新しい行から始まり、幅全体を占有します。                    contents        コンテナを非表示にし、要素の子要素をdomの次のレベルに上げます。                    flex        ブロックレベルのフレックスコンテナとして要素を表示します。                    grid        要素をブロックレベルのグリッドコンテナとして表示します。                    inline-block        要素をインラインレベルのブロックコンテナとして表示します。 要素自体はインライン要素としてフォーマットされますが、高さと幅の値を適用できます。                    inline-flex        要素をインラインレベルのフレックスコンテナとして表示します。                    inline-grid        要素をインラインレベルのグリッドコンテナとして表示します。                    inline-table        要素はインラインレベルの表として表示されます。                    list-item        要素を&amp;lt;li&amp;gt;要素のように動作させます。                    run-in        コンテキストに応じて、要素をブロックまたはインラインとして表示します]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta property="og:url" content="https://www.nowonbun.com/129.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
@@ -54,7 +54,7 @@ body{
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
 <meta name="twitter:title" content="明月の開発ストーリ :: [CSS] 位置(position),表示(display)スタイル" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。前述からcssのスタイルに関して纏めています。今回は要素の表示タイプと位置(postision）に関して調べてみます。上の例を見ればスタイルで「display」を使いました。displayは要素のスタイルの形態を決めるものです。displayの要素の値には下記とおりにあります。                    値        説明                            inline        要素をインライン要素（など）として表示します。 高さと幅のプロパティは効果がありません。                    block        要素をブロック要素（など）として表示します。 新しい行から始まり、幅全体を占有します。                    contents        コンテナを非表示にし、要素の子要素をdomの次のレベルに上げます。                    flex        ブロックレベルのフレックスコンテナとして要素を表示します。                    grid        要素をブロックレベルのグリッドコンテナとして表示します。                    inline-block        要素をインラインレベルのブロックコンテナとして表示します。 要素自体はインライン要素としてフォーマットされますが、高さと幅の値を適用できます。                    inline-flex        要素をインラインレベルのフレックスコンテナとして表示します。                    inline-grid        要素をインラインレベルのグリッドコンテナとして表示します。                    inline-table        要素はインラインレベルの表として表示されます。                    list-item        要素を&amp;lt;li&amp;gt;要素のように動作させます。                    run-in        コンテキストに応じて、要素をブロックまたはインラインとして表示します。                    table        要素を]]>" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。前述からcssのスタイルに関して纏めています。今回は要素の表示タイプと位置(postision）に関して調べてみます。上の例を見ればスタイルで「display」を使いました。displayは要素のスタイルの形態を決めるものです。displayの要素の値には下記とおりにあります。                    値        説明                            inline        要素をインライン要素（&amp;lt;span&amp;gt;など）として表示します。 高さと幅のプロパティは効果がありません。                    block        要素をブロック要素（&amp;lt;p&amp;gt;など）として表示します。 新しい行から始まり、幅全体を占有します。                    contents        コンテナを非表示にし、要素の子要素をdomの次のレベルに上げます。                    flex        ブロックレベルのフレックスコンテナとして要素を表示します。                    grid        要素をブロックレベルのグリッドコンテナとして表示します。                    inline-block        要素をインラインレベルのブロックコンテナとして表示します。 要素自体はインライン要素としてフォーマットされますが、高さと幅の値を適用できます。                    inline-flex        要素をインラインレベルのフレックスコンテナとして表示します。                    inline-grid        要素をインラインレベルのグリッドコンテナとして表示します。                    inline-table        要素はインラインレベルの表として表示されます。                    list-item        要素を&amp;lt;li&amp;gt;要素のように動作させます。                    run-in        コンテキストに応じて、要素をブロックまたはインラインとして表示します]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
@@ -125,7 +125,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/13 20:08:50   修正日付 : 2019/12/16 23:10:07
+					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/13 20:08:50   修正日付 : 2020/01/29 22:58:35
 				</div>
 			</div>
 			<div class="article">
@@ -186,11 +186,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <tbody> 
      <tr> 
       <td>inline</td> 
-      <td>要素をインライン要素（<span>など）として表示します。 高さと幅のプロパティは効果がありません。</span></td> 
+      <td>要素をインライン要素（&lt;span&gt;など）として表示します。 高さと幅のプロパティは効果がありません。</td> 
      </tr> 
      <tr> 
       <td>block</td> 
-      <td>要素をブロック要素（<p>など）として表示します。 新しい行から始まり、幅全体を占有します。</p></td> 
+      <td>要素をブロック要素（&lt;p&gt;など）として表示します。 新しい行から始まり、幅全体を占有します。</td> 
      </tr> 
      <tr> 
       <td>contents</td> 
@@ -324,10 +324,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </tbody> 
    </table> 
   </div> 
-  <p>上の例は「absolute」で設定しました。「div」の親要素は「body」なので、画面の一番上、右、基準で「top」が「100px」、「left」が「100px」を設定します。</p> 
+  <p>上の例は「absolute」で設定しました。「div」の親要素は「body」なので、画面の一番上、左、基準で「top」が「100px」、「left」が「100px」を設定します。</p> 
   <p><br></p> 
-  <p>この「position」と「display」はよく使わないですが、よく使うスタイルですね。</p> 
-  <p>特に「display」で「none」タグを利用して見えたり、見えなかったりする動的なスタイルを作るし、「position」で「fixed」や「absolute」でメニューの位置を決めることもします。</p> 
+  <p>「position」と「display」はよく使わないみだいですが、たくさん使うしすごく大事なスタイル設定です。</p> 
+  <p>特に「display」で「none」設定を利用して見えたり、見えなかったりする動的な設定を作ることができるし、「position」で「fixed」や「absolute」を設定してメニューの位置を決めるし動的に動くこともできます。</p> 
   <pre><code class="html" data-type="example.html">&lt;style&gt;
   .test:hover {
     display:none;
@@ -350,7 +350,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <input type="button" class="test" value="これをクリックできますか？" onclick="alert('まじで？');"> 
    </div> 
   </blockquote> 
-  <p>上の例はマウスをボタンの上に置く(hover)を選択する選択子で「display」を「none」に設定しました。</p> 
+  <p>上の例はマウスをボタンの上に置くとhoverの選択子によって「display」を「none」に設定します。</p> 
   <p>つまり、マウスを上に置くとボタンがなくなりますね。お試してください。</p>
  
 </div>
