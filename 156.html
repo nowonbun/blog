@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / PHP" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。今まで、我々はphpを作成する時にphpコードとhtmlコードを混ぜて作成しました。簡単な仕様ならhtmlデザインパートとスクリプトパートが一緒にあるから楽かも知りませんが、少し複雑になるし大きくなるとソースコードが複雑になるでしょう。昔はphpにもクラス概念がある前には単一ページ作成方法(phpスクリプトとhtmlコードが混在)でよく作成しました。(必ずそのことではないけど、普通はそうだったです。)最近はhtmlタグ構成、cssスタイルコード、javascriptコードも複雑になってその上でphpコードまであるとすごく複雑なソースことになるでしょう。開発する時に可読性は重要な部分なので、その時にはスクリプトコードとhtmlコードを分ける必要があります。java(spring)やc#(mvc)にはmvcモデルのフレームワークがあります。mvcモデルとはmodel(オブジェクト)、view(htmlデザイン)、controller(ロジック)を分けて作成する方法です。phpにもcakeというmvcモデルがあります。でも、cakeにもコントロールとビューが分けていますが、ビューがphpコードになっているので、完全な分離だと思いません。それでphpにはテンプレートフレームがありますが、それがsmartyとtwigです。筆者はtwigよりsmartyが手に慣れているので、smartyを使っています。smartyとtwigは使用方法が全然違うテンプレートですが、パフォーマンスや概念は似ています。link - https://www.smarty.net/smartyを利用するためにcomposerでsmartyをダウンロードしましょう。repository - https://packagist.org/packages/smarty/smartyeclipseのexplorerでたまにエラーマークが表示される時があります。実際にエラーではないので気にしなくてもよいです。eclipseがphpソースを完全に解読できないらしいです。index.phpファイルでsmartyクラスを宣言してテンプレートディレクトリ設定をします。キャッシュ設定もありますが、しなくても構いません。その後、smartyインスタンスでdisplay関数で「index.tpl」ファイルを読み込みます。phpファイルでhtml]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [PHP] PHPのコーディング領域とデザイン領域を分離するテンプレートライブラリ Smarty" />
+<link rel="canonical" href="https://www.nowonbun.com/156.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [PHP] PHPのコーディング領域とデザイン領域を分離するテンプレートライブラリ Smarty" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。今まで、我々はphpを作成する時にphpコードとhtmlコードを混ぜて作成しました。簡単な仕様ならhtmlデザインパートとスクリプトパートが一緒にあるから楽かも知りませんが、少し複雑になるし大きくなるとソースコードが複雑になるでしょう。昔はphpにもクラス概念がある前には単一ページ作成方法(phpスクリプトとhtmlコードが混在)でよく作成しました。(必ずそのことではないけど、普通はそうだったです。)最近はhtmlタグ構成、cssスタイルコード、javascriptコードも複雑になってその上でphpコードまであるとすごく複雑なソースことになるでしょう。開発する時に可読性は重要な部分なので、その時にはスクリプトコードとhtmlコードを分ける必要があります。java(spring)やc#(mvc)にはmvcモデルのフレームワークがあります。mvcモデルとはmodel(オブジェクト)、view(htmlデザイン)、controller(ロジック)を分けて作成する方法です。phpにもcakeというmvcモデルがあります。でも、cakeにもコントロールとビューが分けていますが、ビューがphpコードになっているので、完全な分離だと思いません。それでphpにはテンプレートフレームがありますが、それがsmartyとtwigです。筆者はtwigよりsmartyが手に慣れているので、smartyを使っています。smartyとtwigは使用方法が全然違うテンプレートですが、パフォーマンスや概念は似ています。link - https://www.smarty.net/smartyを利用するためにcomposerでsmartyをダウンロードしましょう。repository - https://packagist.org/packages/smarty/smartyeclipseのexplorerでたまにエラーマークが表示される時があります。実際にエラーではないので気にしなくてもよいです。eclipseがphpソースを完全に解読できないらしいです。index.phpファイルでsmartyクラスを宣言してテンプレートディレクトリ設定をします。キャッシュ設定もありますが、しなくても構いません。その後、smartyインスタンスでdisplay関数で「index.tpl」ファイルを読み込みます。phpファイルでhtml]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/156.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [PHP] PHPのコーディング領域とデザイン領域を分離するテンプレートライブラリ Smarty" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今まで、我々はphpを作成する時にphpコードとhtmlコードを混ぜて作成しました。簡単な仕様ならhtmlデザインパートとスクリプトパートが一緒にあるから楽かも知りませんが、少し複雑になるし大きくなるとソースコードが複雑になるでしょう。昔はphpにもクラス概念がある前には単一ページ作成方法(phpスクリプトとhtmlコードが混在)でよく作成しました。(必ずそのことではないけど、普通はそうだったです。)最近はhtmlタグ構成、cssスタイルコード、javascriptコードも複雑になってその上でphpコードまであるとすごく複雑なソースことになるでしょう。開発する時に可読性は重要な部分なので、その時にはスクリプトコードとhtmlコードを分ける必要があります。java(spring)やc#(mvc)にはmvcモデルのフレームワークがあります。mvcモデルとはmodel(オブジェクト)、view(htmlデザイン)、controller(ロジック)を分けて作成する方法です。phpにもcakeというmvcモデルがあります。でも、cakeにもコントロールとビューが分けていますが、ビューがphpコードになっているので、完全な分離だと思いません。それでphpにはテンプレートフレームがありますが、それがsmartyとtwigです。筆者はtwigよりsmartyが手に慣れているので、smartyを使っています。smartyとtwigは使用方法が全然違うテンプレートですが、パフォーマンスや概念は似ています。link - https://www.smarty.net/smartyを利用するためにcomposerでsmartyをダウンロードしましょう。repository - https://packagist.org/packages/smarty/smartyeclipseのexplorerでたまにエラーマークが表示される時があります。実際にエラーではないので気にしなくてもよいです。eclipseがphpソースを完全に解読できないらしいです。index.phpファイルでsmartyクラスを宣言してテンプレートディレクトリ設定をします。キャッシュ設定もありますが、しなくても構いません。その後、smartyインスタンスでdisplay関数で「index.tpl」ファイルを読み込みます。phpファイルでhtml]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [PHP] PHPのコーディング領域とデザイン領域を分離するテンプレートライブラリ Smarty</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(23)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(133)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(20)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[PHP] PHPのコーディング領域とデザイン領域を分離するテンプレートライブラリ Smarty</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0205">Study / PHP</a>    作成日付 : 2020/02/02 03:00:00   修正日付 : 2020/02/02 03:00:00
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>今まで、我々はPHPを作成する時にPHPコードとhtmlコードを混ぜて作成しました。</p> 
+  <p>簡単な仕様ならhtmlデザインパートとスクリプトパートが一緒にあるから楽かも知りませんが、少し複雑になるし大きくなるとソースコードが複雑になるでしょう。</p> 
+  <p>昔はPHPにもクラス概念がある前には単一ページ作成方法(PHPスクリプトとhtmlコードが混在)でよく作成しました。(必ずそのことではないけど、普通はそうだったです。)</p> 
+  <p>最近はhtmlタグ構成、CSSスタイルコード、javascriptコードも複雑になってその上でPHPコードまであるとすごく複雑なソースことになるでしょう。</p> 
+  <p>開発する時に可読性は重要な部分なので、その時にはスクリプトコードとhtmlコードを分ける必要があります。</p> 
+  <p><br></p> 
+  <p>Java(spring)やC#(MVC)にはMVCモデルのフレームワークがあります。MVCモデルとはModel(オブジェクト)、View(htmlデザイン)、Controller(ロジック)を分けて作成する方法です。</p> 
+  <p>PHPにもCakeというMVCモデルがあります。でも、Cakeにもコントロールとビューが分けていますが、ビューがPHPコードになっているので、完全な分離だと思いません。</p> 
+  <p>それでPHPにはテンプレートフレームがありますが、それがSmartyとTwigです。</p> 
+  <p>筆者はTwigよりSmartyが手に慣れているので、Smartyを使っています。SmartyとTwigは使用方法が全然違うテンプレートですが、パフォーマンスや概念は似ています。</p> 
+  <p><br></p> 
+  <p>link - <a href="https://www.smarty.net/" target="_blank">https://www.smarty.net/</a></p> 
+  <p><br></p> 
+  <p>Smartyを利用するためにcomposerでSmartyをダウンロードしましょう。</p> 
+  <p>repository - <a href="https://packagist.org/packages/smarty/smarty" target="_blank">https://packagist.org/packages/smarty/smarty</a></p> 
+  <pre><code class="json" data-type="composer.json">{
+  "require": {
+    "smarty/smarty": "~3.1"
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/156/831_001.png" data-filename="001.png" style="width: 643px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/156/830_002.png" data-filename="002.png" style="width: 427px;"><br></p> 
+  <p>EclipseのExplorerでたまにエラーマークが表示される時があります。実際にエラーではないので気にしなくてもよいです。EclipseがPHPソースを完全に解読できないらしいです。</p> 
+  <pre><code class="php" data-type="index.php">&lt;?php
+  // composerのautoloadを呼出す。このファイルは必須で宣言しなければならないのでrequireで宣言する。
+  require_once 'vendor/autoload.php';
+
+  // ドキュメントルート設定
+  $ROOT = $_SERVER ["DOCUMENT_ROOT"];
+
+  // Smartクラスを宣言
+  $smarty = new Smarty();
+  // htmlテンプレートファイルディレクト設定
+  $smarty-&gt;template_dir =  $ROOT.'/View';
+  // キャッシュのファイルディレクトリ設定
+  $smarty-&gt;compile_dir = $ROOT . '/../Smarty/templates_c';
+  $smarty-&gt;cache_dir = $ROOT . '/../Smarty/cache';
+  $smarty-&gt;config_dir = $ROOT . '/../Smarty/configs';
+
+  // index.tplテンプレートを読み込む。
+  $smarty-&gt;display('index.tpl');
+?&gt;
+</code></pre> 
+  <pre><code class="html" data-type="index.tpl">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    hello world;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/156/833_003.png" data-filename="003.png" style="width: 795px;"><br></p> 
+  <p>index.phpファイルでSmartyクラスを宣言してテンプレートディレクトリ設定をします。キャッシュ設定もありますが、しなくても構いません。</p> 
+  <p>その後、smartyインスタンスでdisplay関数で「index.tpl」ファイルを読み込みます。</p> 
+  <p style="text-align:left;"><img src="./contents/156/832_004.png" data-filename="004.png" style="width: 439px;"><br></p> 
+  <p>phpファイルでhtmlテンプレートファイルを読み込んでresponseするのは理解しました。</p> 
+  <p>そうするとphpのデータ値をテンプレートに渡す方法とSmarty文法に関して確認しましょう。</p> 
+  <pre><code class="php" data-type="index.php">&lt;?php
+  // ライブラリを読み込む
+  require_once 'vendor/autoload.php';
+  // ドキュメントルートを設定
+  $ROOT = $_SERVER["DOCUMENT_ROOT"];
+
+  // Smartyインスタンス生成
+  $smarty = new Smarty();
+  $smarty-&gt;template_dir = $ROOT . '/View';
+  $smarty-&gt;compile_dir = $ROOT . '/../Smarty/templates_c';
+  $smarty-&gt;cache_dir = $ROOT . '/../Smarty/cache';
+  $smarty-&gt;config_dir = $ROOT . '/../Smarty/configs';
+
+  // Nodeクラス
+  class Node {
+    // データの種類は３つがある。 str、配列、ブールタイプ。
+    private $data = "Hello world!!!!";
+    private $dataarray = [];
+    private $databoolean = true;
+    // コンストラクタにメンバー変数の配列にデータを格納する。
+    public function __construct() {
+      array_push($this-&gt;dataarray, "a");
+      array_push($this-&gt;dataarray, "b");
+      array_push($this-&gt;dataarray, "c");
+      array_push($this-&gt;dataarray, "d");
+    }
+    // メンバー変数dataのgetter
+    public function getData1() {
+      return $this-&gt;data;
+    }
+    // メンバー変数dataarrayのgetter
+    public function getData2() {
+      return $this-&gt;dataarray;
+    }
+    // メンバー変数databooleanのgetter
+    public function getData3() {
+      return $this-&gt;databoolean;
+    }
+  }
+  // titleのキーに「Example」データを格納する。
+  $smarty-&gt;assign("title", "Example");
+  // dataのキーにNodeクラスのインスタンスを格納する。
+  $smarty-&gt;assign("data", new Node());
+
+  //テンプレート呼出す。
+  $smarty-&gt;display('index.tpl');
+?&gt;
+</code></pre> 
+  <pre><code class="html" data-type="index.tpl">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;!-- titleのキーを表示する。--&gt;
+    &lt;title&gt;{$title}&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- dataのキーのデータのgetData1の関数を呼出して表示する。--&gt;
+  {$data-&gt;getData1()}
+  &lt;br /&gt;
+  &lt;!-- dataのキーのデータのgetData2関数を呼出してイタレーション配列を繰り返す。 --&gt;
+  {foreach from = $data-&gt;getData2() item = item}
+      {$item}&lt;br /&gt;
+  {/foreach}
+  &lt;br /&gt;
+  &lt;!-- dataのキーのデータのgetData2関数を呼出してブールチェックを行う。--&gt;
+  {if $data-&gt;getData3()}
+    True!!
+  {else}
+    False!!
+  {/if}
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/156/834_005.png" data-filename="005.png" style="width: 478px;"><br></p> 
+  <p>phpからSmartyテンプレートに値を渡す時にはasign関数を利用するとできます。上の例は変数を２つを渡しました。</p> 
+  <p>titleの変数はstringタイプでdataのタイプはクラスオブジェクトタイプで渡しました。</p> 
+  <p>tplページをみればstringタイプの場合はそのまま表示すると表示できます。オブジェクトの場合はphpの中のオブジェクト参照方法みたいにやじるしで参照します。</p> 
+  <p>foreachとif文法の使用方法もあります。</p> 
+  <p>foreachの場合、fromでイタレーション配列を入れ、一つのデータをitemで取得します。</p> 
+  <p>ifの場合はgetData3から取得したデータがブール値です。</p> 
+  <p><br></p> 
+  <p>Smarty文法に関しては下記のホームページから説明しています。</p> 
+  <p>link - <a href="https://www.smarty.net/docs/ja/" target="_blank">https://www.smarty.net/docs/ja/</a></p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag">  </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0205">Study / PHP</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/156.html'>[PHP] PHPのコーディング領域とデザイン領域を分離するテンプレートライブラリ Smarty</a><span>2020/02/02 03:00:00</span></li><li><a href='https://www.nowonbun.com/155.html'>[PHP] Reflection - Variable編</a><span>2020/02/01 03:00:00</span></li><li><a href='https://www.nowonbun.com/154.html'>[PHP] Reflection - Method編</a><span>2020/01/31 03:00:00</span></li><li><a href='https://www.nowonbun.com/153.html'>[PHP] Reflection - Class編</a><span>2020/01/30 03:00:00</span></li><li><a href='https://www.nowonbun.com/152.html'>[PHP] エラーページ処理方法(追加: ob_cleanとdie関数使用方法)</a><span>2020/01/29 03:00:00</span></li><li><a href='https://www.nowonbun.com/151.html'>[PHP] 分散設定ファイル(.htaccess) 使用方法</a><span>2020/01/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/150.html'>[PHP] データベース(mariaDB)を連結して使う方法</a><span>2020/01/24 03:00:00</span></li><li><a href='https://www.nowonbun.com/149.html'>[PHP] IOに関して</a><span>2020/01/23 03:00:00</span></li><li><a href='https://www.nowonbun.com/148.html'>[PHP] requireとinclude、そして「@」の使用方法</a><span>2020/01/22 03:00:00</span></li><li><a href='https://www.nowonbun.com/147.html'>[PHP] Fatal及びNotice,、Warningメッセージ処理する方法</a><span>2020/01/19 03:00:00</span></li><li><a href='https://www.nowonbun.com/146.html'>[PHP] xDebug設定する方法</a><span>2020/01/18 03:00:00</span></li><li><a href='https://www.nowonbun.com/145.html'>[PHP] $_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())</a><span>2020/01/17 03:00:00</span></li><li><a href='https://www.nowonbun.com/144.html'>[PHP] データ確認関数(var_dump, debug_zval_dump, print_r)</a><span>2020/01/16 03:00:00</span></li><li><a href='https://www.nowonbun.com/143.html'>[PHP] 例外処理(try ~ catch ~ finally)</a><span>2020/01/15 03:00:00</span></li><li><a href='https://www.nowonbun.com/142.html'>[PHP] 配列とリスト(list)</a><span>2020/01/14 03:00:00</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/156.html'>[PHP] PHPのコーディング領域とデザイン領域を分離するテンプレートライブラリ Smarty</a><span>2020/02/02 03:00:00</span></li><li><a href='https://www.nowonbun.com/155.html'>[PHP] Reflection - Variable編</a><span>2020/02/01 03:00:00</span></li><li><a href='https://www.nowonbun.com/154.html'>[PHP] Reflection - Method編</a><span>2020/01/31 03:00:00</span></li><li><a href='https://www.nowonbun.com/153.html'>[PHP] Reflection - Class編</a><span>2020/01/30 03:00:00</span></li><li><a href='https://www.nowonbun.com/152.html'>[PHP] エラーページ処理方法(追加: ob_cleanとdie関数使用方法)</a><span>2020/01/29 03:00:00</span></li><li><a href='https://www.nowonbun.com/151.html'>[PHP] 分散設定ファイル(.htaccess) 使用方法</a><span>2020/01/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/150.html'>[PHP] データベース(mariaDB)を連結して使う方法</a><span>2020/01/24 03:00:00</span></li><li><a href='https://www.nowonbun.com/149.html'>[PHP] IOに関して</a><span>2020/01/23 03:00:00</span></li><li><a href='https://www.nowonbun.com/148.html'>[PHP] requireとinclude、そして「@」の使用方法</a><span>2020/01/22 03:00:00</span></li><li><a href='https://www.nowonbun.com/147.html'>[PHP] Fatal及びNotice,、Warningメッセージ処理する方法</a><span>2020/01/19 03:00:00</span></li><li><a href='https://www.nowonbun.com/146.html'>[PHP] xDebug設定する方法</a><span>2020/01/18 03:00:00</span></li><li><a href='https://www.nowonbun.com/145.html'>[PHP] $_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())</a><span>2020/01/17 03:00:00</span></li><li><a href='https://www.nowonbun.com/144.html'>[PHP] データ確認関数(var_dump, debug_zval_dump, print_r)</a><span>2020/01/16 03:00:00</span></li><li><a href='https://www.nowonbun.com/143.html'>[PHP] 例外処理(try ~ catch ~ finally)</a><span>2020/01/15 03:00:00</span></li><li><a href='https://www.nowonbun.com/142.html'>[PHP] 配列とリスト(list)</a><span>2020/01/14 03:00:00</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/156.html';this.page.identifier = 'NOWONBUN00156';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
