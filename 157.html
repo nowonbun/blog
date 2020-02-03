@@ -34,31 +34,31 @@ body{
 <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-<meta name="keywords" content="Study / Javascript, Jquery, Css" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。今回はcolumn要素に関して調べます。column要素は筆者もよく使わない機能ですが、仕様によって使うところもあると思うのでまとめておきました。スタイル種類は下記とおりになります。                    スタイル        説明                            column-count        カラムの列数を指定する。                    column-width        カラムの列幅を指定する（実際の列の幅は、領域のサイズに応じて変化）                    columns: -width -count        上記2つのスタイルのshorthandスタイル                    column-gap        カラムの間の間隔                    column-span        複数のカラムを横断要素                    column-rule-width        各列を区別する線の太さ                    column-rule-style        各列を区切る線の種類                    column-rule-color        各列を区切る線の色                    column-rule        上記3つのshorthandスタイル                    break-before        ページ指定のスタイル（前）                    break-after        ページ指定のスタイル（後）                    break-inside        ページの指定のスタイル            columnsのサイズはブラウザの幅によって変更するので、calc(10vw)に設定しても幅の(30%)になると思います。カラム数を3で設定しましたので、三つが表示されました。column-gapは線の基準で余白設定です。線は2pxで実線、青色で設定しました。h1タグの場合はcolumn要素を無視して表示することです。hrタグで次のカラムから作成の意味です。筆者がcolumn例を作]]>" />
+<meta name="keywords" content="Study / PHP" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。今回はphpの匿名関数(ラムダ)とクロージャに関して調べてみました。匿名関数は既存phpで宣言した「function methodname($param)」の形じゃなく、「function($param)」という関数名がないことです。関数名がないというのは一回性の関数で「javascript」とコールバック関数とにみたいな流れの関数です。上の例をみればruntest関数に２つのメソッド名がないメソッドを渡します。この関数では「$add」と「$substract」に結果を渡すための一回性の関数です。クロージャとは「java」と「c#」、「javascript」のクロージャと同じ概念です。クロージャと言うのは関数内部じゃないところで宣言した変数を関数の中で使えることです。実際にメモリ上では別のメモリ領域なので共有ができないですが、ソース上でメモリを共有するような機能になっています。上の例をみれば$message変数に「hello」という値を入力しました。各匿名関数「$example1」と「$example2」を作成しました。$example1の関数では「$message」変数を参照するとエラーが発生します。エラー内容は宣言してない変数使用ということになっています。なぜなら$messageの変数は$example1関数外で宣言したものからです。でも、$example2では$messageを使いますね。useキーワードを利用して関数外の変数を使えるようにしたからです。link - https://www.php.net/manual/en/functions.anonymous.phplink - https://www.php.net/closure]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [CSS] Columnスタイル" />
-<link rel="canonical" href="https://www.nowonbun.com/131.html" />
+<meta name="title" content="明月の開発ストーリ :: [PHP] 匿名関数(ラムダ式)とクロージャ(closure)" />
+<link rel="canonical" href="https://www.nowonbun.com/157.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [CSS] Columnスタイル" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。今回はcolumn要素に関して調べます。column要素は筆者もよく使わない機能ですが、仕様によって使うところもあると思うのでまとめておきました。スタイル種類は下記とおりになります。                    スタイル        説明                            column-count        カラムの列数を指定する。                    column-width        カラムの列幅を指定する（実際の列の幅は、領域のサイズに応じて変化）                    columns: -width -count        上記2つのスタイルのshorthandスタイル                    column-gap        カラムの間の間隔                    column-span        複数のカラムを横断要素                    column-rule-width        各列を区別する線の太さ                    column-rule-style        各列を区切る線の種類                    column-rule-color        各列を区切る線の色                    column-rule        上記3つのshorthandスタイル                    break-before        ページ指定のスタイル（前）                    break-after        ページ指定のスタイル（後）                    break-inside        ページの指定のスタイル            columnsのサイズはブラウザの幅によって変更するので、calc(10vw)に設定しても幅の(30%)になると思います。カラム数を3で設定しましたので、三つが表示されました。column-gapは線の基準で余白設定です。線は2pxで実線、青色で設定しました。h1タグの場合はcolumn要素を無視して表示することです。hrタグで次のカラムから作成の意味です。筆者がcolumn例を作]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [PHP] 匿名関数(ラムダ式)とクロージャ(closure)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。今回はphpの匿名関数(ラムダ)とクロージャに関して調べてみました。匿名関数は既存phpで宣言した「function methodname($param)」の形じゃなく、「function($param)」という関数名がないことです。関数名がないというのは一回性の関数で「javascript」とコールバック関数とにみたいな流れの関数です。上の例をみればruntest関数に２つのメソッド名がないメソッドを渡します。この関数では「$add」と「$substract」に結果を渡すための一回性の関数です。クロージャとは「java」と「c#」、「javascript」のクロージャと同じ概念です。クロージャと言うのは関数内部じゃないところで宣言した変数を関数の中で使えることです。実際にメモリ上では別のメモリ領域なので共有ができないですが、ソース上でメモリを共有するような機能になっています。上の例をみれば$message変数に「hello」という値を入力しました。各匿名関数「$example1」と「$example2」を作成しました。$example1の関数では「$message」変数を参照するとエラーが発生します。エラー内容は宣言してない変数使用ということになっています。なぜなら$messageの変数は$example1関数外で宣言したものからです。でも、$example2では$messageを使いますね。useキーワードを利用して関数外の変数を使えるようにしたからです。link - https://www.php.net/manual/en/functions.anonymous.phplink - https://www.php.net/closure]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/131.html" />
+<meta property="og:url" content="https://www.nowonbun.com/157.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [CSS] Columnスタイル" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今回はcolumn要素に関して調べます。column要素は筆者もよく使わない機能ですが、仕様によって使うところもあると思うのでまとめておきました。スタイル種類は下記とおりになります。                    スタイル        説明                            column-count        カラムの列数を指定する。                    column-width        カラムの列幅を指定する（実際の列の幅は、領域のサイズに応じて変化）                    columns: -width -count        上記2つのスタイルのshorthandスタイル                    column-gap        カラムの間の間隔                    column-span        複数のカラムを横断要素                    column-rule-width        各列を区別する線の太さ                    column-rule-style        各列を区切る線の種類                    column-rule-color        各列を区切る線の色                    column-rule        上記3つのshorthandスタイル                    break-before        ページ指定のスタイル（前）                    break-after        ページ指定のスタイル（後）                    break-inside        ページの指定のスタイル            columnsのサイズはブラウザの幅によって変更するので、calc(10vw)に設定しても幅の(30%)になると思います。カラム数を3で設定しましたので、三つが表示されました。column-gapは線の基準で余白設定です。線は2pxで実線、青色で設定しました。h1タグの場合はcolumn要素を無視して表示することです。hrタグで次のカラムから作成の意味です。筆者がcolumn例を作]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [PHP] 匿名関数(ラムダ式)とクロージャ(closure)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今回はphpの匿名関数(ラムダ)とクロージャに関して調べてみました。匿名関数は既存phpで宣言した「function methodname($param)」の形じゃなく、「function($param)」という関数名がないことです。関数名がないというのは一回性の関数で「javascript」とコールバック関数とにみたいな流れの関数です。上の例をみればruntest関数に２つのメソッド名がないメソッドを渡します。この関数では「$add」と「$substract」に結果を渡すための一回性の関数です。クロージャとは「java」と「c#」、「javascript」のクロージャと同じ概念です。クロージャと言うのは関数内部じゃないところで宣言した変数を関数の中で使えることです。実際にメモリ上では別のメモリ領域なので共有ができないですが、ソース上でメモリを共有するような機能になっています。上の例をみれば$message変数に「hello」という値を入力しました。各匿名関数「$example1」と「$example2」を作成しました。$example1の関数では「$message」変数を参照するとエラーが発生します。エラー内容は宣言してない変数使用ということになっています。なぜなら$messageの変数は$example1関数外で宣言したものからです。でも、$example2では$messageを使いますね。useキーワードを利用して関数外の変数を使えるようにしたからです。link - https://www.php.net/manual/en/functions.anonymous.phplink - https://www.php.net/closure]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [CSS] Columnスタイル</title>
+<title>明月の開発ストーリ :: [PHP] 匿名関数(ラムダ式)とクロージャ(closure)</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[CSS] Columnスタイル</h1>
+					<h1 id="titleTxt">[PHP] 匿名関数(ラムダ式)とクロージャ(closure)</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : 2019/12/17 19:52:56   修正日付 : 2019/12/17 19:52:56
+					<a href="./?category=0205">Study / PHP</a>    作成日付 : 2020/02/04 03:00:00   修正日付 : 2020/02/04 03:00:00
 				</div>
 			</div>
 			<div class="article">
@@ -137,120 +137,86 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>今回はColumn要素に関して調べます。</p> 
-  <p>Column要素は筆者もよく使わない機能ですが、仕様によって使うところもあると思うのでまとめておきました。</p> 
-  <p>スタイル種類は下記とおりになります。</p> 
-  <div class="table-responsive"> 
-   <table class="table table-striped table-bordered table-condensed"> 
-    <thead> 
-     <tr style="background-color:#DAD7D7"> 
-      <th style="white-space: nowrap;">スタイル</th> 
-      <th>説明</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td style="white-space: nowrap;">column-count</td> 
-      <td>カラムの列数を指定する。</td> 
-     </tr> 
-     <tr> 
-      <td style="white-space: nowrap;">column-width</td> 
-      <td>カラムの列幅を指定する（実際の列の幅は、領域のサイズに応じて変化）</td> 
-     </tr> 
-     <tr> 
-      <td style="white-space: nowrap;">columns: -width -count</td> 
-      <td>上記2つのスタイルのShorthandスタイル</td> 
-     </tr> 
-     <tr> 
-      <td style="white-space: nowrap;">column-gap</td> 
-      <td>カラムの間の間隔</td> 
-     </tr> 
-     <tr> 
-      <td style="white-space: nowrap;">column-span</td> 
-      <td>複数のカラムを横断要素</td> 
-     </tr> 
-     <tr> 
-      <td style="white-space: nowrap;">column-rule-width</td> 
-      <td>各列を区別する線の太さ</td> 
-     </tr> 
-     <tr> 
-      <td style="white-space: nowrap;">column-rule-style</td> 
-      <td>各列を区切る線の種類</td> 
-     </tr> 
-     <tr> 
-      <td style="white-space: nowrap;">column-rule-color</td> 
-      <td>各列を区切る線の色</td> 
-     </tr> 
-     <tr> 
-      <td style="white-space: nowrap;">column-rule</td> 
-      <td>上記3つのShorthandスタイル</td> 
-     </tr> 
-     <tr> 
-      <td style="white-space: nowrap;">break-before</td> 
-      <td>ページ指定のスタイル（前）</td> 
-     </tr> 
-     <tr> 
-      <td style="white-space: nowrap;">break-after</td> 
-      <td>ページ指定のスタイル（後）</td> 
-     </tr> 
-     <tr> 
-      <td style="white-space: nowrap;">break-inside</td> 
-      <td>ページの指定のスタイル</td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <pre><code class="html" data-type="index.html">&lt;!DOCTYPE html&gt;
+  <p>今回はphpの匿名関数(ラムダ)とクロージャに関して調べてみました。</p> 
+  <p>匿名関数は既存phpで宣言した「function methodname($param)」の形じゃなく、「function($param)」という関数名がないことです。関数名がないというのは一回性の関数で「javascript」とコールバック関数とにみたいな流れの関数です。</p> 
+  <pre><code class="html" data-type="index.php">&lt;?php
+  function runTest($func) {
+    //$funcが関数の可否をチェックする。(javascriptでtypeof 変数 === "function"と同じ意味)
+    if (is_callable($func)) {
+      // 関数を実行してパラメータの10と5を入れる。
+      return $func(10, 5);
+    }
+    return 0;
+  }
+  // 匿名関数でrunTest関数に関数を入れました。
+  $add = runTest(function ($a, $b) {
+    // 上のところで「10」と「5」のパラメータを渡したので「$a」、「$b」は「10」と「5」です。
+    // 10と５を足すと結果は15です。
+    return $a + $b;
+  });
+  // 匿名関数でrunTest関数に関数を入れました。
+  $subtract = runTest(function ($a, $b) {
+    // 上のところで「10」と「5」のパラメータを渡したので「$a」、「$b」は「10」と「5」です。
+    // 10から５を引くと結果は5です。
+    return $a - $b;
+  });
+?&gt;
+&lt;!DOCTYPE html&gt;
 &lt;html&gt;
-  &lt;head&gt;&lt;/head&gt;
+  &lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
   &lt;body&gt;
-    &lt;div&gt;
-      &lt;h1&gt;CSSカラムスタイルの例&lt;/h1&gt;
-      こんにちは。CSSのカラムスタイルに関して説明しています。これは例のための文言です。ありがとうございます。こんにちは。CSSのカラムスタイルに関して説明しています。これは例のための文言です。ありがとうございます。こんにちは。CSSのカラムスタイルに関して説明しています。これは例のための文言です。ありがとうございます。こんにちは。CSSのカラムスタイルに関して説明しています。これは例のための文言です。ありがとうございます。
-      &lt;hr /&gt;
-      こんにちは。CSSのカラムスタイルに関して説明しています。これは例のための文言です。ありがとうございます。こんにちは。CSSのカラムスタイルに関して説明しています。これは例のための文言です。ありがとうございます。
-    &lt;/div&gt;
+    &lt;!-- $addの結果は「15」です。--&gt;
+    add : &lt;?=$add?&gt;
+    &lt;br /&gt;
+    &lt;!-- $subtractの結果は「5」です。--&gt;
+    subtract : &lt;?=$subtract?&gt;
   &lt;/body&gt;
 &lt;/html&gt;
 </code></pre> 
-  <pre><code class="css" data-type="style.css">div{
-  height:calc(80vh);
-  /* カラムを三つを作る。幅とカラム数を指定 */
-  columns:calc(10vw) 3;
-  /* カラム間の間隔 */
-  column-gap:50px;
-  /* カラムを区分する線の太さ、タイプ、色 */
-  column-rule:2px solid blue;  
-}
-div &gt; h1{
-　　/* カラムを横断要素 */
-  column-span:all;
-  text-align:center;
-}
-div &gt; hr{
-  column-break-after:always;
-}
+  <p style="text-align:left;"><img src="./contents/157/835_001.png" data-filename="001.png" style="width: 473px;"><br></p> 
+  <p>上の例をみればrunTest関数に２つのメソッド名がないメソッドを渡します。この関数では「$add」と「$substract」に結果を渡すための一回性の関数です。</p> 
+  <p><br></p> 
+  <p>クロージャとは「java」と「C#」、「javascript」のクロージャと同じ概念です。クロージャと言うのは関数内部じゃないところで宣言した変数を関数の中で使えることです。</p> 
+  <p>実際にメモリ上では別のメモリ領域なので共有ができないですが、ソース上でメモリを共有するような機能になっています。</p> 
+  <pre><code class="html" data-type="index.php">&lt;?php
+  $message = 'hello';
+  // lambda式(匿名関数)
+  $example1 = function () {
+    var_dump($message);
+  };
+  // lambda式(匿名関数)
+  // クロージャ機能を使うようには「use」で$message変数を使うと宣言する。
+  $example2 = function () use ($message) {
+    var_dump($message);
+  };
+  // 関数実行!
+  $example1();
+  $example2();
+?&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/131/693_001.png" data-filename="001.png" style="width: 848px;"><br></p> 
-  <p>columnsのサイズはブラウザの幅によって変更するので、calc(10vw)に設定しても幅の(30%)になると思います。カラム数を3で設定しましたので、三つが表示されました。</p> 
-  <p>column-gapは線の基準で余白設定です。線は2pxで実線、青色で設定しました。</p> 
-  <p><br></p> 
-  <p>h1タグの場合はcolumn要素を無視して表示することです。</p> 
-  <p>hrタグで次のカラムから作成の意味です。</p> 
-  <p><br></p> 
-  <p>筆者がColumn例を作りながら、いろいろテストしましたが、カラム別のスタイル適用か段落でスタイルことで使いにくいですね。</p> 
-  <p>イメージで使うといいと思いますが、divタグで個別スタイルが扱いやすいと思います。</p>
+  <p style="text-align:left;"><img src="./contents/157/836_002.png" data-filename="002.png" style="width: 650px;"><br></p> 
+  <p>上の例をみれば$message変数に「hello」という値を入力しました。各匿名関数「$example1」と「$example2」を作成しました。</p> 
+  <p>$example1の関数では「$message」変数を参照するとエラーが発生します。エラー内容は宣言してない変数使用ということになっています。</p> 
+  <p>なぜなら$messageの変数は$example1関数外で宣言したものからです。でも、$example2では$messageを使いますね。</p> 
+  <p>useキーワードを利用して関数外の変数を使えるようにしたからです。</p> 
+  <p>link - <a href="https://www.php.net/manual/en/functions.anonymous.php" target="_blank">https://www.php.net/manual/en/functions.anonymous.php</a></p> 
+  <p>link - <a href="https://www.php.net/closure" target="_blank">https://www.php.net/closure</a></p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=css>#css</a>,<a href=./search.html?query=column>#column</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag">  </span>
 				</div>
 				<div class="other-category">
-					<div class="list-title">「<a href="./?category=0204">Study / Javascript, Jquery, Css</a>」の他投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/136.html'>[CSS] ブラウザから開発する方法 (developer mode)</a><span>2019/12/25 07:54:31</span></li><li><a href='https://www.nowonbun.com/135.html'>[CSS] 色スタイル、グラデーション</a><span>2019/12/24 07:37:22</span></li><li><a href='https://www.nowonbun.com/134.html'>[CSS] アニメーション (animation)</a><span>2019/12/20 20:51:38</span></li><li><a href='https://www.nowonbun.com/133.html'>[CSS] トランスフォーム (transform)</a><span>2019/12/19 13:00:26</span></li><li><a href='https://www.nowonbun.com/132.html'>[CSS] トランジション(transition)</a><span>2019/12/18 20:33:57</span></li><li><a href='https://www.nowonbun.com/131.html'>[CSS] Columnスタイル</a><span>2019/12/17 19:52:56</span></li><li><a href='https://www.nowonbun.com/130.html'>[CSS] 整列スタイル (float)</a><span>2019/12/17 00:08:54</span></li><li><a href='https://www.nowonbun.com/129.html'>[CSS] 位置(position),表示(display)スタイル</a><span>2019/12/13 20:08:50</span></li><li><a href='https://www.nowonbun.com/128.html'>[CSS] border(枠)、余白スタイル - border, margin, padding</a><span>2019/12/12 20:16:43</span></li><li><a href='https://www.nowonbun.com/127.html'>[CSS] 文字スタイル</a><span>2019/12/11 21:13:22</span></li><li><a href='https://www.nowonbun.com/126.html'>[CSS] その他の疑似選択子 - link, visited, target, enabled, disabled, not, active, hover, focus</a><span>2019/12/10 07:31:28</span></li><li><a href='https://www.nowonbun.com/125.html'>[CSS] 疑似要素選択子 - fist-line, first-letter, before, after</a><span>2019/12/09 07:28:27</span></li><li><a href='https://www.nowonbun.com/124.html'>[CSS] 範囲と指定に関する選択子(全体選択子、要素選択子、孫選択子、子選択子、隣接選択子)</a><span>2019/12/06 07:27:36</span></li><li><a href='https://www.nowonbun.com/123.html'>[CSS] 疑似クラス - only-child, only-of-type, empty, empty, root</a><span>2019/12/05 07:29:15</span></li><li><a href='https://www.nowonbun.com/122.html'>[CSS] 疑似クラス - first-child, last-child, first-of-type, last-of-type</a><span>2019/12/04 07:28:37</span></li></ul>
+					<div class="list-title">「<a href="./?category=0205">Study / PHP</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/157.html'>[PHP] 匿名関数(ラムダ式)とクロージャ(closure)</a><span>2020/02/04 03:00:00</span></li><li><a href='https://www.nowonbun.com/156.html'>[PHP] PHPのコーディング領域とデザイン領域を分離するテンプレートライブラリ Smarty</a><span>2020/02/02 03:00:00</span></li><li><a href='https://www.nowonbun.com/155.html'>[PHP] Reflection - Variable編</a><span>2020/02/01 03:00:00</span></li><li><a href='https://www.nowonbun.com/154.html'>[PHP] Reflection - Method編</a><span>2020/01/31 03:00:00</span></li><li><a href='https://www.nowonbun.com/153.html'>[PHP] Reflection - Class編</a><span>2020/01/30 03:00:00</span></li><li><a href='https://www.nowonbun.com/152.html'>[PHP] エラーページ処理方法(追加: ob_cleanとdie関数使用方法)</a><span>2020/01/29 03:00:00</span></li><li><a href='https://www.nowonbun.com/151.html'>[PHP] 分散設定ファイル(.htaccess) 使用方法</a><span>2020/01/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/150.html'>[PHP] データベース(mariaDB)を連結して使う方法</a><span>2020/01/24 03:00:00</span></li><li><a href='https://www.nowonbun.com/149.html'>[PHP] IOに関して</a><span>2020/01/23 03:00:00</span></li><li><a href='https://www.nowonbun.com/148.html'>[PHP] requireとinclude、そして「@」の使用方法</a><span>2020/01/22 03:00:00</span></li><li><a href='https://www.nowonbun.com/147.html'>[PHP] Fatal及びNotice,、Warningメッセージ処理する方法</a><span>2020/01/19 03:00:00</span></li><li><a href='https://www.nowonbun.com/146.html'>[PHP] xDebug設定する方法</a><span>2020/01/18 03:00:00</span></li><li><a href='https://www.nowonbun.com/145.html'>[PHP] $_SERVER, $GLOBALS, $_GET, $_POST, $_REQUEST, $_COOKIE, $_SESSION, $_FILES, $_ENV(getenv())</a><span>2020/01/17 03:00:00</span></li><li><a href='https://www.nowonbun.com/144.html'>[PHP] データ確認関数(var_dump, debug_zval_dump, print_r)</a><span>2020/01/16 03:00:00</span></li><li><a href='https://www.nowonbun.com/143.html'>[PHP] 例外処理(try ~ catch ~ finally)</a><span>2020/01/15 03:00:00</span></li></ul>
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
@@ -260,7 +226,7 @@ div &gt; hr{
 		</article>
 		<script type="text/javascript" src="./js/postscreen.js"></script>
 		<div id="disqus_thread"></div>
-		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/131.html';this.page.identifier = 'NOWONBUN00131';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/157.html';this.page.identifier = 'NOWONBUN00157';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
 		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	</div>
 	<footer>
