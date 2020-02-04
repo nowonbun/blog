@@ -35,30 +35,30 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / PHP" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。reflectionは以前javaとc#でも説明したことがあります。link - [c#] reflection(リフレクション)link - [java] reflection - class編reflectionとはプログラム構造を投影して再構築する方法のプログラム技法です。その意味は我々がクラスを「$obj = new class()」形で宣言しますが、その宣言するクラスを動的宣言方法で使いたいことです。つまり、パラメータで「aタイプのクラスを宣言して」というデータがあればaタイプクラスを、「bタイプのクラスを宣言して」というとbタイプのクラスを宣言することです。上の例はreflectionではなく、我々がよく知っている形でクラスを宣言した方法です。パラメータでaを受取るとaクラスを宣言するしbを受取るとbクラスを宣言します。普通だし、問題ないプログラムコーディングですが、もしクラスがaクラス、bクラスだけではなくたくさんある場合にはどうでしょうか？後、プロジェクトが大きくなるほど上のパラメータが増えると言えばどうでしょうか？その時には「$obj = new $type.class()」の形で作成したらどうかと思う時がありますね。それがreflectionです。上の例ではパラメータから「type」を受け取ってreflectionを利用してクラスを宣言しました。結果はブラウザのアドレスにquery stringの「type」に「a」を入れるとaclassのprintを呼出して「aclass」という結果が表示されました。「type」に「b」を入れるとbclassのprintの関数で「bclass」の結果が表示されました。reflectionの「getproperties」と「getmethods」の関数でクラス内部のメンバー変数と関数の構成を確認できます。上の結果を見ると変数には「data」が表示するし、関数には「print」、「test」、「get」がみえます。アクセス修飾子も関係ずにデータがすべてみえますね。でもアクセス修飾子の情報と関数の場合はパラメータ返却情報がないですね。実はあるのに、私がまだ知らない状況の可能性もあります。link - https://www.php.net/manual/en/class.reflectionclass.phpreflectionに関し]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。全樹でrequireとincludeに関して説明したことがあります。link - [php] requireとinclude、そして「@」の使用方法筆者が考えてphpでプログラミングする時に、一番不便なことがrequireとinclude宣言です。小さいプロジェクトならそんなに不便とは感じられない可能性もありますが、大きいプロジェクトなら様々なところでクラスを呼出すし関連ページを全て呼び出さなければならないので、すごく大変になるでしょう。javaやc#の場合はパッケージ単位、namespace単位で宣言します。それでもソースの上にimportやusingキーワードが多くなることがあります。まして、クラス単位であるphpページならすごく多くなるでしょう。筆者は以前に参加したプロジェクトでrequireだけで何百行目になったことも見たことがあります。これを解決する関数で「spl_autoload_register」ということがあります。実はこの関数はphp 5.3から提供していますが、筆者の場合は「7.0」から認識しました。それで以前にはphpの場合はパッケージ管理が難しいという認識がありましたが、実はそれじゃなかったんです。やはり、ソースパフォーマンスや可読性は開発者の能力の違いですね。言語は以前から提供しましたが。。。link - https://www.php.net/manual/en/function.spl-autoload-register.php上の例をみれば、ページの中でクラスだけあるファイルは「.class.php」の拡張子で作成しました。これは標準規約じゃなく、私が楽に区分するように決めた規則です。ソースでspl_autoload_registerの関数以外にはincludeやrequireがありません。でもclass1をインスタンス生成する時(newで割当て)、spl_autoload_registerの関数が呼出してclass1.class.phpファイルを読み込みます。ここでinclude_onceで読み込みましたので重複読み込みはありません。class1クラスはextendsキーワードでabstractclassを経書しました。それで「abstractclass.class.php」ファイルも読み込みました。class2.class.phpの場合は、「abs]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [PHP] Reflection - Class編" />
-<link rel="canonical" href="https://www.nowonbun.com/153.html" />
+<meta name="title" content="明月の開発ストーリ :: [PHP] 自動require及びincludeをする方法(spl_autoload_register)" />
+<link rel="canonical" href="https://www.nowonbun.com/158.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [PHP] Reflection - Class編" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。reflectionは以前javaとc#でも説明したことがあります。link - [c#] reflection(リフレクション)link - [java] reflection - class編reflectionとはプログラム構造を投影して再構築する方法のプログラム技法です。その意味は我々がクラスを「$obj = new class()」形で宣言しますが、その宣言するクラスを動的宣言方法で使いたいことです。つまり、パラメータで「aタイプのクラスを宣言して」というデータがあればaタイプクラスを、「bタイプのクラスを宣言して」というとbタイプのクラスを宣言することです。上の例はreflectionではなく、我々がよく知っている形でクラスを宣言した方法です。パラメータでaを受取るとaクラスを宣言するしbを受取るとbクラスを宣言します。普通だし、問題ないプログラムコーディングですが、もしクラスがaクラス、bクラスだけではなくたくさんある場合にはどうでしょうか？後、プロジェクトが大きくなるほど上のパラメータが増えると言えばどうでしょうか？その時には「$obj = new $type.class()」の形で作成したらどうかと思う時がありますね。それがreflectionです。上の例ではパラメータから「type」を受け取ってreflectionを利用してクラスを宣言しました。結果はブラウザのアドレスにquery stringの「type」に「a」を入れるとaclassのprintを呼出して「aclass」という結果が表示されました。「type」に「b」を入れるとbclassのprintの関数で「bclass」の結果が表示されました。reflectionの「getproperties」と「getmethods」の関数でクラス内部のメンバー変数と関数の構成を確認できます。上の結果を見ると変数には「data」が表示するし、関数には「print」、「test」、「get」がみえます。アクセス修飾子も関係ずにデータがすべてみえますね。でもアクセス修飾子の情報と関数の場合はパラメータ返却情報がないですね。実はあるのに、私がまだ知らない状況の可能性もあります。link - https://www.php.net/manual/en/class.reflectionclass.phpreflectionに関し]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [PHP] 自動require及びincludeをする方法(spl_autoload_register)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。全樹でrequireとincludeに関して説明したことがあります。link - [php] requireとinclude、そして「@」の使用方法筆者が考えてphpでプログラミングする時に、一番不便なことがrequireとinclude宣言です。小さいプロジェクトならそんなに不便とは感じられない可能性もありますが、大きいプロジェクトなら様々なところでクラスを呼出すし関連ページを全て呼び出さなければならないので、すごく大変になるでしょう。javaやc#の場合はパッケージ単位、namespace単位で宣言します。それでもソースの上にimportやusingキーワードが多くなることがあります。まして、クラス単位であるphpページならすごく多くなるでしょう。筆者は以前に参加したプロジェクトでrequireだけで何百行目になったことも見たことがあります。これを解決する関数で「spl_autoload_register」ということがあります。実はこの関数はphp 5.3から提供していますが、筆者の場合は「7.0」から認識しました。それで以前にはphpの場合はパッケージ管理が難しいという認識がありましたが、実はそれじゃなかったんです。やはり、ソースパフォーマンスや可読性は開発者の能力の違いですね。言語は以前から提供しましたが。。。link - https://www.php.net/manual/en/function.spl-autoload-register.php上の例をみれば、ページの中でクラスだけあるファイルは「.class.php」の拡張子で作成しました。これは標準規約じゃなく、私が楽に区分するように決めた規則です。ソースでspl_autoload_registerの関数以外にはincludeやrequireがありません。でもclass1をインスタンス生成する時(newで割当て)、spl_autoload_registerの関数が呼出してclass1.class.phpファイルを読み込みます。ここでinclude_onceで読み込みましたので重複読み込みはありません。class1クラスはextendsキーワードでabstractclassを経書しました。それで「abstractclass.class.php」ファイルも読み込みました。class2.class.phpの場合は、「abs]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
-<meta property="og:url" content="https://www.nowonbun.com/153.html" />
+<meta property="og:url" content="https://www.nowonbun.com/158.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
 
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [PHP] Reflection - Class編" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。reflectionは以前javaとc#でも説明したことがあります。link - [c#] reflection(リフレクション)link - [java] reflection - class編reflectionとはプログラム構造を投影して再構築する方法のプログラム技法です。その意味は我々がクラスを「$obj = new class()」形で宣言しますが、その宣言するクラスを動的宣言方法で使いたいことです。つまり、パラメータで「aタイプのクラスを宣言して」というデータがあればaタイプクラスを、「bタイプのクラスを宣言して」というとbタイプのクラスを宣言することです。上の例はreflectionではなく、我々がよく知っている形でクラスを宣言した方法です。パラメータでaを受取るとaクラスを宣言するしbを受取るとbクラスを宣言します。普通だし、問題ないプログラムコーディングですが、もしクラスがaクラス、bクラスだけではなくたくさんある場合にはどうでしょうか？後、プロジェクトが大きくなるほど上のパラメータが増えると言えばどうでしょうか？その時には「$obj = new $type.class()」の形で作成したらどうかと思う時がありますね。それがreflectionです。上の例ではパラメータから「type」を受け取ってreflectionを利用してクラスを宣言しました。結果はブラウザのアドレスにquery stringの「type」に「a」を入れるとaclassのprintを呼出して「aclass」という結果が表示されました。「type」に「b」を入れるとbclassのprintの関数で「bclass」の結果が表示されました。reflectionの「getproperties」と「getmethods」の関数でクラス内部のメンバー変数と関数の構成を確認できます。上の結果を見ると変数には「data」が表示するし、関数には「print」、「test」、「get」がみえます。アクセス修飾子も関係ずにデータがすべてみえますね。でもアクセス修飾子の情報と関数の場合はパラメータ返却情報がないですね。実はあるのに、私がまだ知らない状況の可能性もあります。link - https://www.php.net/manual/en/class.reflectionclass.phpreflectionに関し]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [PHP] 自動require及びincludeをする方法(spl_autoload_register)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。全樹でrequireとincludeに関して説明したことがあります。link - [php] requireとinclude、そして「@」の使用方法筆者が考えてphpでプログラミングする時に、一番不便なことがrequireとinclude宣言です。小さいプロジェクトならそんなに不便とは感じられない可能性もありますが、大きいプロジェクトなら様々なところでクラスを呼出すし関連ページを全て呼び出さなければならないので、すごく大変になるでしょう。javaやc#の場合はパッケージ単位、namespace単位で宣言します。それでもソースの上にimportやusingキーワードが多くなることがあります。まして、クラス単位であるphpページならすごく多くなるでしょう。筆者は以前に参加したプロジェクトでrequireだけで何百行目になったことも見たことがあります。これを解決する関数で「spl_autoload_register」ということがあります。実はこの関数はphp 5.3から提供していますが、筆者の場合は「7.0」から認識しました。それで以前にはphpの場合はパッケージ管理が難しいという認識がありましたが、実はそれじゃなかったんです。やはり、ソースパフォーマンスや可読性は開発者の能力の違いですね。言語は以前から提供しましたが。。。link - https://www.php.net/manual/en/function.spl-autoload-register.php上の例をみれば、ページの中でクラスだけあるファイルは「.class.php」の拡張子で作成しました。これは標準規約じゃなく、私が楽に区分するように決めた規則です。ソースでspl_autoload_registerの関数以外にはincludeやrequireがありません。でもclass1をインスタンス生成する時(newで割当て)、spl_autoload_registerの関数が呼出してclass1.class.phpファイルを読み込みます。ここでinclude_onceで読み込みましたので重複読み込みはありません。class1クラスはextendsキーワードでabstractclassを経書しました。それで「abstractclass.class.php」ファイルも読み込みました。class2.class.phpの場合は、「abs]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [PHP] Reflection - Class編</title>
+<title>明月の開発ストーリ :: [PHP] 自動require及びincludeをする方法(spl_autoload_register)</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -121,11 +121,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt">[PHP] Reflection - Class編</h1>
+					<h1 id="titleTxt">[PHP] 自動require及びincludeをする方法(spl_autoload_register)</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0205">Study / PHP</a>    作成日付 : 2020/01/30 03:00:00   修正日付 : 2020/01/30 03:00:00
+					<a href="./?category=0205">Study / PHP</a>    作成日付 : 2020/02/05 03:00:00   修正日付 : 2020/02/05 03:00:00
 				</div>
 			</div>
 			<div class="article">
@@ -137,100 +137,96 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>Reflectionは以前JavaとC#でも説明したことがあります。</p> 
-  <p>link - <a href="https://www.nowonbun.com/34.html" target="_blank">[C#] Reflection(リフレクション)</a></p> 
-  <p>link - <a href="https://www.nowonbun.com/68.html" target="_blank">[Java] Reflection - Class編</a></p> 
+  <p>全樹でrequireとincludeに関して説明したことがあります。</p> 
+  <p>link - <a href="https://www.nowonbun.com/148.html" target="_blank">[PHP] requireとinclude、そして「@」の使用方法</a></p> 
   <p><br></p> 
-  <p>Reflectionとはプログラム構造を投影して再構築する方法のプログラム技法です。</p> 
-  <p>その意味は我々がクラスを「$obj = new Class()」形で宣言しますが、その宣言するクラスを動的宣言方法で使いたいことです。</p> 
-  <p>つまり、パラメータで「Aタイプのクラスを宣言して」というデータがあればAタイプクラスを、「Bタイプのクラスを宣言して」というとBタイプのクラスを宣言することです。</p> 
-  <pre><code class="html" data-type="index.php">if($type == "A") {
-  $obj = new AClass();
-} else if($type == "B") {
-  $obj = new BClass();
-}
-</code></pre> 
-  <p>上の例はReflectionではなく、我々がよく知っている形でクラスを宣言した方法です。パラメータでAを受取るとAクラスを宣言するしBを受取るとBクラスを宣言します。</p> 
-  <p>普通だし、問題ないプログラムコーディングですが、もしクラスがAクラス、Bクラスだけではなくたくさんある場合にはどうでしょうか？</p> 
-  <p>後、プロジェクトが大きくなるほど上のパラメータが増えると言えばどうでしょうか？</p> 
-  <p>その時には「$obj = new $type.Class()」の形で作成したらどうかと思う時がありますね。</p> 
-  <p>それがReflectionです。</p> 
-  <pre><code class="html" data-type="index.php">&lt;?php
-  class AClass {
-    public function print() {
-      return "AClass";
+  <p>筆者が考えてPHPでプログラミングする時に、一番不便なことがrequireとinclude宣言です。</p> 
+  <p>小さいプロジェクトならそんなに不便とは感じられない可能性もありますが、大きいプロジェクトなら様々なところでクラスを呼出すし関連ページを全て呼び出さなければならないので、すごく大変になるでしょう。</p> 
+  <p>JavaやC#の場合はパッケージ単位、namespace単位で宣言します。それでもソースの上にimportやusingキーワードが多くなることがあります。</p> 
+  <p>まして、クラス単位であるPHPページならすごく多くなるでしょう。</p> 
+  <p>筆者は以前に参加したプロジェクトでrequireだけで何百行目になったことも見たことがあります。</p> 
+  <p><br></p> 
+  <p>これを解決する関数で「spl_autoload_register」ということがあります。実はこの関数はPHP 5.3から提供していますが、筆者の場合は「7.0」から認識しました。</p> 
+  <p>それで以前にはPHPの場合はパッケージ管理が難しいという認識がありましたが、実はそれじゃなかったんです。やはり、ソースパフォーマンスや可読性は開発者の能力の違いですね。言語は以前から提供しましたが。。。</p> 
+  <p>link - <a href="https://www.php.net/manual/en/function.spl-autoload-register.php" target="_blank">https://www.php.net/manual/en/function.spl-autoload-register.php</a></p> 
+  <pre><code class="php" data-type="index.php">&lt;?php
+  // Classをnewすれば呼出す。
+  spl_autoload_register(function($class) {
+    try {
+      // Classの名前 + ".class.php"の名にファイル名を探す。
+      $filename = $class . ".class.php";
+      // デバッグ
+      var_dump($filename);
+      // includeする。ファイルが無い場合、エラーを発生する。
+      if(!@include_once $_SERVER ["DOCUMENT_ROOT"] ."/". $filename) {
+        throw new Exception("not file");
+      }
+    } catch ( Exception $e ) {
+      // エラーが発生するとバッファクリア
+      ob_clean();
+      //　エラーが内容を表示する。
+      echo $e;
+      die();
     }
-  }
-  class BClass {
-    public function print() {
-      return "BClass";
-    }
-  }
-  //Query StringのTypeのパラメータからデータ取得
-  $name = $_GET["type"];
-  // ReflectionクラスによってClassを探す。
-  // パラメータがAならAClassを、BならBClassを探す。
-  $r = new ReflectionClass($name.'Class'); 
-  // $obj変数にnewInstance関数を呼出してインスタンスを生成する。
-  $obj = $r-&gt;newInstance();
+  });
+  // requireやincludeなしでClass1とClass2を呼出す。
+  $class1 = new Class1();
+  $class2 = new Class2();
 ?&gt;
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
-&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
-&lt;body&gt;
-  &lt;?=$obj-&gt;print()?&gt;
-&lt;/body&gt;
+  &lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- Class１のrun関数を呼出す。 --&gt;
+    &lt;?=$class1-&gt;run()?&gt;
+    &lt;br /&gt;
+    &lt;!-- Class2のrun関数の呼出す。 --&gt;
+    &lt;?=$class2-&gt;run()?&gt;
+  &lt;/body&gt;
 &lt;/html&gt;
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/153/820_001.png" data-filename="001.png" style="width: 489px;"><br></p> 
-  <p style="text-align:left;"><img src="./contents/153/821_002.png" data-filename="002.png" style="width: 523px;"><br></p> 
-  <p>上の例ではパラメータから「type」を受け取ってReflectionを利用してクラスを宣言しました。</p> 
-  <p>結果はブラウザのアドレスにQuery Stringの「type」に「A」を入れるとAClassのprintを呼出して「AClass」という結果が表示されました。</p> 
-  <p>「type」に「B」を入れるとBClassのprintの関数で「BClass」の結果が表示されました。</p> 
-  <pre><code class="html" data-type="index.php">&lt;?php
-  class EXClass {
-    private $data = 10;
-    public function print() {
-      return "EXClass";
-    }
-    private function test() {
-    
-    }
-    public function get() {
-    
+  <p style="text-align:left;"><img src="./contents/158/837_001.png" data-filename="001.png" style="width: 424px;"><br></p> 
+  <pre><code class="php" data-type="AbstractClass.class.php">&lt;?php
+  abstract class AbstractClass {
+    public function run() {
+      return $this-&gt;getData();
+    } 
+    protected abstract function getData();
+  }
+?&gt;
+</code></pre> 
+  <pre><code class="php" data-type="Class.class.php">&lt;?php
+  class Class1 extends AbstractClass {	
+    protected function getData() {	
+      return "This is Class1";
     }
   }
-  // Reflectionを利用してEXClassを宣言する。
-  $r = new ReflectionClass('EXClass'); 
-  // Reflectionの変数「r」のデータ構成を確認する。
-  // ReflectionPropertyの設定はアクセス修飾子の関係ずに全てのデータを確認する。
-  var_dump($r-&gt;getProperties( ReflectionProperty::IS_PUBLIC | 
-                              ReflectionProperty::IS_PROTECTED | 
-                              ReflectionProperty::IS_PRIVATE));
-  // Reflectionの変数「r」の関数構成を確認する。
-  var_dump($r-&gt;getMethods());
 ?&gt;
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;&lt;title&gt;title&lt;/title&gt;&lt;/head&gt;
-&lt;body&gt;&lt;/body&gt;
-&lt;/html&gt;
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/153/822_003.png" data-filename="003.png" style="width: 492px;"><br></p> 
-  <p>Reflectionの「getProperties」と「getMethods」の関数でクラス内部のメンバー変数と関数の構成を確認できます。</p> 
-  <p>上の結果を見ると変数には「data」が表示するし、関数には「print」、「test」、「get」がみえます。</p> 
-  <p>アクセス修飾子も関係ずにデータがすべてみえますね。でもアクセス修飾子の情報と関数の場合はパラメータ返却情報がないですね。</p> 
-  <p>実はあるのに、私がまだ知らない状況の可能性もあります。</p> 
-  <p>link - <a href="https://www.php.net/manual/en/class.reflectionclass.php" target="_blank">https://www.php.net/manual/en/class.reflectionclass.php</a></p> 
+  <pre><code class="php" data-type="Class.class.php">&lt;?php
+  class Class2 extends AbstractClass {
+    protected function getData() {
+      return "This is Class2";
+    }
+  }
+?&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/158/838_002.png" data-filename="002.png" style="width: 736px;"><br></p> 
+  <p>上の例をみれば、ページの中でクラスだけあるファイルは「.class.php」の拡張子で作成しました。これは標準規約じゃなく、私が楽に区分するように決めた規則です。</p> 
+  <p>ソースでspl_autoload_registerの関数以外にはincludeやrequireがありません。でもClass1をインスタンス生成する時(newで割当て)、spl_autoload_registerの関数が呼出してClass1.class.phpファイルを読み込みます。</p> 
+  <p>ここでinclude_onceで読み込みましたので重複読み込みはありません。Class1クラスはextendsキーワードでAbstractClassを経書しました。それで「AbstractClass.class.php」ファイルも読み込みました。</p> 
   <p><br></p> 
-  <p>Reflectionに関して続けて調べてみます。</p>
+  <p>Class2.class.phpの場合は、「AbstractClass.class.php」を読み込んだことがあるので、再読み込みはしません。</p> 
+  <p><br></p> 
+  <p>Htmlページではrun関数を呼出しました。run関数では派生クラスのgetData関数を呼出しますね。</p> 
+  <p>それでClass1の場合は「This is Class1」、Class2の場合は「This is Class2」という結果が表示されます。</p>
  
 </div>
 				<!-- 일본 반응형 2 -->
 				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
 				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 				<div class="list-meta ie-dotum">
-					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=php>#php</a>,<a href=./search.html?query=reflection>#reflection</a> </span>
+					<span class="timeago ff-h dt-published tag-column" id="article_tag">  </span>
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0205">Study / PHP</a>」の他投稿</div>
@@ -244,7 +240,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		</article>
 		<script type="text/javascript" src="./js/postscreen.js"></script>
 		<div id="disqus_thread"></div>
-		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/153.html';this.page.identifier = 'NOWONBUN00153';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/158.html';this.page.identifier = 'NOWONBUN00158';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
 		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 	</div>
 	<footer>
