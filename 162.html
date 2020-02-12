@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/162.html"},"url":"https:\/\/www.nowonbun.com\/162.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [PHP] namespace\u3068use","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fphp\u306enamespace\u3068use\u30ad\u30fc\u30ef\u30fc\u30c9\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u73fe\u5728cakephp\u30d5\u30ec\u30fc\u30e0\u30ef\u30fc\u30af\u306b\u95a2\u3059\u308b\u5206\u6790\u3084\u8aac\u660e\u3092\u3057\u3066\u3044\u307e\u3059\u304c\u3001\u6025\u306bphp\u57fa\u790e\u6587\u6cd5\u306b\u623b\u308a\u307e\u3057\u305f\u3002\u5b9f\u306fphp\u306e\u4e2d\u3067namespace\u3084use\u3092\u3088\u304f\u4f7f\u3044\u306a\u3089\u30bd\u30fc\u30b9\u7ba1\u7406\u306b\u826f\u3044\u3067\u3059\u304c\u3001\u30e9\u30a4\u30d6\u30e9\u30ea\u958b\u767a\u3058\u3083\u306a\u3044\u4ee5\u4e0a\u3001\u3059\u3054\u304f\u5927\u4e8b\u306a\u3068\u3053\u308d\u3058\u3083\u306a\u304b\u3063\u305f\u306e\u3067\u7701\u7565\u3057\u3088\u3046\u3068\u601d\u3044\u307e\u3057\u305f\u3002\u3067\u3082\u3001\u3084\u306f\u308amvc\u30e2\u30c7\u30eb\u3067\u958b\u767a\u3059\u308b\u305f\u3081\u306b\u306f\u30d1\u30c3\u30b1\u30fc\u30b8\u533a\u5206\u304c\u5fc5\u8981\u3068\u601d\u3063\u3066\u8aac\u660e\u3057\u307e\u3059\u3002namespace\u3068use\u3068\u306fc#\u306e\u5834\u5408\u306fnamespace\u3068using\u3001java\u306e\u5834\u5408\u306fpackage\u3068import\u3068\u540c\u3058\u610f\u5473\u3067\u3059\u3002\u6700\u8fd1\u3001\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u30b5\u30a4\u30ba\u304c\u4ee5\u524d\u3088\u308a\u5927\u304d\u3044\u3057\u69d8\u3005\u306a\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u53c2\u7167\u3057\u3066\u3044\u307e\u3059\u3002\u305d\u308c\u3067\u30af\u30e9\u30b9\u540d\u3092\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u4e2d\u3067\u96c4\u4e00\u306a\u3053\u3068\u306b\u6c7a\u3081\u308b\u3053\u3068\u304c\u96e3\u3057\u3044\u3067\u3059\u3002\u4f8b\u3048\u3070\u3001\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u3092\uff12\u3064\u3092\u6271\u3046\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u3068\u3044\u3046\u3053\u3068\u306b\u8003\u3048\u3066\u307f\u307e\u3057\u3087\u3046\u3002\u305d\u306e\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306e\u7a2e\u985e\u304cmysql\u3068oracle\u3068\u3044\u3048\u3070rdbms\u306e\u30bf\u30a4\u30d7\u306a\u306e\u3067\u30e9\u30a4\u30d6\u30e9\u30ea\u304c\u3059\u3054\u304f\u4f3c\u3066\u3044\u308b\u3068\u601d\u3044\u307e\u3059\u3002\u305d\u306e\u305f\u3081\u3001\u30b3\u30cd\u30af\u30b7\u30e7\u30f3\u3059\u308b\u30af\u30e9\u30b9\u540d\u304cmysql\u30e9\u30a4\u30d6\u30e9\u30ea\u306f\u300cconnection\u300d\u3068\u3044\u3046\u540d\u3092\u3001oracle\u30e9\u30a4\u30d6\u30e9\u30ea\u3067\u3082\u300cconnection\u300d\u3068\u5b9f\u88c5\u3055\u308c\u3066\u3044\u308b\u3068\u601d\u3048\u3070\u30e6\u30fc\u30b6\u304cconnection\u30af\u30e9\u30b9\u3092\u5272\u5f53\u3066\u3059\u308b\u6642\u306b\u30d7\u30ed\u30b0\u30e9\u30e0\u306f\u3069\u306econnection\u3092\u5ba3\u8a00\u3059\u308b\u304b\u7af6\u5408\u30a8\u30e9\u30fc\u306b\u306a\u308b\u306f\u305a\u3067\u3059\u3002\u4ed6\u306e\u4f8b\u3067\u306fxml\u30c7\u30fc\u30bf\u3092\u6271\u3046\u30e9\u30a4\u30d6\u30e9\u30ea\u3067\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u3092\u4f5c\u6210\u3059\u308bbuild\u30af\u30e9\u30b9\u304c\u3042\u308b\u3057\u3001json\u30c7\u30fc\u30bf\u3092\u6271\u3046\u30e9\u30a4\u30d6\u30e9\u30ea\u3067\u3082\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u3092\u4f5c\u6210\u3059\u308bbuild\u30af\u30e9\u30b9\u304c\u3042\u308b\u3068\u601d\u3048\u3070\u3001buile\u30af\u30e9\u30b9\u3092\u5272\u5f53\u3066\u3059\u308b\u6642\u306b\u30d7\u30ed\u30b0\u30e9\u30e0\u306f\u3069\u306e\u30af\u30e9\u30b9\u3092\u5ba3\u8a00\u3059\u308b\u304b\u3092\u5206\u304b\u3089\u306a\u3044\u3067\u3059\u3002\u305d\u3046\u3059\u308b\u3068\u3001\u5168\u3066\u3082php\u306e\u30e9\u30a4\u30d6\u30e9\u30ea\u306e\u30af\u30e9\u30b9\u540d\u306f\u56fa\u6709\u540d\u3067\u4f5c\u6210\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u304c\u3001\u73fe\u5b9f\u7684\u306b\u3042\u308a\u3048\u306a\u3044\u3053\u3068\u3067\u3057\u3087\u3046\u3002\u540c\u3058\u30af\u30e9\u30b9\u540d\u3067\u3082\u533a\u5225\u3059\u308b\u305f\u3081\u306bnamespace\u304c\u3042\u308a\u307e\u3059\u3002use\u306e\u5834\u5408\u306fnamespace\u3092\u30d1\u30c3\u30b1\u30fc\u30b8\u3092\u4f7f\u7528\u3059\u308b\u660e\u793a\u7684\u306b\u5ba3\u8a00\u3059\u308b\u3053\u3068\u3067\u3059\u3002\u4e0a\u306e\u4f8b\u306ftestclass\u304c\uff12\u3064\u3042\u308a\u307e\u3059\u3002namespace\u306f\u5404test1\u3068test2\u306b\u3042\u308b\u306e\u3067\u3001\u5225\u306e\u30af\u30e9\u30b9\u3067\u3059\u3002\u3082\u3057\u3001namespace\u3092\u4f7f\u3063\u3066\u306a\u3044\u306a\u3089\u540c\u3058\u30af\u30e9\u30b9\u540d\u304c\u91cd\u8907\u3055\u308c\u305f\u3068\u3044\u3046\u30a8\u30e9\u30fc\u30e1\u30c3\u30bb\u30fc\u30b8\u304c\u3067\u307e\u3059\u3002\u30a8\u30e9\u30fc\u30e1\u30c3\u30bb\u30fc\u30b8\u304c\u51fa\u306a\u3044(\u30a8\u30e9\u30fc\u30aa\u30d7\u30b7\u30e7\u30f3\u8a2d\u5b9a\u3067\u3002)\u3068\u8a00\u3063\u3066\u3082controller\u3067testclass\u3092\u5272\u5f53\u3066","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2020-02-13T03:00:00.000+09:00","dateModified":"2020-02-13T03:00:00.000+09:00","publisher":{"@type":"Person","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / PHP" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はphpのnamespaceとuseキーワードに関する説明です。現在cakephpフレームワークに関する分析や説明をしていますが、急にphp基礎文法に戻りました。実はphpの中でnamespaceやuseをよく使いならソース管理に良いですが、ライブラリ開発じゃない以上、すごく大事なところじゃなかったので省略しようと思いました。でも、やはりmvcモデルで開発するためにはパッケージ区分が必要と思って説明します。namespaceとuseとはc#の場合はnamespaceとusing、javaの場合はpackageとimportと同じ意味です。最近、プロジェクトサイズが以前より大きいし様々なライブラリを参照しています。それでクラス名をプロジェクト中で雄一なことに決めることが難しいです。例えば、データベースを２つを扱うプロジェクトということに考えてみましょう。そのデータベースの種類がmysqlとoracleといえばrdbmsのタイプなのでライブラリがすごく似ていると思います。そのため、コネクションするクラス名がmysqlライブラリは「connection」という名を、oracleライブラリでも「connection」と実装されていると思えばユーザがconnectionクラスを割当てする時にプログラムはどのconnectionを宣言するか競合エラーになるはずです。他の例ではxmlデータを扱うライブラリでオブジェクトを作成するbuildクラスがあるし、jsonデータを扱うライブラリでもオブジェクトを作成するbuildクラスがあると思えば、buileクラスを割当てする時にプログラムはどのクラスを宣言するかを分からないです。そうすると、全てもphpのライブラリのクラス名は固有名で作成しなければならないですが、現実的にありえないことでしょう。同じクラス名でも区別するためにnamespaceがあります。useの場合はnamespaceをパッケージを使用する明示的に宣言することです。上の例はtestclassが２つあります。namespaceは各test1とtest2にあるので、別のクラスです。もし、namespaceを使ってないなら同じクラス名が重複されたというエラーメッセージがでます。エラーメッセージが出ない(エラーオプション設定で。)と言ってもcontrollerでtestclassを割当て]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [PHP] namespaceとuse" />
+<link rel="canonical" href="https://www.nowonbun.com/162.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [PHP] namespaceとuse" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はphpのnamespaceとuseキーワードに関する説明です。現在cakephpフレームワークに関する分析や説明をしていますが、急にphp基礎文法に戻りました。実はphpの中でnamespaceやuseをよく使いならソース管理に良いですが、ライブラリ開発じゃない以上、すごく大事なところじゃなかったので省略しようと思いました。でも、やはりmvcモデルで開発するためにはパッケージ区分が必要と思って説明します。namespaceとuseとはc#の場合はnamespaceとusing、javaの場合はpackageとimportと同じ意味です。最近、プロジェクトサイズが以前より大きいし様々なライブラリを参照しています。それでクラス名をプロジェクト中で雄一なことに決めることが難しいです。例えば、データベースを２つを扱うプロジェクトということに考えてみましょう。そのデータベースの種類がmysqlとoracleといえばrdbmsのタイプなのでライブラリがすごく似ていると思います。そのため、コネクションするクラス名がmysqlライブラリは「connection」という名を、oracleライブラリでも「connection」と実装されていると思えばユーザがconnectionクラスを割当てする時にプログラムはどのconnectionを宣言するか競合エラーになるはずです。他の例ではxmlデータを扱うライブラリでオブジェクトを作成するbuildクラスがあるし、jsonデータを扱うライブラリでもオブジェクトを作成するbuildクラスがあると思えば、buileクラスを割当てする時にプログラムはどのクラスを宣言するかを分からないです。そうすると、全てもphpのライブラリのクラス名は固有名で作成しなければならないですが、現実的にありえないことでしょう。同じクラス名でも区別するためにnamespaceがあります。useの場合はnamespaceをパッケージを使用する明示的に宣言することです。上の例はtestclassが２つあります。namespaceは各test1とtest2にあるので、別のクラスです。もし、namespaceを使ってないなら同じクラス名が重複されたというエラーメッセージがでます。エラーメッセージが出ない(エラーオプション設定で。)と言ってもcontrollerでtestclassを割当て]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/162.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [PHP] namespaceとuse" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はphpのnamespaceとuseキーワードに関する説明です。現在cakephpフレームワークに関する分析や説明をしていますが、急にphp基礎文法に戻りました。実はphpの中でnamespaceやuseをよく使いならソース管理に良いですが、ライブラリ開発じゃない以上、すごく大事なところじゃなかったので省略しようと思いました。でも、やはりmvcモデルで開発するためにはパッケージ区分が必要と思って説明します。namespaceとuseとはc#の場合はnamespaceとusing、javaの場合はpackageとimportと同じ意味です。最近、プロジェクトサイズが以前より大きいし様々なライブラリを参照しています。それでクラス名をプロジェクト中で雄一なことに決めることが難しいです。例えば、データベースを２つを扱うプロジェクトということに考えてみましょう。そのデータベースの種類がmysqlとoracleといえばrdbmsのタイプなのでライブラリがすごく似ていると思います。そのため、コネクションするクラス名がmysqlライブラリは「connection」という名を、oracleライブラリでも「connection」と実装されていると思えばユーザがconnectionクラスを割当てする時にプログラムはどのconnectionを宣言するか競合エラーになるはずです。他の例ではxmlデータを扱うライブラリでオブジェクトを作成するbuildクラスがあるし、jsonデータを扱うライブラリでもオブジェクトを作成するbuildクラスがあると思えば、buileクラスを割当てする時にプログラムはどのクラスを宣言するかを分からないです。そうすると、全てもphpのライブラリのクラス名は固有名で作成しなければならないですが、現実的にありえないことでしょう。同じクラス名でも区別するためにnamespaceがあります。useの場合はnamespaceをパッケージを使用する明示的に宣言することです。上の例はtestclassが２つあります。namespaceは各test1とtest2にあるので、別のクラスです。もし、namespaceを使ってないなら同じクラス名が重複されたというエラーメッセージがでます。エラーメッセージが出ない(エラーオプション設定で。)と言ってもcontrollerでtestclassを割当て]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [PHP] namespaceとuse</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(23)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(139)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(26)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[PHP] namespaceとuse</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0205">Study / PHP</a>    作成日付 : 2020/02/13 03:00:00   修正日付 : 2020/02/13 03:00:00
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はPHPのnamespaceとuseキーワードに関する説明です。</p> 
+  <p><br></p> 
+  <p>現在CakePHPフレームワークに関する分析や説明をしていますが、急にPHP基礎文法に戻りました。</p> 
+  <p>実はPHPの中でnamespaceやuseをよく使いならソース管理に良いですが、ライブラリ開発じゃない以上、すごく大事なところじゃなかったので省略しようと思いました。</p> 
+  <p>でも、やはりMVCモデルで開発するためにはパッケージ区分が必要と思って説明します。</p> 
+  <p><br></p> 
+  <p>namespaceとuseとはC#の場合はnamespaceとusing、Javaの場合はpackageとimportと同じ意味です。</p> 
+  <p>最近、プロジェクトサイズが以前より大きいし様々なライブラリを参照しています。それでクラス名をプロジェクト中で雄一なことに決めることが難しいです。</p> 
+  <p>例えば、データベースを２つを扱うプロジェクトということに考えてみましょう。</p> 
+  <p>そのデータベースの種類がmysqlとoracleといえばRDBMSのタイプなのでライブラリがすごく似ていると思います。そのため、コネクションするクラス名がmysqlライブラリは「Connection」という名を、oracleライブラリでも「Connection」と実装されていると思えばユーザがConnectionクラスを割当てする時にプログラムはどのConnectionを宣言するか競合エラーになるはずです。</p> 
+  <p>他の例ではxmlデータを扱うライブラリでオブジェクトを作成するBuildクラスがあるし、jsonデータを扱うライブラリでもオブジェクトを作成するBuildクラスがあると思えば、Buileクラスを割当てする時にプログラムはどのクラスを宣言するかを分からないです。</p> 
+  <p>そうすると、全てもPHPのライブラリのクラス名は固有名で作成しなければならないですが、現実的にありえないことでしょう。</p> 
+  <p><br></p> 
+  <p>同じクラス名でも区別するためにnamespaceがあります。</p> 
+  <p>useの場合はnamespaceをパッケージを使用する明示的に宣言することです。</p> 
+  <pre><code class="php" data-type="HomeController.php">&lt;?php
+//namespace Test1の属するTestClass
+namespace Test1;
+class TestClass {
+  public function print() {
+    return "Test1";
+  }
+}
+//namespace Test2に属するTestClass
+namespace Test2;
+class TestClass {
+  public function print() {
+    return "Test2";
+  }
+}
+	
+namespace App\Controller;
+// Test1のnamespaceを宣言
+use Test1\TestClass;
+
+class HomeController extends AppController {
+  public function index() {
+    // ここで割当てするTestClassはTest1のnamespaceのクラスだ。なぜなら、上にuseでTest1\TestClassを使うと予約宣言したからだ。
+    $this-&gt;set("data",new TestClass());
+  }
+}
+</code></pre> 
+  <pre><code class="html" data-type="index.ctp">&lt;!-- Controllerから渡してもらったTestClassのprint関数を呼出す。--&gt;
+&lt;!-- ControllerでTest1のnamespaceのTestClassを割当てしたので結果は「Test1」だ。--&gt;
+{$data-&gt;print()}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/162/873_001.png" data-filename="001.png" style="width: 495px;"><br></p> 
+  <p>上の例はTestClassが２つあります。namespaceは各Test1とTest2にあるので、別のクラスです。</p> 
+  <p>もし、namespaceを使ってないなら同じクラス名が重複されたというエラーメッセージがでます。エラーメッセージが出ない(エラーオプション設定で。)と言ってもControllerでTestClassを割当てすると思えばなにを割当てするかしらないでしょう。</p> 
+  <p><br></p> 
+  <p>HomeConrollerでnew TestClassを宣言する時に、useで使うnamespaceを予約宣言しましたので、TestClassはTest2/TestClassのことを分かることでしょう。</p> 
+  <p style="text-align:left;"><img src="./contents/162/875_002.png" data-filename="002.png" style="width: 534px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/162/874_003.png" data-filename="003.png" style="width: 502px;"><br></p> 
+  <p>今回はuseを予約宣言クラスをTest2\TestClassに修正しました。結果は「Test２」が得ることを確認できます。</p> 
+  <p><br></p> 
+  <p>上の例では一つのページで様々なnamespaceを宣言しましたが、実際にはフォルダ構造としてnamespaceが決めます。</p> 
+  <p>/Commonフォルダに共通クラスを集める構造だと、Util関係なクラスはnamespaceをCommonに決めることです。</p> 
+  <p><br></p> 
+  <p>我々がPHPを使うことなら普通はウェブサイトを構築するために使います。</p> 
+  <p>なので様々なライブラリを参照して使う立場なのでnamespaceとuseは知らなくてもPHPでサイト運用で問題ないと思いました。でもCakePHPには管理するクラスが多いし、CakePHPのフレームワークが大きいからプロジェクトサイズが大きくなるのでnamespaceとuseキーワードを使わないことができないです。</p> 
+  <p>そのため、調査して説明しました。</p> 
+  <p><br></p> 
+  <p>link - <a href="https://www.php.net/manual/en/language.namespaces.basics.php" target="_blank">https://www.php.net/manual/en/language.namespaces.basics.php</a></p> 
+  <p><br></p> 
+  <p>ここまでPHPのnamespaceとuseキーワードに関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=php>#php</a>,<a href=./search.html?query=namespace>#namespace</a>,<a href=./search.html?query=use>#use</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0205">Study / PHP</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/162.html'>[PHP] namespaceとuse</a><span>2020/02/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/161.html'>[CakePHP] RequestとResponseに関して</a><span>2020/02/12 03:00:02</span></li><li><a href='https://www.nowonbun.com/160.html'>[CakePHP] PHPのCakeからAjax要請がある時、jsonタイプ(json_encode関数)でResponseする方法とControllerでViewを選択する方法</a><span>2020/02/08 03:00:00</span></li><li><a href='https://www.nowonbun.com/159.html'>[CakePHP] MVCフレームワークのCakeをインストールする方法</a><span>2020/02/07 03:00:02</span></li><li><a href='https://www.nowonbun.com/158.html'>[PHP] 自動require及びincludeをする方法(spl_autoload_register)</a><span>2020/02/05 03:00:00</span></li><li><a href='https://www.nowonbun.com/157.html'>[PHP] 匿名関数(ラムダ式)とクロージャ(closure)</a><span>2020/02/04 03:00:00</span></li><li><a href='https://www.nowonbun.com/156.html'>[PHP] PHPのコーディング領域とデザイン領域を分離するテンプレートライブラリ Smarty</a><span>2020/02/02 03:00:00</span></li><li><a href='https://www.nowonbun.com/155.html'>[PHP] Reflection - Variable編</a><span>2020/02/01 03:00:00</span></li><li><a href='https://www.nowonbun.com/154.html'>[PHP] Reflection - Method編</a><span>2020/01/31 03:00:00</span></li><li><a href='https://www.nowonbun.com/153.html'>[PHP] Reflection - Class編</a><span>2020/01/30 03:00:00</span></li><li><a href='https://www.nowonbun.com/152.html'>[PHP] エラーページ処理方法(追加: ob_cleanとdie関数使用方法)</a><span>2020/01/29 03:00:00</span></li><li><a href='https://www.nowonbun.com/151.html'>[PHP] 分散設定ファイル(.htaccess) 使用方法</a><span>2020/01/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/150.html'>[PHP] データベース(mariaDB)を連結して使う方法</a><span>2020/01/24 03:00:00</span></li><li><a href='https://www.nowonbun.com/149.html'>[PHP] IOに関して</a><span>2020/01/23 03:00:00</span></li><li><a href='https://www.nowonbun.com/148.html'>[PHP] requireとinclude、そして「@」の使用方法</a><span>2020/01/22 03:00:00</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/162.html'>[PHP] namespaceとuse</a><span>2020/02/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/161.html'>[CakePHP] RequestとResponseに関して</a><span>2020/02/12 03:00:02</span></li><li><a href='https://www.nowonbun.com/160.html'>[CakePHP] PHPのCakeからAjax要請がある時、jsonタイプ(json_encode関数)でResponseする方法とControllerでViewを選択する方法</a><span>2020/02/08 03:00:00</span></li><li><a href='https://www.nowonbun.com/159.html'>[CakePHP] MVCフレームワークのCakeをインストールする方法</a><span>2020/02/07 03:00:02</span></li><li><a href='https://www.nowonbun.com/158.html'>[PHP] 自動require及びincludeをする方法(spl_autoload_register)</a><span>2020/02/05 03:00:00</span></li><li><a href='https://www.nowonbun.com/157.html'>[PHP] 匿名関数(ラムダ式)とクロージャ(closure)</a><span>2020/02/04 03:00:00</span></li><li><a href='https://www.nowonbun.com/156.html'>[PHP] PHPのコーディング領域とデザイン領域を分離するテンプレートライブラリ Smarty</a><span>2020/02/02 03:00:00</span></li><li><a href='https://www.nowonbun.com/155.html'>[PHP] Reflection - Variable編</a><span>2020/02/01 03:00:00</span></li><li><a href='https://www.nowonbun.com/154.html'>[PHP] Reflection - Method編</a><span>2020/01/31 03:00:00</span></li><li><a href='https://www.nowonbun.com/153.html'>[PHP] Reflection - Class編</a><span>2020/01/30 03:00:00</span></li><li><a href='https://www.nowonbun.com/152.html'>[PHP] エラーページ処理方法(追加: ob_cleanとdie関数使用方法)</a><span>2020/01/29 03:00:00</span></li><li><a href='https://www.nowonbun.com/151.html'>[PHP] 分散設定ファイル(.htaccess) 使用方法</a><span>2020/01/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/150.html'>[PHP] データベース(mariaDB)を連結して使う方法</a><span>2020/01/24 03:00:00</span></li><li><a href='https://www.nowonbun.com/149.html'>[PHP] IOに関して</a><span>2020/01/23 03:00:00</span></li><li><a href='https://www.nowonbun.com/148.html'>[PHP] requireとinclude、そして「@」の使用方法</a><span>2020/01/22 03:00:00</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/162.html';this.page.identifier = 'NOWONBUN00162';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
