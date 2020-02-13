@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/163.html"},"url":"https:\/\/www.nowonbun.com\/163.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [CakePHP] \u30c7\u30fc\u30bf\u30d9\u30fc\u30b9(MariaDB(Mysql))\u3092\u63a5\u7d9a\u3059\u308b\u65b9\u6cd5","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fphp\u306ecake\u30d5\u30ec\u30fc\u30e0\u30ef\u30fc\u30af\u3067\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9(mariadb(mysql))\u3092\u63a5\u7d9a\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u4ee5\u524d\u3001\u30d0\u30cb\u30e9php\u30d0\u30fc\u30b8\u30e7\u30f3\u3067mysqli\u306e\u30e2\u30b8\u30e5\u30fc\u30eb\u3092\u62e1\u5f35\u3057\u3066\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306b\u63a5\u7d9a\u3001\u691c\u7d22\u3001\u683c\u7d0d\u3001\u524a\u9664\u306a\u3069\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u305f\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002link - [php] \u30c7\u30fc\u30bf\u30d9\u30fc\u30b9(mariadb)\u3092\u9023\u7d50\u3057\u3066\u4f7f\u3046\u65b9\u6cd5cake\u30d5\u30ec\u30fc\u30e0\u30ef\u30fc\u30af\u3067\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u3092\u63a5\u7d9a\u3057\u3066\u30c7\u30fc\u30bf\u7ba1\u7406\u3059\u308b\u3053\u3068\u306f\u4ee5\u524d\u30d0\u30cb\u30e9php\u30d0\u30fc\u30b8\u30e7\u30f3\u3088\u308a\u3044\u3044\u3067\u3059\u3002orm\u30d5\u30ec\u30fc\u30e0\u30ef\u30fc\u30af\u3067\u30c7\u30fc\u30bf\u3092\u7ba1\u7406\u3059\u308b\u3057\u3001\u53d6\u5f97\u3059\u308b\u3053\u3068\u3082c#\u306elinq\u5f0f\u307f\u305f\u3044\u306a\u611f\u3058\u306e\u5b9f\u88c5\u3059\u308b\u306e\u3067\u63a5\u8fd1\u6027\u304c\u3088\u304f\u306a\u308a\u307e\u3057\u305f\u3002link - https:\/\/book.cakephp.org\/3\/ja\/orm\/database-basics.html\u5148\u306b\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306b\u30af\u30a8\u30ea\u3092\u4f5c\u3063\u3066\u30c7\u30fc\u30bf\u3092\u6e96\u5099\u3057\u307e\u3057\u3087\u3046\u3002\u4ee5\u524d\u306b\u30c6\u30b9\u30c8\u3067\u4f7f\u3063\u305f\u30c7\u30fc\u30bf\u3092\u305d\u306e\u307e\u307e\u306b\u4f7f\u3044\u307e\u3059\u3002\u305d\u3057\u3066\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306b\u63a5\u7d9a\u3059\u308b\u305f\u3081\u306b\u8a2d\u5b9a\u60c5\u5831\u30d5\u30a1\u30a4\u30eb\u3092\u4fee\u6b63\u3057\u307e\u3059\u3002\u8a2d\u5b9a\u60c5\u5831\u30d5\u30a1\u30a4\u30eb\u306fcake\u30d5\u30ec\u30fc\u30e0\u30ef\u30fc\u30af\u306econfig\u30d5\u30a9\u30eb\u30c0\u306e\u4e2d\u306bapp.php\u30d5\u30a1\u30a4\u30eb\u304c\u3042\u308a\u307e\u3059\u3002app.php\u30d5\u30a1\u30a4\u30eb\u306e\u4e2d\u3067\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u30b3\u30cd\u30af\u30b7\u30e7\u30f3\u60c5\u5831\u3092\u8a2d\u5b9a\u3059\u308b\u3068\u3053\u308d\u304c\u3042\u308a\u307e\u3059\u3002\u305d\u308c\u3092\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u8a2d\u5b9a\u74b0\u5883\u306b\u5408\u308f\u305b\u3066\u4fee\u6b63\u3057\u307e\u3059\u3002\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u8a2d\u5b9a\u304c\u5b8c\u4e86\u3057\u305f\u3089homecontroller\u306e\u30af\u30e9\u30b9\u304b\u3089\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306e\u30c7\u30fc\u30bf\u3092\u53d6\u5f97\u3057\u307e\u3059\u3002\u4e0a\u306e\u7d50\u679c\u3092\u307f\u308c\u3070\u3001\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u304b\u3089\u30c7\u30fc\u30bf\u3092\u53d6\u5f97\u3057\u305f\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3057\u305f\u3002\u4e0a\u306e\u30af\u30a8\u30ea\u3092\u307f\u308c\u3070\u3001\u5358\u7d14\u306b\u300cselect * from testtable\u300d\u5f0f\u3092\u98db\u3070\u3057\u3066assoc\u3092\u9023\u95a2\u914d\u5217\u3067\u53d6\u5f97\u3057\u305f\u3053\u3068\u3067\u4ee5\u524d\u306e\u65b9\u5f0f\u3068\u5225\u306b\u5dee\u304c\u3042\u308a\u307e\u305b\u3093\u3002\u4e0a\u306e\u4f8b\u3092\u307f\u308c\u3070$connection\u304b\u3089\u30af\u30a8\u30ea\u30aa\u30d6\u30b8\u30a7\u30af\u30c8$($query)\u3092\u53d7\u3051\u53d6\u308a\u307e\u3059\u3002$query\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u306f\u300cfrom\u300d\u3001\u300cwhere\u300d\u3001\u300corder\u300d\u3001\u300cselect\u300d\u306e\u95a2\u6570\u3067\u30af\u30a8\u30ea\u3092\u7d44\u307f\u7acb\u3066\u307e\u3059\u3002\u3053\u306e\u95a2\u6570\u306f\u300cexcute\u300d\u95a2\u6570\u3067\u7d44\u307f\u7acb\u3066\u308b\u306e\u3067\u9806\u756a\u304c\u5909\u308f\u3063\u3066\u3082\u7d50\u679c\u306f\u540c\u3058\u3067\u3059\u3002fetchall\u3067\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u304b\u3089\u30c7\u30fc\u30bf\u3092\u53d7\u3051\u53d6\u308a\u307e\u3059\u3002\u7d50\u679c\u306fidx\u304c\u5076\u6570\u3060\u3051\u3042\u308a\u307e\u3059\u300260\u306e\u5834\u5408\u306f10\u500d\u6570\u306a\u306e\u3067\u300cnew!!!\u300d\u5909\u66f4\u3055\u308c\u305f\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002$connection\u306b\u306finsert\u3001update\u3001delete\u306e\u95a2\u6570\u304c\u3042\u308a\u307e\u3059\u3002insert\u306e\u5834\u5408\u306f\u521d\u3081\u306e\u30d1\u30e9\u30e1\u30fc\u30bf\u306f\u30c6\u30fc\u30d6\u30eb\u540d\u3067\uff12\u3064\u76ee\u306f\u9023\u95a2\u914d\u5217\u306b\u3088\u3063\u3066\u30c7","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2020-02-14T03:00:00.000+09:00","dateModified":"2020-02-14T03:00:00.000+09:00","publisher":{"@type":"Person","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / PHP" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はphpのcakeフレームワークでデータベース(mariadb(mysql))を接続する方法に関する説明です。以前、バニラphpバージョンでmysqliのモジュールを拡張してデータベースに接続、検索、格納、削除などに関して説明したことがあります。link - [php] データベース(mariadb)を連結して使う方法cakeフレームワークでデータベースを接続してデータ管理することは以前バニラphpバージョンよりいいです。ormフレームワークでデータを管理するし、取得することもc#のlinq式みたいな感じの実装するので接近性がよくなりました。link - https://book.cakephp.org/3/ja/orm/database-basics.html先にデータベースにクエリを作ってデータを準備しましょう。以前にテストで使ったデータをそのままに使います。そしてデータベースに接続するために設定情報ファイルを修正します。設定情報ファイルはcakeフレームワークのconfigフォルダの中にapp.phpファイルがあります。app.phpファイルの中でデータベースコネクション情報を設定するところがあります。それをデータベース設定環境に合わせて修正します。データベース設定が完了したらhomecontrollerのクラスからデータベースのデータを取得します。上の結果をみれば、データベースからデータを取得したことを確認できました。上のクエリをみれば、単純に「select * from testtable」式を飛ばしてassocを連関配列で取得したことで以前の方式と別に差がありません。上の例をみれば$connectionからクエリオブジェクト$($query)を受け取ります。$queryオブジェクトは「from」、「where」、「order」、「select」の関数でクエリを組み立てます。この関数は「excute」関数で組み立てるので順番が変わっても結果は同じです。fetchallでデータベースからデータを受け取ります。結果はidxが偶数だけあります。60の場合は10倍数なので「new!!!」変更されたことを確認できます。$connectionにはinsert、update、deleteの関数があります。insertの場合は初めのパラメータはテーブル名で２つ目は連関配列によってデ]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [CakePHP] データベース(MariaDB(Mysql))を接続する方法" />
+<link rel="canonical" href="https://www.nowonbun.com/163.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [CakePHP] データベース(MariaDB(Mysql))を接続する方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はphpのcakeフレームワークでデータベース(mariadb(mysql))を接続する方法に関する説明です。以前、バニラphpバージョンでmysqliのモジュールを拡張してデータベースに接続、検索、格納、削除などに関して説明したことがあります。link - [php] データベース(mariadb)を連結して使う方法cakeフレームワークでデータベースを接続してデータ管理することは以前バニラphpバージョンよりいいです。ormフレームワークでデータを管理するし、取得することもc#のlinq式みたいな感じの実装するので接近性がよくなりました。link - https://book.cakephp.org/3/ja/orm/database-basics.html先にデータベースにクエリを作ってデータを準備しましょう。以前にテストで使ったデータをそのままに使います。そしてデータベースに接続するために設定情報ファイルを修正します。設定情報ファイルはcakeフレームワークのconfigフォルダの中にapp.phpファイルがあります。app.phpファイルの中でデータベースコネクション情報を設定するところがあります。それをデータベース設定環境に合わせて修正します。データベース設定が完了したらhomecontrollerのクラスからデータベースのデータを取得します。上の結果をみれば、データベースからデータを取得したことを確認できました。上のクエリをみれば、単純に「select * from testtable」式を飛ばしてassocを連関配列で取得したことで以前の方式と別に差がありません。上の例をみれば$connectionからクエリオブジェクト$($query)を受け取ります。$queryオブジェクトは「from」、「where」、「order」、「select」の関数でクエリを組み立てます。この関数は「excute」関数で組み立てるので順番が変わっても結果は同じです。fetchallでデータベースからデータを受け取ります。結果はidxが偶数だけあります。60の場合は10倍数なので「new!!!」変更されたことを確認できます。$connectionにはinsert、update、deleteの関数があります。insertの場合は初めのパラメータはテーブル名で２つ目は連関配列によってデ]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/163.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CakePHP] データベース(MariaDB(Mysql))を接続する方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はphpのcakeフレームワークでデータベース(mariadb(mysql))を接続する方法に関する説明です。以前、バニラphpバージョンでmysqliのモジュールを拡張してデータベースに接続、検索、格納、削除などに関して説明したことがあります。link - [php] データベース(mariadb)を連結して使う方法cakeフレームワークでデータベースを接続してデータ管理することは以前バニラphpバージョンよりいいです。ormフレームワークでデータを管理するし、取得することもc#のlinq式みたいな感じの実装するので接近性がよくなりました。link - https://book.cakephp.org/3/ja/orm/database-basics.html先にデータベースにクエリを作ってデータを準備しましょう。以前にテストで使ったデータをそのままに使います。そしてデータベースに接続するために設定情報ファイルを修正します。設定情報ファイルはcakeフレームワークのconfigフォルダの中にapp.phpファイルがあります。app.phpファイルの中でデータベースコネクション情報を設定するところがあります。それをデータベース設定環境に合わせて修正します。データベース設定が完了したらhomecontrollerのクラスからデータベースのデータを取得します。上の結果をみれば、データベースからデータを取得したことを確認できました。上のクエリをみれば、単純に「select * from testtable」式を飛ばしてassocを連関配列で取得したことで以前の方式と別に差がありません。上の例をみれば$connectionからクエリオブジェクト$($query)を受け取ります。$queryオブジェクトは「from」、「where」、「order」、「select」の関数でクエリを組み立てます。この関数は「excute」関数で組み立てるので順番が変わっても結果は同じです。fetchallでデータベースからデータを受け取ります。結果はidxが偶数だけあります。60の場合は10倍数なので「new!!!」変更されたことを確認できます。$connectionにはinsert、update、deleteの関数があります。insertの場合は初めのパラメータはテーブル名で２つ目は連関配列によってデ]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [CakePHP] データベース(MariaDB(Mysql))を接続する方法</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(23)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(140)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(27)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[CakePHP] データベース(MariaDB(Mysql))を接続する方法</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0205">Study / PHP</a>    作成日付 : 2020/02/14 03:00:00   修正日付 : 2020/02/14 03:00:00
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はPHPのCakeフレームワークでデータベース(MariaDB(Mysql))を接続する方法に関する説明です。</p> 
+  <p><br></p> 
+  <p>以前、バニラPHPバージョンでmysqliのモジュールを拡張してデータベースに接続、検索、格納、削除などに関して説明したことがあります。</p> 
+  <p>link - <a href="https://www.nowonbun.com/150.html" target="_blank">[PHP] データベース(mariaDB)を連結して使う方法</a></p> 
+  <p><br></p> 
+  <p>Cakeフレームワークでデータベースを接続してデータ管理することは以前バニラPHPバージョンよりいいです。</p> 
+  <p>ORMフレームワークでデータを管理するし、取得することもC#のLinq式みたいな感じの実装するので接近性がよくなりました。</p> 
+  <p>link - <a href="https://book.cakephp.org/3/ja/orm/database-basics.html" target="_blank">https://book.cakephp.org/3/ja/orm/database-basics.html</a></p> 
+  <p><br></p> 
+  <p>先にデータベースにクエリを作ってデータを準備しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/163/876_001.png" data-filename="001.png" style="width: 473px;"><br></p> 
+  <p>以前にテストで使ったデータをそのままに使います。</p> 
+  <p><br></p> 
+  <p>そしてデータベースに接続するために設定情報ファイルを修正します。</p> 
+  <p>設定情報ファイルはCakeフレームワークのconfigフォルダの中にApp.phpファイルがあります。App.phpファイルの中でデータベースコネクション情報を設定するところがあります。</p> 
+  <p>それをデータベース設定環境に合わせて修正します。</p> 
+  <p style="text-align:left;"><img src="./contents/163/880_002.png" data-filename="002.png" style="width: 848px;"><br></p> 
+  <p>データベース設定が完了したらHomeControllerのクラスからデータベースのデータを取得します。</p> 
+  <pre><code class="php" data-type="HomeController.php">&lt;?php
+namespace App\Controller;
+
+use Cake\Datasource\ConnectionManager;
+
+class HomeController extends AppController {
+  public function index() {
+    // 設定ファイルで設定したコネクション名からコネクションを取得する。
+    $connection = ConnectionManager::get('default');
+    // testtableからデータを取得する。結果は連関配列タープだ。
+    $results = $connection-&gt;execute('SELECT * FROM testtable')-&gt;fetchAll('assoc');
+    // データレコード単位は一般配列で各カラムは連関配列になっています。例えば、$results[0]['idx']は一行のレコードでidxカラム値だ。
+    // Viewデータ値に設定
+    $this-&gt;set("testtable", $results);
+  }
+}
+</code></pre> 
+  <pre><code class="html" data-type="index.ctl">&lt;!-- レコード単位で繰り返す。 --&gt;
+{foreach from=$testtable item=entity}
+  &lt;!-- レコードのidxとdataカラムを表示する。 --&gt;
+  {$entity["idx"]}  {$entity["data"]}
+{/foreach}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/163/878_003.png" data-filename="003.png" style="width: 496px;"><br></p> 
+  <p>上の結果をみれば、データベースからデータを取得したことを確認できました。</p> 
+  <p><br></p> 
+  <p>上のクエリをみれば、単純に「select * from testtable」式を飛ばしてassocを連関配列で取得したことで以前の方式と別に差がありません。</p> 
+  <pre><code class="php" data-type="HomeController.php">&lt;?php
+namespace App\Controller;
+
+use Cake\Datasource\ConnectionManager;
+
+class HomeController extends AppController {
+  public function index() {
+    // 設定ファイルで設定したコネクション名からコネクションを取得する。
+    $connection = ConnectionManager::get('default');
+    // queryのオブジェクトを生成する。
+    $query = $connection-&gt;newQuery();
+    // 言語統合クエリ式で作成ができる。
+    $results = $query-&gt;from('testtable')        //検索テーブル
+                     -&gt;where(['idx &gt;' =&gt; 2])    //検索条件 (2を超過した数)
+                     -&gt;order(['idx' =&gt; 'DESC']) //レコード整列条件
+                     -&gt;select('*')              //検索カラム
+                     -&gt;execute()                //実行
+                     -&gt;fetchAll('assoc');
+    // Viewデータ値に設定
+    $this-&gt;set("testtable", $results);
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/163/877_004.png" data-filename="004.png" style="width: 537px;"><br></p> 
+  <p>上の例をみれば$connectionからクエリオブジェクト$($query)を受け取ります。$queryオブジェクトは「from」、「where」、「order」、「select」の関数でクエリを組み立てます。</p> 
+  <p>この関数は「excute」関数で組み立てるので順番が変わっても結果は同じです。</p> 
+  <p>fetchAllでデータベースからデータを受け取ります。</p> 
+  <pre><code class="php" data-type="HomeController.php">&lt;?php
+namespace App\Controller;
+
+use Cake\Datasource\ConnectionManager;	
+ 	
+class HomeController extends AppController {	
+  public function index() {
+    // コネクションを取得する。	
+    $connection = ConnectionManager::get('default');	
+    // testtablのデータを全て削除する。
+    $connection-&gt;delete('testtable');	
+    // testtableにデータをinsertする。
+    for ($i = 0; $i &lt; 10; $i++) {	
+      // dataカラムで「data+(0~9)」のデータを入れる。
+      $connection-&gt;insert('testtable', ["data" =&gt; "data " . $i]);	
+    }	
+    // testtableの奇数を削除する。(パラメータ:テーブル名、条件)
+    $connection-&gt;delete('testtable',['idx%2' =&gt; 1]);	
+    // testtableの10倍数はデータを「new!!!」に変更する。(パラメータ:テーブル名、修正データ、条件)
+    $connection-&gt;update('testtable', ["data" =&gt; "new!!!"] , ['idx%10' =&gt; 0]);	
+    // クエリオブジェクトを生成する。
+    $query = $connection-&gt;newQuery();	
+    // testtableでidxが2より大きいし降順でデータを取得する。
+    $results = $query-&gt;from('testtable')
+                     -&gt;where(['idx &gt;' =&gt; 2])
+                     -&gt;order(['idx' =&gt; 'DESC'])
+                     -&gt;select('*')
+                     -&gt;execute()
+                     -&gt;fetchAll('assoc');
+    // Viewデータ値に設定
+  }	
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/163/879_005.png" data-filename="005.png" style="width: 490px;"><br></p> 
+  <p>結果はidxが偶数だけあります。60の場合は10倍数なので「new!!!」変更されたことを確認できます。</p> 
+  <p><br></p> 
+  <p>$connectionにはinsert、update、deleteの関数があります。</p> 
+  <p>insertの場合は初めのパラメータはテーブル名で２つ目は連関配列によってデータを入れることでinsertが行います。</p> 
+  <p>updateの場合は初めのパラメータはテーブル名で２つ目は更新するデータを連関配列、３つ目はデータ更新条件です。</p> 
+  <p>deleteの場合は初めのパラメータはテーブル名で２つ目は削除条件です。</p> 
+  <p><br></p> 
+  <p>確かに以前にモジュールだけデータベースを使うことよりORMフレームワークがあればデータベース管理がしやすいみたいです。</p> 
+  <p>次の投稿にEntityやTableクラスに関してもっと詳細に説明します。</p> 
+  <p><br></p> 
+  <p>ここまでPHPのCakeフレームワークでデータベース(MariaDB(Mysql))を接続する方法に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=php>#php</a>,<a href=./search.html?query=cakePHP>#cakePHP</a>,<a href=./search.html?query=database>#database</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0205">Study / PHP</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/163.html'>[CakePHP] データベース(MariaDB(Mysql))を接続する方法</a><span>2020/02/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/162.html'>[PHP] namespaceとuse</a><span>2020/02/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/161.html'>[CakePHP] RequestとResponseに関して</a><span>2020/02/12 03:00:02</span></li><li><a href='https://www.nowonbun.com/160.html'>[CakePHP] PHPのCakeからAjax要請がある時、jsonタイプ(json_encode関数)でResponseする方法とControllerでViewを選択する方法</a><span>2020/02/08 03:00:00</span></li><li><a href='https://www.nowonbun.com/159.html'>[CakePHP] MVCフレームワークのCakeをインストールする方法</a><span>2020/02/07 03:00:02</span></li><li><a href='https://www.nowonbun.com/158.html'>[PHP] 自動require及びincludeをする方法(spl_autoload_register)</a><span>2020/02/05 03:00:00</span></li><li><a href='https://www.nowonbun.com/157.html'>[PHP] 匿名関数(ラムダ式)とクロージャ(closure)</a><span>2020/02/04 03:00:00</span></li><li><a href='https://www.nowonbun.com/156.html'>[PHP] PHPのコーディング領域とデザイン領域を分離するテンプレートライブラリ Smarty</a><span>2020/02/02 03:00:00</span></li><li><a href='https://www.nowonbun.com/155.html'>[PHP] Reflection - Variable編</a><span>2020/02/01 03:00:00</span></li><li><a href='https://www.nowonbun.com/154.html'>[PHP] Reflection - Method編</a><span>2020/01/31 03:00:00</span></li><li><a href='https://www.nowonbun.com/153.html'>[PHP] Reflection - Class編</a><span>2020/01/30 03:00:00</span></li><li><a href='https://www.nowonbun.com/152.html'>[PHP] エラーページ処理方法(追加: ob_cleanとdie関数使用方法)</a><span>2020/01/29 03:00:00</span></li><li><a href='https://www.nowonbun.com/151.html'>[PHP] 分散設定ファイル(.htaccess) 使用方法</a><span>2020/01/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/150.html'>[PHP] データベース(mariaDB)を連結して使う方法</a><span>2020/01/24 03:00:00</span></li><li><a href='https://www.nowonbun.com/149.html'>[PHP] IOに関して</a><span>2020/01/23 03:00:00</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/163.html'>[CakePHP] データベース(MariaDB(Mysql))を接続する方法</a><span>2020/02/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/162.html'>[PHP] namespaceとuse</a><span>2020/02/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/161.html'>[CakePHP] RequestとResponseに関して</a><span>2020/02/12 03:00:02</span></li><li><a href='https://www.nowonbun.com/160.html'>[CakePHP] PHPのCakeからAjax要請がある時、jsonタイプ(json_encode関数)でResponseする方法とControllerでViewを選択する方法</a><span>2020/02/08 03:00:00</span></li><li><a href='https://www.nowonbun.com/159.html'>[CakePHP] MVCフレームワークのCakeをインストールする方法</a><span>2020/02/07 03:00:02</span></li><li><a href='https://www.nowonbun.com/158.html'>[PHP] 自動require及びincludeをする方法(spl_autoload_register)</a><span>2020/02/05 03:00:00</span></li><li><a href='https://www.nowonbun.com/157.html'>[PHP] 匿名関数(ラムダ式)とクロージャ(closure)</a><span>2020/02/04 03:00:00</span></li><li><a href='https://www.nowonbun.com/156.html'>[PHP] PHPのコーディング領域とデザイン領域を分離するテンプレートライブラリ Smarty</a><span>2020/02/02 03:00:00</span></li><li><a href='https://www.nowonbun.com/155.html'>[PHP] Reflection - Variable編</a><span>2020/02/01 03:00:00</span></li><li><a href='https://www.nowonbun.com/154.html'>[PHP] Reflection - Method編</a><span>2020/01/31 03:00:00</span></li><li><a href='https://www.nowonbun.com/153.html'>[PHP] Reflection - Class編</a><span>2020/01/30 03:00:00</span></li><li><a href='https://www.nowonbun.com/152.html'>[PHP] エラーページ処理方法(追加: ob_cleanとdie関数使用方法)</a><span>2020/01/29 03:00:00</span></li><li><a href='https://www.nowonbun.com/151.html'>[PHP] 分散設定ファイル(.htaccess) 使用方法</a><span>2020/01/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/150.html'>[PHP] データベース(mariaDB)を連結して使う方法</a><span>2020/01/24 03:00:00</span></li><li><a href='https://www.nowonbun.com/149.html'>[PHP] IOに関して</a><span>2020/01/23 03:00:00</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/163.html';this.page.identifier = 'NOWONBUN00163';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
