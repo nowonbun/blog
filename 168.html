@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/168.html"},"url":"https:\/\/www.nowonbun.com\/168.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] WebSocket (\u30a6\u30a7\u30d6\u30bd\u30b1\u30c3\u30c8)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fjava\u306eservlet\u74b0\u5883\u3067websocket\u3092\u4f7f\u3046\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u666e\u901a\u306eweb\u74b0\u5883\u306f\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u304b\u3089web\u30b5\u30fc\u30d0\u30fc\u306bhtml\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u3092\u8981\u8acb\u3059\u308b\u3068web\u30b5\u30fc\u30d0\u306f\u8981\u8acb\u3055\u308c\u305fhtml\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u3092\u4f5c\u6210\u3057\u3066\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u306b\u5fdc\u7b54\u3057\u3066\u5f8c\u63a5\u7d9a\u3092\u5207\u65ad\u3059\u308b\u975e\u540c\u671f\u30bd\u30b1\u30c3\u30c8\u901a\u4fe1\u3067\u3059\u3002websocket\u3068\u306f\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u306e\u8981\u8acb\u3057\u3066web\u30b5\u30fc\u30d0\u304c\u5fdc\u7b54\u3057\u305f\u5f8c\u3001\u63a5\u7d9a\u3092\u5207\u65ad\u3059\u308b\u3053\u3068\u3058\u3083\u306a\u304f\u3001connection\u3092\u305d\u306e\u307e\u307e\u4fdd\u6301\u3057\u3066\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u306e\u8981\u8acb\u304c\u306a\u304f\u3066\u3082\u30c7\u30fc\u30bf\u3092\u8ee2\u9001\u3059\u308b\u3053\u3068\u304c\u53ef\u80fd\u306a\u30d7\u30ed\u30c8\u30b3\u30fc\u30eb\u3067\u3059\u3002\u4f8b\u3048\u3070\u3001\u30c1\u30e3\u30c3\u30c8\u6a5f\u80fd\u3092\u8003\u3048\u3070\u3001\u30e6\u30fc\u30b6\u304c\u30c1\u30e3\u30c3\u30c8\u5185\u5bb9\u3092\u66f8\u3044\u3066\u30b5\u30fc\u30d0\u306b\u8ee2\u9001\u3059\u308b\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002\u305d\u308c\u306f\u30b5\u30fc\u30d0\u306b\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u304b\u3089\u8981\u8acb\u3059\u308b\u3053\u3068\u3067\u3059\u3002\u3067\u3082\u3001\u4ed6\u306e\u30e6\u30fc\u30b6\u304c\u30c1\u30e3\u30c3\u30c8\u5185\u5bb9\u3092\u66f8\u3044\u3066\u30b5\u30fc\u30d0\u306b\u8ee2\u9001\u3059\u308c\u3070\u79c1\u306e\u5834\u5408\u306f\u30b5\u30fc\u30d0\u304b\u3089\u30c7\u30fc\u30bf\u3092\u53d6\u5f97\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u3002\u305d\u306e\u5834\u5408\u306f\u30e6\u30fc\u30b6\u304b\u3089\u8981\u8acb\u304c\u306a\u304f\u3066\u3082\u30b5\u30fc\u30d0\u304b\u3089\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u306b\u30c7\u30fc\u30bf\u3092\u8ee2\u9001\u3059\u308b\u6d41\u308c\u3067\u3059\u304c\u3001\u65e2\u5b58\u306eweb\u30d7\u30ed\u30c8\u30b3\u30fc\u30eb\u3067\u63a5\u7d9a\u304c\u5207\u65ad\u3059\u308b\u72b6\u6cc1\u306b\u306f\u8ee2\u9001\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u306a\u3044\u3067\u3057\u3087\u3046\u3002websocket\u306e\u5834\u5408\u306f\u63a5\u7d9a\u304c\u5207\u65ad\u3057\u3066\u3044\u308b\u72b6\u6cc1\u3058\u3083\u306a\u3044\u306e\u3067\u3001\u30b5\u30fc\u30d0\u304b\u3089\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u306b\u30e1\u30c3\u30bb\u30fc\u30b8\u3092\u8ee2\u9001\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002\u53c2\u8003\u306b\u65e2\u5b58\u306e\u65b9\u6cd5\u3067\u3082\u51fa\u6765\u306a\u3044\u3053\u3068\u3058\u3083\u306a\u3044\u3067\u3059\u3002ajax(web\u30d7\u30ed\u30c8\u30b3\u30fc\u30eb)\u30675\u79d2\u308410\u79d2\u5358\u4f4d\u3067\u30e1\u30c3\u30bb\u30fc\u30b8\u78ba\u8a8d\u3092\u8981\u8acb\u3059\u308b\u3068\u53ef\u80fd\u3067\u3059\u3002\u3067\u3082\u3001\u983b\u7e41\u306a\u8981\u8acb\u3067web\u30b5\u30fc\u30d0\u304c\u8ca0\u8377\u306b\u306a\u308b\u53ef\u80fd\u6027\u3082\u3042\u308b\u3067\u3057\u3087\u3046\u3002websocket\u306fhtml5\u304b\u3089\u6a19\u6e96\u306b\u306a\u308a\u307e\u3057\u305f\u3002\u30d7\u30ed\u30c8\u30b3\u30fc\u30eb\u8981\u8acb\u306f\u300cws:\/\/~\u300d\u3067\u59cb\u307e\u308a\u307e\u3059\u3002web\u30d7\u30ed\u30c8\u30b3\u30fc\u30eb\u306e\u5834\u5408\u306f\u300chttp:\/\/~\u300d\u3067\u59cb\u307e\u308a\u307e\u3059\u3002ssl\u30bb\u30ad\u30e5\u30ea\u30c6\u30a3\u30bf\u30a4\u30d7\u306e\u5834\u5408\u306f\u300cwss:\/\/~\u300d\u306b\u306a\u308a\u307e\u3059\u3002\u4ee5\u524d\u306bjava\u74b0\u5883\u3067\u30b5\u30fc\u30d6\u30ec\u30c3\u30c8\u3092\u69cb\u7bc9\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u305f\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002link - [java] web service\u30d7\u30ed\u30b0\u30e9\u30e0\u306eservlet\u3092\u4f5c\u6210\u65b9\u6cd5(eclipse)web servlet\u74b0\u5883\u3067\u30af\u30e9\u30b9\u3092\u751f\u6210\u3057\u3066websocket server\u3092\u5b9f\u88c5\u3057\u307e\u3057\u3087\u3046\u3002websocket\u306f\u5225\u306b\u8907\u96d1\u3067\u306f\u306a\u304f\u7c21\u5358\u306b\u5b9f\u88c5\u304c\u3067\u304d\u307e\u3059\u3002\u5225\u306b\u30bd\u30b1\u30c3\u30c8\u30b5\u30fc\u30d0\u3084\u30d7\u30ed\u30c8\u30b3\u30fc\u30eb\u5ba3\u8a00\u306a\u3069\u3082\u5fc5\u8981\u306a\u3044\u3067\u3059\u3002\u305f\u3060websocket \u30db\u30b9\u30c8\u8a2d\u5b9a\u306e\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u3068websocket\u3068\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u9593\u306e\u30a4\u30d9\u30f3\u30c8\u3092\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u3067\u8a2d\u5b9a\u53ef\u80fd\u3067\u3059\u3002\u95a2\u6570\u540d\u306f\u4efb\u610f\u3067\u4f5c\u6210\u3057\u3066\u3082\u3088\u3044\u3067\u3059\u3002websocke","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2020-02-21T03:00:00.000+09:00","dateModified":"2020-02-21T03:00:00.000+09:00","publisher":{"@type":"Person","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Devlopment note / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はjavaのservlet環境でwebsocketを使う方法に関する説明です。普通のweb環境はクライアントからwebサーバーにhtmlドキュメントを要請するとwebサーバは要請されたhtmlドキュメントを作成してクライアントに応答して後接続を切断する非同期ソケット通信です。websocketとはクライアントの要請してwebサーバが応答した後、接続を切断することじゃなく、connectionをそのまま保持してクライアントの要請がなくてもデータを転送することが可能なプロトコールです。例えば、チャット機能を考えば、ユーザがチャット内容を書いてサーバに転送することがあります。それはサーバにクライアントから要請することです。でも、他のユーザがチャット内容を書いてサーバに転送すれば私の場合はサーバからデータを取得しなければならないです。その場合はユーザから要請がなくてもサーバからクライアントにデータを転送する流れですが、既存のwebプロトコールで接続が切断する状況には転送することができないでしょう。websocketの場合は接続が切断している状況じゃないので、サーバからクライアントにメッセージを転送することができます。参考に既存の方法でも出来ないことじゃないです。ajax(webプロトコール)で5秒や10秒単位でメッセージ確認を要請すると可能です。でも、頻繁な要請でwebサーバが負荷になる可能性もあるでしょう。websocketはhtml5から標準になりました。プロトコール要請は「ws://~」で始まります。webプロトコールの場合は「http://~」で始まります。sslセキュリティタイプの場合は「wss://~」になります。以前にjava環境でサーブレットを構築する方法に関して説明したことがあります。link - [java] web serviceプログラムのservletを作成方法(eclipse)web servlet環境でクラスを生成してwebsocket serverを実装しましょう。websocketは別に複雑ではなく簡単に実装ができます。別にソケットサーバやプロトコール宣言なども必要ないです。ただwebsocket ホスト設定のアノテーションとwebsocketとクライアント間のイベントをアノテーションで設定可能です。関数名は任意で作成してもよいです。websocke]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java] WebSocket (ウェブソケット)" />
+<link rel="canonical" href="https://www.nowonbun.com/168.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java] WebSocket (ウェブソケット)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaのservlet環境でwebsocketを使う方法に関する説明です。普通のweb環境はクライアントからwebサーバーにhtmlドキュメントを要請するとwebサーバは要請されたhtmlドキュメントを作成してクライアントに応答して後接続を切断する非同期ソケット通信です。websocketとはクライアントの要請してwebサーバが応答した後、接続を切断することじゃなく、connectionをそのまま保持してクライアントの要請がなくてもデータを転送することが可能なプロトコールです。例えば、チャット機能を考えば、ユーザがチャット内容を書いてサーバに転送することがあります。それはサーバにクライアントから要請することです。でも、他のユーザがチャット内容を書いてサーバに転送すれば私の場合はサーバからデータを取得しなければならないです。その場合はユーザから要請がなくてもサーバからクライアントにデータを転送する流れですが、既存のwebプロトコールで接続が切断する状況には転送することができないでしょう。websocketの場合は接続が切断している状況じゃないので、サーバからクライアントにメッセージを転送することができます。参考に既存の方法でも出来ないことじゃないです。ajax(webプロトコール)で5秒や10秒単位でメッセージ確認を要請すると可能です。でも、頻繁な要請でwebサーバが負荷になる可能性もあるでしょう。websocketはhtml5から標準になりました。プロトコール要請は「ws://~」で始まります。webプロトコールの場合は「http://~」で始まります。sslセキュリティタイプの場合は「wss://~」になります。以前にjava環境でサーブレットを構築する方法に関して説明したことがあります。link - [java] web serviceプログラムのservletを作成方法(eclipse)web servlet環境でクラスを生成してwebsocket serverを実装しましょう。websocketは別に複雑ではなく簡単に実装ができます。別にソケットサーバやプロトコール宣言なども必要ないです。ただwebsocket ホスト設定のアノテーションとwebsocketとクライアント間のイベントをアノテーションで設定可能です。関数名は任意で作成してもよいです。websocke]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/168.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java] WebSocket (ウェブソケット)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaのservlet環境でwebsocketを使う方法に関する説明です。普通のweb環境はクライアントからwebサーバーにhtmlドキュメントを要請するとwebサーバは要請されたhtmlドキュメントを作成してクライアントに応答して後接続を切断する非同期ソケット通信です。websocketとはクライアントの要請してwebサーバが応答した後、接続を切断することじゃなく、connectionをそのまま保持してクライアントの要請がなくてもデータを転送することが可能なプロトコールです。例えば、チャット機能を考えば、ユーザがチャット内容を書いてサーバに転送することがあります。それはサーバにクライアントから要請することです。でも、他のユーザがチャット内容を書いてサーバに転送すれば私の場合はサーバからデータを取得しなければならないです。その場合はユーザから要請がなくてもサーバからクライアントにデータを転送する流れですが、既存のwebプロトコールで接続が切断する状況には転送することができないでしょう。websocketの場合は接続が切断している状況じゃないので、サーバからクライアントにメッセージを転送することができます。参考に既存の方法でも出来ないことじゃないです。ajax(webプロトコール)で5秒や10秒単位でメッセージ確認を要請すると可能です。でも、頻繁な要請でwebサーバが負荷になる可能性もあるでしょう。websocketはhtml5から標準になりました。プロトコール要請は「ws://~」で始まります。webプロトコールの場合は「http://~」で始まります。sslセキュリティタイプの場合は「wss://~」になります。以前にjava環境でサーブレットを構築する方法に関して説明したことがあります。link - [java] web serviceプログラムのservletを作成方法(eclipse)web servlet環境でクラスを生成してwebsocket serverを実装しましょう。websocketは別に複雑ではなく簡単に実装ができます。別にソケットサーバやプロトコール宣言なども必要ないです。ただwebsocket ホスト設定のアノテーションとwebsocketとクライアント間のイベントをアノテーションで設定可能です。関数名は任意で作成してもよいです。websocke]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Java] WebSocket (ウェブソケット)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(24)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(144)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt">[Java] WebSocket (ウェブソケット)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0103">Devlopment note / Java</a>    作成日付 : 2020/02/21 03:00:00   修正日付 : 2020/02/21 03:00:00
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はJavaのServlet環境でWebSocketを使う方法に関する説明です。</p> 
+  <p><br></p> 
+  <p>普通のWeb環境はクライアントからWebサーバーにHtmlドキュメントを要請するとWebサーバは要請されたHtmlドキュメントを作成してクライアントに応答して後接続を切断する非同期ソケット通信です。</p> 
+  <p>Websocketとはクライアントの要請してWebサーバが応答した後、接続を切断することじゃなく、Connectionをそのまま保持してクライアントの要請がなくてもデータを転送することが可能なプロトコールです。</p> 
+  <p>例えば、チャット機能を考えば、ユーザがチャット内容を書いてサーバに転送することがあります。それはサーバにクライアントから要請することです。</p> 
+  <p>でも、他のユーザがチャット内容を書いてサーバに転送すれば私の場合はサーバからデータを取得しなければならないです。</p> 
+  <p>その場合はユーザから要請がなくてもサーバからクライアントにデータを転送する流れですが、既存のWebプロトコールで接続が切断する状況には転送することができないでしょう。</p> 
+  <p>WebSocketの場合は接続が切断している状況じゃないので、サーバからクライアントにメッセージを転送することができます。</p> 
+  <p><br></p> 
+  <p>参考に既存の方法でも出来ないことじゃないです。Ajax(Webプロトコール)で5秒や10秒単位でメッセージ確認を要請すると可能です。</p> 
+  <p>でも、頻繁な要請でWebサーバが負荷になる可能性もあるでしょう。</p> 
+  <p><br></p> 
+  <p>WebSocketはHTML5から標準になりました。プロトコール要請は「ws://~」で始まります。Webプロトコールの場合は「http://~」で始まります。</p> 
+  <p>sslセキュリティタイプの場合は「wss://~」になります。</p> 
+  <p><br></p> 
+  <p>以前にJava環境でサーブレットを構築する方法に関して説明したことがあります。</p> 
+  <p>link - <a href="https://www.nowonbun.com/74.html" target="_blank">[Java] Web serviceプログラムのServletを作成方法(Eclipse)</a></p> 
+  <p><br></p> 
+  <p>Web servlet環境でクラスを生成してWebSocket serverを実装しましょう。</p> 
+  <pre><code class="java" data-type="Websocket.java">import javax.websocket.OnClose;
+import javax.websocket.OnError;
+import javax.websocket.OnMessage;
+import javax.websocket.OnOpen;
+import javax.websocket.server.ServerEndpoint;
+
+// WebSocketのホストアドレス設定
+@ServerEndpoint("/websocket")
+public class Websocket {
+  // WebSocket serverにブラウザ(client)が接続すれば呼ばれる関数。
+  @OnOpen
+  public void handleOpen() {
+    // コンソールにメッセージを出力する。
+    System.out.println("client is now connected...");
+  }
+  // WebSocket serverにブラウザ(client)がメッセージを転送すれば呼ばれる関数。
+  @OnMessage
+  public String handleMessage(String message) {
+    // コンソールに受け取ったメッセージを出力する。
+    System.out.println("receive from client : " + message);
+    // クライアントに転送するようなエコメッセージを作成する。
+    String replymessage = "echo "+ message;
+    // コンソールにエコメッセージを出力する。
+    System.out.println("send to client : " + replymessage);
+    // ブラウザにエコメッセージを転送する。
+    return replymessage;
+  }
+  // WebSocket serverにブラウザ(client)が切断すれば呼ばれる関数。
+  @OnClose
+  public void handleClose() {
+    // コンソールにメッセージを出力する。
+    System.out.println("client is now disconnected...");
+  }
+  // WebSocket serverにブラウザ(client)がエラーが発生すれば呼ばれる関数。
+  @OnError
+  public void handleError(Throwable t) {
+    // コンソールにエラーメッセージを表示する。
+    t.printStackTrace();
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/168/903_001.png" data-filename="001.png" style="width: 302px;"><br></p> 
+  <p>WebSocketは別に複雑ではなく簡単に実装ができます。別にソケットサーバやプロトコール宣言なども必要ないです。</p> 
+  <p>ただWebSocket ホスト設定のアノテーションとWebSocketとクライアント間のイベントをアノテーションで設定可能です。</p> 
+  <p>関数名は任意で作成してもよいです。</p> 
+  <p><br></p> 
+  <p>WebSocketに接続するために、jspファイルにjavascriptを実装しましょう。</p> 
+  <pre><code class="html" data-type="index.jsp">&lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;Web Socket Example&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;form&gt;
+      &lt;!-- 送信メッセージを作成するテキストボックス --&gt;
+      &lt;input id="textMessage" type="text"&gt;
+      &lt;!-- メッセージを送信するボタン --&gt;
+      &lt;input onclick="sendMessage()" value="Send" type="button"&gt;
+      &lt;!-- WebSocket終了(切断)するボタン --&gt;
+      &lt;input onclick="disconnect()" value="Disconnect" type="button"&gt;
+    &lt;/form&gt;
+    &lt;br /&gt;
+    &lt;!-- コンソール役をするテキストアリア、受信メッセージも表示する。 --&gt;
+    &lt;textarea id="messageTextArea" rows="10" cols="50"&gt;&lt;/textarea&gt;
+    &lt;script type="text/javascript"&gt;
+      // 「WebSocketEx」はプロジェクト名
+      // 「websocket」ホスト名
+      // WebSocketオブジェクト生成(接続開始)
+      var webSocket = new WebSocket("ws://localhost:8080/WebSocketEx/websocket");
+      // コンソールのテキストアリア
+      var messageTextArea = document.getElementById("messageTextArea");
+      // WebSocketが接続成功になれば呼ばれる関数。
+      webSocket.onopen = function(message) {
+        // コンソールにメッセージ出力
+        messageTextArea.value += "Server connect...\n";
+      };
+      // WebSocketが切断なれば呼ばれる関数。
+      webSocket.onclose = function(message) {
+        // コンソールにメッセージ出力
+        messageTextArea.value += "Server Disconnect...\n";
+      };
+      // WebSocketからエラーが発生する時に呼ばれる関数。
+      webSocket.onerror = function(message) {
+        // コンソールにメッセージ出力
+        messageTextArea.value += "error...\n";
+      };
+      // WebSocketからメッセージを受け取ったら呼ばれる関数。
+      webSocket.onmessage = function(message) {
+        // コンソールにメッセージ出力
+        messageTextArea.value += "Recieve From Server =&gt; "+message.data+"\n";
+      };
+     // Sendボタンを押下すると呼ばれる関数。
+    function sendMessage() {
+      // 送信メッセージを作成するテキストボックスのオブジェクトを取得する。
+      var message = document.getElementById("textMessage");
+      // コンソールにメッセージを出力
+      messageTextArea.value += "Send to Server =&gt; "+message.value+"\n";
+      // WebSocketにメッセージを送信する。
+      webSocket.send(message.value);
+      // 送信メッセージを作成するテクストボックスを初期化する。
+      message.value = "";
+    }
+    // Disconnectボタンを押下すると呼ばれる関数。
+    function disconnect() {
+      // WebSocket切断
+      webSocket.close();
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/168/904_002.png" data-filename="002.png" style="width: 303px;"><br></p> 
+  <p>WebSocketというJavascript内部関数で宣言します。パラメータはWebSocketのアドレスを入力します。プロトコールは「ws://~」で始まります。</p> 
+  <p>クライアントのリスナー関数は「onopen」、「onmessgae」、「onclose」、「onerror」があります。</p> 
+  <p><br></p> 
+  <p>「onopen」はWebSocketのサーバと接続する時に呼ばれます。「onmessage」はサーバからメッセージが受取る時に呼ばれます。</p> 
+  <p>「onclose」はWebSocketのサーバと連結が切断する時に呼ばれます。「onerror」はエラーが発生する時に呼ばれます。</p> 
+  <p>サーバを起動してブラウザで接続しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/168/902_003.png" data-filename="003.png" style="width: 398px;"><br></p> 
+  <p>接続すると「Server connect...」メッセージが表示されます。</p> 
+  <p>メッセージで「hello world」を送信しました。結果はサーバからエコメッセージで返事がきました。</p> 
+  <p>最終にWebSocketの切断しました。</p> 
+  <p style="text-align:left;"><img src="./contents/168/901_004.png" data-filename="004.png" style="width: 356px;"><br></p> 
+  <p>サーバ側のログをみれば接続したログがあります。クライアントから「hello world」メッセージを受け取ってエコメッセージに返事しました。</p> 
+  <p>最後、WebSocketの切断ログもあります。</p> 
+  <p><br></p> 
+  <p>ここまでJavaのServlet環境でWebSocketを使う方法に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=java>#java</a>,<a href=./search.html?query=websocket>#websocket</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0103">Devlopment note / Java</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/168.html'>[Java] WebSocket (ウェブソケット)</a><span>2020/02/21 03:00:00</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/168.html'>[Java] WebSocket (ウェブソケット)</a><span>2020/02/21 03:00:00</span></li><li><a href='https://www.nowonbun.com/167.html'>[CakePHP] Errorページを設定する方法</a><span>2020/02/20 03:00:00</span></li><li><a href='https://www.nowonbun.com/166.html'>[CakePHP] Transactionを使う方法とEntityクラスを利用してInsert、Update、Deleteする方法</a><span>2020/02/19 03:00:00</span></li><li><a href='https://www.nowonbun.com/165.html'>[CakePHP] ORMのテーブルFetch設定</a><span>2020/02/18 03:00:00</span></li><li><a href='https://www.nowonbun.com/164.html'>[CakePHP] Cakeフレームワークでデータベースに接続する時に使うQuery式とEntityクラス、Tableクラス、ResultSet</a><span>2020/02/17 08:16:23</span></li><li><a href='https://www.nowonbun.com/163.html'>[CakePHP] データベース(MariaDB(Mysql))を接続する方法</a><span>2020/02/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/162.html'>[PHP] namespaceとuse</a><span>2020/02/13 03:00:00</span></li><li><a href='https://www.nowonbun.com/161.html'>[CakePHP] RequestとResponseに関して</a><span>2020/02/12 03:00:02</span></li><li><a href='https://www.nowonbun.com/160.html'>[CakePHP] PHPのCakeからAjax要請がある時、jsonタイプ(json_encode関数)でResponseする方法とControllerでViewを選択する方法</a><span>2020/02/08 03:00:00</span></li><li><a href='https://www.nowonbun.com/159.html'>[CakePHP] MVCフレームワークのCakeをインストールする方法</a><span>2020/02/07 03:00:02</span></li><li><a href='https://www.nowonbun.com/158.html'>[PHP] 自動require及びincludeをする方法(spl_autoload_register)</a><span>2020/02/05 03:00:00</span></li><li><a href='https://www.nowonbun.com/157.html'>[PHP] 匿名関数(ラムダ式)とクロージャ(closure)</a><span>2020/02/04 03:00:00</span></li><li><a href='https://www.nowonbun.com/156.html'>[PHP] PHPのコーディング領域とデザイン領域を分離するテンプレートライブラリ Smarty</a><span>2020/02/02 03:00:00</span></li><li><a href='https://www.nowonbun.com/155.html'>[PHP] Reflection - Variable編</a><span>2020/02/01 03:00:00</span></li><li><a href='https://www.nowonbun.com/154.html'>[PHP] Reflection - Method編</a><span>2020/01/31 03:00:00</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/168.html';this.page.identifier = 'NOWONBUN00168';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
