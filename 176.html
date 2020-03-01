@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/176.html"},"url":"https:\/\/www.nowonbun.com\/176.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] StringBuilder\u3068StringBuffer\u306e\u5dee\u7570","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fjava\u306estringbuilder\u3068stringbuffer\u306e\u5dee\u7570\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002java\u306e\u4e2d\u3067\u6587\u5b57\u5217\u30bf\u30a4\u30d7\u306e\u30c7\u30fc\u30bf\u30bf\u30a4\u30d7\u306f\u300cstring\u300d\u304c\u3042\u308a\u307e\u3059\u3002\u300cstring\u300d\u306f\u30d7\u30ea\u30df\u30c6\u30a3\u30d6\u30c7\u30fc\u30bf\u30bf\u30a4\u30d7(primitive data type: int, char, double...)\u3058\u3083\u306a\u304f\u3001object\u30af\u30e9\u30b9\u304b\u3089\u7d99\u627f\u3055\u308c\u305f\u30af\u30e9\u30b9\u30bf\u30a4\u30d7\u3067\u3059\u3002\u3059\u306a\u308f\u3061\u3001\u300cstring\u300d\u306e\u5185\u90e8\u306fbyte(unsigned char)\u30bf\u30a4\u30d7\u306b\u306a\u3063\u3066\u3044\u307e\u3059\u3002\u305d\u308c\u3067\u6211\u3005\u304c\u300cstring data1 \u003d \u0026quot;abc\u0026quot;;\u300d\u3068\u3044\u3046\u3053\u3068\u306b\u5ba3\u8a00\u3059\u308c\u3070\u5185\u90e8\u306f\u300cbyte[] data1 \u003d new byte[] {\u0026apos;a\u0026apos;, \u0026apos;b\u0026apos;, \u0026apos;c\u0026apos;}\u300d\u306b\u306a\u308a\u307e\u3059\u3002\u305d\u306e\u305f\u3081\u3001\u300cstring\u300d\u30bf\u30a4\u30d7\u3068\u300cstring\u300d\u30bf\u30a4\u30d7\u306e\u6587\u5b57\u5217\u3092\u5408\u308f\u305b\u308b\u3068\u601d\u3048\u3070\u3001\u4e0b\u8a18\u306e\u51e6\u7406\u306b\u306a\u308a\u307e\u3059\u3002string\u3067\u6587\u5b57\u5217\u3092\u5408\u4f75\u3059\u308c\u3070\u4e0a\u306e\u30d5\u30ed\u30fc\u3068\u304a\u308a\u306b\u6587\u5b57\u5217\u304c\u5408\u4f75\u3055\u308c\u307e\u3059\u3002\u3064\u307e\u308astring\u306bstring\u3092\u5408\u4f75\u3059\u308c\u3070\u65b0\u3057\u3044string\u304c\u5272\u5f53\u3057\u307e\u3059\u3002\u305d\u308c\u306a\u3089\u300cstring test \u003d \u0026quot;abc\u0026quot; + \u0026quot;def\u0026quot; + \u0026quot;ghi\u0026quot; + \u0026quot;jkl\u0026quot;;\u300d\u306f\u5408\u4f75\u30d5\u30ed\u30fc\u304c\u3059\u3054\u304f\u8907\u96d1\u306b\u306a\u308a\u307e\u3059\u3002\u305d\u306e\u305f\u3081\u3001string\u3068string\u3092\u5408\u4f75\u3059\u308b\u3053\u3068\u306f\u30d1\u30fc\u30d5\u30a9\u30fc\u30de\u30f3\u30b9\u306b\u5f71\u97ff\u304c\u3042\u308a\u307e\u3059\u3002\u305d\u3046\u3059\u308c\u3070\u4e0a\u306earray\u30bf\u30a4\u30d7\u3058\u3083\u306a\u304f\u3001\u9023\u7d50\u30ea\u30b9\u30c8\u30bf\u30a4\u30d7(list)\u307f\u305f\u3044\u306b\u6587\u5b57\u5217\u3092\u300cadd\u300d\u95a2\u6570\u3067\u8ffd\u52a0\u3059\u308b\u65b9\u6cd5\u304c\u306a\u3044\u304b\u3068\u7591\u554f\u306b\u306a\u308a\u307e\u3059\u3002\u305d\u308c\u304carray\u30bf\u30a4\u30d7\u3058\u3083\u306a\u304f\u3001list\u30bf\u30a4\u30d7\u3067\u6587\u5b57\u5217\u3092\u5408\u4f75\u3059\u308b\u306e\u304c\u300cstringbuffer\u300d\u3068\u300cstringbuilder\u300d\u3067\u3059\u3002\u4e0a\u306e\u4f8b\u3060\u3051\u3067\u307f\u308c\u3070\u5dee\u7570\u304c\u305d\u3093\u306a\u306b\u306a\u3055\u305d\u3046\u3067\u3059\u3002\u3067\u3082\u6587\u5b57\u5217\u306e\u5408\u4f75\u304c\u591a\u3044\u307b\u3069\u30d1\u30fc\u30d5\u30a9\u30fc\u30de\u30f3\u30b9\u306e\u5dee\u7570\u306f\u78ba\u304b\u306b\u51fa\u308b\u3068\u601d\u3044\u307e\u3059\u3002\u305d\u308c\u306a\u3089\u300cstringbuffer\u300d\u3068\u300cstringbuilder\u300d\u306e\u5dee\u7570\u306f\u306a\u306b\u3067\u3057\u3087\u3046\u304b\u3002\u540c\u671f\u5316\u306e\u5dee\u7570\u3067\u3059\u3002stringbuffer\u306e\u5834\u5408\u306f\u30af\u30e9\u30b9\u5185\u90e8\u3067\u540c\u671f\u5316\u3057\u307e\u3059\u304c\u3001stringbuilder\u306e\u5834\u5408\u306f\u540c\u671f\u5316\u304c\u3042\u308a\u307e\u305b\u3093\u3002\u521d\u3081\u306e\u30b9\u30ec\u30c3\u30c9\u306710\u500b\u3001\uff12\u3064\u76ee\u306e\u30b9\u30ec\u30c3\u30c9\u306710\u500b\u3092\u5165\u308c\u305f\u306e\u3067\u5168\u3066\u306e\u6587\u5b57\u6841\u6570\u306f20\u500b\u306b\u306a\u308b\u306f\u305a\u3067\u3059\u3002\u7d50\u679c\u306fstringbuilder\u306b\u306f2","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2020-03-02T07:52:22.000+09:00","dateModified":"2020-03-02T07:52:22.000+09:00","publisher":{"@type":"Person","name":"nowonbun@gmail.com","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Devlopment note / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はjavaのstringbuilderとstringbufferの差異に関する説明です。javaの中で文字列タイプのデータタイプは「string」があります。「string」はプリミティブデータタイプ(primitive data type: int, char, double...)じゃなく、objectクラスから継承されたクラスタイプです。すなわち、「string」の内部はbyte(unsigned char)タイプになっています。それで我々が「string data1 = &quot;abc&quot;;」ということに宣言すれば内部は「byte[] data1 = new byte[] {&apos;a&apos;, &apos;b&apos;, &apos;c&apos;}」になります。そのため、「string」タイプと「string」タイプの文字列を合わせると思えば、下記の処理になります。stringで文字列を合併すれば上のフローとおりに文字列が合併されます。つまりstringにstringを合併すれば新しいstringが割当します。それなら「string test = &quot;abc&quot; + &quot;def&quot; + &quot;ghi&quot; + &quot;jkl&quot;;」は合併フローがすごく複雑になります。そのため、stringとstringを合併することはパーフォーマンスに影響があります。そうすれば上のarrayタイプじゃなく、連結リストタイプ(list)みたいに文字列を「add」関数で追加する方法がないかと疑問になります。それがarrayタイプじゃなく、listタイプで文字列を合併するのが「stringbuffer」と「stringbuilder」です。上の例だけでみれば差異がそんなになさそうです。でも文字列の合併が多いほどパーフォーマンスの差異は確かに出ると思います。それなら「stringbuffer」と「stringbuilder」の差異はなにでしょうか。同期化の差異です。stringbufferの場合はクラス内部で同期化しますが、stringbuilderの場合は同期化がありません。初めのスレッドで10個、２つ目のスレッドで10個を入れたので全ての文字桁数は20個になるはずです。結果はstringbuilderには2]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java] StringBuilderとStringBufferの差異" />
+<link rel="canonical" href="https://www.nowonbun.com/176.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java] StringBuilderとStringBufferの差異" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaのstringbuilderとstringbufferの差異に関する説明です。javaの中で文字列タイプのデータタイプは「string」があります。「string」はプリミティブデータタイプ(primitive data type: int, char, double...)じゃなく、objectクラスから継承されたクラスタイプです。すなわち、「string」の内部はbyte(unsigned char)タイプになっています。それで我々が「string data1 = &quot;abc&quot;;」ということに宣言すれば内部は「byte[] data1 = new byte[] {&apos;a&apos;, &apos;b&apos;, &apos;c&apos;}」になります。そのため、「string」タイプと「string」タイプの文字列を合わせると思えば、下記の処理になります。stringで文字列を合併すれば上のフローとおりに文字列が合併されます。つまりstringにstringを合併すれば新しいstringが割当します。それなら「string test = &quot;abc&quot; + &quot;def&quot; + &quot;ghi&quot; + &quot;jkl&quot;;」は合併フローがすごく複雑になります。そのため、stringとstringを合併することはパーフォーマンスに影響があります。そうすれば上のarrayタイプじゃなく、連結リストタイプ(list)みたいに文字列を「add」関数で追加する方法がないかと疑問になります。それがarrayタイプじゃなく、listタイプで文字列を合併するのが「stringbuffer」と「stringbuilder」です。上の例だけでみれば差異がそんなになさそうです。でも文字列の合併が多いほどパーフォーマンスの差異は確かに出ると思います。それなら「stringbuffer」と「stringbuilder」の差異はなにでしょうか。同期化の差異です。stringbufferの場合はクラス内部で同期化しますが、stringbuilderの場合は同期化がありません。初めのスレッドで10個、２つ目のスレッドで10個を入れたので全ての文字桁数は20個になるはずです。結果はstringbuilderには2]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/176.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java] StringBuilderとStringBufferの差異" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaのstringbuilderとstringbufferの差異に関する説明です。javaの中で文字列タイプのデータタイプは「string」があります。「string」はプリミティブデータタイプ(primitive data type: int, char, double...)じゃなく、objectクラスから継承されたクラスタイプです。すなわち、「string」の内部はbyte(unsigned char)タイプになっています。それで我々が「string data1 = &quot;abc&quot;;」ということに宣言すれば内部は「byte[] data1 = new byte[] {&apos;a&apos;, &apos;b&apos;, &apos;c&apos;}」になります。そのため、「string」タイプと「string」タイプの文字列を合わせると思えば、下記の処理になります。stringで文字列を合併すれば上のフローとおりに文字列が合併されます。つまりstringにstringを合併すれば新しいstringが割当します。それなら「string test = &quot;abc&quot; + &quot;def&quot; + &quot;ghi&quot; + &quot;jkl&quot;;」は合併フローがすごく複雑になります。そのため、stringとstringを合併することはパーフォーマンスに影響があります。そうすれば上のarrayタイプじゃなく、連結リストタイプ(list)みたいに文字列を「add」関数で追加する方法がないかと疑問になります。それがarrayタイプじゃなく、listタイプで文字列を合併するのが「stringbuffer」と「stringbuilder」です。上の例だけでみれば差異がそんなになさそうです。でも文字列の合併が多いほどパーフォーマンスの差異は確かに出ると思います。それなら「stringbuffer」と「stringbuilder」の差異はなにでしょうか。同期化の差異です。stringbufferの場合はクラス内部で同期化しますが、stringbuilderの場合は同期化がありません。初めのスレッドで10個、２つ目のスレッドで10個を入れたので全ての文字桁数は20個になるはずです。結果はstringbuilderには2]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Java] StringBuilderとStringBufferの差異</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(32)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(9)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(144)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/176.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Java] StringBuilderとStringBufferの差異</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0103">Devlopment note / Java</a>    作成日付 : <span property="datePublished">2020/03/02 07:52:22</span>   修正日付 : <span property="dateModified">2020/03/02 07:52:22</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はJavaのStringBuilderとStringBufferの差異に関する説明です。</p> 
+  <p><br></p> 
+  <p>Javaの中で文字列タイプのデータタイプは「String」があります。</p> 
+  <p>「String」はプリミティブデータタイプ(primitive data type: int, char, double...)じゃなく、Objectクラスから継承されたクラスタイプです。</p> 
+  <p>すなわち、「String」の内部はbyte(unsigned char)タイプになっています。</p> 
+  <p><br></p> 
+  <p>それで我々が「String data1 = "abc";」ということに宣言すれば内部は「byte[] data1 = new byte[] {'a', 'b', 'c'}」になります。</p> 
+  <p>そのため、「String」タイプと「String」タイプの文字列を合わせると思えば、下記の処理になります。</p> 
+  <pre><code class="java" data-type="StringEx.java">// 「String data1 = "abc";」の内部は下記とおりになる。
+byte[] data1 = new byte[] { 'a', 'b', 'c' };
+// 「String Data2 = "def";」の内部は下記とおりになる。
+byte[] data2 = new byte[] { 'd', 'e', 'f' };	
+ 	
+// + 演算子を使用すれば下記通りの演算になる。
+// data1とdata2のデータ長さを計算する。
+int length = data1.length + data2.length;
+// 結果を格納する変数をdata1の長さとdata2の長さに加算して長さにする。
+byte[] ret = new byte[length];
+// 配列コピーする。
+for (int i = 0; i &lt; data1.length; i++) {
+  ret[i] = data1[i];
+}
+// 配列コピーする。
+for (int i = 0; i &lt; data2.length; i++) {
+  ret[i + data1.length] = data2[i];
+}
+// 文字列が合併したデータは「ret」(「String data1 + String data2 = String ret」)
+// data1とdata2は要らなくなるので、メモリ解除
+</code></pre> 
+  <p>Stringで文字列を合併すれば上のフローとおりに文字列が合併されます。</p> 
+  <p>つまりStringにStringを合併すれば新しいStringが割当します。</p> 
+  <p>それなら「String test = "abc" + "def" + "ghi" + "jkl";」は合併フローがすごく複雑になります。</p> 
+  <p>そのため、StringとStringを合併することはパーフォーマンスに影響があります。</p> 
+  <p><br></p> 
+  <p>そうすれば上のArrayタイプじゃなく、連結リストタイプ(List)みたいに文字列を「add」関数で追加する方法がないかと疑問になります。</p> 
+  <p>それがArrayタイプじゃなく、Listタイプで文字列を合併するのが「StringBuffer」と「StringBuilder」です。</p> 
+  <pre><code class="java" data-type="StringBuilderEx.java">// StringBufferとStrinbBuilderは連結リストタイプになっています。
+List&lt;Byte&gt; data = new LinkedList&lt;&gt;();
+data.add((byte) 'a');
+data.add((byte) 'b');
+data.add((byte) 'c');
+//文字列の合併する時、Arrayの割当てが要らずにリストに追加できる.
+data.add((byte) 'd');
+data.add((byte) 'e');
+data.add((byte) 'f');
+
+// Stringはbyte[]タイプなので最後にListタイプからArrayタイプに変換
+byte[] ret = new byte[data.size()];
+for (int i = 0; i &lt; data.size(); i++) {
+  ret[i] = data.get(i);
+}
+</code></pre> 
+  <p>上の例だけでみれば差異がそんなになさそうです。</p> 
+  <p>でも文字列の合併が多いほどパーフォーマンスの差異は確かに出ると思います。</p> 
+  <p><br></p> 
+  <p>それなら「StringBuffer」と「StringBuilder」の差異はなにでしょうか。</p> 
+  <p>同期化の差異です。StringBufferの場合はクラス内部で同期化しますが、StringBuilderの場合は同期化がありません。</p> 
+  <pre><code class="java" data-type="MultiThreadEnv.java">// Thread.sleepの「throws」を除けるための関数
+private static void sleep(int time) {
+  try {
+    // Thread.sleepを「try~catch」に包む。
+    Thread.sleep(time);
+  } catch (Throwable e) {
+  }
+}
+// 実行関数
+public static void main(String[] test) {
+  // テストするようなStringBuilderとStringBufferだ。
+  StringBuilder builder = new StringBuilder();
+  StringBuffer buffer = new StringBuffer();
+  // スレッドを２つを生成して0.1秒間隔で文字列を追加する。
+  // このスレッドは「0」を入れる
+  Executors.newSingleThreadExecutor().execute(() -&gt; {
+    for (int i = 0; i &lt; 10; i++) {
+      // 文字列を追加
+      builder.append(0);
+      buffer.append(0);
+      // sleepは0.1秒
+      sleep(100);
+    }
+  });
+  // このスレッドは「1」を入れる。
+  Executors.newSingleThreadExecutor().execute(() -&gt; {
+    for (int i = 0; i &lt; 10; i++) {
+      // 文字列を追加
+      builder.append(1);
+      buffer.append(1);
+      // sleepは0.1秒
+      sleep(100);
+    }
+  });
+  // 結果が終わる時まで10秒待ってる。
+  sleep(10000);
+  // 結果をコンソールに出力する。
+  System.out.println(builder.toString());
+  System.out.println(buffer.toString());
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/176/926_001.png" data-filename="001.png" style="width: 362px;"><br></p> 
+  <p>初めのスレッドで10個、２つ目のスレッドで10個を入れたので全ての文字桁数は20個になるはずです。</p> 
+  <p>結果はStringBuilderには20桁数にならないです。StringBufferの場合はマルチスレッド環境でも20桁数になります。</p> 
+  <p>理由はStringBufferの場合は同期化(lock)機能が内部で動くのでその結果になります。</p> 
+  <p><br></p> 
+  <p>そうすればStringBuilderは使わず、StringBufferだけ使った方がいいと思われます。</p> 
+  <pre><code class="java" data-type="MultiThreadEnv.java">// Thread.sleepの「throws」を除けるための関数
+private static void sleep(int time) {
+  try {
+    // Thread.sleepを「try~catch」に包む。
+    Thread.sleep(time);
+  } catch (Throwable e) {
+  }
+}
+// 実行関数 	
+public static void main(String[] test) {
+  // テストするようなStringBuilderとStringBufferだ。
+  StringBuffer buffer1 = new StringBuffer();
+  StringBuffer buffer2 = new StringBuffer();
+  // スレッドを２つを生成して0.1秒間隔で文字列を追加する。
+  // このスレッドは「0」を入れる
+  Executors.newSingleThreadExecutor().execute(() -&gt; {
+    for (int i = 0; i &lt; 10; i++) {
+      // 同期化のため、lockをした。
+      synchronized (buffer1) {
+        buffer1.append(0);
+        buffer2.append(0);
+      }
+      sleep(100);
+    }
+  });
+  // このスレッドは「1」を入れる。
+  Executors.newSingleThreadExecutor().execute(() -&gt; {
+    for (int i = 0; i &lt; 10; i++) {
+      // 同期化のため、lockをした。
+      synchronized (buffer2) {
+        buffer1.append(1);
+        buffer2.append(2);
+      }
+      sleep(100);
+    }
+  });
+  // 結果が終わる時まで10秒待ってる。
+  sleep(10000);
+  // 結果をコンソールに出力する。
+  System.out.println(buffer1.toString());
+  System.out.println(buffer2.toString());
+}
+</code></pre> 
+  <p>上の結果はでません。</p> 
+  <p>なぜならStringBufferの「lock」の機能でデッドロック(Deadlock)に落ちてしまいました。</p> 
+  <p>一番目のスレッドにはbuffer1にlockをかけてbuffer1にデータを入れようと思います。同じlockの領域なのでbuffer1.appendにはデッドロック(deadlock)に落ちてしません。</p> 
+  <p>でも２番目のスレッドでbuffer1.appendの内部でlockを使うのでスレッド領域が違うスレッド1とスレッド2がお互い影響でデッドロックに落ちてしまう可能性が高いです。</p> 
+  <p>実際に私もデッドロックに落ちてしまって実行中でプロセスが凍ってしまいました。</p> 
+  <p><br></p> 
+  <p>なのでマルチスレッド環境で基本的にStringBufferを使う方がデータ同期化のために良いですが、仕様によってlockがあればStringBuilderが良い時もあります。</p> 
+  <p>StringBuilderとStringBufferは機能が似てますが、仕様によって使う方法は違います。</p> 
+  <p><br></p> 
+  <p>この投稿のポイントは<b>「StringBuilder」は「同期化機能がない」、「StringBuffer」は「同期化機能があり」</b>ということです。</p> 
+  <p><br></p> 
+  <p>ここまでJavaのStringBuilderとStringBufferの差異に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=java>#java</a>,<a href=./search.html?query=StringBuilder>#StringBuilder</a>,<a href=./search.html?query=StringBuffer>#StringBuffer</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0103">Devlopment note / Java</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/176.html'>[Java] StringBuilderとStringBufferの差異</a><span>2020/03/02 07:52:22</span></li><li><a href='https://www.nowonbun.com/175.html'>[Java] Compare関数を使う方法</a><span>2020/02/29 03:00:00</span></li><li><a href='https://www.nowonbun.com/174.html'>[Java] 数字フォーマット(お金表示及び小数点以下表示)</a><span>2020/02/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/173.html'>[Java] サーブレット環境で現在の実行ディレクトリを取得する方法</a><span>2020/02/27 03:00:00</span></li><li><a href='https://www.nowonbun.com/172.html'>[Java] 日本語をユニコードに変換して、ユニコードから日本語に変換する方法</a><span>2020/02/26 03:00:00</span></li><li><a href='https://www.nowonbun.com/171.html'>[Java] コンソールからデータを受け取る方法(System.in)</a><span>2020/02/25 03:00:00</span></li><li><a href='https://www.nowonbun.com/170.html'>[Java] Servlet環境でWebSocket通信中、HttpSessionを取得する方法</a><span>2020/02/24 07:47:20</span></li><li><a href='https://www.nowonbun.com/169.html'>[Java] WebSocketでWeb Sessionを使う方法(Broadcast)とウェブチャットの例</a><span>2020/02/22 03:00:00</span></li><li><a href='https://www.nowonbun.com/168.html'>[Java] WebSocket (ウェブソケット)</a><span>2020/02/21 03:00:00</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/176.html'>[Java] StringBuilderとStringBufferの差異</a><span>2020/03/02 07:52:22</span></li><li><a href='https://www.nowonbun.com/175.html'>[Java] Compare関数を使う方法</a><span>2020/02/29 03:00:00</span></li><li><a href='https://www.nowonbun.com/174.html'>[Java] 数字フォーマット(お金表示及び小数点以下表示)</a><span>2020/02/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/173.html'>[Java] サーブレット環境で現在の実行ディレクトリを取得する方法</a><span>2020/02/27 03:00:00</span></li><li><a href='https://www.nowonbun.com/172.html'>[Java] 日本語をユニコードに変換して、ユニコードから日本語に変換する方法</a><span>2020/02/26 03:00:00</span></li><li><a href='https://www.nowonbun.com/171.html'>[Java] コンソールからデータを受け取る方法(System.in)</a><span>2020/02/25 03:00:00</span></li><li><a href='https://www.nowonbun.com/170.html'>[Java] Servlet環境でWebSocket通信中、HttpSessionを取得する方法</a><span>2020/02/24 07:47:20</span></li><li><a href='https://www.nowonbun.com/169.html'>[Java] WebSocketでWeb Sessionを使う方法(Broadcast)とウェブチャットの例</a><span>2020/02/22 03:00:00</span></li><li><a href='https://www.nowonbun.com/168.html'>[Java] WebSocket (ウェブソケット)</a><span>2020/02/21 03:00:00</span></li><li><a href='https://www.nowonbun.com/167.html'>[CakePHP] Errorページを設定する方法</a><span>2020/02/20 03:00:00</span></li><li><a href='https://www.nowonbun.com/166.html'>[CakePHP] Transactionを使う方法とEntityクラスを利用してInsert、Update、Deleteする方法</a><span>2020/02/19 03:00:00</span></li><li><a href='https://www.nowonbun.com/165.html'>[CakePHP] ORMのテーブルFetch設定</a><span>2020/02/18 03:00:00</span></li><li><a href='https://www.nowonbun.com/164.html'>[CakePHP] Cakeフレームワークでデータベースに接続する時に使うQuery式とEntityクラス、Tableクラス、ResultSet</a><span>2020/02/17 08:16:23</span></li><li><a href='https://www.nowonbun.com/163.html'>[CakePHP] データベース(MariaDB(Mysql))を接続する方法</a><span>2020/02/14 03:00:00</span></li><li><a href='https://www.nowonbun.com/162.html'>[PHP] namespaceとuse</a><span>2020/02/13 03:00:00</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/176.html';this.page.identifier = 'NOWONBUN00176';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
