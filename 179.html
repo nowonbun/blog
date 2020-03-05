@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/179.html"},"url":"https:\/\/www.nowonbun.com\/179.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] \u30e1\u30fc\u30eb(javax.mail)\u3092\u767a\u9001\u3059\u308b\u65b9\u6cd5","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fjava\u3067\u30e1\u30fc\u30eb(javax.mail)\u3092\u767a\u9001\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u30d7\u30ed\u30b0\u30e9\u30e0\u4e0a\u3067\u6211\u3005\u304c\u30e1\u30fc\u30eb\u767a\u9001\u3059\u308b\u3053\u3068\u306f\u69d8\u3005\u306e\u3068\u3053\u308d\u3067\u4f7f\u3048\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002\u4f1a\u54e1\u767b\u9332\u3059\u308b\u6642\u306b\u767b\u9332\u8a8d\u8a3c\u3084\u30d1\u30b9\u30ef\u30fc\u30c9\u63a2\u3059\u3053\u3068\u306a\u3069\u304c\u3042\u308b\u3057\u3001\u30b7\u30b9\u30c6\u30e0\u4e0a\u3067\u69d8\u3005\u306a\u30a2\u30e9\u30fc\u30e0\u30e1\u30c3\u30bb\u30fc\u30b8\u3092\u30e1\u30fc\u30eb\u767a\u9001\u3059\u308b\u3053\u3068\u3082\u3067\u304d\u307e\u3059\u3002\u6700\u8fd1\u306fsns\u304c\u305f\u304f\u3055\u3093\u3042\u308b\u306e\u3067sns\u3067\u30e1\u30c3\u30bb\u30fc\u30b8\u3092\u767a\u9001\u3059\u308b\u65b9\u6cd5\u3082\u3088\u304f\u4f7f\u3044\u307e\u3059\u304c\u3001\u305d\u308c\u3067\u3082\u307e\u3060\u3001\u30e1\u30fc\u30eb\u767a\u9001\u6a5f\u80fd\u306f\u306a\u304f\u306a\u3089\u306a\u3044\u3067\u3057\u3087\u3046\u3002\u79c1\u306fgoogle mail(gmail)\u3092\u901a\u3063\u3066\u30e1\u30fc\u30eb\u3092\u767a\u9001\u3059\u308b\u4f8b\u3067\u3059\u3002google mail - https:\/\/support.google.com\/a\/answer\/176600?hl\u003dja\u5148\u306b\u30af\u30ed\u30fc\u30e0\u306b\u63a5\u7d9a\u3057\u3066\u53f3\u4e0a\u306e\u30a2\u30ab\u30a6\u30f3\u30c8\u7ba1\u7406\u306b\u884c\u304d\u307e\u3057\u3087\u3046\u3002(\u30ed\u30b0\u30a4\u30f3\u304c\u3067\u304d\u306a\u304b\u3063\u305f\u72b6\u6cc1\u306a\u3089\u5148\u306b\u30ed\u30b0\u30a4\u30f3\u3057\u3066\u304b\u3089\u3002)\u30a2\u30ab\u30a6\u30f3\u30c8\u7ba1\u7406\u306b\u79fb\u52d5\u3057\u3066\u5b89\u5168\u6027\u306e\u4f4e\u3044\u30a2\u30d7\u30ea\u306e\u30a2\u30af\u30bb\u30b9\u306e\u30bf\u30d6\u306b\u79fb\u52d5\u3057\u307e\u3059\u3002\u5b89\u5168\u6027\u306e\u4f4e\u3044\u30a2\u30d7\u30ea\u306e\u8a31\u53ef\u3092\u6709\u52b9\u306b\u3057\u307e\u3059\u3002\u3053\u306e\u30c1\u30a7\u30c3\u30af\u3092\u3057\u306a\u3044\u3068\u5916\u90e8\u304b\u3089\u30b0\u30fc\u30b0\u30eb\u30e1\u30fc\u30eb\u3092\u4f7f\u7528\u3067\u304d\u306a\u3044\u3088\u3046\u306b\u3059\u308b\u3053\u3068\u3067\u3059\u3002\u306a\u306e\u3067\u3001id\u3084pw\u306e\u6f0f\u308c\u304c\u306a\u3051\u308c\u3070\u305d\u3093\u306a\u306b\u554f\u984c\u306f\u3042\u308a\u307e\u305b\u3093\u3002java\u3067\u30e1\u30fc\u30eb\u3092\u767a\u9001\u3059\u308b\u30bd\u30fc\u30b9\u3092\u4f5c\u6210\u3059\u308b\u305f\u3081\u306bpom.xml\u3067\u30e1\u30fc\u30eb\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u767b\u9332\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u3002\u30ec\u30dd\u30b8\u30c8\u30ea - https:\/\/mvnrepository.com\/artifact\/javax.mail\/mail\u30e1\u30fc\u30eb\u767a\u9001\u306fconsole\u306b\u4f5c\u6210\u3057\u3066\u3082\u554f\u984c\u306a\u3044\u306e\u3067\u3001console\u3067\u4f5c\u6210\u3057\u307e\u3057\u3087\u3046\u3002\u79c1\u304csession\u306e\u30c7\u30d0\u30c3\u30af\u30e2\u30fc\u30c9\u306b\u8a2d\u5b9a\u3057\u307e\u3057\u305f\u306e\u3067\u30e1\u30fc\u30eb\u30b5\u30fc\u30d0\u3068\u9001\u53d7\u4fe1\u3055\u308c\u308b\u30e1\u30c3\u30bb\u30fc\u30b8\u306e\u72b6\u614b\u304c\u8868\u793a\u3055\u308c\u307e\u3059\u3002\u3082\u3057\u3001\u30d7\u30ed\u30c8\u30b3\u30fc\u30eb\u3067\u8ffd\u52a0\u3059\u308b\u5185\u5bb9\u304c\u3042\u308c\u3070\u3053\u306e\u30ed\u30b0\u3092\u898b\u3066\u8ffd\u52a0\u3059\u308c\u3070\u3088\u3044\u3067\u3059\u3002\u30e1\u30fc\u30eb\u3092\u767a\u9001\u3057\u307e\u3057\u305f\u306e\u3067\u3001\u81ea\u5206\u306e\u30e1\u30fc\u30eb\u30c8\u30ec\u30a4\u306b\u30e1\u30fc\u30eb\u304c\u3042\u308b\u304b\u3069\u3046\u304b\u78ba\u8a8d\u3057\u307e\u3057\u3087\u3046\u3002\u30e1\u30fc\u30eb\u306e\u9001\u4fe1\u304c\u3088\u304f\u3067\u304d\u307e\u3057\u305f\u3002\u3053\u3053\u307e\u3067java\u3067\u30e1\u30fc\u30eb(javax.mail)\u3092\u767a\u9001\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3057\u305f\u3002\u3054\u4e0d\u660e\u306a\u3068\u3053\u308d\u3084\u9593\u9055\u3044\u3068\u3053\u308d\u304c\u3042\u308c\u3070\u30b3\u30e1\u30f3\u30c8\u3057\u3066\u304f\u3060\u3055\u3044\u3002","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2020-03-05T20:07:49.000+09:00","dateModified":"2020-03-05T20:07:49.000+09:00","publisher":{"@type":"Person","name":"nowonbun@gmail.com","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Devlopment note / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はjavaでメール(javax.mail)を発送する方法に関する説明です。プログラム上で我々がメール発送することは様々のところで使えることができます。会員登録する時に登録認証やパスワード探すことなどがあるし、システム上で様々なアラームメッセージをメール発送することもできます。最近はsnsがたくさんあるのでsnsでメッセージを発送する方法もよく使いますが、それでもまだ、メール発送機能はなくならないでしょう。私はgoogle mail(gmail)を通ってメールを発送する例です。google mail - https://support.google.com/a/answer/176600?hl=ja先にクロームに接続して右上のアカウント管理に行きましょう。(ログインができなかった状況なら先にログインしてから。)アカウント管理に移動して安全性の低いアプリのアクセスのタブに移動します。安全性の低いアプリの許可を有効にします。このチェックをしないと外部からグーグルメールを使用できないようにすることです。なので、idやpwの漏れがなければそんなに問題はありません。javaでメールを発送するソースを作成するためにpom.xmlでメールライブラリを登録しなければならないです。レポジトリ - https://mvnrepository.com/artifact/javax.mail/mailメール発送はconsoleに作成しても問題ないので、consoleで作成しましょう。私がsessionのデバックモードに設定しましたのでメールサーバと送受信されるメッセージの状態が表示されます。もし、プロトコールで追加する内容があればこのログを見て追加すればよいです。メールを発送しましたので、自分のメールトレイにメールがあるかどうか確認しましょう。メールの送信がよくできました。ここまでjavaでメール(javax.mail)を発送する方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java] メール(javax.mail)を発送する方法" />
+<link rel="canonical" href="https://www.nowonbun.com/179.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java] メール(javax.mail)を発送する方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaでメール(javax.mail)を発送する方法に関する説明です。プログラム上で我々がメール発送することは様々のところで使えることができます。会員登録する時に登録認証やパスワード探すことなどがあるし、システム上で様々なアラームメッセージをメール発送することもできます。最近はsnsがたくさんあるのでsnsでメッセージを発送する方法もよく使いますが、それでもまだ、メール発送機能はなくならないでしょう。私はgoogle mail(gmail)を通ってメールを発送する例です。google mail - https://support.google.com/a/answer/176600?hl=ja先にクロームに接続して右上のアカウント管理に行きましょう。(ログインができなかった状況なら先にログインしてから。)アカウント管理に移動して安全性の低いアプリのアクセスのタブに移動します。安全性の低いアプリの許可を有効にします。このチェックをしないと外部からグーグルメールを使用できないようにすることです。なので、idやpwの漏れがなければそんなに問題はありません。javaでメールを発送するソースを作成するためにpom.xmlでメールライブラリを登録しなければならないです。レポジトリ - https://mvnrepository.com/artifact/javax.mail/mailメール発送はconsoleに作成しても問題ないので、consoleで作成しましょう。私がsessionのデバックモードに設定しましたのでメールサーバと送受信されるメッセージの状態が表示されます。もし、プロトコールで追加する内容があればこのログを見て追加すればよいです。メールを発送しましたので、自分のメールトレイにメールがあるかどうか確認しましょう。メールの送信がよくできました。ここまでjavaでメール(javax.mail)を発送する方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/179.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java] メール(javax.mail)を発送する方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaでメール(javax.mail)を発送する方法に関する説明です。プログラム上で我々がメール発送することは様々のところで使えることができます。会員登録する時に登録認証やパスワード探すことなどがあるし、システム上で様々なアラームメッセージをメール発送することもできます。最近はsnsがたくさんあるのでsnsでメッセージを発送する方法もよく使いますが、それでもまだ、メール発送機能はなくならないでしょう。私はgoogle mail(gmail)を通ってメールを発送する例です。google mail - https://support.google.com/a/answer/176600?hl=ja先にクロームに接続して右上のアカウント管理に行きましょう。(ログインができなかった状況なら先にログインしてから。)アカウント管理に移動して安全性の低いアプリのアクセスのタブに移動します。安全性の低いアプリの許可を有効にします。このチェックをしないと外部からグーグルメールを使用できないようにすることです。なので、idやpwの漏れがなければそんなに問題はありません。javaでメールを発送するソースを作成するためにpom.xmlでメールライブラリを登録しなければならないです。レポジトリ - https://mvnrepository.com/artifact/javax.mail/mailメール発送はconsoleに作成しても問題ないので、consoleで作成しましょう。私がsessionのデバックモードに設定しましたのでメールサーバと送受信されるメッセージの状態が表示されます。もし、プロトコールで追加する内容があればこのログを見て追加すればよいです。メールを発送しましたので、自分のメールトレイにメールがあるかどうか確認しましょう。メールの送信がよくできました。ここまでjavaでメール(javax.mail)を発送する方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Java] メール(javax.mail)を発送する方法</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(35)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(12)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(144)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/179.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Java] メール(javax.mail)を発送する方法</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0103">Devlopment note / Java</a>    作成日付 : <span property="datePublished">2020/03/05 20:07:49</span>   修正日付 : <span property="dateModified">2020/03/05 20:07:49</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はJavaでメール(javax.mail)を発送する方法に関する説明です。</p> 
+  <p>プログラム上で我々がメール発送することは様々のところで使えることができます。会員登録する時に登録認証やパスワード探すことなどがあるし、システム上で様々なアラームメッセージをメール発送することもできます。</p> 
+  <p>最近はsnsがたくさんあるのでsnsでメッセージを発送する方法もよく使いますが、それでもまだ、メール発送機能はなくならないでしょう。</p> 
+  <p><br></p> 
+  <p>私はgoogle mail(gmail)を通ってメールを発送する例です。</p> 
+  <p>Google mail - <a href="https://support.google.com/a/answer/176600?hl=ja" target="_blank">https://support.google.com/a/answer/176600?hl=ja</a></p> 
+  <p><br></p> 
+  <p>先にクロームに接続して右上のアカウント管理に行きましょう。(ログインができなかった状況なら先にログインしてから。)</p> 
+  <p style="text-align:left;"><img src="./contents/179/933_001.png" data-filename="001.png" style="width: 346px;"><br></p> 
+  <p>アカウント管理に移動して安全性の低いアプリのアクセスのタブに移動します。</p> 
+  <p style="text-align:left;"><img src="./contents/179/935_002.png" data-filename="002.png" style="width: 848px;"><br></p> 
+  <p>安全性の低いアプリの許可を有効にします。</p> 
+  <p>このチェックをしないと外部からグーグルメールを使用できないようにすることです。なので、idやpwの漏れがなければそんなに問題はありません。</p> 
+  <p style="text-align:left;"><img src="./contents/179/936_003.png" data-filename="003.png" style="width: 848px;"><br></p> 
+  <p>Javaでメールを発送するソースを作成するためにpom.xmlでメールライブラリを登録しなければならないです。</p> 
+  <p>レポジトリ - <a href="https://mvnrepository.com/artifact/javax.mail/mail" target="_blank">https://mvnrepository.com/artifact/javax.mail/mail</a></p> 
+  <pre><code class="xml" data-type="pom.xml">&lt;!-- https://mvnrepository.com/artifact/javax.mail/mail --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;javax.mail&lt;/groupId&gt;
+  &lt;artifactId&gt;mail&lt;/artifactId&gt;
+  &lt;version&gt;1.4.7&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/179/934_004.png" data-filename="004.png" style="width: 581px;"><br></p> 
+  <p>メール発送はconsoleに作成しても問題ないので、consoleで作成しましょう。</p> 
+  <pre><code class="java" data-type="Program.java">import java.io.File;
+import java.util.Properties;
+import javax.activation.DataHandler;
+import javax.activation.DataSource;
+import javax.activation.FileDataSource;
+import javax.mail.Address;
+import javax.mail.Authenticator;
+import javax.mail.BodyPart;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Multipart;
+import javax.mail.Part;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
+import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
+// 開始関数は下にあります。
+public class Program implements Runnable {
+  // mainからrun関数を呼び出すとメール発送を開始します。
+  @Override
+  public void run() {
+    try {
+      // メール環境変数設定する。
+      Properties props = new Properties();
+      // メールプロトコールはgmailを利用することなのでsmtpを使用する。
+      props.setProperty("mail.transport.protocol", "smtp");
+      // メールホストのアドレスを設定する。
+      props.setProperty("mail.host", "smtp.gmail.com");
+      // ID, Password設定が必要だ。
+      props.put("mail.smtp.auth", "true");
+      // portは465だ。
+      props.put("mail.smtp.port", "465");
+      // sslを使う場合、設定する。
+      props.put("mail.smtp.socketFactory.port", "465");
+      props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+      props.put("mail.smtp.socketFactory.fallback", "false");
+      props.setProperty("mail.smtp.quitwait", "false");
+      // idとpasswordを設定してsessionを生成する。
+      Session session = Session.getInstance(props, new Authenticator() {
+        protected PasswordAuthentication getPasswordAuthentication() {
+          return new PasswordAuthentication("id", "password");
+        }
+      });
+      // デバックモード
+      session.setDebug(true);
+      // メールメッセージを作るためにメッセージクラスを生成する。
+      MimeMessage message = new MimeMessage(session);
+      // 送信者設定
+      message.setFrom(getAddress("nowonbun@gmail.com"));
+      // 宛先設定
+      message.addRecipients(Message.RecipientType.TO, getAddresses("nowonbun@gmail.com,nowonbun@gmail.com"));
+      // CC設定
+      message.addRecipients(Message.RecipientType.CC, getAddresses("nowonbun@gmail.com"));
+      // BCC設定
+      message.addRecipients(Message.RecipientType.BCC, getAddresses("nowonbun@gmail.com"));
+      
+      // メールタイトルを設定する。
+      message.setSubject("Test Mail");
+      // メール内容を設定するためにMimeクラスを設定する。
+      message.setContent(new MimeMultipart());
+      
+      // メール内容を作成するためにMultipartクラスを受け取る。(上のnew MimeMultipart()で割り当てしたクラス)
+      Multipart mp = (Multipart) message.getContent();
+      // html形式で本文を作成してバウンダリーに入れる。
+      mp.addBodyPart(getContents("&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;Hello Test&lt;br&gt;&lt;img src=\"cid:image\" &gt;&lt;/body&gt;&lt;/html&gt;"));
+      // 添付ファイルを追加する。
+      mp.addBodyPart(getFileAttachment("test.xlsx"));
+      // イメージファイルを追加してcontextIdを設定する。contextIdは上の本文内容のcidでリンクの設定が可能。
+      mp.addBodyPart(getImage("capture.png", "image"));
+      // メールを送信する。
+      Transport.send(message);
+    } catch (Throwable e) {
+      e.printStackTrace();
+    }
+  }
+  // イメージをローカルから読み込んでBodyPartクラスに生成する。(バウンダリー変換)
+  private BodyPart getImage(String filename, String contextId) throws MessagingException {
+    // ファイルを読み込んでBodyPartで受け取る。
+    BodyPart mbp = getFileAttachment(filename);
+    if (contextId != null) {
+      // ContextId設定
+      mbp.setHeader("Content-ID", "&lt;" + contextId + "&gt;");
+    }
+    return mbp;
+  }
+  // ファイルをローカルから読み込んでBodyPartクラスを生成する。(バウンダリー変換)
+  private BodyPart getFileAttachment(String filename) throws MessagingException {
+    // BodyPart生成
+    BodyPart mbp = new MimeBodyPart();
+    // ファイルから読み込んでBodyPartに設定(バウンダリー変換)
+    File file = new File(filename);
+    DataSource source = new FileDataSource(file);
+    mbp.setDataHandler(new DataHandler(source));
+    mbp.setDisposition(Part.ATTACHMENT);
+    mbp.setFileName(file.getName());
+    return mbp;
+  }
+  // メールの本文内容設定
+  private BodyPart getContents(String html) throws MessagingException {
+    BodyPart mbp = new MimeBodyPart();
+    // setTextを利用する場合、一般テキスト内容で設定する。
+    // mbp.setText(html);
+    // html形式に設定する。
+    mbp.setContent(html, "text/html; charset=utf-8");
+    return mbp;
+  }
+  // StringになっているメールアドレスをAddressクラスに変換する。
+  private Address getAddress(String address) throws AddressException {
+    return new InternetAddress(address);
+  }
+  // Stringで複数のメールアドレスをコンマ(,)の区切りでAddress array形に変換
+  private Address[] getAddresses(String addresses) throws AddressException {
+    String[] array = addresses.split(",");
+    Address[] ret = new Address[array.length];
+    for (int i = 0; i &lt; ret.length; i++) {
+      ret[i] = getAddress(array[i]);
+    }
+    return ret;
+  }
+  // 開始関数Programを生成してrun関数を実装する。 
+  public static void main(String[] args) {
+    Program p = new Program();
+    p.run();
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/179/937_005.png" data-filename="005.png" style="width: 836px;"><br></p> 
+  <p>私がsessionのデバックモードに設定しましたのでメールサーバと送受信されるメッセージの状態が表示されます。もし、プロトコールで追加する内容があればこのログを見て追加すればよいです。</p> 
+  <p><br></p> 
+  <p>メールを発送しましたので、自分のメールトレイにメールがあるかどうか確認しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/179/938_006.png" data-filename="006.png" style="width: 707px;"><br></p> 
+  <p>メールの送信がよくできました。</p> 
+  <p><br></p> 
+  <p>ここまでJavaでメール(javax.mail)を発送する方法に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=java>#java</a>,<a href=./search.html?query=mail>#mail</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0103">Devlopment note / Java</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/179.html'>[Java] メール(javax.mail)を発送する方法</a><span>2020/03/05 20:07:49</span></li><li><a href='https://www.nowonbun.com/178.html'>[Java] クラス複製(Clonable, Reflection)</a><span>2020/03/05 00:03:19</span></li><li><a href='https://www.nowonbun.com/177.html'>[Java] シリアライズ(直列化: Serializable)</a><span>2020/03/03 00:03:33</span></li><li><a href='https://www.nowonbun.com/176.html'>[Java] StringBuilderとStringBufferの差異</a><span>2020/03/02 07:52:22</span></li><li><a href='https://www.nowonbun.com/175.html'>[Java] Compare関数を使う方法</a><span>2020/02/29 03:00:00</span></li><li><a href='https://www.nowonbun.com/174.html'>[Java] 数字フォーマット(お金表示及び小数点以下表示)</a><span>2020/02/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/173.html'>[Java] サーブレット環境で現在の実行ディレクトリを取得する方法</a><span>2020/02/27 03:00:00</span></li><li><a href='https://www.nowonbun.com/172.html'>[Java] 日本語をユニコードに変換して、ユニコードから日本語に変換する方法</a><span>2020/02/26 03:00:00</span></li><li><a href='https://www.nowonbun.com/171.html'>[Java] コンソールからデータを受け取る方法(System.in)</a><span>2020/02/25 03:00:00</span></li><li><a href='https://www.nowonbun.com/170.html'>[Java] Servlet環境でWebSocket通信中、HttpSessionを取得する方法</a><span>2020/02/24 07:47:20</span></li><li><a href='https://www.nowonbun.com/169.html'>[Java] WebSocketでWeb Sessionを使う方法(Broadcast)とウェブチャットの例</a><span>2020/02/22 03:00:00</span></li><li><a href='https://www.nowonbun.com/168.html'>[Java] WebSocket (ウェブソケット)</a><span>2020/02/21 03:00:00</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/179.html'>[Java] メール(javax.mail)を発送する方法</a><span>2020/03/05 20:07:49</span></li><li><a href='https://www.nowonbun.com/178.html'>[Java] クラス複製(Clonable, Reflection)</a><span>2020/03/05 00:03:19</span></li><li><a href='https://www.nowonbun.com/177.html'>[Java] シリアライズ(直列化: Serializable)</a><span>2020/03/03 00:03:33</span></li><li><a href='https://www.nowonbun.com/176.html'>[Java] StringBuilderとStringBufferの差異</a><span>2020/03/02 07:52:22</span></li><li><a href='https://www.nowonbun.com/175.html'>[Java] Compare関数を使う方法</a><span>2020/02/29 03:00:00</span></li><li><a href='https://www.nowonbun.com/174.html'>[Java] 数字フォーマット(お金表示及び小数点以下表示)</a><span>2020/02/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/173.html'>[Java] サーブレット環境で現在の実行ディレクトリを取得する方法</a><span>2020/02/27 03:00:00</span></li><li><a href='https://www.nowonbun.com/172.html'>[Java] 日本語をユニコードに変換して、ユニコードから日本語に変換する方法</a><span>2020/02/26 03:00:00</span></li><li><a href='https://www.nowonbun.com/171.html'>[Java] コンソールからデータを受け取る方法(System.in)</a><span>2020/02/25 03:00:00</span></li><li><a href='https://www.nowonbun.com/170.html'>[Java] Servlet環境でWebSocket通信中、HttpSessionを取得する方法</a><span>2020/02/24 07:47:20</span></li><li><a href='https://www.nowonbun.com/169.html'>[Java] WebSocketでWeb Sessionを使う方法(Broadcast)とウェブチャットの例</a><span>2020/02/22 03:00:00</span></li><li><a href='https://www.nowonbun.com/168.html'>[Java] WebSocket (ウェブソケット)</a><span>2020/02/21 03:00:00</span></li><li><a href='https://www.nowonbun.com/167.html'>[CakePHP] Errorページを設定する方法</a><span>2020/02/20 03:00:00</span></li><li><a href='https://www.nowonbun.com/166.html'>[CakePHP] Transactionを使う方法とEntityクラスを利用してInsert、Update、Deleteする方法</a><span>2020/02/19 03:00:00</span></li><li><a href='https://www.nowonbun.com/165.html'>[CakePHP] ORMのテーブルFetch設定</a><span>2020/02/18 03:00:00</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/179.html';this.page.identifier = 'NOWONBUN00179';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
