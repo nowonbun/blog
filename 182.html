@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/182.html"},"url":"https:\/\/www.nowonbun.com\/182.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] Json\u30bf\u30a4\u30d7\u306e\u30c7\u30fc\u30bf\u3092\u4f7f\u3046\u65b9\u6cd5(Gson\u30e9\u30a4\u30d6\u30e9\u30ea)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fjava\u3067json\u30bf\u30a4\u30d7\u306e\u30c7\u30fc\u30bf\u3092\u4f7f\u3046\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002json\u30c7\u30fc\u30bf\u306f\u300c\u30ad\u30fc:\u5024\u300d\u306b\u306a\u3063\u3066\u3044\u308b\u30c7\u30fc\u30bf\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u3067\u4eba\u9593\u304c\u8aad\u3081\u308b\u30c6\u30ad\u30b9\u30c8\u5f62\u5f0f\u306e\u958b\u653e\u578b\u6a19\u6e96\u30d5\u30a9\u30fc\u30de\u30c3\u30c8\u3068\u3044\u3046\u3053\u3068\u3067\u3059\u3002java\u3067\u30c7\u30fc\u30bf\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u3092json\u30bf\u30a4\u30d7\u306b\u5909\u63db\u3059\u308b\u305f\u3081\u306b\u306fgoogle\u3067\u63d0\u4f9b\u3059\u308bgson\u306e\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u4f7f\u3044\u307e\u3059\u3002\u307e\u305a\u3001maven\u3067gson\u3092\u767b\u9332\u3057\u3066\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u9023\u7d50\u3057\u307e\u3057\u3087\u3046\u3002reference - https:\/\/mvnrepository.com\/artifact\/com.google.code.gson\/gsonmaven repository\u306b\u63a5\u7d9a\u3057\u3066gson\u306e\u6700\u65b0maven\u60c5\u5831\u3092\u8aad\u307f\u8fbc\u307f\u307e\u3059\u3002\u79c1\u306feclipse\u3092\u5229\u7528\u3059\u308b\u306e\u3067eclipse\u306epom.xml\u306b\u767b\u9332\u3057\u307e\u3059\u3002\u767b\u9332\u3057\u305f\u5f8c\u3001maven update\u3092\u3057\u3066\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u9023\u7d50\u3057\u307e\u3059\u3002\u305d\u3057\u3066\u30c6\u30b9\u30c8\u30af\u30e9\u30b9\u3092\u4f5c\u6210\u3057\u3066\u8a66\u3057\u3066\u307f\u307e\u3057\u3087\u3046\u3002\u4ee5\u524d\u306b\u30b7\u30ea\u30a2\u30e9\u30a4\u30ba\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u305f\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002link - [java] \u30b7\u30ea\u30a2\u30e9\u30a4\u30ba(\u76f4\u5217\u5316: serializable)\u30b7\u30ea\u30a2\u30e9\u30a4\u30ba\u3068\u304bjson\u30bf\u30a4\u30d7\u306b\u5909\u63db\u3059\u308b\u306e\u306f\u30c7\u30fc\u30bf\u3092string\u30bf\u30a4\u30d7\u306b\u5909\u63db\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u308b\u3053\u3068\u3067\u3059\u3002\u7d50\u679c\u306f\u9055\u3044\u307e\u3059\u304c\u3001\u4ed5\u69d8\u306b\u3088\u3063\u3066\u5404\u826f\u3044\u70b9\u304c\u3042\u308b\u3057\u60aa\u3044\u70b9\u304c\u3042\u308b\u3067\u3057\u3087\u3046\u3002\u30b7\u30ea\u30a2\u30e9\u30a4\u30ba\u306f\u30af\u30e9\u30b9\u306e\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u30d0\u30a4\u30ca\u30ea\u5316\u3059\u308b\u3053\u3068\u306a\u306e\u3067\u3001\u898b\u3048\u306a\u3044\u5909\u6570(private)\u307e\u3067\u30c7\u30fc\u30bf\u304c\u5909\u63db\u3057\u307e\u3059\u3002\u3067\u3082\u4eba\u9593\u304c\u8aad\u307f\u306b\u304f\u3044\u30c7\u30fc\u30bf\u69cb\u9020\u306b\u5909\u63db\u3057\u307e\u3059\u3002json\u306e\u5834\u5408\u306f\u30d7\u30ed\u30d1\u30c6\u30a3\u304c\u306a\u3044\u30c7\u30fc\u30bf(getter\u304c\u306a\u3044\u5909\u6570)\u306a\u3089json\u30bf\u30a4\u30d7\u306b\u5909\u63db\u3059\u308b\u3053\u3068\u306f\u9650\u754c\u304c\u3042\u308a\u307e\u3059\u3002\u3067\u3082\u4eba\u9593\u304c\u8aad\u307f\u3084\u3059\u3044\u30c6\u30ad\u30b9\u30c8\u30c6\u30ad\u30b9\u30c8\u306b\u5909\u63db\u3057\u307e\u3059\u3002\u610f\u5473\u306f\u30c7\u30fc\u30bf\u69cb\u9020\u306e\u76f4\u63a5\u306b\u4fee\u6b63\u304c\u3067\u304d\u308b\u3053\u3068\u3067\u3059\u3002\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u306e\u4ed5\u69d8\u306b\u3088\u3063\u3066\u30b7\u30ea\u30a2\u30e9\u30a4\u30ba\u304bjson\u30bf\u30a4\u30d7\u304b\u306b\u9078\u629e\u3057\u3066\u4f7f\u3044\u307e\u3057\u3087\u3046\u3002\u3053\u3053\u307e\u3067java\u3067json\u30bf\u30a4\u30d7\u306e\u30c7\u30fc\u30bf\u3092\u4f7f\u3046\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3057\u305f\u3002\u3054\u4e0d\u660e\u306a\u3068\u3053\u308d\u3084\u9593\u9055\u3044\u3068\u3053\u308d\u304c\u3042\u308c\u3070\u30b3\u30e1\u30f3\u30c8\u3057\u3066\u304f\u3060\u3055\u3044\u3002","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2020-03-11T00:30:15.000+09:00","dateModified":"2020-03-11T00:30:15.000+09:00","publisher":{"@type":"Person","name":"nowonbun@gmail.com","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Devlopment note / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はjavaでjsonタイプのデータを使う方法に関する説明です。jsonデータは「キー:値」になっているデータオブジェクトで人間が読めるテキスト形式の開放型標準フォーマットということです。javaでデータオブジェクトをjsonタイプに変換するためにはgoogleで提供するgsonのライブラリを使います。まず、mavenでgsonを登録してライブラリを連結しましょう。reference - https://mvnrepository.com/artifact/com.google.code.gson/gsonmaven repositoryに接続してgsonの最新maven情報を読み込みます。私はeclipseを利用するのでeclipseのpom.xmlに登録します。登録した後、maven updateをしてライブラリを連結します。そしてテストクラスを作成して試してみましょう。以前にシリアライズに関して説明したことがあります。link - [java] シリアライズ(直列化: serializable)シリアライズとかjsonタイプに変換するのはデータをstringタイプに変換することができることです。結果は違いますが、仕様によって各良い点があるし悪い点があるでしょう。シリアライズはクラスのインスタンスをバイナリ化することなので、見えない変数(private)までデータが変換します。でも人間が読みにくいデータ構造に変換します。jsonの場合はプロパティがないデータ(getterがない変数)ならjsonタイプに変換することは限界があります。でも人間が読みやすいテキストテキストに変換します。意味はデータ構造の直接に修正ができることです。プロジェクトの仕様によってシリアライズかjsonタイプかに選択して使いましょう。ここまでjavaでjsonタイプのデータを使う方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java] Jsonタイプのデータを使う方法(Gsonライブラリ)" />
+<link rel="canonical" href="https://www.nowonbun.com/182.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java] Jsonタイプのデータを使う方法(Gsonライブラリ)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaでjsonタイプのデータを使う方法に関する説明です。jsonデータは「キー:値」になっているデータオブジェクトで人間が読めるテキスト形式の開放型標準フォーマットということです。javaでデータオブジェクトをjsonタイプに変換するためにはgoogleで提供するgsonのライブラリを使います。まず、mavenでgsonを登録してライブラリを連結しましょう。reference - https://mvnrepository.com/artifact/com.google.code.gson/gsonmaven repositoryに接続してgsonの最新maven情報を読み込みます。私はeclipseを利用するのでeclipseのpom.xmlに登録します。登録した後、maven updateをしてライブラリを連結します。そしてテストクラスを作成して試してみましょう。以前にシリアライズに関して説明したことがあります。link - [java] シリアライズ(直列化: serializable)シリアライズとかjsonタイプに変換するのはデータをstringタイプに変換することができることです。結果は違いますが、仕様によって各良い点があるし悪い点があるでしょう。シリアライズはクラスのインスタンスをバイナリ化することなので、見えない変数(private)までデータが変換します。でも人間が読みにくいデータ構造に変換します。jsonの場合はプロパティがないデータ(getterがない変数)ならjsonタイプに変換することは限界があります。でも人間が読みやすいテキストテキストに変換します。意味はデータ構造の直接に修正ができることです。プロジェクトの仕様によってシリアライズかjsonタイプかに選択して使いましょう。ここまでjavaでjsonタイプのデータを使う方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/182.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java] Jsonタイプのデータを使う方法(Gsonライブラリ)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaでjsonタイプのデータを使う方法に関する説明です。jsonデータは「キー:値」になっているデータオブジェクトで人間が読めるテキスト形式の開放型標準フォーマットということです。javaでデータオブジェクトをjsonタイプに変換するためにはgoogleで提供するgsonのライブラリを使います。まず、mavenでgsonを登録してライブラリを連結しましょう。reference - https://mvnrepository.com/artifact/com.google.code.gson/gsonmaven repositoryに接続してgsonの最新maven情報を読み込みます。私はeclipseを利用するのでeclipseのpom.xmlに登録します。登録した後、maven updateをしてライブラリを連結します。そしてテストクラスを作成して試してみましょう。以前にシリアライズに関して説明したことがあります。link - [java] シリアライズ(直列化: serializable)シリアライズとかjsonタイプに変換するのはデータをstringタイプに変換することができることです。結果は違いますが、仕様によって各良い点があるし悪い点があるでしょう。シリアライズはクラスのインスタンスをバイナリ化することなので、見えない変数(private)までデータが変換します。でも人間が読みにくいデータ構造に変換します。jsonの場合はプロパティがないデータ(getterがない変数)ならjsonタイプに変換することは限界があります。でも人間が読みやすいテキストテキストに変換します。意味はデータ構造の直接に修正ができることです。プロジェクトの仕様によってシリアライズかjsonタイプかに選択して使いましょう。ここまでjavaでjsonタイプのデータを使う方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Java] Jsonタイプのデータを使う方法(Gsonライブラリ)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(38)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(15)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(144)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/182.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Java] Jsonタイプのデータを使う方法(Gsonライブラリ)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0103">Devlopment note / Java</a>    作成日付 : <span property="datePublished">2020/03/11 00:30:15</span>   修正日付 : <span property="dateModified">2020/03/11 00:30:15</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はJavaでJsonタイプのデータを使う方法に関する説明です。</p> 
+  <p><br></p> 
+  <p>Jsonデータは「キー:値」になっているデータオブジェクトで人間が読めるテキスト形式の開放型標準フォーマットということです。</p> 
+  <p>JavaでデータオブジェクトをJsonタイプに変換するためにはGoogleで提供するGsonのライブラリを使います。</p> 
+  <p>まず、MavenでGsonを登録してライブラリを連結しましょう。</p> 
+  <p>Reference - <a href="https://mvnrepository.com/artifact/com.google.code.gson/gson" target="_blank">https://mvnrepository.com/artifact/com.google.code.gson/gson</a></p> 
+  <p style="text-align:left;"><img src="./contents/182/943_001.png" data-filename="001.png" style="width: 621px;"><br></p> 
+  <p>maven repositoryに接続してGsonの最新Maven情報を読み込みます。</p> 
+  <p>私はEclipseを利用するのでEclipseのpom.xmlに登録します。</p> 
+  <p style="text-align:left;"><img src="./contents/182/944_002.png" data-filename="002.png" style="width: 466px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/182/945_003.png" data-filename="003.png" style="width: 438px;"><br></p> 
+  <pre><code class="xml" data-type="pom.xml">&lt;!-- https://mvnrepository.com/artifact/com.google.code.gson/gson --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;com.google.code.gson&lt;/groupId&gt;
+  &lt;artifactId&gt;gson&lt;/artifactId&gt;
+  &lt;version&gt;2.8.6&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre> 
+  <p>登録した後、maven updateをしてライブラリを連結します。</p> 
+  <p style="text-align:left;"><img src="./contents/182/947_004.png" data-filename="004.png" style="width: 734px;"><br></p> 
+  <p>そしてテストクラスを作成して試してみましょう。</p> 
+  <pre><code class="java" data-type="Example.java">import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
+class Example {
+  // Jsonタイプに変換するようなクラス
+  class JsonExample {
+    // jsonキー名に設定する。(もし、このアノテーションが設定なければ変数名がキー名になる。)
+    @SerializedName("Data1")
+    private int data1;
+    // jsonキー名
+    @SerializedName("Data2")
+    private String data2;
+    // data1のgetterプロパティ
+    public int getData1() {
+      return data1;
+    }
+    // data1のsetterプロパティ
+    public void setData1(int data1) {
+      this.data1 = data1;
+    }
+    // data2のgetterプロパティ
+    public String getData2() {
+      return data2;
+    }
+    // data2のsetterプロパティ
+    public void setData2(String data2) {
+      this.data2 = data2;
+    }
+  }
+  // 実行関数
+  public static void main(String[] args) {
+    // Jsonタイプのデータ
+    String json = "{ \"Data1\": 1, \"Data2\":\"TEST\" }";
+    // Jsonタイプのstring値をJsonExmpleタイプに変換
+    Gson gson = new Gson();
+    // Jsonタイプをクラスに変換する。キー名と変数名やアノテーション(SerializedName)と一致することでデータが格納
+    JsonExample obj = gson.fromJson(json, JsonExample.class);
+    // 結果は1
+    System.out.println(obj.getData1());
+    // 結果はTEST
+    System.out.println(obj.getData2());
+    // data1は「10」に格納
+    obj.setData1(10);
+    // data2は「Hello world」に格納
+    obj.setData2("Hello world");
+    // インスタンスデータをjsonタイプに変換する。
+    json = gson.toJson(obj);
+    //　結果値は {"Data1":10,"Data2":"Hello world"}
+    System.out.println(json);
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/182/946_005.png" data-filename="005.png" style="width: 287px;"><br></p> 
+  <p>以前にシリアライズに関して説明したことがあります。</p> 
+  <p>link - <a href="https://www.nowonbun.com/177.html" target="_blank">[Java] シリアライズ(直列化: Serializable)</a></p> 
+  <p><br></p> 
+  <p>シリアライズとかJsonタイプに変換するのはデータをStringタイプに変換することができることです。</p> 
+  <p>結果は違いますが、仕様によって各良い点があるし悪い点があるでしょう。</p> 
+  <p>シリアライズはクラスのインスタンスをバイナリ化することなので、見えない変数(private)までデータが変換します。でも人間が読みにくいデータ構造に変換します。</p> 
+  <p>Jsonの場合はプロパティがないデータ(getterがない変数)ならjsonタイプに変換することは限界があります。でも人間が読みやすいテキストテキストに変換します。意味はデータ構造の直接に修正ができることです。</p> 
+  <p><br></p> 
+  <p>プロジェクトの仕様によってシリアライズかJsonタイプかに選択して使いましょう。</p> 
+  <p><br></p> 
+  <p>ここまでJavaでJsonタイプのデータを使う方法に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=java>#java</a>,<a href=./search.html?query=gson>#gson</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0103">Devlopment note / Java</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/182.html'>[Java] Jsonタイプのデータを使う方法(Gsonライブラリ)</a><span>2020/03/11 00:30:15</span></li><li><a href='https://www.nowonbun.com/181.html'>[Java] Base64にエンコード、デコードする方法</a><span>2020/03/09 10:24:01</span></li><li><a href='https://www.nowonbun.com/180.html'>[Java] cmdコマンドを実行するための方法</a><span>2020/03/06 18:01:10</span></li><li><a href='https://www.nowonbun.com/179.html'>[Java] メール(javax.mail)を発送する方法</a><span>2020/03/05 20:07:49</span></li><li><a href='https://www.nowonbun.com/178.html'>[Java] クラス複製(Clonable, Reflection)</a><span>2020/03/05 00:03:19</span></li><li><a href='https://www.nowonbun.com/177.html'>[Java] シリアライズ(直列化: Serializable)</a><span>2020/03/03 00:03:33</span></li><li><a href='https://www.nowonbun.com/176.html'>[Java] StringBuilderとStringBufferの差異</a><span>2020/03/02 07:52:22</span></li><li><a href='https://www.nowonbun.com/175.html'>[Java] Compare関数を使う方法</a><span>2020/02/29 03:00:00</span></li><li><a href='https://www.nowonbun.com/174.html'>[Java] 数字フォーマット(お金表示及び小数点以下表示)</a><span>2020/02/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/173.html'>[Java] サーブレット環境で現在の実行ディレクトリを取得する方法</a><span>2020/02/27 03:00:00</span></li><li><a href='https://www.nowonbun.com/172.html'>[Java] 日本語をユニコードに変換して、ユニコードから日本語に変換する方法</a><span>2020/02/26 03:00:00</span></li><li><a href='https://www.nowonbun.com/171.html'>[Java] コンソールからデータを受け取る方法(System.in)</a><span>2020/02/25 03:00:00</span></li><li><a href='https://www.nowonbun.com/170.html'>[Java] Servlet環境でWebSocket通信中、HttpSessionを取得する方法</a><span>2020/02/24 07:47:20</span></li><li><a href='https://www.nowonbun.com/169.html'>[Java] WebSocketでWeb Sessionを使う方法(Broadcast)とウェブチャットの例</a><span>2020/02/22 03:00:00</span></li><li><a href='https://www.nowonbun.com/168.html'>[Java] WebSocket (ウェブソケット)</a><span>2020/02/21 03:00:00</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/182.html'>[Java] Jsonタイプのデータを使う方法(Gsonライブラリ)</a><span>2020/03/11 00:30:15</span></li><li><a href='https://www.nowonbun.com/181.html'>[Java] Base64にエンコード、デコードする方法</a><span>2020/03/09 10:24:01</span></li><li><a href='https://www.nowonbun.com/180.html'>[Java] cmdコマンドを実行するための方法</a><span>2020/03/06 18:01:10</span></li><li><a href='https://www.nowonbun.com/179.html'>[Java] メール(javax.mail)を発送する方法</a><span>2020/03/05 20:07:49</span></li><li><a href='https://www.nowonbun.com/178.html'>[Java] クラス複製(Clonable, Reflection)</a><span>2020/03/05 00:03:19</span></li><li><a href='https://www.nowonbun.com/177.html'>[Java] シリアライズ(直列化: Serializable)</a><span>2020/03/03 00:03:33</span></li><li><a href='https://www.nowonbun.com/176.html'>[Java] StringBuilderとStringBufferの差異</a><span>2020/03/02 07:52:22</span></li><li><a href='https://www.nowonbun.com/175.html'>[Java] Compare関数を使う方法</a><span>2020/02/29 03:00:00</span></li><li><a href='https://www.nowonbun.com/174.html'>[Java] 数字フォーマット(お金表示及び小数点以下表示)</a><span>2020/02/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/173.html'>[Java] サーブレット環境で現在の実行ディレクトリを取得する方法</a><span>2020/02/27 03:00:00</span></li><li><a href='https://www.nowonbun.com/172.html'>[Java] 日本語をユニコードに変換して、ユニコードから日本語に変換する方法</a><span>2020/02/26 03:00:00</span></li><li><a href='https://www.nowonbun.com/171.html'>[Java] コンソールからデータを受け取る方法(System.in)</a><span>2020/02/25 03:00:00</span></li><li><a href='https://www.nowonbun.com/170.html'>[Java] Servlet環境でWebSocket通信中、HttpSessionを取得する方法</a><span>2020/02/24 07:47:20</span></li><li><a href='https://www.nowonbun.com/169.html'>[Java] WebSocketでWeb Sessionを使う方法(Broadcast)とウェブチャットの例</a><span>2020/02/22 03:00:00</span></li><li><a href='https://www.nowonbun.com/168.html'>[Java] WebSocket (ウェブソケット)</a><span>2020/02/21 03:00:00</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/182.html';this.page.identifier = 'NOWONBUN00182';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
