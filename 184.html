@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/184.html"},"url":"https:\/\/www.nowonbun.com\/184.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] PDF\u3092\u51fa\u529b\u3059\u308b\u65b9\u6cd5(itextpdf)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fjava\u3067pdf\u3092\u51fa\u529b\u3059\u308b\u65b9\u6cd5(itextpdf)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u30a6\u30a7\u30d6\u30b5\u30fc\u30d3\u30b9\u3067\u3001\u7279\u306b\u30dd\u30fc\u30bf\u30eb\u30b5\u30fc\u30d3\u30b9\u306a\u3089\u30c7\u30fc\u30bf\u306e\u7d50\u679c\u3092\u51fa\u529b\u3059\u308b\u3068\u3053\u308d\u306a\u3089pdf\u51fa\u529b\u304c\u591a\u3044\u3067\u3059\u3002\u6700\u8fd1\u306f\u307b\u3068\u3093\u3069pdf\u306e\u51fa\u529b\u306a\u3089\u6a19\u6e96\u3067\u306a\u3063\u3066\u3044\u308b\u307b\u3069\u591a\u3044\u3067\u3059\u3002pdf\u3067\u51fa\u529b\u3057\u305f\u3089\u4fee\u6b63\u3082\u3067\u304d\u306a\u3044\u3057\u3001\u30a4\u30e1\u30fc\u30b8\u3088\u308a\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u5f62\u5f0f\u306b\u306a\u3063\u3066\u3044\u308b\u30d5\u30a9\u30fc\u30de\u30c3\u30c8\u306b\u306a\u3063\u3066\u3044\u308b\u306e\u3067\u3067\u3059\u3002\u3053\u308c\u3092java\u74b0\u5883\u3067pdf\u3092\u4f5c\u6210\u3057\u3066\u51fa\u529b\u3057\u3066\u4f7f\u3046\u65b9\u6cd5\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u307e\u3059\u3002java\u74b0\u5883\u3067\u4f7f\u3046\u305f\u3081\u306bmaven\u30ec\u30dd\u30b8\u30c8\u30ea\u3092\u901a\u3063\u3066itextpdf\u300d\u3068\u300cxmlworker\u300d\u3092\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u3002repository - https:\/\/mvnrepository.com\/artifact\/com.itextpdf\/itextpdf\/5.5.13.1repository - https:\/\/mvnrepository.com\/artifact\/com.itextpdf.tool\/xmlworker\/5.5.13.1\u7c21\u5358\u306apdf\u3092\u51fa\u529b\u3059\u308b\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u4f5c\u6210\u3057\u307e\u3057\u3087\u3046\u3002\u30b3\u30f3\u30bd\u30fc\u30eb\u3067\u5b9f\u884c\u3059\u308b\u3068pdf\u304c\u751f\u6210\u3059\u308b\u30d7\u30ed\u30b0\u30e9\u30e0\u3067\u3059\u3002\u30bd\u30fc\u30b9\u3067css\u30d5\u30a1\u30a4\u30eb\u3092\u4e8c\u3064\u8aad\u307f\u8fbc\u307f\u307e\u3059\u3002\u4e0a\u306ecss\u30c7\u30a3\u30ec\u30af\u30c8\u30ea\u306e\u8a2d\u5b9a\u306f\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u306e\u4e2d\u306eroot\u306b\u8a2d\u5b9a\u3057\u307e\u3057\u305f\u3002\u8a2d\u5b9a\u306f\u5b8c\u4e86\u3057\u307e\u3057\u305f\u3002\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u5b9f\u884c\u3057\u3066\u7d50\u679c\u3092\u78ba\u8a8d\u3057\u307e\u3057\u3087\u3046\u3002\u3053\u3053\u307e\u3067java\u3067pdf\u3092\u51fa\u529b\u3059\u308b\u65b9\u6cd5(itextpdf)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3057\u305f\u3002\u3054\u4e0d\u660e\u306a\u3068\u3053\u308d\u3084\u9593\u9055\u3044\u3068\u3053\u308d\u304c\u3042\u308c\u3070\u30b3\u30e1\u30f3\u30c8\u3057\u3066\u304f\u3060\u3055\u3044\u3002","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2020-03-13T00:47:31.000+09:00","dateModified":"2020-03-13T00:52:29.000+09:00","publisher":{"@type":"Person","name":"nowonbun@gmail.com","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Devlopment note / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はjavaでpdfを出力する方法(itextpdf)に関する説明です。ウェブサービスで、特にポータルサービスならデータの結果を出力するところならpdf出力が多いです。最近はほとんどpdfの出力なら標準でなっているほど多いです。pdfで出力したら修正もできないし、イメージよりドキュメント形式になっているフォーマットになっているのでです。これをjava環境でpdfを作成して出力して使う方法に関して説明します。java環境で使うためにmavenレポジトリを通ってitextpdf」と「xmlworker」をしなければならないです。repository - https://mvnrepository.com/artifact/com.itextpdf/itextpdf/5.5.13.1repository - https://mvnrepository.com/artifact/com.itextpdf.tool/xmlworker/5.5.13.1簡単なpdfを出力するプログラムを作成しましょう。コンソールで実行するとpdfが生成するプログラムです。ソースでcssファイルを二つ読み込みます。上のcssディレクトリの設定はプロジェクトの中のrootに設定しました。設定は完了しました。プログラムを実行して結果を確認しましょう。ここまでjavaでpdfを出力する方法(itextpdf)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java] PDFを出力する方法(itextpdf)" />
+<link rel="canonical" href="https://www.nowonbun.com/184.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java] PDFを出力する方法(itextpdf)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaでpdfを出力する方法(itextpdf)に関する説明です。ウェブサービスで、特にポータルサービスならデータの結果を出力するところならpdf出力が多いです。最近はほとんどpdfの出力なら標準でなっているほど多いです。pdfで出力したら修正もできないし、イメージよりドキュメント形式になっているフォーマットになっているのでです。これをjava環境でpdfを作成して出力して使う方法に関して説明します。java環境で使うためにmavenレポジトリを通ってitextpdf」と「xmlworker」をしなければならないです。repository - https://mvnrepository.com/artifact/com.itextpdf/itextpdf/5.5.13.1repository - https://mvnrepository.com/artifact/com.itextpdf.tool/xmlworker/5.5.13.1簡単なpdfを出力するプログラムを作成しましょう。コンソールで実行するとpdfが生成するプログラムです。ソースでcssファイルを二つ読み込みます。上のcssディレクトリの設定はプロジェクトの中のrootに設定しました。設定は完了しました。プログラムを実行して結果を確認しましょう。ここまでjavaでpdfを出力する方法(itextpdf)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/184.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java] PDFを出力する方法(itextpdf)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaでpdfを出力する方法(itextpdf)に関する説明です。ウェブサービスで、特にポータルサービスならデータの結果を出力するところならpdf出力が多いです。最近はほとんどpdfの出力なら標準でなっているほど多いです。pdfで出力したら修正もできないし、イメージよりドキュメント形式になっているフォーマットになっているのでです。これをjava環境でpdfを作成して出力して使う方法に関して説明します。java環境で使うためにmavenレポジトリを通ってitextpdf」と「xmlworker」をしなければならないです。repository - https://mvnrepository.com/artifact/com.itextpdf/itextpdf/5.5.13.1repository - https://mvnrepository.com/artifact/com.itextpdf.tool/xmlworker/5.5.13.1簡単なpdfを出力するプログラムを作成しましょう。コンソールで実行するとpdfが生成するプログラムです。ソースでcssファイルを二つ読み込みます。上のcssディレクトリの設定はプロジェクトの中のrootに設定しました。設定は完了しました。プログラムを実行して結果を確認しましょう。ここまでjavaでpdfを出力する方法(itextpdf)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Java] PDFを出力する方法(itextpdf)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(40)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(17)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(2)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(144)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/184.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Java] PDFを出力する方法(itextpdf)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0103">Devlopment note / Java</a>    作成日付 : <span property="datePublished">2020/03/13 00:47:31</span>   修正日付 : <span property="dateModified">2020/03/13 00:52:29</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はJavaでPDFを出力する方法(itextpdf)に関する説明です。</p> 
+  <p>ウェブサービスで、特にポータルサービスならデータの結果を出力するところならPDF出力が多いです。最近はほとんどPDFの出力なら標準でなっているほど多いです。</p> 
+  <p>PDFで出力したら修正もできないし、イメージよりドキュメント形式になっているフォーマットになっているのでです。</p> 
+  <p><br></p> 
+  <p>これをJava環境でPDFを作成して出力して使う方法に関して説明します。</p> 
+  <p>Java環境で使うためにMavenレポジトリを通ってitextpdf」と「xmlworker」をしなければならないです。</p> 
+  <p>repository - <a href="https://mvnrepository.com/artifact/com.itextpdf/itextpdf/5.5.13.1" target="_blank">https://mvnrepository.com/artifact/com.itextpdf/itextpdf/5.5.13.1</a></p> 
+  <p>repository - <a href="https://mvnrepository.com/artifact/com.itextpdf.tool/xmlworker/5.5.13.1" target="_blank">https://mvnrepository.com/artifact/com.itextpdf.tool/xmlworker/5.5.13.1</a></p> 
+  <pre><code class="xml" data-type="pom.xml">&lt;!-- https://mvnrepository.com/artifact/com.itextpdf/itextpdf --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;com.itextpdf&lt;/groupId&gt;
+  &lt;artifactId&gt;itextpdf&lt;/artifactId&gt;
+  &lt;version&gt;5.5.13.1&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- https://mvnrepository.com/artifact/com.itextpdf.tool/xmlworker --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;com.itextpdf.tool&lt;/groupId&gt;
+  &lt;artifactId&gt;xmlworker&lt;/artifactId&gt;
+  &lt;version&gt;5.5.13.1&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/184/954_001.png" data-filename="001.png" style="width: 754px;"><br></p> 
+  <p>簡単なPDFを出力するプログラムを作成しましょう。コンソールで実行するとPDFが生成するプログラムです。</p> 
+  <pre><code class="java" data-type="Main.java">import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.StringReader;
+import java.net.URL;
+import java.nio.charset.Charset;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.PageSize;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.itextpdf.tool.xml.XMLWorker;
+import com.itextpdf.tool.xml.XMLWorkerFontProvider;
+import com.itextpdf.tool.xml.XMLWorkerHelper;
+import com.itextpdf.tool.xml.css.StyleAttrCSSResolver;
+import com.itextpdf.tool.xml.html.CssAppliersImpl;
+import com.itextpdf.tool.xml.html.Tags;
+import com.itextpdf.tool.xml.parser.XMLParser;
+import com.itextpdf.tool.xml.pipeline.css.CssResolverPipeline;
+import com.itextpdf.tool.xml.pipeline.end.PdfWriterPipeline;
+import com.itextpdf.tool.xml.pipeline.html.HtmlPipeline;
+import com.itextpdf.tool.xml.pipeline.html.HtmlPipelineContext;
+public class Main {
+  // 実行関数
+  public static void main(String[] args) {
+    // PDFを作成するHTML
+    String html = "&lt;html&gt;" +
+                  "&lt;head&gt;&lt;/head&gt;" +
+                  "&lt;body&gt;" +
+                  "&lt;div&gt;Hello world&lt;/div&gt;" +
+                  "&lt;div&gt;明月です。&lt;/div&gt;" +
+                  "&lt;/body&gt;" +
+                  "&lt;/html&gt;";
+    // ファイルIOを取得する。
+    // 出力パスは"d:\\work\\test.pdf"
+    try (FileOutputStream os = new FileOutputStream("d:\\work\\test.pdf")) {
+      // Pdfタイプのdocumentを生成する。
+      Document document = new Document(PageSize.A4, 10, 10, 10, 10);
+      // PdfWriterを取得する。
+      PdfWriter writer = PdfWriter.getInstance(document, os);
+      // documentオブジェクトをopenする。
+      document.open();
+      // css設定するインスタンス
+      StyleAttrCSSResolver cssResolver = new StyleAttrCSSResolver();
+      // Cssファイルを設定する。(ｃｓｓ1.cssファイルをインポートする。)
+      try (FileInputStream cssStream = new FileInputStream("d:\\work\\css1.css")) {
+        cssResolver.addCss(XMLWorkerHelper.getCSS(cssStream));
+      }
+      // Cssファイルを設定する。(ｃｓｓ2.cssファイルをインポートする。)
+      try (FileInputStream cssStream = new FileInputStream("d:\\work\\css2.css")) {
+        cssResolver.addCss(XMLWorkerHelper.getCSS(cssStream));
+      }
+      // フォント設定
+      XMLWorkerFontProvider font = new XMLWorkerFontProvider(XMLWorkerFontProvider.DONTLOOKFORFONTS);
+      // windowのフォントを読み込む。
+      font.register("c:/windows/fonts/malgun.ttf", "MalgunGothic");
+      // フォントインスタンスを生成する。
+      CssAppliersImpl cssAppliers = new CssAppliersImpl(font);
+      // htmlContext pipeline生成(フォントインスタンスを設定)
+      HtmlPipelineContext htmlContext = new HtmlPipelineContext(cssAppliers);
+      htmlContext.setTagFactory(Tags.getHtmlTagProcessorFactory());
+      // PDFのpipelineを生成
+      PdfWriterPipeline pdfPipeline = new PdfWriterPipeline(document, writer);
+      // Htmlのpipelineを生成する。(htmlタグ、pdfのpipeline設定)
+      HtmlPipeline htmlPipeline = new HtmlPipeline(htmlContext, pdfPipeline);
+      // cssのpipelineをマージする。
+      CssResolverPipeline cssResolverPipeline = new CssResolverPipeline(cssResolver, htmlPipeline);
+      // Work生成、pipeline設定
+      XMLWorker worker = new XMLWorker(cssResolverPipeline, true);
+      // Xmlパーサ生成(HtmlをPDFに 変換)
+      XMLParser xmlParser = new XMLParser(true, worker, Charset.forName("UTF-8"));
+      // 出力する。
+      try (StringReader strReader = new StringReader(html)) {
+        xmlParser.parse(strReader);
+      }
+      // ドキュメントのリソース返却
+      document.close();
+    } catch (Throwable e) {
+      e.printStackTrace();
+    }
+  }
+}
+</code></pre> 
+  <p>ソースでCSSファイルを二つ読み込みます。</p> 
+  <pre><code class="css" data-type="css1.css">body {
+  /*フォント設定*/
+  font-family: MalgunGothic;
+}
+</code></pre> 
+  <pre><code class="css" data-type="css2.css">div {
+  /* div要素の背景色は赤 */
+  background-color: red;
+  /* フォント色は青 */
+  color: blue;
+}
+</code></pre> 
+  <p>上のCSSディレクトリの設定はプロジェクトの中のrootに設定しました。</p> 
+  <p style="text-align:left;"><img src="./contents/184/953_002.png" data-filename="002.png" style="width: 283px;"><br></p> 
+  <p>設定は完了しました。</p> 
+  <p><br></p> 
+  <p>プログラムを実行して結果を確認しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/184/955_003.png" data-filename="003.png" style="width: 499px;"><br></p> 
+  <p>ここまでJavaでPDFを出力する方法(itextpdf)に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=java>#java</a>,<a href=./search.html?query=pdf>#pdf</a>,<a href=./search.html?query=itextpdf>#itextpdf</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0103">Devlopment note / Java</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/184.html'>[Java] PDFを出力する方法(itextpdf)</a><span>2020/03/13 00:47:31</span></li><li><a href='https://www.nowonbun.com/183.html'>[Java] ログライブラリ(log4j)を使う方法</a><span>2020/03/12 00:54:39</span></li><li><a href='https://www.nowonbun.com/182.html'>[Java] Jsonタイプのデータを使う方法(Gsonライブラリ)</a><span>2020/03/11 00:30:15</span></li><li><a href='https://www.nowonbun.com/181.html'>[Java] Base64にエンコード、デコードする方法</a><span>2020/03/09 10:24:01</span></li><li><a href='https://www.nowonbun.com/180.html'>[Java] cmdコマンドを実行するための方法</a><span>2020/03/06 18:01:10</span></li><li><a href='https://www.nowonbun.com/179.html'>[Java] メール(javax.mail)を発送する方法</a><span>2020/03/05 20:07:49</span></li><li><a href='https://www.nowonbun.com/178.html'>[Java] クラス複製(Clonable, Reflection)</a><span>2020/03/05 00:03:19</span></li><li><a href='https://www.nowonbun.com/177.html'>[Java] シリアライズ(直列化: Serializable)</a><span>2020/03/03 00:03:33</span></li><li><a href='https://www.nowonbun.com/176.html'>[Java] StringBuilderとStringBufferの差異</a><span>2020/03/02 07:52:22</span></li><li><a href='https://www.nowonbun.com/175.html'>[Java] Compare関数を使う方法</a><span>2020/02/29 03:00:00</span></li><li><a href='https://www.nowonbun.com/174.html'>[Java] 数字フォーマット(お金表示及び小数点以下表示)</a><span>2020/02/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/173.html'>[Java] サーブレット環境で現在の実行ディレクトリを取得する方法</a><span>2020/02/27 03:00:00</span></li><li><a href='https://www.nowonbun.com/172.html'>[Java] 日本語をユニコードに変換して、ユニコードから日本語に変換する方法</a><span>2020/02/26 03:00:00</span></li><li><a href='https://www.nowonbun.com/171.html'>[Java] コンソールからデータを受け取る方法(System.in)</a><span>2020/02/25 03:00:00</span></li><li><a href='https://www.nowonbun.com/170.html'>[Java] Servlet環境でWebSocket通信中、HttpSessionを取得する方法</a><span>2020/02/24 07:47:20</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/184.html'>[Java] PDFを出力する方法(itextpdf)</a><span>2020/03/13 00:47:31</span></li><li><a href='https://www.nowonbun.com/183.html'>[Java] ログライブラリ(log4j)を使う方法</a><span>2020/03/12 00:54:39</span></li><li><a href='https://www.nowonbun.com/182.html'>[Java] Jsonタイプのデータを使う方法(Gsonライブラリ)</a><span>2020/03/11 00:30:15</span></li><li><a href='https://www.nowonbun.com/181.html'>[Java] Base64にエンコード、デコードする方法</a><span>2020/03/09 10:24:01</span></li><li><a href='https://www.nowonbun.com/180.html'>[Java] cmdコマンドを実行するための方法</a><span>2020/03/06 18:01:10</span></li><li><a href='https://www.nowonbun.com/179.html'>[Java] メール(javax.mail)を発送する方法</a><span>2020/03/05 20:07:49</span></li><li><a href='https://www.nowonbun.com/178.html'>[Java] クラス複製(Clonable, Reflection)</a><span>2020/03/05 00:03:19</span></li><li><a href='https://www.nowonbun.com/177.html'>[Java] シリアライズ(直列化: Serializable)</a><span>2020/03/03 00:03:33</span></li><li><a href='https://www.nowonbun.com/176.html'>[Java] StringBuilderとStringBufferの差異</a><span>2020/03/02 07:52:22</span></li><li><a href='https://www.nowonbun.com/175.html'>[Java] Compare関数を使う方法</a><span>2020/02/29 03:00:00</span></li><li><a href='https://www.nowonbun.com/174.html'>[Java] 数字フォーマット(お金表示及び小数点以下表示)</a><span>2020/02/28 03:00:00</span></li><li><a href='https://www.nowonbun.com/173.html'>[Java] サーブレット環境で現在の実行ディレクトリを取得する方法</a><span>2020/02/27 03:00:00</span></li><li><a href='https://www.nowonbun.com/172.html'>[Java] 日本語をユニコードに変換して、ユニコードから日本語に変換する方法</a><span>2020/02/26 03:00:00</span></li><li><a href='https://www.nowonbun.com/171.html'>[Java] コンソールからデータを受け取る方法(System.in)</a><span>2020/02/25 03:00:00</span></li><li><a href='https://www.nowonbun.com/170.html'>[Java] Servlet環境でWebSocket通信中、HttpSessionを取得する方法</a><span>2020/02/24 07:47:20</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/184.html';this.page.identifier = 'NOWONBUN00184';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
