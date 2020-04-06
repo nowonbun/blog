@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/197.html"},"url":"https:\/\/www.nowonbun.com\/197.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [C#] Zip\u5727\u7e2e\u30b3\u30fc\u30c9\u3092\u4f5c\u6210\u3059\u308b\u65b9\u6cd5","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fc#\u3067zip\u5727\u7e2e\u30b3\u30fc\u30c9\u3092\u4f5c\u6210\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002zip\u5727\u7e2e\u30a2\u30eb\u30b4\u30ea\u30ba\u30e0\u306f\u79c1\u306e\u8003\u3048\u3066\u4e16\u754c\u306e\u4e2d\u3067\u4e00\u756a\u3088\u304f\u4f7f\u3046\u5727\u7e2e\u30a2\u30eb\u30b4\u30ea\u30ba\u30e0\u3067\u306f\u306a\u3044\u304b\u3068\u601d\u3044\u307e\u3059\u3002\u30a2\u30eb\u30b4\u30ea\u30ba\u30e0\u306e\u512a\u79c0\u6027\u3082\u3044\u3044\u3051\u308c\u3069\u3082\u3001zip\u5727\u7e2e\u30a2\u30eb\u30b4\u30ea\u30ba\u30e0\u306b\u95a2\u3057\u3066\u591a\u3044\u30e9\u30a4\u30d6\u30e9\u30ea\u304c\u3042\u308a\u3001\u63a5\u8fd1\u6027\u3068\u4fbf\u5229\u6027\u304c\u3088\u3044\u304b\u3089\u3088\u304f\u4f7f\u3046\u3068\u601d\u3044\u307e\u3059\u3002c#\u306e.net framework\u5185\u90e8\u3067\u3082zip\u30a2\u30eb\u30b4\u30ea\u30ba\u30e0\u304c\u3042\u308a\u307e\u3059\u3002\u305d\u306e\u305f\u3081\u3001.net framework\u306e\u30bd\u30fc\u30b9\u3092\u3092\u5229\u7528\u3057\u3066\u5727\u7e2e\u3059\u308b\u65b9\u6cd5\u3068\u3001ionic\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u5229\u7528\u3057\u3066\u5727\u7e2e\u3059\u308b\u65b9\u6cd5\u304c\u3042\u308a\u307e\u3059\u3002\u4e8c\u3064\u306e\u30e9\u30a4\u30d6\u30e9\u30ea\u3067\u30d1\u30d5\u30a9\u30fc\u30de\u30f3\u30b9\u306e\u5dee\u304c\u3042\u308a\u307e\u305b\u3093\u3002\u30bd\u30fc\u30b9\u306e\u30b9\u30c6\u30c3\u30d7\u306e\u5dee\u3082\u306a\u3044\u306e\u3067\u3001\u30e6\u30fc\u30b6\u304c\u6c17\u306b\u306a\u308b\u3082\u306e\u3067\u4f7f\u3048\u3070\u3088\u3044\u3067\u3059\u3002ionic\u30e9\u30a4\u30d6\u30e9\u30eaionic\u30e9\u30a4\u30d6\u30e9\u30ea\u306f\u5916\u90e8\u30e9\u30a4\u30d6\u30e9\u30ea\u306a\u306e\u3067nuget\u3092\u901a\u3063\u3066ionic\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u3068\u9023\u7d50\u3092\u3057\u307e\u3057\u3087\u3046\u3002d:\\work\\compresstest\u306e\u30c7\u30a3\u30ec\u30af\u30c8\u30ea\u3092\u5727\u7e2e\u3057\u307e\u3057\u3087\u3046\u3002\u5b9f\u884c\u3057\u307e\u3057\u305f\u3002\u5727\u7e2e\u30d5\u30a1\u30a4\u30eb\u304c\u4f5c\u6210\u3055\u308c\u305f\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002\u5727\u7e2e\u30d5\u30a1\u30a4\u30eb\u5185\u3092\u78ba\u8a8d\u3057\u307e\u3057\u3087\u3046\u3002\u5727\u7e2e\u304c\u6b63\u5e38\u306b\u3067\u304d\u307e\u3057\u305f\u3002.net framework\u5185\u90e8\u3092\u5229\u7528\u3059\u308b\u65b9\u6cd5\u5148\u306b\u300csystem.io.commpress\u300d\u3068\u300csystem.io.comppression.filesystem\u300d\u3092\u8ffd\u52a0\u3057\u307e\u3057\u3087\u3046\u3002d:\\work\\compresstest\u306e\u30c7\u30a3\u30ec\u30af\u30c8\u30ea\u3092\u5727\u7e2e\u3057\u307e\u3057\u3087\u3046\u3002\u5b9f\u884c\u3057\u307e\u3057\u305f\u3002\u5727\u7e2e\u30d5\u30a1\u30a4\u30eb\u304c\u4f5c\u6210\u3055\u308c\u305f\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002\u5727\u7e2e\u30d5\u30a1\u30a4\u30eb\u5185\u3092\u78ba\u8a8d\u3057\u307e\u3057\u3087\u3046\u3002ionic\u30e9\u30a4\u30d6\u30e9\u30ea\u3068\u6a19\u6e96\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u5229\u7528\u3059\u308b\u30bd\u30fc\u30b9\u30b9\u30bf\u30a4\u30eb\u304c\u4f3c\u3066\u307e\u3059\u3002\u5727\u7e2e\u89e3\u51cd\u306f\u5c11\u3057\u5dee\u304c\u3042\u308a\u307e\u3059\u304c\u3001\u5727\u7e2e\u3059\u308b\u3053\u3068\u306f\u540c\u3058\u3067\u3059\u3002\u305d\u3046\u3059\u308b\u3068\u6a19\u6e96\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u4f7f\u3046\u307b\u3046\u304c\u30aa\u30fc\u30d7\u30f3\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u5229\u7528\u3059\u308b\u3053\u3068\u3088\u308a\u826f\u3044\u3068\u601d\u3044\u307e\u3059\u3002\u3053\u3053\u307e\u3067c#\u3067zip\u5727\u7e2e\u30b3\u30fc\u30c9\u3092\u4f5c\u6210\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3057\u305f\u3002\u3054\u4e0d\u660e\u306a\u3068\u3053\u308d\u3084\u9593\u9055\u3044\u3068\u3053\u308d\u304c\u3042\u308c\u3070\u30b3\u30e1\u30f3\u30c8\u3057\u3066\u304f\u3060\u3055\u3044\u3002","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2020-04-06T14:56:13.000+09:00","dateModified":"2020-04-06T14:57:21.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Devlopment note / C#" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はc#でzip圧縮コードを作成する方法に関する説明です。zip圧縮アルゴリズムは私の考えて世界の中で一番よく使う圧縮アルゴリズムではないかと思います。アルゴリズムの優秀性もいいけれども、zip圧縮アルゴリズムに関して多いライブラリがあり、接近性と便利性がよいからよく使うと思います。c#の.net framework内部でもzipアルゴリズムがあります。そのため、.net frameworkのソースをを利用して圧縮する方法と、ionicライブラリを利用して圧縮する方法があります。二つのライブラリでパフォーマンスの差がありません。ソースのステップの差もないので、ユーザが気になるもので使えばよいです。ionicライブラリionicライブラリは外部ライブラリなのでnugetを通ってionicライブラリをダウンロードと連結をしましょう。d:\work\compresstestのディレクトリを圧縮しましょう。実行しました。圧縮ファイルが作成されたことを確認できます。圧縮ファイル内を確認しましょう。圧縮が正常にできました。.net framework内部を利用する方法先に「system.io.commpress」と「system.io.comppression.filesystem」を追加しましょう。d:\work\compresstestのディレクトリを圧縮しましょう。実行しました。圧縮ファイルが作成されたことを確認できます。圧縮ファイル内を確認しましょう。ionicライブラリと標準ライブラリを利用するソーススタイルが似てます。圧縮解凍は少し差がありますが、圧縮することは同じです。そうすると標準ライブラリを使うほうがオープンライブラリを利用することより良いと思います。ここまでc#でzip圧縮コードを作成する方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [C#] Zip圧縮コードを作成する方法" />
+<link rel="canonical" href="https://www.nowonbun.com/197.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [C#] Zip圧縮コードを作成する方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はc#でzip圧縮コードを作成する方法に関する説明です。zip圧縮アルゴリズムは私の考えて世界の中で一番よく使う圧縮アルゴリズムではないかと思います。アルゴリズムの優秀性もいいけれども、zip圧縮アルゴリズムに関して多いライブラリがあり、接近性と便利性がよいからよく使うと思います。c#の.net framework内部でもzipアルゴリズムがあります。そのため、.net frameworkのソースをを利用して圧縮する方法と、ionicライブラリを利用して圧縮する方法があります。二つのライブラリでパフォーマンスの差がありません。ソースのステップの差もないので、ユーザが気になるもので使えばよいです。ionicライブラリionicライブラリは外部ライブラリなのでnugetを通ってionicライブラリをダウンロードと連結をしましょう。d:\work\compresstestのディレクトリを圧縮しましょう。実行しました。圧縮ファイルが作成されたことを確認できます。圧縮ファイル内を確認しましょう。圧縮が正常にできました。.net framework内部を利用する方法先に「system.io.commpress」と「system.io.comppression.filesystem」を追加しましょう。d:\work\compresstestのディレクトリを圧縮しましょう。実行しました。圧縮ファイルが作成されたことを確認できます。圧縮ファイル内を確認しましょう。ionicライブラリと標準ライブラリを利用するソーススタイルが似てます。圧縮解凍は少し差がありますが、圧縮することは同じです。そうすると標準ライブラリを使うほうがオープンライブラリを利用することより良いと思います。ここまでc#でzip圧縮コードを作成する方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/197.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [C#] Zip圧縮コードを作成する方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はc#でzip圧縮コードを作成する方法に関する説明です。zip圧縮アルゴリズムは私の考えて世界の中で一番よく使う圧縮アルゴリズムではないかと思います。アルゴリズムの優秀性もいいけれども、zip圧縮アルゴリズムに関して多いライブラリがあり、接近性と便利性がよいからよく使うと思います。c#の.net framework内部でもzipアルゴリズムがあります。そのため、.net frameworkのソースをを利用して圧縮する方法と、ionicライブラリを利用して圧縮する方法があります。二つのライブラリでパフォーマンスの差がありません。ソースのステップの差もないので、ユーザが気になるもので使えばよいです。ionicライブラリionicライブラリは外部ライブラリなのでnugetを通ってionicライブラリをダウンロードと連結をしましょう。d:\work\compresstestのディレクトリを圧縮しましょう。実行しました。圧縮ファイルが作成されたことを確認できます。圧縮ファイル内を確認しましょう。圧縮が正常にできました。.net framework内部を利用する方法先に「system.io.commpress」と「system.io.comppression.filesystem」を追加しましょう。d:\work\compresstestのディレクトリを圧縮しましょう。実行しました。圧縮ファイルが作成されたことを確認できます。圧縮ファイル内を確認しましょう。ionicライブラリと標準ライブラリを利用するソーススタイルが似てます。圧縮解凍は少し差がありますが、圧縮することは同じです。そうすると標準ライブラリを使うほうがオープンライブラリを利用することより良いと思います。ここまでc#でzip圧縮コードを作成する方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [C#] Zip圧縮コードを作成する方法</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" />
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(53)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(6)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(23)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(3)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(144)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(39)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/197.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[C#] Zip圧縮コードを作成する方法</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0102">Devlopment note / C#</a>    作成日付 : <span property="datePublished">2020/04/06 14:56:13</span>   修正日付 : <span property="dateModified">2020/04/06 14:57:21</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はC#でZip圧縮コードを作成する方法に関する説明です。</p> 
+  <p><br></p> 
+  <p>Zip圧縮アルゴリズムは私の考えて世界の中で一番よく使う圧縮アルゴリズムではないかと思います。アルゴリズムの優秀性もいいけれども、Zip圧縮アルゴリズムに関して多いライブラリがあり、接近性と便利性がよいからよく使うと思います。</p> 
+  <p>C#の.Net Framework内部でもZipアルゴリズムがあります。</p> 
+  <p>そのため、.Net Frameworkのソースをを利用して圧縮する方法と、Ionicライブラリを利用して圧縮する方法があります。</p> 
+  <p>二つのライブラリでパフォーマンスの差がありません。ソースのステップの差もないので、ユーザが気になるもので使えばよいです。</p> 
+  <h2><b><span>Ionicライブラリ</span></b></h2> 
+  <p>Ionicライブラリは外部ライブラリなのでNugetを通ってIonicライブラリをダウンロードと連結をしましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/197/1021_001.png" data-filename="001.png" style="width: 355px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/197/1031_002.png" data-filename="002.png" style="width: 848px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/197/1024_003.png" data-filename="003.png" style="width: 404px;"><br></p> 
+  <pre><code class="cs" data-type="Program.cs">using System;
+using System.Collections.Generic;
+using System.IO;
+using Ionic.Zip;
+namespace CS_ZipCompressSource
+{
+  class Program
+  {
+    // ファイルリストを取得する関数 (再帰を通ってSubディレクトリのファイルもすべて取得する。)
+    public static List&lt;String&gt; GetFileList(String rootPath, List&lt;String&gt; fileList = null)
+    {
+      // ファイルリストを格納するリストがNULLなら返却
+      if (fileList == null)
+      {
+        fileList = new List&lt;string&gt;();
+      }
+      // fileのパスの属性を取得する。
+      var attr = File.GetAttributes(rootPath);
+      // ディレクトリの場合
+      if ((attr &amp; FileAttributes.Directory) == FileAttributes.Directory)
+      {
+        // ディレクトリ情報を取得する。
+        var dirInfo = new DirectoryInfo(rootPath);
+        // ディレクトリリストを取得する。
+        foreach (var dir in dirInfo.GetDirectories())
+        {
+          // 再帰要請でサブディレクトリを探索する。
+          GetFileList(dir.FullName, fileList);
+        }
+        // ファイルリストを取得する。
+        foreach (var file in dirInfo.GetFiles())
+        {
+          // 再帰要請でファイルを検索する。 
+          GetFileList(file.FullName, fileList);
+        }
+      }
+      // ファイルの場合
+      else
+      {
+        // ファイル情報を取得する。
+        var fileInfo = new FileInfo(rootPath);
+        // リストの絶対パスを格納する。
+        fileList.Add(fileInfo.FullName);
+      }
+      return fileList;
+    }
+    // 圧縮実行関数
+    public static void CompressZipByIonic(string sourcePath, string zipPath)
+    {
+      // sourcePathのパラメータからディレクトリを取得する。
+      var filelist = GetFileList(sourcePath);
+      // ファイルのリストで圧縮を開始する。
+      using (var zip = new ZipFile())
+      {
+        // ファイルのリストを繰り返す。
+        foreach (string file in filelist)
+        {
+          // 絶対パスで相対パスに変更。
+          string path = file.Substring(sourcePath.Length + 1);
+          // zipオブジェクトでファイルを追加する。
+          zip.AddEntry(path, File.ReadAllBytes(file));
+        }
+        // ファイル格納
+        zip.Save(zipPath);
+      }
+    }
+    // 実行関数
+    static void Main(string[] args)
+    {
+      // D:\work\CompressTestのディレクトリを圧縮してD:\work\CompressTest\Ionic.zipのファイルで作成する。
+      CompressZipByIonic(@"D:\work\CompressTest", @"D:\work\CompressTest\Ionic.zip");
+      Console.WriteLine("Press any key...");
+      Console.ReadKey();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/197/1023_004.png" data-filename="004.png" style="width: 272px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/197/1026_005.png" data-filename="005.png" style="width: 274px;"><br></p> 
+  <p>D:\work\CompressTestのディレクトリを圧縮しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/197/1022_006.png" data-filename="006.png" style="width: 342px;"><br></p> 
+  <p>実行しました。</p> 
+  <p style="text-align:left;"><img src="./contents/197/1029_007.png" data-filename="007.png" style="width: 279px;"><br></p> 
+  <p>圧縮ファイルが作成されたことを確認できます。</p> 
+  <p>圧縮ファイル内を確認しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/197/1025_008.png" data-filename="008.png" style="width: 251px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/197/1028_009.png" data-filename="009.png" style="width: 240px;"><br></p> 
+  <p>圧縮が正常にできました。</p> 
+  <h2><b><span>.Net Framework内部を利用する方法</span></b></h2> 
+  <p>先に「System.IO.Commpress」と「System.IO.Comppression.FileSystem」を追加しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/197/1032_010.png" data-filename="010.png" style="width: 545px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/197/1033_011.png" data-filename="011.png" style="width: 788px;"><br></p> 
+  <pre><code class="cs" data-type="Program.cs">using System;
+using System.Collections.Generic;
+using System.IO;
+using System.IO.Compression;
+namespace CS_ZipCompressSource
+{
+  class Program
+  {
+    // ファイルリストを取得する関数 (再帰を通ってSubディレクトリのファイルもすべて取得する。)
+    public static List&lt;String&gt; GetFileList(String rootPath, List&lt;String&gt; fileList = null)
+    {
+      // ファイルリストを格納するリストがNULLなら返却
+      if (fileList == null)
+      {
+        fileList = new List&lt;string&gt;();
+      }
+      // fileのパスの属性を取得する。
+      var attr = File.GetAttributes(rootPath);
+      // ディレクトリの場合
+      if ((attr &amp; FileAttributes.Directory) == FileAttributes.Directory)
+      {
+        // ディレクトリ情報を取得する。
+        var dirInfo = new DirectoryInfo(rootPath);
+        // ディレクトリリストを取得する。
+        foreach (var dir in dirInfo.GetDirectories())
+        {
+          // 再帰要請でサブディレクトリを探索する。
+          GetFileList(dir.FullName, fileList);
+        }
+        // ファイルリストを取得する。
+        foreach (var file in dirInfo.GetFiles())
+        {
+          // 再帰要請でファイルを検索する。 
+          GetFileList(file.FullName, fileList);
+        }
+      }
+      // ファイルの場合
+      else
+      {
+        // ファイル情報を取得する。
+        var fileInfo = new FileInfo(rootPath);
+        // リストの絶対パスを格納する。
+        fileList.Add(fileInfo.FullName);
+      }
+      return fileList;
+    }
+    // 圧縮実行関数
+    public static void CompressZipByIO(string sourcePath, string zipPath)
+    {
+      // sourcePathのパラメータからディレクトリを取得する。
+      var filelist = GetFileList(sourcePath, new List&lt;String&gt;());
+      // ファイルを生成するようにストリームを取得する。
+      using (FileStream fileStream = new FileStream(zipPath, FileMode.Create, FileAccess.ReadWrite))
+      {
+        // 圧縮ファイルを生成する。
+        using (ZipArchive zipArchive = new ZipArchive(fileStream, ZipArchiveMode.Create))
+        {
+          // ファイルのリストを繰り返す。
+          foreach (string file in filelist)
+          {
+            // 絶対パスで相対パスに変更。
+            string path = file.Substring(sourcePath.Length + 1);
+            // zipオブジェクトでファイルを追加する。   
+            zipArchive.CreateEntryFromFile(file, path);
+          }
+        }
+      }
+    }
+    static void Main(string[] args)
+    {
+      CompressZipByIO(@"D:\work\CompressTest", @"D:\work\CompressTest\IO.zip");
+      Console.WriteLine("Press any key...");
+      Console.ReadKey();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/197/1023_004.png" data-filename="004.png" style="width: 272px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/197/1026_005.png" data-filename="005.png" style="width: 274px;"><br></p> 
+  <p>D:\work\CompressTestのディレクトリを圧縮しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/197/1022_006.png" data-filename="006.png" style="width: 342px;"><br></p> 
+  <p>実行しました。</p> 
+  <p style="text-align:left;"><img src="./contents/197/1030_012.png" data-filename="012.png" style="width: 274px;"><br></p> 
+  <p>圧縮ファイルが作成されたことを確認できます。</p> 
+  <p>圧縮ファイル内を確認しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/197/1027_013.png" data-filename="013.png" style="width: 242px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/197/1034_014.png" data-filename="014.png" style="width: 242px;"><br></p> 
+  <p>Ionicライブラリと標準ライブラリを利用するソーススタイルが似てます。圧縮解凍は少し差がありますが、圧縮することは同じです。</p> 
+  <p>そうすると標準ライブラリを使うほうがオープンライブラリを利用することより良いと思います。</p> 
+  <p><br></p> 
+  <p>ここまでC#でZip圧縮コードを作成する方法に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Zip>#Zip</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0102">Devlopment note / C#</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/197.html'>[C#] Zip圧縮コードを作成する方法</a><span>2020/04/06 14:56:13</span></li><li><a href='https://www.nowonbun.com/196.html'>[C#] 数字フォーマット(お金表示及び小数点以下表示)</a><span>2020/04/03 00:38:37</span></li><li><a href='https://www.nowonbun.com/195.html'>[C#] コマンド(cmd)を実行する方法(Processクラス)</a><span>2020/03/31 07:15:40</span></li><li><a href='https://www.nowonbun.com/194.html'>[C#] FTPに接続してファイルダウンロード、アップロードする方法</a><span>2020/03/27 19:20:14</span></li><li><a href='https://www.nowonbun.com/193.html'>[C#] HttpWebRequestを利用してウェブページを読み込みする方法</a><span>2020/03/27 00:23:19</span></li><li><a href='https://www.nowonbun.com/192.html'>[C#] Base64のエンコード、デコードする方法</a><span>2020/03/26 02:19:50</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/197.html'>[C#] Zip圧縮コードを作成する方法</a><span>2020/04/06 14:56:13</span></li><li><a href='https://www.nowonbun.com/196.html'>[C#] 数字フォーマット(お金表示及び小数点以下表示)</a><span>2020/04/03 00:38:37</span></li><li><a href='https://www.nowonbun.com/195.html'>[C#] コマンド(cmd)を実行する方法(Processクラス)</a><span>2020/03/31 07:15:40</span></li><li><a href='https://www.nowonbun.com/194.html'>[C#] FTPに接続してファイルダウンロード、アップロードする方法</a><span>2020/03/27 19:20:14</span></li><li><a href='https://www.nowonbun.com/193.html'>[C#] HttpWebRequestを利用してウェブページを読み込みする方法</a><span>2020/03/27 00:23:19</span></li><li><a href='https://www.nowonbun.com/192.html'>[C#] Base64のエンコード、デコードする方法</a><span>2020/03/26 02:19:50</span></li><li><a href='https://www.nowonbun.com/191.html'>[Java] 日付フォーマット(SimpleDateFormat)を使う方法</a><span>2020/03/25 00:36:53</span></li><li><a href='https://www.nowonbun.com/190.html'>[Java] サーブレット(Servlet)の環境でファイルアップロード(プログレスバーでファイルアップロード状態を表示する方法)する方法</a><span>2020/03/24 00:48:21</span></li><li><a href='https://www.nowonbun.com/189.html'>[Java] Spring環境でファイルアップロード(プログレスバーでファイルアップロード状態を表示する方法)する方法</a><span>2020/03/22 23:15:12</span></li><li><a href='https://www.nowonbun.com/188.html'>[Java] FTPに接続してファイルをダウンロード、アップロードする方法(FTPClient)</a><span>2020/03/20 02:44:36</span></li><li><a href='https://www.nowonbun.com/187.html'>[Window] WindowでFTPサーバを構築する方法</a><span>2020/03/19 03:27:22</span></li><li><a href='https://www.nowonbun.com/186.html'>[Java] JSPのSpring環境でschedulerのcronを使う方法</a><span>2020/03/18 00:24:32</span></li><li><a href='https://www.nowonbun.com/185.html'>[Java] POIを利用してExcelを扱う方法</a><span>2020/03/17 01:48:00</span></li><li><a href='https://www.nowonbun.com/184.html'>[Java] PDFを出力する方法(itextpdf)</a><span>2020/03/13 00:47:31</span></li><li><a href='https://www.nowonbun.com/183.html'>[Java] ログライブラリ(log4j)を使う方法</a><span>2020/03/12 00:54:39</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/197.html';this.page.identifier = 'NOWONBUN00197';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
