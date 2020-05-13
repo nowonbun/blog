@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-6300064900388375",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/215.html"},"url":"https:\/\/www.nowonbun.com\/215.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [C#] \u30bd\u30b1\u30c3\u30c8(Socket)\u901a\u4fe1\u3092\u3059\u308b\u65b9\u6cd5","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fc#\u3067\u30bd\u30b1\u30c3\u30c8(socket)\u901a\u4fe1\u3092\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u30d7\u30ed\u30b0\u30e9\u30e0\u8a00\u8a9e\u3067\u901a\u4fe1\u3068\u3044\u3046\u306e\u306f\u52d5\u3044\u3066\u3044\u308b\u30d7\u30ed\u30bb\u30b9\u3084\u30d7\u30ed\u30b0\u30e9\u30e0\u304c\u4ed6\u306e\u30d7\u30ed\u30bb\u30b9\u3084\u30d7\u30ed\u30b0\u30e9\u30e0\u3068\u30c7\u30fc\u30bf\u3092\u9001\u53d7\u4fe1\u3059\u308b\u3053\u3068\u3067\u3059\u3002\u305d\u306e\u4e2d\u3067\u30bd\u30b1\u30c3\u30c8\u901a\u4fe1\u3068\u306fos\u306e\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u3092\u5229\u7528\u3057\u3066\u4ed6\u306e\u30d7\u30ed\u30b0\u30e9\u30e0\u3084\u30e9\u30f3\u30b1\u30fc\u30d6\u30eb\u3092\u901a\u3063\u3066\u4ed6\u306e\u30b7\u30b9\u30c6\u30e0\u307e\u3067\u901a\u4fe1\u3059\u308b\u3053\u3068\u3067\u3059\u3002\u5b9f\u306f\u901a\u4fe1\u3059\u308b\u305f\u3081\u306b\u306f\u5404\u7aef\u672b\u306e\u898f\u683c\u3084endpoint\u306a\u3069\u3092\u3059\u3079\u3066\u8a2d\u5b9a\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u304c\u3001\u305d\u306e\u3053\u3068\u3092\u3059\u3079\u3066os\u5074\u3067\u5b9f\u88c5\u3055\u308c\u3066\u3044\u308b\u306e\u3067\u3001\u30d7\u30ed\u30b0\u30e9\u30e0\u8a00\u8a9e\u3068\u3057\u3066\u306f\u305f\u3060\u30bd\u30b1\u30c3\u30c8\u898f\u7d04\u3092\u5229\u7528\u3057\u3066\u30c7\u30fc\u30bf\u3092\u9001\u53d7\u4fe1\u3059\u308c\u3070\u3044\u3044\u3067\u3059\u3002\u305d\u306e\u3053\u3068\u3067\u8a73\u3057\u3044\u3053\u3068\u306fos\u53c2\u7167\u30e2\u30c7\u30eb\u3092\u53c2\u8003\u3059\u308b\u3068\u7406\u89e3\u3057\u3084\u3059\u3044\u3068\u601d\u3044\u307e\u3059\u3002link - osi\u53c2\u7167\u30e2\u30c7\u30eb\u30bd\u30b1\u30c3\u30c8\u306e\u4f7f\u7528\u65b9\u6cd5\u3068\u6d41\u308c\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u307e\u3059\u3002\u30bd\u30b1\u30c3\u30c8\u306f\u30b5\u30fc\u30d0\u304c\u30ed\u30fc\u30ab\u30ebip\u3092\u3082\u3063\u3066port\u3092\u958b\u3044\u3066(bind)\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u306e\u63a5\u7d9a\u3092\u6301\u3063\u3066\u3044\u307e\u3059\u3002(listen)\u305d\u3057\u3066\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u306f\u30b5\u30fc\u30d0ip\u30a2\u30c9\u30ec\u30b9\u3068\u30dd\u30fc\u30c8\u756a\u53f7\u3067\u63a5\u7d9a(connection)\u3057\u3066\u9023\u7d50\u3059\u308c\u3070\u3001\u30b5\u30fc\u30d0\u3068\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u306f\u300csend\u300d\u3001\u300crecieve\u300d\u306e\u5f62\u3067\u30d1\u30b1\u30c3\u30c8\u3092\u9001\u4fe1\u3001\u53d7\u4fe1\u3057\u307e\u3059\u3002\u304a\u4e92\u3044\u306b\u901a\u4fe1\u304c\u304a\u308f\u308c\u3070\u3001\u300cclose\u300d\u3067\u63a5\u7d9a\u3092\u5207\u308a\u307e\u3059\u3002\u53c2\u8003 - https:\/\/www.ibm.com\/support\/knowledgecenter\/ja\/ssw_ibm_i_71\/rzab6\/howdosockets.htm\u4e00\u5fdc\u3001\u30b5\u30fc\u30d0\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u4f5c\u6210\u3057\u3066\u30b3\u30de\u30f3\u30c9\u306etelnet\u3092\u5229\u7528\u3057\u3066\u63a5\u7d9a\u3057\u307e\u3059\u3002\u5b9f\u884c\u3059\u308c\u3070\u30b3\u30f3\u30bd\u30fc\u30eb\u306b9999\u30dd\u30fc\u30c8\u3067listen\u3059\u308b\u3068\u30e1\u30c3\u30bb\u30fc\u30b8\u304c\u8868\u793a\u3055\u308c\u307e\u3059\u3002\u3053\u308c\u304b\u3089telnet\u3092\u5229\u7528\u3057\u3066\u63a5\u7d9a\u3057\u307e\u3059\u3002\u3053\u3053\u3067127.0.0.1\u3092\u30ed\u30fc\u30ab\u30eb\u306eip\u306b\u3068\u3044\u3046\u610f\u5473\u3067\u3059\u30029999\u306f\u30dd\u30fc\u30c8\u3067\u3059\u3002\u6700\u521d\u306b\u63a5\u7d9a\u3059\u308c\u3070we\uff4ccome\u30e1\u30c3\u30bb\u30fc\u30b8\u304c\u8868\u793a\u3055\u308c\u307e\u3059\u3002\u305d\u306e\u5f8c\u306b\u30e1\u30c3\u30bb\u30fc\u30b8\u3092\u9001\u4fe1\u3059\u308c\u3070echo\u30e1\u30c3\u30bb\u30fc\u30b8\u304c\u53d7\u4fe1\u3055\u308c\u307e\u3059\u3002\u30b5\u30fc\u30d0\u306e\u30b3\u30f3\u30bd\u30fc\u30eb\u306b\u306fclient\u306e\u30e1\u30c3\u30bb\u30fc\u30b8\u304c\u8868\u793a\u3055\u308c\u307e\u3059\u3002\u6700\u7d42\u306bexit\u30e1\u30c3\u30bb\u30fc\u30b8\u3092\u9001\u4fe1\u3059\u308b\u3068\u63a5\u7d9a\u304c\u5207\u308c\u307e\u3059\u3002\u4e0a\u306e\u30b5\u30fc\u30d0\u3092\u57fa\u6e96\u3067c#\u3067\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u3092\u4f5c\u6210\u3057\u307e\u3057\u3087\u3046\u3002\u307e\u305f\u30b5\u30fc\u30d0\u3092\u8d77\u52d5\u3057\u307e\u3059\u3002\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u8d77\u52d5\u3057\u307e\u3059\u3002\u30e1\u30c3\u30bb\u30fc\u30b8\u3092\u9001\u4fe1\u3057\u3066\u7d42\u4e86\u3057\u307e\u3059\u3002\u30e1\u30c3\u30bb\u30fc\u30b8\u306e\u9001\u53d7\u4fe1\u306f\u6b63\u5e38\u306b\u3067\u304d\u307e\u3057\u305f\u3002\u30b5\u30fc\u30d0\u30bd\u30fc\u30b9\u3068\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u30bd\u30fc\u30b9\u306e\u5dee\u306flisten, accept\u3067\u5f85\u6a5f\u3059\u308b\u304bconnect\u95a2\u6570\u3067\u63a5\u7d9a\u3059\u308b\u304b\u306e\u5dee\u3067\u3059\u3002\u4e0a","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2020-05-13T17:37:13.000+09:00","dateModified":"2020-05-13T17:38:32.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / C#" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はc#でソケット(socket)通信をする方法に関する説明です。プログラム言語で通信というのは動いているプロセスやプログラムが他のプロセスやプログラムとデータを送受信することです。その中でソケット通信とはosのネットワークを利用して他のプログラムやランケーブルを通って他のシステムまで通信することです。実は通信するためには各端末の規格やendpointなどをすべて設定しなければならないですが、そのことをすべてos側で実装されているので、プログラム言語としてはただソケット規約を利用してデータを送受信すればいいです。そのことで詳しいことはos参照モデルを参考すると理解しやすいと思います。link - osi参照モデルソケットの使用方法と流れに関して説明します。ソケットはサーバがローカルipをもってportを開いて(bind)クライアントの接続を持っています。(listen)そしてクライアントはサーバipアドレスとポート番号で接続(connection)して連結すれば、サーバとクライアントは「send」、「recieve」の形でパケットを送信、受信します。お互いに通信がおわれば、「close」で接続を切ります。参考 - https://www.ibm.com/support/knowledgecenter/ja/ssw_ibm_i_71/rzab6/howdosockets.htm一応、サーバプログラムを作成してコマンドのtelnetを利用して接続します。実行すればコンソールに9999ポートでlistenするとメッセージが表示されます。これからtelnetを利用して接続します。ここで127.0.0.1をローカルのipにという意味です。9999はポートです。最初に接続すればweｌcomeメッセージが表示されます。その後にメッセージを送信すればechoメッセージが受信されます。サーバのコンソールにはclientのメッセージが表示されます。最終にexitメッセージを送信すると接続が切れます。上のサーバを基準でc#でクライアントを作成しましょう。またサーバを起動します。クライアントプログラムを起動します。メッセージを送信して終了します。メッセージの送受信は正常にできました。サーバソースとクライアントソースの差はlisten, acceptで待機するかconnect関数で接続するかの差です。上]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [C#] ソケット(Socket)通信をする方法" />
+<link rel="canonical" href="https://www.nowonbun.com/215.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [C#] ソケット(Socket)通信をする方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はc#でソケット(socket)通信をする方法に関する説明です。プログラム言語で通信というのは動いているプロセスやプログラムが他のプロセスやプログラムとデータを送受信することです。その中でソケット通信とはosのネットワークを利用して他のプログラムやランケーブルを通って他のシステムまで通信することです。実は通信するためには各端末の規格やendpointなどをすべて設定しなければならないですが、そのことをすべてos側で実装されているので、プログラム言語としてはただソケット規約を利用してデータを送受信すればいいです。そのことで詳しいことはos参照モデルを参考すると理解しやすいと思います。link - osi参照モデルソケットの使用方法と流れに関して説明します。ソケットはサーバがローカルipをもってportを開いて(bind)クライアントの接続を持っています。(listen)そしてクライアントはサーバipアドレスとポート番号で接続(connection)して連結すれば、サーバとクライアントは「send」、「recieve」の形でパケットを送信、受信します。お互いに通信がおわれば、「close」で接続を切ります。参考 - https://www.ibm.com/support/knowledgecenter/ja/ssw_ibm_i_71/rzab6/howdosockets.htm一応、サーバプログラムを作成してコマンドのtelnetを利用して接続します。実行すればコンソールに9999ポートでlistenするとメッセージが表示されます。これからtelnetを利用して接続します。ここで127.0.0.1をローカルのipにという意味です。9999はポートです。最初に接続すればweｌcomeメッセージが表示されます。その後にメッセージを送信すればechoメッセージが受信されます。サーバのコンソールにはclientのメッセージが表示されます。最終にexitメッセージを送信すると接続が切れます。上のサーバを基準でc#でクライアントを作成しましょう。またサーバを起動します。クライアントプログラムを起動します。メッセージを送信して終了します。メッセージの送受信は正常にできました。サーバソースとクライアントソースの差はlisten, acceptで待機するかconnect関数で接続するかの差です。上]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/215.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [C#] ソケット(Socket)通信をする方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はc#でソケット(socket)通信をする方法に関する説明です。プログラム言語で通信というのは動いているプロセスやプログラムが他のプロセスやプログラムとデータを送受信することです。その中でソケット通信とはosのネットワークを利用して他のプログラムやランケーブルを通って他のシステムまで通信することです。実は通信するためには各端末の規格やendpointなどをすべて設定しなければならないですが、そのことをすべてos側で実装されているので、プログラム言語としてはただソケット規約を利用してデータを送受信すればいいです。そのことで詳しいことはos参照モデルを参考すると理解しやすいと思います。link - osi参照モデルソケットの使用方法と流れに関して説明します。ソケットはサーバがローカルipをもってportを開いて(bind)クライアントの接続を持っています。(listen)そしてクライアントはサーバipアドレスとポート番号で接続(connection)して連結すれば、サーバとクライアントは「send」、「recieve」の形でパケットを送信、受信します。お互いに通信がおわれば、「close」で接続を切ります。参考 - https://www.ibm.com/support/knowledgecenter/ja/ssw_ibm_i_71/rzab6/howdosockets.htm一応、サーバプログラムを作成してコマンドのtelnetを利用して接続します。実行すればコンソールに9999ポートでlistenするとメッセージが表示されます。これからtelnetを利用して接続します。ここで127.0.0.1をローカルのipにという意味です。9999はポートです。最初に接続すればweｌcomeメッセージが表示されます。その後にメッセージを送信すればechoメッセージが受信されます。サーバのコンソールにはclientのメッセージが表示されます。最終にexitメッセージを送信すると接続が切れます。上のサーバを基準でc#でクライアントを作成しましょう。またサーバを起動します。クライアントプログラムを起動します。メッセージを送信して終了します。メッセージの送受信は正常にできました。サーバソースとクライアントソースの差はlisten, acceptで待機するかconnect関数で接続するかの差です。上]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [C#] ソケット(Socket)通信をする方法</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(70)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(23)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(23)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(3)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(145)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(40)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/215.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[C#] ソケット(Socket)通信をする方法</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0202">Study / C#</a>    作成日付 : <span property="datePublished">2020/05/13 17:37:13</span>   修正日付 : <span property="dateModified">2020/05/13 17:38:32</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="6281046165"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はC#でソケット(Socket)通信をする方法に関する説明です。</p> 
+  <p><br></p> 
+  <p>プログラム言語で通信というのは動いているプロセスやプログラムが他のプロセスやプログラムとデータを送受信することです。</p> 
+  <p>その中でソケット通信とはOSのネットワークを利用して他のプログラムやランケーブルを通って他のシステムまで通信することです。</p> 
+  <p><br></p> 
+  <p>実は通信するためには各端末の規格やEndPointなどをすべて設定しなければならないですが、そのことをすべてOS側で実装されているので、プログラム言語としてはただソケット規約を利用してデータを送受信すればいいです。</p> 
+  <p>そのことで詳しいことはOS参照モデルを参考すると理解しやすいと思います。</p> 
+  <p>link - <a href="https://ja.wikipedia.org/wiki/OSI%E5%8F%82%E7%85%A7%E3%83%A2%E3%83%87%E3%83%AB" target="_blank">OSI参照モデル</a></p> 
+  <p><br></p> 
+  <p>ソケットの使用方法と流れに関して説明します。</p> 
+  <p>ソケットはサーバがローカルIPをもってPortを開いて(Bind)クライアントの接続を持っています。(Listen)</p> 
+  <p>そしてクライアントはサーバIPアドレスとポート番号で接続(Connection)して連結すれば、サーバとクライアントは「Send」、「Recieve」の形でパケットを送信、受信します。</p> 
+  <p>お互いに通信がおわれば、「close」で接続を切ります。</p> 
+  <p style="text-align:left;"><img src="./contents/215/1121_001.gif" data-filename="001.gif" style="width: 280px;"><br></p> 
+  <p>参考 - <a href="https://www.ibm.com/support/knowledgecenter/ja/ssw_ibm_i_71/rzab6/howdosockets.htm" target="_blank">https://www.ibm.com/support/knowledgecenter/ja/ssw_ibm_i_71/rzab6/howdosockets.htm</a></p> 
+  <p><br></p> 
+  <p>一応、サーバプログラムを作成してコマンドのTelnetを利用して接続します。</p> 
+  <pre><code class="cs" data-type="Program.cs">using System;
+using System.Text;
+// ソケットを利用するためのNamespaceを宣言
+using System.Net;
+using System.Net.Sockets;
+using System.Threading;
+namespace SocketServer
+{
+  class Program
+  {
+    // 改行コード
+    private static char CR = (char)0x0D;
+    private static char LF = (char)0x0A;
+    // 実行関数
+    static void Main(string[] args)
+    {
+      // ネットワーク情報を設定(ポート 9999)
+      IPEndPoint ipep = new IPEndPoint(IPAddress.Any, 9999);
+      // ソケットインスタンスを生成する。
+      Socket server = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+      // ソケットインスタンスにネットワークの情報を設定
+      server.Bind(ipep);
+      // Acceptする前のキューに待機するコネクション数
+      server.Listen(20);
+      // コンソール出力
+      Console.WriteLine("Server Start... Listen port 9999...");
+      try
+      {
+        // マルチ待機するために無限ループになる。
+        while (true)
+        {
+          // Clientから接続別にスレッドを生成する。
+          // Clientのスレッドをプルで管理する。
+          ThreadPool.QueueUserWorkItem((c) =&gt;
+          {
+            // 改行までのデータを格納するバッファ
+            StringBuilder buffer = new StringBuilder();
+            // スレッドから受け取るパラメータをSocketタイプにキャスターする。
+            Socket client = (Socket)c;
+            // RemoteEndPointを取得する。
+            IPEndPoint remoteAddr = (IPEndPoint)client.RemoteEndPoint;
+            // 接続アドレス、ポートをコンソールに出力
+            Console.WriteLine($"Client : (From: {remoteAddr.Address.ToString()}:{remoteAddr.Port}, Connection time: {DateTime.Now})");
+            // Send関数 - Clientにメッセージを送信する。
+            Action&lt;String&gt; Send = (msg) =&gt;
+            {
+              // Stringタイプをbyteタイプに変更
+              byte[] b = Encoding.ASCII.GetBytes(msg);
+              // Clientにメッセージ送信
+              client.Send(b, b.Length, SocketFlags.None);
+            };
+            // メッセージ送信
+            Send("Welcome server!\r\n&gt;");
+            // Clientからメッセージを受信を待ち
+            try
+            {
+              while (true)
+              {
+                // バッファ設定
+                var b = new byte[1024];
+                // データを受信
+                client.Receive(b);
+                // byte[]タイプのデータをStringタイプに変更
+                string msg = Encoding.Default.GetString(b);
+                // 空欄データを除いてバッファにデータを合併
+                buffer.Append(msg.Trim('\0'));
+                // メッセージの末が改行なら
+                if (buffer.Length &gt;= 2 &amp;&amp; buffer[buffer.Length - 2] == CR &amp;&amp; buffer[buffer.Length - 1] == LF)
+                {
+                  // メッセージが「exit」なら接続終了
+                  if ("exit\r\n".Equals(buffer.ToString(), StringComparison.OrdinalIgnoreCase))
+                  {
+                    // 接続終了
+                    client.Disconnect(true);
+                    break;
+                  }
+                  // メッセージをコンソールに出力
+                  Console.Write(buffer.ToString());
+                  // echoメッセージをClientに送信
+                  msg = "echo - " + buffer.ToString() + "&gt;\0";
+                  // clientにメッセージ送信
+                  Send(msg);
+                  // バッファをクリア 
+                  buffer.Clear();
+                }
+              }
+            }
+            // Client側から強制接続がある場合
+            catch(SocketException e)
+            {
+              // エラー内容をコンソールに出力
+              Console.WriteLine(e);
+            }
+            finally
+            {
+              // ソケットを閉める
+              client.Close();
+              // 接続終了。メッセージ出力
+              Console.WriteLine($"Disconnected  : (From: {remoteAddr.Address.ToString()}:{remoteAddr.Port}, Connection time: {DateTime.Now})");
+            }
+            // サーバAccept
+          }, server.Accept());
+        }
+      }
+      catch (Exception e)
+      {
+        // エラーが発生するとコンソールに表示
+        Console.WriteLine(e);
+      }
+      finally
+      {
+        // サーバ終了
+        server.Close();
+      }
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/215/1119_002.png" data-filename="002.png" style="width: 418px;"><br></p> 
+  <p>実行すればコンソールに9999ポートでListenするとメッセージが表示されます。</p> 
+  <p>これからTelnetを利用して接続します。</p> 
+  <p style="text-align:left;"><img src="./contents/215/1122_003.png" data-filename="003.png" style="width: 339px;"><br></p> 
+  <p>ここで127.0.0.1をローカルのIPにという意味です。9999はポートです。</p> 
+  <p style="text-align:left;"><img src="./contents/215/1123_004.png" data-filename="004.png" style="width: 304px;"><br></p> 
+  <p>最初に接続すればWeｌcomeメッセージが表示されます。その後にメッセージを送信すればechoメッセージが受信されます。</p> 
+  <p>サーバのコンソールにはClientのメッセージが表示されます。</p> 
+  <p style="text-align:left;"><img src="./contents/215/1124_005.png" data-filename="005.png" style="width: 624px;"><br></p> 
+  <p>最終にexitメッセージを送信すると接続が切れます。</p> 
+  <p style="text-align:left;"><img src="./contents/215/1125_006.png" data-filename="006.png" style="width: 722px;"><br></p> 
+  <p><br></p> 
+  <p>上のサーバを基準でC#でクライアントを作成しましょう。</p> 
+  <pre><code class="cs" data-type="Program.cs">using System;
+using System.Text;
+// ソケットを利用するためのNamespaceを宣言
+using System.Net;
+using System.Net.Sockets;
+using System.Threading;
+
+namespace SocketClient
+{
+  // Socketクラスを継承した
+  class Program : Socket
+  {
+    // 改行コード
+    private static char CR = (char)0x0D;
+    private static char LF = (char)0x0A;
+    
+    public Program() : base(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp)
+    {
+      // ネットワーク情報を設定(接続IP: localhost, ポート 9999)
+      IPEndPoint ipep = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 9999);
+      base.Connect(ipep);
+
+      ThreadPool.QueueUserWorkItem((c) =&gt;
+      {
+        try
+        {
+          // 改行までのデータを格納するバッファ
+          StringBuilder buffer = new StringBuilder();
+          while (true)
+          {
+            // バッファ設定
+            var b = new byte[1024];
+            // データを受信
+            Receive(b);
+            // byte[]タイプのデータをStringタイプに変更
+            string msg = Encoding.Default.GetString(b);
+            // 空欄データを除いてバッファにデータを合併
+            buffer.Append(msg.Trim('\0'));
+            // メッセージの末が改行なら
+            if (buffer.Length &gt;= 3 &amp;&amp; buffer[buffer.Length - 3] == CR &amp;&amp; buffer[buffer.Length - 2] == LF &amp;&amp; buffer[buffer.Length - 1] == '&gt;')
+            {
+              // メッセージをコンソールに出力
+              msg = buffer.ToString();
+              Console.Write(msg);
+              // バッファをクリア 
+              buffer.Clear();
+            }
+          }
+        }
+        // Server側から強制接続がある場合
+        catch (SocketException e)
+        {
+          // エラー内容をコンソールに出力
+          Console.WriteLine(e);
+        }
+      });
+      try
+      {
+        // コンソールから入力するためのループ
+        while (true)
+        {
+          // コンソールから入力を受ける。
+          string k = Console.ReadLine();
+          // サーバにメッセージを送信
+          Send(k + "\r\n");
+          // exitのコマンドなら終了
+          if (String.Equals("exit", k, StringComparison.OrdinalIgnoreCase))
+          {
+            break;
+          }
+        }
+      }
+      finally
+      {
+        // 接続を閉める
+        Close();
+        // ソケット終了を1秒を待つ。
+        Thread.Sleep(1000);
+        // コンソール出力
+        Console.WriteLine("Press any key...");
+        // どれがキーを押すと終了
+        Console.ReadKey();
+      }
+    }
+    // メッセージを送信関数
+    public void Send(String msg)
+    {
+      // Stringタイプのデータをbyteに変換する。
+      byte[] sendData = Encoding.ASCII.GetBytes(msg);
+      // メッセージ送信
+      Send(sendData, sendData.Length, SocketFlags.None);
+    }
+    // 実行関数
+    static void Main(string[] args)
+    {
+      // Programクラスはソケットクラスを継承したので、インスタンス生成だけで実行する。
+      new Program();
+    }
+  }
+}
+</code></pre> 
+  <p>またサーバを起動します。</p> 
+  <p style="text-align:left;"><img src="./contents/215/1119_002.png" data-filename="002.png" style="width: 418px;"><br></p> 
+  <p>クライアントプログラムを起動します。</p> 
+  <p style="text-align:left;"><img src="./contents/215/1118_007.png" data-filename="007.png" style="width: 247px;"><br></p> 
+  <p>メッセージを送信して終了します。</p> 
+  <p style="text-align:left;"><img src="./contents/215/1120_008.png" data-filename="008.png" style="width: 848px;"><br></p> 
+  <p>メッセージの送受信は正常にできました。</p> 
+  <p><br></p> 
+  <p>サーバソースとクライアントソースの差はListen, Acceptで待機するかConnect関数で接続するかの差です。</p> 
+  <p>上の例はSocketクラスをインスタンスして使うかSocketクラスを継承して使うかの差もありますが、基本的にSend、Receiveの流れは同じです。</p> 
+  <p><br></p> 
+  <p>最後にClientでエラーメッセージが発生しましたが、サーバかクライアントで接続する時に何処かで通信を切るので発生することです。エラーメッセージですが問題がないことです。</p> 
+  <p><br></p> 
+  <p>ここまでC#でソケット(Socket)通信をする方法に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-6300064900388375" data-ad-slot="5897902785"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Socket>#Socket</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0202">Study / C#</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/215.html'>[C#] ソケット(Socket)通信をする方法</a><span>2020/05/13 17:37:13</span></li><li><a href='https://www.nowonbun.com/40.html'>[C#] Thread(スレッド)</a><span>2019/07/24 00:57:35</span></li><li><a href='https://www.nowonbun.com/39.html'>[C#] 「IDisposable」と「using」</a><span>2019/07/23 00:05:40</span></li><li><a href='https://www.nowonbun.com/38.html'>[C#] ファイルシステム(File System) - FileStream、 Encoding、 Serializable</a><span>2019/07/22 23:45:05</span></li><li><a href='https://www.nowonbun.com/37.html'>[C#] ファイルシステム(File System) - FileInfo,DirectoryInfo</a><span>2019/07/22 23:30:17</span></li><li><a href='https://www.nowonbun.com/36.html'>[C#] MSDN(Microsoft Developer Network)</a><span>2019/07/22 23:15:42</span></li><li><a href='https://www.nowonbun.com/35.html'>[C#] Attribute(アトリビュート)</a><span>2019/07/20 02:27:23</span></li><li><a href='https://www.nowonbun.com/34.html'>[C#] Reflection(リフレクション)</a><span>2019/07/20 02:22:03</span></li><li><a href='https://www.nowonbun.com/33.html'>[C#] Objectタイプ、varタイプ(匿名タイプ)、dynamicタイプ</a><span>2019/07/18 22:50:16</span></li><li><a href='https://www.nowonbun.com/32.html'>[C#] Partial Type(クラス分割)、拡張メソッド</a><span>2019/07/18 20:22:16</span></li><li><a href='https://www.nowonbun.com/31.html'>[C#] Lamda(ラムダ)</a><span>2019/07/17 23:06:42</span></li><li><a href='https://www.nowonbun.com/30.html'>[C#] LINQ(リンク)-3 (Enumerableクラス)</a><span>2019/07/17 20:57:00</span></li><li><a href='https://www.nowonbun.com/29.html'>[C#] LINQ(リンク)-2 (メソッド式)</a><span>2019/07/16 22:40:03</span></li><li><a href='https://www.nowonbun.com/28.html'>[C#] LINQ(リンク)-1</a><span>2019/07/16 20:41:27</span></li><li><a href='https://www.nowonbun.com/27.html'>[C#] event(イベント)</a><span>2019/07/16 00:59:34</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/215.html'>[C#] ソケット(Socket)通信をする方法</a><span>2020/05/13 17:37:13</span></li><li><a href='https://www.nowonbun.com/214.html'>[C#] NPOIを利用してExcelを読み込んで出力する方法</a><span>2020/05/08 10:43:52</span></li><li><a href='https://www.nowonbun.com/213.html'>[C#] NPOIライブラリを利用してエクセルファイルを生成する方法</a><span>2020/05/07 01:49:01</span></li><li><a href='https://www.nowonbun.com/212.html'>[C#] Geckoライブラリを利用してウェブスクレイピングする方法</a><span>2020/05/05 00:52:26</span></li><li><a href='https://www.nowonbun.com/211.html'>[C#] PDFを作成する方法(iTextSharp)</a><span>2020/05/03 10:22:40</span></li><li><a href='https://www.nowonbun.com/210.html'>[C#] シリアライズ(Serialization)をする方法</a><span>2020/04/30 19:32:04</span></li><li><a href='https://www.nowonbun.com/209.html'>[C#] dynamicタイプの動的パラメータ-DynamicObject(WinFormでASP.MVCのViewBagオブジェクトを使用する方法)</a><span>2020/04/29 22:41:32</span></li><li><a href='https://www.nowonbun.com/208.html'>[C#] Stringの補間式(interpolation)</a><span>2020/04/27 20:39:57</span></li><li><a href='https://www.nowonbun.com/207.html'>[C#] Newtonsoft.JSONライブラリを利用してJsonデータ構造を扱う方法</a><span>2020/04/23 20:19:53</span></li><li><a href='https://www.nowonbun.com/206.html'>[C#] EMailを送信する方法(System.Net.Mail)</a><span>2020/04/22 19:00:42</span></li><li><a href='https://www.nowonbun.com/205.html'>[C#] ini環境ファイルを使う方法</a><span>2020/04/22 00:09:39</span></li><li><a href='https://www.nowonbun.com/204.html'>[C#] 環境設定ファイルを扱う方法(System.Configuration)</a><span>2020/04/20 19:37:57</span></li><li><a href='https://www.nowonbun.com/203.html'>[C#] Reflectionを利用してクラス複製する方法</a><span>2020/04/17 00:34:33</span></li><li><a href='https://www.nowonbun.com/202.html'>[C#] XMLをXPathを利用してデータを取得する方法</a><span>2020/04/16 00:47:17</span></li><li><a href='https://www.nowonbun.com/201.html'>[C#] NSoupライブラリを利用してXMLとHTMLをパーシングする方法</a><span>2020/04/14 19:34:15</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/215.html';this.page.identifier = 'NOWONBUN00215';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
