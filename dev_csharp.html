@@ -125,7 +125,703 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 				</p>
 			</div>
 			<div class="list-area" vocab="http://schema.org/" typeof="BreadcrumbList" resource="https://www.nowonbun.com/dev_csharp.html">
-				<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">1</span><a class="list-link" href="./216.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] 非同期ソケット通信(IOCP)-EAPパターン</h5><p class="list-summary">こんにちは。明月です。この投稿はc#の非同期ソケット通信(iocp)-eapパターンに関する説明です。以前、同期ソケット通信に関して説明したことがあります。link - [c#] ソケット(socket)通信をする方法普通の同期、非同期の意味はクライアントとサーバーの連結状態が続いていれば同期だし、非同期は連結を続けていることではなくデータを送受信すれば連結を切断することです。でも、ここで説明する同期と非同期は意味が少し違います。システム内部でスレッドリソースでソケット通信を保持するかどうかの差です。つまり、同期ソケット通信ならsocketクラスをサーバーにlistenしてclientが接続するたびにスレッドを生成してオブジェクトを保持することです。スレッドのリストはvectorやlistで管理して切断する時、オブジェクトを解除することです。でもこの同期ソケット通信はプログラム実装が簡単ですが、リソース問題があります。システムリソースは限定的なので、スレッドとsocketオブジェクトを無限に生成することができません。ゲームサーバーだと考えても同時接続200clientから300clientだけでもスレッドが200個から300個が生成されることです。最近は、ハードウェアが以前より非常に向上になりましたが、c#の長所であり短所であるgc(ガベージコレクション)があるのでリソース管理がしやすくないでしょう。c#というのはインスタンスを生成することは可能ですが、メモリ解除はできません。gcが自動に解除してくれますが、リソースをたくさん使っている状況でサーバーがフリージング状態になっても可笑しくないでしょう。その問題を解決することが非同期ソケットです。非同期ソケットはclientが接続すると接続する時の処理をためのイベントを発生して連結リソースをキュー構造のiocpに格納します。その後からclientからメッセージが発生するとiocpから連結リソースを持ち込んでソケット通信を続けることです。そのことでサーバはthreadを生成する必要がないので、リソースをたくさん節約することができます。非同期ソケットサーバーはスレッドを管理するスレッドプールを生成する必要がないし、スレッドを管理する必要がないので、その部分はソースが簡単になります。これが同期ソケット通信と非同期ソケット通信の差です。非同期ソケットはメモリ効率もいい</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=IOCP>#IOCP</a>,<a href=./search.html?query=EAP>#EAP</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/05/15 19:31:02</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/05/15 19:31:02</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">2</span><a class="list-link" href="./214.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] NPOIを利用してExcelを読み込んで出力する方法</h5><p class="list-summary">こんにちは。明月です。この投稿はc#のnpoiを利用してexcelを読み込んで出力する方法に関する説明です。以前の投稿でc#でエクセルファイルを生成する方法でnpoiのライブラリを説明しました。link - [c#] npoiライブラリを利用してエクセルファイルを生成する方法今回はnpoiを利用してエクセルを生成することではなく、エクセルのテンプレートを読み込んでエクセルを出力する方法に関して説明します。例のデータは始めの列は月、二つ目は温度平均、三つ目は午前の温度、四つ目は午後の温度です。右下のグラフは基本の表の数値の基盤で表れた一年間の気温平均です。ここでやろうと思うことはエクセルで温度平均は関数でカラムを関数で計算するし、グラフもb列のデータで表示するので、エクセルを読み込んでc列のデータとd列のデータを修正すればb列のデータが更新されグラフが変わるかを確認しましょう。npoiを利用するためにnugetからライブラリをダウンロード及び連携しましょう。これからエクセル生成したディレクトリに移動してファイルを開きましょう。結果をみれば既存b列のデータをc列のデータが変更されました。そのあとb列の関数データが更新され、グラフの結果まで更新されました。作業しながらなぜかc列とd列のデータを変更することだけでb列のデータが自動に更新されませんでした。トリガーみたいな呼び出しが必要らしいです。私の場合はsetcellformula関数を利用してエクセル関数を再設定しました。グラフの場合はb列のデータが変わることですぐデータが反映されます。私の例の場合は簡単なデータを扱うので別の最初からエクセルを作成することと読み込んで後修正することとの差異がありません。でも、実務ではかなり複雑なデータを扱う可能性が高いです。その時、最初からエクセルをc#で作成することはすごく大変だと思います。デザインまで必要な部分ならスタイル設定はフォント設定まで必要です。エクセルをもっと知る方ならvba領域も考えなければならないです。それをすべてc#で作成することになると複雑です。なのでプログラムのパフォーマンス部分もすごく遅くなります。なので実際はある程度にエクセルを作成してc#で読み込んで後データ値だけ更新することでエクセル出力する仕様が多いです。ここまでc#のnpoiを利用してexcelを読み込んで出力する方法に関する説明でした。ご不</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=NPOI>#NPOI</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/05/08 10:43:52</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/05/08 10:44:48</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">3</span><a class="list-link" href="./213.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] NPOIライブラリを利用してエクセルファイルを生成する方法</h5><p class="list-summary">こんにちは。明月です。この投稿はc#でnpoiライブラリを利用してエクセルファイルを生成する方法に関する説明です。npoiライブラリはapache財団で提供するエクセル、パワーポイント、ワードファイルフォーマットを運用するためのライブラリです。元はjavaのpoiライブラリから始まりましたが、c#でも使うためにnpoiの名でライブラリを提供していることです。それならこれからnpoiを使ってエクセルを作成しましょう。npoiを使うためにnugetを利用してライブラリをダウンロードと連携します。これからエクセル生成したディレクトリに移動してファイルを開きましょう。xlsバージョンとxlsxバージョンはnamespaceが違うし扱うクラスも違います。でも、クラスは違いますが、インタフェースは iworkbook과 isheetで作業するのでクラスを割り当てする時だけ分けて、次からはインタフェースで運用するとバージョン関係せずにエクセルを扱うことができます。上の例では基本的にnpoiでよく使うデータ格納、関数式、色の設定、セルのスタイル設定まで実装しておきました。npoiのapiはすごく多いので、下記のurlのドキュメントを参考してください。link - https://poi.apache.org/apidocs/(javaのドキュメントですが、使用方法はc#と同じです。)でも、実際の業務ではexcelを始めから生成して出力することは少ないです。普通はexcelのテンプレートを作成して、そのテンプレートを参照して出力する方法で使います。その方法に関しては別の投稿で紹介します。ここまでc#でnpoiライブラリを利用してエクセルファイルを生成する方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=NPOI>#NPOI</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/05/07 01:49:01</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/05/07 01:49:01</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">4</span><a class="list-link" href="./212.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] Geckoライブラリを利用してウェブスクレイピングする方法</h5><p class="list-summary">こんにちは。明月です。この投稿はc#でgeckoライブラリを利用してウェブスクレイピングする方法に関する説明です。htmlのレイアウトエンジンとはhtmlドキュメントとcss style、javascriptを画面に描画するレンダリングするエンジンです。レンダリングエンジンの種類は代表的にmsのieとmozilla財団のgeckoがあります。ieレンダリングのmshtmlがありますが、ie 8.0バージョンまではc#で参照して使えます。ieの8.0バージョンはもう10年前のレンダリングエンジンだし、今のスタイルなら様々でエラーが発生するかもしれません。geckoレンダリングは60バージョンです。ieより最新バージョンです。geckoレイアウトのライブラリはc#のnugetでダウンロード及び連携が可能です。ブラウザライブラリは一応、windowのprocメッセージのキューが必要なのでwindow forms appでプロジェクトを生成します。そしてnugetを通ってgeckoライブラリを連携します。上のイメージをみれば以前45バージョンもあります。45バージョンで作成するなら60バージョンと同じです。ここでは60で作成します。一応、私のosは64ビットなので64ビットで作成します。 32ビットも作成方法も同じです。windowデザインフォームの隣のtoolbarをみればgecko-browserコントロールができたことを確認できます。このwindowsフォームにdrap＆dropした後でプロパティのdockをfillに合わせています。これからfirefox.dllファイルを注入する必要があります。右program.csファイルを開いて,下記のソースを追加します。そして右のform1.csファイルを右クリックしをして、ソースビューでソースを開きます。上みたいにスクレイピングソースを作成しました。結果みたいにスクレイピングになったことを確認できます。--　もしエラーが発生する場合 -- 1. 64ビットに設定しても64ビットでできない場合があります。デバッグ設定をx64に変更すれば解決できます。デバッグのpropertyメニューを開きます。メニューのbuildタブでプラットフォームをx64に変更すると解決できます。2. dllファイルを読み込めませんというエラーメッセージが発生する可能性があります。この場合はd</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Gecko>#Gecko</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/05/05 00:52:26</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/05/05 00:55:27</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">5</span><a class="list-link" href="./211.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] PDFを作成する方法(iTextSharp)</h5><p class="list-summary">こんにちは。明月です。この投稿はcでpdfを作成する方法(itextsharp)に関する説明です。プログラムを運用すれば結果レポートや帳票などを出力する場合が多いです。その時にcsvファイルやexcelファイル、xmlファイルタイプで出力する場合があります。その中で契約書やデータ形式ではなくドキュメント形式、でも編集ができないタイプで出力したい場合はpdfを利用します。c#でpdfを出力するために提供するオープンライブラリはitextsharpがあります。itextsharpを使うためにnugetを利用してダウンロードして連携します。itextsharpライブラリを連携したらソースを作成してpdfを出力しましょう。上のhtmlからファイルを生成することまで下記の流れになります。「filestream -&amp;gt; pdfwriter取得　-&amp;gt; pdfwriterpipeline生成 -&amp;gt; htmlpipeline生成 -&amp;gt; cssresolverpipeline生成 -&amp;gt; xmlworker生成 -&amp;gt; xmlparser生成 -&amp;gt; xmlparserによってhtmlをpdfに変換する。」ということになります。上のcssファイルを実行するデバッグフォルダに置きます。実行すると「simple.pdf」というpdfファイルが生成されます。結果は上のとおりに出ました。私は簡単にソースを作成しましたが、少しhtml作成する部分とcssを紐づく部分を整理すると一般プロジェクトにも十分に使えると思います。ここまでcでpdfを作成する方法(itextsharp)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=iTextSharp>#iTextSharp</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/05/03 10:22:40</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/05/03 10:22:40</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">6</span><a class="list-link" href="./210.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] シリアライズ(Serialization)をする方法</h5><p class="list-summary">こんにちは。明月です。この投稿はc#でシリアライズ(serialization)をする方法に関する説明です。シリアライズとはメモリに割り当てしているクラスのデータをバイナリ化することです。つまり、クラス内部で変数のデータをすべてbyteタイプに変換することだと思えば良いです。シリアライズは昔にたくさん使った記憶がありますが、最近はシリアライズよりjsonタイプに変換してデータ化することがトレンドなので、最近はよく使わないみたいです。link - [c#] newtonsoft.jsonライブラリを利用してjsonデータ構造を扱う方法でも、newtonsoft.jsonを利用してデータをjsonタイプに変換することはクラスのpublicタイプだけ変換するし、データをすべてstringタイプに変換するので、限界があります。シリアライズはpublicデータだけではなく、privateも構造化するし、クラス自体をすべてbyteタイプに変換することなので、クラス自体を格納することではよいです。でも、シリアライズも短所があります。バイナリ化するので、当該なデータを人が読みにくいです。なのでメモ帳でデータ変更ができないです。また、クラス自体を変換しましたから、クラスが変更がある場合に復元ができない可能性もあります。jsonも場合はプログラム言語に関係しずに、読み込む移植性がよいですが、シリアライズはc#で作成したらc#しか読み込まれないです。正確にはクラス変更や他のプレートフォームでも読み込まられないことではないですが、データ漏れが発生したり、データが可笑しくなる可能性があります。つまり、バグ発生する可能性があることです。仕様によってシリアライズがよいかjsonを使うかを正しく選択して使う方がよいです。nodeというクラスをシリアライズしてbyte[]タイプに変換しました。変換してファイルに格納します。また、格納したファイルを読み込んでデシリアライズでbyte[]データをクラスタイプに変換します。ファイルをメモ帳で開きました。人が解析することでは無理があります。ここまでc#でシリアライズ(serialization)をする方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Serialization>#Serialization</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/04/30 19:32:04</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/04/30 19:32:04</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">7</span><a class="list-link" href="./209.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] dynamicタイプの動的パラメータ-DynamicObject(WinFormでASP.MVCのViewBagオブジェクトを使用する方法)</h5><p class="list-summary">こんにちは。明月です。この投稿はc#でdynamicタイプの動的パラメータ-dynamicobject(winformでasp.mvcのviewbagオブジェクトを使用する方法)に関する説明です。asp.mvcのcontrollerでview(.cshtml)にデータを渡す時、viewbagというオブジェクトを使う場合があります。viewbagというオブジェクトはすごく便利です。可読性やパフォーマンスはよくないですが、クラスを一々宣言する必要なしでそのままに動的なプロパティを生成してデータを格納、取得するの可能です。でも、viewbagとはasp.mvcだけで使うものなので、それを同じ仕様で実装してc#のwindowフォーム開発する時にも使ってみましょう。コントロールでviewbagオブジェクトに任意のプロパティにデータを格納しましょう。viewファイルはviewbagの任意のプロパティからデータを取得しましょう。link - 参照リンクを作成中コンソールのプロジェクトを生成してviewbagを使ってみましょう。viewbagオブジェクトがありませんというメッセージが表示されいます。私がc#でwindowを作成する時、値を渡すために一つ一つエンティティクラスを生成して開発したことがあります。そのため、一回性の値のクラスがだんだん多くなったし、プロジェクトがすごく大きくなったし、その結果、プロジェクトの管理性、可読性、パフォーマンスなどがすべて悪くなった経験があります。それで、window form開発する時にもasp.mvcのviewbagを使ったらすごく便利かと思いました。探してみたらありました。link - https://docs.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject?view=netframework-4.8前からこのことを知ってたらよかったのにという物足りなさがあります。ここまでc#でdynamicタイプの動的パラメータ-dynamicobject(winformでasp.mvcのviewbagオブジェクトを使用する方法)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=dynamic>#dynamic</a>,<a href=./search.html?query=ViewBag>#ViewBag</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/04/29 22:41:32</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/04/29 22:41:32</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">8</span><a class="list-link" href="./208.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] Stringの補間式(interpolation)</h5><p class="list-summary">こんにちは。明月です。この投稿はc#でstringの補間式(interpolation)に関する説明です。最近、c#のコード標準でstringの補間式に関して説明がありました。既存、c#でstringのフォーマットを使うとstring.format関数を利用しましたが、それが数字で「{0},{1}」で表現するので、可読性が悪いです。なので、もっと可読性を上がるため、に補間式(interpolation)があり、もっとフォーマットをしやすく表現できます。link - https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolatedstringでstringの補間式を使うために、ダブルクォートの前に「$」を付けて設定することで使えます。stringのの補間式(interpolation)は下記とおりになります。                    要素        説明                            interpolationexpression		形式化する結果を生成する表現式です。nullの結果のライン表現はstring.emptyです。      	          alignment		補間表現式の結果の文字列で最小文字数を定義する定数式です。正の場合は、文字列表現が右揃えされます。負の場合は左揃えです。      	          formatstring		式の結果タイプによってサポートされる形式の文字列です。            補間表現式は三項演算子でも計算可能です。中括弧の表現は中括弧を重ねることで表現できます。ここまでc#でstringの補間式(interpolation)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=interpolation>#interpolation</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/04/27 20:39:57</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/04/27 20:39:57</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">9</span><a class="list-link" href="./207.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] Newtonsoft.JSONライブラリを利用してJsonデータ構造を扱う方法</h5><p class="list-summary">こんにちは。明月です。この投稿はc#でnewtonsoft.jsonライブラリを利用してjsonデータ構造を扱う方法に関する説明です。まず、jsonに関して説明しますとjsonとは(キー,値)構造で人が認識できる開放型標準データフォーマットです。私が10年前に開発する時にはxmlの構造でデータを扱うことが多くありましたが、最近はほとんどjsonタイプのデータを扱うプログラムが多いです。でもxmlを使わないことではないけれども、xmlより直観的な構造だし、データ修正がxmlよりしやすいからだと思います。(xmlはタグの開き、閉めが間違っても全体エラーが発生します。)そのため、プログラムライブラリでjsonを読み取るか書き込むのライブラリが多いですが、newtonsoft.jsonがたくさん使うし、一番機能が多いので紹介します。まず、nugetでnewtonsoft.jsonライブラリを連携しましょう。結果をみれば、stringタイプのjsonデータがクラスに変換されたし、クラスのデータがstringタイプのjsonデータに変換することを確認できます。注意点はjsonタイプでシングルクォートはstringでないことは定数に表記されます。なのでjsonとクラスのデータタイプが合わない場合にはエラーが発生します。後、上のことはプロパティ名とjsonのキーを一致しましたが、仕様によって一致できない場合もあります。その場合はjsonpropertyアトリビュートを利用して設定が可能です。newtonsoft.jsonのライブラリは様々な機能がありますが、私の基準では上の以外には使わないです。ここまでc#でnewtonsoft.jsonライブラリを利用してjsonデータ構造を扱う方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Newtonsoft.JSON>#Newtonsoft.JSON</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/04/23 20:19:53</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/04/23 20:19:53</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">10</span><a class="list-link" href="./206.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] EMailを送信する方法(System.Net.Mail)</h5><p class="list-summary">こんにちは。明月です。この投稿はc#でemailを送信する方法(system.net.mail)に関する説明です。プロジェクトでよく使う機能と思えばemailを送ることではないかと思います。例えば、ウェブページでユーザ登録からパスワード初期化、お知らせのメールなど様々で使います。c#ではメールを送信する方法がいろいろありますが、その中で.net frameworkのsystem.net.mailを使う方法があります。system.net.mailの場合は.net frameworkの基本の機能なので別にnugetを利用してライブラリを連携する必要がないです。ソースは作成しました。その後、smtpサーバーを設定しましょう。私の場合はgoogleメールを利用します。google mail - https://support.google.com/a/answer/176600?hl=ja先にクロームに接続して右上のアカウント管理に行きましょう。(ログインができなかった状況なら先にログインしてから。)アカウント管理に移動して安全性の低いアプリのアクセスのタブに移動します。安全性の低いアプリの許可を有効にします。このチェックをしないと外部からグーグルメールを使用できないようにすることです。なので、idやpwの漏れがなければそんなに問題はありません。上のソースを実行してメールを送信しましょう。プログラムが正常に実行されました。gmailのメールの受信トレイを見れば、メールが届いたことを確認できます。ここまでc#でemailを送信する方法(system.net.mail)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Email>#Email</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/04/22 19:00:42</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/04/22 19:00:42</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">11</span><a class="list-link" href="./205.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] ini環境ファイルを使う方法</h5><p class="list-summary">こんにちは。明月です。この投稿はc#でini環境ファイルを使う方法に関する説明です。c#で一般的な環境ファイルはapp.configファイルのxmlファイルです。link - [c#] 環境設定ファイルを扱う方法(system.configuration)iniファイルはc++でよく使う環境ファイルの構造です。セッションがあり、キーでデータを取得する構造です。でもc#もc++ライブラリを使うことができるのでiniファイルを読み取りや書き込みができます。writeprivateprofilestringとgetprivateprofilestringはc#のライブラリではなく、c++のライブラリの「kernel32」の関数です。実行関数でiniファイルを書き込んで読み取るので同然「日本語」という結果が出ます。config.iniファイルを確認しましょう。config.iniファイル中で[sectiontest]のdataのキーで「日本語」という値があります。iniファイルはプログラムだけで操作することではなく、直接にセッションやキー、値を設定すると上のgetprivateprofilestringの関数で読み込むのが可能です。ここまでc#でini環境ファイルを使う方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=ini>#ini</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/04/22 00:09:39</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/04/22 00:09:39</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">12</span><a class="list-link" href="./204.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] 環境設定ファイルを扱う方法(System.Configuration)</h5><p class="list-summary">こんにちは。明月です。この投稿はc#で環境設定ファイルを扱う方法(system.configuration)に関する説明です。プログラムを作成する時にプログラムによって環境ファイルを設定する場合があります。例えば、ログファイルの格納パスやサーバによって設定するデータなどです。以前、c++ファイルの場合はiniファイルを設定ファイルによく使いました。もちろん、c#でiniファイルを使えないことではないですが、基本xmlファイルで環境設定を行います。javaの場合「.property」ファイルが環境ファイルでよく使います。(xml形式も多いです。)c#ではxmlになっているapp.configファイルを環境ファイルでよく使います。プロジェクトを生成すればc#は基本的にapp.configファイルが生成されます。その後、app.configファイルにデータを設定してプログラム上で読み込みます。appsettingsのタグの中でaddタグを追加します。ここでkeyというアトリビュートはプログラムで読み込むキーでvalueは値です。configファイルを読み込むためにライブラリを追加しなければならないです。(app.configは基本的に生成されるのにライブラリは追加することで。。)configurationmanager.appsettingsクラスにindexer形式でキーの値を入れればapp.configに設定した値を取得できます。プログラムをリリースしたらapp.configファイル名は「プロジェクト名.exe.config」で変更されます。ここまでc#で環境設定ファイルを扱う方法(system.configuration)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=System.Configuration>#System.Configuration</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/04/20 19:37:57</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/04/20 19:37:57</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">13</span><a class="list-link" href="./203.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] Reflectionを利用してクラス複製する方法</h5><p class="list-summary">こんにちは。明月です。この投稿はc#でreflectionを利用してクラス複製する方法に関する説明です。oopでクラス複製することはプロトタイプパターン(デザインパターン)によってクラスを複製する方法があります。結果をみればnodeとnode1は同じクラスです。その意味はnodeでdataの値を修正したらnode1にも影響があると意味です。でもnode2の場合は複製になったのでnodeと違うクラスです。その意味はnodeのdataの値が修正してもnode2は影響がないと意味です。上の結果見ればnode.dataが2になっていることを確認できます。クラス複製をするようにはmemberwiseclone関数を利用すべきですが、memberwiseclone関数はobjectクラスのprotectedタイプです。その意味は私が作成するクラスつまり、memberwiseclone関数を使うことができる状況なら複製ができますが、ライブラリのクラスや修正ができないクラスの場合はクラス複製ができないと意味になります。その場合は新しくnewキーワードを使ってメモリ割り当てして変数の値を一々にコピーことしかないです。でもこれも問題があるのはpublicの値は出来ますが、privateやprotectedはコピーが不可能なので、クラス複製ができないと意味になります。上の状況ならdata2を設定する方法がないです。完全にコピーができないです。それをreflectionを利用して解決ができます。link - https://www.nowonbun.com/34.htmlクラスでmemberwisecloneを利用しなくてクラス複製になりました。nodeクラスの修正がなしで外部でクラスコピーができるといみです。ここまでc#でreflectionを利用してクラス複製する方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Reflection>#Reflection</a>,<a href=./search.html?query=proto>#proto</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/04/17 00:34:33</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/04/17 00:34:33</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">14</span><a class="list-link" href="./202.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] XMLをXPathを利用してデータを取得する方法</h5><p class="list-summary">こんにちは。明月です。この投稿はc#でxmlをxpathを利用してデータを取得する方法に関する説明です。以前、xmlをcssselectorエンジン(sizzle)みたいに要素を検索してデータを取得する方法に関して説明したことがあります。link - [c#] nsoupライブラリを利用してxmlとhtmlをパーシングする方法最近はxpathを利用して検索することよりnsoupのライブラリを利用してデータを取得することが一般的なことになりました。でも、sizzleエンジンの要素を検索する方法の以前はxpathで検索することが一般的だったんです。でも、xpathの方法が悪いことではなく、css selectorで検索するキーが単純だし、理解しやすいのでよく使うことです。でも以前の方法がもっとよい時があります。例えば、xmlから一つのデータとノードを検索することではnsoupのほうがいいです。でも、xmlの全体を構造化するしクラスを変換することではreaderを利用するかもっと明確なルールを決めて検索することならxpathがよいです。stringで正規表現でreplaceするか、ただ特定文字でreplaceするかの差と似てます。実はxpathを使うためにはxpathを詳しく知らなければならないですが、いつかxpathは別途で説明します。xpathを使うために以前で使った私のブログの検索エンジンに登録するようなrssファイルを使いましょう。link - https://www.nowonbun.com/rssxpathを利用するクラスのnsoupみたいにオープンソースではなく、system.xmlの.net frameworkを使います。コンソールの結果をみればrssのtitleのタグの内容だけ出力したことを確認できます。後、descriptionのタグのテキストデータを変更して、ファイルに格納しました。結果を確認すればdescriptionタグの内容が変更されたことを確認できます。nsoupとsystem.xmlの差はnsoupの場合はhtmlまで検索ができます。でも、system.xmlの場合はhtmlファイルが検索ができません。htmlを読み込めば許せないアトリビュートや開き閉めタグタイプではないこと(inputタグ)などでエラーが発生します。個人的にはほぼnsoupを使いますが、逆に環境ファイルのxml</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Xml>#Xml</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/04/16 00:47:17</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/04/16 00:47:17</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">15</span><a class="list-link" href="./201.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] NSoupライブラリを利用してXMLとHTMLをパーシングする方法</h5><p class="list-summary">こんにちは。明月です。この投稿はc#でnsoupライブラリを利用してxmlとhtmlをパーシングする方法に関する説明です。最近、プログラムを作成する時に環境設定ファイルとしてxmlを利用することがあります。以前はxpathを利用してxmlを探索して値を取得しましたが、jqueryのライブラリが登場してcssselectorエンジン(sizzle)の概念が生じ、classやidなどのアトリビュートで検索する方法ができました。nsoupライブラリはxmlやhtml形式にあるファイルやデータをcssselectorで探索するライブラリです。個人的にxpathはxmlを探索する時にもっと明確に検索ができますが、javascriptや様々でcssselectorをよく使う今はcssselectorタイプで探索するほうがもっとしやすくなったと思います。visual studioでnsoupライブラリを使うためにnugetを利用してライブラリをダウンロード及び連結しましょう。私のブログで検索エンジンに登録するようなrssファイルがあります。それをnsoupライブラリを利用してタイトルだけ取得します。上のxmlファイルを取得してitemのtitleタグのデータをコンソールに出力しました。　jquryでelement探索することと同じ方法で探索が可能です。nsoupの場合は探索だけではなく、書き直し機能もあります。上のdescriptionのテキストを「hello world」に書き直しました。そのあと、コンソールにxmlを出力しました。descriptionの部分が「hello world」になっています。ここまでc#でnsoupライブラリを利用してxmlとhtmlをパーシングする方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Nsoup>#Nsoup</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/04/14 19:34:15</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/04/14 19:34:15</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">16</span><a class="list-link" href="./200.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] 日付フォーマット</h5><p class="list-summary">こんにちは。明月です。この投稿はc#で日付フォーマットに関する説明です。以前、数字フォーマットに関して、桁数とお金表示などを説明したことがあります。link - [c#] 数字フォーマット(お金表示及び小数点以下表示)日付フォーマットはdatetimeのデータタイプをでtostringやstring.formatを利用して変換ができます。日付フォーマットは置換文字が多いです。基本的に「yyyy」は年度、「mm」は月、「dd」は日、「hh」は時間、「mm」は分です。ここで「mm」は「mm」は小文字、大文字で月、分の区分にします。気を付けなければならないです。                    フォーマット指定子        説明        例                            d		日: 1日から31日まで		2009-06-01t13:45:30 -&amp;gt; 1      	          dd		日: 01日から31日まで(10日の未満は十桁に「0」をつける)		2009-06-01t13:45:30 -&amp;gt; 01      	          ddd		曜日(略称)		月、火、水。。      	          dddd		曜日(プル名)		月曜日、火曜日、水曜日。。      	          f		ミリセカンド1桁(なければ0に満たす。)		2019-08-05 12:00:00.1 -&amp;gt; 1      	          ff		ミリセカンド2桁(なければ0に満たす。)		2019-08-05 12:00:00.12 -&amp;gt; 12      	          fff		ミリセカンド3桁(なければ0に満たす。)		2019-08-05 12:00:00.123 -&amp;gt; 123      	          ffff		ミリセカンド4桁(なければ0に満たす。)		2019-08-05 12:00:00.1234 -&amp;gt; 1234      	          fffff		ミリセカンド5桁(なければ0に満たす。)		2019-08-05 12:00:00.12345 -&amp;gt; 12345      	          ffffff		ミリセカンド6桁(なければ0に満</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=DateFormat>#DateFormat</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/04/09 20:53:20</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/04/09 20:53:20</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">17</span><a class="list-link" href="./199.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] ログライブラリ(log4net)を設定する方法</h5><p class="list-summary">こんにちは。明月です。この投稿はc#のログライブラリ(log4net)を設定する方法に関する説明です。プログラムを開発する時にvisual studioなどのideツールでデバッグ機能を通ってプログラムの流れを把握することができます。それで開発中でエラーが発生するか間違う結果が出る時にはデバッグ値を追跡してソースコードを修正することができます。でも、開発が終わって本番(production)にビルドしたものをサーバにデプロイして運用する時にもバグが発生する可能性があります。その時には別にエラーログを作成する機能がなければエラー原因と問題を把握することが大変になります。そのため、出来る方法でログを残して(テキストファイルやデータベースにエラー内容を格納すること)プログラムの流れを記録します。問題が発生する時に、ログ内容を追跡してエラーを予測するか見つけることができます。その以外にログを通ってユーザの行動パターンの分析、追跡、学習などの統計資料も必要です。c#ではログを作成するライブラリは代表的に二つがあります。elmahとlog4netがあります。elmahも随分多いプロジェクトで使っていると思いますが、個人的にlog4netをお勧めです。理由はlog4net、log4j、log4phpなどで他のプログラム言語でも使っているライブラリなので、互換性がよいし、ライブラリのコミュニティも大きいので様々な情報や派生ライブラリを得やすいです。それならlog4netを使うためにはnugetを利用してlog4netを連結します。パターンレイアウトと領域を確認するとパターン式があることを確認できます。 パターンレイアウトに関しては詳しく説明したいですが、別に大事部分ではないし、パターンレイアウトの内容が多いので、log4netのapiで直接に確認するほうがよいです。参照 - https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/patternlayout.html別にレイアウトに関して問題なければ、「%d [%t] %-5p %c - %m%n」の式はよいです。ここまで設定すればログを使うことができます。でも、実際に本番(production)に使うと思えばログ設定がソースの中にあるので、設定ができないです。パラメータで設定ができますが、それはそれで設</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Log4Net>#Log4Net</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/04/08 13:04:22</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/04/08 13:04:22</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">18</span><a class="list-link" href="./198.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] Zipの圧縮ファイルを解凍するコードを作成する方法</h5><p class="list-summary">こんにちは。明月です。この投稿はc#でzipの圧縮ファイルを解凍するコードを作成する方法に関する説明です。以前、c#でファイルをzipアルゴリズムで圧縮するソースコードに関して説明したことがあります。link - [c#] zip圧縮コードを作成する方法その投稿にも説明しましたが、zipアルゴリズムは様々なところでよく使うアルゴリズムです。ionicライブラリと.net frameworkを利用して圧縮する方法に関して説明しましたが、解凍も同じで作成しましょう。ionicライブラリionicライブラリは外部ライブラリなのでnugetを通ってionicライブラリをダウンロードと連結をしましょう。zipファイルの状況は下記のイメージになっています。解凍しましょう。実行しました。解凍されました。.net framework内部を利用する方法先に「system.io.commpress」と「system.io.comppression.filesystem」を追加しましょう。zipファイルの状況は下記のイメージになっています。解凍しましょう。実行しました。ionicと.net frameworkにあるライブラリで圧縮することと違ってソースの差異があります。ionicの場合は圧縮のファイルを読み込んで解凍することではなく、extractallの関数を呼び出しで一括で解凍されます。標準ライブラリの場合は一つ一つの圧縮ファイルを読み込んでioで作成することです。個人的に解凍の場合は標準ライブラリがよいと思います。一つ一つのエラー確認やソース応用が可能することを比べてionicの場合は解凍ソースはすごく簡単だけど、一つのコントロールが難しいなので様々ところで使いにくいと思います。ここまでc#でzipの圧縮ファイルを解凍するコードを作成する方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=zip>#zip</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/04/07 11:17:44</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/04/07 11:22:01</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">19</span><a class="list-link" href="./197.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] Zip圧縮コードを作成する方法</h5><p class="list-summary">こんにちは。明月です。この投稿はc#でzip圧縮コードを作成する方法に関する説明です。zip圧縮アルゴリズムは私の考えて世界の中で一番よく使う圧縮アルゴリズムではないかと思います。アルゴリズムの優秀性もいいけれども、zip圧縮アルゴリズムに関して多いライブラリがあり、接近性と便利性がよいからよく使うと思います。c#の.net framework内部でもzipアルゴリズムがあります。そのため、.net frameworkのソースをを利用して圧縮する方法と、ionicライブラリを利用して圧縮する方法があります。二つのライブラリでパフォーマンスの差がありません。ソースのステップの差もないので、ユーザが気になるもので使えばよいです。ionicライブラリionicライブラリは外部ライブラリなのでnugetを通ってionicライブラリをダウンロードと連結をしましょう。d:\work\compresstestのディレクトリを圧縮しましょう。実行しました。圧縮ファイルが作成されたことを確認できます。圧縮ファイル内を確認しましょう。圧縮が正常にできました。.net framework内部を利用する方法先に「system.io.commpress」と「system.io.comppression.filesystem」を追加しましょう。d:\work\compresstestのディレクトリを圧縮しましょう。実行しました。圧縮ファイルが作成されたことを確認できます。圧縮ファイル内を確認しましょう。ionicライブラリと標準ライブラリを利用するソーススタイルが似てます。圧縮解凍は少し差がありますが、圧縮することは同じです。そうすると標準ライブラリを使うほうがオープンライブラリを利用することより良いと思います。ここまでc#でzip圧縮コードを作成する方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Zip>#Zip</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/04/06 14:56:13</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/04/06 14:57:21</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">20</span><a class="list-link" href="./196.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] 数字フォーマット(お金表示及び小数点以下表示)</h5><p class="list-summary">こんにちは。明月です。この投稿はc#で数字フォーマット(お金表示及び小数点以下表示)に関する説明です。我々がプログラム上で数を扱えばintやdouble、decimalのデータタイプで数を使います。その中で計算はおそらくお金と関係があることが多くないかと思います。でも、お金を計算した結果を出力する時に単純に数だけ表現すると見づらいことになります。特に億や兆単位までなれば行くと間違って読んで間違って判断する可能性もあります。数を間違って読むことはお金の単位は100万円ですが、コンマなしで1000000円のことに出力されたら一目で100万円に認識するのが難しいことです。つまり1000万円のことで誤解することがあります。１億の場合は100000000 です。そのため、我々は誤解しないようにコンマを表示して数の単位を区分します。上の例をみれば変数に1億を格納して「#,##0」のフォーマットで出力フォーマット(tostring関数)を設定してお金形式で表示しました。エクセルを使ったことがある方なら数字フォーマット形式を知るかもしりません。数字を表現することで「0」と「#」があります。この差は「0」の場合は数字データが当該な桁数でデータがなくても「0」を表示することだし、「#」の場合は表示しないことです。すなわち、フォーマットを「0,000」に設定して「1」のデータを出力すると下記の結果が出力します。数字は基本「0」と「#」で表現しますが、その以外の表現を説明します。数字フォーマッティングは「tostring」がよく使いますが、状況によってstring.formatを利用する時もあります。cultureinfoクラスを利用してお金を表示する方法もあります。cultureinfoはシステムによって地域別お金を表示する方法です。つまり日本なら日本の形式でアメリカならアメリカタイプに表示する機能です。link - https://docs.microsoft.com/ja-jp/dotnet/api/system.globalization.cultureinfo?redirectedfrom=msdn&amp;amp;view=netframework-4.8ここまでc#で数字フォーマット(お金表示及び小数点以下表示)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=decimal+format>#decimal format</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/04/03 00:38:37</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/04/03 00:46:31</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">21</span><a class="list-link" href="./195.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] コマンド(cmd)を実行する方法(Processクラス)</h5><p class="list-summary">こんにちは。明月です。この投稿はc#でコマンド(cmd)を実行する方法(processクラス)に関する説明です。c#を利用してプログラミングすることは普通はwindow環境で構築します。coreでlinux環境やiot環境でcoreを使いますが、まだ多くあることではありません。そのため、processクラスを利用すればwindow commandを操作できるようなプログラムを開発できます。上の結果をみれば始めdドライブでコンソールが始まります。まるでcmdコマンドらしくカーソルがc:&amp;gt;の次にフォーカスになっています。そしてディレクトリ変更する時にドライブc:\ディレクトリ&amp;gt;で表示されます。最終、dirコマンドを実行してファイルリストを取得します。最後にexitのコマンドでprocessプログラムを終了します。参考に上の結果はcmd.exeプログラムではなく、cmd.exeと最大に似ているuiで作りました。ほぼそっくりです。ここまでc#でコマンド(cmd)を実行する方法(processクラス)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=process>#process</a>,<a href=./search.html?query=cmd>#cmd</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/03/31 07:15:40</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/03/31 07:16:19</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">22</span><a class="list-link" href="./194.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] FTPに接続してファイルダウンロード、アップロードする方法</h5><p class="list-summary">こんにちは。明月です。この投稿はc#でftpに接続してファイルダウンロード、アップロードする方法に関する説明です。プログラム通信上でよく使うプロトコールはhttp、mail(メール)があるし、ftpがあります。sambaもネットワーク通信ですが、プロトコールではなく、ユーティリティ名だし、プログラム内で通信設定が必要なことではなく、os側でネットワークドライブを割り当てして使うかlinux環境ならmountして内部ディスクみたいに使うので、プログラム内で別途で開発が必要なことではないです。率直に全然要らないことではないですが、しやすい方法を置いて大変に開発する必要はありません。最近はcloudやwebサーバのrest apiを利用するか、またはhttpヘッダを利用してcontext-typeをapplication/octet-streamに指定して直接にウェブサーバにアップロード、ダウンロードする方法でファイルを管理するので、以前みたいにftpをよく使いません。また、ファイルストレージではなく、アプリサーバ(ゲームサーバなど)でも以前みたいに直接にサーバを開発することより、webサーバにつけて使う方法になったので、データ格納サーバ(ftpサーバ)を別途で構築せずに開発するのが最近のトレンドです。(必ずwebサーバではなく仕様によって違います。)でも、逆にftpプロトコールはhttpプロトコールと似ていることが多し、以前より良いライブラリも多いので、よく使うことになると様々なサービスのパフォーマンス改善によくなると思います。以前にftpサーバを構築する方法に関して説明したことがあるから参考してください。link - [window] windowでftpサーバを構築する方法link - [centos] ftpインストールする方法(vsftpd)上のソースをみればftpからリストを取得する時にディレクトリやファイルの区分がありません。もちろん、検索メソッドをlistdirectoryではなく、listdirectorydetailでするとファイルとディレクトリの区分ができますが、結果パーシングしなければならないし、様々なことに大変になるのでtry~catchを利用してファイルとディレクトリを区分する方が簡単です。実はtry~catchで分岐することはパフォーマンスで致命的に悪いのでできればif~elseで</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=ftp>#ftp</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/03/27 19:20:14</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/03/27 19:21:49</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">23</span><a class="list-link" href="./193.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] HttpWebRequestを利用してウェブページを読み込みする方法</h5><p class="list-summary">こんにちは。明月です。この投稿はc#のhttpwebrequestを利用してウェブページを読み込みする方法に関する説明です。我々がプログラミングをする時にウェブのオブジェクトを読み込みが必要な時があります。例えば、ブログのrssあるいはsitemapのxmlを読み込みするかまたはウェブページの情報を取得する必要な時です。でもhttpwebrequestはウェブページだけ読み込むことでスクレイピングとは意味が違います。スクレイピングはウェブのレンダリング、つまり、javascriptの動的に処理されたデータを読み込むデータを取得することです。httpwebrequestはウェブレンダリングがされてない純粋なページの要素データを読み込むことです。httpプロトコールは単純なソケット方法で要請(request)と応答(response)が終わればソケット接続を終わらせる流れです。プロトコールの中でヘッダを定義して要請すればそのヘッダ値に合わせて応答することがhttpプロトコールです。httpプロトコールはソケットでたくさん使うオブジェクトです。それでc#にはhttpwebrequestのクラスがあってそれを簡単に接続してデータを取得できるようになっています。上のソースをテストするようにphpファイルを作成しましょう。「200」は応答コードでgetrequest関数の中でresponse.statuscodeをコンソール出力したことです。「200」は正常です。私がgetrequest関数を二回に呼び出したので、二つの結果を受け取りました。始めはgetタイプで接続したので、getの変数に「test」というデータがあります。二つ目はpostタイプで接続したので、postの変数に「test」というデータがあります。ここまでc#のhttpwebrequestを利用してウェブページを読み込みする方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=HttpWebRequest>#HttpWebRequest</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/03/27 00:23:19</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/03/27 00:23:19</span></p></div></div></div></div></article><article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem"><div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity"><div class="list-body" style="width: 100%;"><div class="flexbox"><span property="position" style="display:none;">24</span><a class="list-link" href="./192.html" property="item" typeof="WebPage"><h5 class="list-head ie-nanum ci-link" property="name">[C#] Base64のエンコード、デコードする方法</h5><p class="list-summary">こんにちは。明月です。この投稿はc#でbase64のエンコード、デコードする方法に関する説明です。base64とはbyteタイプになっているバイナリデータをプログラムの間にもっと扱いやすくするため、asciiコードに変換したデータをbase64といいます。簡単に説明すると「byteデータやstreamデータをstringタイプに変換したことです。そのstringタイプになっているデータもエンコードタイプに関係ないasciiコードになっている」ということで理解するとよいです。簡単なファイルを読み込んでbase64タイプに変換しましょう。「hello world」というテキストを作成したファイルを準備しましょう。そしてそれをbyteタイプに読み込んでbase64に変換しましょう。結果をみればhello worldのバイナリが暗号コードみたいに変換されました。また、bsse64になったコードをstringタイプに変換して出力しましょう。コンソールで「hello world」という結果が表示されました。プログラム間に通信する時にbase64コードでエンコード、デコードすれば逆にデータが大きくなるので、非効率的です。ただ、byteタイプに送信すればよいからです。でも、このbase64が必要な時があります。例えば、バイナリタイプをstringタイプに変換する時です。暗号化する時にも必要な時があります。ここまでc#でbase64のエンコード、デコードする方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p></a><div class="list-meta ie-dotum"><p><a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a></p><p><span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=c%23>#c#</a>,<a href=./search.html?query=base64>#base64</a></span></p><p><span class="data-column-label">作成日付 :</span><span class="timeago ff-h dt-published date-column create-date">2020/03/26 02:19:50</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="data-column-label">修正日付	:</span><span class="timeago ff-h dt-published date-column update-date">2020/03/26 02:20:59</span></p></div></div></div></div></article>
+				<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">1</span>
+								<a class="list-link" href="./216.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] 非同期ソケット通信(IOCP)-EAPパターン</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#の非同期ソケット通信(iocp)-eapパターンに関する説明です。以前、同期ソケット通信に関して説明したことがあります。link - [c#] ソケット(socket)通信をする方法普通の同期、非同期の意味はクライアントとサーバーの連結状態が続いていれば同期だし、非同期は連結を続けていることではなくデータを送受信すれば連結を切断することです。でも、ここで説明する同期と非同期は意味が少し違います。システム内部でスレッドリソースでソケット通信を保持するかどうかの差です。つまり、同期ソケット通信ならsocketクラスをサーバーにlistenしてclientが接続するたびにスレッドを生成してオブジェクトを保持することです。スレッドのリストはvectorやlistで管理して切断する時、オブジェクトを解除することです。でもこの同期ソケット通信はプログラム実装が簡単ですが、リソース問題があります。システムリソースは限定的なので、スレッドとsocketオブジェクトを無限に生成することができません。ゲームサーバーだと考えても同時接続200clientから300clientだけでもスレッドが200個から300個が生成されることです。最近は、ハードウェアが以前より非常に向上になりましたが、c#の長所であり短所であるgc(ガベージコレクション)があるのでリソース管理がしやすくないでしょう。c#というのはインスタンスを生成することは可能ですが、メモリ解除はできません。gcが自動に解除してくれますが、リソースをたくさん使っている状況でサーバーがフリージング状態になっても可笑しくないでしょう。その問題を解決することが非同期ソケットです。非同期ソケットはclientが接続すると接続する時の処理をためのイベントを発生して連結リソースをキュー構造のiocpに格納します。その後からclientからメッセージが発生するとiocpから連結リソースを持ち込んでソケット通信を続けることです。そのことでサーバはthreadを生成する必要がないので、リソースをたくさん節約することができます。非同期ソケットサーバーはスレッドを管理するスレッドプールを生成する必要がないし、スレッドを管理する必要がないので、その部分はソースが簡単になります。これが同期ソケット通信と非同期ソケット通信の差です。非同期ソケットはメモリ効率もいい</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=IOCP>#IOCP</a>,<a href=./search.html?query=EAP>#EAP</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/05/15 19:31:02</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/05/15 19:31:02</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">2</span>
+								<a class="list-link" href="./214.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] NPOIを利用してExcelを読み込んで出力する方法</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#のnpoiを利用してexcelを読み込んで出力する方法に関する説明です。以前の投稿でc#でエクセルファイルを生成する方法でnpoiのライブラリを説明しました。link - [c#] npoiライブラリを利用してエクセルファイルを生成する方法今回はnpoiを利用してエクセルを生成することではなく、エクセルのテンプレートを読み込んでエクセルを出力する方法に関して説明します。例のデータは始めの列は月、二つ目は温度平均、三つ目は午前の温度、四つ目は午後の温度です。右下のグラフは基本の表の数値の基盤で表れた一年間の気温平均です。ここでやろうと思うことはエクセルで温度平均は関数でカラムを関数で計算するし、グラフもb列のデータで表示するので、エクセルを読み込んでc列のデータとd列のデータを修正すればb列のデータが更新されグラフが変わるかを確認しましょう。npoiを利用するためにnugetからライブラリをダウンロード及び連携しましょう。これからエクセル生成したディレクトリに移動してファイルを開きましょう。結果をみれば既存b列のデータをc列のデータが変更されました。そのあとb列の関数データが更新され、グラフの結果まで更新されました。作業しながらなぜかc列とd列のデータを変更することだけでb列のデータが自動に更新されませんでした。トリガーみたいな呼び出しが必要らしいです。私の場合はsetcellformula関数を利用してエクセル関数を再設定しました。グラフの場合はb列のデータが変わることですぐデータが反映されます。私の例の場合は簡単なデータを扱うので別の最初からエクセルを作成することと読み込んで後修正することとの差異がありません。でも、実務ではかなり複雑なデータを扱う可能性が高いです。その時、最初からエクセルをc#で作成することはすごく大変だと思います。デザインまで必要な部分ならスタイル設定はフォント設定まで必要です。エクセルをもっと知る方ならvba領域も考えなければならないです。それをすべてc#で作成することになると複雑です。なのでプログラムのパフォーマンス部分もすごく遅くなります。なので実際はある程度にエクセルを作成してc#で読み込んで後データ値だけ更新することでエクセル出力する仕様が多いです。ここまでc#のnpoiを利用してexcelを読み込んで出力する方法に関する説明でした。ご不</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=NPOI>#NPOI</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/05/08 10:43:52</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/05/08 10:44:48</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">3</span>
+								<a class="list-link" href="./213.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] NPOIライブラリを利用してエクセルファイルを生成する方法</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#でnpoiライブラリを利用してエクセルファイルを生成する方法に関する説明です。npoiライブラリはapache財団で提供するエクセル、パワーポイント、ワードファイルフォーマットを運用するためのライブラリです。元はjavaのpoiライブラリから始まりましたが、c#でも使うためにnpoiの名でライブラリを提供していることです。それならこれからnpoiを使ってエクセルを作成しましょう。npoiを使うためにnugetを利用してライブラリをダウンロードと連携します。これからエクセル生成したディレクトリに移動してファイルを開きましょう。xlsバージョンとxlsxバージョンはnamespaceが違うし扱うクラスも違います。でも、クラスは違いますが、インタフェースは iworkbook과 isheetで作業するのでクラスを割り当てする時だけ分けて、次からはインタフェースで運用するとバージョン関係せずにエクセルを扱うことができます。上の例では基本的にnpoiでよく使うデータ格納、関数式、色の設定、セルのスタイル設定まで実装しておきました。npoiのapiはすごく多いので、下記のurlのドキュメントを参考してください。link - https://poi.apache.org/apidocs/(javaのドキュメントですが、使用方法はc#と同じです。)でも、実際の業務ではexcelを始めから生成して出力することは少ないです。普通はexcelのテンプレートを作成して、そのテンプレートを参照して出力する方法で使います。その方法に関しては別の投稿で紹介します。ここまでc#でnpoiライブラリを利用してエクセルファイルを生成する方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=NPOI>#NPOI</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/05/07 01:49:01</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/05/07 01:49:01</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">4</span>
+								<a class="list-link" href="./212.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] Geckoライブラリを利用してウェブスクレイピングする方法</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#でgeckoライブラリを利用してウェブスクレイピングする方法に関する説明です。htmlのレイアウトエンジンとはhtmlドキュメントとcss style、javascriptを画面に描画するレンダリングするエンジンです。レンダリングエンジンの種類は代表的にmsのieとmozilla財団のgeckoがあります。ieレンダリングのmshtmlがありますが、ie 8.0バージョンまではc#で参照して使えます。ieの8.0バージョンはもう10年前のレンダリングエンジンだし、今のスタイルなら様々でエラーが発生するかもしれません。geckoレンダリングは60バージョンです。ieより最新バージョンです。geckoレイアウトのライブラリはc#のnugetでダウンロード及び連携が可能です。ブラウザライブラリは一応、windowのprocメッセージのキューが必要なのでwindow forms appでプロジェクトを生成します。そしてnugetを通ってgeckoライブラリを連携します。上のイメージをみれば以前45バージョンもあります。45バージョンで作成するなら60バージョンと同じです。ここでは60で作成します。一応、私のosは64ビットなので64ビットで作成します。 32ビットも作成方法も同じです。windowデザインフォームの隣のtoolbarをみればgecko-browserコントロールができたことを確認できます。このwindowsフォームにdrap＆dropした後でプロパティのdockをfillに合わせています。これからfirefox.dllファイルを注入する必要があります。右program.csファイルを開いて,下記のソースを追加します。そして右のform1.csファイルを右クリックしをして、ソースビューでソースを開きます。上みたいにスクレイピングソースを作成しました。結果みたいにスクレイピングになったことを確認できます。--　もしエラーが発生する場合 -- 1. 64ビットに設定しても64ビットでできない場合があります。デバッグ設定をx64に変更すれば解決できます。デバッグのpropertyメニューを開きます。メニューのbuildタブでプラットフォームをx64に変更すると解決できます。2. dllファイルを読み込めませんというエラーメッセージが発生する可能性があります。この場合はd</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Gecko>#Gecko</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/05/05 00:52:26</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/05/05 00:55:27</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">5</span>
+								<a class="list-link" href="./211.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] PDFを作成する方法(iTextSharp)</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はcでpdfを作成する方法(itextsharp)に関する説明です。プログラムを運用すれば結果レポートや帳票などを出力する場合が多いです。その時にcsvファイルやexcelファイル、xmlファイルタイプで出力する場合があります。その中で契約書やデータ形式ではなくドキュメント形式、でも編集ができないタイプで出力したい場合はpdfを利用します。c#でpdfを出力するために提供するオープンライブラリはitextsharpがあります。itextsharpを使うためにnugetを利用してダウンロードして連携します。itextsharpライブラリを連携したらソースを作成してpdfを出力しましょう。上のhtmlからファイルを生成することまで下記の流れになります。「filestream -&amp;gt; pdfwriter取得　-&amp;gt; pdfwriterpipeline生成 -&amp;gt; htmlpipeline生成 -&amp;gt; cssresolverpipeline生成 -&amp;gt; xmlworker生成 -&amp;gt; xmlparser生成 -&amp;gt; xmlparserによってhtmlをpdfに変換する。」ということになります。上のcssファイルを実行するデバッグフォルダに置きます。実行すると「simple.pdf」というpdfファイルが生成されます。結果は上のとおりに出ました。私は簡単にソースを作成しましたが、少しhtml作成する部分とcssを紐づく部分を整理すると一般プロジェクトにも十分に使えると思います。ここまでcでpdfを作成する方法(itextsharp)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=iTextSharp>#iTextSharp</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/05/03 10:22:40</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/05/03 10:22:40</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">6</span>
+								<a class="list-link" href="./210.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] シリアライズ(Serialization)をする方法</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#でシリアライズ(serialization)をする方法に関する説明です。シリアライズとはメモリに割り当てしているクラスのデータをバイナリ化することです。つまり、クラス内部で変数のデータをすべてbyteタイプに変換することだと思えば良いです。シリアライズは昔にたくさん使った記憶がありますが、最近はシリアライズよりjsonタイプに変換してデータ化することがトレンドなので、最近はよく使わないみたいです。link - [c#] newtonsoft.jsonライブラリを利用してjsonデータ構造を扱う方法でも、newtonsoft.jsonを利用してデータをjsonタイプに変換することはクラスのpublicタイプだけ変換するし、データをすべてstringタイプに変換するので、限界があります。シリアライズはpublicデータだけではなく、privateも構造化するし、クラス自体をすべてbyteタイプに変換することなので、クラス自体を格納することではよいです。でも、シリアライズも短所があります。バイナリ化するので、当該なデータを人が読みにくいです。なのでメモ帳でデータ変更ができないです。また、クラス自体を変換しましたから、クラスが変更がある場合に復元ができない可能性もあります。jsonも場合はプログラム言語に関係しずに、読み込む移植性がよいですが、シリアライズはc#で作成したらc#しか読み込まれないです。正確にはクラス変更や他のプレートフォームでも読み込まられないことではないですが、データ漏れが発生したり、データが可笑しくなる可能性があります。つまり、バグ発生する可能性があることです。仕様によってシリアライズがよいかjsonを使うかを正しく選択して使う方がよいです。nodeというクラスをシリアライズしてbyte[]タイプに変換しました。変換してファイルに格納します。また、格納したファイルを読み込んでデシリアライズでbyte[]データをクラスタイプに変換します。ファイルをメモ帳で開きました。人が解析することでは無理があります。ここまでc#でシリアライズ(serialization)をする方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Serialization>#Serialization</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/04/30 19:32:04</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/04/30 19:32:04</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">7</span>
+								<a class="list-link" href="./209.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] dynamicタイプの動的パラメータ-DynamicObject(WinFormでASP.MVCのViewBagオブジェクトを使用する方法)</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#でdynamicタイプの動的パラメータ-dynamicobject(winformでasp.mvcのviewbagオブジェクトを使用する方法)に関する説明です。asp.mvcのcontrollerでview(.cshtml)にデータを渡す時、viewbagというオブジェクトを使う場合があります。viewbagというオブジェクトはすごく便利です。可読性やパフォーマンスはよくないですが、クラスを一々宣言する必要なしでそのままに動的なプロパティを生成してデータを格納、取得するの可能です。でも、viewbagとはasp.mvcだけで使うものなので、それを同じ仕様で実装してc#のwindowフォーム開発する時にも使ってみましょう。コントロールでviewbagオブジェクトに任意のプロパティにデータを格納しましょう。viewファイルはviewbagの任意のプロパティからデータを取得しましょう。link - 参照リンクを作成中コンソールのプロジェクトを生成してviewbagを使ってみましょう。viewbagオブジェクトがありませんというメッセージが表示されいます。私がc#でwindowを作成する時、値を渡すために一つ一つエンティティクラスを生成して開発したことがあります。そのため、一回性の値のクラスがだんだん多くなったし、プロジェクトがすごく大きくなったし、その結果、プロジェクトの管理性、可読性、パフォーマンスなどがすべて悪くなった経験があります。それで、window form開発する時にもasp.mvcのviewbagを使ったらすごく便利かと思いました。探してみたらありました。link - https://docs.microsoft.com/en-us/dotnet/api/system.dynamic.dynamicobject?view=netframework-4.8前からこのことを知ってたらよかったのにという物足りなさがあります。ここまでc#でdynamicタイプの動的パラメータ-dynamicobject(winformでasp.mvcのviewbagオブジェクトを使用する方法)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=dynamic>#dynamic</a>,<a href=./search.html?query=ViewBag>#ViewBag</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/04/29 22:41:32</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/04/29 22:41:32</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">8</span>
+								<a class="list-link" href="./208.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] Stringの補間式(interpolation)</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#でstringの補間式(interpolation)に関する説明です。最近、c#のコード標準でstringの補間式に関して説明がありました。既存、c#でstringのフォーマットを使うとstring.format関数を利用しましたが、それが数字で「{0},{1}」で表現するので、可読性が悪いです。なので、もっと可読性を上がるため、に補間式(interpolation)があり、もっとフォーマットをしやすく表現できます。link - https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolatedstringでstringの補間式を使うために、ダブルクォートの前に「$」を付けて設定することで使えます。stringのの補間式(interpolation)は下記とおりになります。                    要素        説明                            interpolationexpression		形式化する結果を生成する表現式です。nullの結果のライン表現はstring.emptyです。      	          alignment		補間表現式の結果の文字列で最小文字数を定義する定数式です。正の場合は、文字列表現が右揃えされます。負の場合は左揃えです。      	          formatstring		式の結果タイプによってサポートされる形式の文字列です。            補間表現式は三項演算子でも計算可能です。中括弧の表現は中括弧を重ねることで表現できます。ここまでc#でstringの補間式(interpolation)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=interpolation>#interpolation</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/04/27 20:39:57</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/04/27 20:39:57</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">9</span>
+								<a class="list-link" href="./207.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] Newtonsoft.JSONライブラリを利用してJsonデータ構造を扱う方法</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#でnewtonsoft.jsonライブラリを利用してjsonデータ構造を扱う方法に関する説明です。まず、jsonに関して説明しますとjsonとは(キー,値)構造で人が認識できる開放型標準データフォーマットです。私が10年前に開発する時にはxmlの構造でデータを扱うことが多くありましたが、最近はほとんどjsonタイプのデータを扱うプログラムが多いです。でもxmlを使わないことではないけれども、xmlより直観的な構造だし、データ修正がxmlよりしやすいからだと思います。(xmlはタグの開き、閉めが間違っても全体エラーが発生します。)そのため、プログラムライブラリでjsonを読み取るか書き込むのライブラリが多いですが、newtonsoft.jsonがたくさん使うし、一番機能が多いので紹介します。まず、nugetでnewtonsoft.jsonライブラリを連携しましょう。結果をみれば、stringタイプのjsonデータがクラスに変換されたし、クラスのデータがstringタイプのjsonデータに変換することを確認できます。注意点はjsonタイプでシングルクォートはstringでないことは定数に表記されます。なのでjsonとクラスのデータタイプが合わない場合にはエラーが発生します。後、上のことはプロパティ名とjsonのキーを一致しましたが、仕様によって一致できない場合もあります。その場合はjsonpropertyアトリビュートを利用して設定が可能です。newtonsoft.jsonのライブラリは様々な機能がありますが、私の基準では上の以外には使わないです。ここまでc#でnewtonsoft.jsonライブラリを利用してjsonデータ構造を扱う方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Newtonsoft.JSON>#Newtonsoft.JSON</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/04/23 20:19:53</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/04/23 20:19:53</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">10</span>
+								<a class="list-link" href="./206.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] EMailを送信する方法(System.Net.Mail)</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#でemailを送信する方法(system.net.mail)に関する説明です。プロジェクトでよく使う機能と思えばemailを送ることではないかと思います。例えば、ウェブページでユーザ登録からパスワード初期化、お知らせのメールなど様々で使います。c#ではメールを送信する方法がいろいろありますが、その中で.net frameworkのsystem.net.mailを使う方法があります。system.net.mailの場合は.net frameworkの基本の機能なので別にnugetを利用してライブラリを連携する必要がないです。ソースは作成しました。その後、smtpサーバーを設定しましょう。私の場合はgoogleメールを利用します。google mail - https://support.google.com/a/answer/176600?hl=ja先にクロームに接続して右上のアカウント管理に行きましょう。(ログインができなかった状況なら先にログインしてから。)アカウント管理に移動して安全性の低いアプリのアクセスのタブに移動します。安全性の低いアプリの許可を有効にします。このチェックをしないと外部からグーグルメールを使用できないようにすることです。なので、idやpwの漏れがなければそんなに問題はありません。上のソースを実行してメールを送信しましょう。プログラムが正常に実行されました。gmailのメールの受信トレイを見れば、メールが届いたことを確認できます。ここまでc#でemailを送信する方法(system.net.mail)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Email>#Email</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/04/22 19:00:42</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/04/22 19:00:42</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">11</span>
+								<a class="list-link" href="./205.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] ini環境ファイルを使う方法</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#でini環境ファイルを使う方法に関する説明です。c#で一般的な環境ファイルはapp.configファイルのxmlファイルです。link - [c#] 環境設定ファイルを扱う方法(system.configuration)iniファイルはc++でよく使う環境ファイルの構造です。セッションがあり、キーでデータを取得する構造です。でもc#もc++ライブラリを使うことができるのでiniファイルを読み取りや書き込みができます。writeprivateprofilestringとgetprivateprofilestringはc#のライブラリではなく、c++のライブラリの「kernel32」の関数です。実行関数でiniファイルを書き込んで読み取るので同然「日本語」という結果が出ます。config.iniファイルを確認しましょう。config.iniファイル中で[sectiontest]のdataのキーで「日本語」という値があります。iniファイルはプログラムだけで操作することではなく、直接にセッションやキー、値を設定すると上のgetprivateprofilestringの関数で読み込むのが可能です。ここまでc#でini環境ファイルを使う方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=ini>#ini</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/04/22 00:09:39</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/04/22 00:09:39</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">12</span>
+								<a class="list-link" href="./204.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] 環境設定ファイルを扱う方法(System.Configuration)</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#で環境設定ファイルを扱う方法(system.configuration)に関する説明です。プログラムを作成する時にプログラムによって環境ファイルを設定する場合があります。例えば、ログファイルの格納パスやサーバによって設定するデータなどです。以前、c++ファイルの場合はiniファイルを設定ファイルによく使いました。もちろん、c#でiniファイルを使えないことではないですが、基本xmlファイルで環境設定を行います。javaの場合「.property」ファイルが環境ファイルでよく使います。(xml形式も多いです。)c#ではxmlになっているapp.configファイルを環境ファイルでよく使います。プロジェクトを生成すればc#は基本的にapp.configファイルが生成されます。その後、app.configファイルにデータを設定してプログラム上で読み込みます。appsettingsのタグの中でaddタグを追加します。ここでkeyというアトリビュートはプログラムで読み込むキーでvalueは値です。configファイルを読み込むためにライブラリを追加しなければならないです。(app.configは基本的に生成されるのにライブラリは追加することで。。)configurationmanager.appsettingsクラスにindexer形式でキーの値を入れればapp.configに設定した値を取得できます。プログラムをリリースしたらapp.configファイル名は「プロジェクト名.exe.config」で変更されます。ここまでc#で環境設定ファイルを扱う方法(system.configuration)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=System.Configuration>#System.Configuration</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/04/20 19:37:57</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/04/20 19:37:57</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">13</span>
+								<a class="list-link" href="./203.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] Reflectionを利用してクラス複製する方法</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#でreflectionを利用してクラス複製する方法に関する説明です。oopでクラス複製することはプロトタイプパターン(デザインパターン)によってクラスを複製する方法があります。結果をみればnodeとnode1は同じクラスです。その意味はnodeでdataの値を修正したらnode1にも影響があると意味です。でもnode2の場合は複製になったのでnodeと違うクラスです。その意味はnodeのdataの値が修正してもnode2は影響がないと意味です。上の結果見ればnode.dataが2になっていることを確認できます。クラス複製をするようにはmemberwiseclone関数を利用すべきですが、memberwiseclone関数はobjectクラスのprotectedタイプです。その意味は私が作成するクラスつまり、memberwiseclone関数を使うことができる状況なら複製ができますが、ライブラリのクラスや修正ができないクラスの場合はクラス複製ができないと意味になります。その場合は新しくnewキーワードを使ってメモリ割り当てして変数の値を一々にコピーことしかないです。でもこれも問題があるのはpublicの値は出来ますが、privateやprotectedはコピーが不可能なので、クラス複製ができないと意味になります。上の状況ならdata2を設定する方法がないです。完全にコピーができないです。それをreflectionを利用して解決ができます。link - https://www.nowonbun.com/34.htmlクラスでmemberwisecloneを利用しなくてクラス複製になりました。nodeクラスの修正がなしで外部でクラスコピーができるといみです。ここまでc#でreflectionを利用してクラス複製する方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Reflection>#Reflection</a>,<a href=./search.html?query=proto>#proto</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/04/17 00:34:33</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/04/17 00:34:33</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">14</span>
+								<a class="list-link" href="./202.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] XMLをXPathを利用してデータを取得する方法</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#でxmlをxpathを利用してデータを取得する方法に関する説明です。以前、xmlをcssselectorエンジン(sizzle)みたいに要素を検索してデータを取得する方法に関して説明したことがあります。link - [c#] nsoupライブラリを利用してxmlとhtmlをパーシングする方法最近はxpathを利用して検索することよりnsoupのライブラリを利用してデータを取得することが一般的なことになりました。でも、sizzleエンジンの要素を検索する方法の以前はxpathで検索することが一般的だったんです。でも、xpathの方法が悪いことではなく、css selectorで検索するキーが単純だし、理解しやすいのでよく使うことです。でも以前の方法がもっとよい時があります。例えば、xmlから一つのデータとノードを検索することではnsoupのほうがいいです。でも、xmlの全体を構造化するしクラスを変換することではreaderを利用するかもっと明確なルールを決めて検索することならxpathがよいです。stringで正規表現でreplaceするか、ただ特定文字でreplaceするかの差と似てます。実はxpathを使うためにはxpathを詳しく知らなければならないですが、いつかxpathは別途で説明します。xpathを使うために以前で使った私のブログの検索エンジンに登録するようなrssファイルを使いましょう。link - https://www.nowonbun.com/rssxpathを利用するクラスのnsoupみたいにオープンソースではなく、system.xmlの.net frameworkを使います。コンソールの結果をみればrssのtitleのタグの内容だけ出力したことを確認できます。後、descriptionのタグのテキストデータを変更して、ファイルに格納しました。結果を確認すればdescriptionタグの内容が変更されたことを確認できます。nsoupとsystem.xmlの差はnsoupの場合はhtmlまで検索ができます。でも、system.xmlの場合はhtmlファイルが検索ができません。htmlを読み込めば許せないアトリビュートや開き閉めタグタイプではないこと(inputタグ)などでエラーが発生します。個人的にはほぼnsoupを使いますが、逆に環境ファイルのxml</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Xml>#Xml</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/04/16 00:47:17</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/04/16 00:47:17</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">15</span>
+								<a class="list-link" href="./201.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] NSoupライブラリを利用してXMLとHTMLをパーシングする方法</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#でnsoupライブラリを利用してxmlとhtmlをパーシングする方法に関する説明です。最近、プログラムを作成する時に環境設定ファイルとしてxmlを利用することがあります。以前はxpathを利用してxmlを探索して値を取得しましたが、jqueryのライブラリが登場してcssselectorエンジン(sizzle)の概念が生じ、classやidなどのアトリビュートで検索する方法ができました。nsoupライブラリはxmlやhtml形式にあるファイルやデータをcssselectorで探索するライブラリです。個人的にxpathはxmlを探索する時にもっと明確に検索ができますが、javascriptや様々でcssselectorをよく使う今はcssselectorタイプで探索するほうがもっとしやすくなったと思います。visual studioでnsoupライブラリを使うためにnugetを利用してライブラリをダウンロード及び連結しましょう。私のブログで検索エンジンに登録するようなrssファイルがあります。それをnsoupライブラリを利用してタイトルだけ取得します。上のxmlファイルを取得してitemのtitleタグのデータをコンソールに出力しました。　jquryでelement探索することと同じ方法で探索が可能です。nsoupの場合は探索だけではなく、書き直し機能もあります。上のdescriptionのテキストを「hello world」に書き直しました。そのあと、コンソールにxmlを出力しました。descriptionの部分が「hello world」になっています。ここまでc#でnsoupライブラリを利用してxmlとhtmlをパーシングする方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Nsoup>#Nsoup</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/04/14 19:34:15</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/04/14 19:34:15</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">16</span>
+								<a class="list-link" href="./200.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] 日付フォーマット</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#で日付フォーマットに関する説明です。以前、数字フォーマットに関して、桁数とお金表示などを説明したことがあります。link - [c#] 数字フォーマット(お金表示及び小数点以下表示)日付フォーマットはdatetimeのデータタイプをでtostringやstring.formatを利用して変換ができます。日付フォーマットは置換文字が多いです。基本的に「yyyy」は年度、「mm」は月、「dd」は日、「hh」は時間、「mm」は分です。ここで「mm」は「mm」は小文字、大文字で月、分の区分にします。気を付けなければならないです。                    フォーマット指定子        説明        例                            d		日: 1日から31日まで		2009-06-01t13:45:30 -&amp;gt; 1      	          dd		日: 01日から31日まで(10日の未満は十桁に「0」をつける)		2009-06-01t13:45:30 -&amp;gt; 01      	          ddd		曜日(略称)		月、火、水。。      	          dddd		曜日(プル名)		月曜日、火曜日、水曜日。。      	          f		ミリセカンド1桁(なければ0に満たす。)		2019-08-05 12:00:00.1 -&amp;gt; 1      	          ff		ミリセカンド2桁(なければ0に満たす。)		2019-08-05 12:00:00.12 -&amp;gt; 12      	          fff		ミリセカンド3桁(なければ0に満たす。)		2019-08-05 12:00:00.123 -&amp;gt; 123      	          ffff		ミリセカンド4桁(なければ0に満たす。)		2019-08-05 12:00:00.1234 -&amp;gt; 1234      	          fffff		ミリセカンド5桁(なければ0に満たす。)		2019-08-05 12:00:00.12345 -&amp;gt; 12345      	          ffffff		ミリセカンド6桁(なければ0に満</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=DateFormat>#DateFormat</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/04/09 20:53:20</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/04/09 20:53:20</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">17</span>
+								<a class="list-link" href="./199.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] ログライブラリ(log4net)を設定する方法</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#のログライブラリ(log4net)を設定する方法に関する説明です。プログラムを開発する時にvisual studioなどのideツールでデバッグ機能を通ってプログラムの流れを把握することができます。それで開発中でエラーが発生するか間違う結果が出る時にはデバッグ値を追跡してソースコードを修正することができます。でも、開発が終わって本番(production)にビルドしたものをサーバにデプロイして運用する時にもバグが発生する可能性があります。その時には別にエラーログを作成する機能がなければエラー原因と問題を把握することが大変になります。そのため、出来る方法でログを残して(テキストファイルやデータベースにエラー内容を格納すること)プログラムの流れを記録します。問題が発生する時に、ログ内容を追跡してエラーを予測するか見つけることができます。その以外にログを通ってユーザの行動パターンの分析、追跡、学習などの統計資料も必要です。c#ではログを作成するライブラリは代表的に二つがあります。elmahとlog4netがあります。elmahも随分多いプロジェクトで使っていると思いますが、個人的にlog4netをお勧めです。理由はlog4net、log4j、log4phpなどで他のプログラム言語でも使っているライブラリなので、互換性がよいし、ライブラリのコミュニティも大きいので様々な情報や派生ライブラリを得やすいです。それならlog4netを使うためにはnugetを利用してlog4netを連結します。パターンレイアウトと領域を確認するとパターン式があることを確認できます。 パターンレイアウトに関しては詳しく説明したいですが、別に大事部分ではないし、パターンレイアウトの内容が多いので、log4netのapiで直接に確認するほうがよいです。参照 - https://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/patternlayout.html別にレイアウトに関して問題なければ、「%d [%t] %-5p %c - %m%n」の式はよいです。ここまで設定すればログを使うことができます。でも、実際に本番(production)に使うと思えばログ設定がソースの中にあるので、設定ができないです。パラメータで設定ができますが、それはそれで設</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Log4Net>#Log4Net</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/04/08 13:04:22</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/04/08 13:04:22</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">18</span>
+								<a class="list-link" href="./198.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] Zipの圧縮ファイルを解凍するコードを作成する方法</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#でzipの圧縮ファイルを解凍するコードを作成する方法に関する説明です。以前、c#でファイルをzipアルゴリズムで圧縮するソースコードに関して説明したことがあります。link - [c#] zip圧縮コードを作成する方法その投稿にも説明しましたが、zipアルゴリズムは様々なところでよく使うアルゴリズムです。ionicライブラリと.net frameworkを利用して圧縮する方法に関して説明しましたが、解凍も同じで作成しましょう。ionicライブラリionicライブラリは外部ライブラリなのでnugetを通ってionicライブラリをダウンロードと連結をしましょう。zipファイルの状況は下記のイメージになっています。解凍しましょう。実行しました。解凍されました。.net framework内部を利用する方法先に「system.io.commpress」と「system.io.comppression.filesystem」を追加しましょう。zipファイルの状況は下記のイメージになっています。解凍しましょう。実行しました。ionicと.net frameworkにあるライブラリで圧縮することと違ってソースの差異があります。ionicの場合は圧縮のファイルを読み込んで解凍することではなく、extractallの関数を呼び出しで一括で解凍されます。標準ライブラリの場合は一つ一つの圧縮ファイルを読み込んでioで作成することです。個人的に解凍の場合は標準ライブラリがよいと思います。一つ一つのエラー確認やソース応用が可能することを比べてionicの場合は解凍ソースはすごく簡単だけど、一つのコントロールが難しいなので様々ところで使いにくいと思います。ここまでc#でzipの圧縮ファイルを解凍するコードを作成する方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=zip>#zip</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/04/07 11:17:44</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/04/07 11:22:01</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">19</span>
+								<a class="list-link" href="./197.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] Zip圧縮コードを作成する方法</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#でzip圧縮コードを作成する方法に関する説明です。zip圧縮アルゴリズムは私の考えて世界の中で一番よく使う圧縮アルゴリズムではないかと思います。アルゴリズムの優秀性もいいけれども、zip圧縮アルゴリズムに関して多いライブラリがあり、接近性と便利性がよいからよく使うと思います。c#の.net framework内部でもzipアルゴリズムがあります。そのため、.net frameworkのソースをを利用して圧縮する方法と、ionicライブラリを利用して圧縮する方法があります。二つのライブラリでパフォーマンスの差がありません。ソースのステップの差もないので、ユーザが気になるもので使えばよいです。ionicライブラリionicライブラリは外部ライブラリなのでnugetを通ってionicライブラリをダウンロードと連結をしましょう。d:\work\compresstestのディレクトリを圧縮しましょう。実行しました。圧縮ファイルが作成されたことを確認できます。圧縮ファイル内を確認しましょう。圧縮が正常にできました。.net framework内部を利用する方法先に「system.io.commpress」と「system.io.comppression.filesystem」を追加しましょう。d:\work\compresstestのディレクトリを圧縮しましょう。実行しました。圧縮ファイルが作成されたことを確認できます。圧縮ファイル内を確認しましょう。ionicライブラリと標準ライブラリを利用するソーススタイルが似てます。圧縮解凍は少し差がありますが、圧縮することは同じです。そうすると標準ライブラリを使うほうがオープンライブラリを利用することより良いと思います。ここまでc#でzip圧縮コードを作成する方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=Zip>#Zip</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/04/06 14:56:13</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/04/06 14:57:21</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">20</span>
+								<a class="list-link" href="./196.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] 数字フォーマット(お金表示及び小数点以下表示)</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#で数字フォーマット(お金表示及び小数点以下表示)に関する説明です。我々がプログラム上で数を扱えばintやdouble、decimalのデータタイプで数を使います。その中で計算はおそらくお金と関係があることが多くないかと思います。でも、お金を計算した結果を出力する時に単純に数だけ表現すると見づらいことになります。特に億や兆単位までなれば行くと間違って読んで間違って判断する可能性もあります。数を間違って読むことはお金の単位は100万円ですが、コンマなしで1000000円のことに出力されたら一目で100万円に認識するのが難しいことです。つまり1000万円のことで誤解することがあります。１億の場合は100000000 です。そのため、我々は誤解しないようにコンマを表示して数の単位を区分します。上の例をみれば変数に1億を格納して「#,##0」のフォーマットで出力フォーマット(tostring関数)を設定してお金形式で表示しました。エクセルを使ったことがある方なら数字フォーマット形式を知るかもしりません。数字を表現することで「0」と「#」があります。この差は「0」の場合は数字データが当該な桁数でデータがなくても「0」を表示することだし、「#」の場合は表示しないことです。すなわち、フォーマットを「0,000」に設定して「1」のデータを出力すると下記の結果が出力します。数字は基本「0」と「#」で表現しますが、その以外の表現を説明します。数字フォーマッティングは「tostring」がよく使いますが、状況によってstring.formatを利用する時もあります。cultureinfoクラスを利用してお金を表示する方法もあります。cultureinfoはシステムによって地域別お金を表示する方法です。つまり日本なら日本の形式でアメリカならアメリカタイプに表示する機能です。link - https://docs.microsoft.com/ja-jp/dotnet/api/system.globalization.cultureinfo?redirectedfrom=msdn&amp;amp;view=netframework-4.8ここまでc#で数字フォーマット(お金表示及び小数点以下表示)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=decimal+format>#decimal format</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/04/03 00:38:37</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/04/03 00:46:31</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">21</span>
+								<a class="list-link" href="./195.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] コマンド(cmd)を実行する方法(Processクラス)</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#でコマンド(cmd)を実行する方法(processクラス)に関する説明です。c#を利用してプログラミングすることは普通はwindow環境で構築します。coreでlinux環境やiot環境でcoreを使いますが、まだ多くあることではありません。そのため、processクラスを利用すればwindow commandを操作できるようなプログラムを開発できます。上の結果をみれば始めdドライブでコンソールが始まります。まるでcmdコマンドらしくカーソルがc:&amp;gt;の次にフォーカスになっています。そしてディレクトリ変更する時にドライブc:\ディレクトリ&amp;gt;で表示されます。最終、dirコマンドを実行してファイルリストを取得します。最後にexitのコマンドでprocessプログラムを終了します。参考に上の結果はcmd.exeプログラムではなく、cmd.exeと最大に似ているuiで作りました。ほぼそっくりです。ここまでc#でコマンド(cmd)を実行する方法(processクラス)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=process>#process</a>,<a href=./search.html?query=cmd>#cmd</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/03/31 07:15:40</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/03/31 07:16:19</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">22</span>
+								<a class="list-link" href="./194.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] FTPに接続してファイルダウンロード、アップロードする方法</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#でftpに接続してファイルダウンロード、アップロードする方法に関する説明です。プログラム通信上でよく使うプロトコールはhttp、mail(メール)があるし、ftpがあります。sambaもネットワーク通信ですが、プロトコールではなく、ユーティリティ名だし、プログラム内で通信設定が必要なことではなく、os側でネットワークドライブを割り当てして使うかlinux環境ならmountして内部ディスクみたいに使うので、プログラム内で別途で開発が必要なことではないです。率直に全然要らないことではないですが、しやすい方法を置いて大変に開発する必要はありません。最近はcloudやwebサーバのrest apiを利用するか、またはhttpヘッダを利用してcontext-typeをapplication/octet-streamに指定して直接にウェブサーバにアップロード、ダウンロードする方法でファイルを管理するので、以前みたいにftpをよく使いません。また、ファイルストレージではなく、アプリサーバ(ゲームサーバなど)でも以前みたいに直接にサーバを開発することより、webサーバにつけて使う方法になったので、データ格納サーバ(ftpサーバ)を別途で構築せずに開発するのが最近のトレンドです。(必ずwebサーバではなく仕様によって違います。)でも、逆にftpプロトコールはhttpプロトコールと似ていることが多し、以前より良いライブラリも多いので、よく使うことになると様々なサービスのパフォーマンス改善によくなると思います。以前にftpサーバを構築する方法に関して説明したことがあるから参考してください。link - [window] windowでftpサーバを構築する方法link - [centos] ftpインストールする方法(vsftpd)上のソースをみればftpからリストを取得する時にディレクトリやファイルの区分がありません。もちろん、検索メソッドをlistdirectoryではなく、listdirectorydetailでするとファイルとディレクトリの区分ができますが、結果パーシングしなければならないし、様々なことに大変になるのでtry~catchを利用してファイルとディレクトリを区分する方が簡単です。実はtry~catchで分岐することはパフォーマンスで致命的に悪いのでできればif~elseで</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=ftp>#ftp</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/03/27 19:20:14</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/03/27 19:21:49</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">23</span>
+								<a class="list-link" href="./193.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] HttpWebRequestを利用してウェブページを読み込みする方法</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#のhttpwebrequestを利用してウェブページを読み込みする方法に関する説明です。我々がプログラミングをする時にウェブのオブジェクトを読み込みが必要な時があります。例えば、ブログのrssあるいはsitemapのxmlを読み込みするかまたはウェブページの情報を取得する必要な時です。でもhttpwebrequestはウェブページだけ読み込むことでスクレイピングとは意味が違います。スクレイピングはウェブのレンダリング、つまり、javascriptの動的に処理されたデータを読み込むデータを取得することです。httpwebrequestはウェブレンダリングがされてない純粋なページの要素データを読み込むことです。httpプロトコールは単純なソケット方法で要請(request)と応答(response)が終わればソケット接続を終わらせる流れです。プロトコールの中でヘッダを定義して要請すればそのヘッダ値に合わせて応答することがhttpプロトコールです。httpプロトコールはソケットでたくさん使うオブジェクトです。それでc#にはhttpwebrequestのクラスがあってそれを簡単に接続してデータを取得できるようになっています。上のソースをテストするようにphpファイルを作成しましょう。「200」は応答コードでgetrequest関数の中でresponse.statuscodeをコンソール出力したことです。「200」は正常です。私がgetrequest関数を二回に呼び出したので、二つの結果を受け取りました。始めはgetタイプで接続したので、getの変数に「test」というデータがあります。二つ目はpostタイプで接続したので、postの変数に「test」というデータがあります。ここまでc#のhttpwebrequestを利用してウェブページを読み込みする方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=HttpWebRequest>#HttpWebRequest</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/03/27 00:23:19</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/03/27 00:23:19</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<article class="list-item" data-category-code="0102" property="itemListElement" typeof="ListItem">
+					<div class="list-row pos-right ratio-fixed ratio-4by3 crop-center lts-narrow fouc clearfix searchListEntity">
+						<div class="list-body" style="width: 100%;">
+							<div class="flexbox">
+								<span property="position" style="display:none;">24</span>
+								<a class="list-link" href="./192.html" property="item" typeof="WebPage">
+									<h5 class="list-head ie-nanum ci-link" property="name">[C#] Base64のエンコード、デコードする方法</h5>
+									<p class="list-summary">こんにちは。明月です。この投稿はc#でbase64のエンコード、デコードする方法に関する説明です。base64とはbyteタイプになっているバイナリデータをプログラムの間にもっと扱いやすくするため、asciiコードに変換したデータをbase64といいます。簡単に説明すると「byteデータやstreamデータをstringタイプに変換したことです。そのstringタイプになっているデータもエンコードタイプに関係ないasciiコードになっている」ということで理解するとよいです。簡単なファイルを読み込んでbase64タイプに変換しましょう。「hello world」というテキストを作成したファイルを準備しましょう。そしてそれをbyteタイプに読み込んでbase64に変換しましょう。結果をみればhello worldのバイナリが暗号コードみたいに変換されました。また、bsse64になったコードをstringタイプに変換して出力しましょう。コンソールで「hello world」という結果が表示されました。プログラム間に通信する時にbase64コードでエンコード、デコードすれば逆にデータが大きくなるので、非効率的です。ただ、byteタイプに送信すればよいからです。でも、このbase64が必要な時があります。例えば、バイナリタイプをstringタイプに変換する時です。暗号化する時にも必要な時があります。ここまでc#でbase64のエンコード、デコードする方法に関する説明でした。ご不明なところや間違いところがあればコメントしてください。</p>
+								</a>
+								<div class="list-meta ie-dotum">
+									<p>
+										<a href="./search.html?category=0102" class="p-category ci-color">Devlopment note / C#</a>
+									</p>
+									<p>
+										<span class="timeago ff-h dt-published tag-column"><a href=./search.html?query=c%23>#c#</a>,<a href=./search.html?query=base64>#base64</a></span>
+									</p>
+									<p>
+										<span class="data-column-label">作成日付 :</span>
+										<span class="timeago ff-h dt-published date-column create-date">2020/03/26 02:19:50</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										<span class="data-column-label">修正日付	:</span>
+										<span class="timeago ff-h dt-published date-column update-date">2020/03/26 02:20:59</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+
 			</div>
 		</div>
 		<script type="text/javascript" src="./js/listscreen.js"></script>
