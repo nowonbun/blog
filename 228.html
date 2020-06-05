@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/228.html"},"url":"https:\/\/www.nowonbun.com\/228.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Python] 09. \u4f8b\u5916\u51e6\u7406\u3059\u308b\u65b9\u6cd5","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fpython\u3067\u4f8b\u5916\u51e6\u7406\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u4f5c\u6210\u3059\u308b\u3068\u69d8\u3005\u306a\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3059\u308b\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002\u4f8b\u3048\u3070\u3001string\u30bf\u30a4\u30d7\u306bint\u30bf\u30a4\u30d7\u306e\u6570\u5b57\u3092\u52a0\u7b97\u3059\u308b\u3068\u304b\u3001\u6587\u5b57\u30bf\u30a4\u30d7\u3092\u5b9a\u6570\u30bf\u30a4\u30d7\u306b\u30ad\u30e3\u30b9\u30c8\u3059\u308b\u3068\u304b\u304c\u3042\u308a\u307e\u3059\u3002\u4e0a\u306e\u4f8b\u3092\u307f\u308c\u30704\u884c\u76ee\u3067\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u305f\u3068\u8868\u793a\u3055\u308c\u307e\u3059\u3002\u305d\u306e\u5f8c\u306bpython\u30b3\u30fc\u30c9\u306f\u4e2d\u65ad\u3055\u308c\u307e\u3057\u305f\u3002\u4e0b\u306eprint\u95a2\u6570\u304c\u5b9f\u884c\u3055\u308c\u307e\u305b\u3093\u3067\u3057\u305f\u3002\u69d8\u3005\u306a\u5909\u6570\u3092\u9593\u9055\u3063\u3066\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3059\u308b\u3053\u3068\u306f\u60aa\u304f\u306a\u3044\u3067\u3059\u3002\u305f\u3060\u3001\u30a8\u30e9\u30fc\u3092\u3069\u306e\u3088\u3046\u306b\u51e6\u7406\u3059\u308b\u3053\u3068\u304c\u91cd\u8981\u3067\u3059\u3002\u30a8\u30e9\u30fc\u51e6\u7406\u3092\u4e0a\u624b\u304f\u3067\u304d\u306a\u3051\u308c\u3070\u4e0a\u307f\u305f\u3044\u306b\u30d7\u30ed\u30b0\u30e9\u30e0\u5b9f\u884c\u304c\u6b62\u307e\u308a\u307e\u3059\u3002\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3059\u308b\u6642\u306b\u306f\u30a8\u30e9\u30fc\u51e6\u7406\u3092\u3057\u3066\u30a8\u30e9\u30fc\u90e8\u5206\u306e\u30b9\u30c6\u30c3\u30d7\u3092\u8d85\u3048\u307e\u3059\u3002\u4e0a\u306e\u4f8b\u3067\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3059\u308b\u90e8\u5206\u3092try ~ except\u3067\u56f2\u3093\u3067\u307e\u3057\u305f\u3002c \u003d a + b\u306e\u30b9\u30c6\u30c3\u30d7\u3067\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u3066except\u306e\u3068\u3053\u308d\u306b\u79fb\u52d5\u3057\u307e\u3057\u305f\u3002print(c)\u3067\u30b3\u30f3\u30bd\u30fc\u30eb\u51fa\u529b\u304c\u884c\u308f\u306a\u3044\u3067\u3059\u3002\u5f8c\u3001except\u3067\u3042\u308b\u30b3\u30f3\u30bd\u30fc\u30eb\u51fa\u529b\u3057\u3066print(a)\u304c\u5b9f\u884c\u3055\u308c\u307e\u3057\u305f\u3002\u533a\u9593\u5185\u3067\u30a8\u30e9\u30fc\u306e\u7a2e\u985e\u306f\u4e00\u3064\u3067\u306f\u306a\u304f\u69d8\u3005\u306a\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3059\u308b\u53ef\u80fd\u6027\u304c\u3042\u308a\u307e\u3059\u3002\u305d\u306e\u30a8\u30e9\u30fc\u306e\u7a2e\u985e\u306b\u3088\u3063\u3066\u30a8\u30e9\u30fc\u51e6\u7406\u3092\u5225\u3005\u306b\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002\u4e0a\u306e\u7d50\u679c\u3092\u307f\u308c\u3070division_function\u3092\u4e09\u56de\u306b\u547c\u3073\u51fa\u3057\u307e\u3059\u304c\u3001\u4e0a\u306e\u4e8c\u56de\u306f\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3059\u3002\u3067\u3082\u4e0a\u306e\u30a8\u30e9\u30fc\u7a2e\u985e\u304c\u9055\u3046\u306e\u3067\u5225\u306eprint\u95a2\u6570\u3092\u547c\u3073\u51fa\u3057\u307e\u3059\u3002\u53c2\u8003\u306b\u4e0a\u306e\u300c\u30a8\u30e9\u30fc\u30bf\u30a4\u30d7 as e\u300d\u69cb\u9020\u306a\u3089e\u5909\u6570\u306b\u30a8\u30e9\u30fc\u5185\u5bb9\u304c\u683c\u7d0d\u3055\u308c\u307e\u3059\u3002\u3053\u3053\u3067\u4f8b\u5916\u306e\u6700\u4e0a\u4f4d\u30a8\u30e9\u30fc\u30bf\u30a4\u30d7\u306fexception\u3067\u3059\u3002\u4e0a\u307f\u305f\u3044\u306b\u4f5c\u6210\u3059\u308c\u3070typeerror\u3068zerodivisionerror\u304c\u767a\u751f\u3057\u3066\u3082\u3059\u3079\u3066exception\u306b\u884c\u3063\u3066\u3057\u307e\u3044\u307e\u3059\u3002\u4e0a\u306e\u7d50\u679c\u306ftypeerror\u3068zerodivisionerror\u306e\u3068\u3053\u308d\u306b\u79fb\u52d5\u3057\u307e\u3057\u305f\u3002\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u3066\u30a8\u30e9\u30fc\u304b\u3001\u30a8\u30e9\u30fc\u3067\u306f\u306a\u3044\u304b\u306e\u95a2\u4fc2\u3057\u305a\u3001\u30b9\u30c6\u30c3\u30d7\u51e6\u7406\u3059\u308b\u30ad\u30fc\u30ef\u30fc\u30c9\u306ffinally\u3067\u3059\u3002\u4e00\u822c\u30bd\u30fc\u30b9\u30b9\u30c6\u30c3\u30d7\u3067\u306ffinally\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u4f7f\u308f\u306a\u304f\u3066\u3082except\u304c\u547c\u3073\u51fa\u3057\u305f\u3089\u6b21\u306e\u30b9\u30c6\u30c3\u30d7\u306b\u5b9f\u884c\u3059\u308b\u306e\u3067finally\u306e\u5fc5\u8981\u6027\u3092\u611f\u3058\u3089\u308c\u307e\u305b\u3093\u3002\u3067\u3082\u95a2\u6570\u306e\u4e2d\u3067return\u30ad\u30fc\u30ef\u30fc\u30c9\u3068\u4e00\u7dd2\u306b\u4f7f\u3048\u3070try\u306e\u4e2d\u3067return\u3057\u3066\u3082\u6700\u5f8c\u306bfinally\u306e\u90e8\u5206\u304c\u5b9f\u884c\u3055\u308c\u307e\u3059\u3002\u7279\u306b\u30ea\u30bd\u30fc\u30b9\u7ba1\u7406\u3059\u308b\u90e8\u5206\u3067\u4f7f\u3048\u3070\u3044\u3044\u6587\u6cd5\u3067\u3059\u3002\u3053\u3053\u307e\u3067\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3059\u308c\u3070\u3069\u306e\u3088\u3046\u306b\u51e6\u7406\u3059\u308b\u3053\u3068\u3092\u8aac\u660e","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2020-06-05T17:11:47.000+09:00","dateModified":"2020-06-05T17:11:47.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Python" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はpythonで例外処理する方法に関する説明です。プログラムを作成すると様々なエラーが発生することがあります。例えば、stringタイプにintタイプの数字を加算するとか、文字タイプを定数タイプにキャストするとかがあります。上の例をみれば4行目でエラーが発生したと表示されます。その後にpythonコードは中断されました。下のprint関数が実行されませんでした。様々な変数を間違ってエラーが発生することは悪くないです。ただ、エラーをどのように処理することが重要です。エラー処理を上手くできなければ上みたいにプログラム実行が止まります。エラーが発生する時にはエラー処理をしてエラー部分のステップを超えます。上の例でエラーが発生する部分をtry ~ exceptで囲んでました。c = a + bのステップでエラーが発生してexceptのところに移動しました。print(c)でコンソール出力が行わないです。後、exceptであるコンソール出力してprint(a)が実行されました。区間内でエラーの種類は一つではなく様々なエラーが発生する可能性があります。そのエラーの種類によってエラー処理を別々にすることができます。上の結果をみればdivision_functionを三回に呼び出しますが、上の二回はエラーが発生します。でも上のエラー種類が違うので別のprint関数を呼び出します。参考に上の「エラータイプ as e」構造ならe変数にエラー内容が格納されます。ここで例外の最上位エラータイプはexceptionです。上みたいに作成すればtypeerrorとzerodivisionerrorが発生してもすべてexceptionに行ってしまいます。上の結果はtypeerrorとzerodivisionerrorのところに移動しました。エラーが発生してエラーか、エラーではないかの関係しず、ステップ処理するキーワードはfinallyです。一般ソースステップではfinallyキーワードを使わなくてもexceptが呼び出したら次のステップに実行するのでfinallyの必要性を感じられません。でも関数の中でreturnキーワードと一緒に使えばtryの中でreturnしても最後にfinallyの部分が実行されます。特にリソース管理する部分で使えばいい文法です。ここまでエラーが発生すればどのように処理することを説明]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Python] 09. 例外処理する方法" />
+<link rel="canonical" href="https://www.nowonbun.com/228.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Python] 09. 例外処理する方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はpythonで例外処理する方法に関する説明です。プログラムを作成すると様々なエラーが発生することがあります。例えば、stringタイプにintタイプの数字を加算するとか、文字タイプを定数タイプにキャストするとかがあります。上の例をみれば4行目でエラーが発生したと表示されます。その後にpythonコードは中断されました。下のprint関数が実行されませんでした。様々な変数を間違ってエラーが発生することは悪くないです。ただ、エラーをどのように処理することが重要です。エラー処理を上手くできなければ上みたいにプログラム実行が止まります。エラーが発生する時にはエラー処理をしてエラー部分のステップを超えます。上の例でエラーが発生する部分をtry ~ exceptで囲んでました。c = a + bのステップでエラーが発生してexceptのところに移動しました。print(c)でコンソール出力が行わないです。後、exceptであるコンソール出力してprint(a)が実行されました。区間内でエラーの種類は一つではなく様々なエラーが発生する可能性があります。そのエラーの種類によってエラー処理を別々にすることができます。上の結果をみればdivision_functionを三回に呼び出しますが、上の二回はエラーが発生します。でも上のエラー種類が違うので別のprint関数を呼び出します。参考に上の「エラータイプ as e」構造ならe変数にエラー内容が格納されます。ここで例外の最上位エラータイプはexceptionです。上みたいに作成すればtypeerrorとzerodivisionerrorが発生してもすべてexceptionに行ってしまいます。上の結果はtypeerrorとzerodivisionerrorのところに移動しました。エラーが発生してエラーか、エラーではないかの関係しず、ステップ処理するキーワードはfinallyです。一般ソースステップではfinallyキーワードを使わなくてもexceptが呼び出したら次のステップに実行するのでfinallyの必要性を感じられません。でも関数の中でreturnキーワードと一緒に使えばtryの中でreturnしても最後にfinallyの部分が実行されます。特にリソース管理する部分で使えばいい文法です。ここまでエラーが発生すればどのように処理することを説明]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/228.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Python] 09. 例外処理する方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はpythonで例外処理する方法に関する説明です。プログラムを作成すると様々なエラーが発生することがあります。例えば、stringタイプにintタイプの数字を加算するとか、文字タイプを定数タイプにキャストするとかがあります。上の例をみれば4行目でエラーが発生したと表示されます。その後にpythonコードは中断されました。下のprint関数が実行されませんでした。様々な変数を間違ってエラーが発生することは悪くないです。ただ、エラーをどのように処理することが重要です。エラー処理を上手くできなければ上みたいにプログラム実行が止まります。エラーが発生する時にはエラー処理をしてエラー部分のステップを超えます。上の例でエラーが発生する部分をtry ~ exceptで囲んでました。c = a + bのステップでエラーが発生してexceptのところに移動しました。print(c)でコンソール出力が行わないです。後、exceptであるコンソール出力してprint(a)が実行されました。区間内でエラーの種類は一つではなく様々なエラーが発生する可能性があります。そのエラーの種類によってエラー処理を別々にすることができます。上の結果をみればdivision_functionを三回に呼び出しますが、上の二回はエラーが発生します。でも上のエラー種類が違うので別のprint関数を呼び出します。参考に上の「エラータイプ as e」構造ならe変数にエラー内容が格納されます。ここで例外の最上位エラータイプはexceptionです。上みたいに作成すればtypeerrorとzerodivisionerrorが発生してもすべてexceptionに行ってしまいます。上の結果はtypeerrorとzerodivisionerrorのところに移動しました。エラーが発生してエラーか、エラーではないかの関係しず、ステップ処理するキーワードはfinallyです。一般ソースステップではfinallyキーワードを使わなくてもexceptが呼び出したら次のステップに実行するのでfinallyの必要性を感じられません。でも関数の中でreturnキーワードと一緒に使えばtryの中でreturnしても最後にfinallyの部分が実行されます。特にリソース管理する部分で使えばいい文法です。ここまでエラーが発生すればどのように処理することを説明]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Python] 09. 例外処理する方法</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(74)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(3)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(154)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(40)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(9)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/228.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Python] 09. 例外処理する方法</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0206">Study / Python</a>    作成日付 : <span property="datePublished">2020/06/05 17:11:47</span>   修正日付 : <span property="dateModified">2020/06/05 17:11:47</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はPythonで例外処理する方法に関する説明です。</p> 
+  <p><br></p> 
+  <p>プログラムを作成すると様々なエラーが発生することがあります。例えば、stringタイプにintタイプの数字を加算するとか、文字タイプを定数タイプにキャストするとかがあります。</p> 
+  <pre><code class="python" data-type="example.py"># 文字列タイプに変数宣言
+a = "hello"
+# 定数タイプに変数宣言
+b = 1
+# 文字列タイプのa変数に数字いタイプのb変数を加算すうる。
+c = a + b
+# 結果を出力する。
+print(c)
+# aを出力する。
+print(a)
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/228/1204_001.png" data-filename="001.png" style="width: 479px;"><br></p> 
+  <p>上の例をみれば4行目でエラーが発生したと表示されます。その後にPythonコードは中断されました。下のprint関数が実行されませんでした。</p> 
+  <p>様々な変数を間違ってエラーが発生することは悪くないです。ただ、エラーをどのように処理することが重要です。</p> 
+  <p>エラー処理を上手くできなければ上みたいにプログラム実行が止まります。</p> 
+  <p><br></p> 
+  <p>エラーが発生する時にはエラー処理をしてエラー部分のステップを超えます。</p> 
+  <pre><code class="python" data-type="example.py"># 文字列タイプに変数宣言
+a = "hello"
+# 定数タイプに変数宣言
+b = 1
+# 文字列タイプのa変数に数字いタイプのb変数を加算する。
+# エラーが発生する可能性がある区間をtry ~ exceptで囲む。　tryの領域でエラーが発生するとexceptの部分に移動する。
+try:
+  c = a + b
+  # コンソール出力
+  print(c)
+except:
+  # コンソール出力
+  print("the error is occurred")
+# コンソール出力
+print(a)
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/228/1199_002.png" data-filename="002.png" style="width: 276px;"><br></p> 
+  <p>上の例でエラーが発生する部分をtry ~ exceptで囲んでました。c = a + bのステップでエラーが発生してexceptのところに移動しました。</p> 
+  <p>print(c)でコンソール出力が行わないです。</p> 
+  <p>後、exceptであるコンソール出力してprint(a)が実行されました。</p> 
+  <p><br></p> 
+  <p>区間内でエラーの種類は一つではなく様々なエラーが発生する可能性があります。そのエラーの種類によってエラー処理を別々にすることができます。</p> 
+  <pre><code class="python" data-type="example.py"># 関数宣言
+def division_function(a,b):
+  # 例外処理
+  try:	
+    # aにbを分ける。
+    print(a/b)
+  # このエラーはタイプが合わない変数で計算する時にエラーが発生する。、つまりstrタイプ / intタイプならエラーが発生する。
+  except TypeError as e:
+    # コンソール出力
+    print(e)
+  # このエラーは0で分けると発生するエラー。
+  except ZeroDivisionError as e:
+    # コンソール出力
+    print(e)
+
+# TypeErrorが発生することを予想
+division_function("a", 1)
+# ZeroDivisionErrorが発生することを予想
+division_function(1, 0)
+# 正常処理
+division_function(4, 2)
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/228/1203_003.png" data-filename="003.png" style="width: 432px;"><br></p> 
+  <p>上の結果をみればdivision_functionを三回に呼び出しますが、上の二回はエラーが発生します。</p> 
+  <p>でも上のエラー種類が違うので別のprint関数を呼び出します。</p> 
+  <p>参考に上の「エラータイプ as e」構造ならe変数にエラー内容が格納されます。</p> 
+  <p>ここで例外の最上位エラータイプはExceptionです。</p> 
+  <pre><code class="python" data-type="example.py"># 関数宣言
+def division_function(a,b):
+  # 例外処理
+  try:
+    # コンソール出力
+    print(a/b)
+  # 最上位エラータイプを一番上に配置
+  except Exception as e:
+    # コンソール出力
+    print("first")
+  # このエラーはタイプが合わない変数で計算する時にエラーが発生する。
+  except TypeError as e:
+    # コンソール出力
+    print("second")
+  # このエラーは0で分けると発生するエラー。
+  except ZeroDivisionError as e:
+    # コンソール出力
+    print("third")
+# 関数を呼び出す。
+division_function("a", 1)
+# 関数を呼び出す。
+division_function(1, 0)
+# 関数を呼び出す。
+division_function(4, 2)
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/228/1200_004.png" data-filename="004.png" style="width: 249px;"><br></p> 
+  <p>上みたいに作成すればTypeErrorとZeroDivisionErrorが発生してもすべてExceptionに行ってしまいます。</p> 
+  <pre><code class="python" data-type="example.py"># 関数宣言
+def division_function(a,b):
+  # 例外処理
+  try:
+    # コンソール出力
+    print(a/b)
+  # このエラーはタイプが合わない変数で計算する時にエラーが発生する。
+  except TypeError as e:
+    print("first")
+  # このエラーは0で分けると発生するエラー。
+  except ZeroDivisionError as e:
+    print("second")
+  # 最上位エラータイプを一番下に配置
+  except Exception as e:
+    print("third")
+# 関数を呼び出す。
+division_function("a", 1)
+# 関数を呼び出す。
+division_function(1, 0)
+# 関数を呼び出す。
+division_function(4, 2)
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/228/1206_005.png" data-filename="005.png" style="width: 248px;"><br></p> 
+  <p>上の結果はTypeErrorとZeroDivisionErrorのところに移動しました。</p> 
+  <p><br></p> 
+  <p>エラーが発生してエラーか、エラーではないかの関係しず、ステップ処理するキーワードはfinallyです。</p> 
+  <pre><code class="python" data-type="example.py"># 関数宣言
+def division_function(a,b):
+  # 例外処理
+  try:
+    # 今回は結果を返却した。
+    return a/b
+  # このエラーはタイプが合わない変数で計算する時にエラーが発生する。
+  except TypeError as e:
+    # エラーが発生すれば-1を返却する。
+    return -1
+  # このエラーは0で分けると発生するエラー。
+  except ZeroDivisionError as e:
+    # エラーが発生すれば-2を返却する。
+    return -2
+  # 最上位エラータイプ
+  except Exception as e:
+    # エラーが発生すれば-3を返却する。
+    return -3
+  finally:
+    # コンソール出力
+    print("finally!")
+# 関数を呼び出して変数に格納
+ret = division_function("a", 1)
+# コンソール出力
+print(ret)
+# 関数を呼び出して変数に格納
+ret = division_function(1, 0)
+# コンソール出力
+print(ret)
+# 関数を呼び出して変数に格納
+ret = division_function(4, 2)
+# コンソール出力
+print(ret)
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/228/1201_006.png" data-filename="006.png" style="width: 253px;"><br></p> 
+  <p>一般ソースステップではfinallyキーワードを使わなくてもexceptが呼び出したら次のステップに実行するのでfinallyの必要性を感じられません。</p> 
+  <p>でも関数の中でreturnキーワードと一緒に使えばtryの中でreturnしても最後にfinallyの部分が実行されます。特にリソース管理する部分で使えばいい文法です。</p> 
+  <p><br></p> 
+  <p>ここまでエラーが発生すればどのように処理することを説明しました。今回は我々がエラーを発生して処理する方法に関して説明します。</p> 
+  <pre><code class="python" data-type="example.py"># 関数宣言
+def call_function():
+  # エラー発生はraiseキーワードをつきます。
+  raise Exception("error!!!!")
+# 関数を呼び出す。
+call_function()
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/228/1205_007.png" data-filename="007.png" style="width: 390px;"><br></p> 
+  <p>raiseキーワードでExceptionクラスを呼び出すとエラーが発生します。</p> 
+  <p>様々な関数を作成する時、データ検証で悪いデータが入力するかデータ計算結果が予想より使う場合にわざとエラー発生する必要があります。その時に使うことです。</p> 
+  <pre><code class="python" data-type="example.py"># 関数宣言
+def call_function():
+  # エラー発生はraiseキーワードをつきます。
+  raise Exception("error!!!!")
+# 例外処理
+try:
+  #　関数を呼び出す。
+  call_function()
+# エラー処理
+except Exception as e:
+  # コンソール出力
+  print(e)
+# コンソール出力
+print("end")
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/228/1202_008.png" data-filename="008.png" style="width: 241px;"><br></p> 
+  <p>call_function関数を呼び出すとエラーが発生しますが、例外処理をしました。</p> 
+  <p><br></p> 
+  <p>ここまでPythonで例外処理する方法に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=python>#python</a>,<a href=./search.html?query=try>#try</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0206">Study / Python</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/228.html'>[Python] 09. 例外処理する方法</a><span>2020/06/05 17:11:47</span></li><li><a href='https://www.nowonbun.com/227.html'>[Python] 08. ジェネレータ(Generator)</a><span>2020/06/04 18:46:08</span></li><li><a href='https://www.nowonbun.com/226.html'>[Python] 07. globalとnonlocal</a><span>2020/06/03 20:34:49</span></li><li><a href='https://www.nowonbun.com/225.html'>[Python] 06. 関数(function) - インライン関数、callbak、ラムダ(lambda)そしてクロージャ</a><span>2020/06/02 20:51:22</span></li><li><a href='https://www.nowonbun.com/224.html'>[Python] 05. コンプリヘンション(Comprehension)を使用する方法</a><span>2020/06/01 19:38:58</span></li><li><a href='https://www.nowonbun.com/223.html'>[Python] 04. 制御文(if, while, for, break, continue)とインデント</a><span>2020/05/29 21:09:08</span></li><li><a href='https://www.nowonbun.com/222.html'>[Python] 03. Pythonでリスト(list)とタプル(tuple)、そしてディクショナリ(dictionary)、セット(set)</a><span>2020/05/27 18:49:08</span></li><li><a href='https://www.nowonbun.com/221.html'>[Python] 02. データタイプ、変数宣言そしてコメントする方法</a><span>2020/05/26 18:16:52</span></li><li><a href='https://www.nowonbun.com/220.html'>[Python] 01. Python3をインストールする方法(Anacondaインストール)</a><span>2020/05/25 19:02:44</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/228.html'>[Python] 09. 例外処理する方法</a><span>2020/06/05 17:11:47</span></li><li><a href='https://www.nowonbun.com/227.html'>[Python] 08. ジェネレータ(Generator)</a><span>2020/06/04 18:46:08</span></li><li><a href='https://www.nowonbun.com/226.html'>[Python] 07. globalとnonlocal</a><span>2020/06/03 20:34:49</span></li><li><a href='https://www.nowonbun.com/225.html'>[Python] 06. 関数(function) - インライン関数、callbak、ラムダ(lambda)そしてクロージャ</a><span>2020/06/02 20:51:22</span></li><li><a href='https://www.nowonbun.com/224.html'>[Python] 05. コンプリヘンション(Comprehension)を使用する方法</a><span>2020/06/01 19:38:58</span></li><li><a href='https://www.nowonbun.com/223.html'>[Python] 04. 制御文(if, while, for, break, continue)とインデント</a><span>2020/05/29 21:09:08</span></li><li><a href='https://www.nowonbun.com/222.html'>[Python] 03. Pythonでリスト(list)とタプル(tuple)、そしてディクショナリ(dictionary)、セット(set)</a><span>2020/05/27 18:49:08</span></li><li><a href='https://www.nowonbun.com/221.html'>[Python] 02. データタイプ、変数宣言そしてコメントする方法</a><span>2020/05/26 18:16:52</span></li><li><a href='https://www.nowonbun.com/220.html'>[Python] 01. Python3をインストールする方法(Anacondaインストール)</a><span>2020/05/25 19:02:44</span></li><li><a href='https://www.nowonbun.com/219.html'>[Java] HttpConnectionを利用してウェブページを取得する方法</a><span>2020/05/20 23:53:24</span></li><li><a href='https://www.nowonbun.com/218.html'>[Java] Jsoupを利用してXMLファイル(HTML)を扱う方法</a><span>2020/05/19 19:32:21</span></li><li><a href='https://www.nowonbun.com/217.html'>[C#] 非同期ソケット通信(IOCP)-APMパターン</a><span>2020/05/18 18:45:37</span></li><li><a href='https://www.nowonbun.com/216.html'>[C#] 非同期ソケット通信(IOCP)-EAPパターン</a><span>2020/05/15 19:31:02</span></li><li><a href='https://www.nowonbun.com/215.html'>[C#] ソケット(Socket)通信をする方法</a><span>2020/05/13 17:37:13</span></li><li><a href='https://www.nowonbun.com/214.html'>[C#] NPOIを利用してExcelを読み込んで出力する方法</a><span>2020/05/08 10:43:52</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/228.html';this.page.identifier = 'NOWONBUN00228';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
