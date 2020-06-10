@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/231.html"},"url":"https:\/\/www.nowonbun.com\/231.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Python] 12. \u30af\u30e9\u30b9(Class)\u3092\u4f7f\u3046\u65b9\u6cd5","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fpython\u3067\u30af\u30e9\u30b9(class)\u3092\u4f7f\u3046\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u30af\u30e9\u30b9\u306e\u6982\u5ff5\u306f\u4ed6\u306e\u30b3\u30f3\u30d1\u30a4\u30eb\u8a00\u8a9e\u3092\u6271\u3063\u305f\u65b9\u306a\u3089\u5225\u306b\u8aac\u660e\u304c\u306a\u304f\u3066\u3082\u5341\u5206\u306b\u77e5\u3063\u3066\u3044\u308b\u3068\u601d\u3044\u307e\u3059\u3002python\u306e\u5834\u5408\u306f\u30b9\u30af\u30ea\u30d7\u30c8\u8a00\u8a9e\u306a\u306e\u3067\u30af\u30e9\u30b9\u6982\u5ff5\u3092\u77e5\u3089\u306a\u304f\u3066\u3082\u30bd\u30fc\u30b9\u5b9f\u88c5\u3059\u308b\u3053\u3068\u3084\u8a2d\u8a08\u3092\u4f5c\u6210\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002\u3067\u3082\u3001\u7ba1\u7406\u304c\u5fc5\u8981\u306a\u30c7\u30fc\u30bf\u3084\u4e00\u3064\u306e\u6982\u5ff5\u3067\u30c7\u30fc\u30bf\u3092\u7d50\u3070\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u30c7\u30fc\u30bf\u306a\u3089\u30af\u30e9\u30b9\u306e\u6982\u5ff5\u3067\u4f5c\u3063\u305f\u307b\u3046\u304c\u8a2d\u8a08\u3084\u5b9f\u88c5\u3059\u308b\u3053\u3068\u304c\u7406\u89e3\u3057\u3084\u3059\u3044\u3057\u30bd\u30fc\u30b9\u30b9\u30c6\u30c3\u30d7\u3092\u6e1b\u3089\u3059\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002\u4e0b\u8a18\u306e\u4f8b\u3092\u901a\u3063\u3066\u30af\u30e9\u30b9\u304c\u3042\u308b\u3053\u3068\u3068\u306a\u3044\u3053\u3068\u306e\u5dee\u7570\u3092\u78ba\u8a8d\u3057\u307e\u3057\u3087\u3046\u3002\u4f8b\u306f\u56fd\u8a9e\u3001\u6570\u5b66\u3001\u82f1\u8a9e\u306e\u6210\u7e3e\u3092\u6301\u3063\u3066\u3044\u308b\u5b66\u751f\u306e\u5e73\u5747\u5024\u3068\u30af\u30e9\u30b9\u306e\u5e73\u5747\u5024\u3092\u8a08\u7b97\u3057\u307e\u3057\u3087\u3046\u3002\u4e0a\u306e\u4f8b\u3092\u307f\u308c\u3070\u5404\u4eba\u3001\u56fd\u8a9e\u3001\u6570\u5b66\u3001\u82f1\u8a9e\u6210\u7e3e\u306e\u30ea\u30b9\u30c8\u5ba3\u8a00\u3057\u3066\u4eba\u3092\u8ffd\u52a0\u3059\u308b\u6642\u306b\u5404\u6210\u7e3e\u30ea\u30b9\u30c8\u3082\u540c\u3058\u304f\u8ffd\u52a0\u3057\u307e\u3059\u3002\u3064\u307e\u308a\u30014\u500b\u306e\u30ea\u30b9\u30c8\u306e\u30c7\u30fc\u30bf\u500b\u6570\u306f\u3044\u3064\u3082\u540c\u3058\u304f\u306a\u308a\u307e\u3059\u3002\u3082\u3057\u540c\u3058\u3067\u306f\u306a\u3044\u5834\u5408\u3001\u6574\u5408\u6027\u306e\u554f\u984c\u306b\u306a\u308a\u307e\u3059\u3002\u3064\u307e\u308a\u3001person\u30ea\u30b9\u30c8\u306f4\u500b\u306a\u306e\u306b\u3001math\u30ea\u30b9\u30c8\u306f2\u500b\u306a\u3089\u30c7\u30fc\u30bf\u304c\u53ef\u7b11\u3057\u3044\u3067\u3057\u3087\u3046\u3002\u307e\u305f\u3001\u30ea\u30b9\u30c8\u3060\u3051\u78ba\u8a8d\u3059\u308b\u3068\u8ab0\u306e\u30c7\u30fc\u30bf\u304b\u306f\u77e5\u308a\u307e\u305b\u3093\u3002\u4f8b\u3048\u3070math\u306e3\u756a\u76ee\u306e\u30c7\u30fc\u30bf\u306fpersion\u306e3\u756a\u76ee\u306e\u30c7\u30fc\u30bf\u3092\u78ba\u8a8d\u3057\u306a\u3044\u3068\u77e5\u3089\u306a\u3044\u3068\u3044\u3046\u610f\u5473\u3067\u3059\u3002\u4e0a\u306e\u4f8b\u306f\u7c21\u5358\u306a\u30bd\u30fc\u30b9\u306a\u306e\u3067\u96e3\u3057\u304f\u306a\u3044\u3067\u3059\u304c\u3001\u30ed\u30b8\u30c3\u30af\u304c\u8907\u96d1\u3060\u3057\u3001\u30c7\u30fc\u30bf\u304c\u591a\u3044\u306a\u3089\u30c7\u30fc\u30bf\u7ba1\u7406\u306f\u7c21\u5358\u3067\u306f\u306a\u3044\u3067\u3057\u3087\u3046\u3002\u30bd\u30fc\u30b9\u30b9\u30c6\u30c3\u30d7\u3060\u3051\u898b\u3066\u3082\u30af\u30e9\u30b9\u3092\u6271\u3046\u3053\u3068\u3068\u4f7f\u308f\u306a\u3044\u3053\u3068\u3068\u30bd\u30fc\u30b9\u30b9\u30c6\u30c3\u30d7\u3082\u5dee\u7570\u304c\u5927\u304d\u3044\u3067\u3059\u3002\u307e\u305f\u3001\u5404\u4eba\u306e\u70b9\u6570\u3092\u5404\u30ea\u30b9\u30c8\u306b\u683c\u7d0d\u3057\u305f\u3053\u3068\u3088\u308a\u30af\u30e9\u30b9\u5185\u90e8\u306e\u30e1\u30f3\u30d0\u30fc\u5909\u6570\u3067\u7ba1\u7406\u3059\u308b\u306e\u3067\u6574\u5408\u6027\u3082\u554f\u984c\u306a\u3044\u3067\u3059\u3002\u3064\u307e\u308a\u3001\u30ea\u30b9\u30c8\u304b\u3089\u53d6\u308a\u9664\u304f\u3068\u6210\u7e3e\u3082\u4e00\u7dd2\u306b\u524a\u9664\u3055\u308c\u308b\u306e\u3067\u53ef\u7b11\u3057\u3044\u30c7\u30fc\u30bf\u304c\u5165\u308b\u3053\u3068\u304c\u3042\u308a\u307e\u305b\u3093\u3002python\u3067\u30af\u30e9\u30b9\u3092\u4f7f\u3046\u65b9\u6cd5\u306f\u95a2\u6570\u306edef\u4ee3\u308f\u308a\u306bclass\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u4f7f\u3048\u3070\u751f\u6210\u3057\u307e\u3059\u3002\u5c0f\u62ec\u5f27\u306f\u30af\u30e9\u30b9\u7d99\u627f\u306e\u305f\u3081\u306b\u3042\u308b\u3053\u3068\u3067\u3059\u304c\u3001\u4ed6\u306e\u6295\u7a3f\u3067\u8a73\u3057\u304f\u8aac\u660e\u3057\u307e\u3059\u3002\u30af\u30e9\u30b9\u306f\u30e1\u30bd\u30c3\u30c9\u3060\u3051\u69cb\u6210\u3055\u308c\u3066\u3044\u307e\u3059\u3002\u4ed6\u306e\u8a00\u8a9e\u307f\u305f\u3044\u306b\u5909\u6570\u3092\u5ba3\u8a00\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u305b\u3093\u3002\u5404\u95a2\u6570\u306e\u6700\u521d\u306e\u30d1\u30e9\u30e1\u30fc\u30bf\u306fself\u3067\u56fa\u5b9a\u306b\u306a\u3063\u3066\u3044\u307e\u3059\u3002__init__\u306e\u95a2\u6570\u306f\u521d\u671f\u5316\u95a2\u6570\u3067\u4ed6\u306e\u8a00\u8a9e\u306a\u3089\u30b3\u30f3\u30b9\u30c8\u30e9\u30af\u30bf\u3068\u3044\u3046\u3053\u3068\u3067\u3059\u3002\u30b3\u30f3\u30b9\u30c8\u30e9\u30af\u30bf\u306f\u7121\u304f\u3066\u3082\u30af\u30e9\u30b9\u3092\u6271\u3046\u306e\u306f\u554f\u984c\u306f\u306a\u3044\u3051\u3069\u3001\u53ef\u8aad\u6027\u306e\u305f\u3081\u306b\u30b3\u30f3\u30b9\u30c8\u30e9\u30af\u30bf\u3092\u751f\u6210\u3059\u308b\u307b\u3046\u304c\u3044\u3044\u3067\u3059\u3002\u7279\u306b\u30e1\u30f3\u30d0\u30fc\u5909\u6570\u306f\u3069\u306e\u95a2\u6570\u3067\u5ba3\u8a00\u3057\u3066\u3082\u554f\u984c\u306a\u3044\u3067\u3059\u304c\u3001\u30b3\u30f3\u30b9\u30c8\u30e9\u30af\u30bf\u3067\u521d\u671f\u5024","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2020-06-10T19:33:33.000+09:00","dateModified":"2020-06-10T19:33:33.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Python" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はpythonでクラス(class)を使う方法に関する説明です。クラスの概念は他のコンパイル言語を扱った方なら別に説明がなくても十分に知っていると思います。pythonの場合はスクリプト言語なのでクラス概念を知らなくてもソース実装することや設計を作成することができます。でも、管理が必要なデータや一つの概念でデータを結ばなければならないデータならクラスの概念で作ったほうが設計や実装することが理解しやすいしソースステップを減らすことができます。下記の例を通ってクラスがあることとないことの差異を確認しましょう。例は国語、数学、英語の成績を持っている学生の平均値とクラスの平均値を計算しましょう。上の例をみれば各人、国語、数学、英語成績のリスト宣言して人を追加する時に各成績リストも同じく追加します。つまり、4個のリストのデータ個数はいつも同じくなります。もし同じではない場合、整合性の問題になります。つまり、personリストは4個なのに、mathリストは2個ならデータが可笑しいでしょう。また、リストだけ確認すると誰のデータかは知りません。例えばmathの3番目のデータはpersionの3番目のデータを確認しないと知らないという意味です。上の例は簡単なソースなので難しくないですが、ロジックが複雑だし、データが多いならデータ管理は簡単ではないでしょう。ソースステップだけ見てもクラスを扱うことと使わないこととソースステップも差異が大きいです。また、各人の点数を各リストに格納したことよりクラス内部のメンバー変数で管理するので整合性も問題ないです。つまり、リストから取り除くと成績も一緒に削除されるので可笑しいデータが入ることがありません。pythonでクラスを使う方法は関数のdef代わりにclassキーワードを使えば生成します。小括弧はクラス継承のためにあることですが、他の投稿で詳しく説明します。クラスはメソッドだけ構成されています。他の言語みたいに変数を宣言することができません。各関数の最初のパラメータはselfで固定になっています。__init__の関数は初期化関数で他の言語ならコンストラクタということです。コンストラクタは無くてもクラスを扱うのは問題はないけど、可読性のためにコンストラクタを生成するほうがいいです。特にメンバー変数はどの関数で宣言しても問題ないですが、コンストラクタで初期値]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Python] 12. クラス(Class)を使う方法" />
+<link rel="canonical" href="https://www.nowonbun.com/231.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Python] 12. クラス(Class)を使う方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はpythonでクラス(class)を使う方法に関する説明です。クラスの概念は他のコンパイル言語を扱った方なら別に説明がなくても十分に知っていると思います。pythonの場合はスクリプト言語なのでクラス概念を知らなくてもソース実装することや設計を作成することができます。でも、管理が必要なデータや一つの概念でデータを結ばなければならないデータならクラスの概念で作ったほうが設計や実装することが理解しやすいしソースステップを減らすことができます。下記の例を通ってクラスがあることとないことの差異を確認しましょう。例は国語、数学、英語の成績を持っている学生の平均値とクラスの平均値を計算しましょう。上の例をみれば各人、国語、数学、英語成績のリスト宣言して人を追加する時に各成績リストも同じく追加します。つまり、4個のリストのデータ個数はいつも同じくなります。もし同じではない場合、整合性の問題になります。つまり、personリストは4個なのに、mathリストは2個ならデータが可笑しいでしょう。また、リストだけ確認すると誰のデータかは知りません。例えばmathの3番目のデータはpersionの3番目のデータを確認しないと知らないという意味です。上の例は簡単なソースなので難しくないですが、ロジックが複雑だし、データが多いならデータ管理は簡単ではないでしょう。ソースステップだけ見てもクラスを扱うことと使わないこととソースステップも差異が大きいです。また、各人の点数を各リストに格納したことよりクラス内部のメンバー変数で管理するので整合性も問題ないです。つまり、リストから取り除くと成績も一緒に削除されるので可笑しいデータが入ることがありません。pythonでクラスを使う方法は関数のdef代わりにclassキーワードを使えば生成します。小括弧はクラス継承のためにあることですが、他の投稿で詳しく説明します。クラスはメソッドだけ構成されています。他の言語みたいに変数を宣言することができません。各関数の最初のパラメータはselfで固定になっています。__init__の関数は初期化関数で他の言語ならコンストラクタということです。コンストラクタは無くてもクラスを扱うのは問題はないけど、可読性のためにコンストラクタを生成するほうがいいです。特にメンバー変数はどの関数で宣言しても問題ないですが、コンストラクタで初期値]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/231.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Python] 12. クラス(Class)を使う方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はpythonでクラス(class)を使う方法に関する説明です。クラスの概念は他のコンパイル言語を扱った方なら別に説明がなくても十分に知っていると思います。pythonの場合はスクリプト言語なのでクラス概念を知らなくてもソース実装することや設計を作成することができます。でも、管理が必要なデータや一つの概念でデータを結ばなければならないデータならクラスの概念で作ったほうが設計や実装することが理解しやすいしソースステップを減らすことができます。下記の例を通ってクラスがあることとないことの差異を確認しましょう。例は国語、数学、英語の成績を持っている学生の平均値とクラスの平均値を計算しましょう。上の例をみれば各人、国語、数学、英語成績のリスト宣言して人を追加する時に各成績リストも同じく追加します。つまり、4個のリストのデータ個数はいつも同じくなります。もし同じではない場合、整合性の問題になります。つまり、personリストは4個なのに、mathリストは2個ならデータが可笑しいでしょう。また、リストだけ確認すると誰のデータかは知りません。例えばmathの3番目のデータはpersionの3番目のデータを確認しないと知らないという意味です。上の例は簡単なソースなので難しくないですが、ロジックが複雑だし、データが多いならデータ管理は簡単ではないでしょう。ソースステップだけ見てもクラスを扱うことと使わないこととソースステップも差異が大きいです。また、各人の点数を各リストに格納したことよりクラス内部のメンバー変数で管理するので整合性も問題ないです。つまり、リストから取り除くと成績も一緒に削除されるので可笑しいデータが入ることがありません。pythonでクラスを使う方法は関数のdef代わりにclassキーワードを使えば生成します。小括弧はクラス継承のためにあることですが、他の投稿で詳しく説明します。クラスはメソッドだけ構成されています。他の言語みたいに変数を宣言することができません。各関数の最初のパラメータはselfで固定になっています。__init__の関数は初期化関数で他の言語ならコンストラクタということです。コンストラクタは無くてもクラスを扱うのは問題はないけど、可読性のためにコンストラクタを生成するほうがいいです。特にメンバー変数はどの関数で宣言しても問題ないですが、コンストラクタで初期値]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Python] 12. クラス(Class)を使う方法</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(74)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(3)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(157)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(40)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(12)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/231.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Python] 12. クラス(Class)を使う方法</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0206">Study / Python</a>    作成日付 : <span property="datePublished">2020/06/10 19:33:33</span>   修正日付 : <span property="dateModified">2020/06/10 19:33:33</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はPythonでクラス(Class)を使う方法に関する説明です。</p> 
+  <p><br></p> 
+  <p>クラスの概念は他のコンパイル言語を扱った方なら別に説明がなくても十分に知っていると思います。</p> 
+  <p>Pythonの場合はスクリプト言語なのでクラス概念を知らなくてもソース実装することや設計を作成することができます。</p> 
+  <p>でも、管理が必要なデータや一つの概念でデータを結ばなければならないデータならクラスの概念で作ったほうが設計や実装することが理解しやすいしソースステップを減らすことができます。</p> 
+  <p><br></p> 
+  <p>下記の例を通ってクラスがあることとないことの差異を確認しましょう。</p> 
+  <p>例は国語、数学、英語の成績を持っている学生の平均値とクラスの平均値を計算しましょう。</p> 
+  <pre><code class="python" data-type="test.py"># 学生の名と国語、数学、英語の点数を入力して学生の平均値とクラスの平均値を計算する。
+# 人名リスト
+person = []
+# 国語成績リスト
+japanese = []
+# 数学成績リスト
+math = []
+# 英語成績リスト
+english = []
+
+# 人を追加関数
+def add_person(name, j, m, e):
+  # グローバル変数
+  global person
+  global japanese
+  global math
+  global english
+  # 人名リストに追加
+  person.append(name)
+  # 国語リストに追加
+  japanese.append(j)
+  # 数学リストに追加
+  math.append(m)
+  # 英語リストに追加
+  english.append(e)
+
+# 平均値を計算する関数
+def calculate_average(index):
+  # グローバル変数
+  global person
+  global japanese
+  global math
+  global english
+  # 国語と数学、英語を加算して3で分ける。
+  return int((japanese[index] + math[index] + english[index]) / 3)
+
+# クラスの平均値を計算する関数
+def calculate_total_average():
+  # グローバル変数
+  global person
+  # リストインデックス
+  i = 0
+  # 総点
+  sum = 0
+  # 人名リスト個数ほど繰り返す。
+  while i &lt; len(person):
+    # 総点を加算する。
+    sum += calculate_average(i)
+    # インデックス増加
+    i += 1
+  # 平均値を計算
+  return sum / len(person)
+ 	
+# a, b, c, d, eを追加する。
+add_person('a', 50, 60, 80)
+add_person('b', 40, 80, 60)	
+add_person('c', 80, 70, 30)	
+add_person('d', 80, 60, 80)	
+add_person('e', 90, 80, 90)	
+ 	
+# 各平均値を計算する。
+i = 0
+while i &lt; len(person):
+  # コンソール出力
+  print(person[i] + " : " + str(calculate_average(i)))
+  # インデックス増加
+  i += 1
+# 改行
+print()
+# 各平均値を計算する。
+print("total")
+# コンソール出力
+print(calculate_total_average())
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/231/1220_001.png" data-filename="001.png" style="width: 270px;"><br></p> 
+  <p>上の例をみれば各人、国語、数学、英語成績のリスト宣言して人を追加する時に各成績リストも同じく追加します。つまり、4個のリストのデータ個数はいつも同じくなります。もし同じではない場合、整合性の問題になります。</p> 
+  <p>つまり、personリストは4個なのに、mathリストは2個ならデータが可笑しいでしょう。</p> 
+  <p>また、リストだけ確認すると誰のデータかは知りません。例えばmathの3番目のデータはpersionの3番目のデータを確認しないと知らないという意味です。</p> 
+  <p>上の例は簡単なソースなので難しくないですが、ロジックが複雑だし、データが多いならデータ管理は簡単ではないでしょう。</p> 
+  <pre><code class="python" data-type="main.py"># Personクラスを生成
+class Person():
+  # コンストラクタでnameと国語、数学、英語を設定する。
+  def __init__(self, name, japanese, math, english):
+    # selfを付けるとメンバー変数になる。
+    self.__name = name
+    self.__japanese = japanese
+    self.__math = math
+    self.__english = english
+  # 平均する関数
+  def calculate_average(self):
+    # 国語と数学、英語を加算して3で分ける。
+    return int((self.__japanese + self.__math + self.__english)/3)
+  # コンソール出力関数
+  def print(self):
+    # コンソール出力
+    print(self.__name + " : " + str(self.calculate_average()))
+
+# 変数を格納するリスト    
+person_list = []
+# person_listにPersonのインスタンスを生成して人のa, b, c, d, eを追加した。
+person_list.append(Person('a', 50, 60, 80))
+person_list.append(Person('b', 40, 80, 60))
+person_list.append(Person('c', 80, 70, 30))
+person_list.append(Person('d', 80, 60, 80))
+person_list.append(Person('e', 90, 80, 90))
+
+# 各人の平均値を計算して出力する。
+for p in person_list:	
+  p.print()
+ 	
+# すべての平均値を計算する。
+# 総点
+sum = 0
+# 各人の平均値を計算を加算する。
+for p in person_list:
+  sum += p.calculate_average()
+# 改行
+print()
+print("total")
+# コンソール出力
+print(sum / len(person_list))
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/231/1220_001.png" data-filename="001.png" style="width: 270px;"><br></p> 
+  <p>ソースステップだけ見てもクラスを扱うことと使わないこととソースステップも差異が大きいです。</p> 
+  <p>また、各人の点数を各リストに格納したことよりクラス内部のメンバー変数で管理するので整合性も問題ないです。つまり、リストから取り除くと成績も一緒に削除されるので可笑しいデータが入ることがありません。</p> 
+  <p><br></p> 
+  <p>Pythonでクラスを使う方法は関数のdef代わりにclassキーワードを使えば生成します。小括弧はクラス継承のためにあることですが、他の投稿で詳しく説明します。</p> 
+  <p>クラスはメソッドだけ構成されています。他の言語みたいに変数を宣言することができません。各関数の最初のパラメータはselfで固定になっています。</p> 
+  <p><br></p> 
+  <p>__init__の関数は初期化関数で他の言語ならコンストラクタということです。コンストラクタは無くてもクラスを扱うのは問題はないけど、可読性のためにコンストラクタを生成するほうがいいです。</p> 
+  <p>特にメンバー変数はどの関数で宣言しても問題ないですが、コンストラクタで初期値を設定することがいいでしょう。</p> 
+  <p><br></p> 
+  <p>各関数のselfは自分自身のクラスを指すことです。　グローバル変数を使う方法は、self.変数名でアクセスができます。</p> 
+  <p>変数名を宣言するときは、変数名の前にアンダーバー（_）を二つ付けなければならないです。そうでなければ、外部からのアクセスが可能なpublicの形で変数が指定されるため、必ずアンダーバー（_）の2つを付けてprivateとして宣言する必要があります。</p> 
+  <pre><code class="python" data-type="main.py"># クラス生成
+class ClassExample():
+  # コンストラクタ
+  def __init__(self):
+    # メンバー変数宣言
+    self.var = "test1"
+    self.__var = "test2"
+# インスタンス生成
+cls = ClassExample()
+# アンダーバーを付けなければpublicタイプになり、参照ができる。
+print(cls.var)
+# 参照不可能
+print(cls.__var)
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/231/1221_002.png" data-filename="002.png" style="width: 589px;"><br></p> 
+  <p>これはOOPのカプセル化と関係がある構造です。クラスの変数が外部から直接参照がされてしまうとクラスの意味がなくなります。</p> 
+  <p>メンバー変数はクラスの内部で様々な計算した結果、関数を利用して格納したデータですが、外部からのアクセスになって修正されてしまうとクラスの関数などの意味がなくなります。</p> 
+  <p>クラスを生成（インスタンス）する方法は変数=クラス名（）;の呼び出します。他の言語で使うnewキーワードは必要ありません。</p> 
+  <p>括弧の意味は__init__でselfパラメータを以降のパラメータでインスタンスを生成する時でデータを持ち込みます。</p> 
+  <p>関数の呼び出し方法は、生成された変数で関数を呼び出します。またはクラス名.関数名（インスタンス）の形式でも宣言が可能です。</p> 
+  <pre><code class="python" data-type="main.py"># クラス生成
+class ClassExample():
+  # コンストラクタ
+  def __init__(self):
+    # 関数で処理が何もない場合はpass;キーワードを使う。
+    pass
+  # 関数
+  def print(self):
+    # コンソール出力
+    print("Hello world")
+# インスタンスを生成
+cls = ClassExample()
+# 関数を呼び出す。
+cls.print();	
+# 関数を呼び出す。(個人的にこの方法は慣れてない。)
+ClassExample.print(cls)
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/231/1222_003.png" data-filename="003.png" style="width: 215px;"><br></p> 
+  <p>ここまでPythonでクラス(Class)を使う方法に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=python>#python</a>,<a href=./search.html?query=class>#class</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0206">Study / Python</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/231.html'>[Python] 12. クラス(Class)を使う方法</a><span>2020/06/10 19:33:33</span></li><li><a href='https://www.nowonbun.com/230.html'>[Python] 11. デコレーター（Decorator）を使う方法</a><span>2020/06/09 17:27:18</span></li><li><a href='https://www.nowonbun.com/229.html'>[Python] 10. モジュールとパッケージ(import)</a><span>2020/06/08 19:07:50</span></li><li><a href='https://www.nowonbun.com/228.html'>[Python] 09. 例外処理する方法</a><span>2020/06/05 17:11:47</span></li><li><a href='https://www.nowonbun.com/227.html'>[Python] 08. ジェネレータ(Generator)</a><span>2020/06/04 18:46:08</span></li><li><a href='https://www.nowonbun.com/226.html'>[Python] 07. globalとnonlocal</a><span>2020/06/03 20:34:49</span></li><li><a href='https://www.nowonbun.com/225.html'>[Python] 06. 関数(function) - インライン関数、callbak、ラムダ(lambda)そしてクロージャ</a><span>2020/06/02 20:51:22</span></li><li><a href='https://www.nowonbun.com/224.html'>[Python] 05. コンプリヘンション(Comprehension)を使用する方法</a><span>2020/06/01 19:38:58</span></li><li><a href='https://www.nowonbun.com/223.html'>[Python] 04. 制御文(if, while, for, break, continue)とインデント</a><span>2020/05/29 21:09:08</span></li><li><a href='https://www.nowonbun.com/222.html'>[Python] 03. Pythonでリスト(list)とタプル(tuple)、そしてディクショナリ(dictionary)、セット(set)</a><span>2020/05/27 18:49:08</span></li><li><a href='https://www.nowonbun.com/221.html'>[Python] 02. データタイプ、変数宣言そしてコメントする方法</a><span>2020/05/26 18:16:52</span></li><li><a href='https://www.nowonbun.com/220.html'>[Python] 01. Python3をインストールする方法(Anacondaインストール)</a><span>2020/05/25 19:02:44</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/231.html'>[Python] 12. クラス(Class)を使う方法</a><span>2020/06/10 19:33:33</span></li><li><a href='https://www.nowonbun.com/230.html'>[Python] 11. デコレーター（Decorator）を使う方法</a><span>2020/06/09 17:27:18</span></li><li><a href='https://www.nowonbun.com/229.html'>[Python] 10. モジュールとパッケージ(import)</a><span>2020/06/08 19:07:50</span></li><li><a href='https://www.nowonbun.com/228.html'>[Python] 09. 例外処理する方法</a><span>2020/06/05 17:11:47</span></li><li><a href='https://www.nowonbun.com/227.html'>[Python] 08. ジェネレータ(Generator)</a><span>2020/06/04 18:46:08</span></li><li><a href='https://www.nowonbun.com/226.html'>[Python] 07. globalとnonlocal</a><span>2020/06/03 20:34:49</span></li><li><a href='https://www.nowonbun.com/225.html'>[Python] 06. 関数(function) - インライン関数、callbak、ラムダ(lambda)そしてクロージャ</a><span>2020/06/02 20:51:22</span></li><li><a href='https://www.nowonbun.com/224.html'>[Python] 05. コンプリヘンション(Comprehension)を使用する方法</a><span>2020/06/01 19:38:58</span></li><li><a href='https://www.nowonbun.com/223.html'>[Python] 04. 制御文(if, while, for, break, continue)とインデント</a><span>2020/05/29 21:09:08</span></li><li><a href='https://www.nowonbun.com/222.html'>[Python] 03. Pythonでリスト(list)とタプル(tuple)、そしてディクショナリ(dictionary)、セット(set)</a><span>2020/05/27 18:49:08</span></li><li><a href='https://www.nowonbun.com/221.html'>[Python] 02. データタイプ、変数宣言そしてコメントする方法</a><span>2020/05/26 18:16:52</span></li><li><a href='https://www.nowonbun.com/220.html'>[Python] 01. Python3をインストールする方法(Anacondaインストール)</a><span>2020/05/25 19:02:44</span></li><li><a href='https://www.nowonbun.com/219.html'>[Java] HttpConnectionを利用してウェブページを取得する方法</a><span>2020/05/20 23:53:24</span></li><li><a href='https://www.nowonbun.com/218.html'>[Java] Jsoupを利用してXMLファイル(HTML)を扱う方法</a><span>2020/05/19 19:32:21</span></li><li><a href='https://www.nowonbun.com/217.html'>[C#] 非同期ソケット通信(IOCP)-APMパターン</a><span>2020/05/18 18:45:37</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/231.html';this.page.identifier = 'NOWONBUN00231';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
