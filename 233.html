@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/233.html"},"url":"https:\/\/www.nowonbun.com\/233.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Python] 14. \u30af\u30e9\u30b9\u30d7\u30ed\u30d1\u30c6\u30a3(Property)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fpython\u306e\u30af\u30e9\u30b9\u30d7\u30ed\u30d1\u30c6\u30a3(property)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u307e\u305a\u3001\u30af\u30e9\u30b9\u306e\u30d7\u30ed\u30d1\u30c6\u30a3\u306f\u30af\u30e9\u30b9\u5185\u90e8\u5909\u6570\u3092\u53c2\u7167\u3059\u308b\u3088\u3046\u306a\u95a2\u6570\u306e\u610f\u5473\u3067\u3059\u3002 \u666e\u901a\u306f\u30b2\u30c3\u30bf\u30fc(getter)\u3001\u30bb\u30c3\u30bf\u30fc(setter)\u3068\u3044\u3046\u6642\u3082\u3042\u308a\u307e\u3059\u3002\u30af\u30e9\u30b9\u3092\u751f\u6210\u3059\u308b\u6642\u306b\u5185\u90e8\u30e1\u30f3\u30d0\u30fc\u5909\u6570\u3092public\u30bf\u30a4\u30d7\u3067\u751f\u6210\u3059\u308b\u3053\u3068\u306f\u3067\u304d\u307e\u3059\u304c\u3001oop\u306e\u30ab\u30d7\u30bb\u30eb\u306e\u7279\u6027\u3067\u30af\u30e9\u30b9\u306e\u5185\u90e8\u30e1\u30f3\u30d0\u30fc\u5909\u6570\u3092\u76f4\u63a5\u306b\u53c2\u7167\u3059\u308b\u3053\u3068\u306f\u3088\u304f\u306a\u3044\u3067\u3059\u3002(python\u306f\u5225\u306boop\u30d7\u30ed\u30b0\u30e9\u30e0\u8a00\u8a9e\u3067\u306f\u306a\u3044\u3067\u3059\u304c\u3002\u3002\u3002)\u306a\u305c\u306a\u3089\u3001\u30af\u30e9\u30b9\u3092\u751f\u6210\u3059\u308b\u7406\u7531\u306f\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u306e\u610f\u5473\u3092\u5408\u308f\u305b\u3066\u4f5c\u3063\u305f\u5909\u6570\u304c\u30af\u30e9\u30b9\u3067\u3059\u304c\u3001\u76f4\u63a5\u306b\u5909\u6570\u3092\u53c2\u7167\u3059\u308b\u3053\u3068\u306b\u306a\u308b\u3068\u30af\u30e9\u30b9\u306e\u610f\u5473\u304c\u306a\u304f\u306a\u308b\u3053\u3068\u3067\u3059\u3002\u4e0a\u306e\u4f8b\u3092\u307f\u308c\u3070people\u30af\u30e9\u30b9\u306b\u56fd\u8a9e\u3001\u6570\u5b66\u3001\u82f1\u8a9e\u3092\u3044\u308c\u3066calc\u95a2\u6570\u3067\u7dcf\u70b9\u3068\u5e73\u5747\u70b9\u6570\u3092\u8a08\u7b97\u3057\u307e\u3059\u3002\u3067\u3082public\u306b\u306a\u308b\u3068a.avg\u3067\u5e73\u5747\u70b9\u6570\u5024\u3092\u4fee\u6b63\u304c\u3067\u304d\u307e\u3059\u3002\u4e0a\u307f\u305f\u3044\u306b\u30af\u30e9\u30b9\u3092\u8a2d\u8a08\u3059\u308c\u3070\u30af\u30e9\u30b9\u306e\u610f\u5473\u304c\u306a\u304f\u306a\u308a\u307e\u3059\u3002\u306a\u306e\u3067\u5909\u6570\u306e\u30a2\u30af\u30bb\u30b9\u3092\u5236\u5fa1\u3059\u308b\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059\u304c\u3001\u305d\u308c\u304c\u30af\u30e9\u30b9\u30d7\u30ed\u30d1\u30c6\u30a3\u3067\u3059\u3002\u3067\u3082\u3001\u30af\u30e9\u30b9\u306e\u30e1\u30f3\u30d0\u30fc\u5909\u6570\u3092\u53c2\u7167\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u6642\u304c\u3042\u308a\u307e\u3059\u3002\u305d\u306e\u6642\u306b\u306fpublic\u306b\u3059\u308b\u3053\u3068\u3067\u306f\u306a\u304f\u3001\u30b2\u30c3\u30bf\u30fc\u3001\u30bb\u30c3\u30bf\u30fc\u306e\u30d7\u30ed\u30d1\u30c6\u30a3\u3092\u8a2d\u5b9a\u3057\u3066\u53c2\u7167\u3057\u307e\u3059\u3002\u5b9f\u306f\u4e0a\u307f\u305f\u3044\u306b\u30b2\u30c3\u30bf\u30fc\u3001\u30bb\u30c3\u30bf\u30fc\u95a2\u6570\u3067\u5909\u6570\u3092\u53c2\u7167\u3057\u3066\u3082python\u306e\u6a19\u6e96\u30b3\u30fc\u30c7\u30a3\u30f3\u30b0\u306b\u9593\u9055\u3044\u3053\u3068\u3067\u306f\u306a\u3044\u3067\u3059\u3002java\u306e\u5834\u5408\u306f\u30d7\u30ed\u30d1\u30c6\u30a3\u3092\u4e0a\u307f\u305f\u3044\u306b\u30b2\u30c3\u30bf\u30fc\u3001\u30bb\u30c3\u30bf\u30fc\u95a2\u6570\u3067\u53c2\u7167\u3057\u307e\u3059\u3002c#\u306e\u5834\u5408\u306f\u30d7\u30ed\u30d1\u30c6\u30a3\u6587\u6cd5\u304c\u5225\u306b\u3042\u308a\u307e\u3059\u3002python\u3082\u30c7\u30b3\u30ec\u30fc\u30c8\u3092\u4f7f\u3063\u3066\u30d7\u30ed\u30d1\u30c6\u30a3\u3092\u8a2d\u5b9a\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002python\u306e\u30af\u30e9\u30b9\u30d7\u30ed\u30d1\u30c6\u30a3\u306f\u30bb\u30c3\u30bf\u30fc\u3060\u3051\u3092\u751f\u6210\u304c\u3067\u304d\u307e\u305b\u3093\u3002@\u30b2\u30c3\u30bf\u30fc\u540d.setter\u306a\u306e\u3067\u30b2\u30c3\u30bf\u30fc\u304c\u7121\u3051\u308c\u3070\u30bb\u30c3\u30bf\u30fc\u8a2d\u5b9a\u304c\u3067\u304d\u306a\u3044\u3067\u3059\u3002\u3067\u3082\u3001\u30b2\u30c3\u30bf\u30fc\u3060\u3051\u306b\u306f\u8a2d\u5b9a\u304c\u3067\u304d\u307e\u3059\u3002\u30b2\u30c3\u30bf\u30fc\u3060\u3051\u3042\u308c\u3070\u8aad\u307f\u53d6\u308a\u5c02\u7528\u5909\u6570\u306b\u306a\u308a\u307e\u3059\u3002\u30bb\u30c3\u30bf\u30fc\u3092\u8a2d\u5b9a\u3057\u3066\u306a\u3044\u306e\u3067\u7523\u6240\u3059\u308b\u3068\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3059\u3002\u3053\u3053\u307e\u3067python\u306e\u30af\u30e9\u30b9\u30d7\u30ed\u30d1\u30c6\u30a3(property)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3057\u305f\u3002\u3054\u4e0d\u660e\u306a\u3068\u3053\u308d\u3084\u9593\u9055\u3044\u3068\u3053\u308d\u304c\u3042\u308c\u3070\u30b3\u30e1\u30f3\u30c8\u3057\u3066\u304f\u3060\u3055\u3044\u3002","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2020-06-12T17:45:13.000+09:00","dateModified":"2020-06-12T17:45:13.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Python" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はpythonのクラスプロパティ(property)に関する説明です。まず、クラスのプロパティはクラス内部変数を参照するような関数の意味です。 普通はゲッター(getter)、セッター(setter)という時もあります。クラスを生成する時に内部メンバー変数をpublicタイプで生成することはできますが、oopのカプセルの特性でクラスの内部メンバー変数を直接に参照することはよくないです。(pythonは別にoopプログラム言語ではないですが。。。)なぜなら、クラスを生成する理由はオブジェクトの意味を合わせて作った変数がクラスですが、直接に変数を参照することになるとクラスの意味がなくなることです。上の例をみればpeopleクラスに国語、数学、英語をいれてcalc関数で総点と平均点数を計算します。でもpublicになるとa.avgで平均点数値を修正ができます。上みたいにクラスを設計すればクラスの意味がなくなります。なので変数のアクセスを制御する必要がありますが、それがクラスプロパティです。でも、クラスのメンバー変数を参照しなければならない時があります。その時にはpublicにすることではなく、ゲッター、セッターのプロパティを設定して参照します。実は上みたいにゲッター、セッター関数で変数を参照してもpythonの標準コーディングに間違いことではないです。javaの場合はプロパティを上みたいにゲッター、セッター関数で参照します。c#の場合はプロパティ文法が別にあります。pythonもデコレートを使ってプロパティを設定することができます。pythonのクラスプロパティはセッターだけを生成ができません。@ゲッター名.setterなのでゲッターが無ければセッター設定ができないです。でも、ゲッターだけには設定ができます。ゲッターだけあれば読み取り専用変数になります。セッターを設定してないので産所するとエラーが発生します。ここまでpythonのクラスプロパティ(property)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Python] 14. クラスプロパティ(Property)" />
+<link rel="canonical" href="https://www.nowonbun.com/233.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Python] 14. クラスプロパティ(Property)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はpythonのクラスプロパティ(property)に関する説明です。まず、クラスのプロパティはクラス内部変数を参照するような関数の意味です。 普通はゲッター(getter)、セッター(setter)という時もあります。クラスを生成する時に内部メンバー変数をpublicタイプで生成することはできますが、oopのカプセルの特性でクラスの内部メンバー変数を直接に参照することはよくないです。(pythonは別にoopプログラム言語ではないですが。。。)なぜなら、クラスを生成する理由はオブジェクトの意味を合わせて作った変数がクラスですが、直接に変数を参照することになるとクラスの意味がなくなることです。上の例をみればpeopleクラスに国語、数学、英語をいれてcalc関数で総点と平均点数を計算します。でもpublicになるとa.avgで平均点数値を修正ができます。上みたいにクラスを設計すればクラスの意味がなくなります。なので変数のアクセスを制御する必要がありますが、それがクラスプロパティです。でも、クラスのメンバー変数を参照しなければならない時があります。その時にはpublicにすることではなく、ゲッター、セッターのプロパティを設定して参照します。実は上みたいにゲッター、セッター関数で変数を参照してもpythonの標準コーディングに間違いことではないです。javaの場合はプロパティを上みたいにゲッター、セッター関数で参照します。c#の場合はプロパティ文法が別にあります。pythonもデコレートを使ってプロパティを設定することができます。pythonのクラスプロパティはセッターだけを生成ができません。@ゲッター名.setterなのでゲッターが無ければセッター設定ができないです。でも、ゲッターだけには設定ができます。ゲッターだけあれば読み取り専用変数になります。セッターを設定してないので産所するとエラーが発生します。ここまでpythonのクラスプロパティ(property)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/233.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Python] 14. クラスプロパティ(Property)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はpythonのクラスプロパティ(property)に関する説明です。まず、クラスのプロパティはクラス内部変数を参照するような関数の意味です。 普通はゲッター(getter)、セッター(setter)という時もあります。クラスを生成する時に内部メンバー変数をpublicタイプで生成することはできますが、oopのカプセルの特性でクラスの内部メンバー変数を直接に参照することはよくないです。(pythonは別にoopプログラム言語ではないですが。。。)なぜなら、クラスを生成する理由はオブジェクトの意味を合わせて作った変数がクラスですが、直接に変数を参照することになるとクラスの意味がなくなることです。上の例をみればpeopleクラスに国語、数学、英語をいれてcalc関数で総点と平均点数を計算します。でもpublicになるとa.avgで平均点数値を修正ができます。上みたいにクラスを設計すればクラスの意味がなくなります。なので変数のアクセスを制御する必要がありますが、それがクラスプロパティです。でも、クラスのメンバー変数を参照しなければならない時があります。その時にはpublicにすることではなく、ゲッター、セッターのプロパティを設定して参照します。実は上みたいにゲッター、セッター関数で変数を参照してもpythonの標準コーディングに間違いことではないです。javaの場合はプロパティを上みたいにゲッター、セッター関数で参照します。c#の場合はプロパティ文法が別にあります。pythonもデコレートを使ってプロパティを設定することができます。pythonのクラスプロパティはセッターだけを生成ができません。@ゲッター名.setterなのでゲッターが無ければセッター設定ができないです。でも、ゲッターだけには設定ができます。ゲッターだけあれば読み取り専用変数になります。セッターを設定してないので産所するとエラーが発生します。ここまでpythonのクラスプロパティ(property)に関する説明でした。ご不明なところや間違いところがあればコメントしてください。]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Python] 14. クラスプロパティ(Property)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(74)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(3)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(159)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(40)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(14)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/233.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Python] 14. クラスプロパティ(Property)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0206">Study / Python</a>    作成日付 : <span property="datePublished">2020/06/12 17:45:13</span>   修正日付 : <span property="dateModified">2020/06/12 17:45:13</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はPythonのクラスプロパティ(Property)に関する説明です。</p> 
+  <p><br></p> 
+  <p>まず、クラスのプロパティはクラス内部変数を参照するような関数の意味です。 普通はゲッター(getter)、セッター(setter)という時もあります。</p> 
+  <p>クラスを生成する時に内部メンバー変数をpublicタイプで生成することはできますが、OOPのカプセルの特性でクラスの内部メンバー変数を直接に参照することはよくないです。(Pythonは別にOOPプログラム言語ではないですが。。。)</p> 
+  <p>なぜなら、クラスを生成する理由はオブジェクトの意味を合わせて作った変数がクラスですが、直接に変数を参照することになるとクラスの意味がなくなることです。</p> 
+  <pre><code class="python" data-type="main.py"># 成績を管理するクラス
+class People():
+  # コンストラクタ (名前、日本語、数学、英語)	
+  def __init__(self, name, japanese, math, english):
+    # メンバー変数設定
+    self.name = name
+    self.japanese = japanese
+    self.math = math
+    self.english = english
+  # 成績計算
+  def calc(self):
+    # 総点を計算
+    self.total = self.japanese + self.math + self.english
+    # 平均点数を計算
+    self.avg = self.total / 3
+  # 出力
+  def print(self):
+    # 名前をコンソール出力
+    print("name - " + self.name)
+    # 総点をコンソール出力
+    print("total - " + str(self.total))
+    # 平均点数をコンソール出力
+    print("avg - " + str(self.avg))
+# インスタンスを生成
+a = People("test", 70, 80, 90)
+# 点数を計算
+a.calc()
+# コンソール出力
+a.print()
+# 改行
+print()
+# 平均点数を修正
+a.avg = 100
+# コンソール出力
+a.print()
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/233/1229_001.png" data-filename="001.png" style="width: 235px;"><br></p> 
+  <p>上の例をみればPeopleクラスに国語、数学、英語をいれてcalc関数で総点と平均点数を計算します。</p> 
+  <p>でもpublicになるとa.avgで平均点数値を修正ができます。上みたいにクラスを設計すればクラスの意味がなくなります。なので変数のアクセスを制御する必要がありますが、それがクラスプロパティです。</p> 
+  <pre><code class="python" data-type="main.py"># クラス生成
+class Main():
+  # コンストラクタ
+  def __init__(self):
+    # publicのメンバー変数
+    self.data1 = "good"
+    # 変数名の前でアンダーバー(_)が二つあればprivate設定、つまり外部でアクセスができない。
+    self.__data2 = "morning"
+# インスタンスを生成
+a = Main()
+# data1はpublicタイプでアクセスができる。
+print(a.data1)
+# data2はprivateタイプでアクセスができない。
+print(a.__data2)
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/233/1231_002.png" data-filename="002.png" style="width: 474px;"><br></p> 
+  <p>でも、クラスのメンバー変数を参照しなければならない時があります。その時にはpublicにすることではなく、ゲッター、セッターのプロパティを設定して参照します。</p> 
+  <pre><code class="python" data-type="main.py"># クラス生成
+class Main():
+  # コンストラクタ
+  def __init__(self):
+    # メンバー変数設定
+    self.__data = ""
+  # data変数の値をクラス外部で参照するようなゲッター
+  def get_data(self):
+    return self.__data
+  # data変数の値をクラス外部で設定するようなセッター
+  def set_data(self, data):
+    self.__data = data
+# インスタンスを生成
+a = Main()
+# aクラスの__dataを設定
+a.set_data("good")
+# aクラスの__dataを出力
+print(a.get_data())
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/233/1232_003.png" data-filename="003.png" style="width: 243px;"><br></p> 
+  <p>実は上みたいにゲッター、セッター関数で変数を参照してもpythonの標準コーディングに間違いことではないです。Javaの場合はプロパティを上みたいにゲッター、セッター関数で参照します。</p> 
+  <p>C#の場合はプロパティ文法が別にあります。</p> 
+  <p><br></p> 
+  <p>pythonもデコレートを使ってプロパティを設定することができます。</p> 
+  <pre><code class="python" data-type="main.py"># クラス生成
+class Main():
+  # コンストラクタ
+  def __init__(self):
+    # メンバー変数設定
+    self.__data = ""
+  # ゲッター設定
+  @property
+  def data(self):
+    # メンバー変数を返却
+    return self.__data
+  # セッター設定、 ゲッター名.setter
+  @data.setter
+  def data(self,data):
+    # メンバー変数を設定
+    self.__data = data
+# インスタンスを生成
+a = Main()
+# セッター関数でデータを設定
+a.data = "good"
+# ゲッター関数でデータを受け取る。
+print(a.data)
+# セッター関数でデータを設定
+a.data = "hello"
+# ゲッター関数でデータを受け取る。
+print(a.data)
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/233/1228_004.png" data-filename="004.png" style="width: 245px;"><br></p> 
+  <p>Pythonのクラスプロパティはセッターだけを生成ができません。@ゲッター名.setterなのでゲッターが無ければセッター設定ができないです。</p> 
+  <pre><code class="python" data-type="main.py"># クラス生成
+class Main():
+  # コンストラクタ
+  def __init__(self):
+    # メンバー変数設定
+    self.__data = ""
+  # セッター設定、 ゲッター名.setter
+  @data.setter
+  def data(self,data):
+    # メンバー変数を設定
+    self.__data = data
+# インスタンスを生成
+a = Main()
+# セッター関数でデータを設定
+a.data = "hello"
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/233/1230_005.png" data-filename="005.png" style="width: 336px;"><br></p> 
+  <p>でも、ゲッターだけには設定ができます。ゲッターだけあれば読み取り専用変数になります。</p> 
+  <pre><code class="python" data-type="main.py"># クラス生成
+class Main():
+  # コンストラクタ
+  def __init__(self):
+    # メンバー変数設定
+    self.__data = 0
+  # ゲッター設定
+  @property
+  def data(self):
+    # 呼び出すたびにdataが1ずつに増加するカウントを作成した。
+    self.__data = self.__data + 1
+    # 返却
+    return self.__data
+# インスタンスを生成
+a = Main()
+# ゲッターでデータを取得、カウントがあるから呼び出すたびに1ずつ増加する。
+print(a.data)
+# ゲッターでデータを取得
+print(a.data)
+# ゲッターでデータを取得
+print(a.data)
+# ゲッターでデータを取得
+print(a.data)
+# ゲッターでデータを取得 	
+# セッターはないのでエラーが発生する。
+a.data = 10
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/233/1227_006.png" data-filename="006.png" style="width: 325px;"><br></p> 
+  <p>セッターを設定してないので産所するとエラーが発生します。</p> 
+  <p><br></p> 
+  <p>ここまでPythonのクラスプロパティ(Property)に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=python>#python</a>,<a href=./search.html?query=property>#property</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0206">Study / Python</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/233.html'>[Python] 14. クラスプロパティ(Property)</a><span>2020/06/12 17:45:13</span></li><li><a href='https://www.nowonbun.com/232.html'>[Python] 13. クラス関数(class method)とダック・タイピング、そして特殊メソッド</a><span>2020/06/11 19:42:29</span></li><li><a href='https://www.nowonbun.com/231.html'>[Python] 12. クラス(Class)を使う方法</a><span>2020/06/10 19:33:33</span></li><li><a href='https://www.nowonbun.com/230.html'>[Python] 11. デコレーター（Decorator）を使う方法</a><span>2020/06/09 17:27:18</span></li><li><a href='https://www.nowonbun.com/229.html'>[Python] 10. モジュールとパッケージ(import)</a><span>2020/06/08 19:07:50</span></li><li><a href='https://www.nowonbun.com/228.html'>[Python] 09. 例外処理する方法</a><span>2020/06/05 17:11:47</span></li><li><a href='https://www.nowonbun.com/227.html'>[Python] 08. ジェネレータ(Generator)</a><span>2020/06/04 18:46:08</span></li><li><a href='https://www.nowonbun.com/226.html'>[Python] 07. globalとnonlocal</a><span>2020/06/03 20:34:49</span></li><li><a href='https://www.nowonbun.com/225.html'>[Python] 06. 関数(function) - インライン関数、callbak、ラムダ(lambda)そしてクロージャ</a><span>2020/06/02 20:51:22</span></li><li><a href='https://www.nowonbun.com/224.html'>[Python] 05. コンプリヘンション(Comprehension)を使用する方法</a><span>2020/06/01 19:38:58</span></li><li><a href='https://www.nowonbun.com/223.html'>[Python] 04. 制御文(if, while, for, break, continue)とインデント</a><span>2020/05/29 21:09:08</span></li><li><a href='https://www.nowonbun.com/222.html'>[Python] 03. Pythonでリスト(list)とタプル(tuple)、そしてディクショナリ(dictionary)、セット(set)</a><span>2020/05/27 18:49:08</span></li><li><a href='https://www.nowonbun.com/221.html'>[Python] 02. データタイプ、変数宣言そしてコメントする方法</a><span>2020/05/26 18:16:52</span></li><li><a href='https://www.nowonbun.com/220.html'>[Python] 01. Python3をインストールする方法(Anacondaインストール)</a><span>2020/05/25 19:02:44</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/233.html'>[Python] 14. クラスプロパティ(Property)</a><span>2020/06/12 17:45:13</span></li><li><a href='https://www.nowonbun.com/232.html'>[Python] 13. クラス関数(class method)とダック・タイピング、そして特殊メソッド</a><span>2020/06/11 19:42:29</span></li><li><a href='https://www.nowonbun.com/231.html'>[Python] 12. クラス(Class)を使う方法</a><span>2020/06/10 19:33:33</span></li><li><a href='https://www.nowonbun.com/230.html'>[Python] 11. デコレーター（Decorator）を使う方法</a><span>2020/06/09 17:27:18</span></li><li><a href='https://www.nowonbun.com/229.html'>[Python] 10. モジュールとパッケージ(import)</a><span>2020/06/08 19:07:50</span></li><li><a href='https://www.nowonbun.com/228.html'>[Python] 09. 例外処理する方法</a><span>2020/06/05 17:11:47</span></li><li><a href='https://www.nowonbun.com/227.html'>[Python] 08. ジェネレータ(Generator)</a><span>2020/06/04 18:46:08</span></li><li><a href='https://www.nowonbun.com/226.html'>[Python] 07. globalとnonlocal</a><span>2020/06/03 20:34:49</span></li><li><a href='https://www.nowonbun.com/225.html'>[Python] 06. 関数(function) - インライン関数、callbak、ラムダ(lambda)そしてクロージャ</a><span>2020/06/02 20:51:22</span></li><li><a href='https://www.nowonbun.com/224.html'>[Python] 05. コンプリヘンション(Comprehension)を使用する方法</a><span>2020/06/01 19:38:58</span></li><li><a href='https://www.nowonbun.com/223.html'>[Python] 04. 制御文(if, while, for, break, continue)とインデント</a><span>2020/05/29 21:09:08</span></li><li><a href='https://www.nowonbun.com/222.html'>[Python] 03. Pythonでリスト(list)とタプル(tuple)、そしてディクショナリ(dictionary)、セット(set)</a><span>2020/05/27 18:49:08</span></li><li><a href='https://www.nowonbun.com/221.html'>[Python] 02. データタイプ、変数宣言そしてコメントする方法</a><span>2020/05/26 18:16:52</span></li><li><a href='https://www.nowonbun.com/220.html'>[Python] 01. Python3をインストールする方法(Anacondaインストール)</a><span>2020/05/25 19:02:44</span></li><li><a href='https://www.nowonbun.com/219.html'>[Java] HttpConnectionを利用してウェブページを取得する方法</a><span>2020/05/20 23:53:24</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/233.html';this.page.identifier = 'NOWONBUN00233';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
