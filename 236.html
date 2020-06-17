@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/236.html"},"url":"https:\/\/www.nowonbun.com\/236.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Python] 17. \u30b9\u30ec\u30c3\u30c9(Thread)\u3068\u30ed\u30c3\u30af(lock)\u3001\u305d\u3057\u3066\u30c7\u30c3\u30c9\u30ed\u30c3\u30af(deadlock)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fpython\u3067\u30b9\u30ec\u30c3\u30c9(thread)\u3068\u30ed\u30c3\u30af(lock)\u3001\u305d\u3057\u3066\u30c7\u30c3\u30c9\u30ed\u30c3\u30af(deadlock)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u30b9\u30ec\u30c3\u30c9\u3068\u306f\u30d7\u30ed\u30bb\u30b9\u306e\u4e2d\u3067\u52d5\u3044\u3066\u3044\u308b\u6700\u5c0f\u306e\u5b9f\u884c\u5358\u4f4d\u3092\u30b9\u30ec\u30c3\u30c9\u3068\u3044\u3044\u307e\u3059\u3002\u305f\u3060\u3001\u3053\u306e\u3088\u3046\u306b\u8aac\u660e\u3059\u308b\u3068\u4f55\u306e\u610f\u5473\u304c\u3088\u304f\u7406\u89e3\u3067\u304d\u307e\u305b\u3093\u3002\u307e\u305a\u3001\u30d7\u30ed\u30bb\u30b9\u3068\u3044\u3046\u306e\u306f\u30e1\u30e2\u30ea\u306b\u5272\u308a\u5f53\u3066\u3066\u3044\u308b\u4e00\u3064\u306e\u30d7\u30ed\u30b0\u30e9\u30e0\u3068\u3044\u3046\u3053\u3068\u3067\u3059\u3002\u30d7\u30ed\u30b0\u30e9\u30e0\u306f\u4e00\u3064\u4ee5\u4e0a\u306e\u30d7\u30ed\u30bb\u30b9\u3092\u904b\u7528\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u305a\u3001\u30d7\u30ed\u30b0\u30e9\u30e0\u3068\u306f\u4e00\u3064\u306e\u30d7\u30ed\u30bb\u30b9\u3068\u3044\u3046\u610f\u5473\u3068\u540c\u3058\u3067\u3059\u3002\u4e00\u3064\u306e\u30d7\u30ed\u30bb\u30b9\u306f\u4e8c\u3064\u4ee5\u4e0a\u306e\u30b9\u30ec\u30c3\u30c9\u3092\u904b\u7528\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002\u7c21\u5358\u306b\u8aac\u660e\u3059\u308b\u3068\u30d7\u30ed\u30bb\u30b9\u3067\u4e8c\u3064\u4ee5\u4e0a\u306e\u30b9\u30ec\u30c3\u30c9\u3092\u540c\u6642\u306b\u5b9f\u884c\u3067\u304d\u308b\u4e26\u5217\u51e6\u7406\u65b9\u6cd5\u3060\u3068\u601d\u3048\u3070\u826f\u3044\u3067\u3059\u3002\u7c21\u5358\u306a\u4f8b\u3068\u3057\u3066\u8aac\u660e\u3057\u307e\u3057\u3087\u3046\u3002\u4e0a\u306e\u4f8b\u3092\u898b\u308c\u3070example\u95a2\u6570\u3092\u4e8c\u56de\u306b\u547c\u3073\u51fa\u3057\u307e\u3057\u305f\u3002example\u95a2\u6570\u30671\u304b\u30899\u307e\u3067\u7e70\u308a\u8fd4\u3057\u3066\u30b3\u30f3\u30bd\u30fc\u30eb\u306b\u51fa\u529b\u3057\u307e\u3059\u3002\u5f53\u7136\u306b\u59cb\u3081\u306eexample\u95a2\u6570\u306e\u547c\u3073\u51fa\u3057\u304c\u7d42\u308f\u3063\u305f\u3089\u6b21\u306eexample\u95a2\u6570\u306e\u547c\u3073\u51fa\u3057\u306b\u5b9f\u884c\u3059\u308b\u3053\u3068\u3067\u9806\u756a\u306b\u5b9f\u884c\u3059\u308b\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002\u3067\u3082\u3001\u79c1\u306f\u3053\u306e\u95a2\u6570\u3092\u9806\u756a\u3067\u306f\u306a\u304f\u3001\u540c\u6642\u306b\u5b9f\u884c\u3057\u305f\u3044\u3067\u3059\u3002\u3064\u307e\u308a\u59cb\u3081\u306eexample\u95a2\u6570\u306e\u547c\u3073\u51fa\u3057\u306e\u7d42\u4e86\u3092\u95a2\u4fc2\u305a\u306b\u6b21\u306eexample\u95a2\u6570\u306e\u547c\u3073\u51fa\u3057\u3057\u305f\u3044\u3067\u3059\u3002\u7d50\u679c\u3092\u307f\u308c\u30706\u304b\u30897\u9593\u306b1\u30682\u304c\u51fa\u529b\u3055\u308c\u307e\u3057\u305f\u30027\u306f2\u306e\u6b21\u306b\u3042\u308a\u307e\u3059\u3002\u3064\u307e\u308aexample\u95a2\u6570\u3092\u4e8c\u56de\u306b\u547c\u3073\u51fa\u3057\u307e\u3057\u305f\u304c\u59cb\u3081\u306eexample\u95a2\u6570\u304c\u7d42\u308f\u308b\u524d\u306b\u4e8c\u3064\u76ee\u306eexample\u95a2\u6570\u304c\u547c\u3073\u51fa\u3055\u308c\u305f\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002\u3053\u306e\u3088\u3046\u306b\u4f7f\u3063\u305f\u3089thread\u306e\u7279\u5fb4\u3092\u78ba\u8a8d\u3059\u308b\u306e\u304c\u5927\u5909\u3067\u3059\u3002\u4eca\u56de\u306fqueue\u3092\u4f7f\u3063\u3066\u69d8\u3005\u306e\u4f5c\u696d\u3092\u540c\u6642\u306b\u51e6\u7406\u3059\u308b\u4f8b\u3092\u4f5c\u3063\u3066\u8aac\u660e\u3057\u307e\u3059\u3002\u4e0a\u306e\u4f8b\u3092\u307f\u308c\u3070\u30ad\u30e5\u30fc\u306etask_done\u3068join\u95a2\u6570\u3092\u4f7f\u3044\u307e\u3057\u305f\u3002\u7c21\u5358\u306b\u8aac\u660e\u3059\u308b\u3068\u30ad\u30e5\u30fc\u304b\u3089get\u95a2\u6570\u3067\u30c7\u30fc\u30bf\u3092\u51fa\u305b\u3070\u5225\u306b\u30ab\u30a6\u30f3\u30bf\u30fc\u304c\u66f4\u65b0\u3057\u306a\u3044\u3067\u3059\u3002\u30ad\u30e5\u30fc\u306e\u30c7\u30fc\u30bf\u6570\u3092\u66f4\u65b0\u3059\u308b\u95a2\u6570\u304ctask_done\u95a2\u6570\u3067\u3059\u3002queue\u306e\u8a73\u7d30\u306a\u8aac\u660e\u306f\u6b21\u306e\u30ea\u30f3\u30af\u304b\u3089\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002link - https:\/\/docs.python.org\/ja\/3\/library\/asyncio-queue.htmljoin\u306f\u30ad\u30e5\u30fc\u304c\u7a7a\u3051\u308b\u307e\u3067\u30d7\u30ed\u30bb\u30b9\u3092\u6b62\u307e\u308b\u95a2\u6570\u3067\u3059\u3002\u4e00\u3064\u306e\u30ea\u30b9\u30c8\u306b\u8907\u6570\u306e\u30b9\u30ec\u30c3\u30c9\u3067\u7121\u5dee\u5225\u306b\u30c7\u30fc\u30bf\u3092\u5165\u308c\u308b\u3068\u3001\u30c7\u30fc\u30bf\u304c\u5931\u308f\u308c\u308b\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u3002\u78ba\u304b\u306bgenerator\u95a2\u6570\u3092\u4e8c\u56de\u306b\u547c\u3073\u51fa\u3057\u3057\u307e\u3059\u3002generator\u95a2\u6570\u306f1\u304b\u30899\u307e\u3067\u7e70\u308a\u8fd4\u3059\u306e\u3067\u30b3\u30f3\u30bd\u30fc\u30eb","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2020-06-18T00:19:45.000+09:00","dateModified":"2020-06-18T00:19:45.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Python" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はpythonでスレッド(thread)とロック(lock)、そしてデッドロック(deadlock)に関する説明です。スレッドとはプロセスの中で動いている最小の実行単位をスレッドといいます。ただ、このように説明すると何の意味がよく理解できません。まず、プロセスというのはメモリに割り当てている一つのプログラムということです。プログラムは一つ以上のプロセスを運用することができず、プログラムとは一つのプロセスという意味と同じです。一つのプロセスは二つ以上のスレッドを運用することができます。簡単に説明するとプロセスで二つ以上のスレッドを同時に実行できる並列処理方法だと思えば良いです。簡単な例として説明しましょう。上の例を見ればexample関数を二回に呼び出しました。example関数で1から9まで繰り返してコンソールに出力します。当然に始めのexample関数の呼び出しが終わったら次のexample関数の呼び出しに実行することで順番に実行することを確認できます。でも、私はこの関数を順番ではなく、同時に実行したいです。つまり始めのexample関数の呼び出しの終了を関係ずに次のexample関数の呼び出ししたいです。結果をみれば6から7間に1と2が出力されました。7は2の次にあります。つまりexample関数を二回に呼び出しましたが始めのexample関数が終わる前に二つ目のexample関数が呼び出されたことを確認できます。このように使ったらthreadの特徴を確認するのが大変です。今回はqueueを使って様々の作業を同時に処理する例を作って説明します。上の例をみればキューのtask_doneとjoin関数を使いました。簡単に説明するとキューからget関数でデータを出せば別にカウンターが更新しないです。キューのデータ数を更新する関数がtask_done関数です。queueの詳細な説明は次のリンクから確認できます。link - https://docs.python.org/ja/3/library/asyncio-queue.htmljoinはキューが空けるまでプロセスを止まる関数です。一つのリストに複数のスレッドで無差別にデータを入れると、データが失われる場合があります。確かにgenerator関数を二回に呼び出しします。generator関数は1から9まで繰り返すのでコンソール]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Python] 17. スレッド(Thread)とロック(lock)、そしてデッドロック(deadlock)" />
+<link rel="canonical" href="https://www.nowonbun.com/236.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Python] 17. スレッド(Thread)とロック(lock)、そしてデッドロック(deadlock)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はpythonでスレッド(thread)とロック(lock)、そしてデッドロック(deadlock)に関する説明です。スレッドとはプロセスの中で動いている最小の実行単位をスレッドといいます。ただ、このように説明すると何の意味がよく理解できません。まず、プロセスというのはメモリに割り当てている一つのプログラムということです。プログラムは一つ以上のプロセスを運用することができず、プログラムとは一つのプロセスという意味と同じです。一つのプロセスは二つ以上のスレッドを運用することができます。簡単に説明するとプロセスで二つ以上のスレッドを同時に実行できる並列処理方法だと思えば良いです。簡単な例として説明しましょう。上の例を見ればexample関数を二回に呼び出しました。example関数で1から9まで繰り返してコンソールに出力します。当然に始めのexample関数の呼び出しが終わったら次のexample関数の呼び出しに実行することで順番に実行することを確認できます。でも、私はこの関数を順番ではなく、同時に実行したいです。つまり始めのexample関数の呼び出しの終了を関係ずに次のexample関数の呼び出ししたいです。結果をみれば6から7間に1と2が出力されました。7は2の次にあります。つまりexample関数を二回に呼び出しましたが始めのexample関数が終わる前に二つ目のexample関数が呼び出されたことを確認できます。このように使ったらthreadの特徴を確認するのが大変です。今回はqueueを使って様々の作業を同時に処理する例を作って説明します。上の例をみればキューのtask_doneとjoin関数を使いました。簡単に説明するとキューからget関数でデータを出せば別にカウンターが更新しないです。キューのデータ数を更新する関数がtask_done関数です。queueの詳細な説明は次のリンクから確認できます。link - https://docs.python.org/ja/3/library/asyncio-queue.htmljoinはキューが空けるまでプロセスを止まる関数です。一つのリストに複数のスレッドで無差別にデータを入れると、データが失われる場合があります。確かにgenerator関数を二回に呼び出しします。generator関数は1から9まで繰り返すのでコンソール]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/236.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Python] 17. スレッド(Thread)とロック(lock)、そしてデッドロック(deadlock)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はpythonでスレッド(thread)とロック(lock)、そしてデッドロック(deadlock)に関する説明です。スレッドとはプロセスの中で動いている最小の実行単位をスレッドといいます。ただ、このように説明すると何の意味がよく理解できません。まず、プロセスというのはメモリに割り当てている一つのプログラムということです。プログラムは一つ以上のプロセスを運用することができず、プログラムとは一つのプロセスという意味と同じです。一つのプロセスは二つ以上のスレッドを運用することができます。簡単に説明するとプロセスで二つ以上のスレッドを同時に実行できる並列処理方法だと思えば良いです。簡単な例として説明しましょう。上の例を見ればexample関数を二回に呼び出しました。example関数で1から9まで繰り返してコンソールに出力します。当然に始めのexample関数の呼び出しが終わったら次のexample関数の呼び出しに実行することで順番に実行することを確認できます。でも、私はこの関数を順番ではなく、同時に実行したいです。つまり始めのexample関数の呼び出しの終了を関係ずに次のexample関数の呼び出ししたいです。結果をみれば6から7間に1と2が出力されました。7は2の次にあります。つまりexample関数を二回に呼び出しましたが始めのexample関数が終わる前に二つ目のexample関数が呼び出されたことを確認できます。このように使ったらthreadの特徴を確認するのが大変です。今回はqueueを使って様々の作業を同時に処理する例を作って説明します。上の例をみればキューのtask_doneとjoin関数を使いました。簡単に説明するとキューからget関数でデータを出せば別にカウンターが更新しないです。キューのデータ数を更新する関数がtask_done関数です。queueの詳細な説明は次のリンクから確認できます。link - https://docs.python.org/ja/3/library/asyncio-queue.htmljoinはキューが空けるまでプロセスを止まる関数です。一つのリストに複数のスレッドで無差別にデータを入れると、データが失われる場合があります。確かにgenerator関数を二回に呼び出しします。generator関数は1から9まで繰り返すのでコンソール]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Python] 17. スレッド(Thread)とロック(lock)、そしてデッドロック(deadlock)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(74)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(3)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(162)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(40)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(17)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/236.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Python] 17. スレッド(Thread)とロック(lock)、そしてデッドロック(deadlock)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0206">Study / Python</a>    作成日付 : <span property="datePublished">2020/06/18 00:19:45</span>   修正日付 : <span property="dateModified">2020/06/18 00:19:45</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はPythonでスレッド(Thread)とロック(lock)、そしてデッドロック(deadlock)に関する説明です。</p> 
+  <p><br></p> 
+  <p>スレッドとはプロセスの中で動いている最小の実行単位をスレッドといいます。ただ、このように説明すると何の意味がよく理解できません。</p> 
+  <p>まず、プロセスというのはメモリに割り当てている一つのプログラムということです。プログラムは一つ以上のプロセスを運用することができず、プログラムとは一つのプロセスという意味と同じです。</p> 
+  <p>一つのプロセスは二つ以上のスレッドを運用することができます。簡単に説明するとプロセスで二つ以上のスレッドを同時に実行できる並列処理方法だと思えば良いです。</p> 
+  <p><br></p> 
+  <p>簡単な例として説明しましょう。</p> 
+  <pre><code class="python" data-type="main.py"># 関数生成
+def example():
+  # 1から9までの繰り返す。
+  for i in range(1,10,1):
+    # コンソールに出力
+    print(i)
+# 関数呼び出す。
+example()
+# 関数呼び出す。
+example()
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/236/1249_001.png" data-filename="001.png" style="width: 347px;"><br></p> 
+  <p>上の例を見ればexample関数を二回に呼び出しました。example関数で1から9まで繰り返してコンソールに出力します。</p> 
+  <p>当然に始めのexample関数の呼び出しが終わったら次のexample関数の呼び出しに実行することで順番に実行することを確認できます。</p> 
+  <p><br></p> 
+  <p>でも、私はこの関数を順番ではなく、同時に実行したいです。</p> 
+  <p>つまり始めのexample関数の呼び出しの終了を関係ずに次のexample関数の呼び出ししたいです。</p> 
+  <pre><code class="python" data-type="main.py"># スレッドを使うためにthreadingモジュールをimportするべきです。
+import threading
+# 関数生成
+def example():
+  # 1から9までの繰り返す。
+  for i in range(1,10,1):
+    # コンソールに出力
+    print(i)
+# targetに関数名を入れてstartをする。
+threading.Thread(target=example).start()
+threading.Thread(target=example).start()
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/236/1246_002.png" data-filename="002.png" style="width: 307px;"><br></p> 
+  <p>結果をみれば6から7間に1と2が出力されました。7は2の次にあります。つまりexample関数を二回に呼び出しましたが始めのexample関数が終わる前に二つ目のexample関数が呼び出されたことを確認できます。</p> 
+  <p><br></p> 
+  <p>このように使ったらThreadの特徴を確認するのが大変です。</p> 
+  <p>今回はQueueを使って様々の作業を同時に処理する例を作って説明します。</p> 
+  <pre><code class="python" data-type="main.py"># スレッドを使うためにthreadingモジュールをimportするべきです。
+# queueを使うためにqueueをimportするべきです。
+# timeモジュールはThread上で処理を一時停止する機能がある。
+import threading, queue, time
+
+# workでQueueを生成した。
+# QueueとはFIFOの構造のデータタイプです。put関数で入れたデータを順番とおりにget関数でデータが出力できる構造だ。
+work = queue.Queue()
+# generator関数でqueueにパラメータのstartからendまでデータを入れた。
+def generator(start, end):
+  # startからendまで1ずつ繰り返す。
+  for i in range(start, end, 1):
+    # workキューにデータをputする。
+    work.put(i)
+# 出力はqueueが空くまで繰り返してデータを取得する。
+def display():
+  # workキューが空かないなら実行
+  while work.empty() is False:
+    # workキューからデータを取得
+    data = work.get()
+    # コンソールに出力
+    print("data is " + str(data))
+    # 1秒単位で一時停止する。
+    time.sleep(1)
+    # キュー同期
+    work.task_done()
+
+# 二つのスレッドに二つの処理を入れた。
+# スレッドで関数を呼び出す時、パラメータがargsのパラメータに入れられる。
+threading.Thread(target=generator, args = (1,10)).start()
+# display関数をスレッドに入れる。
+threading.Thread(target=display).start()
+# キューが終わると終了
+work.join()
+</code></pre> 
+  <p>上の例をみればキューのtask_doneとjoin関数を使いました。簡単に説明するとキューからget関数でデータを出せば別にカウンターが更新しないです。キューのデータ数を更新する関数がtask_done関数です。</p> 
+  <p>queueの詳細な説明は次のリンクから確認できます。</p> 
+  <p>link - <a href="https://docs.python.org/ja/3/library/asyncio-queue.html" target="_blank">https://docs.python.org/ja/3/library/asyncio-queue.html</a></p> 
+  <p>joinはキューが空けるまでプロセスを止まる関数です。</p> 
+  <p style="text-align:left;"><img src="./contents/236/1247_003.png" data-filename="003.png" style="width: 307px;"><br></p> 
+  <p>一つのリストに複数のスレッドで無差別にデータを入れると、データが失われる場合があります。</p> 
+  <pre><code class="python" data-type="main.py"># スレッドを使うためにthreadingモジュールをimportするべきです。
+# queueを使うためにqueueをimportするべきです。
+# timeモジュールはThread上で処理を一時停止する機能がある。
+import threading, queue, time
+# 変数宣言
+data = 0
+# 関数生成
+def generator(start, end):
+  # グローバル変数を使う。
+  global data
+  # startからendまで繰り返す。
+  for i in range(start, end, 1):
+    # buf変数にdata変数のデータを入れる。
+    buf = data
+    # 一時停止
+    time.sleep(0.01)
+    # data値を一つずつ増加
+    data = buf + 1
+
+# generator関数を二つのスレッドで実装する。
+t1 = threading.Thread(target=generator, args = (1,10))
+t2 = threading.Thread(target=generator, args = (1,10))
+# スレッド実行
+t1.start()
+t2.start()
+# スレッドが終了するまで待ち
+t1.join()
+t2.join()
+# コンソールに出力
+print(data)
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/236/1250_004.png" data-filename="004.png" style="width: 271px;"><br></p> 
+  <p>確かにgenerator関数を二回に呼び出しします。generator関数は1から9まで繰り返すのでコンソール結果は18を予想できます。でも、結果は9というデータが出ました。</p> 
+  <p>理由は私がわざとエラーを発生するように作りましたが、始めのスレッドでbuf変数にデータを入れて、同時に二つのスレッドでもbuf変数にデータを入れます。</p> 
+  <p>その後、dataにはbufの1を増加するのでこの状況になります。</p> 
+  <p><br></p> 
+  <p>並列ですが、二つのスレッドを同期したいです。</p> 
+  <p>Pythonでは同期するためにはlockを使うべきです。</p> 
+  <pre><code class="python" data-type="main.py"># スレッドを使うためにthreadingモジュールをimportするべきです。
+# queueを使うためにqueueをimportするべきです。
+# timeモジュールはThread上で処理を一時停止する機能がある。
+import threading, queue, time
+# 変数宣言
+data = 0
+# スレッドのLockを持ち込む。
+lock = threading.Lock()
+# 関数生成
+def generator(start, end):
+  # グローバル変数を使う。
+  global data
+  # startからendまで繰り返す。
+  for i in range(start, end, 1):
+    # lockが設定したら次のlock.acquire関数を呼び出すと一時停止です。
+    lock.acquire()
+    # buf変数にdata変数のデータを入れる。
+    buf = data
+    # 一時停止
+    time.sleep(0.01)
+    # data値を一つずつ増加
+    data = buf + 1;	
+    # lock使いが終わるとlockを解除
+    lock.release();	
+ 	
+# generator関数を二つのスレッドで実装する。
+t1 = threading.Thread(target=generator, args = (1,10))
+t2 = threading.Thread(target=generator, args = (1,10))
+# スレッド実行
+t1.start()
+t2.start()
+# スレッドが終了するまで待ち
+t1.join()
+t2.join()
+# コンソールに出力
+print(data)
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/236/1248_005.png" data-filename="005.png" style="width: 300px;"><br></p> 
+  <p>予想した結果が出力されました。</p> 
+  <p><br></p> 
+  <p>lockはスレッド間の並列処理を同期化する機能がありますが、lockを使う時にはいつもデッドロックを気を付けなければならないです。</p> 
+  <p>デッドロックはlockがお互いにロックかけていることです。</p> 
+  <pre><code class="python" data-type="main.py"># スレッドを使うためにthreadingモジュールをimportするべきです。
+# queueを使うためにqueueをimportするべきです。
+# timeモジュールはThread上で処理を一時停止する機能がある。
+import threading, queue, time
+# 変数宣言
+data = 0
+# スレッドのLockを持ち込む。
+lock1 = threading.Lock()
+lock2 = threading.Lock()
+# 関数生成
+def generator1(start, end):
+  # グローバル変数を使う。
+  global data
+  # startからendまで繰り返す。
+  for i in range(start, end, 1):
+    # lock1でロックを掛けた。(このステップを過ぎるためにはlock1がrelease状況にならなければならない。)
+    lock1.acquire()
+    # lock2でロックを掛けた。(このステップを過ぎるためにはlock2がrelease状況にならなければならない。)
+    lock2.acquire()
+    # コンソール出力
+    print(i)
+    # 一時停止
+    time.sleep(0.1)
+    # lock2を解除
+    lock2.release()
+    # lock1を解除
+    lock1.release()
+# 関数生成
+def generator2(start, end):
+  # グローバル変数を使う。
+  global data
+  # startからendまで繰り返す。
+  for i in range(start, end, 1):
+    # lock2でロックを掛けた。(このステップを過ぎるためにはlock2がrelease状況にならなければならない。)
+    lock2.acquire()
+    # lock1でロックを掛けた。(このステップを過ぎるためにはlock1がrelease状況にならなければならない。)
+    lock1.acquire()
+    # コンソール出力
+    print(i)
+    # 一時停止
+    time.sleep(0.1)
+    # lock1を解除
+    lock1.release()
+    # lock2を解除
+    lock2.release()
+
+# generator1関数をスレッドで実装する。
+t1 = threading.Thread(target=generator1, args = (1,10))
+# generator2関数をスレッドで実装する。
+t2 = threading.Thread(target=generator2, args = (1,10))
+# スレッド実行
+t1.start()
+t2.start()
+# スレッドが終了するまで待ち
+t1.join()
+t2.join()
+# コンソールに出力
+print(data)
+</code></pre> 
+  <p>上の例はデッドロックの状況です。スレッドでgenerator1関数とgenerator2関数にはお互いにロックが掛けている状況です。</p> 
+  <p>つまりgenerator1でlock1とlock2を掛けていきます。 generator2でlock2とlock1を掛けていきます。</p> 
+  <p><br></p> 
+  <p>generator1でlock1にロックを掛けてlock2を掛けてステップを過ぎていこうとすればすでにgenerator2でlock2が掛けている状態です。</p> 
+  <p>generator2でlock2にロックを掛けてlock1を掛けてステップを過ぎていこうとすればすでにgenerator1でlock1が掛けている状態です。</p> 
+  <p><br></p> 
+  <p>つまり、generator1関数ではgenerator2のlock2が解除することを待つ状況だし、generator2関数ではgenerator1のlock1が解除することを待つ状況です。</p> 
+  <p>これがデッドロックです。上の例は、私がわざとデッドロックに掛けるために作ったソースです。実際のプロジェクトでも関数の中に関数の中でlockをかけ、他のところでlockが掛かってデッドロック状態になるケースが多いです。</p> 
+  <p>解決方法はは出来ればlock変数を一つに統一してlockが重ならないようにする方法しかないです。</p> 
+  <p><br></p> 
+  <p>ここまでPythonでスレッド(Thread)とロック(lock)、そしてデッドロック(deadlock)に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=python>#python</a>,<a href=./search.html?query=thread>#thread</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0206">Study / Python</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/236.html'>[Python] 17. スレッド(Thread)とロック(lock)、そしてデッドロック(deadlock)</a><span>2020/06/18 00:19:45</span></li><li><a href='https://www.nowonbun.com/235.html'>[Python] 16. IO(ファイル読み取り、書き込み)を扱う方法</a><span>2020/06/16 18:37:00</span></li><li><a href='https://www.nowonbun.com/234.html'>[Python] 15. クラスを継承する方法</a><span>2020/06/15 18:20:07</span></li><li><a href='https://www.nowonbun.com/233.html'>[Python] 14. クラスプロパティ(Property)</a><span>2020/06/12 17:45:13</span></li><li><a href='https://www.nowonbun.com/232.html'>[Python] 13. クラス関数(class method)とダック・タイピング、そして特殊メソッド</a><span>2020/06/11 19:42:29</span></li><li><a href='https://www.nowonbun.com/231.html'>[Python] 12. クラス(Class)を使う方法</a><span>2020/06/10 19:33:33</span></li><li><a href='https://www.nowonbun.com/230.html'>[Python] 11. デコレーター（Decorator）を使う方法</a><span>2020/06/09 17:27:18</span></li><li><a href='https://www.nowonbun.com/229.html'>[Python] 10. モジュールとパッケージ(import)</a><span>2020/06/08 19:07:50</span></li><li><a href='https://www.nowonbun.com/228.html'>[Python] 09. 例外処理する方法</a><span>2020/06/05 17:11:47</span></li><li><a href='https://www.nowonbun.com/227.html'>[Python] 08. ジェネレータ(Generator)</a><span>2020/06/04 18:46:08</span></li><li><a href='https://www.nowonbun.com/226.html'>[Python] 07. globalとnonlocal</a><span>2020/06/03 20:34:49</span></li><li><a href='https://www.nowonbun.com/225.html'>[Python] 06. 関数(function) - インライン関数、callbak、ラムダ(lambda)そしてクロージャ</a><span>2020/06/02 20:51:22</span></li><li><a href='https://www.nowonbun.com/224.html'>[Python] 05. コンプリヘンション(Comprehension)を使用する方法</a><span>2020/06/01 19:38:58</span></li><li><a href='https://www.nowonbun.com/223.html'>[Python] 04. 制御文(if, while, for, break, continue)とインデント</a><span>2020/05/29 21:09:08</span></li><li><a href='https://www.nowonbun.com/222.html'>[Python] 03. Pythonでリスト(list)とタプル(tuple)、そしてディクショナリ(dictionary)、セット(set)</a><span>2020/05/27 18:49:08</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/236.html'>[Python] 17. スレッド(Thread)とロック(lock)、そしてデッドロック(deadlock)</a><span>2020/06/18 00:19:45</span></li><li><a href='https://www.nowonbun.com/235.html'>[Python] 16. IO(ファイル読み取り、書き込み)を扱う方法</a><span>2020/06/16 18:37:00</span></li><li><a href='https://www.nowonbun.com/234.html'>[Python] 15. クラスを継承する方法</a><span>2020/06/15 18:20:07</span></li><li><a href='https://www.nowonbun.com/233.html'>[Python] 14. クラスプロパティ(Property)</a><span>2020/06/12 17:45:13</span></li><li><a href='https://www.nowonbun.com/232.html'>[Python] 13. クラス関数(class method)とダック・タイピング、そして特殊メソッド</a><span>2020/06/11 19:42:29</span></li><li><a href='https://www.nowonbun.com/231.html'>[Python] 12. クラス(Class)を使う方法</a><span>2020/06/10 19:33:33</span></li><li><a href='https://www.nowonbun.com/230.html'>[Python] 11. デコレーター（Decorator）を使う方法</a><span>2020/06/09 17:27:18</span></li><li><a href='https://www.nowonbun.com/229.html'>[Python] 10. モジュールとパッケージ(import)</a><span>2020/06/08 19:07:50</span></li><li><a href='https://www.nowonbun.com/228.html'>[Python] 09. 例外処理する方法</a><span>2020/06/05 17:11:47</span></li><li><a href='https://www.nowonbun.com/227.html'>[Python] 08. ジェネレータ(Generator)</a><span>2020/06/04 18:46:08</span></li><li><a href='https://www.nowonbun.com/226.html'>[Python] 07. globalとnonlocal</a><span>2020/06/03 20:34:49</span></li><li><a href='https://www.nowonbun.com/225.html'>[Python] 06. 関数(function) - インライン関数、callbak、ラムダ(lambda)そしてクロージャ</a><span>2020/06/02 20:51:22</span></li><li><a href='https://www.nowonbun.com/224.html'>[Python] 05. コンプリヘンション(Comprehension)を使用する方法</a><span>2020/06/01 19:38:58</span></li><li><a href='https://www.nowonbun.com/223.html'>[Python] 04. 制御文(if, while, for, break, continue)とインデント</a><span>2020/05/29 21:09:08</span></li><li><a href='https://www.nowonbun.com/222.html'>[Python] 03. Pythonでリスト(list)とタプル(tuple)、そしてディクショナリ(dictionary)、セット(set)</a><span>2020/05/27 18:49:08</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/236.html';this.page.identifier = 'NOWONBUN00236';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
