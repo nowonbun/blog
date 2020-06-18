@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/237.html"},"url":"https:\/\/www.nowonbun.com\/237.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Python] 18. \u30cd\u30c3\u30c8\u30ef\u30fc\u30af(Socket)\u901a\u4fe1\u3059\u308b\u65b9\u6cd5","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fpython\u3067\u30cd\u30c3\u30c8\u30ef\u30fc\u30af(socket)\u901a\u4fe1\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u30d7\u30ed\u30b0\u30e9\u30e0\u3067\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u901a\u4fe1\u3059\u308b\u3053\u3068\u306f\u30bd\u30b1\u30c3\u30c8\u901a\u4fe1\u3068\u3044\u3044\u307e\u3059\u3002\u30cd\u30c3\u30c8\u30ef\u30fc\u30af\u901a\u4fe1\u306f\u30d7\u30ed\u30b0\u30e9\u30e0\u3068\u30d7\u30ed\u30b0\u30e9\u30e0\u9593\u306b\u901a\u4fe1\u3059\u308b\u3053\u3068\u3084pc\u3068pc\u9593\u306b\u901a\u4fe1\u3059\u308b\u3068\u3044\u3046\u610f\u5473\u3067\u3059\u3002\u30bd\u30b1\u30c3\u30c8\u306fpython\u3060\u3051\u3067\u306f\u306a\u304f\u3001\u4ed6\u306e\u30d7\u30ed\u30b0\u30e9\u30e0\u8a00\u8a9e\u3067\u3082\u540c\u3058\u901a\u4fe1\u6a19\u6e96\u3067\u3059\u3002\u57fa\u672c\u7684\u306b\u30bd\u30b1\u30c3\u30c8\u901a\u4fe1\u6d41\u308c\u306f\u4e0b\u8a18\u3068\u304a\u308a\u306b\u306a\u308a\u307e\u3059\u3002\u30bd\u30b1\u30c3\u30c8\u901a\u4fe1\u306f\u30b5\u30fc\u30d0\u30fc\u3068\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u304c\u3042\u308a\u307e\u3059\u3002\u30b5\u30fc\u30d0\u30fc\u306f\u30bd\u30b1\u30c3\u30c8\u63a5\u7d9a\u3092\u5f85\u3063\u3066\u3044\u308b\u3082\u306e(listen)\u3067\u3059\u3002\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u306f\u63a5\u7d9a\u3092\u5f85\u3063\u3066\u3044\u308b\u30b5\u30fc\u30d0\u30fc\u306b\u63a5\u7d9a\u3059\u308b\u3082\u306e\u3067\u3059\u3002\u3064\u307e\u308a\u3001\u30b5\u30fc\u30d0\u30fc\u304clisten\u72b6\u6cc1\u306b\u306a\u3063\u3066\u3044\u308b\u3068\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u304c\u30b5\u30fc\u30d0\u30fc\u306bconnection\u3057\u307e\u3059\u3002\u305d\u3046\u3059\u308b\u3068\u30b5\u30fc\u30d0\u30fc\u5074\u306faccept\u304c\u767a\u751f\u3057\u3066\u30b5\u30fc\u30d0\u30fc\u3068\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u304csend\u3068receive\u3067\u30c7\u30fc\u30bf\u3092\u9001\u53d7\u4fe1\u3057\u307e\u3059\u3002\u30c7\u30fc\u30bf\u3092\u9001\u53d7\u4fe1\u3059\u308b\u30c7\u30fc\u30bf\u30bf\u30a4\u30d7\u306f\u30d0\u30a4\u30ca\u30ea(byte)\u30bf\u30a4\u30d7\u306b\u306a\u308a\u307e\u3059\u3002\u4e0a\u306e\u4f8b\u3092\u30bd\u30b1\u30c3\u30c8\u30b5\u30fc\u30d0\u30fc\u30bd\u30fc\u30b9\u3067\u3059\u3002\u57fa\u672c\u7684\u306bbind\u3057\u3066listen\u3067\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u3092\u5f85\u6a5f\u3057\u307e\u3059\u3002\u305d\u306e\u5f8c\u3001accept\u304c\u767a\u751f\u3059\u308c\u3070\u30b9\u30ec\u30c3\u30c9\u3067\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u30bd\u30b1\u30c3\u30c8\u3092\u6e21\u3057\u3066\u30e1\u30c3\u30bb\u30fc\u30b8\u53d7\u4fe1\u3092\u5f85\u6a5f\u3057\u307e\u3059\u3002binder\u95a2\u6570\u3067\u306f\u53d7\u4fe1\u3059\u308b\u30c7\u30fc\u30bf\u30b5\u30a4\u30ba\u3001\u30c7\u30fc\u30bf\u53d7\u4fe1\u3001echo\u3092\u4ed8\u3051\u305f\u30c7\u30fc\u30bf\u306e\u30b5\u30a4\u30ba\u3092\u9001\u4fe1\u3001echo\u30c7\u30fc\u30bf\u9001\u4fe1\u9806\u306e\u6d41\u308c\u3067\u7e70\u308a\u8fd4\u3057\u3066\u3044\u307e\u3059\u3002thread\u74b0\u5883\u3067\u4f5c\u3063\u305f\u306e\u3067\u63a5\u7d9a\u304c\u5207\u308c\u306a\u304f\u3066\u3082\u5225\u306e\u30b9\u30ec\u30c3\u30c9\u3067\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u3092\u5f85\u3064\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002\u4e0a\u306e\u4f8b\u3092\u30bd\u30b1\u30c3\u30c8\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u30bd\u30fc\u30b9\u3067\u3059\u3002\u307e\u305a\u3001\u30b5\u30fc\u30d0\u30fc\u3092\u8d77\u52d5\u3057\u3066\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u3092\u63a5\u7d9a\u3057\u307e\u3059\u3002\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u304b\u3089\u30b5\u30fc\u30d0\u30fc\u306b\u63a5\u7d9a\u3057\u3066hello\u3068\u3044\u3046\u30e1\u30c3\u30bb\u30fc\u30b8\u309210\u56de\u306b\u30eb\u30fc\u30d7\u3067\u8ee2\u9001\u3057\u307e\u3057\u305f\u3002\u30b5\u30fc\u30d0\u30fc\u306b\u306f10\u56de\u306ehello\u3068\u3044\u3046\u30e1\u30c3\u30bb\u30fc\u30b8\u3092\u53d7\u4fe1\u3057\u3066echo :\u3068\u3044\u3046\u6587\u5b57\u3092\u4ed8\u3051\u3066echo : hello\u3068\u3044\u3046\u30e1\u30c3\u30bb\u30fc\u30b8\u3092\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u306b\u8ee2\u9001\u3057\u307e\u3057\u305f\u3002\u305d\u306e\u7d50\u679c\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u306b\u306fecho: hello\u304c10\u56de\u306b\u30b3\u30f3\u30bd\u30fc\u30eb\u306b\u51fa\u529b\u3055\u308c\u307e\u3057\u305f\u3002\u30bd\u30b1\u30c3\u30c8\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u751f\u6210\u3059\u308b\u6642socket.af_inet\u3068socket.sock_stream\u3092\u4f7f\u3044\u307e\u3057\u305f\u304c\u3001socket.af_inet\u306fip4\u30a4\u30f3\u30bf\u30fc\u30cd\u30c3\u30c8\u3092\u4f7f\u3046\u3068\u3044\u3046\u610f\u5473\u3060\u3057\u3001socket.sock_stream\u306f\u30c7\u30fc\u30bf\u3092\u30d0\u30a4\u30ca\u30ea(byte stream)\u30bf\u30a4\u30d7\u306b\u4f7f\u3046\u3068\u3044\u3046\u610f\u5473\u3067\u3059\u3002af_inet\u4ee5\u5916\u306baf_inet6\u3001af_unix\u3001af_","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2020-06-18T19:53:56.000+09:00","dateModified":"2020-06-18T19:53:56.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Python" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はpythonでネットワーク(socket)通信する方法に関する説明です。プログラムでネットワーク通信することはソケット通信といいます。ネットワーク通信はプログラムとプログラム間に通信することやpcとpc間に通信するという意味です。ソケットはpythonだけではなく、他のプログラム言語でも同じ通信標準です。基本的にソケット通信流れは下記とおりになります。ソケット通信はサーバーとクライアントがあります。サーバーはソケット接続を待っているもの(listen)です。クライアントは接続を待っているサーバーに接続するものです。つまり、サーバーがlisten状況になっているとクライアントがサーバーにconnectionします。そうするとサーバー側はacceptが発生してサーバーとクライアントがsendとreceiveでデータを送受信します。データを送受信するデータタイプはバイナリ(byte)タイプになります。上の例をソケットサーバーソースです。基本的にbindしてlistenでクライアントを待機します。その後、acceptが発生すればスレッドでクライアントソケットを渡してメッセージ受信を待機します。binder関数では受信するデータサイズ、データ受信、echoを付けたデータのサイズを送信、echoデータ送信順の流れで繰り返しています。thread環境で作ったので接続が切れなくても別のスレッドでクライアントを待つことができます。上の例をソケットクライアントソースです。まず、サーバーを起動してクライアントを接続します。クライアントからサーバーに接続してhelloというメッセージを10回にループで転送しました。サーバーには10回のhelloというメッセージを受信してecho :という文字を付けてecho : helloというメッセージをクライアントに転送しました。その結果クライアントにはecho: helloが10回にコンソールに出力されました。ソケットインスタンスを生成する時socket.af_inetとsocket.sock_streamを使いましたが、socket.af_inetはip4インターネットを使うという意味だし、socket.sock_streamはデータをバイナリ(byte stream)タイプに使うという意味です。af_inet以外にaf_inet6、af_unix、af_]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Python] 18. ネットワーク(Socket)通信する方法" />
+<link rel="canonical" href="https://www.nowonbun.com/237.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Python] 18. ネットワーク(Socket)通信する方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はpythonでネットワーク(socket)通信する方法に関する説明です。プログラムでネットワーク通信することはソケット通信といいます。ネットワーク通信はプログラムとプログラム間に通信することやpcとpc間に通信するという意味です。ソケットはpythonだけではなく、他のプログラム言語でも同じ通信標準です。基本的にソケット通信流れは下記とおりになります。ソケット通信はサーバーとクライアントがあります。サーバーはソケット接続を待っているもの(listen)です。クライアントは接続を待っているサーバーに接続するものです。つまり、サーバーがlisten状況になっているとクライアントがサーバーにconnectionします。そうするとサーバー側はacceptが発生してサーバーとクライアントがsendとreceiveでデータを送受信します。データを送受信するデータタイプはバイナリ(byte)タイプになります。上の例をソケットサーバーソースです。基本的にbindしてlistenでクライアントを待機します。その後、acceptが発生すればスレッドでクライアントソケットを渡してメッセージ受信を待機します。binder関数では受信するデータサイズ、データ受信、echoを付けたデータのサイズを送信、echoデータ送信順の流れで繰り返しています。thread環境で作ったので接続が切れなくても別のスレッドでクライアントを待つことができます。上の例をソケットクライアントソースです。まず、サーバーを起動してクライアントを接続します。クライアントからサーバーに接続してhelloというメッセージを10回にループで転送しました。サーバーには10回のhelloというメッセージを受信してecho :という文字を付けてecho : helloというメッセージをクライアントに転送しました。その結果クライアントにはecho: helloが10回にコンソールに出力されました。ソケットインスタンスを生成する時socket.af_inetとsocket.sock_streamを使いましたが、socket.af_inetはip4インターネットを使うという意味だし、socket.sock_streamはデータをバイナリ(byte stream)タイプに使うという意味です。af_inet以外にaf_inet6、af_unix、af_]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/237.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Python] 18. ネットワーク(Socket)通信する方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はpythonでネットワーク(socket)通信する方法に関する説明です。プログラムでネットワーク通信することはソケット通信といいます。ネットワーク通信はプログラムとプログラム間に通信することやpcとpc間に通信するという意味です。ソケットはpythonだけではなく、他のプログラム言語でも同じ通信標準です。基本的にソケット通信流れは下記とおりになります。ソケット通信はサーバーとクライアントがあります。サーバーはソケット接続を待っているもの(listen)です。クライアントは接続を待っているサーバーに接続するものです。つまり、サーバーがlisten状況になっているとクライアントがサーバーにconnectionします。そうするとサーバー側はacceptが発生してサーバーとクライアントがsendとreceiveでデータを送受信します。データを送受信するデータタイプはバイナリ(byte)タイプになります。上の例をソケットサーバーソースです。基本的にbindしてlistenでクライアントを待機します。その後、acceptが発生すればスレッドでクライアントソケットを渡してメッセージ受信を待機します。binder関数では受信するデータサイズ、データ受信、echoを付けたデータのサイズを送信、echoデータ送信順の流れで繰り返しています。thread環境で作ったので接続が切れなくても別のスレッドでクライアントを待つことができます。上の例をソケットクライアントソースです。まず、サーバーを起動してクライアントを接続します。クライアントからサーバーに接続してhelloというメッセージを10回にループで転送しました。サーバーには10回のhelloというメッセージを受信してecho :という文字を付けてecho : helloというメッセージをクライアントに転送しました。その結果クライアントにはecho: helloが10回にコンソールに出力されました。ソケットインスタンスを生成する時socket.af_inetとsocket.sock_streamを使いましたが、socket.af_inetはip4インターネットを使うという意味だし、socket.sock_streamはデータをバイナリ(byte stream)タイプに使うという意味です。af_inet以外にaf_inet6、af_unix、af_]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Python] 18. ネットワーク(Socket)通信する方法</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(74)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(3)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(163)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(40)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(18)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/237.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Python] 18. ネットワーク(Socket)通信する方法</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0206">Study / Python</a>    作成日付 : <span property="datePublished">2020/06/18 19:53:56</span>   修正日付 : <span property="dateModified">2020/06/18 19:53:56</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はPythonでネットワーク(Socket)通信する方法に関する説明です。</p> 
+  <p><br></p> 
+  <p>プログラムでネットワーク通信することはソケット通信といいます。ネットワーク通信はプログラムとプログラム間に通信することやPCとPC間に通信するという意味です。</p> 
+  <p>ソケットはPythonだけではなく、他のプログラム言語でも同じ通信標準です。</p> 
+  <p><br></p> 
+  <p>基本的にソケット通信流れは下記とおりになります。</p> 
+  <p style="text-align:left;"><img src="./contents/237/1251_001.gif" data-filename="001.gif" style="width: 280px;"><br></p> 
+  <p>ソケット通信はサーバーとクライアントがあります。サーバーはソケット接続を待っているもの(Listen)です。クライアントは接続を待っているサーバーに接続するものです。</p> 
+  <p>つまり、サーバーがListen状況になっているとクライアントがサーバーにconnectionします。そうするとサーバー側はacceptが発生してサーバーとクライアントがSendとReceiveでデータを送受信します。</p> 
+  <p>データを送受信するデータタイプはバイナリ(byte)タイプになります。</p> 
+  <pre><code class="python" data-type="server.py"># ソケットを使うためにsocketモジュールをimportするべきだ。
+import socket, threading
+
+# binder関数はサーバーからacceptしたら生成されるsocketインスタンスを通ってclientからデータを受信するとecho形で再送信するメソッドだ。
+def binder(client_socket, addr):
+  # コネクションになれば接続アドレスを出力する。
+  print('Connected by', addr)
+  try:
+    # 接続状況でクライアントからデータ受信を待つ。
+    # もし、接続が切れちゃうとexceptが発生する。
+    while True:
+      # socketのrecv関数は連結されたソケットからデータを受信を待つ関数だ。最初に4byteを待機する。
+      data = client_socket.recv(4)
+      # 最初4byteは転送するデータのサイズだ。そのサイズはlittleエンディアンでbyteからintタイプに変換する。
+      length = int.from_bytes(data, "little")
+      # データを受信する。上の受け取ったサイズほど
+      data = client_socket.recv(length)
+      # 受信されたデータをstr形式でdecodeする。
+      msg = data.decode()
+      # 受信されたメッセージをコンソールに出力する。
+      print('Received from', addr, msg)
+
+      # 受信されたメッセージの前に「echo:」という文字を付ける。
+      msg = "echo : " + msg
+      # バイナリ(byte)タイプに変換する。
+      data = msg.encode()
+      # バイナリのデータサイズを計算する。
+      length = len(data)
+      # データサイズをlittleエンディアンタイプのbyteに変換して転送する。
+      client_socket.sendall(length.to_bytes(4, byteorder="little"))
+      # データをクライアントに転送する。
+      client_socket.sendall(data)
+  except:
+    # 接続が切れちゃうとexceptが発生する。
+    print("except : " , addr)
+  finally:
+    # 接続が切れたらsocketリソースを返却する。
+    client_socket.close()
+
+# ソケットを生成する。
+server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# ソケットレベルとデータタイプを設定する。
+server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+# サーバーは複数ipを使っているPCの場合はIPを設定して、そうではない場合はNoneや''で設定する。
+# ポートはPC内で空いているポートを使う。cmdにnetstat -an | find "LISTEN"で確認できる。
+server_socket.bind(('', 9999))
+# server設定が完了すればlistenを開始する。
+server_socket.listen()
+
+try:	
+  # サーバーは複数クライアントから接続するので無限ループを使う。
+  while True:
+    # clientから接続すればacceptが発生する。
+    # clientソケットとaddr(アドレス)をタプルで受け取る。
+    client_socket, addr = server_socket.accept()
+    # スレッドを利用してclient接続を作って、またaccept関数に行ってclientを待機する。
+    th = threading.Thread(target=binder, args = (client_socket,addr))
+    # スレッド開始
+    th.start()
+except:
+  # コンソール出力
+  print("server")
+finally:
+  # エラーが発生すればサーバーソケットを閉める。
+  server_socket.close()
+</code></pre> 
+  <p>上の例をソケットサーバーソースです。</p> 
+  <p>基本的にbindしてlistenでクライアントを待機します。その後、acceptが発生すればスレッドでクライアントソケットを渡してメッセージ受信を待機します。</p> 
+  <p>binder関数では受信するデータサイズ、データ受信、echoを付けたデータのサイズを送信、echoデータ送信順の流れで繰り返しています。</p> 
+  <p>thread環境で作ったので接続が切れなくても別のスレッドでクライアントを待つことができます。</p> 
+  <pre><code class="python" data-type="client.py"># ソケットを使うためにsocketをimportするべきだ。
+import socket	
+# 127.0.0.1のIPはローカルの意味だ。
+HOST = '127.0.0.1'
+# ポートはサーバーで設定した9999に接続する。
+PORT = 9999
+# ソケットを生成する。
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+# connect関数でサーバーに接続する。
+client_socket.connect((HOST, PORT))
+
+# 10回のループでsend、receiveをする。
+for i in range(1,10):
+  # メッセージはhelloで送信
+  msg = 'hello'
+  # メッセージをバイナリ(byte)タイプに変換する。
+  data = msg.encode()
+  # メッセージのサイズを計算する。
+  length = len(data)
+  # データサイズをlittleエンディアンタイプに変換してサーバーに送信する。
+  client_socket.sendall(length.to_bytes(4, byteorder="little"))
+  # データを送信する。
+  client_socket.sendall(data)
+
+  # サーバーからデータサイズを受信する。
+  data = client_socket.recv(4)
+  # データサイズはlittleエンディアンタイプでintタイプに変換する。
+  length = int.from_bytes(data, "little")
+  # データを受信する。
+  data = client_socket.recv(length)
+  # データをエンコードしてstrタイプに変換する。
+  msg = data.decode()
+  # コンソールに出力する。
+  print('Received from : ', msg)
+# ソケットリソースを返却する。
+client_socket.close()
+</code></pre> 
+  <p>上の例をソケットクライアントソースです。</p> 
+  <p><br></p> 
+  <p>まず、サーバーを起動してクライアントを接続します。</p> 
+  <p style="text-align:left;"><img src="./contents/237/1252_001.png" data-filename="001.png" style="width: 372px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/237/1253_002.png" data-filename="002.png" style="width: 320px;"><br></p> 
+  <p>クライアントからサーバーに接続してhelloというメッセージを10回にループで転送しました。サーバーには10回のhelloというメッセージを受信してecho :という文字を付けてecho : helloというメッセージをクライアントに転送しました。</p> 
+  <p>その結果クライアントにはecho: helloが10回にコンソールに出力されました。</p> 
+  <p><br></p> 
+  <p>ソケットインスタンスを生成する時socket.AF_INETとsocket.SOCK_STREAMを使いましたが、socket.AF_INETはIP4インターネットを使うという意味だし、socket.SOCK_STREAMはデータをバイナリ(byte stream)タイプに使うという意味です。</p> 
+  <p>AF_INET以外にAF_INET6、AF_UNIX、AF_CAN、AF_PACKET、AF_RDSのオプションがありますが、私も使ったことがないので具体的に知りません。AF_INET6だけはIP6インターネットだと思います。</p> 
+  <p>インターネットアドレスタイプオプションみたいですが、一般的なプログラムならsocket.AF_INETだけで十分だと思います。</p> 
+  <p>socket.SOCK_STREAMは連結指向性(TCP)という意味で、似ているなオプションではsocket.SOCK_DGRAM、socket.SOCK_RAW、socket.SOCK_RDM、socket.SOCK_SEQPACKETがあります。</p> 
+  <p>SOCK_DGRAMは非連結指向性(UDP)だし、SOCK_RAWはソケットヘッダ情報まで取得する時に使うオプションです。</p> 
+  <p>ソケットラベルにはSOL_SOCKET、IPPROTO_TCP、IPPROTO_UDPを使えます。</p> 
+  <p>特にSOL_SOCKETの場合、ヘッダーレベルオプションをプロトコル側で設定するオプションです。</p> 
+  <div class="table-responsive"> 
+   <table class="table table-striped table-bordered table-condensed"> 
+    <thead> 
+     <tr style="background-color:#DAD7D7"> 
+      <th style="white-space: nowrap;">オプション値</th> 
+      <th>データタイプ</th> 
+      <th>説明</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="white-space: nowrap;">SO_BROADCAST</td> 
+      <td>BOOL</td> 
+      <td>broadcastメッセージを送信可能にします。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">SO_DEBUG</td> 
+      <td>BOOL</td> 
+      <td>デバッグ情報をレコードします。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">SO_DONTLINGER</td> 
+      <td>BOOL</td> 
+      <td>ソケットを閉める時メッセージ送受信が終わるまでブロックされないようにします。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">SO_DONTROUTE</td> 
+      <td>BOOL</td> 
+      <td>ルーティングせずに、直接にインターフェースを送信します。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">SO_OOBINLINE</td> 
+      <td>BOOL</td> 
+      <td>OOBデータを転送設定する時、一般入力キューからデータを読み取ることができるようにします。このフラグを付けるとrecv(:12)やsend(:12)でMSG_OOBフラグを使う必要なく、OOBデータを読み取られます。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">SO_GROUP_PRIORITY</td> 
+      <td>int</td> 
+      <td>使わないフラグです。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">SO_KEEPALIVE</td> 
+      <td>BOOL</td> 
+      <td>Keepalivesを転送します。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">SO_LINGER</td> 
+      <td>struct LINGER</td> 
+      <td>ソケットを閉める時、転送データがある場合、データ処理ルール</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">SO_RCVBUF</td> 
+      <td>int</td> 
+      <td>データを受信するため、バッファ設定を明示</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">SO_REUSEADDR</td> 
+      <td>BOOL</td> 
+      <td>もう使ったアドレスを再使用(bind)するようにする。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">SO_SNDBUF</td> 
+      <td>int</td> 
+      <td>データ送信するため、バッファ設定を明示/td&gt; </td>
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <p>私の場合は特別なことがなければsocket.AF_INETとsocket.SOCK_STREAMの設定でSOL_SOCKET + SO_REUSEADDR, IPPROTO_TCP + TCP_NODELAYの形でソケット通信をします。</p> 
+  <p><br></p> 
+  <p>ここまでPythonでネットワーク(Socket)通信する方法に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=python>#python</a>,<a href=./search.html?query=socket>#socket</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0206">Study / Python</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/237.html'>[Python] 18. ネットワーク(Socket)通信する方法</a><span>2020/06/18 19:53:56</span></li><li><a href='https://www.nowonbun.com/236.html'>[Python] 17. スレッド(Thread)とロック(lock)、そしてデッドロック(deadlock)</a><span>2020/06/18 00:19:45</span></li><li><a href='https://www.nowonbun.com/235.html'>[Python] 16. IO(ファイル読み取り、書き込み)を扱う方法</a><span>2020/06/16 18:37:00</span></li><li><a href='https://www.nowonbun.com/234.html'>[Python] 15. クラスを継承する方法</a><span>2020/06/15 18:20:07</span></li><li><a href='https://www.nowonbun.com/233.html'>[Python] 14. クラスプロパティ(Property)</a><span>2020/06/12 17:45:13</span></li><li><a href='https://www.nowonbun.com/232.html'>[Python] 13. クラス関数(class method)とダック・タイピング、そして特殊メソッド</a><span>2020/06/11 19:42:29</span></li><li><a href='https://www.nowonbun.com/231.html'>[Python] 12. クラス(Class)を使う方法</a><span>2020/06/10 19:33:33</span></li><li><a href='https://www.nowonbun.com/230.html'>[Python] 11. デコレーター（Decorator）を使う方法</a><span>2020/06/09 17:27:18</span></li><li><a href='https://www.nowonbun.com/229.html'>[Python] 10. モジュールとパッケージ(import)</a><span>2020/06/08 19:07:50</span></li><li><a href='https://www.nowonbun.com/228.html'>[Python] 09. 例外処理する方法</a><span>2020/06/05 17:11:47</span></li><li><a href='https://www.nowonbun.com/227.html'>[Python] 08. ジェネレータ(Generator)</a><span>2020/06/04 18:46:08</span></li><li><a href='https://www.nowonbun.com/226.html'>[Python] 07. globalとnonlocal</a><span>2020/06/03 20:34:49</span></li><li><a href='https://www.nowonbun.com/225.html'>[Python] 06. 関数(function) - インライン関数、callbak、ラムダ(lambda)そしてクロージャ</a><span>2020/06/02 20:51:22</span></li><li><a href='https://www.nowonbun.com/224.html'>[Python] 05. コンプリヘンション(Comprehension)を使用する方法</a><span>2020/06/01 19:38:58</span></li><li><a href='https://www.nowonbun.com/223.html'>[Python] 04. 制御文(if, while, for, break, continue)とインデント</a><span>2020/05/29 21:09:08</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/237.html'>[Python] 18. ネットワーク(Socket)通信する方法</a><span>2020/06/18 19:53:56</span></li><li><a href='https://www.nowonbun.com/236.html'>[Python] 17. スレッド(Thread)とロック(lock)、そしてデッドロック(deadlock)</a><span>2020/06/18 00:19:45</span></li><li><a href='https://www.nowonbun.com/235.html'>[Python] 16. IO(ファイル読み取り、書き込み)を扱う方法</a><span>2020/06/16 18:37:00</span></li><li><a href='https://www.nowonbun.com/234.html'>[Python] 15. クラスを継承する方法</a><span>2020/06/15 18:20:07</span></li><li><a href='https://www.nowonbun.com/233.html'>[Python] 14. クラスプロパティ(Property)</a><span>2020/06/12 17:45:13</span></li><li><a href='https://www.nowonbun.com/232.html'>[Python] 13. クラス関数(class method)とダック・タイピング、そして特殊メソッド</a><span>2020/06/11 19:42:29</span></li><li><a href='https://www.nowonbun.com/231.html'>[Python] 12. クラス(Class)を使う方法</a><span>2020/06/10 19:33:33</span></li><li><a href='https://www.nowonbun.com/230.html'>[Python] 11. デコレーター（Decorator）を使う方法</a><span>2020/06/09 17:27:18</span></li><li><a href='https://www.nowonbun.com/229.html'>[Python] 10. モジュールとパッケージ(import)</a><span>2020/06/08 19:07:50</span></li><li><a href='https://www.nowonbun.com/228.html'>[Python] 09. 例外処理する方法</a><span>2020/06/05 17:11:47</span></li><li><a href='https://www.nowonbun.com/227.html'>[Python] 08. ジェネレータ(Generator)</a><span>2020/06/04 18:46:08</span></li><li><a href='https://www.nowonbun.com/226.html'>[Python] 07. globalとnonlocal</a><span>2020/06/03 20:34:49</span></li><li><a href='https://www.nowonbun.com/225.html'>[Python] 06. 関数(function) - インライン関数、callbak、ラムダ(lambda)そしてクロージャ</a><span>2020/06/02 20:51:22</span></li><li><a href='https://www.nowonbun.com/224.html'>[Python] 05. コンプリヘンション(Comprehension)を使用する方法</a><span>2020/06/01 19:38:58</span></li><li><a href='https://www.nowonbun.com/223.html'>[Python] 04. 制御文(if, while, for, break, continue)とインデント</a><span>2020/05/29 21:09:08</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/237.html';this.page.identifier = 'NOWONBUN00237';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
