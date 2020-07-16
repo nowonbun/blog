@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/251.html"},"url":"https:\/\/www.nowonbun.com\/251.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Python] Excel(openpyxl)\u3092\u6271\u3046\u65b9\u6cd5","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fpython\u3067excel(openpyxl)\u3092\u6271\u3046\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u4f1a\u793e\u3067\u4ed5\u4e8b\u3059\u308b\u65b9\u306a\u3089\u5fc5\u9808\u7684\u306b\u77e5\u308b\u3079\u304d\u306a\u30d7\u30ed\u30b0\u30e9\u30e0\u306f\u30a8\u30af\u30bb\u30eb\u3060\u3068\u601d\u3044\u307e\u3059\u3002\u305d\u306e\u305f\u3081\u304b\u30a8\u30af\u30bb\u30eb\u30e9\u30a4\u30d6\u30e9\u30ea\u306f\u3069\u306e\u30d7\u30ed\u30b0\u30e9\u30e0\u8a00\u8a9e\u3067\u3082\u5b58\u5728\u3057\u307e\u3059\u3002java\u3068c#\u3067\u306fapache\u8ca1\u56e3\u3067\u63d0\u4f9b\u3059\u308bpoi\u30e9\u30a4\u30d6\u30e9\u30ea\u304c\u3042\u308a\u307e\u3059\u304c\u3001pyhon\u306f\u72ec\u81ea\u306e\u30e9\u30a4\u30d6\u30e9\u30ea\u304c\u3042\u308a\u307e\u3059\u3002link - https:\/\/openpyxl.readthedocs.io\/en\/stable\/usage.htmlexcel\u30d5\u30a1\u30a4\u30eb\u3092\u751f\u6210\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u307e\u3059\u3002\u4e0a\u306e\u7d50\u679c\u306f\u30bd\u30fc\u30b9\u4e0a\u3067print\u95a2\u6570\u3092\u4f7f\u3063\u3066\u7d50\u679c\u3092\u51fa\u529b\u3057\u307e\u3057\u305f\u3002\u59cb\u3081\u306f\u30a8\u30af\u30bb\u30eb\u3092\u751f\u6210\u3057\u3066\u30b7\u30fc\u30c8\u306e\u72b6\u6cc1\u3092\u78ba\u8a8d\u3059\u308b\u6642\u306b\u30ea\u30b9\u30c8\u30bf\u30a4\u30d7\u3067sheet\u304c\u3042\u308b\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002workbook\u3092\u751f\u6210\u3059\u308c\u3070sheet\u3068\u3044\u3046\u30b7\u30fc\u30c8\u304c\u81ea\u52d5\u306b\u751f\u6210\u3055\u308c\u307e\u3059\u3002\u6b21\u306fsheet\u306e\u540d\u3092\u300ctest1\u300d\u306b\u5909\u66f4\u3057\u3001\u300ctest2\u300d\u3068\u3044\u3046\u30b7\u30fc\u30c8\u3092\u4f7f\u3044\u3057\u307e\u3057\u305f\u3002\u307e\u305f\u3001\u691c\u7d22\u3059\u308c\u3070\u30b7\u30fc\u30c8\u304c\u300ctest1\u300d\u3001\u300ctest2\u300d\u304c\u3042\u308b\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002\u305d\u306e\u5f8c\u3001\u30bb\u30eb\u306b\u6587\u5b57\u30bf\u30a4\u30d7\u306e\u30c7\u30fc\u30bf\u3092\u5165\u308c\u307e\u3057\u305f\u3002\u30bf\u30a4\u30d7\u304cgeneral\u3068\u3044\u3046\u3053\u3068\u3067\u51fa\u307e\u3057\u305f\u3002\u6b21\u306e\u30bb\u30eb\u306b\u65e5\u4ed8\u3092\u683c\u7d0d\u3057\u3066\u0026apos;yyyy-mm-dd\u0026apos;\u306e\u30bf\u30a4\u30d7\u306b\u30c7\u30fc\u30bf\u3092\u8a2d\u5b9a\u3057\u307e\u3057\u305f\u3002main.py\u30d5\u30a1\u30a4\u30eb\u304c\u3042\u308b\u3068\u3053\u308d\u3067example1.xlsx\u30d5\u30a1\u30a4\u30eb\u304c\u751f\u6210\u3055\u308c\u305f\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002test1\u306e\u30b7\u30fc\u30c8\u306b\u306fhello world\u3068\u65e5\u4ed8\u304c\u30d5\u30a9\u30fc\u30de\u30c3\u30c8\u306b\u5408\u308f\u305b\u3066\u5165\u529b\u3055\u308c\u305f\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002test2\u306e\u30b7\u30fc\u30c8\u306b\u306fa1\u306e\u5024\u3068a2\u306e\u5024\u304c\u3042\u3063\u3066sum\u95a2\u6570\u304c\u5b9f\u884c\u3055\u308c\u305f\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002\u4eca\u56de\u306fexcel\u30d5\u30a1\u30a4\u30eb\u3092\u751f\u6210\u3059\u308b\u3053\u3068\u3067\u306f\u306a\u304f\u30d5\u30a1\u30a4\u30eb\u3092\u8aad\u307f\u8fbc\u3093\u3067\u30b9\u30bf\u30a4\u30eb\u307e\u3067\u5909\u66f4\u3057\u307e\u3059\u3002(\u53c2\u8003\u306bpython\u306eopenpyxl\u306fxls\u30bf\u30a4\u30d7\u306e\u30a8\u30af\u30bb\u30eb\u306f\u53c2\u7167\u304c\u3067\u304d\u307e\u305b\u3093\u3002)c1\u304b\u3089d13\u307e\u3067\u30c7\u30fc\u30bf\u3092\u5165\u308c\u308c\u3070\u30b0\u30e9\u30d5\u304c\u81ea\u52d5\u306b\u5909\u66f4\u3055\u308c\u308b\u30a8\u30af\u30bb\u30eb\u30b7\u30fc\u30c8\u3092\u4f5c\u6210\u3057\u307e\u3057\u305f\u3002\u4e0a\u306e\u4f8b\u306ftestexcel.xlsx\u30d5\u30a1\u30a4\u30eb\u3092\u8aad\u307f\u8fbc\u3093\u3067sheet\u306e\u5024\u3092\u5909\u66f4\u3059\u308b\u4f8b\u3067\u3059\u3002c\u5217\u3068d\u5217\u306frandom\u95a2\u6570\u3067-20\u304b\u308920\u307e\u3067\u306e\u6570\u3092\u683c\u7d0d\u3057\u307e\u3059\u3002\u7d50\u679c\u306f\u30e9\u30f3\u30c0\u30e0\u306a\u306e\u3067\u53ef\u7b11\u3057\u3044\u6c17\u6e29\u30b0\u30e9\u30d5\u306b\u306a\u308a\u307e\u3059\u3002\u305d\u3057\u3066c\u5217\u306b\u306ffont\u8a2d\u5b9a\u3068\u30d0\u30c3\u30af\u30b0\u30e9\u30a6\u30f3\u30c9\u8272\u8a2d\u5b9a\u3001\u67a0\u8a2d\u5b9a\u3092\u3057\u307e\u3057\u305f\u3002\u67a0\u306eside\u95a2\u6570\u306e\u5024\u306fcolor\u306e\u5834\u5408\u3001hex\u30c7\u30fc\u30bf\u3092\u5165\u308c\u308b\u3057\u3001style\u306e\u5834\u5408\u3001\u683c\u306e\u30b9\u30bf\u30a4\u30eb","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2020-07-16T16:40:31.000+09:00","dateModified":"2020-07-16T16:40:31.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Devlopment note / Python" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はpythonでexcel(openpyxl)を扱う方法に関する説明です。会社で仕事する方なら必須的に知るべきなプログラムはエクセルだと思います。そのためかエクセルライブラリはどのプログラム言語でも存在します。javaとc#ではapache財団で提供するpoiライブラリがありますが、pyhonは独自のライブラリがあります。link - https://openpyxl.readthedocs.io/en/stable/usage.htmlexcelファイルを生成する方法に関して説明します。上の結果はソース上でprint関数を使って結果を出力しました。始めはエクセルを生成してシートの状況を確認する時にリストタイプでsheetがあることを確認できます。workbookを生成すればsheetというシートが自動に生成されます。次はsheetの名を「test1」に変更し、「test2」というシートを使いしました。また、検索すればシートが「test1」、「test2」があることを確認できます。その後、セルに文字タイプのデータを入れました。タイプがgeneralということで出ました。次のセルに日付を格納して&apos;yyyy-mm-dd&apos;のタイプにデータを設定しました。main.pyファイルがあるところでexample1.xlsxファイルが生成されたことを確認できます。test1のシートにはhello worldと日付がフォーマットに合わせて入力されたことを確認できます。test2のシートにはa1の値とa2の値があってsum関数が実行されたことを確認できます。今回はexcelファイルを生成することではなくファイルを読み込んでスタイルまで変更します。(参考にpythonのopenpyxlはxlsタイプのエクセルは参照ができません。)c1からd13までデータを入れればグラフが自動に変更されるエクセルシートを作成しました。上の例はtestexcel.xlsxファイルを読み込んでsheetの値を変更する例です。c列とd列はrandom関数で-20から20までの数を格納します。結果はランダムなので可笑しい気温グラフになります。そしてc列にはfont設定とバックグラウンド色設定、枠設定をしました。枠のside関数の値はcolorの場合、hexデータを入れるし、styleの場合、格のスタイル]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Python] Excel(openpyxl)を扱う方法" />
+<link rel="canonical" href="https://www.nowonbun.com/251.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Python] Excel(openpyxl)を扱う方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はpythonでexcel(openpyxl)を扱う方法に関する説明です。会社で仕事する方なら必須的に知るべきなプログラムはエクセルだと思います。そのためかエクセルライブラリはどのプログラム言語でも存在します。javaとc#ではapache財団で提供するpoiライブラリがありますが、pyhonは独自のライブラリがあります。link - https://openpyxl.readthedocs.io/en/stable/usage.htmlexcelファイルを生成する方法に関して説明します。上の結果はソース上でprint関数を使って結果を出力しました。始めはエクセルを生成してシートの状況を確認する時にリストタイプでsheetがあることを確認できます。workbookを生成すればsheetというシートが自動に生成されます。次はsheetの名を「test1」に変更し、「test2」というシートを使いしました。また、検索すればシートが「test1」、「test2」があることを確認できます。その後、セルに文字タイプのデータを入れました。タイプがgeneralということで出ました。次のセルに日付を格納して&apos;yyyy-mm-dd&apos;のタイプにデータを設定しました。main.pyファイルがあるところでexample1.xlsxファイルが生成されたことを確認できます。test1のシートにはhello worldと日付がフォーマットに合わせて入力されたことを確認できます。test2のシートにはa1の値とa2の値があってsum関数が実行されたことを確認できます。今回はexcelファイルを生成することではなくファイルを読み込んでスタイルまで変更します。(参考にpythonのopenpyxlはxlsタイプのエクセルは参照ができません。)c1からd13までデータを入れればグラフが自動に変更されるエクセルシートを作成しました。上の例はtestexcel.xlsxファイルを読み込んでsheetの値を変更する例です。c列とd列はrandom関数で-20から20までの数を格納します。結果はランダムなので可笑しい気温グラフになります。そしてc列にはfont設定とバックグラウンド色設定、枠設定をしました。枠のside関数の値はcolorの場合、hexデータを入れるし、styleの場合、格のスタイル]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/251.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Python] Excel(openpyxl)を扱う方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はpythonでexcel(openpyxl)を扱う方法に関する説明です。会社で仕事する方なら必須的に知るべきなプログラムはエクセルだと思います。そのためかエクセルライブラリはどのプログラム言語でも存在します。javaとc#ではapache財団で提供するpoiライブラリがありますが、pyhonは独自のライブラリがあります。link - https://openpyxl.readthedocs.io/en/stable/usage.htmlexcelファイルを生成する方法に関して説明します。上の結果はソース上でprint関数を使って結果を出力しました。始めはエクセルを生成してシートの状況を確認する時にリストタイプでsheetがあることを確認できます。workbookを生成すればsheetというシートが自動に生成されます。次はsheetの名を「test1」に変更し、「test2」というシートを使いしました。また、検索すればシートが「test1」、「test2」があることを確認できます。その後、セルに文字タイプのデータを入れました。タイプがgeneralということで出ました。次のセルに日付を格納して&apos;yyyy-mm-dd&apos;のタイプにデータを設定しました。main.pyファイルがあるところでexample1.xlsxファイルが生成されたことを確認できます。test1のシートにはhello worldと日付がフォーマットに合わせて入力されたことを確認できます。test2のシートにはa1の値とa2の値があってsum関数が実行されたことを確認できます。今回はexcelファイルを生成することではなくファイルを読み込んでスタイルまで変更します。(参考にpythonのopenpyxlはxlsタイプのエクセルは参照ができません。)c1からd13までデータを入れればグラフが自動に変更されるエクセルシートを作成しました。上の例はtestexcel.xlsxファイルを読み込んでsheetの値を変更する例です。c列とd列はrandom関数で-20から20までの数を格納します。結果はランダムなので可笑しい気温グラフになります。そしてc列にはfont設定とバックグラウンド色設定、枠設定をしました。枠のside関数の値はcolorの場合、hexデータを入れるし、styleの場合、格のスタイル]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Python] Excel(openpyxl)を扱う方法</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(85)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(3)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(11)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(166)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(40)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0300" href="opensource.html">Open source<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/251.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Python] Excel(openpyxl)を扱う方法</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0108">Devlopment note / Python</a>    作成日付 : <span property="datePublished">2020/07/16 16:40:31</span>   修正日付 : <span property="dateModified">2020/07/16 16:40:31</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はPythonでExcel(openpyxl)を扱う方法に関する説明です。</p> 
+  <p><br></p> 
+  <p>会社で仕事する方なら必須的に知るべきなプログラムはエクセルだと思います。そのためかエクセルライブラリはどのプログラム言語でも存在します。</p> 
+  <p>JavaとC#ではApache財団で提供するPOIライブラリがありますが、Pyhonは独自のライブラリがあります。</p> 
+  <p><br></p> 
+  <p>link - <a href="https://openpyxl.readthedocs.io/en/stable/usage.html" target="_blank">https://openpyxl.readthedocs.io/en/stable/usage.html</a></p> 
+  <p><br></p> 
+  <p>Excelファイルを生成する方法に関して説明します。</p> 
+  <pre><code class="python" data-type="main.py"># 日付タイプモジュール
+import datetime
+# エクセルを使うためのモジュール
+from openpyxl import Workbook
+
+# エクセルWorkbook生成
+wb = Workbook()
+# Workbookを生成すれば基本的にシートが一つ生成する。
+print(wb.sheetnames)
+
+# 現在に活性化されたエクセルシートオブジェクトを持ち込む。
+ws = wb.active
+# シート名を変更
+ws.title = "Test1"
+# シート名でシートを選択することもできる。(シート名でエクセルでなければエラーが発生する。)
+ws = wb["Test1"]
+
+# シートを生成する。
+ws1 = wb.create_sheet(title="Test2")
+# 総しーをを出力する。
+print(wb.sheetnames)
+
+# シート内でcellを選択する方法
+cell = ws.cell(row=1, column=1)
+# 選択されたcellに値を入れる。
+cell.value = "hello world"
+# cellの文字フォーマット(generalはexcelでは一般という意味)
+print(cell.number_format)
+
+# 2行1列のセルを選択する。
+cell = ws.cell(row=2, column=1)
+# 選択されたcellに日付タイプの値を入れる。
+cell.value = datetime.datetime(2020, 1, 1)
+# セルのフォーマットを変更する。
+cell.number_format = 'yyyy-mm-dd'
+# cellの文字フォーマット
+print(cell.number_format)
+
+# ここはTest2のシートに値を入れる。
+# セルを選択する方法はR1C1タイプで選択可能。
+cell = ws1["A1"]
+# 選択されたcellに値を入れる。
+cell.value = 5
+
+cell = ws1["A2"]
+cell.value = 6
+
+# 関数式(formulae)はエクセルを使う方法はstrタイプに入れればよい。
+ws1["A3"] = "=SUM(A1, A2)"
+
+# 上の作成したエクセルシートをファイルに格納する。
+wb.save('Example1.xlsx')
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/251/1303_001.png" data-filename="001.png" style="width: 262px;"><br></p> 
+  <p>上の結果はソース上でprint関数を使って結果を出力しました。</p> 
+  <p>始めはエクセルを生成してシートの状況を確認する時にリストタイプでSheetがあることを確認できます。Workbookを生成すればSheetというシートが自動に生成されます。</p> 
+  <p>次はSheetの名を「Test1」に変更し、「Test2」というシートを使いしました。また、検索すればシートが「Test1」、「Test2」があることを確認できます。</p> 
+  <p>その後、セルに文字タイプのデータを入れました。タイプがGeneralということで出ました。次のセルに日付を格納して'yyyy-mm-dd'のタイプにデータを設定しました。</p> 
+  <p style="text-align:left;"><img src="./contents/251/1304_002.png" data-filename="002.png" style="width: 275px;"><br></p> 
+  <p>main.pyファイルがあるところでExample1.xlsxファイルが生成されたことを確認できます。</p> 
+  <p style="text-align:left;"><img src="./contents/251/1302_003.png" data-filename="003.png" style="width: 406px;"><br></p> 
+  <p>Test1のシートにはHello worldと日付がフォーマットに合わせて入力されたことを確認できます。</p> 
+  <p style="text-align:left;"><img src="./contents/251/1305_004.png" data-filename="004.png" style="width: 382px;"><br></p> 
+  <p>Test2のシートにはA1の値とA2の値があってSUM関数が実行されたことを確認できます。</p> 
+  <p><br></p> 
+  <p>今回はExcelファイルを生成することではなくファイルを読み込んでスタイルまで変更します。</p> 
+  <p>(参考にPythonのopenpyxlはxlsタイプのエクセルは参照ができません。)</p> 
+  <p style="text-align:left;"><img src="./contents/251/1307_005.png" data-filename="005.png" style="width: 848px;"><br></p> 
+  <p>C1からD13までデータを入れればグラフが自動に変更されるエクセルシートを作成しました。</p> 
+  <pre><code class="python" data-type="main.py"># エクセルを使うためのモジュール
+from openpyxl import Workbook
+from openpyxl import load_workbook
+from openpyxl.styles import PatternFill, Border, Side, Alignment, Protection, Font
+from random import random
+
+# ランダム関数を利用して-20から20までのランダム値を取得する関数。
+def get_random():
+  while True:
+    # ランダム関数は0から1間の実数が出る。 100を乗じて0から100を定数を変数に入れる。
+    ret = int(random()*100)
+    # 40以下ではなければランダム値を再取得
+    if ret &lt; 40:
+      # -20から20の値に変換
+      return ret - 20
+# エクセルを読み込む。
+wb = load_workbook(filename = "TestExcel.xlsx")
+# エクセルシートをactiveする。
+ws = wb[wb.sheetnames[0]]
+
+# C2からD13までのデータをランダムに入力する。
+for row in range(2,14):
+  key = f'C{row}'
+  # ランダム値を入力する。
+  ws[key].value = get_random()
+  # 当該なcellのフォント設定(フォントスタイル、サイズ、太さ、イタリック、整列、アンダーバー、取り消し線、色)
+  ws[key].font = Font(name='Calibri',size=11,bold=False,italic=False,vertAlign=None,underline='none',strike=False,color='FF000000')
+  # 当該なcellのフォント設定(色スタイル、グラデーションの開始色、終了色)
+  ws[key].fill = PatternFill(fill_type="solid", start_color='FFFFFFFF', end_color='FF000000')
+  # 当該なcellの枠設定
+  ws[key].border = Border( left=Side(style="thick", color="000000"),
+                           right=Side(style='double', color="000000"),
+                           top=Side(style="thick", color="000000"),
+                           bottom=Side(style="thick", color="000000"),
+                           diagonal=Side(style="thick", color="000000"),
+                           diagonal_direction=0,
+                           outline=Side(style="thick", color="000000"),
+                           vertical=Side(style="thick", color="000000"),
+                           horizontal=Side(style="thick", color="000000"))
+  key = f'D{row}'
+  # ランダム値を入力する。
+  ws[key].value = get_random()
+  # 整列設定(横整列、縦整列、回転、改行..)
+  ws[key].alignment=Alignment(horizontal='general',vertical='bottom',text_rotation=0,wrap_text=False,shrink_to_fit=False,indent=0)
+  # セルの属性(閉め、隠しなど)
+  ws[key].protection = Protection(locked=True, hidden=False)
+
+# 行の高さを設定する。
+for row in range(1, 14):
+  ws.row_dimensions[row].height = 30
+
+# 列の幅を設定する。
+for col in range(65,70):
+  ws.column_dimensions[chr(col)].width = 20
+
+# 列の幅を自動設定する機能が、作動しない。
+ws.column_dimensions['A'].auto_size = True
+
+# 上で作成したエクセルシートをファイルに格納する。
+wb.save('Example2.xlsx')
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/251/1306_006.png" data-filename="006.png" style="width: 832px;"><br></p> 
+  <p>上の例はTestExcel.xlsxファイルを読み込んでSheetの値を変更する例です。</p> 
+  <p>C列とD列はrandom関数で-20から20までの数を格納します。結果はランダムなので可笑しい気温グラフになります。</p> 
+  <p>そしてC列にはfont設定とバックグラウンド色設定、枠設定をしました。枠のSide関数の値はcolorの場合、HEXデータを入れるし、styleの場合、格のスタイル種類で選択ができます。</p> 
+  <pre><code class="text" data-type="style">'mediumDashDot', 'mediumDashed', 'dotted', 'medium', 'thick', 'thin', 'double', 'dashed', 'slantDashDot', 'dashDot', 'dashDotDot', 'hair', 'mediumDashDotDot'
+</code></pre> 
+  <p>D列の場合は整列と属性を選択しました。</p> 
+  <p>結果を見ればC列には枠が見えるし(バックグラウンド色は白なので差異がなさそうです。)、D列は整列に下向けになることを確認できます。</p> 
+  <p><br></p> 
+  <p>詳しい属性を参考することは下記のリンクを確認してください。</p> 
+  <p>link - <a href="https://openpyxl.readthedocs.io/en/stable/styles.html" target="_blank">https://openpyxl.readthedocs.io/en/stable/styles.html</a></p> 
+  <p>link - <a href="https://www.geeksforgeeks.org/python-adjusting-rows-and-columns-of-an-excel-file-using-openpyxl-module/" target="_blank">https://www.geeksforgeeks.org/python-adjusting-rows-and-columns-of-an-excel-file-using-openpyxl-module/</a></p> 
+  <p><br></p> 
+  <p>ここまでPythonでExcel(openpyxl)を扱う方法に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=python>#python</a>,<a href=./search.html?query=openpyxl>#openpyxl</a>,<a href=./search.html?query=excel>#excel</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0108">Devlopment note / Python</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/251.html'>[Python] Excel(openpyxl)を扱う方法</a><span>2020/07/16 16:40:31</span></li><li><a href='https://www.nowonbun.com/250.html'>[Python] ファイル圧縮、解凍(zipfile)する方法</a><span>2020/07/14 19:14:22</span></li><li><a href='https://www.nowonbun.com/249.html'>[Python] Apache cgiでPythonを使う方法</a><span>2020/07/09 19:58:19</span></li><li><a href='https://www.nowonbun.com/248.html'>[Python] Web serverを起動する方法(http.server)</a><span>2020/07/09 00:13:13</span></li><li><a href='https://www.nowonbun.com/247.html'>[Python] WebSocketを使う方法</a><span>2020/07/07 17:29:18</span></li><li><a href='https://www.nowonbun.com/246.html'>[Python] PythonとJavaのソケット通信する方法</a><span>2020/07/03 18:35:50</span></li><li><a href='https://www.nowonbun.com/245.html'>[Python] PythonとC#のソケット通信</a><span>2020/07/01 19:28:22</span></li><li><a href='https://www.nowonbun.com/244.html'>[Python] INI(環境設定ファイル)を扱う方法</a><span>2020/06/30 18:26:01</span></li><li><a href='https://www.nowonbun.com/243.html'>[Python] Jsonを扱う方法</a><span>2020/06/29 19:18:15</span></li><li><a href='https://www.nowonbun.com/242.html'>[Python] XMLファイルを扱う方法</a><span>2020/06/26 19:18:14</span></li><li><a href='https://www.nowonbun.com/241.html'>[Python] IOを利用してCSVファイルを扱う方法</a><span>2020/06/25 18:20:30</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/251.html'>[Python] Excel(openpyxl)を扱う方法</a><span>2020/07/16 16:40:31</span></li><li><a href='https://www.nowonbun.com/250.html'>[Python] ファイル圧縮、解凍(zipfile)する方法</a><span>2020/07/14 19:14:22</span></li><li><a href='https://www.nowonbun.com/249.html'>[Python] Apache cgiでPythonを使う方法</a><span>2020/07/09 19:58:19</span></li><li><a href='https://www.nowonbun.com/248.html'>[Python] Web serverを起動する方法(http.server)</a><span>2020/07/09 00:13:13</span></li><li><a href='https://www.nowonbun.com/247.html'>[Python] WebSocketを使う方法</a><span>2020/07/07 17:29:18</span></li><li><a href='https://www.nowonbun.com/246.html'>[Python] PythonとJavaのソケット通信する方法</a><span>2020/07/03 18:35:50</span></li><li><a href='https://www.nowonbun.com/245.html'>[Python] PythonとC#のソケット通信</a><span>2020/07/01 19:28:22</span></li><li><a href='https://www.nowonbun.com/244.html'>[Python] INI(環境設定ファイル)を扱う方法</a><span>2020/06/30 18:26:01</span></li><li><a href='https://www.nowonbun.com/243.html'>[Python] Jsonを扱う方法</a><span>2020/06/29 19:18:15</span></li><li><a href='https://www.nowonbun.com/242.html'>[Python] XMLファイルを扱う方法</a><span>2020/06/26 19:18:14</span></li><li><a href='https://www.nowonbun.com/241.html'>[Python] IOを利用してCSVファイルを扱う方法</a><span>2020/06/25 18:20:30</span></li><li><a href='https://www.nowonbun.com/240.html'>[Python] 21. データベース(mariaDB)を連結する方法</a><span>2020/06/24 18:51:50</span></li><li><a href='https://www.nowonbun.com/239.html'>[Python] 20. stringフォマード(Formatting)と補間法(interpolation)</a><span>2020/06/23 19:03:21</span></li><li><a href='https://www.nowonbun.com/238.html'>[Python] 19. 非同期IOのasync/await(asyncio)を使う方法</a><span>2020/06/22 18:10:12</span></li><li><a href='https://www.nowonbun.com/237.html'>[Python] 18. ネットワーク(Socket)通信する方法</a><span>2020/06/18 19:53:56</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/251.html';this.page.identifier = 'NOWONBUN00251';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
