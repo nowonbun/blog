@@ -26,7 +26,7 @@ body{
 	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
 }
 </style>
-<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/61.html"},"url":"https:\/\/www.nowonbun.com\/61.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] IO(Input \/ Output)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u30da\u30fc\u30b8\u306fjava\u3067\u4f7f\u3046io(input \/ output)\u306b\u95a2\u3057\u3066\u8abf\u3079\u3066\u307f\u307e\u3057\u305f\u3002io\u3068\u306f(input \/ output)\u306e\u7565\u8a9e\u3067\u305f\u3060input\u306e\u30ad\u30fc\u30dc\u30fc\u30c9\u3068output\u306e\u30e2\u30cb\u30bf\u30fc\u306e\u610f\u5473\u3067\u306f\u306a\u304f\u3001\u30d5\u30a1\u30a4\u30eb\u306einput\u306e\u30d5\u30a1\u30a4\u30eb\u4f5c\u308b\u3001\u30d5\u30a1\u30a4\u30eb\u306eoutput\u306e\u30d5\u30a1\u30a4\u30eb\u3092\u8aad\u8fbc\u307f\u306e\u3044\u307f\u3067\u3059\u306d\u3002\u3059\u306a\u308f\u3061\u3001\u30d7\u30ed\u30b0\u30e9\u30e0\u3067io\u3068\u3044\u3046\u306e\u306f\u30d5\u30a1\u30a4\u30eb\u3092\u6271\u3046\u3068\u610f\u5473\u306b\u306a\u308a\u307e\u3059\u3002\u4e00\u5fdc\u3001\u3053\u306e\u300cinput \/ output\u300d\u3092\u7406\u89e3\u3059\u308b\u3088\u3046\u306b\u306f\u300cbyte[]\u300d\u914d\u5217\u3068\u300cstream\u300d\u306b\u95a2\u3057\u3066\u8a8d\u77e5\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u3002\u6211\u3005\u304c\u30d7\u30ed\u30b0\u30e9\u30e0\u3067\u4f7f\u3046\u30c7\u30fc\u30bf\u306f\u7d50\u5c40\u3001\u8a08\u7b97\u3057\u3066\u3069\u3053\u304b\u3067\u683c\u7d0d\u3059\u308b\u304b\u3001\u51fa\u529b\u3059\u308b\u304b(\u5370\u5237\u3068\u304b\u3001\u30e2\u30cb\u30bf\u30fc\u306b\u7d50\u679c\u3092\u8868\u793a\u304b)\u3001\u3069\u3053\u304b\u3067\u901a\u4fe1\u3057\u3066\u30c7\u30fc\u30bf\u3092\u6e21\u3059\u304b\u306b\u306a\u308a\u307e\u3059\u306d\u3002\u305d\u306e\u30c7\u30fc\u30bf\u3092\u30c7\u30fc\u30bf\u5316\u3059\u308b\u3088\u3046\u306b\u306f\u30d0\u30a4\u30ca\u30ea\u30fc\u5f62\u5f0f\u306b\u5909\u63db\u3057\u307e\u3059\u3002\u30d0\u30a4\u30ca\u30ea\u30fc\u3068\u306f\u6a5f\u68b0\u304c\u8a8d\u8b58\u3067\u304d\u308b\u3088\u3046\u306a2\u9032\u30d5\u30a1\u30a4\u30eb\u3067\u3059\u306d\u3002\u305d\u306e2\u9032\u30d5\u30a1\u30a4\u30eb\u306e\u4e00\u3064\u306e\u30c7\u30fc\u30bf\u304cjava\u3067\u306f\u300cbyte\u300d\u5f62\u5f0f\u306b\u306a\u3063\u3066\u3044\u307e\u3059\u3002\u306a\u306e\u3067\u3001\u30d0\u30a4\u30ca\u30ea\u30fc\u30c7\u30fc\u30bf\u306f\u300cbyte[]\u300d\u914d\u5217\u306b\u306a\u3063\u3066\u3044\u307e\u3059\u3002java\u3067\u4f7f\u3046\u30c7\u30fc\u30bf\u30bf\u30a4\u30d7\u3067\u306f\u300cint\u300d\u578b\u304c\u3042\u308a\u307e\u3059\u3002\u3053\u306e\u300cint\u300d\u306f\u3059\u3079\u3066\u300c4byte\u300d\u306b\u306a\u3063\u3066\u3044\u307e\u3059\u306d\u3002\u300c4byte\u300d\u306b\u306a\u3063\u3066\u3044\u308b\u3053\u3068\u306e\u610f\u5473\u3067\u306f\u300cint\u300d\u578b\u3092\u30d0\u30a4\u30ca\u30ea\u30fc\u306b\u3059\u308b\u3068\u300cbyte[4]\u300d\u306b\u306a\u308a\u307e\u3059\u3002\u3082\u3057\u3001\u4e0a\u306e\u300c4byte\u300d\u3067\u9806\u756a\u304c\u5909\u308f\u3063\u305f\u308a\u3001\u300c4byte\u300d\u306e[0]\u3068[1]\u304c\u300c0\u300d\u306a\u306e\u3067\u3001\u7701\u7565\u3057\u307e\u3059\u3068\u601d\u3046\u3068\u3001\u30c7\u30fc\u30bf\u304c\u300c1000\u300d\u306b\u306a\u3089\u306a\u3044\u3067\u3059\u306d\u3002\u521d\u3081\u304b\u3089\u300cint\u300d\u304c\u300c4byte\u300d\u3060\u304b\u3089\u300c2byte\u300d\u3067\u683c\u7d0d\u3059\u308b\u3068\u30c7\u30fc\u30bf\u304c\u300cint\u300d\u306b\u623b\u308c\u307e\u305b\u3093\u3002\u306a\u306e\u3067\u3001\u9023\u7d9a\u306a\u30c7\u30fc\u30bf\u306e\u6d41\u308c\u3001\u4e0a\u306e\u30c7\u30fc\u30bf\u3092\u300cbyte[]\u300d\u5358\u4f4d\u306e\u7d50\u3076\u304b\u305f\u3092\u30d7\u30ed\u30b0\u30e9\u30e0\u3067\u306f\u300cstream\u300d\u3068\u8a00\u3044\u307e\u3059\u3002\u300cstream\u300d\u306f\u300ci\/o\u300d\u3068\u300csocket\u300d\u901a\u4fe1\u306a\u3069\u3068\u95a2\u4fc2\u304c\u305f\u304f\u3055\u3093\u3042\u308a\u307e\u3059\u306d\u3002\u30c6\u30ad\u30b9\u30c8\u30d5\u30a1\u30a4\u30eb\u3092\u30d7\u30ed\u30b0\u30e9\u30e0\u5074\u306b\u8aad\u8fbc\u3080\u6642\u306b\u300cstream\u300d\u5f62\u5f0f\u3067\u53d7\u3051\u53d6\u308b\u3057\u3001\u30c7\u30fc\u30bf\u3092\u30d5\u30a1\u30a4\u30eb\u306b\u66f8\u51fa\u3059\u6642\u306b\u3082\u300cstream\u300d\u5f62\u5f0f\u3092\u5229\u7528\u3057\u307e\u3059\u3002\u4e0a\u306e\u4f8b\u3092\u307f\u308c\u3070\u3001\u300cfileinputstream\u300d\u3067\u30d5\u30a1\u30a4\u30eb\u3092\u8aad\u307f\u8fbc\u3093\u3067\u3001\u30b3\u30f3\u30bd\u30fc\u30eb\u306b\u51fa\u529b\u3057\u307e\u3057\u305f\u3002\u7d50\u679c\u306f\u300ctest.txt\u300d\u3068\u540c\u3058\u6587\u8a00\u304c\u51fa\u529b\u3057\u307e\u3059\u306d\u3002\u4eca\u56de\u306f\u9006\u306b\u30c7\u30fc\u30bf\u5185\u5bb9\u3092\u30d5\u30a1\u30a4\u30eb\u306b\u66f8\u51fa\u3057\u307e\u3059\u3002\u4e0a\u306e\u4f8b\u3092\u307f\u308c\u3070\u3001\u3059\u3079\u3066\u300cstream.close()\u300d\u306e\u95a2\u6570\u3092\u547c\u51fa\u3057\u3066\u3044\u307e\u3059\u3002\u306a\u305c\u306a\u3089\u3001\u300ci\/o\u300d\u306b\u306f\u30b3\u30cd\u30af\u30b7\u30e7\u30f3\u304c\u3042\u308a\u307e\u3059\u304c\u3001","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2019-09-05T22:58:20.000+09:00","dateModified":"2020-01-17T07:41:38.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/61.html"},"url":"https:\/\/www.nowonbun.com\/61.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] 21. \u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3(Annotation)\u3092\u4f7f\u3046\u65b9\u6cd5","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fjava\u306e\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3(annotation)\u3092\u4f7f\u3046\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002java\u306e\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3(annotation)\u3068\u306f\u30af\u30e9\u30b9\u3084\u30e1\u30bd\u30c3\u30c9\u3001\u5909\u6570\u306a\u306e\u3067\u30e1\u30bf\u30c7\u30fc\u30bf\u3001\u30c7\u30fc\u30bf\u306e\u5b9a\u7fa9\u3092\u8a2d\u5b9a\u3059\u308b\u30c7\u30fc\u30bf\u3068\u3044\u3046\u610f\u5473\u3067\u3059\u3002\u3064\u307e\u308a\u3001\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u306e\u30c7\u30fc\u30bf\u306f\u30d7\u30ed\u30b0\u30e9\u30e0\u5b9f\u88c5\u3067\u306f\u5f71\u97ff\u304c\u306a\u304f\u3066\u3001\u30af\u30e9\u30b9\u3084\u30e1\u30bd\u30c3\u30c9\u3001\u5909\u6570\u3092\u533a\u5206\u3059\u308b\u305f\u3081\u306e\u30c7\u30fc\u30bf\u3060\u3068\u8a00\u3048\u307e\u3059\u3002\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u306f\u30a2\u30c3\u30c8\u30de\u30fc\u30af(@)\u3092\u5229\u7528\u3057\u3066\u8a2d\u5b9a\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002java\u3067\u3088\u304f\u4f7f\u3046\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u306foverride\u3001deprecated\u304c\u3042\u308a\u307e\u3059\u3002override\u306f\u30af\u30e9\u30b9\u3092\u7d99\u627f\u3057\u3066\u518d\u5b9a\u7fa9\u3059\u308b\u6642\u306b\u8a2d\u5b9a\u3059\u308b\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u3067\u3059\u3002deprecated\u306f\u30e1\u30bd\u30c3\u30c9\u3092\u524a\u9664\u3059\u308b\u3068\u65e2\u5b58\u306b\u7d99\u627f\u3057\u305f\u30af\u30e9\u30b9\u3067\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3059\u308b\u305f\u3081\u3001\u30e1\u30bd\u30c3\u30c9\u3092\u524a\u9664\u3082\u3067\u304d\u306a\u304f\u3066\u3001\u305f\u3060\u4f7f\u7528\u3092\u304a\u52e7\u3081\u3057\u306a\u3044\u306e\u3053\u3068\u3092\u304a\u77e5\u3089\u305b\u3059\u308b\u6642\u306b\u4f7f\u3046\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u3067\u3059\u3002@functionalinterface\u306e\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u3092\u4f7f\u3063\u305f\u30a4\u30f3\u30bf\u30d5\u30a7\u30fc\u30b9\u306f\u95a2\u6570\u3092\u4e8c\u3064\u306b\u4f5c\u6210\u3059\u308b\u3068\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3059\u308b\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002print\u306e\u95a2\u6570\u306f\u53d6\u308a\u6d88\u3057\u7dda\u304c\u3042\u308a\u307e\u3059\u3002@deprecated\u306e\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u306e\u5f71\u97ff\u3067\u95a2\u6570\u3092\u547c\u3073\u51fa\u3059\u3053\u3068\u3092\u3059\u308c\u3070warning\u30e1\u30c3\u30bb\u30fc\u30b8\u304c\u8868\u793a\u3057\u307e\u3059\u3002\u3000test\u306e\u95a2\u6570\u306fint aaa\u003d0;\u304c\u3042\u308a\u307e\u3059\u304c\u3001@suppresswarnings\u304c\u7121\u3051\u308c\u3070\u3001unused\u306ewarning\u30e1\u30c3\u30bb\u30fc\u30b8\u304c\u51fa\u307e\u3059\u3002\u4e0a\u306e\u3053\u3068\u306fjava\u3067\u63d0\u4f9b\u3059\u308b\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u3067\u3059\u3002\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u306f\u958b\u767a\u8005\u304c\u4f5c\u6210\u3059\u308b\u3053\u3068\u3082\u3067\u304d\u307e\u3059\u3002\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u306f\u30d7\u30ed\u30b0\u30e9\u30e0\u5b9f\u884c\u3059\u308b\u3053\u3068\u3067\u306f\u5f71\u97ff\u304c\u3042\u308a\u307e\u305b\u3093\u3002\u305f\u3060\u3001\u30e1\u30bf\u30c7\u30fc\u30bf\u3068\u3057\u3066\u69d8\u3005\u306a\u30af\u30e9\u30b9\u3068\u95a2\u6570\u3001\u5909\u6570\u3092\u533a\u5206\u3059\u308b\u305f\u3081\u306e\u60c5\u5831\u3068\u3057\u3066\u4f7f\u3046\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u3092\u751f\u6210\u3059\u308b\u6642\u306b\u3001@target\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u306f\u4f7f\u3046\u533a\u5206\u3092\u8a2d\u5b9a\u3001@retention\u306f\u8a2d\u5b9a\u3059\u308b\u30dd\u30b8\u30b7\u30e7\u30f3\u3092\u8a2d\u5b9a\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002                    \u30bf\u30a4\u30d7        \u8aac\u660e                            @target                    type        \u30af\u30e9\u30b9\u3001\u30a4\u30f3\u30bf\u30d5\u30a7\u30fc\u30b9\u3001enum\u306a\u3069\u306b\u8a2d\u5b9a                    field        \u30e1\u30f3\u30d0\u30fc\u5909\u6570\u306b\u8a2d\u5b9a                    method         \u30e1\u30bd\u30c3\u30c9\u306b\u8a2d\u5b9a              ","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2019-09-05T22:58:20.000+09:00","dateModified":"2021-01-27T14:19:59.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -36,17 +36,17 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / Java" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。このページはjavaで使うio(input / output)に関して調べてみました。ioとは(input / output)の略語でただinputのキーボードとoutputのモニターの意味ではなく、ファイルのinputのファイル作る、ファイルのoutputのファイルを読込みのいみですね。すなわち、プログラムでioというのはファイルを扱うと意味になります。一応、この「input / output」を理解するようには「byte[]」配列と「stream」に関して認知しなければならないです。我々がプログラムで使うデータは結局、計算してどこかで格納するか、出力するか(印刷とか、モニターに結果を表示か)、どこかで通信してデータを渡すかになりますね。そのデータをデータ化するようにはバイナリー形式に変換します。バイナリーとは機械が認識できるような2進ファイルですね。その2進ファイルの一つのデータがjavaでは「byte」形式になっています。なので、バイナリーデータは「byte[]」配列になっています。javaで使うデータタイプでは「int」型があります。この「int」はすべて「4byte」になっていますね。「4byte」になっていることの意味では「int」型をバイナリーにすると「byte[4]」になります。もし、上の「4byte」で順番が変わったり、「4byte」の[0]と[1]が「0」なので、省略しますと思うと、データが「1000」にならないですね。初めから「int」が「4byte」だから「2byte」で格納するとデータが「int」に戻れません。なので、連続なデータの流れ、上のデータを「byte[]」単位の結ぶかたをプログラムでは「stream」と言います。「stream」は「i/o」と「socket」通信などと関係がたくさんありますね。テキストファイルをプログラム側に読込む時に「stream」形式で受け取るし、データをファイルに書出す時にも「stream」形式を利用します。上の例をみれば、「fileinputstream」でファイルを読み込んで、コンソールに出力しました。結果は「test.txt」と同じ文言が出力しますね。今回は逆にデータ内容をファイルに書出します。上の例をみれば、すべて「stream.close()」の関数を呼出しています。なぜなら、「i/o」にはコネクションがありますが、]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はjavaのアノテーション(annotation)を使う方法に関する説明です。javaのアノテーション(annotation)とはクラスやメソッド、変数なのでメタデータ、データの定義を設定するデータという意味です。つまり、アノテーションのデータはプログラム実装では影響がなくて、クラスやメソッド、変数を区分するためのデータだと言えます。アノテーションはアットマーク(@)を利用して設定することができます。javaでよく使うアノテーションはoverride、deprecatedがあります。overrideはクラスを継承して再定義する時に設定するアノテーションです。deprecatedはメソッドを削除すると既存に継承したクラスでエラーが発生するため、メソッドを削除もできなくて、ただ使用をお勧めしないのことをお知らせする時に使うアノテーションです。@functionalinterfaceのアノテーションを使ったインタフェースは関数を二つに作成するとエラーが発生することを確認できます。printの関数は取り消し線があります。@deprecatedのアノテーションの影響で関数を呼び出すことをすればwarningメッセージが表示します。　testの関数はint aaa=0;がありますが、@suppresswarningsが無ければ、unusedのwarningメッセージが出ます。上のことはjavaで提供するアノテーションです。アノテーションは開発者が作成することもできます。アノテーションはプログラム実行することでは影響がありません。ただ、メタデータとして様々なクラスと関数、変数を区分するための情報として使うことができます。アノテーションを生成する時に、@targetアノテーションは使う区分を設定、@retentionは設定するポジションを設定することができます。                    タイプ        説明                            @target                    type        クラス、インタフェース、enumなどに設定                    field        メンバー変数に設定                    method         メソッドに設定              ]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [Java] IO(Input / Output)" />
+<meta name="title" content="明月の開発ストーリ :: [Java] 21. アノテーション(Annotation)を使う方法" />
 <link rel="canonical" href="https://www.nowonbun.com/61.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [Java] IO(Input / Output)" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。このページはjavaで使うio(input / output)に関して調べてみました。ioとは(input / output)の略語でただinputのキーボードとoutputのモニターの意味ではなく、ファイルのinputのファイル作る、ファイルのoutputのファイルを読込みのいみですね。すなわち、プログラムでioというのはファイルを扱うと意味になります。一応、この「input / output」を理解するようには「byte[]」配列と「stream」に関して認知しなければならないです。我々がプログラムで使うデータは結局、計算してどこかで格納するか、出力するか(印刷とか、モニターに結果を表示か)、どこかで通信してデータを渡すかになりますね。そのデータをデータ化するようにはバイナリー形式に変換します。バイナリーとは機械が認識できるような2進ファイルですね。その2進ファイルの一つのデータがjavaでは「byte」形式になっています。なので、バイナリーデータは「byte[]」配列になっています。javaで使うデータタイプでは「int」型があります。この「int」はすべて「4byte」になっていますね。「4byte」になっていることの意味では「int」型をバイナリーにすると「byte[4]」になります。もし、上の「4byte」で順番が変わったり、「4byte」の[0]と[1]が「0」なので、省略しますと思うと、データが「1000」にならないですね。初めから「int」が「4byte」だから「2byte」で格納するとデータが「int」に戻れません。なので、連続なデータの流れ、上のデータを「byte[]」単位の結ぶかたをプログラムでは「stream」と言います。「stream」は「i/o」と「socket」通信などと関係がたくさんありますね。テキストファイルをプログラム側に読込む時に「stream」形式で受け取るし、データをファイルに書出す時にも「stream」形式を利用します。上の例をみれば、「fileinputstream」でファイルを読み込んで、コンソールに出力しました。結果は「test.txt」と同じ文言が出力しますね。今回は逆にデータ内容をファイルに書出します。上の例をみれば、すべて「stream.close()」の関数を呼出しています。なぜなら、「i/o」にはコネクションがありますが、]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java] 21. アノテーション(Annotation)を使う方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaのアノテーション(annotation)を使う方法に関する説明です。javaのアノテーション(annotation)とはクラスやメソッド、変数なのでメタデータ、データの定義を設定するデータという意味です。つまり、アノテーションのデータはプログラム実装では影響がなくて、クラスやメソッド、変数を区分するためのデータだと言えます。アノテーションはアットマーク(@)を利用して設定することができます。javaでよく使うアノテーションはoverride、deprecatedがあります。overrideはクラスを継承して再定義する時に設定するアノテーションです。deprecatedはメソッドを削除すると既存に継承したクラスでエラーが発生するため、メソッドを削除もできなくて、ただ使用をお勧めしないのことをお知らせする時に使うアノテーションです。@functionalinterfaceのアノテーションを使ったインタフェースは関数を二つに作成するとエラーが発生することを確認できます。printの関数は取り消し線があります。@deprecatedのアノテーションの影響で関数を呼び出すことをすればwarningメッセージが表示します。　testの関数はint aaa=0;がありますが、@suppresswarningsが無ければ、unusedのwarningメッセージが出ます。上のことはjavaで提供するアノテーションです。アノテーションは開発者が作成することもできます。アノテーションはプログラム実行することでは影響がありません。ただ、メタデータとして様々なクラスと関数、変数を区分するための情報として使うことができます。アノテーションを生成する時に、@targetアノテーションは使う区分を設定、@retentionは設定するポジションを設定することができます。                    タイプ        説明                            @target                    type        クラス、インタフェース、enumなどに設定                    field        メンバー変数に設定                    method         メソッドに設定              ]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta property="og:url" content="https://www.nowonbun.com/61.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
@@ -54,12 +54,12 @@ body{
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [Java] IO(Input / Output)" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。このページはjavaで使うio(input / output)に関して調べてみました。ioとは(input / output)の略語でただinputのキーボードとoutputのモニターの意味ではなく、ファイルのinputのファイル作る、ファイルのoutputのファイルを読込みのいみですね。すなわち、プログラムでioというのはファイルを扱うと意味になります。一応、この「input / output」を理解するようには「byte[]」配列と「stream」に関して認知しなければならないです。我々がプログラムで使うデータは結局、計算してどこかで格納するか、出力するか(印刷とか、モニターに結果を表示か)、どこかで通信してデータを渡すかになりますね。そのデータをデータ化するようにはバイナリー形式に変換します。バイナリーとは機械が認識できるような2進ファイルですね。その2進ファイルの一つのデータがjavaでは「byte」形式になっています。なので、バイナリーデータは「byte[]」配列になっています。javaで使うデータタイプでは「int」型があります。この「int」はすべて「4byte」になっていますね。「4byte」になっていることの意味では「int」型をバイナリーにすると「byte[4]」になります。もし、上の「4byte」で順番が変わったり、「4byte」の[0]と[1]が「0」なので、省略しますと思うと、データが「1000」にならないですね。初めから「int」が「4byte」だから「2byte」で格納するとデータが「int」に戻れません。なので、連続なデータの流れ、上のデータを「byte[]」単位の結ぶかたをプログラムでは「stream」と言います。「stream」は「i/o」と「socket」通信などと関係がたくさんありますね。テキストファイルをプログラム側に読込む時に「stream」形式で受け取るし、データをファイルに書出す時にも「stream」形式を利用します。上の例をみれば、「fileinputstream」でファイルを読み込んで、コンソールに出力しました。結果は「test.txt」と同じ文言が出力しますね。今回は逆にデータ内容をファイルに書出します。上の例をみれば、すべて「stream.close()」の関数を呼出しています。なぜなら、「i/o」にはコネクションがありますが、]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java] 21. アノテーション(Annotation)を使う方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaのアノテーション(annotation)を使う方法に関する説明です。javaのアノテーション(annotation)とはクラスやメソッド、変数なのでメタデータ、データの定義を設定するデータという意味です。つまり、アノテーションのデータはプログラム実装では影響がなくて、クラスやメソッド、変数を区分するためのデータだと言えます。アノテーションはアットマーク(@)を利用して設定することができます。javaでよく使うアノテーションはoverride、deprecatedがあります。overrideはクラスを継承して再定義する時に設定するアノテーションです。deprecatedはメソッドを削除すると既存に継承したクラスでエラーが発生するため、メソッドを削除もできなくて、ただ使用をお勧めしないのことをお知らせする時に使うアノテーションです。@functionalinterfaceのアノテーションを使ったインタフェースは関数を二つに作成するとエラーが発生することを確認できます。printの関数は取り消し線があります。@deprecatedのアノテーションの影響で関数を呼び出すことをすればwarningメッセージが表示します。　testの関数はint aaa=0;がありますが、@suppresswarningsが無ければ、unusedのwarningメッセージが出ます。上のことはjavaで提供するアノテーションです。アノテーションは開発者が作成することもできます。アノテーションはプログラム実行することでは影響がありません。ただ、メタデータとして様々なクラスと関数、変数を区分するための情報として使うことができます。アノテーションを生成する時に、@targetアノテーションは使う区分を設定、@retentionは設定するポジションを設定することができます。                    タイプ        説明                            @target                    type        クラス、インタフェース、enumなどに設定                    field        メンバー変数に設定                    method         メソッドに設定              ]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [Java] IO(Input / Output)</title>
+<title>明月の開発ストーリ :: [Java] 21. アノテーション(Annotation)を使う方法</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -123,11 +123,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/61.html">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt" property="headline">[Java] IO(Input / Output)</h1>
+					<h1 id="titleTxt" property="headline">[Java] 21. アノテーション(Annotation)を使う方法</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0203">Study / Java</a>    作成日付 : <span property="datePublished">2019/09/05 22:58:20</span>   修正日付 : <span property="dateModified">2020/01/17 07:41:38</span>
+					<a href="./?category=0203">Study / Java</a>    作成日付 : <span property="datePublished">2019/09/05 22:58:20</span>   修正日付 : <span property="dateModified">2021/01/27 14:19:59</span>
 				</div>
 			</div>
 			<div class="article">
@@ -138,98 +138,234 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
  
   <p>こんにちは。明月です。</p> 
+  <p>この投稿はJavaのアノテーション(Annotation)を使う方法に関する説明です。</p> 
   <p><br></p> 
-  <p>このページはJavaで使うIO(Input / Output)に関して調べてみました。</p> 
+  <p>Javaのアノテーション(Annotation)とはクラスやメソッド、変数なのでメタデータ、データの定義を設定するデータという意味です。</p> 
+  <p>つまり、アノテーションのデータはプログラム実装では影響がなくて、クラスやメソッド、変数を区分するためのデータだと言えます。</p> 
   <p><br></p> 
-  <p>IOとは(Input / Output)の略語でただInputのキーボードとOutputのモニターの意味ではなく、ファイルのInputのファイル作る、ファイルのOutputのファイルを読込みのいみですね。</p> 
-  <p>すなわち、プログラムでIOというのはファイルを扱うと意味になります。</p> 
-  <p><br></p> 
-  <p>一応、この「Input / Output」を理解するようには「Byte[]」配列と「Stream」に関して認知しなければならないです。</p> 
-  <p>我々がプログラムで使うデータは結局、計算してどこかで格納するか、出力するか(印刷とか、モニターに結果を表示か)、どこかで通信してデータを渡すかになりますね。</p> 
-  <p>そのデータをデータ化するようにはバイナリー形式に変換します。バイナリーとは機械が認識できるような2進ファイルですね。その2進ファイルの一つのデータがJavaでは「byte」形式になっています。</p> 
-  <p>なので、バイナリーデータは「byte[]」配列になっています。</p> 
-  <p>Javaで使うデータタイプでは「int」型があります。この「int」はすべて「4byte」になっていますね。「4byte」になっていることの意味では「int」型をバイナリーにすると「byte[4]」になります。</p> 
-  <p style="text-align:left;"><img src="./contents/61/247_001.jpg" data-filename="001.jpg" style="width: 563px;"></p> 
-  <p>もし、上の「4byte」で順番が変わったり、「4byte」の[0]と[1]が「0」なので、省略しますと思うと、データが「1000」にならないですね。初めから「int」が「4byte」だから「2byte」で格納するとデータが「int」に戻れません。</p> 
-  <p>なので、連続なデータの流れ、上のデータを「byte[]」単位の結ぶかたをプログラムでは「Stream」と言います。</p> 
-  <p><br></p> 
-  <p>「stream」は「I/O」と「Socket」通信などと関係がたくさんありますね。</p> 
-  <p>テキストファイルをプログラム側に読込む時に「stream」形式で受け取るし、データをファイルに書出す時にも「stream」形式を利用します。</p> 
-  <p style="text-align:left;"><img src="./contents/61/251_002.jpg" data-filename="002.jpg" style="width: 552px;"></p> 
-  <pre><code class="java" data-type="">import java.io.File;
-import java.io.FileInputStream;
-
-public class Example {
-  public static void main(String[] args) {
-    try {
-      // ファイル情報をFileクラスで取得する。
-      File file = new File("/home/nowonbun/example/test.txt");
-      // データを扱うbyte[]タイプの変数を宣言する。
-      byte[] data = new byte[(int) file.length()];
-
-      // streamを割当てる。
-      FileInputStream stream = new FileInputStream(file);
-      //　データ読込む
-      stream.read(data, 0, data.length);
-      // Streamは使用後で必ず「close」をしなければならないです。
-      stream.close();
-      // 出力
-      System.out.println(new String(data));
-    } catch (Throwable e) {
-      e.printStackTrace();
-    }
+  <p>アノテーションはアットマーク(@)を利用して設定することができます。</p> 
+  <pre><code class="java" data-type="Example.java">// ラムダ式のインタフェースを設定するアノテーション
+// メソッドを二つ以上に作ったらコンパイル側でエラーが発生する。
+@FunctionalInterface
+// インターフェース
+interface LambdaExpression{
+  // 抽象メソッド
+  void run();
+}
+//　クラス
+class Example {
+  // 再定義のアノテーション(Objectから継承)
+  @Override
+  public String toString() {
+    return "Hello world";
+  }
+  // 使用禁止というアノテーション
+  // 呼び出すことの実装したらWarning表示する。
+  @Deprecated
+  public void print() {
+    System.out.println("print");
+  }
+  // 設定されているスタック領域でWarningをなくすアノテーション
+  @SuppressWarnings("unused")
+  public void test() {
+    int aaa = 0;
   }
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/61/249_003.jpg" data-filename="003.jpg" style="width: 578px;"></p> 
-  <p>上の例をみれば、「FileInputStream」でファイルを読み込んで、コンソールに出力しました。結果は「test.txt」と同じ文言が出力しますね。</p> 
-  <p>今回は逆にデータ内容をファイルに書出します。</p> 
-  <pre><code class="java" data-type="">import java.io.File;
-import java.io.FileOutputStream;
-
+  <p>Javaでよく使うアノテーションはOverride、Deprecatedがあります。</p> 
+  <p>Overrideはクラスを継承して再定義する時に設定するアノテーションです。Deprecatedはメソッドを削除すると既存に継承したクラスでエラーが発生するため、メソッドを削除もできなくて、ただ使用をお勧めしないのことをお知らせする時に使うアノテーションです。</p> 
+  <p style="text-align:left;"><img src="./contents/61/1418_001.png" data-filename="001.png" style="width: 401px;"><br></p> 
+  <p>@FunctionalInterfaceのアノテーションを使ったインタフェースは関数を二つに作成するとエラーが発生することを確認できます。</p> 
+  <p>printの関数は取り消し線があります。@Deprecatedのアノテーションの影響で関数を呼び出すことをすればWarningメッセージが表示します。　testの関数はint aaa=0;がありますが、@SuppressWarningsが無ければ、unusedのWarningメッセージが出ます。</p> 
+  <p><br></p> 
+  <p>上のことはJavaで提供するアノテーションです。アノテーションは開発者が作成することもできます。</p> 
+  <pre><code class="java" data-type="Example.java">import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
+// クラスで使うアノテーション設定
+@Target(ElementType.TYPE)
+// アノテーション設定
+@interface TestClassAnnotaion {
+  // アノテーション属性(valueは属性設定省略が可能)
+  public String value();
+}
+// メソッドで使うアノテーション設定
+@Target(ElementType.METHOD)
+// アノテーション設定
+@interface TestMethodAnnotaion {
+  // アノテーション属性
+  public String name() default "no name";
+}
+// 変数で使うアノテーション設定	
+@Target(ElementType.FIELD)
+// アノテーション設定
+@interface TestVariableAnnotaion {
+  // アノテーション属性 (valueでもないし、default値が設定されてないなら、必須要求属性になる。)
+  public String name();
+}
+//実行クラス
 public class Example {
-  public static void main(String[] args) {
-    try {
-      File file = new File("/home/nowonbun/example/test1.txt");
-      byte[] data = "テストです。".getBytes();
-
-      FileOutputStream stream = new FileOutputStream(file);
-      stream.write(data, 0, data.length);
-      stream.close();
-    } catch (Throwable e) {
-      e.printStackTrace();
+  // クラスにアノテーション設定
+  @TestClassAnnotaion("test")
+  class Node {
+    // メソッドにアノテーション設定
+    @TestMethodAnnotaion(name = "print")
+    public void print() {
+      // コンソールに出力
+      System.out.println("Hello world");
     }
+  }
+  // 変数にアノテーション設定(name属性は必須)
+  @TestVariableAnnotaion(name = "node")
+  private Node node = null;
+  // コンストラクタ
+  public Example() {
+    // Nodeインスタンスを生成
+    node = new Node();
+    // print関数を呼び出す。
+    node.print();
+  }
+  // 実行関数
+  public static void main(String... args) {
+    // インスタンスを生成
+    new Example();
   }
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/61/248_004.jpg" data-filename="004.jpg" style="width: 607px;"></p> 
-  <p>上の例をみれば、すべて「stream.close()」の関数を呼出しています。なぜなら、「I/O」にはコネクションがありますが、それをちゃんと閉めてリソースを返却しなければならないですね。</p> 
-  <p>そのためにありますが、もちろん「close」を忘れても「jvm」で自動に処理してくれますが、ちゃんとリソース返却がなれないとパフォーマンスが遅い理由になります。</p> 
-  <p>もし、「close」を呼出す前に「Exception」が発生すれば、どのようになるか？</p> 
-  <p>もちろん、「close」を呼び出せなかったので、リソースが残るままになりますね。そのため、ここで「try」キーワードを使えます。</p> 
-  <pre><code class="java" data-type="">import java.io.File;
-import java.io.FileOutputStream;
+  <p style="text-align:left;"><img src="./contents/61/1419_002.png" data-filename="002.png" style="width: 161px;"><br></p> 
+  <p>アノテーションはプログラム実行することでは影響がありません。ただ、メタデータとして様々なクラスと関数、変数を区分するための情報として使うことができます。</p> 
+  <p>アノテーションを生成する時に、@Targetアノテーションは使う区分を設定、@Retentionは設定するポジションを設定することができます。</p> 
+  <div class="table-responsive"> 
+   <table class="table table-striped table-bordered table-condensed"> 
+    <thead> 
+     <tr style="background-color:#DAD7D7"> 
+      <th style="white-space: nowrap;">タイプ</th> 
+      <th>説明</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td colspan="2" style="background-color:#C5FDFD;text-align:center">@Target</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">TYPE</td> 
+      <td>クラス、インタフェース、enumなどに設定</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">FIELD</td> 
+      <td>メンバー変数に設定</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">METHOD </td> 
+      <td>メソッドに設定</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">PARAMETER</td> 
+      <td>関数のパラメータに設定</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">CONSTRUCTOR</td> 
+      <td>コンストラクタに設定</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">LOCAL_VARIABLE</td> 
+      <td>ロカール変数に設定</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">ANNOTATION_TYPE</td> 
+      <td>アノテーションに設定</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">PACKAGE</td> 
+      <td>パッケージに設定</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">TYPE_PARAMETER</td> 
+      <td>ジェネリックタイプに設定</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">PACKAGE </td> 
+      <td>すべてのところで設定可能</td> 
+     </tr> 
+     <tr> 
+      <td colspan="2" style="background-color:#C5FDFD;text-align:center">@Retention</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">SOURCE</td> 
+      <td>ソース上だけ使うメタデータ情報。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">CLASS</td> 
+      <td>.classファイルにはあるが、Runtime(実行中)には見えない。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">RUNTIME</td> 
+      <td>Runtime(実行中)にも参照可能。 Reflectionを通ってクラスやメソッド区分ができます。</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <p>その以外に@inheritedの設定はクラスを継承する時にアノテーションメタデータ情報も継承するという意味です。@DocumentedはJava docを生成する時にメタデータ情報を含めるというアノテーション情報です。</p> 
+  <p>私の個人の考えはReflection機能ではなければ別にアノテーションを使うことがないと思います。Reflectionでアノテーションをよってクラスを探索やメソッドを探索することが必要なので、それのためには必要です。</p> 
+  <pre><code class="java" data-type="Example.java">import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
+import java.lang.reflect.Method;
 
-public class Example {
-  public static void main(String[] args) {
-    try {
-      File file = new File("/home/nowonbun/example/test1.txt");
-      byte[] data = "テストです。".getBytes();
-      
-      //　{ }の処理領域を外れたら自動に「close」が呼び出せます。
-      try (FileOutputStream stream = new FileOutputStream(file)) {
-        stream.write(data, 0, data.length);
+// メソッドで使うアノテーション設定
+@Target(ElementType.METHOD)
+// Reflectionで認識するアノテーション
+@Retention(RetentionPolicy.RUNTIME)
+// アノテーション設定
+@interface CallMethod {
+  // アノテーション属性
+  public String name() default "no name";
+}
+//　クラス
+class Example {
+  // Runtimeアノテーション設定
+  @CallMethod
+  public void run1() {
+    // コンソールに出力
+    System.out.println("run1 call");
+  }
+  // アノテーション設定しない
+  public void run2() {
+    // コンソールに出力
+    System.out.println("run2 call");
+  }
+  // Runtimeアノテーション設定
+  @CallMethod
+  public void run3() {
+    // コンソールに出力
+    System.out.println("run3 call");
+  }
+  // 実行関数
+  public static void main(String[] args) throws Throwable {
+    // インスタンスを生成
+    Example ex = new Example();
+    // Reflectionでメソッドを検索
+    for(Method method : ex.getClass().getMethods()) {
+      // CallMethodのアノテーションを取得
+      CallMethod anno = method.getAnnotation(CallMethod.class);
+      // 設定しなければnullになる。
+      if(anno != null) {
+        // CallMethodがあるメソッドを実行する。
+        method.invoke(ex);
       }
-    } catch (Throwable e) {
-      e.printStackTrace();
     }
   }
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/61/250_006.jpg" data-filename="006.jpg" style="width: 659px;"></p> 
-  <p>上の「try ~ close」を使えるようには必ずクラスが「closeable」インタフェースを継承しなければならないです。</p> 
-  <p style="text-align:left;"><img src="./contents/61/246_005.jpg" data-filename="005.jpg" style="width: 546px;"></p> 
-  <p>もちろん「try ~ catch ~ close ~ finally」の構文も使えますね。</p>
+  <p style="text-align:left;"><img src="./contents/61/1420_003.png" data-filename="003.png" style="width: 182px;"><br></p> 
+  <p>上の例をみればReflectionでアノテーションが設定している関数だけ呼び出すことができます。</p> 
+  <p>つまり、アノテーションでStrategyパターン(戦略パターン)、facade patternパターンを実装することができます。</p> 
+  <p><br></p> 
+  <p>その以外にEclipseみたいにIDEツールやJankinsのCIツールなどで使うためのアノテーションです。</p> 
+  <p>ただ、コメントとしてアノテーションを作成するのは逆にソースの可読性を悪くなることがあるので、コメントと区分して使えばよいと思います。</p> 
+  <p><br></p> 
+  <p>ここまでJavaのアノテーション(Annotation)を使う方法に関する説明でした。</p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
  
 </div>
 				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/60.html" target="_blank">[Java] 20. iterator(for-each)とStream APIを使う方法</a></div><div class="post-category"><span>次の投稿▶</span><a href="https://www.nowonbun.com/62.html" target="_blank">[Java] ジェネリック(Generic type)</a></div></div>
@@ -241,7 +377,7 @@ public class Example {
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0203">Study / Java</a>」の他投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/68.html'>[Java] Reflection - Class編</a><span>2019/09/17 20:22:02</span></li><li><a href='https://www.nowonbun.com/67.html'>[Java] ソケット(Socket)通信</a><span>2019/09/16 23:42:46</span></li><li><a href='https://www.nowonbun.com/66.html'>[Java] アノテーション(annotation)</a><span>2019/09/13 20:03:58</span></li><li><a href='https://www.nowonbun.com/65.html'>[Java] スレッドプール(ThreadPool)</a><span>2019/09/13 00:58:31</span></li><li><a href='https://www.nowonbun.com/64.html'>[Java] スレッド(Thread)、同期化(synchronized)、デッドロック(deadlock)</a><span>2019/09/11 23:06:09</span></li><li><a href='https://www.nowonbun.com/63.html'>[Java] Streamフィルタ式</a><span>2019/09/10 21:55:36</span></li><li><a href='https://www.nowonbun.com/62.html'>[Java] ジェネリック(Generic type)</a><span>2019/09/06 22:30:49</span></li><li><a href='https://www.nowonbun.com/61.html'>[Java] IO(Input / Output)</a><span>2019/09/05 22:58:20</span></li><li><a href='https://www.nowonbun.com/60.html'>[Java] 20. iterator(for-each)とStream APIを使う方法</a><span>2019/09/04 20:11:28</span></li><li><a href='https://www.nowonbun.com/59.html'>[Java] 19. ラムダ(Lambda)を使う方法</a><span>2019/09/03 20:37:14</span></li><li><a href='https://www.nowonbun.com/58.html'>[Java] 18. 匿名クラス(Anonymous class)とクロージャ(closure)</a><span>2019/09/02 20:30:34</span></li><li><a href='https://www.nowonbun.com/57.html'>[Java] 17. ジェネリックタイプ(Generic type)を使う方法</a><span>2019/08/27 19:05:44</span></li><li><a href='https://www.nowonbun.com/56.html'>[Java] 16. 例外処理(try~catch~finally, throw)を使う方法</a><span>2019/08/26 23:40:29</span></li><li><a href='https://www.nowonbun.com/55.html'>[Java] 15. 列挙型(バイナリデータビット演算子の使用例)</a><span>2019/08/23 19:46:10</span></li><li><a href='https://www.nowonbun.com/54.html'>[Java] 14. オブジェクト指向プログラミング(OOP)の4つ特性(カプセル化、抽象化、継承、多相化)</a><span>2019/08/22 20:08:37</span></li></ul>
+					<ul><li><a href='https://www.nowonbun.com/68.html'>[Java] Reflection - Class編</a><span>2019/09/17 20:22:02</span></li><li><a href='https://www.nowonbun.com/67.html'>[Java] ソケット(Socket)通信</a><span>2019/09/16 23:42:46</span></li><li><a href='https://www.nowonbun.com/66.html'>[Java] アノテーション(annotation)</a><span>2019/09/13 20:03:58</span></li><li><a href='https://www.nowonbun.com/65.html'>[Java] スレッドプール(ThreadPool)</a><span>2019/09/13 00:58:31</span></li><li><a href='https://www.nowonbun.com/64.html'>[Java] スレッド(Thread)、同期化(synchronized)、デッドロック(deadlock)</a><span>2019/09/11 23:06:09</span></li><li><a href='https://www.nowonbun.com/63.html'>[Java] Streamフィルタ式</a><span>2019/09/10 21:55:36</span></li><li><a href='https://www.nowonbun.com/62.html'>[Java] ジェネリック(Generic type)</a><span>2019/09/06 22:30:49</span></li><li><a href='https://www.nowonbun.com/61.html'>[Java] 21. アノテーション(Annotation)を使う方法</a><span>2019/09/05 22:58:20</span></li><li><a href='https://www.nowonbun.com/60.html'>[Java] 20. iterator(for-each)とStream APIを使う方法</a><span>2019/09/04 20:11:28</span></li><li><a href='https://www.nowonbun.com/59.html'>[Java] 19. ラムダ(Lambda)を使う方法</a><span>2019/09/03 20:37:14</span></li><li><a href='https://www.nowonbun.com/58.html'>[Java] 18. 匿名クラス(Anonymous class)とクロージャ(closure)</a><span>2019/09/02 20:30:34</span></li><li><a href='https://www.nowonbun.com/57.html'>[Java] 17. ジェネリックタイプ(Generic type)を使う方法</a><span>2019/08/27 19:05:44</span></li><li><a href='https://www.nowonbun.com/56.html'>[Java] 16. 例外処理(try~catch~finally, throw)を使う方法</a><span>2019/08/26 23:40:29</span></li><li><a href='https://www.nowonbun.com/55.html'>[Java] 15. 列挙型(バイナリデータビット演算子の使用例)</a><span>2019/08/23 19:46:10</span></li><li><a href='https://www.nowonbun.com/54.html'>[Java] 14. オブジェクト指向プログラミング(OOP)の4つ特性(カプセル化、抽象化、継承、多相化)</a><span>2019/08/22 20:08:37</span></li></ul>
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
