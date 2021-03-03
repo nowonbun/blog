@@ -26,7 +26,7 @@ body{
 	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
 }
 </style>
-<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/65.html"},"url":"https:\/\/www.nowonbun.com\/65.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] \u30b9\u30ec\u30c3\u30c9\u30d7\u30fc\u30eb(ThreadPool)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u30da\u30fc\u30b8\u3067\u306f\u30b9\u30ec\u30c3\u30c9\u30d7\u30fc\u30eb(threadpool)\u306b\u95a2\u3057\u3066\u8abf\u3079\u3066\u307f\u307e\u3057\u305f\u3002\u4ee5\u524d\u307e\u3067\u30b9\u30ec\u30c3\u30c9(thread)\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u307e\u3057\u305f\u3002\u30b9\u30ec\u30c3\u30c9(thread)\u3068\u306f\u4e26\u5217\u51e6\u7406\u3067\u30d7\u30ed\u30bb\u30b9\u5185\u3067\u540c\u6642\u306b\u51e6\u7406\u304c\u3067\u304d\u308b\u3053\u3068\u3067\u3059\u3002\u305d\u306e\u305f\u3081\u3001\u30c7\u30fc\u30bf\u3092\u5171\u6709\u3059\u308b\u3088\u3046\u306b\u540c\u671f\u5316(synchronized)\u306b\u3088\u3063\u3066\u30c7\u30fc\u30bf\u306e\u7121\u6b20\u6027\u3092\u5b88\u308b\u3053\u3068\u306b\u3057\u307e\u3059\u3002\u30b9\u30ec\u30c3\u30c9\u306e\u5834\u5408\u306f\u30b7\u30b9\u30c6\u30e0\u306e\u6027\u80fd\u95a2\u4fc2\u306a\u304f\u3001\u7121\u9650\u306b\u751f\u6210\u304c\u3067\u304d\u307e\u3059\u3002\u9069\u5207\u306a\u30b9\u30ec\u30c3\u30c9\u751f\u6210\u306f\u4e26\u5217\u51e6\u7406\u3067\u30d7\u30ed\u30b0\u30e9\u30e0\u306e\u6027\u80fd\u3092\u4e0a\u3052\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u306d\u3002\u3067\u3082\u3001\u30b9\u30ec\u30c3\u30c9\u306f\u7121\u9650\u306b\u751f\u6210\u3067\u304d\u308b\u3068\u601d\u3063\u3066\u3082\u3001\u30d1\u30bd\u30b3\u30f3\u306e\u7269\u7406\u7684\u306a\u5bb9\u91cf\u306f\u9650\u754c\u304c\u3042\u308a\u307e\u3059\u306d\u3002\u7121\u9650\u306b\u30b9\u30ec\u30c3\u30c9\u3092\u751f\u6210\u3059\u308b\u3053\u3068\u3067\u30d7\u30ed\u30b0\u30e9\u30e0\u304c\u6307\u6570\u7684\u306b\u6027\u80fd\u304c\u4e0a\u304c\u308b\u3053\u3068\u3067\u306f\u306a\u304f\u3001\u9650\u754c\u304c\u81f3\u308b\u3068\u7d50\u5c40\u30b9\u30ec\u30c3\u30c9\u3092\u5b9f\u884c\u3059\u308b\u30ea\u30bd\u30fc\u30b9\u3067\u30b7\u30f3\u30b0\u30eb\u30b9\u30ec\u30c3\u30c9\u3088\u308a\u9045\u304f\u306a\u308b\u6bb5\u968e\u306b\u306a\u308a\u307e\u3059\u306d\u3002\u305d\u306e\u610f\u5473\u3067\u306f\u3001\u30b9\u30ec\u30c3\u30c9\u500b\u6570\u3092\u5236\u5fa1\u3059\u308b\u3057\u3001\u30ea\u30bd\u30fc\u30b9\u3092\u518d\u4f7f\u7528\u3059\u308b\u3053\u3068\u3067\u30d7\u30ed\u30b0\u30e9\u30e0\u306e\u6027\u80fd\u3092\u3042\u304c\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002\u30b9\u30ec\u30c3\u30c9\u30d7\u30fc\u30eb\u306f\u30b7\u30b9\u30c6\u30e0\u306b\u3088\u3063\u3066\u30b9\u30ec\u30c3\u30c9\u500b\u6570\u3092\u5236\u5fa1\u3059\u308b\u3057\u3001\u30b9\u30ec\u30c3\u30c9\u306e\u30b9\u30c6\u30c3\u30d7\u304c\u7d42\u308f\u3063\u305f\u3082\u306e\u3060\u3063\u3066\u3082\u30ea\u30bd\u30fc\u30b9\u89e3\u9664\u3067\u306f\u306a\u304f\u3001\u6b21\u306e\u30b9\u30ec\u30c3\u30c9\u306b\u518d\u4f7f\u7528\u3059\u308b\u3053\u3068\u3067\u30ea\u30bd\u30fc\u30b9\u3092\u7bc0\u7d04\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002\u300cexecutors.newsinglethreadexecutor()\u300d\u306f\u30b9\u30ec\u30c3\u30c9\u30d7\u30fc\u30eb\u306e\u4e2d\u3067\u4e00\u3064\u306e\u30b9\u30ec\u30c3\u30c9\u3092\u5229\u7528\u3059\u308b\u4f8b\u3067\u3059\u3002\u7d50\u679c\u3092\u307f\u308c\u3070\uff11\u756a\u76ee\u3001\uff12\u756a\u76ee\u3001\uff13\u756a\u76ee\u3092\u5b9f\u884c\u3057\u3066\u3082\u9806\u756a\u901a\u308a\u306b\u30b9\u30ec\u30c3\u30c9\u304c\u52d5\u304d\u307e\u3059\u3002\u30b9\u30ec\u30c3\u30c9\u540d\u3082\u300cthread1\u300d\u3067\u540c\u3058\u30b9\u30ec\u30c3\u30c9\u306b\u306a\u3063\u3066\u3044\u307e\u3059\u306d\u3002\u300cexecutors.newcachedthreadpool()\u300d\u306f\u30b9\u30ec\u30c3\u30c9\u30d7\u30fc\u30eb\u306e\u4e2d\u3067\u30b9\u30ec\u30c3\u30c9\u30b9\u30ec\u30c3\u30c9\u500b\u6570\u3092\u6700\u5927\u306b\u300cint\u300d\u306e\u30b5\u30a4\u30ba\u307b\u3069\u751f\u6210\u304c\u3067\u304d\u307e\u3059\u3002\u30b7\u30b9\u30c6\u30e0\u6027\u80fd\u306b\u3088\u3063\u3066\u9650\u754c\u304c\u3042\u308a\u307e\u3059\u304c\u3001\u304b\u306a\u308a\u591a\u304f\u30b9\u30ec\u30c3\u30c9\u3092\u751f\u6210\u3067\u304d\u307e\u3059\u3002\u3067\u3082\u30b7\u30b9\u30c6\u30e0\u4e2d\u3067\u306f\u4e00\u3064\u306e\u30d7\u30ed\u30b0\u30e9\u30e0\u304c\u3042\u308b\u306e\u3067\u3001\u30d1\u30d5\u30a9\u30fc\u30de\u30f3\u30b9\u3092\u6700\u5927\u307e\u3067\u4f7f\u3046\u306e\u306f\u5371\u306a\u3044\u3067\u3059\u306d\u3002\u30b9\u30ec\u30c3\u30c9\u30d7\u30fc\u30eb\u3067\u30b9\u30ec\u30c3\u30c9\u30ea\u30bd\u30fc\u30b9\u3092\u518d\u4f7f\u7528\u3059\u308b\u3068\u6a5f\u80fd\u304c\u306a\u3051\u308c\u3070\u3001\u5225\u306b\u4e00\u822c\u300cthread\u300d\u3092\u751f\u6210\u3059\u308b\u3053\u3068\u3068\u5dee\u7570\u304c\u306a\u3044\u3068\u601d\u3044\u307e\u3059\u306d\u3002\u30b9\u30ec\u30c3\u30c9\uff12\u3064\u3060\u3051\u4f7f\u3046\u30b9\u30ec\u30c3\u30c9\u30d7\u30fc\u30eb\u3092\u751f\u6210\u3057\u305f\u306e\u3067\u3001\u7d50\u679c\u3092\u307f\u308c\u3070\u521d\u3081\u306b\u306f\u30b9\u30ec\u30c3\u30c9\u3092\uff12\u3064\u3092\u5229\u7528\u3057\u3066\uff12\u3064\u306e\u30b9\u30ec\u30c3\u30c9\u304c\u7d42\u4e86\u3059\u308b\u3068\u300cthread1\u300d\u306f\u518d\u4f7f\u7528\u3059\u308b\u3057\u3066\u4e00\u3064\u306e\u30b9\u30ec\u30c3\u30c9\u306b\u5c55\u958b\u3059\u308b\u3053\u3068\u3092\u898b\u3048\u307e\u3059\u306d\u3002\u305d\u306e\u4ee5\u5916\u306e\u30b9\u30ec\u30c3\u30c9\u30d7\u30fc\u30eb\u306e\u7a2e\u985e\u306f\u300cnewscheduledthreadpool\u300d,\u300cnewworkstealingpoo","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2019-09-13T00:58:31.000+09:00","dateModified":"2020-01-17T07:42:13.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/65.html"},"url":"https:\/\/www.nowonbun.com\/65.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] 25. Object\u30af\u30e9\u30b9(notify\u3001wait\u306e\u4f7f\u3044\u65b9)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fjava\u306eobject\u30af\u30e9\u30b9(notify\u3001wait\u306e\u4f7f\u3044\u65b9)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u4ee5\u524d\u306e\u6295\u7a3f\u3067\u518d\u5b9a\u7fa9(override)\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u305f\u6642\u306b\u3001hashcode\u3068equals\u3001tostring\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u305f\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002link - [java] 11. string\u306ehashcode\u3068equals\u3001\u305d\u3057\u3066tostring\u306e\u518d\u5b9a\u7fa9(override)java\u306e\u6700\u5c0f\u306e\u5358\u4f4d\u304c\u30af\u30e9\u30b9\u306b\u306a\u3063\u3066\u3044\u307e\u3059\u3002\u3064\u307e\u308a\u3001\u5b9f\u884c\u95a2\u6570\u306emain\u95a2\u6570\u3060\u3051\u3092\u4f5c\u308d\u3046\u3068\u601d\u3063\u3066\u3082\u30af\u30e9\u30b9\u3092\u4f5c\u3063\u3066\u305d\u306e\u4e2d\u3067static void main\u3067\u5b9f\u884c\u95a2\u6570\u3092\u4f5c\u6210\u3057\u307e\u3059\u3002\u305d\u306e\u6700\u5c0f\u5358\u4f4d\u306e\u30af\u30e9\u30b9\u304c\u57fa\u672c\u7684\u306bobject\u30af\u30e9\u30b9\u3092\u7d99\u627f\u3057\u3066\u3044\u307e\u3059\u3002\u3064\u307e\u308a\u3001extents\u3067\u7d99\u627f\u3092\u3057\u3066\u306a\u304f\u3066\u3082\u57fa\u672c\u7684\u306bobject\u3092\u7d99\u627f\u3057\u3066\u3044\u308b\u3068\u601d\u3048\u3070\u3088\u3044\u3067\u3059\u3002\u305d\u3046\u306a\u3089\u3001java\u306f\u8907\u6570\u306e\u7d99\u627f\u304c\u3067\u304d\u306a\u3044\u3067\u3059\u304c\u3001\u305d\u306e\u4ed6\u306e\u30af\u30e9\u30b9\u3092\u7d99\u627f\u3057\u305f\u3089\u8907\u6570\u7d99\u627f\u306b\u306a\u308b\u304b\u3068\u601d\u3044\u307e\u3059\u304c\u3001\u3059\u3079\u3066\u306e\u30af\u30e9\u30b9\u304cobject\u30af\u30e9\u30b9\u3092\u7d99\u627f\u3057\u3066\u3044\u308b\u306e\u3067\u8907\u6570\u7d99\u627f\u3067\u306f\u306a\u304f\u3001\u7d99\u627f\u306e\u7d99\u627f\u306b\u306a\u3063\u305f\u3053\u3068\u3067\u3059\u3002\u305d\u3046\u306a\u3089\u3059\u3079\u3066\u306e\u30af\u30e9\u30b9\u304cobejct\u30af\u30e9\u30b9\u3092\u7d99\u627f\u3057\u3066\u3044\u308b\u306e\u3067object\u30af\u30e9\u30b9\u306b\u95a2\u3057\u3066\u6574\u7406\u3059\u308b\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059\u3002object\u30af\u30e9\u30b9\u306f\u7dcf11\u500b\u306e\u95a2\u6570\u3067\u69cb\u6210\u3057\u3066\u3044\u307e\u3059\u3002\u5185\u90e8\u306e\u30e1\u30f3\u30d0\u30fc\u5909\u6570\u306f\u3042\u308a\u307e\u305b\u3093\u3002                    \u95a2\u6570        \u8aac\u660e                            public final native class\u0026amp;lt;?\u0026amp;gt; getclass()        \u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u306e\u30af\u30e9\u30b9\u30bf\u30a4\u30d7\u3092\u30ea\u30bf\u30fc\u30f3\u3059\u308b\u3002                    public native int hashcode();        \u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u306e\u30a2\u30c9\u30ec\u30b9\u306e\u5024\u3092\u30cf\u30c3\u30b7\u30e5\u5024\u3067\u30ea\u30bf\u30fc\u30f3\u3059\u308b\u3002                    public boolean equals(object obj)        \u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u306e\u30a2\u30c9\u30ec\u30b9\u5024\u3092\u6bd4\u8f03\u3057\u3066\u540c\u3058\u306a\u3089true\u3001\u9055\u3044\u306a\u3089false\u3092\u30ea\u30bf\u30fc\u30f3                    protected native object clone()        \u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u3092\u30b3\u30d4\u30fc\u3059\u308b\u3002\u5358\u7d14\u306a\u30a2\u30c9\u30ec\u30b9\u5024\u306e\u30b3\u30d4\u30fc\u3067\u306f\u306a\u304f\u30af\u30e9\u30b9\u306e\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u30b3\u30d4\u30fc\u3059\u308b\u3053\u3068\u3002\u30af\u30e9\u30b9\u30b3\u30d4\u30fc\u306e\u305f\u3081\u306b\u30a4\u30f3\u30bf\u30d5\u30a7\u30fc\u30b9cloneable\u3092\u7d99\u627f","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2019-09-13T00:58:31.000+09:00","dateModified":"2021-03-03T18:00:38.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -36,17 +36,17 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / Java" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。このページではスレッドプール(threadpool)に関して調べてみました。以前までスレッド(thread)に関して説明しました。スレッド(thread)とは並列処理でプロセス内で同時に処理ができることです。そのため、データを共有するように同期化(synchronized)によってデータの無欠性を守ることにします。スレッドの場合はシステムの性能関係なく、無限に生成ができます。適切なスレッド生成は並列処理でプログラムの性能を上げることができますね。でも、スレッドは無限に生成できると思っても、パソコンの物理的な容量は限界がありますね。無限にスレッドを生成することでプログラムが指数的に性能が上がることではなく、限界が至ると結局スレッドを実行するリソースでシングルスレッドより遅くなる段階になりますね。その意味では、スレッド個数を制御するし、リソースを再使用することでプログラムの性能をあがることができます。スレッドプールはシステムによってスレッド個数を制御するし、スレッドのステップが終わったものだってもリソース解除ではなく、次のスレッドに再使用することでリソースを節約することができます。「executors.newsinglethreadexecutor()」はスレッドプールの中で一つのスレッドを利用する例です。結果をみれば１番目、２番目、３番目を実行しても順番通りにスレッドが動きます。スレッド名も「thread1」で同じスレッドになっていますね。「executors.newcachedthreadpool()」はスレッドプールの中でスレッドスレッド個数を最大に「int」のサイズほど生成ができます。システム性能によって限界がありますが、かなり多くスレッドを生成できます。でもシステム中では一つのプログラムがあるので、パフォーマンスを最大まで使うのは危ないですね。スレッドプールでスレッドリソースを再使用すると機能がなければ、別に一般「thread」を生成することと差異がないと思いますね。スレッド２つだけ使うスレッドプールを生成したので、結果をみれば初めにはスレッドを２つを利用して２つのスレッドが終了すると「thread1」は再使用するして一つのスレッドに展開することを見えますね。その以外のスレッドプールの種類は「newscheduledthreadpool」,「newworkstealingpoo]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はjavaのobjectクラス(notify、waitの使い方)に関する説明です。以前の投稿で再定義(override)に関して説明した時に、hashcodeとequals、tostringに関して説明したことがあります。link - [java] 11. stringのhashcodeとequals、そしてtostringの再定義(override)javaの最小の単位がクラスになっています。つまり、実行関数のmain関数だけを作ろうと思ってもクラスを作ってその中でstatic void mainで実行関数を作成します。その最小単位のクラスが基本的にobjectクラスを継承しています。つまり、extentsで継承をしてなくても基本的にobjectを継承していると思えばよいです。そうなら、javaは複数の継承ができないですが、その他のクラスを継承したら複数継承になるかと思いますが、すべてのクラスがobjectクラスを継承しているので複数継承ではなく、継承の継承になったことです。そうならすべてのクラスがobejctクラスを継承しているのでobjectクラスに関して整理する必要があります。objectクラスは総11個の関数で構成しています。内部のメンバー変数はありません。                    関数        説明                            public final native class&amp;lt;?&amp;gt; getclass()        オブジェクトのクラスタイプをリターンする。                    public native int hashcode();        オブジェクトのアドレスの値をハッシュ値でリターンする。                    public boolean equals(object obj)        オブジェクトのアドレス値を比較して同じならtrue、違いならfalseをリターン                    protected native object clone()        オブジェクトをコピーする。単純なアドレス値のコピーではなくクラスのインスタンスをコピーすること。クラスコピーのためにインタフェースcloneableを継承]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [Java] スレッドプール(ThreadPool)" />
+<meta name="title" content="明月の開発ストーリ :: [Java] 25. Objectクラス(notify、waitの使い方)" />
 <link rel="canonical" href="https://www.nowonbun.com/65.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [Java] スレッドプール(ThreadPool)" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。このページではスレッドプール(threadpool)に関して調べてみました。以前までスレッド(thread)に関して説明しました。スレッド(thread)とは並列処理でプロセス内で同時に処理ができることです。そのため、データを共有するように同期化(synchronized)によってデータの無欠性を守ることにします。スレッドの場合はシステムの性能関係なく、無限に生成ができます。適切なスレッド生成は並列処理でプログラムの性能を上げることができますね。でも、スレッドは無限に生成できると思っても、パソコンの物理的な容量は限界がありますね。無限にスレッドを生成することでプログラムが指数的に性能が上がることではなく、限界が至ると結局スレッドを実行するリソースでシングルスレッドより遅くなる段階になりますね。その意味では、スレッド個数を制御するし、リソースを再使用することでプログラムの性能をあがることができます。スレッドプールはシステムによってスレッド個数を制御するし、スレッドのステップが終わったものだってもリソース解除ではなく、次のスレッドに再使用することでリソースを節約することができます。「executors.newsinglethreadexecutor()」はスレッドプールの中で一つのスレッドを利用する例です。結果をみれば１番目、２番目、３番目を実行しても順番通りにスレッドが動きます。スレッド名も「thread1」で同じスレッドになっていますね。「executors.newcachedthreadpool()」はスレッドプールの中でスレッドスレッド個数を最大に「int」のサイズほど生成ができます。システム性能によって限界がありますが、かなり多くスレッドを生成できます。でもシステム中では一つのプログラムがあるので、パフォーマンスを最大まで使うのは危ないですね。スレッドプールでスレッドリソースを再使用すると機能がなければ、別に一般「thread」を生成することと差異がないと思いますね。スレッド２つだけ使うスレッドプールを生成したので、結果をみれば初めにはスレッドを２つを利用して２つのスレッドが終了すると「thread1」は再使用するして一つのスレッドに展開することを見えますね。その以外のスレッドプールの種類は「newscheduledthreadpool」,「newworkstealingpoo]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java] 25. Objectクラス(notify、waitの使い方)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaのobjectクラス(notify、waitの使い方)に関する説明です。以前の投稿で再定義(override)に関して説明した時に、hashcodeとequals、tostringに関して説明したことがあります。link - [java] 11. stringのhashcodeとequals、そしてtostringの再定義(override)javaの最小の単位がクラスになっています。つまり、実行関数のmain関数だけを作ろうと思ってもクラスを作ってその中でstatic void mainで実行関数を作成します。その最小単位のクラスが基本的にobjectクラスを継承しています。つまり、extentsで継承をしてなくても基本的にobjectを継承していると思えばよいです。そうなら、javaは複数の継承ができないですが、その他のクラスを継承したら複数継承になるかと思いますが、すべてのクラスがobjectクラスを継承しているので複数継承ではなく、継承の継承になったことです。そうならすべてのクラスがobejctクラスを継承しているのでobjectクラスに関して整理する必要があります。objectクラスは総11個の関数で構成しています。内部のメンバー変数はありません。                    関数        説明                            public final native class&amp;lt;?&amp;gt; getclass()        オブジェクトのクラスタイプをリターンする。                    public native int hashcode();        オブジェクトのアドレスの値をハッシュ値でリターンする。                    public boolean equals(object obj)        オブジェクトのアドレス値を比較して同じならtrue、違いならfalseをリターン                    protected native object clone()        オブジェクトをコピーする。単純なアドレス値のコピーではなくクラスのインスタンスをコピーすること。クラスコピーのためにインタフェースcloneableを継承]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta property="og:url" content="https://www.nowonbun.com/65.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
@@ -54,12 +54,12 @@ body{
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [Java] スレッドプール(ThreadPool)" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。このページではスレッドプール(threadpool)に関して調べてみました。以前までスレッド(thread)に関して説明しました。スレッド(thread)とは並列処理でプロセス内で同時に処理ができることです。そのため、データを共有するように同期化(synchronized)によってデータの無欠性を守ることにします。スレッドの場合はシステムの性能関係なく、無限に生成ができます。適切なスレッド生成は並列処理でプログラムの性能を上げることができますね。でも、スレッドは無限に生成できると思っても、パソコンの物理的な容量は限界がありますね。無限にスレッドを生成することでプログラムが指数的に性能が上がることではなく、限界が至ると結局スレッドを実行するリソースでシングルスレッドより遅くなる段階になりますね。その意味では、スレッド個数を制御するし、リソースを再使用することでプログラムの性能をあがることができます。スレッドプールはシステムによってスレッド個数を制御するし、スレッドのステップが終わったものだってもリソース解除ではなく、次のスレッドに再使用することでリソースを節約することができます。「executors.newsinglethreadexecutor()」はスレッドプールの中で一つのスレッドを利用する例です。結果をみれば１番目、２番目、３番目を実行しても順番通りにスレッドが動きます。スレッド名も「thread1」で同じスレッドになっていますね。「executors.newcachedthreadpool()」はスレッドプールの中でスレッドスレッド個数を最大に「int」のサイズほど生成ができます。システム性能によって限界がありますが、かなり多くスレッドを生成できます。でもシステム中では一つのプログラムがあるので、パフォーマンスを最大まで使うのは危ないですね。スレッドプールでスレッドリソースを再使用すると機能がなければ、別に一般「thread」を生成することと差異がないと思いますね。スレッド２つだけ使うスレッドプールを生成したので、結果をみれば初めにはスレッドを２つを利用して２つのスレッドが終了すると「thread1」は再使用するして一つのスレッドに展開することを見えますね。その以外のスレッドプールの種類は「newscheduledthreadpool」,「newworkstealingpoo]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java] 25. Objectクラス(notify、waitの使い方)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaのobjectクラス(notify、waitの使い方)に関する説明です。以前の投稿で再定義(override)に関して説明した時に、hashcodeとequals、tostringに関して説明したことがあります。link - [java] 11. stringのhashcodeとequals、そしてtostringの再定義(override)javaの最小の単位がクラスになっています。つまり、実行関数のmain関数だけを作ろうと思ってもクラスを作ってその中でstatic void mainで実行関数を作成します。その最小単位のクラスが基本的にobjectクラスを継承しています。つまり、extentsで継承をしてなくても基本的にobjectを継承していると思えばよいです。そうなら、javaは複数の継承ができないですが、その他のクラスを継承したら複数継承になるかと思いますが、すべてのクラスがobjectクラスを継承しているので複数継承ではなく、継承の継承になったことです。そうならすべてのクラスがobejctクラスを継承しているのでobjectクラスに関して整理する必要があります。objectクラスは総11個の関数で構成しています。内部のメンバー変数はありません。                    関数        説明                            public final native class&amp;lt;?&amp;gt; getclass()        オブジェクトのクラスタイプをリターンする。                    public native int hashcode();        オブジェクトのアドレスの値をハッシュ値でリターンする。                    public boolean equals(object obj)        オブジェクトのアドレス値を比較して同じならtrue、違いならfalseをリターン                    protected native object clone()        オブジェクトをコピーする。単純なアドレス値のコピーではなくクラスのインスタンスをコピーすること。クラスコピーのためにインタフェースcloneableを継承]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [Java] スレッドプール(ThreadPool)</title>
+<title>明月の開発ストーリ :: [Java] 25. Objectクラス(notify、waitの使い方)</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -123,11 +123,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/65.html">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt" property="headline">[Java] スレッドプール(ThreadPool)</h1>
+					<h1 id="titleTxt" property="headline">[Java] 25. Objectクラス(notify、waitの使い方)</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0203">Study / Java</a>    作成日付 : <span property="datePublished">2019/09/13 00:58:31</span>   修正日付 : <span property="dateModified">2020/01/17 07:42:13</span>
+					<a href="./?category=0203">Study / Java</a>    作成日付 : <span property="datePublished">2019/09/13 00:58:31</span>   修正日付 : <span property="dateModified">2021/03/03 18:00:38</span>
 				</div>
 			</div>
 			<div class="article">
@@ -139,299 +139,232 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>このページではスレッドプール(ThreadPool)に関して調べてみました。</p> 
+  <p>この投稿はJavaのObjectクラス(notify、waitの使い方)に関する説明です。</p> 
   <p><br></p> 
-  <p>以前までスレッド(Thread)に関して説明しました。スレッド(Thread)とは並列処理でプロセス内で同時に処理ができることです。</p> 
-  <p>そのため、データを共有するように同期化(synchronized)によってデータの無欠性を守ることにします。</p> 
+  <p>以前の投稿で再定義(override)に関して説明した時に、hashCodeとequals、toStringに関して説明したことがあります。</p> 
+  <p>link - <a href="https://www.nowonbun.com/51.html" target="_blank">[Java] 11. StringのhashCodeとequals、そしてtoStringの再定義(override)</a></p> 
   <p><br></p> 
-  <p>スレッドの場合はシステムの性能関係なく、無限に生成ができます。</p> 
-  <p>適切なスレッド生成は並列処理でプログラムの性能を上げることができますね。</p> 
-  <p>でも、スレッドは無限に生成できると思っても、パソコンの物理的な容量は限界がありますね。無限にスレッドを生成することでプログラムが指数的に性能が上がることではなく、限界が至ると結局スレッドを実行するリソースでシングルスレッドより遅くなる段階になりますね。</p> 
-  <p>その意味では、スレッド個数を制御するし、リソースを再使用することでプログラムの性能をあがることができます。</p> 
-  <p><br></p> 
-  <p>スレッドプールはシステムによってスレッド個数を制御するし、スレッドのステップが終わったものだってもリソース解除ではなく、次のスレッドに再使用することでリソースを節約することができます。</p> 
-  <pre><code class="java" data-type="Executors.newSingleThreadExecutor()">import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-public class Example {
-  // スレッドsleep関数
-  private static void sleep() {
+  <p>Javaの最小の単位がクラスになっています。つまり、実行関数のmain関数だけを作ろうと思ってもクラスを作ってその中でstatic void mainで実行関数を作成します。</p> 
+  <p>その最小単位のクラスが基本的にObjectクラスを継承しています。つまり、extentsで継承をしてなくても基本的にObjectを継承していると思えばよいです。</p> 
+  <p>そうなら、Javaは複数の継承ができないですが、その他のクラスを継承したら複数継承になるかと思いますが、すべてのクラスがObjectクラスを継承しているので複数継承ではなく、継承の継承になったことです。</p> 
+  <p><img src="./contents/65/1439_001.png" data-filename="001.png" style="width: 106px;"><br></p> 
+  <p>そうならすべてのクラスがObejctクラスを継承しているのでObjectクラスに関して整理する必要があります。</p> 
+  <p>Objectクラスは総11個の関数で構成しています。内部のメンバー変数はありません。</p> 
+  <div class="table-responsive"> 
+   <table class="table table-striped table-bordered table-condensed"> 
+    <thead> 
+     <tr style="background-color:#DAD7D7"> 
+      <th style="white-space: nowrap;">関数</th> 
+      <th>説明</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="white-space: nowrap;">public final native Class&lt;?&gt; getClass()</td> 
+      <td>オブジェクトのクラスタイプをリターンする。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">public native int hashCode();</td> 
+      <td>オブジェクトのアドレスの値をハッシュ値でリターンする。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">public boolean equals(Object obj)</td> 
+      <td>オブジェクトのアドレス値を比較して同じならtrue、違いならfalseをリターン</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">protected native Object clone()</td> 
+      <td>オブジェクトをコピーする。単純なアドレス値のコピーではなくクラスのインスタンスをコピーすること。<br>クラスコピーのためにインタフェースCloneableを継承しなければならない。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">public String toString()</td> 
+      <td>現在のオブジェクトのStringをリターンする。<br>基本の値はgetClass().getName() + "@" + Integer.toHexString(hashCode())です。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">public final native void notify()</td> 
+      <td>waitになったスレッドを再開する。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">public final native void notifyAll()</td> 
+      <td>waitなったすべてのスレッドを再開する。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">public final void wait()</td> 
+      <td>スレッドを停止する。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">public final native void wait(long timeoutMillis)</td> 
+      <td>設定した時間ほどスレッドを停止する。値が0の場合、notifyが呼び出すまで停止する。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">public final void wait(long timeoutMillis, int nanos)</td> 
+      <td>設定した時間ほどスレッドを停止する。値が0の場合、notifyが呼び出すまで停止する。</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">protected void finalize()</td> 
+      <td>GC(Garbage collection)でオブジェクトを削除すると呼び出す。Java 9以上にはもう使わない。(Deprecated)</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <p>まず、getClassとhashCode、equals、clone、toStringに関して説明します。</p> 
+  <pre><code class="java" data-type="Example.java">public class Example implements Cloneable {
+  // Object cloneメソッドはアクセス修飾子がprotectedなのでpublicで再定義
+  public Example clone() {
     try {
-      Thread.sleep(1000);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
+      // キャスト変換をしてリターンする。
+      return (Example) super.clone();
+    } catch (CloneNotSupportedException e) {
+      // Cloneableを継承しなければCloneNotSupportedExceptionエラーが発生する。
+      return null;
     }
   }
-
-  public static void main(String[] main) {
-    // シングルスレッドプール -&gt; スレッドプールの中で一つのプールを呼出す。その意味は使うたびに一つのスレッドで再使用する目的だ。
-    ExecutorService service = Executors.newSingleThreadExecutor();
-    // スレッドプールの中でステップを実行する。
-    service.execute(() -&gt; {
-      for (int i = 0; i &lt; 10; i++) {
-        System.out.println(Thread.currentThread().getName() + " " + i);
-        sleep();
-      }
-    });
-    // スレッド再使用
-    service.execute(() -&gt; {
-      for (int i = 0; i &lt; 10; i++) {
-        System.out.println(Thread.currentThread().getName() + " " + i);
-        sleep();
-      }
-    });
-    // スレッド再使用
-    service.execute(() -&gt; {
-      for (int i = 0; i &lt; 10; i++) {
-        System.out.println(Thread.currentThread().getName() + " " + i);
-        sleep();
-      }
-    });
-    service.shutdown();
+  // 実行関数
+  public static void main(String[] args) {
+    // インスタンス生成、すべてクラスはObjectを継承しているのでObjectタイプで設定することが可能。
+    Object a = new Example();
+    // getClassはReflectionで使えるClass&lt;?&gt;タイプでリターンんする。そのClassタイプはHeapに宣言されたインスタンスのクラスタイプだ。
+    System.out.println("getClass = " + a.getClass().getName());
+    // アドレス値がhash codeでリターンする。
+    System.out.println("hashCode = " + a.hashCode());
+    // これはアドレス値をコピー
+    Example b = (Example)a;
+    // これはインスタンスをコピー
+    Example c = b.clone();
+    // bのhash codeはaのhash codeと同じ
+    System.out.println("b hashCode = " + b.hashCode());
+    // cのhash codeはcloneをしたのでhash codeが違う。
+    System.out.println("c hashCode = " + c.hashCode());
+    // aとbは同じクラスか？
+    System.out.println("a.equals(b) = " + a.equals(b));
+    // aとcは同じクラスか？
+    System.out.println("a.equals(c) = " + a.equals(c));
+    // toStringはgetClass().getName() + "@" + Integer.toHexString(hashCode())
+    System.out.println("toString = " + a.toString());
   }
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/65/264_001.jpg" data-filename="001.jpg" style="width: 502px;"></p> 
-  <p>「Executors.newSingleThreadExecutor()」はスレッドプールの中で一つのスレッドを利用する例です。結果をみれば１番目、２番目、３番目を実行しても順番通りにスレッドが動きます。スレッド名も「thread1」で同じスレッドになっていますね。</p> 
-  <pre><code class="java" data-type="Executors.newCachedThreadPool()">import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-public class Example {
-  // スレッドsleep関数
-  private static void sleep() {
-    try {
-      Thread.sleep(1000);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-  }
-
-  public static void main(String[] main) {
-    // スレッド個数をシステムの性能によって自動に生成する。
-    ExecutorService service = Executors.newCachedThreadPool();
-    // スレッドプールの中でステップを実行する。
-    service.execute(() -&gt; {
-      for (int i = 0; i &lt; 10; i++) {
-        System.out.println(Thread.currentThread().getName() + " " + i);
-        sleep();
-      }
-    });
-    // スレッド再使用
-    service.execute(() -&gt; {
-      for (int i = 0; i &lt; 10; i++) {
-        System.out.println(Thread.currentThread().getName() + " " + i);
-        sleep();
-      }
-    });
-    // スレッド再使用
-    service.execute(() -&gt; {
-      for (int i = 0; i &lt; 10; i++) {
-        System.out.println(Thread.currentThread().getName() + " " + i);
-        sleep();
-      }
-    });
-    service.shutdown();
-  }
-}
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/65/265_002.jpg" data-filename="002.jpg" style="width: 417px;"></p> 
-  <p>「Executors.newCachedThreadPool()」はスレッドプールの中でスレッドスレッド個数を最大に「int」のサイズほど生成ができます。システム性能によって限界がありますが、かなり多くスレッドを生成できます。</p> 
-  <p>でもシステム中では一つのプログラムがあるので、パフォーマンスを最大まで使うのは危ないですね。スレッドプールでスレッドリソースを再使用すると機能がなければ、別に一般「thread」を生成することと差異がないと思いますね。</p> 
-  <pre><code class="java" data-type="Executors.newFixedThreadPool()">import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-public class Example {
-  // スレッドsleep関数
-  private static void sleep() {
-    try {
-      Thread.sleep(1000);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-  }
-
-  public static void main(String[] main) {
-    // スレッド個数を決めることができるスレッドプールだ。例は２つ生成しました。
-    ExecutorService service = Executors.newFixedThreadPool(2);
-    // スレッドプールの中でステップを実行する。
-    service.execute(() -&gt; {
-      for (int i = 0; i &lt; 10; i++) {
-        System.out.println(Thread.currentThread().getName() + " " + i);
-        sleep();
-      }
-    });
-    // スレッド再使用
-    service.execute(() -&gt; {
-      for (int i = 0; i &lt; 10; i++) {
-        System.out.println(Thread.currentThread().getName() + " " + i);
-        sleep();
-      }
-    });
-    // スレッド再使用
-    service.execute(() -&gt; {
-      for (int i = 0; i &lt; 10; i++) {
-        System.out.println(Thread.currentThread().getName() + " " + i);
-        sleep();
-      }
-    });
-    service.shutdown();
-  }
-}
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/65/267_003.jpg" data-filename="003.jpg" style="width: 368px;"></p> 
-  <p>スレッド２つだけ使うスレッドプールを生成したので、結果をみれば初めにはスレッドを２つを利用して２つのスレッドが終了すると「thread1」は再使用するして一つのスレッドに展開することを見えますね。</p> 
-  <p>その以外のスレッドプールの種類は「newScheduledThreadPool」,「newWorkStealingPool」がありますが、私も使ったことがないので説明が難しいですね。</p> 
+  <p><img src="./contents/65/1437_002.png" data-filename="002.png" style="width: 256px;"><br></p> 
+  <p>ここで注意することはequalsと演算子==はhashCodeの値を確認します。つまり、クラスの中のデータがデータが同じでも、生成したインスタンスが違いならfalseをリターンします。</p> 
+  <p>参考にStringの場合はhashCodeが再定義しているのでhashCode関数は必ずメモリアドレス値ではありません。つまり、hashCode関数を再定義すると別の値をリターンする関数になります。</p> 
   <p><br></p> 
-  <p>そしてスレッドプールの中でスレッドを起動する時に「execute」関数を使いました。「execute」関数の場合はインタフェース「Runnable」で使うのでラムダ式に簡単に作成ができますね。</p> 
-  <p>でもスレッドプールの中で並列計算が終わった時に結果をもらいたい時には「submit」があり、データを返却して貰えます。</p> 
-  <p style="text-align:left;"><img src="./contents/65/268_004.png" data-filename="004.png" style="width: 701px;"></p> 
-  <pre><code class="java" data-type="">import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+  <p>次はnotifyとwaitの機能です。</p> 
+  <p>以前スレッドに関して説明したことがあります。</p> 
+  <p>link - <a href="https://www.nowonbun.com/62.html" target="_blank">[Java] 22.スレッド(Thread)を使う方法</a></p> 
+  <p>link - <a href="https://www.nowonbun.com/64.html" target="_blank">[Java] 24. Javaの同期化(Synchronized)とデッドロック(Deadlock)</a></p> 
+  <p>個のスレッド環境で値を同期化する時にsynchronizedを使います。でもこの同期化する時にもっと細かく運用する時があります。</p> 
+  <pre><code class="java" data-type="Example.java">import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-public class Example {
-  // スレッドsleep関数
-  private static void sleep() {
+public class Example implements Runnable {
+  // デートフォマート
+  private DateFormat format = new SimpleDateFormat("hh:MM:ss");
+  // print同期化関数
+  public synchronized void print() {
     try {
-      Thread.sleep(1000);
+      // コンソールに現在の時間を出力
+      System.out.println(Thread.currentThread().getName() + " " + format.format(new Date()));
+      // waitをすれば他のsynchronizedのロックが解ける。
+      // つまり、synchronized内部でwaitをしましたが、synchronizedでロックに掛けることではなく、ロック解除になる状況になる。
+      super.wait();
+      // コンソール出力
+      System.out.println(Thread.currentThread().getName() + " wait");
     } catch (InterruptedException e) {
+      // TODO Auto-generated catch block
       e.printStackTrace();
     }
   }
-
-  public static void main(String[] main) {
-    // スレッド個数を決めることができるスレッドプールだ。例は２つ生成しました。
-    ExecutorService service = Executors.newFixedThreadPool(2);
-    // スレッドプールの中でステップを実行する。
-    Future&lt;Integer&gt; data1 = service.submit(() -&gt; {
-      int sum = 0;
-      for (int i = 0; i &lt; 10; i++) {
-        System.out.println(Thread.currentThread().getName() + " " + i);
-        sum += i;
-        sleep();
+  // 実行
+  @Override
+  public void run() {
+    // 繰り返す
+    for (int i = 0; i &lt; 10; i++) {
+      // 同期化領域
+      synchronized (this) {
+        // コンソール出力
+        System.out.println(Thread.currentThread().getName() + " notify ");
+        // notifyを呼び出す。
+        notify();
       }
-      return sum;
-    });
-    // スレッドプールの中でステップを実行する。
-    Future&lt;Integer&gt; data2 = service.submit(() -&gt; {
-      int sum = 0;
-      for (int i = 10; i &lt; 20; i++) {
-        System.out.println(Thread.currentThread().getName() + " " + i);
-        sum += i;
-        sleep();
-      }
-      return sum;
-    });
-    // スレッドプールの中でステップを実行する。
-    Future&lt;Integer&gt; data3 = service.submit(() -&gt; {
-      int sum = 0;
-      for (int i = 20; i &lt; 30; i++) {
-        System.out.println(Thread.currentThread().getName() + " " + i);
-        sum += i;
-        sleep();
-      }
-      return sum;
-    });
+      // print関数を呼び出す。
+      print();
+    }
+  }
+  // 実行関数
+  public static void main(String[] args) {
+    Example a = new Example();
+    // 二つのスレッドにaインスタンスを実行する。
+    new Thread(a).start();
+    new Thread(a).start();
     try {
-      // ３つ目のスレッド値
-      System.out.println(data3.get());
-      // ３つ目が終わるまで待つ。
-      System.out.println(data2.get());
-      System.out.println(data1.get());
+      // 最後はwait状況で終わるので
+      Thread.sleep(2000);
+      synchronized (a) {
+        // すべてのスレッドを再開して終了する。
+        a.notifyAll();
+      }
     } catch (Throwable e) {
       e.printStackTrace();
     }
-    service.shutdown();
   }
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/65/266_005.jpg" data-filename="005.jpg" style="width: 390px;"></p> 
-  <p>実は「execute」や「submit」やどちらを使っても構いません。「execute」を使用して変数をクロージャ機能でデータを共有しても問題ないですね。(参考:クロージャ機能は変数がラムダ式外で宣言した変数をラムダ式内で使えることができることです。)</p> 
-  <p>でも私の場合は特別なこと以外は「submit」関数を使います。</p> 
-  <p>なぜなら「submit」関数は「Runnable」インタフェース、「Callable」インタフェースの両方を使えるのでです。</p> 
+  <p><img src="./contents/65/1440_003.png" data-filename="003.png" style="width: 341px;"><br></p> 
+  <p>上の例をみれば二つのスレッドが順番に呼び出すことを確認できます。</p> 
+  <p>先にThread1から先にnotifyしてprint関数を呼び出してコンソール出力します。そしてsynchronizedスタック領域の中でwaitを呼び出します。参考にnotifyとwaitはsynchronizedのスタック領域の中で使う関数です。</p> 
+  <p>その間に、Thread2はforのsynchronized(this)が待機していますが、Thread1でwait関数を呼び出したらThread2のロックが解けます。</p> 
+  <p>Thread2がsynchronized(this)に進入するとnotifyを呼び出します。</p> 
+  <p>Thread1のwait関数は解けてsynchronizedのロックによって待機状況になります。また、Thread2がwait関数によってスレッドが止まったらThread1は動きます。</p> 
+  <p>notifyとnotifyAllの差異はnotifyはQueueの順番で先にwaitになったスレッド一つが解けることですが、notifyAllはwaitになったすべてのスレッドが解けます。</p> 
+  <p>waitで時間を設定してnotifyの呼び出しがなくても時間で解けることができます。</p> 
+  <pre><code class="java" data-type="Example.java">import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Example implements Runnable {
+　　// デートフォマート
+  private DateFormat format = new SimpleDateFormat("hh:MM:ss");
+  // print同期化関数
+  public synchronized void print() {
+    try {
+      // コンソールに現在の時間を出力
+      System.out.println(Thread.currentThread().getName() + " " + format.format(new Date()));
+      // waitをすれば他のsynchronizedのロックが解ける。
+      // つまり、synchronized内部でwaitをしましたが、synchronizedでロックに掛けることではなく、ロック解除になる状況になる。
+      // 待機時間を入れればnotifyを呼び出さなくても設定時間後でスレッドは解ける。
+      super.wait(1000);
+      // コンソール出力
+      System.out.println(Thread.currentThread().getName() + " wait");
+    } catch (InterruptedException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+  }
+  // 実行
+  @Override
+  public void run() {
+    // 繰り返す
+    for (int i = 0; i &lt; 10; i++) {
+      // print関数呼び出す。
+      print();
+    }
+  }
+  // 実行関数
+  public static void main(String[] args) {
+    Example a = new Example();
+    // 二つのスレッドにaインスタンスを実行する。
+    new Thread(a).start();
+    new Thread(a).start();
+  }
+}
+</code></pre> 
+  <p><img src="./contents/65/1438_004.png" data-filename="004.png" style="width: 309px;"><br></p> 
+  <p>Thread.sleepと似てますが、wait関数は他の同期化に影響になる関数なので差異があります。</p> 
+  <p>参考 - <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html" target="_blank">https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html</a></p> 
   <p><br></p> 
-  <p>ここまえ纏めます。</p> 
-  <div class="table-responsive"> 
-   <table class="table table-striped table-bordered table-condensed"> 
-    <thead> 
-     <tr style="background-color:#DAD7D7"> 
-      <th>スレッド種類</th> 
-      <th>説明</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td>newSingleThreadExecutor</td> 
-      <td>1個のスレッドを使用するスレッドプール</td> 
-     </tr> 
-     <tr> 
-      <td>newCachedThreadPool</td> 
-      <td>個数の制限がないスレッドプール</td> 
-     </tr> 
-     <tr> 
-      <td>newFixedThreadPool</td> 
-      <td>個数を指定して使用するスレッドプール</td> 
-     </tr> 
-     <tr> 
-      <td>newScheduledThreadPool</td> 
-      <td>特定時間などを指定して使用するスレッドプール</td> 
-     </tr> 
-     <tr> 
-      <td>newWorkStealingPool</td> 
-      <td>1.8バージョンから使えるスレッドプールですが、完全なパラレル形で使えるスレッドプール</td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <p>そしてスレッドプールではスレッドを呼び出せる関数が２つがあります。</p> 
-  <div class="table-responsive"> 
-   <table class="table table-striped table-bordered table-condensed"> 
-    <thead> 
-     <tr style="background-color:#DAD7D7"> 
-      <th>関数名</th> 
-      <th>説明</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td>execute</td> 
-      <td>パラメータは「Runnable」インタフェースでリターン値がありません。</td> 
-     </tr> 
-     <tr> 
-      <td>submit</td> 
-      <td>パラメータは「Runnable」、「Callable」インタフェースがオバーロードになっているので、「void」やジェネリックタイプで返却が可能です。</td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <p>参考でスレッドプールを終了するようには関数が３つあります。</p> 
-  <p>一般的に使用する「shutdown」はプールの中の全てのスレッドが終了するとプールを終了する関数です。</p> 
-  <p>「shutdownNow」の場合はプールの中のスレッドを強制終了してプールを終了します。「awaitTermination」は時間を設定して時間まで終了しなかったらスレッドを強制終了してプールを終了します。</p> 
-  <div class="table-responsive"> 
-   <table class="table table-striped table-bordered table-condensed"> 
-    <thead> 
-     <tr style="background-color:#DAD7D7"> 
-      <th>関数名</th> 
-      <th>説明</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td>shutdown</td> 
-      <td>全てのスレッドが終了するとプールを終了します。</td> 
-     </tr> 
-     <tr> 
-      <td>shutdownNow</td> 
-      <td>全てのスレッドが強制終了するとプールを終了します。</td> 
-     </tr> 
-     <tr> 
-      <td>awaitTermination</td> 
-      <td>時間間で終了しないと全てのスレッドが強制終了するとプールを終了します。</td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div>
+  <p>ここまでJavaのObjectクラス(notify、waitの使い方)に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
  
 </div>
 				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/64.html" target="_blank">[Java] 24. Javaの同期化(Synchronized)とデッドロック(Deadlock)</a></div><div class="post-category"><span>次の投稿▶</span><a href="https://www.nowonbun.com/66.html" target="_blank">[Java] アノテーション(annotation)</a></div></div>
@@ -443,7 +376,7 @@ public class Example {
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0203">Study / Java</a>」の他投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/72.html'>[Java] Mavenをインストール、使用方法、そしてeclipseに連結する方法</a><span>2019/09/24 00:19:25</span></li><li><a href='https://www.nowonbun.com/71.html'>[Java] Reflection - Annotation編</a><span>2019/09/20 22:34:40</span></li><li><a href='https://www.nowonbun.com/70.html'>[Java] Reflection - Variable編</a><span>2019/09/19 20:20:10</span></li><li><a href='https://www.nowonbun.com/69.html'>[Java] Reflection - Method編</a><span>2019/09/18 20:02:14</span></li><li><a href='https://www.nowonbun.com/68.html'>[Java] Reflection - Class編</a><span>2019/09/17 20:22:02</span></li><li><a href='https://www.nowonbun.com/67.html'>[Java] ソケット(Socket)通信</a><span>2019/09/16 23:42:46</span></li><li><a href='https://www.nowonbun.com/66.html'>[Java] アノテーション(annotation)</a><span>2019/09/13 20:03:58</span></li><li><a href='https://www.nowonbun.com/65.html'>[Java] スレッドプール(ThreadPool)</a><span>2019/09/13 00:58:31</span></li><li><a href='https://www.nowonbun.com/64.html'>[Java] 24. Javaの同期化(Synchronized)とデッドロック(Deadlock)</a><span>2019/09/11 23:06:09</span></li><li><a href='https://www.nowonbun.com/63.html'>[Java] 23. スレッドプール(Threadpool)を使う方法</a><span>2019/09/10 21:55:36</span></li><li><a href='https://www.nowonbun.com/62.html'>[Java] 22.スレッド(Thread)を使う方法</a><span>2019/09/06 22:30:49</span></li><li><a href='https://www.nowonbun.com/61.html'>[Java] 21. アノテーション(Annotation)を使う方法</a><span>2019/09/05 22:58:20</span></li><li><a href='https://www.nowonbun.com/60.html'>[Java] 20. iterator(for-each)とStream APIを使う方法</a><span>2019/09/04 20:11:28</span></li><li><a href='https://www.nowonbun.com/59.html'>[Java] 19. ラムダ(Lambda)を使う方法</a><span>2019/09/03 20:37:14</span></li><li><a href='https://www.nowonbun.com/58.html'>[Java] 18. 匿名クラス(Anonymous class)とクロージャ(closure)</a><span>2019/09/02 20:30:34</span></li></ul>
+					<ul><li><a href='https://www.nowonbun.com/72.html'>[Java] Mavenをインストール、使用方法、そしてeclipseに連結する方法</a><span>2019/09/24 00:19:25</span></li><li><a href='https://www.nowonbun.com/71.html'>[Java] Reflection - Annotation編</a><span>2019/09/20 22:34:40</span></li><li><a href='https://www.nowonbun.com/70.html'>[Java] Reflection - Variable編</a><span>2019/09/19 20:20:10</span></li><li><a href='https://www.nowonbun.com/69.html'>[Java] Reflection - Method編</a><span>2019/09/18 20:02:14</span></li><li><a href='https://www.nowonbun.com/68.html'>[Java] Reflection - Class編</a><span>2019/09/17 20:22:02</span></li><li><a href='https://www.nowonbun.com/67.html'>[Java] ソケット(Socket)通信</a><span>2019/09/16 23:42:46</span></li><li><a href='https://www.nowonbun.com/66.html'>[Java] アノテーション(annotation)</a><span>2019/09/13 20:03:58</span></li><li><a href='https://www.nowonbun.com/65.html'>[Java] 25. Objectクラス(notify、waitの使い方)</a><span>2019/09/13 00:58:31</span></li><li><a href='https://www.nowonbun.com/64.html'>[Java] 24. Javaの同期化(Synchronized)とデッドロック(Deadlock)</a><span>2019/09/11 23:06:09</span></li><li><a href='https://www.nowonbun.com/63.html'>[Java] 23. スレッドプール(Threadpool)を使う方法</a><span>2019/09/10 21:55:36</span></li><li><a href='https://www.nowonbun.com/62.html'>[Java] 22.スレッド(Thread)を使う方法</a><span>2019/09/06 22:30:49</span></li><li><a href='https://www.nowonbun.com/61.html'>[Java] 21. アノテーション(Annotation)を使う方法</a><span>2019/09/05 22:58:20</span></li><li><a href='https://www.nowonbun.com/60.html'>[Java] 20. iterator(for-each)とStream APIを使う方法</a><span>2019/09/04 20:11:28</span></li><li><a href='https://www.nowonbun.com/59.html'>[Java] 19. ラムダ(Lambda)を使う方法</a><span>2019/09/03 20:37:14</span></li><li><a href='https://www.nowonbun.com/58.html'>[Java] 18. 匿名クラス(Anonymous class)とクロージャ(closure)</a><span>2019/09/02 20:30:34</span></li></ul>
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
