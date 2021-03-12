@@ -26,7 +26,7 @@ body{
 	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
 }
 </style>
-<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/70.html"},"url":"https:\/\/www.nowonbun.com\/70.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] Reflection - Variable\u7de8","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u30da\u30fc\u30b8\u306b\u306freflection\u6a5f\u80fd\u306e\u4e2d\u3067\u5909\u6570(variable)\u306b\u95a2\u3057\u3066\u8abf\u3079\u3066\u307f\u307e\u3057\u305f\u3002\u524d\u8ff0\u3001\u30af\u30e9\u30b9(class)\u3068\u30e1\u30bd\u30c3\u30c9(method)\u306b\u95a2\u3057\u3066\u8abf\u3079\u3066\u307f\u307e\u3057\u305f\u3002link - \u4f5c\u6210\u4e2dlink - \u4f5c\u6210\u4e2d\u3055\u3066\u3001reflection\u3067\u306f\u30af\u30e9\u30b9\u3068\u30e1\u30bd\u30c3\u30c9\u306f\u69d8\u3005\u306a\u30d1\u30bf\u30fc\u30f3\u3092\u4f5c\u308b\u3088\u3046\u306b\u3088\u304f\u4f7f\u3046\u3053\u3068\u3067\u3059\u304c\u3001\u5909\u6570\u306f\u3042\u307e\u308a\u4f7f\u308f\u306a\u3044\u3067\u3059\u306d\u3002\u306a\u305c\u306a\u3089\u3001\u30af\u30e9\u30b9\u4e2d\u3067\u30e1\u30f3\u30d0\u30fc\u5909\u6570\u306f\u305d\u306e\u76ee\u7684\u304c\u3042\u308b\u3057\u3001\u30c7\u30fc\u30bf\u3092\u5165\u308c\u5909\u308f\u3063\u305f\u308a\u3059\u308b\u3068\u30af\u30e9\u30b9\u51e6\u7406\u304c\u30a8\u30e9\u30fc\u306a\u308b\u53ef\u80fd\u6027\u304c\u3042\u308b\u306e\u3067\u3067\u3059\u3002\u3067\u3082\u3001\u305d\u306e\u5fc5\u8981\u6027\u304c\u5168\u7136\u306a\u3044\u3053\u3068\u3067\u306f\u306a\u3044\u304b\u3068\u7591\u554f\u306b\u306a\u308a\u307e\u3059\u304c\u3001\u30af\u30e9\u30b9\u306e\u6d41\u308c\u3067\u30c6\u30b9\u30c8\u3059\u308b\u6642\u306b\u30c7\u30d0\u30c3\u30b0\u306e\u3088\u3046\u306b\u5909\u6570\u306e\u30c7\u30fc\u30bf\u3092\u78ba\u8a8d\u3059\u308b\u6642\u3084\u6700\u8fd1\u3001mvc\u30e2\u30c7\u30eb\u3067di(\u4f9d\u5b58\u6027\u6ce8\u5165)\u6982\u5ff5\u304c\u3042\u308a\u3001\u5916\u90e8\u3067\u5909\u6570\u306b\u30af\u30e9\u30b9\u306e\u30d5\u30a1\u30af\u30c8\u30ea\u30fc\u30d1\u30bf\u30fc\u30f3\u3067\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u523a\u3057\u5165\u308c\u308b\u51e6\u7406\u3067\u4f7f\u3048\u307e\u3059\u3002\u4e0a\u306e\u4f8b\u3092\u307f\u308c\u3070\u30e1\u30f3\u30d0\u5909\u6570\u304c\u300cprivate\u300d\u30bf\u30a4\u30d7\u3067\u3082\u300cdata\u300d\u306e\u5024\u3092\u300c100\u300d\u306b\u5909\u308f\u308a\u307e\u3057\u305f\u3002\u300creflection\u300d\u3068\u5834\u5408\u306f\u30d7\u30ed\u30b0\u30e9\u30e0\u6587\u6cd5\u3092\u30e1\u30c3\u30c1\u30e3\u30af\u30c1\u30e3\u306b\u306a\u308c\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u306d\u3002\u3067\u306f\u300creflection\u300d\u306f\u30d1\u30d5\u30a9\u30fc\u30de\u30f3\u30b9\u7684\u306b\u9045\u304f\u306a\u308b\u53ef\u80fd\u6027\u304c\u3042\u308b\u3057\u3001\u7121\u5206\u5225\u306b\u4f7f\u3046\u3068\u30b3\u30fc\u30c9\u30d1\u30bf\u30fc\u30f3\u3084\u8a2d\u8a08\u304c\u3042\u3063\u3068\u3044\u3046\u307e\u3067\u3081\u3061\u3083\u304f\u3061\u3083\u306b\u306a\u308b\u306e\u3067\u30c7\u30b6\u30a4\u30f3\u30d1\u30bf\u30fc\u30f3\u3084\u30bd\u30fc\u30b9\u6a19\u6e96\u306a\u306e\u3067\u5b88\u308a\u306a\u304c\u3089\u4f7f\u308f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3068\u601d\u3044\u307e\u3059\u3002","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2019-09-19T20:20:10.000+09:00","dateModified":"2020-01-17T07:42:58.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/70.html"},"url":"https:\/\/www.nowonbun.com\/70.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] 30. Reflection\u6a5f\u80fd\u3092\u4f7f\u3046\u65b9\u6cd5(Method\u7de8)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fjava\u306ereflection\u6a5f\u80fd\u3092\u4f7f\u3046\u65b9\u6cd5(method\u7de8)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u4ee5\u524d\u306e\u6295\u7a3f\u3067reflection\u6a5f\u80fd\u306e\u30af\u30e9\u30b9\u3092\u8aac\u660e\u3057\u305f\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002link - [java] 29. reflection\u6a5f\u80fd\u3092\u4f7f\u3046\u65b9\u6cd5(class\u7de8)reflection\u306e\u6a5f\u80fd\u306f\u30af\u30e9\u30b9\u306e\u69cb\u9020\u3092\u5206\u6790\u3057\u3066\u30e1\u30bd\u30c3\u30c9\u3084\u5909\u6570\u3092\u4f7f\u3048\u308b\u6a5f\u80fd\u3060\u3068\u8aac\u660e\u3057\u307e\u3057\u305f\u3002\u305d\u3046\u3059\u308b\u3068reflection\u306e\u52d5\u7684\u306e\u5272\u308a\u5f53\u3066\u3067\u30af\u30e9\u30b9\u3092object\u306b\u683c\u7d0d\u3059\u308b\u3068object\u30af\u30e9\u30b9\u306e\u95a2\u6570\u3060\u3051\u3067\u306f\u306a\u304freflection\u6a5f\u80fd\u3092\u901a\u3063\u3066\u30af\u30e9\u30b9\u69cb\u9020\u3092\u5206\u6790\u3057\u3066\u30e1\u30bd\u30c3\u30c9\u3092\u63a2\u7d22\u3057\u3066\u4f7f\u3048\u307e\u3059\u3002\u4e0a\u306e\u4f8b\u3067node\u30af\u30e9\u30b9\u3092\u53d6\u5f97\u3057\u3066\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u751f\u6210\u3057\u307e\u3057\u305f\u3002\u305d\u3057\u3066node\u30af\u30e9\u30b9\u3067print\u30e1\u30bd\u30c3\u30c9\u3092\u63a2\u3057\u3066\u30e1\u30bd\u30c3\u30c9\u306b\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u5165\u308c\u3066\u5b9f\u884c(invoke)\u3057\u307e\u3059\u3002main\u95a2\u6570\u3067\u30bd\u30fc\u30b9\u4e0a\u3067\u306fnode\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u4f7f\u3048\u306a\u304b\u3063\u305f\u306e\u3067\u3001node\u30af\u30e9\u30b9\u3092\u52d5\u7684\u306b\u5206\u96e2\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002java\u306b\u306f\u30e1\u30bd\u30c3\u30c9\u306e\u30bf\u30a4\u30d7\u304c\u95a2\u6570\u306e\u7a2e\u985e\u304c2\u3064\u3067\u3059\u3002\u30b3\u30f3\u30b9\u30c8\u30e9\u30af\u30bf\u3068\u4e00\u822c\u95a2\u6570\u306b\u5206\u3051\u307e\u3059\u3002\u30b3\u30f3\u30b9\u30c8\u30e9\u30af\u30bf\u306e\u5834\u5408\u306f\u8fd4\u5374\u30bf\u30a4\u30d7\u304c\u306a\u3044\u5f62\u3067\u3059\u3002java\u306ereflection\u3067\u306fgetconstructor()\u95a2\u6570\u3092\u4f7f\u3063\u3066\u53d6\u5f97\u3067\u304d\u307e\u3059\u3002\u4e00\u822c\u95a2\u6570\u306e\u5834\u5408\u306f\u8fd4\u5374\u30bf\u30a4\u30d7\u304c\u3042\u308b\u5f62\u3067\u3059\u3002java\u306ereflection\u3067\u306fgetmethod()\u95a2\u6570\u3092\u4f7f\u3063\u3066\u53d6\u5f97\u3067\u304d\u307e\u3059\u3002\u95a2\u6570\u3092\u63a2\u7d22\u3059\u308b\u6642\u306b\u95a2\u6570\u306e\u540d\u524d\u3082\u91cd\u8981\u3067\u3059\u304c\u3001java\u306b\u306f\u30aa\u30d0\u30fc\u30ed\u30fc\u30c9\u6a5f\u80fd\u304c\u3042\u308b\u306e\u3067\u3001\u30d1\u30e9\u30e1\u30fc\u30bf\u306e\u500b\u6570\u3068\u30bf\u30a4\u30d7\u3082\u91cd\u8981\u3067\u3059\u3002\u4e0a\u307f\u305f\u3044\u306b\u540c\u3058\u95a2\u6570\u540d\u3067\u3082\u30d1\u30e9\u30e1\u30fc\u30bf\u8a2d\u5b9a\u3088\u308a\u547c\u3073\u51fa\u3057\u3092\u5225\u3005\u306b\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002getconstructor\u95a2\u6570\u3082\u540c\u3058\u65b9\u6cd5\u3067\u30b3\u30f3\u30b9\u30c8\u30e9\u30af\u30bf\u3092\u63a2\u7d22\u3057\u3066\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u751f\u6210\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002class\u7de8\u3067\u30af\u30e9\u30b9\u3092string\u30bf\u30a4\u30d7\u3067\u63a2\u7d22\u3057\u3066\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u751f\u6210\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3057\u305f\u3002\u30e1\u30bd\u30c3\u30c9\u3082\u540c\u3058\u65b9\u6cd5\u3067string\u30bf\u30a4\u30d7\u3067\u63a2\u7d22\u3092\u3057\u3066\u5b9f\u884c\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002\u4e0a\u307f\u305f\u3044\u306bstring\u30bf\u30a4\u30d7\u306b\u95a2\u6570\u3092\u63a2\u7d22\u3057\u3066\u5b9f\u884c\u3059\u308b\u3053\u3068\u3082\u53ef\u80fd\u3067\u3059\u3002\u3053\u306e\u610f\u5473\u306f\u30d7\u30ed\u30b0\u30e9\u30e0\u306e\u5b9f\u884c\u9806\u756a\u3092\u30d7\u30ed\u30b0\u30e9\u30e0\u306e\u4e2d\u3067\u5b9f\u88c5\u3059\u308b\u3053\u3068\u3067\u306f\u306a\u304f\u3001\u30c6\u30ad\u30b9\u30c8\u3084\u74b0\u5883\u5909\u6570\u306b\u3088\u308a\u30d7\u30ed\u30b0\u30e9\u30e0\u5b9f\u884c\u9806\u756a\u3092\u5b9f\u88c5\u3053\u3068\u3082\u3067\u304d\u307e\u3059\u3002\u4e0a\u306e\u4f8b\u306f\u7c21\u5358\u306b\u5b9f\u884c\u95a2\u6570\u540d\u3092\u30d1\u30e9\u30e1\u30fc\u30bf\u304b\u3089\u53d7\u3051\u53d6\u3063\u3066\u5b9f\u884c\u3059\u308b\u3053\u3068\u306b\u3057\u307e\u3057\u305f\u304c\u3001\u30c6\u30ad\u30b9\u30c8\u3067\u5b9f\u884c\u3059\u308b\u95a2\u6570\u540d\u3092\u9806\u756a\u3068\u304a\u308a\u306b\u4f5c\u6210\u3057\u3066io\u3067\u8aad\u307f\u53d6\u3063\u3066\u5b9f\u884c\u3059\u308b\u3053\u3068\u3082\u3067\u304d\u307e\u3059\u3002reflection\u3067\u306f\u5358\u7d14","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2019-09-19T20:20:10.000+09:00","dateModified":"2021-03-12T13:04:09.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -36,17 +36,17 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / Java" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。このページにはreflection機能の中で変数(variable)に関して調べてみました。前述、クラス(class)とメソッド(method)に関して調べてみました。link - 作成中link - 作成中さて、reflectionではクラスとメソッドは様々なパターンを作るようによく使うことですが、変数はあまり使わないですね。なぜなら、クラス中でメンバー変数はその目的があるし、データを入れ変わったりするとクラス処理がエラーなる可能性があるのでです。でも、その必要性が全然ないことではないかと疑問になりますが、クラスの流れでテストする時にデバッグのように変数のデータを確認する時や最近、mvcモデルでdi(依存性注入)概念があり、外部で変数にクラスのファクトリーパターンでインスタンスを刺し入れる処理で使えます。上の例をみればメンバ変数が「private」タイプでも「data」の値を「100」に変わりました。「reflection」と場合はプログラム文法をメッチャクチャになれることができますね。では「reflection」はパフォーマンス的に遅くなる可能性があるし、無分別に使うとコードパターンや設計があっというまでめちゃくちゃになるのでデザインパターンやソース標準なので守りながら使わなければならないと思います。]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はjavaのreflection機能を使う方法(method編)に関する説明です。以前の投稿でreflection機能のクラスを説明したことがあります。link - [java] 29. reflection機能を使う方法(class編)reflectionの機能はクラスの構造を分析してメソッドや変数を使える機能だと説明しました。そうするとreflectionの動的の割り当てでクラスをobjectに格納するとobjectクラスの関数だけではなくreflection機能を通ってクラス構造を分析してメソッドを探索して使えます。上の例でnodeクラスを取得してインスタンスを生成しました。そしてnodeクラスでprintメソッドを探してメソッドにインスタンスを入れて実行(invoke)します。main関数でソース上ではnodeキーワードを使えなかったので、nodeクラスを動的に分離することができます。javaにはメソッドのタイプが関数の種類が2つです。コンストラクタと一般関数に分けます。コンストラクタの場合は返却タイプがない形です。javaのreflectionではgetconstructor()関数を使って取得できます。一般関数の場合は返却タイプがある形です。javaのreflectionではgetmethod()関数を使って取得できます。関数を探索する時に関数の名前も重要ですが、javaにはオバーロード機能があるので、パラメータの個数とタイプも重要です。上みたいに同じ関数名でもパラメータ設定より呼び出しを別々にすることができます。getconstructor関数も同じ方法でコンストラクタを探索してインスタンスを生成することができます。class編でクラスをstringタイプで探索してインスタンスを生成することができました。メソッドも同じ方法でstringタイプで探索をして実行することができます。上みたいにstringタイプに関数を探索して実行することも可能です。この意味はプログラムの実行順番をプログラムの中で実装することではなく、テキストや環境変数によりプログラム実行順番を実装こともできます。上の例は簡単に実行関数名をパラメータから受け取って実行することにしましたが、テキストで実行する関数名を順番とおりに作成してioで読み取って実行することもできます。reflectionでは単純]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [Java] Reflection - Variable編" />
+<meta name="title" content="明月の開発ストーリ :: [Java] 30. Reflection機能を使う方法(Method編)" />
 <link rel="canonical" href="https://www.nowonbun.com/70.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [Java] Reflection - Variable編" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。このページにはreflection機能の中で変数(variable)に関して調べてみました。前述、クラス(class)とメソッド(method)に関して調べてみました。link - 作成中link - 作成中さて、reflectionではクラスとメソッドは様々なパターンを作るようによく使うことですが、変数はあまり使わないですね。なぜなら、クラス中でメンバー変数はその目的があるし、データを入れ変わったりするとクラス処理がエラーなる可能性があるのでです。でも、その必要性が全然ないことではないかと疑問になりますが、クラスの流れでテストする時にデバッグのように変数のデータを確認する時や最近、mvcモデルでdi(依存性注入)概念があり、外部で変数にクラスのファクトリーパターンでインスタンスを刺し入れる処理で使えます。上の例をみればメンバ変数が「private」タイプでも「data」の値を「100」に変わりました。「reflection」と場合はプログラム文法をメッチャクチャになれることができますね。では「reflection」はパフォーマンス的に遅くなる可能性があるし、無分別に使うとコードパターンや設計があっというまでめちゃくちゃになるのでデザインパターンやソース標準なので守りながら使わなければならないと思います。]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java] 30. Reflection機能を使う方法(Method編)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaのreflection機能を使う方法(method編)に関する説明です。以前の投稿でreflection機能のクラスを説明したことがあります。link - [java] 29. reflection機能を使う方法(class編)reflectionの機能はクラスの構造を分析してメソッドや変数を使える機能だと説明しました。そうするとreflectionの動的の割り当てでクラスをobjectに格納するとobjectクラスの関数だけではなくreflection機能を通ってクラス構造を分析してメソッドを探索して使えます。上の例でnodeクラスを取得してインスタンスを生成しました。そしてnodeクラスでprintメソッドを探してメソッドにインスタンスを入れて実行(invoke)します。main関数でソース上ではnodeキーワードを使えなかったので、nodeクラスを動的に分離することができます。javaにはメソッドのタイプが関数の種類が2つです。コンストラクタと一般関数に分けます。コンストラクタの場合は返却タイプがない形です。javaのreflectionではgetconstructor()関数を使って取得できます。一般関数の場合は返却タイプがある形です。javaのreflectionではgetmethod()関数を使って取得できます。関数を探索する時に関数の名前も重要ですが、javaにはオバーロード機能があるので、パラメータの個数とタイプも重要です。上みたいに同じ関数名でもパラメータ設定より呼び出しを別々にすることができます。getconstructor関数も同じ方法でコンストラクタを探索してインスタンスを生成することができます。class編でクラスをstringタイプで探索してインスタンスを生成することができました。メソッドも同じ方法でstringタイプで探索をして実行することができます。上みたいにstringタイプに関数を探索して実行することも可能です。この意味はプログラムの実行順番をプログラムの中で実装することではなく、テキストや環境変数によりプログラム実行順番を実装こともできます。上の例は簡単に実行関数名をパラメータから受け取って実行することにしましたが、テキストで実行する関数名を順番とおりに作成してioで読み取って実行することもできます。reflectionでは単純]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta property="og:url" content="https://www.nowonbun.com/70.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
@@ -54,12 +54,12 @@ body{
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [Java] Reflection - Variable編" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。このページにはreflection機能の中で変数(variable)に関して調べてみました。前述、クラス(class)とメソッド(method)に関して調べてみました。link - 作成中link - 作成中さて、reflectionではクラスとメソッドは様々なパターンを作るようによく使うことですが、変数はあまり使わないですね。なぜなら、クラス中でメンバー変数はその目的があるし、データを入れ変わったりするとクラス処理がエラーなる可能性があるのでです。でも、その必要性が全然ないことではないかと疑問になりますが、クラスの流れでテストする時にデバッグのように変数のデータを確認する時や最近、mvcモデルでdi(依存性注入)概念があり、外部で変数にクラスのファクトリーパターンでインスタンスを刺し入れる処理で使えます。上の例をみればメンバ変数が「private」タイプでも「data」の値を「100」に変わりました。「reflection」と場合はプログラム文法をメッチャクチャになれることができますね。では「reflection」はパフォーマンス的に遅くなる可能性があるし、無分別に使うとコードパターンや設計があっというまでめちゃくちゃになるのでデザインパターンやソース標準なので守りながら使わなければならないと思います。]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java] 30. Reflection機能を使う方法(Method編)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaのreflection機能を使う方法(method編)に関する説明です。以前の投稿でreflection機能のクラスを説明したことがあります。link - [java] 29. reflection機能を使う方法(class編)reflectionの機能はクラスの構造を分析してメソッドや変数を使える機能だと説明しました。そうするとreflectionの動的の割り当てでクラスをobjectに格納するとobjectクラスの関数だけではなくreflection機能を通ってクラス構造を分析してメソッドを探索して使えます。上の例でnodeクラスを取得してインスタンスを生成しました。そしてnodeクラスでprintメソッドを探してメソッドにインスタンスを入れて実行(invoke)します。main関数でソース上ではnodeキーワードを使えなかったので、nodeクラスを動的に分離することができます。javaにはメソッドのタイプが関数の種類が2つです。コンストラクタと一般関数に分けます。コンストラクタの場合は返却タイプがない形です。javaのreflectionではgetconstructor()関数を使って取得できます。一般関数の場合は返却タイプがある形です。javaのreflectionではgetmethod()関数を使って取得できます。関数を探索する時に関数の名前も重要ですが、javaにはオバーロード機能があるので、パラメータの個数とタイプも重要です。上みたいに同じ関数名でもパラメータ設定より呼び出しを別々にすることができます。getconstructor関数も同じ方法でコンストラクタを探索してインスタンスを生成することができます。class編でクラスをstringタイプで探索してインスタンスを生成することができました。メソッドも同じ方法でstringタイプで探索をして実行することができます。上みたいにstringタイプに関数を探索して実行することも可能です。この意味はプログラムの実行順番をプログラムの中で実装することではなく、テキストや環境変数によりプログラム実行順番を実装こともできます。上の例は簡単に実行関数名をパラメータから受け取って実行することにしましたが、テキストで実行する関数名を順番とおりに作成してioで読み取って実行することもできます。reflectionでは単純]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [Java] Reflection - Variable編</title>
+<title>明月の開発ストーリ :: [Java] 30. Reflection機能を使う方法(Method編)</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -123,11 +123,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/70.html">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt" property="headline">[Java] Reflection - Variable編</h1>
+					<h1 id="titleTxt" property="headline">[Java] 30. Reflection機能を使う方法(Method編)</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0203">Study / Java</a>    作成日付 : <span property="datePublished">2019/09/19 20:20:10</span>   修正日付 : <span property="dateModified">2020/01/17 07:42:58</span>
+					<a href="./?category=0203">Study / Java</a>    作成日付 : <span property="datePublished">2019/09/19 20:20:10</span>   修正日付 : <span property="dateModified">2021/03/12 13:04:09</span>
 				</div>
 			</div>
 			<div class="article">
@@ -139,44 +139,383 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>このページにはReflection機能の中で変数(Variable)に関して調べてみました。</p> 
+  <p>この投稿はJavaのReflection機能を使う方法(Method編)に関する説明です。</p> 
   <p><br></p> 
-  <p>前述、クラス(Class)とメソッド(Method)に関して調べてみました。</p> 
-  <p>link - 作成中</p> 
-  <p>link - 作成中</p> 
+  <p>以前の投稿でReflection機能のクラスを説明したことがあります。</p> 
+  <p>link - <a href="https://www.nowonbun.com/69.html" target="_blank">[Java] 29. Reflection機能を使う方法(Class編)</a></p> 
   <p><br></p> 
-  <p>さて、Reflectionではクラスとメソッドは様々なパターンを作るようによく使うことですが、変数はあまり使わないですね。</p> 
-  <p>なぜなら、クラス中でメンバー変数はその目的があるし、データを入れ変わったりするとクラス処理がエラーなる可能性があるのでです。</p> 
-  <p><br></p> 
-  <p>でも、その必要性が全然ないことではないかと疑問になりますが、クラスの流れでテストする時にデバッグのように変数のデータを確認する時や最近、MVCモデルでDI(依存性注入)概念があり、外部で変数にクラスのファクトリーパターンでインスタンスを刺し入れる処理で使えます。</p> 
-  <pre><code class="java" data-type="">import java.lang.reflect.Field;
-
-public class Example {
-  public static void main(String... args) throws Exception {
-    Node node = new Node();
-    // Reflectionでメンバー変数の「data」を取得する。
-    Field field = Node.class.getDeclaredField("data");
-    // setAccessibleはprivate, protectedに接近に可能にする。
-    field.setAccessible(true);
-    // data フィルドに「100」のデータを差し入れる。
-    field.set(node, 100);
-    // 結果は「100」になる。
-    System.out.println(node.getData());
+  <p>Reflectionの機能はクラスの構造を分析してメソッドや変数を使える機能だと説明しました。</p> 
+  <p>そうするとReflectionの動的の割り当てでクラスをObjectに格納するとObjectクラスの関数だけではなくReflection機能を通ってクラス構造を分析してメソッドを探索して使えます。</p> 
+  <pre><code class="java" data-type="Example.java">import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+// ノードクラス
+class Node {
+  // コンストラクタ
+  public Node() { }
+  // 関数生成
+  public void print() {
+    // コンソール出力
+    System.out.println("Hello world");
   }
 }
-
-class Node {
-  private int data = 0;
-  public int getData() {
-    return this.data;
+public class Example {
+  // 実行関数
+  public static void main(String... args) {
+    try {
+      // Nodeクラスのタイプを探す。
+      Class&lt;?&gt; cls = Class.forName("Node");
+      // Nodeクラスのコンストラクタを取得する。
+      Constructor&lt;?&gt; constructor = cls.getConstructor();
+      // コンストラクタを通ってnewInstance関数を呼び出し、Nodeインスタンスを生成する。
+      Object node = constructor.newInstance();
+      // Nodeクラスのprint関数を取得する。
+      Method method = cls.getMethod("print");
+      // 取得した関数に生成したインスタンスを格納して実行する。
+      method.invoke(node);
+    } catch (Throwable e) {
+      e.printStackTrace();
+    }
   }
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/70/284_001.jpg" data-filename="001.jpg" style="width: 686px;"></p> 
-  <p>上の例をみればメンバ変数が「private」タイプでも「data」の値を「100」に変わりました。</p> 
+  <p><img src="./contents/70/1473_001.png" data-filename="001.png" style="width: 247px;"><br></p> 
+  <p>上の例でNodeクラスを取得してインスタンスを生成しました。そしてNodeクラスでprintメソッドを探してメソッドにインスタンスを入れて実行(invoke)します。</p> 
+  <p>main関数でソース上ではNodeキーワードを使えなかったので、Nodeクラスを動的に分離することができます。</p> 
   <p><br></p> 
-  <p>「Reflection」と場合はプログラム文法をメッチャクチャになれることができますね。</p> 
-  <p>では「Reflection」はパフォーマンス的に遅くなる可能性があるし、無分別に使うとコードパターンや設計があっというまでめちゃくちゃになるのでデザインパターンやソース標準なので守りながら使わなければならないと思います。</p>
+  <p>Javaにはメソッドのタイプが関数の種類が2つです。コンストラクタと一般関数に分けます。</p> 
+  <p>コンストラクタの場合は返却タイプがない形です。JavaのReflectionではgetConstructor()関数を使って取得できます。</p> 
+  <p>一般関数の場合は返却タイプがある形です。JavaのReflectionではgetMethod()関数を使って取得できます。</p> 
+  <p>関数を探索する時に関数の名前も重要ですが、Javaにはオバーロード機能があるので、パラメータの個数とタイプも重要です。</p> 
+  <pre><code class="java" data-type="Example.java">import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+// ノードクラス
+class Node {
+  // コンストラクタ
+  public Node() {  }
+  // 関数生成 (パラメータなし)
+  public void print() {
+    // コンソール出力
+    System.out.println("print");
+  }
+  // 関数生成 (パラメータがStringタイプで一つ)
+  public void print(String msg) {
+    // コンソール出力
+    System.out.println("print " + msg);
+  }
+  // 関数生成(パラメータがString、intタイプで二つ)
+  public void print(String msg, int count) {
+    // コンソール出力
+    System.out.println("print " + msg + " count - " + count);
+  }
+}
+public class Example {
+  // 実行関数
+  public static void main(String... args) {
+    try {
+      // Nodeクラスのタイプを探す。
+      Class&lt;?&gt; cls = Class.forName("Node");
+      // Nodeクラスのコンストラクタを取得する。
+      Constructor&lt;?&gt; constructor = cls.getConstructor();
+      // コンストラクタを通ってnewInstance関数を呼び出し、Nodeインスタンスを生成する。
+      Object node = constructor.newInstance();
+      // Nodeクラスからパラメータがないprint関数を取得する。
+      Method method = cls.getMethod("print");
+      // 取得した関数に生成したインスタンスを入れて実行する。
+      method.invoke(node);
+      // NodeクラスからStringパラメータを持つprint関数を取得する。
+      method = cls.getMethod("print", String.class);
+      // 取得した関数に生成したインスタンスを入れて実行する。
+      method.invoke(node, "test");
+      // NodeクラスからString、intパラメータを持つprint関数を取得する。
+      method = cls.getMethod("print", String.class, Integer.TYPE);
+      // 取得した関数に生成したインスタンスを入れて実行する。
+      method.invoke(node, "test2", 100);
+    } catch (Throwable e) {
+      e.printStackTrace();
+    }
+  }
+}
+</code></pre> 
+  <p><img src="./contents/70/1474_002.png" data-filename="002.png" style="width: 269px;"><br></p> 
+  <p>上みたいに同じ関数名でもパラメータ設定より呼び出しを別々にすることができます。getConstructor関数も同じ方法でコンストラクタを探索してインスタンスを生成することができます。</p> 
+  <p><br></p> 
+  <p>Class編でクラスをStringタイプで探索してインスタンスを生成することができました。メソッドも同じ方法でStringタイプで探索をして実行することができます。</p> 
+  <pre><code class="java" data-type="Example.java">import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+// ノードクラス
+class Node {
+  // メンバー変数
+  private String data = "init";
+  // コンストラクタ
+  public Node() {
+    // コンソール出力
+    System.out.println("Node() constructor");
+  }
+  // Stringパラメータがあるコンストラクタ
+  public Node(String data) {
+    // メンバー変数に入力
+    this.data = data;
+    // コンソール出力
+    System.out.println("Node(String) constructor");
+  }
+  // 出力関数
+  public void print() {
+    // コンソール出力
+    System.out.println("data - " + data);
+  }
+  // メンバー変数値を修正関数
+  public void setData(String data) {
+    // メンバー変数値を修正
+    this.data = data;
+  }
+  // メンバー変数値を返却関数
+  public String getData() {
+    // メンバー変数値を返却
+    return this.data;
+  }
+}
+public class Example {
+  // クラス取得関数
+  private static Object getClass(String name, Object... args) {
+    try {
+      // Class.forNameの関数を使って文字列でClass&lt;?&gt;タイプを取得する。
+      Class&lt;?&gt; clz = Class.forName(name);
+      // パラメータをObjectタイプの可変に受け取ったのでパラメータのデータタイプを探す。
+      Class&lt;?&gt;[] params = new Class&lt;?&gt;[args.length];
+      // パラメータの個数ほど
+      for (int i = 0; i &lt; args.length; i++) {
+        // タイプ抽出
+        params[i] = args[i].getClass();
+      }
+      // パラメータタイプによるコンストラクタを取得する。
+      Constructor&lt;?&gt; constructor = clz.getConstructor(params);
+      // コンストラクタを通ってnewInstance関数を呼び出すNodeインスタンスを生成する。
+      return constructor.newInstance(args);
+    } catch (Throwable e) {
+      return null;
+    }
+  }
+  // 関数を探索して実行関数
+  private static &lt;T&gt; T executeMethod(Object instance, String name, Object... args) {
+    try {
+      // パラメータを可変に受け取ったのでパラメータのデータタイプを探す。
+      Class&lt;?&gt;[] params = new Class&lt;?&gt;[args.length];
+      // パラメータの個数ほど
+      for (int i = 0; i &lt; args.length; i++) {
+        // タイプ抽出
+        params[i] = args[i].getClass();
+      }
+      // インスタンスのクラスタイプでメソッドを探す。
+      Method method = instance.getClass().getMethod(name, params);
+      // 実行
+      return (T) method.invoke(instance, args);
+    } catch (Throwable e) {
+      return null;
+    }
+  }
+  // 実行関数
+  public static void main(String... args) {
+    // Nodeインスタンスを実行する。パラメータがStringのコンストラクタを実行する。
+    Object instance = getClass("Node", "hello world");
+    // print関数実行
+    executeMethod(instance, "print");
+    // setData関数実行、パラメータ値を入れる。
+    executeMethod(instance, "setData", "good");
+    // getData関数を実行してメンバー変数の値を受け取る。
+    String data = executeMethod(instance, "getData");
+    // コンソール出力
+    System.out.println("Node data - " + data);
+  }
+}
+</code></pre> 
+  <p><img src="./contents/70/1477_003.png" data-filename="003.png" style="width: 309px;"><br></p> 
+  <p>上みたいにStringタイプに関数を探索して実行することも可能です。</p> 
+  <p>この意味はプログラムの実行順番をプログラムの中で実装することではなく、テキストや環境変数によりプログラム実行順番を実装こともできます。</p> 
+  <pre><code class="java" data-type="Example.java">import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+// ノードクラス
+class Node {
+  // メンバー変数
+  private String data = "init";
+  // コンストラクタ
+  public Node() {
+    // コンソール出力
+    System.out.println("Node() constructor");
+  }
+  // Stringパラメータがあるコンストラクタ
+  public Node(String data) {
+    // メンバー変数に入力
+    this.data = data;
+    // コンソール出力
+    System.out.println("Node(String) constructor");
+  }
+  // 出力関数
+  public void print() {
+    // コンソール出力
+    System.out.println("data - " + data);
+  }
+  // メンバー変数値を修正関数
+  public void setData(String data) {
+    // メンバー変数値を修正
+    this.data = data;
+  }
+  // メンバー変数値を返却関数
+  public String getData() {
+    // メンバー変数値を返却
+    return this.data;
+  }
+}
+public class Example {
+  // クラス取得関数
+  private static Object getClass(String name, Object... args) {
+    try {
+      // Class.forNameの関数を使って文字列でClass&lt;?&gt;タイプを取得する。
+      Class&lt;?&gt; clz = Class.forName(name);
+      // パラメータをObjectタイプの可変に受け取ったのでパラメータのデータタイプを探す。
+      Class&lt;?&gt;[] params = new Class&lt;?&gt;[args.length];
+      // パラメータの個数ほど
+      for (int i = 0; i &lt; args.length; i++) {
+        // タイプ抽出
+        params[i] = args[i].getClass();
+      }
+      // パラメータタイプによるコンストラクタを取得する。
+      Constructor&lt;?&gt; constructor = clz.getConstructor(params);
+      // コンストラクタを通ってnewInstance関数を呼び出すNodeインスタンスを生成する。
+      return constructor.newInstance(args);
+    } catch (Throwable e) {
+      return null;
+    }
+  }
+  // 関数を探索して実行関数
+  private static &lt;T&gt; T executeMethod(Object instance, String name, Object... args) {
+    try {
+      // パラメータを可変に受け取ったのでパラメータのデータタイプを探す。
+      Class&lt;?&gt;[] params = new Class&lt;?&gt;[args.length];
+      // パラメータの個数ほど
+      for (int i = 0; i &lt; args.length; i++) {
+        // タイプ抽出
+        params[i] = args[i].getClass();
+      }
+      // インスタンスのクラスタイプでメソッドを探す。
+      Method method = instance.getClass().getMethod(name, params);
+      // 実行
+      return (T) method.invoke(instance, args);
+    } catch (Throwable e) {
+      return null;
+    }
+  }
+  // 実行関数
+  public static void main(String... args) {
+    if (args.length &gt; 0) {
+      // インスタンスを生成する。
+      Object instance = getClass("Node");
+      // 関数を実行する。
+      executeMethod(instance, args[0]);
+    }
+  }
+}
+</code></pre> 
+  <p><img src="./contents/70/1476_004.png" data-filename="004.png" style="width: 300px;"><br></p> 
+  <p>上の例は簡単に実行関数名をパラメータから受け取って実行することにしましたが、テキストで実行する関数名を順番とおりに作成してIOで読み取って実行することもできます。</p> 
+  <p><br></p> 
+  <p>Reflectionでは単純にgetMethod関数を利用して探すことだけではなく、getMethodsを通ってクラスにあるメソッドをすべて取得することもできます。</p> 
+  <pre><code class="java" data-type="Example.java">import java.lang.reflect.Method;
+// ノードクラス
+class Node {
+  // コンストラクタ
+  public Node() {　}
+  // 出力関数
+  public void print() {
+    // コンソール出力
+    System.out.println("print");
+  }
+  // 実行関数
+  public void execute() {
+    // コンソール出力
+    System.out.println("execute");
+  }
+}
+public class Example {
+  // 実行関数
+  public static void main(String... args) {
+    try {
+      // Class.forNameの関数を使って文字列でClass&lt;?&gt;タイプを取得する。
+      Class&lt;?&gt; clz = Class.forName("Node");
+      // コンソール出力
+      System.out.println("*** method list ***");
+      // Nodeクラスのメソッド取得
+      for (Method method : clz.getMethods()) {
+        // メソッド名を出力
+        System.out.println(method.getName());
+      }
+      // 改行
+      System.out.println();
+      // コンソール出力
+      System.out.println("*** getDeclaredMethods list ***");
+      // Nodeクラスのメソッド取得する。
+      for (Method method : clz.getDeclaredMethods()) {
+        // メソッド名をコンソールに出力
+        System.out.println(method.getName());
+      }
+    } catch (Throwable e) {
+      e.printStackTrace();
+    }
+  }
+}
+</code></pre> 
+  <p><img src="./contents/70/1475_005.png" data-filename="005.png" style="width: 277px;"><br></p> 
+  <p>getMethods関数の場合は、当該なクラスの関数だけではなく、上位クラスからすべての関数、つまりObjectクラスからNodeクラスまでのすべての関数を出力します。</p> 
+  <p>getDeclaredMethodsはNodeクラスにある関数を出力します。</p> 
+  <p>仕様によって使ったらよいと思います。</p> 
+  <p><br></p> 
+  <p>Reflectionには面白い機能があります。privateやprotectedみたいにアクセスが制限している関数も実行することができます。</p> 
+  <pre><code class="java" data-type="Example.java">import java.lang.reflect.Constructor;
+import java.lang.reflect.Method;
+// ノードクラス
+class Node {
+  // コンストラクタ
+  public Node() { }
+  // 出力関数(privateで外部からアクセスができない。)
+  private void print() {
+    // コンソール出力
+    System.out.println("print");
+  }
+  // 実行関数(privateで外部からアクセスができない。)
+  private void execute() {
+    // コンソール出力
+    System.out.println("execute");
+  }
+}
+public class Example {
+  // 実行関数
+  public static void main(String... args) {
+    try {
+      // Class.forNameの関数を使って文字列でClass&lt;?&gt;タイプを取得する。
+      Class&lt;?&gt; clz = Class.forName("Node");
+      // Nodeクラスのコンストラクタを取得する。
+      Constructor&lt;?&gt; constructor = clz.getConstructor();
+      // コンストラクタを通ってnewInstance関数を呼び出し、Nodeインスタンスを生成する。
+      Object node = constructor.newInstance();
+      // 関数を取得する。
+      for (Method method : clz.getDeclaredMethods()) {
+        // アクセス修飾子を無視してアクセスできるようにする。
+        method.setAccessible(true);
+        // 実行
+        method.invoke(node);
+      }
+    } catch (Throwable e) {
+      e.printStackTrace();
+    }
+  }
+}
+</code></pre> 
+  <p><img src="./contents/70/1478_006.png" data-filename="006.png" style="width: 210px;"><br></p> 
+  <p>上みたいにNodeクラスで関数がprivateになっていてもアクセスができます。</p> 
+  <p>普通に上の方法はUnitTestで関数の値を確認する時に使う方法で、プロジェクトのプログラムを実装する時にはOOPのカプセル化が無力化になるのでお勧めではありません。</p> 
+  <p><br></p> 
+  <p>ここまでJavaのReflection機能を使う方法(Method編)に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
  
 </div>
 				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/69.html" target="_blank">[Java] 29. Reflection機能を使う方法(Class編)</a></div><div class="post-category"><span>次の投稿▶</span><a href="https://www.nowonbun.com/71.html" target="_blank">[Java] Reflection - Annotation編</a></div></div>
@@ -188,7 +527,7 @@ class Node {
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0203">Study / Java</a>」の他投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/77.html'>[Java] 「Web spring framework」の「Controller」で「ajax」の要請する時「json」タイプで返却する方法</a><span>2019/09/30 22:19:34</span></li><li><a href='https://www.nowonbun.com/76.html'>[Java] Spring web frameworkでControllerを使用する方法</a><span>2019/09/27 20:39:09</span></li><li><a href='https://www.nowonbun.com/75.html'>[Java] EclipseでSpring web frameworkを利用してウェブサービスプロジェクトを立ち上がる方法</a><span>2019/09/26 21:31:25</span></li><li><a href='https://www.nowonbun.com/74.html'>[Java] Web serviceプログラムのServletを作成方法(Eclipse)</a><span>2019/09/25 19:58:30</span></li><li><a href='https://www.nowonbun.com/73.html'>[Java] 「Eclipse」でトムキャット(tomcat)を設定する方法</a><span>2019/09/24 19:35:54</span></li><li><a href='https://www.nowonbun.com/72.html'>[Java] Mavenをインストール、使用方法、そしてeclipseに連結する方法</a><span>2019/09/24 00:19:25</span></li><li><a href='https://www.nowonbun.com/71.html'>[Java] Reflection - Annotation編</a><span>2019/09/20 22:34:40</span></li><li><a href='https://www.nowonbun.com/70.html'>[Java] Reflection - Variable編</a><span>2019/09/19 20:20:10</span></li><li><a href='https://www.nowonbun.com/69.html'>[Java] 29. Reflection機能を使う方法(Class編)</a><span>2019/09/18 20:02:14</span></li><li><a href='https://www.nowonbun.com/68.html'>[Java] 28. 文字タイプ(CharacterSet)とエンディアン(endian)で変換する方法</a><span>2019/09/17 20:22:02</span></li><li><a href='https://www.nowonbun.com/67.html'>[Java] 27. ネットワーク通信(Socket)をする方法</a><span>2019/09/16 23:42:46</span></li><li><a href='https://www.nowonbun.com/66.html'>[Java] 26. ファイル(IO)を扱う方法(ファイル作成、ファイル修正、アクセス日付変更とIOをclose(リソース返却)する理由、Closableインタフェース)</a><span>2019/09/13 20:03:58</span></li><li><a href='https://www.nowonbun.com/65.html'>[Java] 25. Objectクラス(notify、waitの使い方)</a><span>2019/09/13 00:58:31</span></li><li><a href='https://www.nowonbun.com/64.html'>[Java] 24. Javaの同期化(Synchronized)とデッドロック(Deadlock)</a><span>2019/09/11 23:06:09</span></li><li><a href='https://www.nowonbun.com/63.html'>[Java] 23. スレッドプール(Threadpool)を使う方法</a><span>2019/09/10 21:55:36</span></li></ul>
+					<ul><li><a href='https://www.nowonbun.com/77.html'>[Java] 「Web spring framework」の「Controller」で「ajax」の要請する時「json」タイプで返却する方法</a><span>2019/09/30 22:19:34</span></li><li><a href='https://www.nowonbun.com/76.html'>[Java] Spring web frameworkでControllerを使用する方法</a><span>2019/09/27 20:39:09</span></li><li><a href='https://www.nowonbun.com/75.html'>[Java] EclipseでSpring web frameworkを利用してウェブサービスプロジェクトを立ち上がる方法</a><span>2019/09/26 21:31:25</span></li><li><a href='https://www.nowonbun.com/74.html'>[Java] Web serviceプログラムのServletを作成方法(Eclipse)</a><span>2019/09/25 19:58:30</span></li><li><a href='https://www.nowonbun.com/73.html'>[Java] 「Eclipse」でトムキャット(tomcat)を設定する方法</a><span>2019/09/24 19:35:54</span></li><li><a href='https://www.nowonbun.com/72.html'>[Java] Mavenをインストール、使用方法、そしてeclipseに連結する方法</a><span>2019/09/24 00:19:25</span></li><li><a href='https://www.nowonbun.com/71.html'>[Java] Reflection - Annotation編</a><span>2019/09/20 22:34:40</span></li><li><a href='https://www.nowonbun.com/70.html'>[Java] 30. Reflection機能を使う方法(Method編)</a><span>2019/09/19 20:20:10</span></li><li><a href='https://www.nowonbun.com/69.html'>[Java] 29. Reflection機能を使う方法(Class編)</a><span>2019/09/18 20:02:14</span></li><li><a href='https://www.nowonbun.com/68.html'>[Java] 28. 文字タイプ(CharacterSet)とエンディアン(endian)で変換する方法</a><span>2019/09/17 20:22:02</span></li><li><a href='https://www.nowonbun.com/67.html'>[Java] 27. ネットワーク通信(Socket)をする方法</a><span>2019/09/16 23:42:46</span></li><li><a href='https://www.nowonbun.com/66.html'>[Java] 26. ファイル(IO)を扱う方法(ファイル作成、ファイル修正、アクセス日付変更とIOをclose(リソース返却)する理由、Closableインタフェース)</a><span>2019/09/13 20:03:58</span></li><li><a href='https://www.nowonbun.com/65.html'>[Java] 25. Objectクラス(notify、waitの使い方)</a><span>2019/09/13 00:58:31</span></li><li><a href='https://www.nowonbun.com/64.html'>[Java] 24. Javaの同期化(Synchronized)とデッドロック(Deadlock)</a><span>2019/09/11 23:06:09</span></li><li><a href='https://www.nowonbun.com/63.html'>[Java] 23. スレッドプール(Threadpool)を使う方法</a><span>2019/09/10 21:55:36</span></li></ul>
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
