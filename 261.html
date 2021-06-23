@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/261.html"},"url":"https:\/\/www.nowonbun.com\/261.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Design pattern] 1-3. \u30d5\u30a1\u30af\u30c8\u30ea\u30e1\u30bd\u30c3\u30c9\u30d1\u30bf\u30fc\u30f3(Factory method pattern)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306f\u30c7\u30b6\u30a4\u30f3\u30d1\u30bf\u30fc\u30f3\u306e\u30d5\u30a1\u30af\u30c8\u30ea\u30e1\u30bd\u30c3\u30c9\u30d1\u30bf\u30fc\u30f3(factory method pattern)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u4ee5\u524d\u306e\u6295\u7a3f\u3067\u30d3\u30eb\u30c0\u30fc\u30d1\u30bf\u30fc\u30f3\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u307e\u3057\u305f\u3002link - [design pattern] 1-2. \u30d3\u30eb\u30c0\u30fc\u30d1\u30bf\u30fc\u30f3(builder pattern)\u30d3\u30eb\u30c0\u30fc\u30d1\u30bf\u30fc\u30f3\u306f\u7c21\u5358\u306b\u8aac\u660e\u3059\u308b\u3068builder\u30af\u30e9\u30b9\u3068director\u30af\u30e9\u30b9\u306e\u7d44\u307f\u5408\u3044\u3067\u4e00\u3064\u306e\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u751f\u6210\u3059\u308b\u751f\u6210\u30d1\u30bf\u30fc\u30f3\u3067\u3059\u3002\u3053\u306e\u30d5\u30a1\u30af\u30c8\u30ea\u30e1\u30bd\u30c3\u30c9\u30d1\u30bf\u30fc\u30f3\u3082\u30d3\u30eb\u30c0\u30fc\u30d1\u30bf\u30fc\u30f3\u3068\u540c\u3058\u751f\u6210\u30d1\u30bf\u30fc\u30f3\u306e\u4e00\u3064\u3067\u3001\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u751f\u6210\u3059\u308b\u30d1\u30bf\u30fc\u30f3\u3067\u3059\u3002\u3053\u306e\u30d5\u30a1\u30af\u30c8\u30ea\u30e1\u30bd\u30c3\u30c9\u30d1\u30bf\u30fc\u30f3\u306f\u30e1\u30bd\u30c3\u30c9\u306e\u30d1\u30e9\u30e1\u30fc\u30bf\u306b\u3088\u308a\u751f\u6210\u3055\u308c\u308b\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u5909\u308f\u308b\u5f62\u306e\u30d1\u30bf\u30fc\u30f3\u3067\u3059\u3002reference - https:\/\/en.wikipedia.org\/wiki\/factory_method_pattern\u4e0a\u306e\u4f8b\u3092\u307f\u308c\u3070factory\u95a2\u6570\u306e\u30d1\u30e9\u30e1\u30fc\u30bf\u306e\u5024\u306b\u3088\u308anode1\u30af\u30e9\u30b9\u306e\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u751f\u6210\u3059\u308b\u304bnode2\u30af\u30e9\u30b9\u306e\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u751f\u6210\u3059\u308b\u3053\u3068\u304c\u6c7a\u3081\u307e\u3059\u3002\u30d3\u30eb\u30c0\u30fc\u30d1\u30bf\u30fc\u30f3\u3068\u6bd4\u3079\u305f\u3089\u3059\u3054\u304f\u7c21\u5358\u306a\u69cb\u9020\u3067\u3059\u3002java\u306e\u4f8b\u3067\u306f\u30d1\u30e9\u30e1\u30fc\u30bf\u306e\u5024\u3092string\u3067\u53d7\u3051\u307e\u3059\u3002\u3064\u307e\u308a\u3001string\u30c7\u30fc\u30bf\u306b\u3088\u308a\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u751f\u6210\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002\u3053\u3093\u306a\u3053\u3068\u306b\u306a\u308b\u3068\u5b9f\u969b\u306e\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u306b\u306f\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u3084\u30e6\u30fc\u30b6\u304b\u3089\u53d7\u3051\u308b\u5024\u306b\u3088\u308a\u751f\u6210\u3059\u308b\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u5909\u308f\u3063\u3066\u5b9f\u884c\u3059\u308b\u30ed\u30b8\u30c3\u30af\u3092\u9078\u629e\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002\u305d\u3057\u3066\u30d5\u30a1\u30af\u30c8\u30ea\u30e1\u30bd\u30c3\u30c9\u306b\u306f\u30ea\u30bf\u30fc\u30f3\u3059\u308b\u30bf\u30a4\u30d7\u3092\u4e00\u3064\u7a2e\u985e\u306e\u30bf\u30a4\u30d7\u306b\u7d71\u4e00\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u306e\u3067interface\u3092\u4f7f\u3044\u307e\u3057\u305f\u3002\u4e0a\u306e\u4f8b\u306fstring\u30bf\u30a4\u30d7\u3067\u306f\u306a\u304f\u3001\u5217\u6319\u578b\u306e\u5024\u306b\u3088\u308a\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u751f\u6210\u3057\u307e\u3057\u305f\u3002string\u30bf\u30a4\u30d7\u3092\u4f7f\u3046\u3053\u3068\u306f\u3082\u3057\u3001string\u5024\u306b\u30bf\u30a4\u30d7\u30df\u30b9\u304c\u3042\u308b\u5834\u5408\u3001\u30c7\u30d0\u30c3\u30b0\u6bb5\u968e\u3067\u30a8\u30e9\u30fc\u3092\u30c1\u30a7\u30c3\u30af\u3057\u306a\u3044\u306e\u3067\u3001\u30d0\u30b0\u304c\u767a\u751f\u3059\u308b\u53ef\u80fd\u6027\u304c\u3042\u308a\u307e\u3059\u3002\u3067\u3082\u3001\u5217\u6319\u578b\u3067\u30d1\u30e9\u30e1\u30fc\u30bf\u3092\u8a2d\u5b9a\u3059\u308c\u3070\u30d0\u30b0\u304c\u767a\u751f\u3059\u308b\u53ef\u80fd\u6027\u306f\u5c11\u3057\u306a\u304f\u3059\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002\u30d5\u30a1\u30af\u30c8\u30ea\u30e1\u30bd\u30c3\u30c9\u30d1\u30bf\u30fc\u30f3\u306f\u666e\u901a\u306f\u30b7\u30f3\u30b0\u30eb\u30c8\u30f3\u30d1\u30bf\u30fc\u30f3\u3068\u7d44\u307f\u5408\u3044\u3057\u3066\u3088\u304f\u4f7f\u3044\u307e\u3059\u3002\u306a\u306e\u3067\u3001entity\u30bf\u30a4\u30d7\u306e\u30c7\u30fc\u30bf\u30af\u30e9\u30b9\u3088\u308acontroller\u307f\u305f\u3044\u306b\u51e6\u7406\u30af\u30e9\u30b9\u306b\u3088\u304f\u4f7f\u3044\u307e\u3059\u3002\u4e0a\u306e\u4f8b\u306fnode1\u30af\u30e9\u30b9\u3068node2\u30af\u30e9\u30b9\u306b\u3042\u308b\u30b3\u30f3\u30b9\u30c8\u30e9\u30af\u30bf\u3092private\u306b\u8a2d\u5b9a\u3057\u3066getinstance\u95a2\u6570\u3067\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u53d6\u5f97\u3059\u308b\u5f62\u306e\u30b7\u30f3\u30b0\u30eb\u30c8\u30f3\u30d1\u30bf\u30fc\u30f3\u3092\u4f5c","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2021-06-23T19:45:37.000+09:00","dateModified":"2021-06-23T19:46:01.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Devlopment note / C, C++, MFC" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はデザインパターンのファクトリメソッドパターン(factory method pattern)に関する説明です。以前の投稿でビルダーパターンに関して説明しました。link - [design pattern] 1-2. ビルダーパターン(builder pattern)ビルダーパターンは簡単に説明するとbuilderクラスとdirectorクラスの組み合いで一つのインスタンスを生成する生成パターンです。このファクトリメソッドパターンもビルダーパターンと同じ生成パターンの一つで、インスタンスを生成するパターンです。このファクトリメソッドパターンはメソッドのパラメータにより生成されるインスタンスを変わる形のパターンです。reference - https://en.wikipedia.org/wiki/factory_method_pattern上の例をみればfactory関数のパラメータの値によりnode1クラスのインスタンスを生成するかnode2クラスのインスタンスを生成することが決めます。ビルダーパターンと比べたらすごく簡単な構造です。javaの例ではパラメータの値をstringで受けます。つまり、stringデータによりインスタンスを生成することができます。こんなことになると実際のプロジェクトにはデータベースやユーザから受ける値により生成するインスタンスを変わって実行するロジックを選択することができます。そしてファクトリメソッドにはリターンするタイプを一つ種類のタイプに統一しなければならないのでinterfaceを使いました。上の例はstringタイプではなく、列挙型の値によりインスタンスを生成しました。stringタイプを使うことはもし、string値にタイプミスがある場合、デバッグ段階でエラーをチェックしないので、バグが発生する可能性があります。でも、列挙型でパラメータを設定すればバグが発生する可能性は少しなくすことができます。ファクトリメソッドパターンは普通はシングルトンパターンと組み合いしてよく使います。なので、entityタイプのデータクラスよりcontrollerみたいに処理クラスによく使います。上の例はnode1クラスとnode2クラスにあるコンストラクタをprivateに設定してgetinstance関数でインスタンスを取得する形のシングルトンパターンを作]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Design pattern] 1-3. ファクトリメソッドパターン(Factory method pattern)" />
+<link rel="canonical" href="https://www.nowonbun.com/261.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Design pattern] 1-3. ファクトリメソッドパターン(Factory method pattern)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はデザインパターンのファクトリメソッドパターン(factory method pattern)に関する説明です。以前の投稿でビルダーパターンに関して説明しました。link - [design pattern] 1-2. ビルダーパターン(builder pattern)ビルダーパターンは簡単に説明するとbuilderクラスとdirectorクラスの組み合いで一つのインスタンスを生成する生成パターンです。このファクトリメソッドパターンもビルダーパターンと同じ生成パターンの一つで、インスタンスを生成するパターンです。このファクトリメソッドパターンはメソッドのパラメータにより生成されるインスタンスを変わる形のパターンです。reference - https://en.wikipedia.org/wiki/factory_method_pattern上の例をみればfactory関数のパラメータの値によりnode1クラスのインスタンスを生成するかnode2クラスのインスタンスを生成することが決めます。ビルダーパターンと比べたらすごく簡単な構造です。javaの例ではパラメータの値をstringで受けます。つまり、stringデータによりインスタンスを生成することができます。こんなことになると実際のプロジェクトにはデータベースやユーザから受ける値により生成するインスタンスを変わって実行するロジックを選択することができます。そしてファクトリメソッドにはリターンするタイプを一つ種類のタイプに統一しなければならないのでinterfaceを使いました。上の例はstringタイプではなく、列挙型の値によりインスタンスを生成しました。stringタイプを使うことはもし、string値にタイプミスがある場合、デバッグ段階でエラーをチェックしないので、バグが発生する可能性があります。でも、列挙型でパラメータを設定すればバグが発生する可能性は少しなくすことができます。ファクトリメソッドパターンは普通はシングルトンパターンと組み合いしてよく使います。なので、entityタイプのデータクラスよりcontrollerみたいに処理クラスによく使います。上の例はnode1クラスとnode2クラスにあるコンストラクタをprivateに設定してgetinstance関数でインスタンスを取得する形のシングルトンパターンを作]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/261.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Design pattern] 1-3. ファクトリメソッドパターン(Factory method pattern)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はデザインパターンのファクトリメソッドパターン(factory method pattern)に関する説明です。以前の投稿でビルダーパターンに関して説明しました。link - [design pattern] 1-2. ビルダーパターン(builder pattern)ビルダーパターンは簡単に説明するとbuilderクラスとdirectorクラスの組み合いで一つのインスタンスを生成する生成パターンです。このファクトリメソッドパターンもビルダーパターンと同じ生成パターンの一つで、インスタンスを生成するパターンです。このファクトリメソッドパターンはメソッドのパラメータにより生成されるインスタンスを変わる形のパターンです。reference - https://en.wikipedia.org/wiki/factory_method_pattern上の例をみればfactory関数のパラメータの値によりnode1クラスのインスタンスを生成するかnode2クラスのインスタンスを生成することが決めます。ビルダーパターンと比べたらすごく簡単な構造です。javaの例ではパラメータの値をstringで受けます。つまり、stringデータによりインスタンスを生成することができます。こんなことになると実際のプロジェクトにはデータベースやユーザから受ける値により生成するインスタンスを変わって実行するロジックを選択することができます。そしてファクトリメソッドにはリターンするタイプを一つ種類のタイプに統一しなければならないのでinterfaceを使いました。上の例はstringタイプではなく、列挙型の値によりインスタンスを生成しました。stringタイプを使うことはもし、string値にタイプミスがある場合、デバッグ段階でエラーをチェックしないので、バグが発生する可能性があります。でも、列挙型でパラメータを設定すればバグが発生する可能性は少しなくすことができます。ファクトリメソッドパターンは普通はシングルトンパターンと組み合いしてよく使います。なので、entityタイプのデータクラスよりcontrollerみたいに処理クラスによく使います。上の例はnode1クラスとnode2クラスにあるコンストラクタをprivateに設定してgetinstance関数でインスタンスを取得する形のシングルトンパターンを作]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Design pattern] 1-3. ファクトリメソッドパターン(Factory method pattern)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(90)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(27)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(3)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(13)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(169)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(40)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(3)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(2)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/261.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Design pattern] 1-3. ファクトリメソッドパターン(Factory method pattern)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0101">Devlopment note / C, C++, MFC</a>    作成日付 : <span property="datePublished">2021/06/23 19:45:37</span>   修正日付 : <span property="dateModified">2021/06/23 19:46:01</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はデザインパターンのファクトリメソッドパターン(Factory method pattern)に関する説明です。</p> 
+  <p><br></p> 
+  <p>以前の投稿でビルダーパターンに関して説明しました。</p> 
+  <p>link - <a href="https://www.nowonbun.com/258.html" target="_blank">[Design pattern] 1-2. ビルダーパターン(Builder pattern)</a></p> 
+  <p>ビルダーパターンは簡単に説明するとBuilderクラスとDirectorクラスの組み合いで一つのインスタンスを生成する生成パターンです。このファクトリメソッドパターンもビルダーパターンと同じ生成パターンの一つで、インスタンスを生成するパターンです。</p> 
+  <p>このファクトリメソッドパターンはメソッドのパラメータにより生成されるインスタンスを変わる形のパターンです。</p> 
+  <p style="text-align:left;"><img src="./contents/261/1633_001.jpg" style="width: 500px;" data-filename="001.jpg"><br></p> 
+  <span style="font-size:0.7em">Reference - <a href="https://en.wikipedia.org/wiki/Factory_method_pattern" target="_blank">https://en.wikipedia.org/wiki/Factory_method_pattern</a></span> 
+  <pre><code class="c" data-type="C/C++ファクトリメソッドパターン例">#pragma once
+#include &lt;stdio.h&gt;
+#include &lt;iostream&gt;
+using namespace std;
+// 抽象クラス
+class INode {
+public:
+  // 抽象メソッド
+  virtual void print() = 0;
+};
+// Node1クラス、INodeクラスを継承する。
+class Node1 : public INode {
+public:
+  // 出力関数
+  virtual void print() {
+    // コンソール出力
+    cout &lt;&lt; "Node1 Class " &lt;&lt; endl;
+  }
+};
+// Node2クラス、INodeクラスを継承する。
+class Node2 : public INode {
+public:
+  // 出力関数
+  virtual void print() {
+    // コンソール出力
+    cout &lt;&lt; "Node2 Class " &lt;&lt; endl;
+  }
+};
+// ファクトリメソッドパターンの関数
+INode* factory(int type) {
+  // パラメータのtypeの値が0の場合
+  if (type == 0) {
+    // Node1インスタンスを生成
+    return new Node1();
+  }
+  // パラメータのtypeの値が1の場合
+  else if (type == 1) {
+    // Node2インスタンスを生成
+    return new Node2();
+  }
+  // nullリターン
+  return nullptr;
+}
+// 実行関数
+int main() {
+  // ファクトリメソッドのパラメータで0を入れたら
+  INode* node = factory(0);
+  // Node1クラスのprint関数が実行
+  node-&gt;print();
+  // メモリ解除
+  delete node;
+  // ファクトリメソッドのパラメータで1を入れたら
+  node = factory(1);
+  // Node2クラスのprint関数が実行
+  node-&gt;print();
+  // メモリ解除
+  delete node;
+  return 0;
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/261/1631_002.png" data-filename="002.png" style="width: 236px;"><br></p> 
+  <p>上の例をみればfactory関数のパラメータの値によりNode1クラスのインスタンスを生成するかNode2クラスのインスタンスを生成することが決めます。</p> 
+  <p><br></p> 
+  <p>ビルダーパターンと比べたらすごく簡単な構造です。</p> 
+  <pre><code class="java" data-type="Javaファクトリメソッドパターン例">// 実行関数があるクラス
+public class Program {
+  // ファクトリメソッドパターンの関数
+  public static INode factory(String type) {
+    // パラメータのtypeが大小文字に関係せず、NODE1の場合
+    if ("NODE1".equalsIgnoreCase(type)) {
+      // Node1インスタンスを生成
+      return new Node1();
+    // パラメータのtypeが大小文字に関係せず、NODE2の場合
+    } else if ("NODE2".equalsIgnoreCase(type)) {
+      // Node2インスタンスを生成
+      return new Node2();
+    }
+    // 上の条件に合うことがなければnullをリターン
+    return null;
+  }
+  // 実行関数
+  public static void main(String... args) {
+    // ファクトリメソッドにnode1の値を入れたら
+    INode node = factory("node1");
+    // Node1インスタンスが生成され、コンソール出力
+    node.print();
+    // ファクトリメソッドにnode2の値を入れたら
+    node = factory("node2");
+    // Node2インスタンスが生成され、コンソール出力
+    node.print();
+  }
+}
+// インタフェース
+interface INode {
+  // コンソール出力の抽象メソッド
+  void print();
+}
+// Node1クラス、INodeインスタンスを継承する。
+class Node1 implements INode {
+  // 再定義
+  @Override
+  public void print() {
+    // コンソール出力
+    System.out.println("Node 1 class");
+  }
+}
+// Node2クラス、INodeインスタンスを継承する。
+class Node2 implements INode {
+  // 再定義
+  @Override
+  public void print() {
+    // コンソール出力
+    System.out.println("Node 2 class");
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/261/1630_003.png" data-filename="003.png" style="width: 200px;"><br></p> 
+  <p>Javaの例ではパラメータの値をStringで受けます。つまり、Stringデータによりインスタンスを生成することができます。</p> 
+  <p>こんなことになると実際のプロジェクトにはデータベースやユーザから受ける値により生成するインスタンスを変わって実行するロジックを選択することができます。</p> 
+  <p><br></p> 
+  <p>そしてファクトリメソッドにはリターンするタイプを一つ種類のタイプに統一しなければならないのでinterfaceを使いました。</p> 
+  <pre><code class="cs" data-type="C#ファクトリメソッドパターン例">using System;
+
+namespace Example
+{
+  // インタフェース
+  interface INode
+  {
+    // コンソール出力の抽象メソッド
+    void Print();
+  }
+  // Node1クラス、INodeインスタンスを継承する。
+  class Node1 : INode
+  {
+    // 再定義関数
+    public void Print()
+    {
+      // コンソール出力
+      Console.WriteLine("Node1 Class");
+    }
+  }
+  // Node2クラス、INodeインスタンスを継承する。
+  class Node2 : INode
+  {
+    // 再定義関数
+    public void Print()
+    {
+      // コンソール出力
+      Console.WriteLine("Node2 Class");
+    }
+  }
+  // 列挙型
+  enum NodeType
+  {
+    Node1,
+    Node2
+  }
+  // 実行関数があるクラス
+  class Program
+  {
+    // ファクトリメソッドパターンの関数
+    static INode Factory(NodeType type)
+    {
+      // typeの値がNodeType.Node1なら
+      if (type == NodeType.Node1)
+      {
+        // Node1クラスのインスタンスを生成
+        return new Node1();
+      }
+      // typeの値がNodeType.Node2なら
+      else if (type == NodeType.Node2)
+      {
+        // Node2クラスのインスタンスを生成
+        return new Node2();
+      }
+      // 上の条件に合うことがなければnullをリターン
+      return null;
+    }
+    // 実行関数
+    static void Main(string[] args)
+    {
+      // ファクトリメソッドにNodeType.Node1の値を入れたら
+      INode node = Factory(NodeType.Node1);
+      // Node1インスタンスが生成され、コンソール出力
+      node.Print();
+      // ファクトリメソッドにNodeType.Node2の値を入れたら
+      node = Factory(NodeType.Node2);
+      // Node1インスタンスが生成され、コンソール出力
+      node.Print();
+
+      Console.WriteLine("Press any key...");
+      Console.ReadKey();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/261/1632_004.png" data-filename="004.png" style="width: 181px;"><br></p> 
+  <p>上の例はStringタイプではなく、列挙型の値によりインスタンスを生成しました。</p> 
+  <p>Stringタイプを使うことはもし、String値にタイプミスがある場合、デバッグ段階でエラーをチェックしないので、バグが発生する可能性があります。でも、列挙型でパラメータを設定すればバグが発生する可能性は少しなくすことができます。</p> 
+  <p><br></p> 
+  <p>ファクトリメソッドパターンは普通はシングルトンパターンと組み合いしてよく使います。なので、EntityタイプのデータクラスよりControllerみたいに処理クラスによく使います。</p> 
+  <pre><code class="cs" data-type="SingletonパターンとFactory Methodパターンの組み合い">using System;
+
+namespace Example
+{
+  // インタフェース
+  interface INode
+  {
+    // コンソール出力の抽象メソッド
+    void Print();
+  }
+  // Node1クラス、INodeインスタンスを継承する。
+  class Node1 : INode
+  {
+    // シングルトンパターンのための変数
+    private static Node1 singleton = null;
+    // コンストラクタはprivate
+    private Node1() { }
+    // インスタンスを取得関数
+    public static Node1 GetInstance()
+    {
+      // インスタンスがない場合
+      if(singleton == null)
+      {
+        // インスタンス生成
+        singleton = new Node1();
+      }
+      // インスタンスリターン
+      return singleton;
+    }
+    // 再定義関数
+    public void Print()
+    {
+      // コンソール出力
+      Console.WriteLine("Node1 Class");
+    }
+  }
+  // Node2クラス、INodeインスタンスを継承する。
+  class Node2 : INode
+  {
+    // シングルトンパターンのための変数
+    private static Node2 singleton = null;
+    // コンストラクタはprivate
+    private Node2() { }
+    // インスタンスを取得関数
+    public static Node2 GetInstance()
+    {
+      // インスタンスがない場合
+      if (singleton == null)
+      {
+        // インスタンス生成
+        singleton = new Node2();
+      }
+      // インスタンスリターン
+      return singleton;
+    }
+    // 再定義関数
+    public void Print()
+    {
+      // コンソール出力
+      Console.WriteLine("Node2 Class");
+    }
+  }
+  // 列挙型
+  enum NodeType
+  {
+    Node1,
+    Node2
+  }
+  // 実行関数があるクラス
+  class Program
+  {
+    // ファクトリメソッドパターンの関数
+    static INode Factory(NodeType type)
+    {
+      // typeの値がNodeType.Node1なら
+      if (type == NodeType.Node1)
+      {
+        // Node1クラスのインスタンスを生成
+        return new Node1();
+      }
+      // typeの値がNodeType.Node2なら
+      else if (type == NodeType.Node2)
+      {
+        // Node2クラスのインスタンスを生成
+        return new Node2();
+      }
+      // 上の条件に合うことがなければnullをリターン
+      return null;
+    }
+    // 実行関数
+    static void Main(string[] args)
+    {
+      // ファクトリメソッドにNodeType.Node1の値を入れたら
+      INode node = Factory(NodeType.Node1);
+      // Node1インスタンスが生成され、コンソール出力
+      node.Print();
+      // ファクトリメソッドにNodeType.Node2の値を入れたら
+      node = Factory(NodeType.Node2);
+      // Node1インスタンスが生成され、コンソール出力
+      node.Print();
+
+      Console.WriteLine("Press any key...");
+      Console.ReadKey();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/261/1632_004.png" data-filename="004.png" style="width: 181px;"><br></p> 
+  <p>上の例はNode1クラスとNode2クラスにあるコンストラクタをprivateに設定してGetInstance関数でインスタンスを取得する形のシングルトンパターンを作成しました。</p> 
+  <p>ファクトリメソッドにはパラメータにより各クラスのGetInstance関数を呼び出し、インスタンスをリターンします。</p> 
+  <p><br></p> 
+  <p>この構造を何処でよく見えるかと思えばウェブのMVCの形のControllerクラスでウェブのURL要請により呼び出すクラスインスタンスが変わることと同じ構造だと思います。(Routeクラス)</p> 
+  <p><br></p> 
+  <p>ここまでデザインパターンのファクトリメソッドパターン(Factory method pattern)に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> Factory method pattern </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0101">Devlopment note / C, C++, MFC</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/261.html'>[Design pattern] 1-3. ファクトリメソッドパターン(Factory method pattern)</a><span>2021/06/23 19:45:37</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/261.html'>[Design pattern] 1-3. ファクトリメソッドパターン(Factory method pattern)</a><span>2021/06/23 19:45:37</span></li><li><a href='https://www.nowonbun.com/260.html'>[Java] WebSocketでチャット履歴をローディングする方法</a><span>2021/06/15 18:34:45</span></li><li><a href='https://www.nowonbun.com/259.html'>[Java] WebSocketを利用してユーザ(サイト運用者)が他のユーザとチャットする方法</a><span>2021/06/15 17:20:08</span></li><li><a href='https://www.nowonbun.com/258.html'>[Design pattern] 1-2. ビルダーパターン(Builder pattern)</a><span>2021/06/11 19:06:28</span></li><li><a href='https://www.nowonbun.com/257.html'>[Design pattern] 1-1. シングルトンパターン(Singleton pattern)</a><span>2021/06/09 19:40:05</span></li><li><a href='https://www.nowonbun.com/256.html'>[Design Pattern] デザインパターンの紹介</a><span>2021/06/08 20:42:36</span></li><li><a href='https://www.nowonbun.com/255.html'>[Tools] Dbeaver(無料Sql queryブラウザツール)</a><span>2021/04/28 18:26:49</span></li><li><a href='https://www.nowonbun.com/254.html'>[Bootstrap] HTMLデザインのフレームワークのBootstrap紹介</a><span>2020/07/30 19:06:36</span></li><li><a href='https://www.nowonbun.com/253.html'>[Python] メール(smtplib)を送信する方法</a><span>2020/07/27 18:38:43</span></li><li><a href='https://www.nowonbun.com/252.html'>[Python] HttpConnection(requestsモジュール)でウェブサーバーで接続する方法</a><span>2020/07/20 14:41:51</span></li><li><a href='https://www.nowonbun.com/251.html'>[Python] Excel(openpyxl)を扱う方法</a><span>2020/07/16 16:40:31</span></li><li><a href='https://www.nowonbun.com/250.html'>[Python] ファイル圧縮、解凍(zipfile)する方法</a><span>2020/07/14 19:14:22</span></li><li><a href='https://www.nowonbun.com/249.html'>[Python] Apache cgiでPythonを使う方法</a><span>2020/07/09 19:58:19</span></li><li><a href='https://www.nowonbun.com/248.html'>[Python] Web serverを起動する方法(http.server)</a><span>2020/07/09 00:13:13</span></li><li><a href='https://www.nowonbun.com/247.html'>[Python] WebSocketを使う方法</a><span>2020/07/07 17:29:18</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/261.html';this.page.identifier = 'NOWONBUN00261';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
