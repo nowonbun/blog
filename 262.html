@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/262.html"},"url":"https:\/\/www.nowonbun.com\/262.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] 53. \u30a6\u30a7\u30d6\u30b5\u30fc\u30d3\u30b9(Web service)\u3067\u30a8\u30e9\u30fc\u30da\u30fc\u30b8\u3092\u51e6\u7406\u3059\u308b\u65b9\u6cd5","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306f\u30a6\u30a7\u30d6\u30b5\u30fc\u30d3\u30b9(web service)\u3067\u30a8\u30e9\u30fc\u30da\u30fc\u30b8\u3092\u51e6\u7406\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u57fa\u672c\u7684\u306a\u30a6\u30a7\u30d6\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u3092\u8a2d\u5b9a\u3059\u308b\u3053\u3068\u306f\u4ee5\u524d\u306e\u6295\u7a3f\u307e\u3067\u8aac\u660e\u3059\u308b\u3053\u3068\u3067\u7d42\u308f\u308a\u307e\u3057\u305f\u3002\u30a6\u30a7\u30d6\u30b5\u30fc\u30d3\u30b9\u306e\u30d5\u30ec\u30fc\u30e0\u30ef\u30fc\u30af\u306espring framwork\u3092\u8a2d\u5b9a\u3059\u308b\u3053\u3068\u304b\u3089\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306eorm(object reference mapping)\u306ejpa\u8a2d\u5b9a\u9593\u3067\u3059\u3002\u3064\u307e\u308a\u3001\u5b9f\u969b\u306b\u30af\u30e9\u30a4\u30a2\u30f3\u30c8(\u30d6\u30e9\u30a6\u30b6)\u304c\u30b5\u30fc\u30d0\u306b\u63a5\u7d9a\u3057\u3066\u5f53\u8a72\u306a\u30c7\u30fc\u30bf\u3092\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u304b\u3089\u53d6\u5f97\u3057\u3066\u30af\u30e9\u30a4\u30a2\u30f3\u30c8(\u30d6\u30e9\u30a6\u30b6)\u306b\u8868\u793a\u3059\u308bhtml\u3092\u30d1\u30fc\u30b7\u30f3\u30b0\u3059\u308b\u4f5c\u696d\u307e\u3067\u3067\u3059\u3002\u3053\u3053\u307e\u3067\u8a2d\u5b9a\u3057\u3066\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u3092\u4f5c\u6210\u3057\u3066\u30a6\u30a7\u30d6\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u904b\u7528\u3059\u308b\u3053\u3068\u3067\u554f\u984c\u306f\u3042\u308a\u307e\u305b\u3093\u3002\u3057\u304b\u3057\u5c11\u3057\u30c7\u30a3\u30c6\u30fc\u30eb\u306a\u4f5c\u696d\u304c\u3042\u308a\u307e\u3059\u3002\u4f8b\u3048\u3070\u3001\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u305f\u6642\u3001\u30a8\u30e9\u30fc\u30da\u30fc\u30b8\u3092\u8868\u793a\u3059\u308b\u4f5c\u696d\u3084\u30ed\u30b0\u30a4\u30f3\u7ba1\u7406\u306e\u305f\u3081\u3001\u30bb\u30c3\u30b7\u30e7\u30f3\u4f5c\u696d\u306a\u3069\u306e\u30d7\u30ed\u30b0\u30e9\u30e0\u306e\u5b8c\u6210\u5ea6\u3092\u4e0a\u3052\u308b\u3088\u3046\u306a\u4f5c\u696d\u3067\u3059\u3002\u57fa\u672c\u7684\u306b\u30c8\u30e0\u30ad\u30e3\u30c3\u30c8\u30b5\u30fc\u30d3\u30b9\u3067\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3059\u308b\u3068\u4e0b\u8a18\u3068\u304a\u308a\u306e\u30da\u30fc\u30b8\u304c\u8868\u793a\u3055\u308c\u307e\u3059\u3002\u5b9f\u969b\u306b\u904b\u7528\u3059\u308b\u30a6\u30a7\u30d6\u30b5\u30fc\u30d3\u30b9\u3067\u4e0a\u307f\u305f\u3044\u306a\u30da\u30fc\u30b8\u304c\u8868\u793a\u3055\u308c\u308b\u3068\u30c0\u30e1\u3067\u3059\u3002\u4f55\u304b\u304c\u5b8c\u6210\u3055\u308c\u3066\u306a\u3044\u307f\u305f\u3044\u306a\u753b\u9762\u3067\u3059\u3002\u305d\u308c\u3067\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u305f\u6642\u3001\u6211\u3005\u304c\u6307\u5b9a\u3057\u305f\u30da\u30fc\u30b8\u3092\u8868\u793a\u3059\u308b\u3088\u3046\u306a\u65b9\u6cd5\u304c\u3042\u308a\u307e\u3059\u3002\u30a6\u30a7\u30d6\u8a2d\u5b9a(web.xml)\u3067\u30a8\u30e9\u30fc\u30d5\u30a9\u30fc\u30ef\u30fc\u30c9\u3092\u8a2d\u5b9a\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002\u4e0a\u306e\u8a2d\u5b9a\u306ferror\u304c\u767a\u751f\u3057\u305f\u5834\u5408\u306berror.html\u306b\u9077\u79fb\u3059\u308b\u3053\u3068\u3067\u3059\u3002\u79c1\u306f\u62e1\u5f35\u5b50\u304c.html\u306e\u5834\u5408\u3001spring framework\u306econtroller\u3092\u3068\u304a\u308a\u3088\u3046\u306b\u3057\u307e\u3057\u305f\u306e\u3067controller\u30af\u30e9\u30b9\u306berror.html\u3092\u8a2d\u5b9a\u3057\u307e\u3059\u3002error.html\u306b\u8981\u8acb\u3059\u308b\u30d1\u30bf\u30fc\u30f3\u3092\u8a2d\u5b9a\u3057\u3066error.jsp\u3068\u30d1\u30fc\u30b7\u30f3\u30b0\u3057\u3066\u30d6\u30e9\u30a6\u30b6\u306b\u5fdc\u7b54\u3057\u307e\u3059\u3002\u78ba\u5b9f\u306berror.html\u304c\u8981\u8acb\u3055\u308c\u30a8\u30e9\u30fc\u30b3\u30fc\u30c9\u304c404(\u30da\u30fc\u30b8\u7121\u3057)\u304c\u8868\u793a\u3055\u308c\u307e\u3059\u3002\u30d6\u30e9\u30a6\u30b6\u30c7\u30d0\u30c3\u30b0\u30e2\u30fc\u30c9\u3067network\u30bf\u30d6\u306e\u8981\u8acb\u5fdc\u7b54\u306e\u72b6\u6cc1\u3092\u78ba\u8a8d\u3059\u308c\u3070error\u8981\u8acb\u3059\u308c\u3070404\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3059\u304c\u3001redirect\u3067\u767a\u751f\u3057\u305f\u3053\u3068(\u518d\u9001\u4fe1)\u3067\u306f\u306a\u304f\u3001error\u30da\u30fc\u30b8\u306b\u95a2\u6570\u30a8\u30e9\u30fc\u30da\u30fc\u30b8\u304c\u767a\u751f\u3057\u307e\u3057\u305f\u3002\u5b9f\u969b\u306e\u30b5\u30fc\u30d3\u30b9\u3067\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3059\u308b\u304b\u9593\u9055\u3044\u30a2\u30c9\u30ec\u30b9\u306b\u63a5\u7d9a\u3059\u308b\u3068\u3001\u57fa\u672c\u30c8\u30e0\u30ad\u30e3\u30c3\u30c8\u30da\u30fc\u30b8\u3067\u306f\u306a\u304f\u3001\u30a8\u30e9\u30fc\u30da\u30fc\u30b8\u304c\u8868\u793a\u3059\u308b\u3053\u3068\u3092\u898b\u305f\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002\u4e0a\u306e\u30a4\u30e1\u30fc\u30b8\u306f\u30b0\u30fc\u30b0\u30eb\u3067\u9593\u9055\u3044\u30a2\u30c9\u30ec\u30b9\u306b\u63a5\u7d9a\u3057\u305f\u5834\u5408\u306b\u8868\u793a\u3055\u308c\u308b\u753b\u9762\u3067\u3059\u3002\u30a6\u30a7\u30d6\u306e\u30a8\u30e9\u30fc\u30b3\u30fc\u30c9\u5225","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2021-06-25T13:35:54.000+09:00","dateModified":"2021-06-25T13:35:54.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はウェブサービス(web service)でエラーページを処理する方法に関する説明です。基本的なウェブプロジェクトを設定することは以前の投稿まで説明することで終わりました。ウェブサービスのフレームワークのspring framworkを設定することからデータベースのorm(object reference mapping)のjpa設定間です。つまり、実際にクライアント(ブラウザ)がサーバに接続して当該なデータをデータベースから取得してクライアント(ブラウザ)に表示するhtmlをパーシングする作業までです。ここまで設定してプロジェクトを作成してウェブプログラムを運用することで問題はありません。しかし少しディテールな作業があります。例えば、エラーが発生した時、エラーページを表示する作業やログイン管理のため、セッション作業などのプログラムの完成度を上げるような作業です。基本的にトムキャットサービスでエラーが発生すると下記とおりのページが表示されます。実際に運用するウェブサービスで上みたいなページが表示されるとダメです。何かが完成されてないみたいな画面です。それでエラーが発生した時、我々が指定したページを表示するような方法があります。ウェブ設定(web.xml)でエラーフォーワードを設定することができます。上の設定はerrorが発生した場合にerror.htmlに遷移することです。私は拡張子が.htmlの場合、spring frameworkのcontrollerをとおりようにしましたのでcontrollerクラスにerror.htmlを設定します。error.htmlに要請するパターンを設定してerror.jspとパーシングしてブラウザに応答します。確実にerror.htmlが要請されエラーコードが404(ページ無し)が表示されます。ブラウザデバッグモードでnetworkタブの要請応答の状況を確認すればerror要請すれば404エラーが発生しますが、redirectで発生したこと(再送信)ではなく、errorページに関数エラーページが発生しました。実際のサービスでエラーが発生するか間違いアドレスに接続すると、基本トムキャットページではなく、エラーページが表示することを見たことがあります。上のイメージはグーグルで間違いアドレスに接続した場合に表示される画面です。ウェブのエラーコード別]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java] 53. ウェブサービス(Web service)でエラーページを処理する方法" />
+<link rel="canonical" href="https://www.nowonbun.com/262.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java] 53. ウェブサービス(Web service)でエラーページを処理する方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はウェブサービス(web service)でエラーページを処理する方法に関する説明です。基本的なウェブプロジェクトを設定することは以前の投稿まで説明することで終わりました。ウェブサービスのフレームワークのspring framworkを設定することからデータベースのorm(object reference mapping)のjpa設定間です。つまり、実際にクライアント(ブラウザ)がサーバに接続して当該なデータをデータベースから取得してクライアント(ブラウザ)に表示するhtmlをパーシングする作業までです。ここまで設定してプロジェクトを作成してウェブプログラムを運用することで問題はありません。しかし少しディテールな作業があります。例えば、エラーが発生した時、エラーページを表示する作業やログイン管理のため、セッション作業などのプログラムの完成度を上げるような作業です。基本的にトムキャットサービスでエラーが発生すると下記とおりのページが表示されます。実際に運用するウェブサービスで上みたいなページが表示されるとダメです。何かが完成されてないみたいな画面です。それでエラーが発生した時、我々が指定したページを表示するような方法があります。ウェブ設定(web.xml)でエラーフォーワードを設定することができます。上の設定はerrorが発生した場合にerror.htmlに遷移することです。私は拡張子が.htmlの場合、spring frameworkのcontrollerをとおりようにしましたのでcontrollerクラスにerror.htmlを設定します。error.htmlに要請するパターンを設定してerror.jspとパーシングしてブラウザに応答します。確実にerror.htmlが要請されエラーコードが404(ページ無し)が表示されます。ブラウザデバッグモードでnetworkタブの要請応答の状況を確認すればerror要請すれば404エラーが発生しますが、redirectで発生したこと(再送信)ではなく、errorページに関数エラーページが発生しました。実際のサービスでエラーが発生するか間違いアドレスに接続すると、基本トムキャットページではなく、エラーページが表示することを見たことがあります。上のイメージはグーグルで間違いアドレスに接続した場合に表示される画面です。ウェブのエラーコード別]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/262.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java] 53. ウェブサービス(Web service)でエラーページを処理する方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はウェブサービス(web service)でエラーページを処理する方法に関する説明です。基本的なウェブプロジェクトを設定することは以前の投稿まで説明することで終わりました。ウェブサービスのフレームワークのspring framworkを設定することからデータベースのorm(object reference mapping)のjpa設定間です。つまり、実際にクライアント(ブラウザ)がサーバに接続して当該なデータをデータベースから取得してクライアント(ブラウザ)に表示するhtmlをパーシングする作業までです。ここまで設定してプロジェクトを作成してウェブプログラムを運用することで問題はありません。しかし少しディテールな作業があります。例えば、エラーが発生した時、エラーページを表示する作業やログイン管理のため、セッション作業などのプログラムの完成度を上げるような作業です。基本的にトムキャットサービスでエラーが発生すると下記とおりのページが表示されます。実際に運用するウェブサービスで上みたいなページが表示されるとダメです。何かが完成されてないみたいな画面です。それでエラーが発生した時、我々が指定したページを表示するような方法があります。ウェブ設定(web.xml)でエラーフォーワードを設定することができます。上の設定はerrorが発生した場合にerror.htmlに遷移することです。私は拡張子が.htmlの場合、spring frameworkのcontrollerをとおりようにしましたのでcontrollerクラスにerror.htmlを設定します。error.htmlに要請するパターンを設定してerror.jspとパーシングしてブラウザに応答します。確実にerror.htmlが要請されエラーコードが404(ページ無し)が表示されます。ブラウザデバッグモードでnetworkタブの要請応答の状況を確認すればerror要請すれば404エラーが発生しますが、redirectで発生したこと(再送信)ではなく、errorページに関数エラーページが発生しました。実際のサービスでエラーが発生するか間違いアドレスに接続すると、基本トムキャットページではなく、エラーページが表示することを見たことがあります。上のイメージはグーグルで間違いアドレスに接続した場合に表示される画面です。ウェブのエラーコード別]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Java] 53. ウェブサービス(Web service)でエラーページを処理する方法</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(90)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(27)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(3)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(13)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(170)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(40)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(53)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(3)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(2)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/262.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Java] 53. ウェブサービス(Web service)でエラーページを処理する方法</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0203">Study / Java</a>    作成日付 : <span property="datePublished">2021/06/25 13:35:54</span>   修正日付 : <span property="dateModified">2021/06/25 13:35:54</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はウェブサービス(Web service)でエラーページを処理する方法に関する説明です。</p> 
+  <p><br></p> 
+  <p>基本的なウェブプロジェクトを設定することは以前の投稿まで説明することで終わりました。</p> 
+  <p>ウェブサービスのフレームワークのSpring framworkを設定することからデータベースのORM(Object reference mapping)のJPA設定間です。つまり、実際にクライアント(ブラウザ)がサーバに接続して当該なデータをデータベースから取得してクライアント(ブラウザ)に表示するHTMLをパーシングする作業までです。</p> 
+  <p>ここまで設定してプロジェクトを作成してウェブプログラムを運用することで問題はありません。</p> 
+  <p><br></p> 
+  <p>しかし少しディテールな作業があります。例えば、エラーが発生した時、エラーページを表示する作業やログイン管理のため、セッション作業などのプログラムの完成度を上げるような作業です。</p> 
+  <p><br></p> 
+  <p>基本的にトムキャットサービスでエラーが発生すると下記とおりのページが表示されます。</p> 
+  <p style="text-align:left;"><img src="./contents/262/1639_001.png" data-filename="001.png" style="width: 727px;"><br></p> 
+  <p>実際に運用するウェブサービスで上みたいなページが表示されるとダメです。何かが完成されてないみたいな画面です。</p> 
+  <p><br></p> 
+  <p>それでエラーが発生した時、我々が指定したページを表示するような方法があります。</p> 
+  <p>ウェブ設定(web.xml)でエラーフォーワードを設定することができます。</p> 
+  <pre><code class="xml" data-type="web.xml">&lt;error-page&gt;
+  &lt;location&gt;/error.html&lt;/location&gt;
+&lt;/error-page&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/262/1640_002.png" data-filename="002.png" style="width: 651px;"><br></p> 
+  <p>上の設定はerrorが発生した場合にerror.htmlに遷移することです。</p> 
+  <p><br></p> 
+  <p>私は拡張子が.htmlの場合、Spring frameworkのControllerをとおりようにしましたのでControllerクラスにerror.htmlを設定します。</p> 
+  <pre><code class="java" data-type="Home.java">package controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class Home {
+  // 要請urlパターン(index.html)
+  @RequestMapping(value = "/index.html")
+  public String index(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+    modelmap.addAttribute("Data", "Hello world");
+    // viewのファイル名
+    return "index";
+  }
+
+  // 要請urlパターン(error.html)
+  @RequestMapping(value = "/error.html")
+  public String error(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+    // modelmapにerror codeを設定
+    modelmap.addAttribute("Data", "error code : " + res.getStatus());
+    // viewのファイル名
+    return "error";
+  }
+}
+</code></pre> 
+  <pre><code class="html" data-type="error.jsp">&lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Error&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;!-- modelmapから貰うデータ --&gt;
+    ${Data}
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p>error.htmlに要請するパターンを設定してerror.jspとパーシングしてブラウザに応答します。</p> 
+  <p style="text-align:left;"><img src="./contents/262/1642_003.png" style="width: 848px;" data-filename="003.png"><br></p> 
+  <p>確実にerror.htmlが要請されエラーコードが404(ページ無し)が表示されます。</p> 
+  <p>ブラウザデバッグモードでnetworkタブの要請応答の状況を確認すればerror要請すれば404エラーが発生しますが、redirectで発生したこと(再送信)ではなく、errorページに関数エラーページが発生しました。</p> 
+  <p><br></p> 
+  <p>実際のサービスでエラーが発生するか間違いアドレスに接続すると、基本トムキャットページではなく、エラーページが表示することを見たことがあります。</p> 
+  <p style="text-align:left;"><img src="./contents/262/1646_004.png" data-filename="004.png" style="width: 778px;"><br></p> 
+  <p>上のイメージはグーグルで間違いアドレスに接続した場合に表示される画面です。</p> 
+  <p><br></p> 
+  <p>ウェブのエラーコード別に各別のページを設定することもできます。</p> 
+  <pre><code class="xml" data-type="web.xml">&lt;error-page&gt;
+  &lt;error-code&gt;404&lt;/error-code&gt;
+  &lt;location&gt;/error-404.html&lt;/location&gt;
+&lt;/error-page&gt;
+&lt;error-page&gt;
+  &lt;error-code&gt;500&lt;/error-code&gt;
+  &lt;location&gt;/error-500.html&lt;/location&gt;
+&lt;/error-page&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/262/1645_006.png" data-filename="006.png" style="width: 600px;"><br></p> 
+  <pre><code class="java" data-type="Home.java">package controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class Home {
+  // 要請urlパターン(index.html)
+  @RequestMapping(value = "/index.html")
+  public String index(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+    // 強制エラー発生(500エラーコード)
+    throw new RuntimeException();
+  }
+
+  // 要請urlパターン(error.html)
+  @RequestMapping(value = "/error-404.html")
+  public String error(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+    // modelmapにerror code設定
+    modelmap.addAttribute("Data", "error code : 404 ");
+    // viewのファイル名
+    return "error";
+  }
+
+  // 要請urlパターン(error-500.html)
+  @RequestMapping(value = "/error-500.html")
+  public String error500(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+    // modelmapにデータ設定
+    modelmap.addAttribute("Data", "This is 500 error");
+    // viewのファイル名
+    return "error";
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/262/1641_005.png" data-filename="005.png" style="width: 432px;"><br></p> 
+  <p>上の例はindex.htmlページを要請したらExceptionが発生して500エラーコードが発生します。</p> 
+  <p>そうならerror500関数を呼び出してerror.jspページの"This is 500 error"の値を表示します。</p> 
+  <p><br></p> 
+  <p>エラーコードではなく、もっと細かくExceptionの種類の別で処理ページを分けることができます。</p> 
+  <pre><code class="xml" data-type="web.xml">&lt;error-page&gt;
+  &lt;error-code&gt;404&lt;/error-code&gt;
+  &lt;location&gt;/error-404.html&lt;/location&gt;
+&lt;/error-page&gt;
+&lt;error-page&gt;
+  &lt;exception-type&gt;java.lang.NullPointerException&lt;/exception-type&gt;
+  &lt;location&gt;/error-NullPointException.html&lt;/location&gt;
+&lt;/error-page&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/262/1643_007.png" data-filename="007.png" style="width: 616px;"><br></p> 
+  <pre><code class="java" data-type="Home.java">package controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class Home {
+  // 要請urlパターン(index.html)
+  @RequestMapping(value = "/index.html")
+  public String index(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+    // 強制エラー発生
+    throw new NullPointerException();
+  }
+
+  // 要請urlパターン(error.html)
+  @RequestMapping(value = "/error-404.html")
+  public String error(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+    // modelmapにerror code設定
+    modelmap.addAttribute("Data", "error code : 404 ");
+    // viewのファイル名
+    return "error";
+  }
+
+  // 要請urlパターン(error-NullPointException.html)
+  @RequestMapping(value = "/error-NullPointException.html")
+  public String errorNullPointException(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+    // modelmapにデータ設定
+    modelmap.addAttribute("Data", "Null point exception");
+    // viewのファイル名
+    return "error";
+  }
+}
+</code></pre> 
+  <p>今回はindex.htmlでNullPointerExceptionエラーを発生しました。</p> 
+  <p style="text-align:left;"><img src="./contents/262/1644_008.png" data-filename="008.png" style="width: 484px;"><br></p> 
+  <p>最近の小さいサイトをみればエラー処理を設定しなくて、ウェブサーバ(WAS)で設定されている基本エラーページが見える場合があります。</p> 
+  <p>単純なエラーページなら別に問題ないですが、どのケースにはソース内部のデバッグやcall stack情報がみえる時もあります。ソース内部の情報が見えたらセキュリティ(Security)としてすごく悪いので、このエラー処理はする方が良いです。</p> 
+  <p><br></p> 
+  <p>ここまでウェブサービス(Web service)でエラーページを処理する方法に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/92.html" target="_blank">[Java] 52. SpringフレームワークでDAOをFactory method Patternを利用して依存性注入する方法</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> Java </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0203">Study / Java</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/262.html'>[Java] 53. ウェブサービス(Web service)でエラーページを処理する方法</a><span>2021/06/25 13:35:54</span></li><li><a href='https://www.nowonbun.com/92.html'>[Java] 52. SpringフレームワークでDAOをFactory method Patternを利用して依存性注入する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Java] 51. SpringフレームワークでJPAを使い方(依存性注入@Autowired)</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Java] 50. JPAプロジェクトでDAOクラスを作成する方法</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Java] 49. JPAでトランザクション(transaction)を扱う方法と共通関数作成する方法(Observerパターン)</a><span>2019/10/14 20:13:44</span></li><li><a href='https://www.nowonbun.com/88.html'>[Java] 48. JPAでQueryを使う方法(JPQLクエリを作成する方法)</a><span>2019/10/13 22:55:52</span></li><li><a href='https://www.nowonbun.com/87.html'>[Java] 47. JPAのEntityクラスのリファレンス設定(cascade, fetch)</a><span>2019/10/13 00:40:08</span></li><li><a href='https://www.nowonbun.com/86.html'>[Java] 46. JPAのEntityクラスの基本設定(@GeneratedValue、 @ManyToMany)</a><span>2019/10/11 07:30:14</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/262.html'>[Java] 53. ウェブサービス(Web service)でエラーページを処理する方法</a><span>2021/06/25 13:35:54</span></li><li><a href='https://www.nowonbun.com/261.html'>[Design pattern] 1-3. ファクトリメソッドパターン(Factory method pattern)</a><span>2021/06/23 19:45:37</span></li><li><a href='https://www.nowonbun.com/260.html'>[Java] WebSocketでチャット履歴をローディングする方法</a><span>2021/06/15 18:34:45</span></li><li><a href='https://www.nowonbun.com/259.html'>[Java] WebSocketを利用してユーザ(サイト運用者)が他のユーザとチャットする方法</a><span>2021/06/15 17:20:08</span></li><li><a href='https://www.nowonbun.com/258.html'>[Design pattern] 1-2. ビルダーパターン(Builder pattern)</a><span>2021/06/11 19:06:28</span></li><li><a href='https://www.nowonbun.com/257.html'>[Design pattern] 1-1. シングルトンパターン(Singleton pattern)</a><span>2021/06/09 19:40:05</span></li><li><a href='https://www.nowonbun.com/256.html'>[Design Pattern] デザインパターンの紹介</a><span>2021/06/08 20:42:36</span></li><li><a href='https://www.nowonbun.com/255.html'>[Tools] Dbeaver(無料Sql queryブラウザツール)</a><span>2021/04/28 18:26:49</span></li><li><a href='https://www.nowonbun.com/254.html'>[Bootstrap] HTMLデザインのフレームワークのBootstrap紹介</a><span>2020/07/30 19:06:36</span></li><li><a href='https://www.nowonbun.com/253.html'>[Python] メール(smtplib)を送信する方法</a><span>2020/07/27 18:38:43</span></li><li><a href='https://www.nowonbun.com/252.html'>[Python] HttpConnection(requestsモジュール)でウェブサーバーで接続する方法</a><span>2020/07/20 14:41:51</span></li><li><a href='https://www.nowonbun.com/251.html'>[Python] Excel(openpyxl)を扱う方法</a><span>2020/07/16 16:40:31</span></li><li><a href='https://www.nowonbun.com/250.html'>[Python] ファイル圧縮、解凍(zipfile)する方法</a><span>2020/07/14 19:14:22</span></li><li><a href='https://www.nowonbun.com/249.html'>[Python] Apache cgiでPythonを使う方法</a><span>2020/07/09 19:58:19</span></li><li><a href='https://www.nowonbun.com/248.html'>[Python] Web serverを起動する方法(http.server)</a><span>2020/07/09 00:13:13</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/262.html';this.page.identifier = 'NOWONBUN00262';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
