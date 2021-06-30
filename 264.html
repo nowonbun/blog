@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/264.html"},"url":"https:\/\/www.nowonbun.com\/264.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] 55. Spring framework\u306b\u6587\u5b57\u5316\u3051\u3092\u89e3\u6c7a\u3059\u308b\u65b9\u6cd5(Encoding\u8a2d\u5b9a)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fspring framework\u306b\u6587\u5b57\u5316\u3051\u3092\u89e3\u6c7a\u3059\u308b\u65b9\u6cd5(encoding\u8a2d\u5b9a)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002eclipse\u3067\u6211\u3005\u304c\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u4f5c\u6210\u3059\u308b\u6642\u3001\u57fa\u672c\u7684\u306b\u30d5\u30a1\u30a4\u30eb\u306e\u6587\u5b57\u30b3\u30fc\u30c9\u3092\u8a2d\u5b9a\u3057\u307e\u3059\u3002\u4e0a\u306e\u4f8b\u306fjava\u30d5\u30a1\u30a4\u30eb\u3068jsp\u30d5\u30a1\u30a4\u30eb\u306b\u8a2d\u5b9a\u3057\u305f\u6587\u5b57\u30b3\u30fc\u30c9\u3067\u3059\u304c\u3001\u305d\u306e\u4ee5\u5916\u306bxml\u30d5\u30a1\u30a4\u30eb\u3084properties\u30d5\u30a1\u30a4\u30eb\u306b\u3082\u6211\u3005\u306f\u57fa\u672c\u7684\u306butf-8\u3092\u8a2d\u5b9a\u3057\u307e\u3059\u3002\u3053\u306e\u3053\u3068\u306f\u30d5\u30a1\u30a4\u30eb\u306b\u95a2\u3059\u308b\u6587\u5b57\u30b3\u30fc\u30c9\u306a\u306e\u3067\u30b5\u30fc\u30d0\u3068\u30af\u30e9\u30a4\u30a2\u30f3\u30c8\u9593\u306e\u901a\u4fe1\u306e\u6587\u5b57\u30b3\u30fc\u30c9\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002\u3064\u307e\u308a\u3001\u30d6\u30e9\u30a6\u30b6\u304b\u3089\u8981\u8acb\u3059\u308b\u6642\u3001\u305d\u306e\u4e2d\u3067\u306f\u8981\u8acb\u30d8\u30c3\u30c0\u30fc\u5024\u304c\u3042\u308b\u3057\u3001\u3053\u306e\u30d8\u30c3\u30c0\u30fc\u306e\u6587\u5b57\u30b3\u30fc\u30c9\u3092\u6307\u5b9a\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u3002\u307e\u305f\u3001\u30d6\u30e9\u30a6\u30b6\u304b\u3089\u8981\u8acb\u3057\u305f\u3053\u3068\u3092\u307e\u305f\u3001controller\u306e\u5024\u3068view\u306e\u30c7\u30fc\u30bf\u3092\u30d1\u30fc\u30b7\u30f3\u30b0\u3057\u3066\u8fd4\u5374\u3059\u308b\u3051\u3069\u3001\u3053\u3053\u306b\u3082\u6587\u5b57\u30b3\u30fc\u30c9\u306e\u8a2d\u5b9a\u304c\u5fc5\u8981\u3067\u3059\u3002\u4e0a\u306e\u30bd\u30fc\u30b9\u3092\u4f5c\u6210\u3057\u3066\u8d77\u52d5\u3059\u308c\u3070index\u95a2\u6570\u304c\u547c\u3073\u51fa\u3057\u3066index.jsp\u30d5\u30a1\u30a4\u30eb\u304c\u30d1\u30fc\u30b7\u30f3\u30b0\u306b\u306a\u3063\u3066\u30c6\u30ad\u30b9\u30c8\u30dc\u30c3\u30af\u30b9\u3068submit\u30dc\u30bf\u30f3\u304c\u3042\u308b\u753b\u9762\u304c\u8868\u793a\u3055\u308c\u307e\u3059\u3002\u305d\u3057\u3066textbox\u3067\u0026apos;\u3053\u3093\u306b\u3061\u306f\u0026apos;\u3068\u3044\u3046\u30c7\u30fc\u30bf\u3092\u5165\u308c\u3066submit\u30dc\u30bf\u30f3\u3092\u62bc\u4e0b\u3059\u308b\u3068textbox\u306e\u30c7\u30fc\u30bf\u304cname\u540d\u3067paramdata\u306e\u5909\u6570\u540d\u306b\u8a2d\u5b9a\u3057\u3066form\u30c7\u30fc\u30bf\u3067post\u95a2\u6570\u304c\u547c\u3073\u51fa\u3057\u307e\u3059\u3002\u305d\u3057\u3066\u30d1\u30e9\u30e1\u30fc\u30bfparamdata\u3067\u30c7\u30fc\u30bf\u3092\u53d7\u3051\u53d6\u3063\u3066modelmap\u306edata\u304c\u8a2d\u5b9a\u3055\u308c\u305f\u5f8c\u3001index.jsp\u30d5\u30a1\u30a4\u30eb\u304c\u30d1\u30fc\u30b7\u30f3\u30b0\u3057\u3066\u30d6\u30e9\u30a6\u30b6\u3067\u5fdc\u7b54\u3057\u307e\u3059\u3002\u4e88\u60f3\u3059\u308b\u7d50\u679c\u306fsubmit\u30dc\u30bf\u30f3\u306e\u4e0b\u306b\u0026apos;\u3053\u3093\u306b\u3061\u306f\u0026apos;\u3068\u3044\u3046\u30c7\u30fc\u30bf\u304c\u8868\u793a\u3059\u308b\u3053\u3068\u3092\u4e88\u60f3\u3057\u307e\u3059\u304c\u3001\u6587\u5b57\u5316\u3051\u306b\u306a\u3063\u3066\u3069\u306e\u6587\u5b57\u304b\u5206\u304b\u3089\u306a\u3044\u6587\u5b57\u306b\u306a\u308a\u307e\u3057\u305f\u3002\u3053\u3053\u3067\u6211\u3005\u306f\u30d6\u30e9\u30a6\u30b6\u3067\u8981\u8acb\u3059\u308b\u30c7\u30fc\u30bf\u3092\u6587\u5b57\u30b3\u30fc\u30c9\u3092\u5909\u63db\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u3002\u307e\u305a\u3001web.xml\u306efilter\u8a2d\u5b9a\u3067springframework\u306e\u6587\u5b57\u30b3\u30fc\u30c9\u3092\u8a2d\u5b9a\u3057\u307e\u3057\u3087\u3046\u3002link - characterencodingfilter.htmlfilter\u306b\u95a2\u3059\u308b\u306b\u306f\u4ee5\u524d\u306e\u6295\u7a3f\u3067\u8aac\u660e\u3057\u305f\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002link - [java] 54. spring framework\u3067web filter\u3092\u4f7f\u3046\u65b9\u6cd5\u6587\u5b57\u5909\u63db\u30af\u30e9\u30b9\u3092\u30d5\u30a3\u30eb\u30bf\u30fc\u306b\u53cd\u6620\u3059\u308b\u3068\u30d6\u30e9\u30a6\u30b6\u306e\u3059\u3079\u3066\u306e\u8981\u8acb\u306fcharacterencodingfilter\u30af\u30e9\u30b9\u3092\u901a\u308b\u3053\u3068\u306b\u306a\u308a\u307e\u3059\u3002\u305d\u3053\u3067\u3059\u3079\u3066\u306e\u8981\u8acb\u306e\u6587\u5b57\u30b3\u30fc\u30c8\u306f\u81ea\u52d5","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2021-06-30T16:37:16.000+09:00","dateModified":"2021-06-30T16:37:16.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はspring frameworkに文字化けを解決する方法(encoding設定)に関する説明です。eclipseで我々がプログラムを作成する時、基本的にファイルの文字コードを設定します。上の例はjavaファイルとjspファイルに設定した文字コードですが、その以外にxmlファイルやpropertiesファイルにも我々は基本的にutf-8を設定します。このことはファイルに関する文字コードなのでサーバとクライアント間の通信の文字コードではありません。つまり、ブラウザから要請する時、その中では要請ヘッダー値があるし、このヘッダーの文字コードを指定しなければならないです。また、ブラウザから要請したことをまた、controllerの値とviewのデータをパーシングして返却するけど、ここにも文字コードの設定が必要です。上のソースを作成して起動すればindex関数が呼び出してindex.jspファイルがパーシングになってテキストボックスとsubmitボタンがある画面が表示されます。そしてtextboxで&apos;こんにちは&apos;というデータを入れてsubmitボタンを押下するとtextboxのデータがname名でparamdataの変数名に設定してformデータでpost関数が呼び出します。そしてパラメータparamdataでデータを受け取ってmodelmapのdataが設定された後、index.jspファイルがパーシングしてブラウザで応答します。予想する結果はsubmitボタンの下に&apos;こんにちは&apos;というデータが表示することを予想しますが、文字化けになってどの文字か分からない文字になりました。ここで我々はブラウザで要請するデータを文字コードを変換しなければならないです。まず、web.xmlのfilter設定でspringframeworkの文字コードを設定しましょう。link - characterencodingfilter.htmlfilterに関するには以前の投稿で説明したことがあります。link - [java] 54. spring frameworkでweb filterを使う方法文字変換クラスをフィルターに反映するとブラウザのすべての要請はcharacterencodingfilterクラスを通ることになります。そこですべての要請の文字コートは自動]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java] 55. Spring frameworkに文字化けを解決する方法(Encoding設定)" />
+<link rel="canonical" href="https://www.nowonbun.com/264.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java] 55. Spring frameworkに文字化けを解決する方法(Encoding設定)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はspring frameworkに文字化けを解決する方法(encoding設定)に関する説明です。eclipseで我々がプログラムを作成する時、基本的にファイルの文字コードを設定します。上の例はjavaファイルとjspファイルに設定した文字コードですが、その以外にxmlファイルやpropertiesファイルにも我々は基本的にutf-8を設定します。このことはファイルに関する文字コードなのでサーバとクライアント間の通信の文字コードではありません。つまり、ブラウザから要請する時、その中では要請ヘッダー値があるし、このヘッダーの文字コードを指定しなければならないです。また、ブラウザから要請したことをまた、controllerの値とviewのデータをパーシングして返却するけど、ここにも文字コードの設定が必要です。上のソースを作成して起動すればindex関数が呼び出してindex.jspファイルがパーシングになってテキストボックスとsubmitボタンがある画面が表示されます。そしてtextboxで&apos;こんにちは&apos;というデータを入れてsubmitボタンを押下するとtextboxのデータがname名でparamdataの変数名に設定してformデータでpost関数が呼び出します。そしてパラメータparamdataでデータを受け取ってmodelmapのdataが設定された後、index.jspファイルがパーシングしてブラウザで応答します。予想する結果はsubmitボタンの下に&apos;こんにちは&apos;というデータが表示することを予想しますが、文字化けになってどの文字か分からない文字になりました。ここで我々はブラウザで要請するデータを文字コードを変換しなければならないです。まず、web.xmlのfilter設定でspringframeworkの文字コードを設定しましょう。link - characterencodingfilter.htmlfilterに関するには以前の投稿で説明したことがあります。link - [java] 54. spring frameworkでweb filterを使う方法文字変換クラスをフィルターに反映するとブラウザのすべての要請はcharacterencodingfilterクラスを通ることになります。そこですべての要請の文字コートは自動]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/264.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java] 55. Spring frameworkに文字化けを解決する方法(Encoding設定)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はspring frameworkに文字化けを解決する方法(encoding設定)に関する説明です。eclipseで我々がプログラムを作成する時、基本的にファイルの文字コードを設定します。上の例はjavaファイルとjspファイルに設定した文字コードですが、その以外にxmlファイルやpropertiesファイルにも我々は基本的にutf-8を設定します。このことはファイルに関する文字コードなのでサーバとクライアント間の通信の文字コードではありません。つまり、ブラウザから要請する時、その中では要請ヘッダー値があるし、このヘッダーの文字コードを指定しなければならないです。また、ブラウザから要請したことをまた、controllerの値とviewのデータをパーシングして返却するけど、ここにも文字コードの設定が必要です。上のソースを作成して起動すればindex関数が呼び出してindex.jspファイルがパーシングになってテキストボックスとsubmitボタンがある画面が表示されます。そしてtextboxで&apos;こんにちは&apos;というデータを入れてsubmitボタンを押下するとtextboxのデータがname名でparamdataの変数名に設定してformデータでpost関数が呼び出します。そしてパラメータparamdataでデータを受け取ってmodelmapのdataが設定された後、index.jspファイルがパーシングしてブラウザで応答します。予想する結果はsubmitボタンの下に&apos;こんにちは&apos;というデータが表示することを予想しますが、文字化けになってどの文字か分からない文字になりました。ここで我々はブラウザで要請するデータを文字コードを変換しなければならないです。まず、web.xmlのfilter設定でspringframeworkの文字コードを設定しましょう。link - characterencodingfilter.htmlfilterに関するには以前の投稿で説明したことがあります。link - [java] 54. spring frameworkでweb filterを使う方法文字変換クラスをフィルターに反映するとブラウザのすべての要請はcharacterencodingfilterクラスを通ることになります。そこですべての要請の文字コートは自動]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Java] 55. Spring frameworkに文字化けを解決する方法(Encoding設定)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(90)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(27)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(3)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(13)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(172)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(40)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(55)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(3)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(2)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/264.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Java] 55. Spring frameworkに文字化けを解決する方法(Encoding設定)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0203">Study / Java</a>    作成日付 : <span property="datePublished">2021/06/30 16:37:16</span>   修正日付 : <span property="dateModified">2021/06/30 16:37:16</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はSpring frameworkに文字化けを解決する方法(Encoding設定)に関する説明です。</p> 
+  <p><br></p> 
+  <p>Eclipseで我々がプログラムを作成する時、基本的にファイルの文字コードを設定します。</p> 
+  <p style="text-align:left;"><img src="./contents/264/1658_001.png" data-filename="001.png" style="width: 781px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/264/1657_002.png" data-filename="002.png" style="width: 657px;"><br></p> 
+  <p>上の例はjavaファイルとjspファイルに設定した文字コードですが、その以外にxmlファイルやpropertiesファイルにも我々は基本的にUTF-8を設定します。</p> 
+  <p><br></p> 
+  <p>このことはファイルに関する文字コードなのでサーバとクライアント間の通信の文字コードではありません。つまり、ブラウザから要請する時、その中では要請ヘッダー値があるし、このヘッダーの文字コードを指定しなければならないです。</p> 
+  <p>また、ブラウザから要請したことをまた、controllerの値とviewのデータをパーシングして返却するけど、ここにも文字コードの設定が必要です。</p> 
+  <pre><code class="html" data-type="index.jsp">&lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Insert title here&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- 要請する時にヘッダーデータを送るためのformタグ --&gt;
+  &lt;form method="post"&gt;
+    &lt;!-- テキストボックス --&gt;
+    &lt;input type="text" name="paramdata"&gt;&lt;br /&gt;
+    &lt;!-- submitボタン --&gt;
+    &lt;input type="submit"&gt;
+  &lt;/form&gt;
+  &lt;!-- modelmapから貰うデータ --&gt;
+  ${Data} 
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <pre><code class="java" data-type="Home.java">package controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
+@Controller
+public class Home {
+  // 要請urlパターン(index.html) - get方式で要請する場合
+  @RequestMapping(value = "/index.html", method = RequestMethod.GET)
+  public String index(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+    // modelmapにデータ設定
+    modelmap.addAttribute("Data", "");
+    return "index";
+  }
+
+  // 要請urlパターン(index.html) - submitボタンを押下してpost方式で要請する場合
+  @RequestMapping(value = "/index.html", method = RequestMethod.POST)
+  public String post(@RequestParam String paramdata, ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+    // modelmapにデータ設定
+    modelmap.addAttribute("Data", paramdata);
+    return "index";
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/264/1651_003.png" data-filename="003.png" style="width: 320px;"><br></p> 
+  <p>上のソースを作成して起動すればindex関数が呼び出してindex.jspファイルがパーシングになってテキストボックスとsubmitボタンがある画面が表示されます。</p> 
+  <p>そしてtextboxで'こんにちは'というデータを入れてsubmitボタンを押下するとtextboxのデータがname名でparamdataの変数名に設定してformデータでpost関数が呼び出します。そしてパラメータparamdataでデータを受け取ってmodelmapのDataが設定された後、index.jspファイルがパーシングしてブラウザで応答します。</p> 
+  <p style="text-align:left;"><img src="./contents/264/1652_005.png" data-filename="005.png" style="width: 329px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/264/1655_004.png" data-filename="004.png" style="width: 318px;"><br></p> 
+  <p>予想する結果はsubmitボタンの下に'こんにちは'というデータが表示することを予想しますが、文字化けになってどの文字か分からない文字になりました。</p> 
+  <p><br></p> 
+  <p>ここで我々はブラウザで要請するデータを文字コードを変換しなければならないです。</p> 
+  <p>まず、web.xmlのfilter設定でSpringframeworkの文字コードを設定しましょう。</p> 
+  <pre><code class="xml" data-type="web.xml">&lt;!-- すべての要請はencodingFilterのフィルダー名を呼び出す。 --&gt;
+&lt;filter-mapping&gt;
+  &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;
+  &lt;url-pattern&gt;*&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+&lt;!-- encodingパターン(Postなどのヘッダー値のエンコード設定) --&gt;
+&lt;filter&gt;
+  &lt;!-- フィルター名を設定 - encodingFilter --&gt;
+  &lt;filter-name&gt;encodingFilter&lt;/filter-name&gt;
+  &lt;!-- 呼び出すクラス名を設定(package名含め) --&gt;
+  &lt;filter-class&gt;org.springframework.web.filter.CharacterEncodingFilter&lt;/filter-class&gt;
+  &lt;!-- クラスに使うパラメータデータ --&gt;
+  &lt;init-param&gt;
+    &lt;!-- 文字コード設定 --&gt;
+    &lt;param-name&gt;encoding&lt;/param-name&gt;
+    &lt;param-value&gt;UTF-8&lt;/param-value&gt;
+  &lt;/init-param&gt;
+  &lt;init-param&gt;
+    &lt;!-- 文字コードを強制変換設定 --&gt;
+    &lt;param-name&gt;forceEncoding&lt;/param-name&gt;
+    &lt;param-value&gt;true&lt;/param-value&gt;
+  &lt;/init-param&gt;
+&lt;/filter&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/264/1656_008.png" style="width: 727px;" data-filename="008.png"><br></p> 
+  <p>link - <a href="https://docs.spring.io/spring-framework/docs/4.2.2.RELEASE_to_4.2.3.RELEASE/Spring%20Framework%204.2.3.RELEASE/org/springframework/web/filter/CharacterEncodingFilter.html" target="_blank">CharacterEncodingFilter.html</a></p> 
+  <p><br></p> 
+  <p>filterに関するには以前の投稿で説明したことがあります。</p> 
+  <p>link - <a href="https://www.nowonbun.com/263.html" target="_blank">[Java] 54. Spring frameworkでWeb filterを使う方法</a></p> 
+  <p><br></p> 
+  <p>文字変換クラスをフィルターに反映するとブラウザのすべての要請はCharacterEncodingFilterクラスを通ることになります。</p> 
+  <p style="text-align:left;"><img src="./contents/264/1653_006.png" data-filename="006.png" style="width: 659px;"><br></p> 
+  <p>そこですべての要請の文字コートは自動に設定され、controllerを呼び出します。その後は文字コードが設定された後なので文字化けがなくなります。</p> 
+  <p style="text-align:left;"><img src="./contents/264/1654_007.png" style="width: 298px;" data-filename="007.png"><br></p> 
+  <p>ここには文字化けを解決する方法に関して説明しましたが、実はFilterをセッション確認に使うログイン認証確認の以外に使う方法に関する説明でした。</p> 
+  <p>様々なFilterをどの方法で使えるかを考えて見ましたが、よく使う文字化けの解決する方法のことを例にして説明しました。</p> 
+  <p><br></p> 
+  <p>ここまでSpring frameworkに文字化けを解決する方法(Encoding設定)に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/263.html" target="_blank">[Java] 54. Spring frameworkでWeb filterを使う方法</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> java </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0203">Study / Java</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/264.html'>[Java] 55. Spring frameworkに文字化けを解決する方法(Encoding設定)</a><span>2021/06/30 16:37:16</span></li><li><a href='https://www.nowonbun.com/263.html'>[Java] 54. Spring frameworkでWeb filterを使う方法</a><span>2021/06/29 18:25:12</span></li><li><a href='https://www.nowonbun.com/262.html'>[Java] 53. ウェブサービス(Web service)でエラーページを処理する方法</a><span>2021/06/25 13:35:54</span></li><li><a href='https://www.nowonbun.com/92.html'>[Java] 52. SpringフレームワークでDAOをFactory method Patternを利用して依存性注入する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Java] 51. SpringフレームワークでJPAを使い方(依存性注入@Autowired)</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Java] 50. JPAプロジェクトでDAOクラスを作成する方法</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Java] 49. JPAでトランザクション(transaction)を扱う方法と共通関数作成する方法(Observerパターン)</a><span>2019/10/14 20:13:44</span></li><li><a href='https://www.nowonbun.com/88.html'>[Java] 48. JPAでQueryを使う方法(JPQLクエリを作成する方法)</a><span>2019/10/13 22:55:52</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/264.html'>[Java] 55. Spring frameworkに文字化けを解決する方法(Encoding設定)</a><span>2021/06/30 16:37:16</span></li><li><a href='https://www.nowonbun.com/263.html'>[Java] 54. Spring frameworkでWeb filterを使う方法</a><span>2021/06/29 18:25:12</span></li><li><a href='https://www.nowonbun.com/262.html'>[Java] 53. ウェブサービス(Web service)でエラーページを処理する方法</a><span>2021/06/25 13:35:54</span></li><li><a href='https://www.nowonbun.com/261.html'>[Design pattern] 1-3. ファクトリメソッドパターン(Factory method pattern)</a><span>2021/06/23 19:45:37</span></li><li><a href='https://www.nowonbun.com/260.html'>[Java] WebSocketでチャット履歴をローディングする方法</a><span>2021/06/15 18:34:45</span></li><li><a href='https://www.nowonbun.com/259.html'>[Java] WebSocketを利用してユーザ(サイト運用者)が他のユーザとチャットする方法</a><span>2021/06/15 17:20:08</span></li><li><a href='https://www.nowonbun.com/258.html'>[Design pattern] 1-2. ビルダーパターン(Builder pattern)</a><span>2021/06/11 19:06:28</span></li><li><a href='https://www.nowonbun.com/257.html'>[Design pattern] 1-1. シングルトンパターン(Singleton pattern)</a><span>2021/06/09 19:40:05</span></li><li><a href='https://www.nowonbun.com/256.html'>[Design Pattern] デザインパターンの紹介</a><span>2021/06/08 20:42:36</span></li><li><a href='https://www.nowonbun.com/255.html'>[Tools] Dbeaver(無料Sql queryブラウザツール)</a><span>2021/04/28 18:26:49</span></li><li><a href='https://www.nowonbun.com/254.html'>[Bootstrap] HTMLデザインのフレームワークのBootstrap紹介</a><span>2020/07/30 19:06:36</span></li><li><a href='https://www.nowonbun.com/253.html'>[Python] メール(smtplib)を送信する方法</a><span>2020/07/27 18:38:43</span></li><li><a href='https://www.nowonbun.com/252.html'>[Python] HttpConnection(requestsモジュール)でウェブサーバーで接続する方法</a><span>2020/07/20 14:41:51</span></li><li><a href='https://www.nowonbun.com/251.html'>[Python] Excel(openpyxl)を扱う方法</a><span>2020/07/16 16:40:31</span></li><li><a href='https://www.nowonbun.com/250.html'>[Python] ファイル圧縮、解凍(zipfile)する方法</a><span>2020/07/14 19:14:22</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/264.html';this.page.identifier = 'NOWONBUN00264';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
