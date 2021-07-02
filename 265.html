@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/265.html"},"url":"https:\/\/www.nowonbun.com\/265.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] 56. Web service\u306e\u30b5\u30fc\u30d6\u30ec\u30c3\u30c8(Servlet)\u3067\u521d\u671f\u5316\u4f5c\u696d(properties\u8a2d\u5b9a)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fweb service\u306e\u30b5\u30fc\u30d6\u30ec\u30c3\u30c8(servlet)\u3067\u521d\u671f\u5316\u4f5c\u696d(properties\u8a2d\u5b9a)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002web service\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u4f5c\u6210\u3059\u308b\u3068\u3001\u30b5\u30fc\u30d0\u3092\u8d77\u52d5\u3059\u308b\u6642\u306b\u521d\u671f\u5316\u4f5c\u696d\u304c\u5fc5\u8981\u306a\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u3002\u4f8b\u3048\u3070\u3001\u5148\u306b\u30de\u30b9\u30bf\u30c6\u30fc\u30d6\u30eb\u306e\u30c7\u30fc\u30bf\u3092\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u751f\u6210\u3057\u3066\u30e1\u30e2\u30ea\u306b\u5272\u308a\u5f53\u3066\u3059\u308b\u304b\u3001\u30b5\u30fc\u30d0\u306e\u5b9f\u884c\u30c7\u30a3\u30ec\u30af\u30c8\u30ea\u8a2d\u5b9a\u306a\u3069\u304c\u3042\u308a\u307e\u3059\u3002\u307e\u305f\u3001\u5148\u306b\u6211\u3005\u304cweb service\u3067orm\u3092jpa\u3067\u4f7f\u3046\u5834\u5408\u3001\u6700\u521d\u306bconnection\u521d\u671f\u5316\u304c\u5fc5\u8981\u3067\u3059\u3002\u4e0a\u306e\u4f8b\u306f\u5148\u306bindex.html\u30da\u30fc\u30b8\u3092\u8981\u8acb\u3059\u308c\u3070ajax\u3067test.json\u306e\u30c7\u30fc\u30bf\u3092\u53d6\u5f97\u3057\u307e\u3059\u3002\u6700\u521d\u3001\u8d77\u52d5\u3059\u308b\u5f8c\u3067index.html\u304c\u30ed\u30fc\u30c7\u30a3\u30f3\u30b0\u3057\u307e\u3059\u3002\u305d\u306e\u5f8c\u3067test.json\u3092\u547c\u3073\u51fa\u3059\u5834\u5408\u306b\u6642\u9593\u304c\u3069\u306e\u3050\u3089\u3044\u304b\u304b\u308b\u304b\u3092\u78ba\u8a8d\u3059\u308b\u30d7\u30ed\u30b0\u30e9\u30e0\u3067\u3059\u3002\u7d50\u679c\u306f\u7d041\u79d2\u307b\u3069\u306e\u6642\u9593\u304c\u304b\u304b\u308a\u307e\u3059\u3002\u6642\u9593\u304c\u304b\u304b\u308b\u7406\u7531\u306f\u6700\u521d\u306bconnection\u521d\u671f\u5316\u3059\u308b\u305f\u3081\u306b\u6642\u9593\u304c\u304b\u304b\u308b\u3053\u3068\u3067\u3059\u3002\u518d\u8d77\u52d5\u305b\u305a\u306b\u540c\u3058\u30da\u30fc\u30b8\u3092\u518d\u66f4\u65b0(f5 -reload)\u3092\u3059\u308c\u3070ajax\u3067\u30c7\u30fc\u30bf\u3092\u53d6\u5f97\u3059\u308b\u3053\u3068\u304c1\u79d2\u3082\u304b\u304b\u3089\u306a\u3044\u3067\u3059\u3002\u3053\u306e\u610f\u5473\u306f\u30b5\u30fc\u30d3\u30b9\u304c\u6700\u521d\u3060\u3051\u5c11\u3057(?)\u9045\u304f\u306a\u308b\u3053\u3068\u3067\u521d\u671f\u5316\u3059\u308b\u5fc5\u8981\u304c\u3042\u308a\u307e\u305b\u3093\u304c\u3001\u305d\u308c\u3067\u3082\u5c11\u3057\u5b8c\u74a7(?)\u306b\u8a2d\u5b9a\u3059\u308b\u305f\u3081\u306b\u306f\u521d\u671f\u5316\u3092\u5225\u9014\u306b\u3059\u308b\u307b\u3046\u304c\u826f\u3044\u3067\u3059\u3002\u521d\u671f\u5316\u8a2d\u5b9a\u306fweb.xml\u3067\u8a2d\u5b9a\u3057\u307e\u3059\u3002\u5b9f\u884c\u9806\u756a\u306f\u521d\u671f\u5316\u3059\u308b\u30af\u30e9\u30b9\u304c\u4e00\u3064\u3067\u306f\u306a\u3044\u5834\u5408\u306fload-on-startup\u3092\u901a\u3063\u3066\u9806\u756a\u3092\u8a2d\u5b9a\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002initcontroller\u30af\u30e9\u30b9\u306fhttpservlet\u306e\u30af\u30e9\u30b9\u3092\u7d99\u627f\u3057\u307e\u3059\u3002\u305d\u3057\u3066init\u95a2\u6570\u3067orm\u3092\u901a\u3063\u3066\u30c7\u30fc\u30bf\u3092\u53d6\u5f97\u3059\u308b\u3053\u3068\u3067orm connection\u3092\u751f\u6210\u3057\u307e\u3059\u3002\u521d\u671f\u5316\u3067\u53d6\u5f97\u3059\u308b\u95a2\u6570\u306f\u30de\u30b9\u30bf\u30c6\u30fc\u30d6\u30eb\u3092\u5148\u306b\u30e1\u30e2\u30ea\u306b\u5272\u308a\u5f53\u3066\u3057\u3066controller\u3067\u306f\u518d\u4f7f\u7528\u3059\u308b\u3053\u3068\u3067\u30d1\u30d5\u30a9\u30fc\u30de\u30f3\u30b9\u3092\u4e0a\u304c\u308a\u307e\u3059\u3002\u6700\u521d\u306e\u8d77\u52d5\u304b\u3089\u30c7\u30fc\u30bf\u53d6\u5f97\u304c\u901f\u3044\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002\u305d\u306e\u4ee5\u5916\u306b\u30a6\u30a7\u30d6\u306e\u74b0\u5883\u8a2d\u5b9a\u30c7\u30fc\u30bf\u3092\u8a2d\u5b9a\u3059\u308b\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u3002\u4f8b\u3048\u3070\u3001\u30e9\u30a4\u30bb\u30f3\u30b9\u30ad\u30fc\u3084smtp\u306eemail\u30d1\u30b9\u30ef\u30fc\u30c9\u306a\u3069\u304c\u3042\u308a\u307e\u3059\u3002initcontroller\u3067property\u3092\u53d6\u5f97\u3059\u308b\u95a2\u6570\u3092\u4f5c\u6210\u3057\u307e\u3057\u305f\u3002static\u30bf\u30a4\u30d7\u306eflyweight\u30d1\u30bf\u30fc\u30f3\u3067\u6700\u521d\u306bproperty\u3092\u8aad\u307f\u8fbc\u3093\u3067\u30e1\u30e2\u30ea\u306b\u5272\u308a\u5f53\u3066\u3057\u3066\u518d\u4f7f\u7528\u3059\u308b\u65b9\u6cd5\u3067\u4f5c\u6210\u3057\u307e\u3057\u305f\u3002(property\u5024\u3092\u4fee\u6b63\u3059\u308b\u3068\u30b5\u30fc\u30d0\u3092\u518d\u8d77\u52d5\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u3002)","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2021-07-02T17:10:36.000+09:00","dateModified":"2021-07-02T17:10:47.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はweb serviceのサーブレット(servlet)で初期化作業(properties設定)に関する説明です。web serviceプログラムを作成すると、サーバを起動する時に初期化作業が必要な場合があります。例えば、先にマスタテーブルのデータをインスタンス生成してメモリに割り当てするか、サーバの実行ディレクトリ設定などがあります。また、先に我々がweb serviceでormをjpaで使う場合、最初にconnection初期化が必要です。上の例は先にindex.htmlページを要請すればajaxでtest.jsonのデータを取得します。最初、起動する後でindex.htmlがローディングします。その後でtest.jsonを呼び出す場合に時間がどのぐらいかかるかを確認するプログラムです。結果は約1秒ほどの時間がかかります。時間がかかる理由は最初にconnection初期化するために時間がかかることです。再起動せずに同じページを再更新(f5 -reload)をすればajaxでデータを取得することが1秒もかからないです。この意味はサービスが最初だけ少し(?)遅くなることで初期化する必要がありませんが、それでも少し完璧(?)に設定するためには初期化を別途にするほうが良いです。初期化設定はweb.xmlで設定します。実行順番は初期化するクラスが一つではない場合はload-on-startupを通って順番を設定することができます。initcontrollerクラスはhttpservletのクラスを継承します。そしてinit関数でormを通ってデータを取得することでorm connectionを生成します。初期化で取得する関数はマスタテーブルを先にメモリに割り当てしてcontrollerでは再使用することでパフォーマンスを上がります。最初の起動からデータ取得が速いことを確認できます。その以外にウェブの環境設定データを設定する場合があります。例えば、ライセンスキーやsmtpのemailパスワードなどがあります。initcontrollerでpropertyを取得する関数を作成しました。staticタイプのflyweightパターンで最初にpropertyを読み込んでメモリに割り当てして再使用する方法で作成しました。(property値を修正するとサーバを再起動しなければならないです。)]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java] 56. Web serviceのサーブレット(Servlet)で初期化作業(properties設定)" />
+<link rel="canonical" href="https://www.nowonbun.com/265.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java] 56. Web serviceのサーブレット(Servlet)で初期化作業(properties設定)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はweb serviceのサーブレット(servlet)で初期化作業(properties設定)に関する説明です。web serviceプログラムを作成すると、サーバを起動する時に初期化作業が必要な場合があります。例えば、先にマスタテーブルのデータをインスタンス生成してメモリに割り当てするか、サーバの実行ディレクトリ設定などがあります。また、先に我々がweb serviceでormをjpaで使う場合、最初にconnection初期化が必要です。上の例は先にindex.htmlページを要請すればajaxでtest.jsonのデータを取得します。最初、起動する後でindex.htmlがローディングします。その後でtest.jsonを呼び出す場合に時間がどのぐらいかかるかを確認するプログラムです。結果は約1秒ほどの時間がかかります。時間がかかる理由は最初にconnection初期化するために時間がかかることです。再起動せずに同じページを再更新(f5 -reload)をすればajaxでデータを取得することが1秒もかからないです。この意味はサービスが最初だけ少し(?)遅くなることで初期化する必要がありませんが、それでも少し完璧(?)に設定するためには初期化を別途にするほうが良いです。初期化設定はweb.xmlで設定します。実行順番は初期化するクラスが一つではない場合はload-on-startupを通って順番を設定することができます。initcontrollerクラスはhttpservletのクラスを継承します。そしてinit関数でormを通ってデータを取得することでorm connectionを生成します。初期化で取得する関数はマスタテーブルを先にメモリに割り当てしてcontrollerでは再使用することでパフォーマンスを上がります。最初の起動からデータ取得が速いことを確認できます。その以外にウェブの環境設定データを設定する場合があります。例えば、ライセンスキーやsmtpのemailパスワードなどがあります。initcontrollerでpropertyを取得する関数を作成しました。staticタイプのflyweightパターンで最初にpropertyを読み込んでメモリに割り当てして再使用する方法で作成しました。(property値を修正するとサーバを再起動しなければならないです。)]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/265.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java] 56. Web serviceのサーブレット(Servlet)で初期化作業(properties設定)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はweb serviceのサーブレット(servlet)で初期化作業(properties設定)に関する説明です。web serviceプログラムを作成すると、サーバを起動する時に初期化作業が必要な場合があります。例えば、先にマスタテーブルのデータをインスタンス生成してメモリに割り当てするか、サーバの実行ディレクトリ設定などがあります。また、先に我々がweb serviceでormをjpaで使う場合、最初にconnection初期化が必要です。上の例は先にindex.htmlページを要請すればajaxでtest.jsonのデータを取得します。最初、起動する後でindex.htmlがローディングします。その後でtest.jsonを呼び出す場合に時間がどのぐらいかかるかを確認するプログラムです。結果は約1秒ほどの時間がかかります。時間がかかる理由は最初にconnection初期化するために時間がかかることです。再起動せずに同じページを再更新(f5 -reload)をすればajaxでデータを取得することが1秒もかからないです。この意味はサービスが最初だけ少し(?)遅くなることで初期化する必要がありませんが、それでも少し完璧(?)に設定するためには初期化を別途にするほうが良いです。初期化設定はweb.xmlで設定します。実行順番は初期化するクラスが一つではない場合はload-on-startupを通って順番を設定することができます。initcontrollerクラスはhttpservletのクラスを継承します。そしてinit関数でormを通ってデータを取得することでorm connectionを生成します。初期化で取得する関数はマスタテーブルを先にメモリに割り当てしてcontrollerでは再使用することでパフォーマンスを上がります。最初の起動からデータ取得が速いことを確認できます。その以外にウェブの環境設定データを設定する場合があります。例えば、ライセンスキーやsmtpのemailパスワードなどがあります。initcontrollerでpropertyを取得する関数を作成しました。staticタイプのflyweightパターンで最初にpropertyを読み込んでメモリに割り当てして再使用する方法で作成しました。(property値を修正するとサーバを再起動しなければならないです。)]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Java] 56. Web serviceのサーブレット(Servlet)で初期化作業(properties設定)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(90)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(27)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(3)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(13)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(173)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(40)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(56)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(3)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(2)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/265.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Java] 56. Web serviceのサーブレット(Servlet)で初期化作業(properties設定)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0203">Study / Java</a>    作成日付 : <span property="datePublished">2021/07/02 17:10:36</span>   修正日付 : <span property="dateModified">2021/07/02 17:10:47</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はWeb serviceのサーブレット(Servlet)で初期化作業(properties設定)に関する説明です。</p> 
+  <p><br></p> 
+  <p>Web serviceプログラムを作成すると、サーバを起動する時に初期化作業が必要な場合があります。</p> 
+  <p>例えば、先にマスタテーブルのデータをインスタンス生成してメモリに割り当てするか、サーバの実行ディレクトリ設定などがあります。</p> 
+  <p><br></p> 
+  <p>また、先に我々がWeb serviceでORMをJPAで使う場合、最初にConnection初期化が必要です。</p> 
+  <pre><code class="java" data-type="Home.java">package controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import dao.UserDao;
+import model.User;
+
+@Controller
+public class Home {
+  // UserDaoインスタンスの依存性注入
+  @Autowired
+  @Qualifier("UserDao")
+  private UserDao userDao;
+
+  // 要請urlパターン(index.html)
+  @RequestMapping(value = "/index.html")
+  public String index(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+    // viewファイルマッピング
+    return "index";
+  }
+
+  // 要請urlパターン(test.json)
+  @RequestMapping(value = "/test.json")
+  // viewファイルのマッピングをしない
+  @ResponseBody
+  public String index(HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+    // userテーブルからidがnowonbunを取得
+    User user = userDao.selectById("nowonbun");
+    // 返却
+    return user.getName();
+  }
+}
+</code></pre> 
+  <pre><code class="html" data-type="index.jsp">&lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Insert title here&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- ajax通信が開始する前の時間 --&gt;
+  &lt;br /&gt;startdate - &lt;span id="startdate"&gt;&lt;/span&gt;
+  &lt;!-- ajax通信が完了するの時間 --&gt;
+  &lt;br /&gt;enddate - &lt;span id="endate"&gt;&lt;/span&gt;
+  &lt;!-- cdn jquery --&gt;
+  &lt;script src="//code.jquery.com/jquery-3.4.1.min.js"&gt;&lt;/script&gt;
+  &lt;!-- cdn 日付の関係なmomentライブラリ --&gt;
+  &lt;script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"&gt;&lt;/script&gt;
+  &lt;script&gt;
+    $(function() {
+      // 開始する時間を設定
+      $("#startdate").html(moment().format('HH:mm:ss'));
+      // ajax設定
+      $.ajax({
+        type : "GET",
+        url : "test.json",
+        dataType : "html",
+        success : function(msg) {
+          // 値をコンソールに出力
+          console.log(msg);
+          // ajaxが完了する時間を設定
+          $("#endate").html(moment().format('HH:mm:ss'));
+        }
+      });
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p>上の例は先にindex.htmlページを要請すればajaxでtest.jsonのデータを取得します。</p> 
+  <p>最初、起動する後でindex.htmlがローディングします。その後でtest.jsonを呼び出す場合に時間がどのぐらいかかるかを確認するプログラムです。</p> 
+  <p style="text-align:left;"><img src="./contents/265/1660_001.png" data-filename="001.png" style="width: 333px;"><br></p> 
+  <p>結果は約1秒ほどの時間がかかります。時間がかかる理由は最初にconnection初期化するために時間がかかることです。</p> 
+  <p style="text-align:left;"><img src="./contents/265/1662_002.png" style="width: 848px;" data-filename="002.png"><br></p> 
+  <p>再起動せずに同じページを再更新(F5 -reload)をすればajaxでデータを取得することが1秒もかからないです。</p> 
+  <p style="text-align:left;"><img src="./contents/265/1664_003.png" style="width: 314px;" data-filename="003.png"><br></p> 
+  <p>この意味はサービスが最初だけ少し(?)遅くなることで初期化する必要がありませんが、それでも少し完璧(?)に設定するためには初期化を別途にするほうが良いです。</p> 
+  <p><br></p> 
+  <p>初期化設定はweb.xmlで設定します。</p> 
+  <pre><code class="xml" data-type="web.xml">&lt;servlet&gt;
+  &lt;!-- servlet名は何でも構わない(可能なら他のサーブレット名を重ならないことで) --&gt;
+  &lt;servlet-name&gt;startup&lt;/servlet-name&gt;
+  &lt;!-- 実行するクラス(package名を含め) --&gt;
+  &lt;servlet-class&gt;common.InitController&lt;/servlet-class&gt;
+  &lt;!-- 実行順番 --&gt;
+  &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+&lt;/servlet&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/265/1659_007.png" data-filename="007.png" style="width: 448px;"><br></p> 
+  <p>実行順番は初期化するクラスが一つではない場合はload-on-startupを通って順番を設定することができます。</p> 
+  <pre><code class="java" data-type="InitController.java">package common;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import dao.FactoryDao;
+import dao.UserDao;
+
+// サーブレットを継承する。
+public class InitController extends HttpServlet {
+  private static final long serialVersionUID = 1L;
+  // get、postではなく、initをoverrideする。
+  @Override
+  public void init(ServletConfig config) throws ServletException {
+    super.init(config);
+    // マスタテーブルを呼び出してコネクションを起動する。
+    FactoryDao.getDao(PermissionDao.class).reflesh();
+  }
+}
+</code></pre> 
+  <p>InitControllerクラスはHttpServletのクラスを継承します。そしてinit関数でORMを通ってデータを取得することでORM connectionを生成します。</p> 
+  <p>初期化で取得する関数はマスタテーブルを先にメモリに割り当てしてcontrollerでは再使用することでパフォーマンスを上がります。</p> 
+  <p style="text-align:left;"><img src="./contents/265/1665_004.png" data-filename="004.png" style="width: 294px;"><br></p> 
+  <p>最初の起動からデータ取得が速いことを確認できます。</p> 
+  <p><br></p> 
+  <p>その以外にウェブの環境設定データを設定する場合があります。例えば、ライセンスキーやSMTPのEmailパスワードなどがあります。</p> 
+  <pre><code class="java" data-type="InitController.java">package common;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Hashtable;
+import java.util.Map;
+import java.util.Properties;
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import dao.FactoryDao;
+import dao.PermissionDao;
+
+// サーブレットを継承する。
+public class InitController extends HttpServlet {
+  private static final long serialVersionUID = 1L;
+  // 実行ディレクトリ
+  private static String localPath;
+  // flyweightパターン
+  private static final Map&lt;String, Properties&gt; flyweight = new Hashtable&lt;&gt;();
+
+  // get、postではなく、initをoverrideする。
+  @Override
+  public void init(ServletConfig config) throws ServletException {
+    super.init(config);
+    // マスタテーブルを呼び出してコネクションを起動する。
+    FactoryDao.getDao(PermissionDao.class).reflesh();
+    // 初期化のウェブサービスの実行ディレクトリ
+    localPath = getServletContext().getRealPath("/");
+  }
+  // property値を取得する関数
+  // sessionはpropertyファイル名、keyはキー
+  public static String getProperty(String session, String key) {
+    try {
+      // flyweightパターンでproperty設定値を一回にロードするとメモリに割り当てする。
+      // つまり、実行中で環境設定値を修正するとサーバを再起動しなければならない。
+      if (!flyweight.containsKey(session)) {
+        // propertyインスタンス生成
+        Properties property = new Properties();
+        // flyweightパターンに格納
+        flyweight.put(session, property);
+        // サービスの実行パスでsessionパラメータ名でファイルを読み込む。
+        File file = new File(localPath + "WEB-INF" + File.separator + "classes" + File.separator + session + ".properties");
+        // stream生成
+        try (InputStream straem = new FileInputStream(file)) {
+          // プロパティを読み込む。
+          property.load(straem);
+        }
+      }
+      // flyweightパターンでproperty取得
+      Properties property = flyweight.get(session);
+      // キーを通って値を取得
+      return property.getProperty(key);
+    } catch (IOException e) {
+      return null;
+    }
+  }
+}
+</code></pre> 
+  <p>InitControllerでpropertyを取得する関数を作成しました。</p> 
+  <p>staticタイプのflyweightパターンで最初にpropertyを読み込んでメモリに割り当てして再使用する方法で作成しました。(property値を修正するとサーバを再起動しなければならないです。)</p> 
+  <p>ここで重要なことはlocalパスです。最初、サーバを起動する時、servletのinit関数で実行パスを取得することができます。</p> 
+  <p style="text-align:left;"><img src="./contents/265/1663_005.png" style="width: 242px;" data-filename="005.png"><br></p> 
+  <pre><code class="LDIF" data-type="config.properties">test=test-key
+</code></pre> 
+  <p>そして上のproperty値をControllerで使いましょう。</p> 
+  <pre><code class="java" data-type="Home.java">package controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import common.InitController;
+
+@Controller
+public class Home {
+  // 要請urlパターン(index.html)
+  @RequestMapping(value = "/index.html")
+  public String index(ModelMap modelmap, HttpSession session, HttpServletRequest req, HttpServletResponse res) {
+    // InitControllerクラスのgetProperty関数を通ってconfig.propertiesファイルのtestキー値を取得して
+    // modelmapに格納する。
+    modelmap.addAttribute("data", InitController.getProperty("config", "test"));
+    // viewファイルマッピング
+    return "index";
+  }
+}
+</code></pre> 
+  <pre><code class="html" data-type="index.jsp">&lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="UTF-8"&gt;
+&lt;title&gt;Insert title here&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- modelmapから貰うデータ --&gt;
+  ${data}
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/265/1661_006.png" data-filename="006.png" style="width: 317px;"><br></p> 
+  <p>property設定値を取得してviewのファイルにマッピングして実行すれば画面に表示されます。</p> 
+  <p><br></p> 
+  <p>ここまで設定完了すればJava Spring Frameworkのプロジェクトを開始する基本設定は完了します。その以外には仕様によりデザインパターンで抽象クラスやインスタンスを生成して仕様とおりにプログラムを作成すればよいです。</p> 
+  <p><br></p> 
+  <p>ここまでWeb serviceのサーブレット(Servlet)で初期化作業(properties設定)に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/264.html" target="_blank">[Java] 55. Spring frameworkに文字化けを解決する方法(Encoding設定)</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=java>#java</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0203">Study / Java</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/265.html'>[Java] 56. Web serviceのサーブレット(Servlet)で初期化作業(properties設定)</a><span>2021/07/02 17:10:36</span></li><li><a href='https://www.nowonbun.com/264.html'>[Java] 55. Spring frameworkに文字化けを解決する方法(Encoding設定)</a><span>2021/06/30 16:37:16</span></li><li><a href='https://www.nowonbun.com/263.html'>[Java] 54. Spring frameworkでWeb filterを使う方法</a><span>2021/06/29 18:25:12</span></li><li><a href='https://www.nowonbun.com/262.html'>[Java] 53. ウェブサービス(Web service)でエラーページを処理する方法</a><span>2021/06/25 13:35:54</span></li><li><a href='https://www.nowonbun.com/92.html'>[Java] 52. SpringフレームワークでDAOをFactory method Patternを利用して依存性注入する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Java] 51. SpringフレームワークでJPAを使い方(依存性注入@Autowired)</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Java] 50. JPAプロジェクトでDAOクラスを作成する方法</a><span>2019/10/15 20:12:35</span></li><li><a href='https://www.nowonbun.com/89.html'>[Java] 49. JPAでトランザクション(transaction)を扱う方法と共通関数作成する方法(Observerパターン)</a><span>2019/10/14 20:13:44</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/265.html'>[Java] 56. Web serviceのサーブレット(Servlet)で初期化作業(properties設定)</a><span>2021/07/02 17:10:36</span></li><li><a href='https://www.nowonbun.com/264.html'>[Java] 55. Spring frameworkに文字化けを解決する方法(Encoding設定)</a><span>2021/06/30 16:37:16</span></li><li><a href='https://www.nowonbun.com/263.html'>[Java] 54. Spring frameworkでWeb filterを使う方法</a><span>2021/06/29 18:25:12</span></li><li><a href='https://www.nowonbun.com/262.html'>[Java] 53. ウェブサービス(Web service)でエラーページを処理する方法</a><span>2021/06/25 13:35:54</span></li><li><a href='https://www.nowonbun.com/261.html'>[Design pattern] 1-3. ファクトリメソッドパターン(Factory method pattern)</a><span>2021/06/23 19:45:37</span></li><li><a href='https://www.nowonbun.com/260.html'>[Java] WebSocketでチャット履歴をローディングする方法</a><span>2021/06/15 18:34:45</span></li><li><a href='https://www.nowonbun.com/259.html'>[Java] WebSocketを利用してユーザ(サイト運用者)が他のユーザとチャットする方法</a><span>2021/06/15 17:20:08</span></li><li><a href='https://www.nowonbun.com/258.html'>[Design pattern] 1-2. ビルダーパターン(Builder pattern)</a><span>2021/06/11 19:06:28</span></li><li><a href='https://www.nowonbun.com/257.html'>[Design pattern] 1-1. シングルトンパターン(Singleton pattern)</a><span>2021/06/09 19:40:05</span></li><li><a href='https://www.nowonbun.com/256.html'>[Design Pattern] デザインパターンの紹介</a><span>2021/06/08 20:42:36</span></li><li><a href='https://www.nowonbun.com/255.html'>[Tools] Dbeaver(無料Sql queryブラウザツール)</a><span>2021/04/28 18:26:49</span></li><li><a href='https://www.nowonbun.com/254.html'>[Bootstrap] HTMLデザインのフレームワークのBootstrap紹介</a><span>2020/07/30 19:06:36</span></li><li><a href='https://www.nowonbun.com/253.html'>[Python] メール(smtplib)を送信する方法</a><span>2020/07/27 18:38:43</span></li><li><a href='https://www.nowonbun.com/252.html'>[Python] HttpConnection(requestsモジュール)でウェブサーバーで接続する方法</a><span>2020/07/20 14:41:51</span></li><li><a href='https://www.nowonbun.com/251.html'>[Python] Excel(openpyxl)を扱う方法</a><span>2020/07/16 16:40:31</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/265.html';this.page.identifier = 'NOWONBUN00265';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
