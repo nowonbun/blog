@@ -226,7 +226,7 @@ namespace classEx
 </code></pre> 
   <p>上の例を見ると割り当て演算子の区切りで「TestClass test」「new TestClass」に分けて考えて見ましょう。前の「TestClass test」は変数と同様の意味でメモリアドレス(整数)が入ります。</p> 
   <p>「new TestClass」の場合はメモリ(heap)に「TestClass」を割り当てます。</p> 
-  <p style="text-align:left;"><img src="./contents/16/53_001.jpg" data-filename="001.jpg" style="width: 600px;"></p> 
+  <p style="text-align:left;"><img src="./contents/12/53_001.jpg" data-filename="001.jpg" style="width: 600px;"></p> 
   <p>上のイメージとおりにクラスが宣言し割り当てたと思われます。すなわち、「test」変数は「heap」に「TestClass」が割り当てたメモリアドレスがあると意味です。そして割り当てた「TestClass」のデータを取得することはコンマ「.」の区切りで取得できます。</p> 
   <p><br></p> 
   <p>「test」変数名は「TestClass」が割り当ててメモリアドレスが格納されたことは理解しました。そうすると「test」で割り当てたクラスの「data」変数にデータを格納して見ましょう。</p> 
@@ -290,7 +290,7 @@ namespace classEx
   <p>ただ、基本的に考えると「test」の変数「data」の値は「Data」、「test2」の変数「data」は「Clear」になると思いますね。</p> 
   <p style="text-align:left;"><img src="./contents/16/52_003.jpg" data-filename="003.jpg" style="width: 600px;"></p> 
   <p>でも結果は両方「Clear」になりました。なぜなら、初めに「test」に割り当ててメモリアドレスを「test2」を代入したからです。すなわち、クラス内のデータが複製して新しいクラスが割り当てたことではなく、同じクラスを見ていることの意味ですね。それで「test」と「test2」は割り当てた同じクラスを参照している結果になったことです。そしてメモリアドレス結果「GetHashCode」を見ても「test」と「test2」のメモリアドレスは同じになっています。</p> 
-  <p style="text-align:left;"><img src="./contents/16/54_004.jpg" data-filename="004.jpg" style="width: 600px;"></p> 
+  <p style="text-align:left;"><img src="./contents/12/54_004.jpg" data-filename="004.jpg" style="width: 600px;"></p> 
   <p>今回は「test」、「test2」に「new」をして割り当てて結果を確認してみましょう。</p> 
   <pre><code class="cs" data-type="">using System;
 using System.Collections.Generic;
@@ -427,7 +427,7 @@ namespace classEx
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0202">Study / C#</a>」の他投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/23.html'>[C#] インタフェース( interface )</a><span>2019/07/13 01:06:04</span></li><li><a href='https://www.nowonbun.com/22.html'>[C#] this、base、ポリモーフィズム( overload (多型) )</a><span>2019/07/13 00:56:20</span></li><li><a href='https://www.nowonbun.com/21.html'>[C#] 抽象クラス、抽象メソッド、仮想メソッド</a><span>2019/07/12 00:17:35</span></li><li><a href='https://www.nowonbun.com/20.html'>[C#]  継承とSealedクラス</a><span>2019/07/11 23:13:25</span></li><li><a href='https://www.nowonbun.com/19.html'>[C#] enum(列挙型)</a><span>2019/07/10 23:57:25</span></li><li><a href='https://www.nowonbun.com/18.html'>[C#] struct(構造体)</a><span>2019/07/10 23:43:56</span></li><li><a href='https://www.nowonbun.com/17.html'>[C#] static</a><span>2019/07/10 00:19:18</span></li><li><a href='https://www.nowonbun.com/16.html'>[C#] クラス(class)とコンストラクタ、そしてnew(割り当て)</a><span>2019/07/10 00:06:17</span></li><li><a href='https://www.nowonbun.com/15.html'>[C#] プロパティ(property)</a><span>2019/07/08 23:04:09</span></li><li><a href='https://www.nowonbun.com/14.html'>[C#] アクセス修飾子(public, private, protected)</a><span>2019/07/08 22:55:00</span></li><li><a href='https://www.nowonbun.com/13.html'>[C#] メソッド(関数)とvoid型</a><span>2019/07/07 23:12:30</span></li><li><a href='https://www.nowonbun.com/12.html'>[C#] 制御文 - ループ分岐(break, continue)</a><span>2019/07/07 22:54:13</span></li><li><a href='https://www.nowonbun.com/11.html'>[C#] 10. クラスを作成する方法(コンストラクタ、デストラクタ)</a><span>2019/07/06 00:53:17</span></li><li><a href='https://www.nowonbun.com/10.html'>[C#] 9. 関数(Method)とオーバーロード、再帰呼び出し</a><span>2019/07/06 00:38:29</span></li><li><a href='https://www.nowonbun.com/9.html'>[C#] 8. 配列とリスト</a><span>2019/07/05 00:12:42</span></li></ul>
+					<ul><li><a href='https://www.nowonbun.com/23.html'>[C#] インタフェース( interface )</a><span>2019/07/13 01:06:04</span></li><li><a href='https://www.nowonbun.com/22.html'>[C#] this、base、ポリモーフィズム( overload (多型) )</a><span>2019/07/13 00:56:20</span></li><li><a href='https://www.nowonbun.com/21.html'>[C#] 抽象クラス、抽象メソッド、仮想メソッド</a><span>2019/07/12 00:17:35</span></li><li><a href='https://www.nowonbun.com/20.html'>[C#]  継承とSealedクラス</a><span>2019/07/11 23:13:25</span></li><li><a href='https://www.nowonbun.com/19.html'>[C#] enum(列挙型)</a><span>2019/07/10 23:57:25</span></li><li><a href='https://www.nowonbun.com/18.html'>[C#] struct(構造体)</a><span>2019/07/10 23:43:56</span></li><li><a href='https://www.nowonbun.com/17.html'>[C#] static</a><span>2019/07/10 00:19:18</span></li><li><a href='https://www.nowonbun.com/16.html'>[C#] クラス(class)とコンストラクタ、そしてnew(割り当て)</a><span>2019/07/10 00:06:17</span></li><li><a href='https://www.nowonbun.com/15.html'>[C#] プロパティ(property)</a><span>2019/07/08 23:04:09</span></li><li><a href='https://www.nowonbun.com/14.html'>[C#] アクセス修飾子(public, private, protected)</a><span>2019/07/08 22:55:00</span></li><li><a href='https://www.nowonbun.com/13.html'>[C#] メソッド(関数)とvoid型</a><span>2019/07/07 23:12:30</span></li><li><a href='https://www.nowonbun.com/12.html'>[C#] 11. インスタンスう生成(new)とメモリ割り当て(StackメモリとHeapメモリ)そしてヌル(null)</a><span>2019/07/07 22:54:13</span></li><li><a href='https://www.nowonbun.com/11.html'>[C#] 10. クラスを作成する方法(コンストラクタ、デストラクタ)</a><span>2019/07/06 00:53:17</span></li><li><a href='https://www.nowonbun.com/10.html'>[C#] 9. 関数(Method)とオーバーロード、再帰呼び出し</a><span>2019/07/06 00:38:29</span></li><li><a href='https://www.nowonbun.com/9.html'>[C#] 8. 配列とリスト</a><span>2019/07/05 00:12:42</span></li></ul>
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
