@@ -26,7 +26,7 @@ body{
 	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
 }
 </style>
-<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/28.html"},"url":"https:\/\/www.nowonbun.com\/28.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [C#] LINQ(\u30ea\u30f3\u30af)-1","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u4eca\u65e5\u306fc#\u306e\u306elinq\u306b\u3064\u3044\u3066\u52c9\u5f37\u3057\u307e\u3059\u3002\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u958b\u767a\u3059\u308b\u3068list\uff08\u30ea\u30b9\u30c8),map(dictionary)\u306a\u3069\u3092\u305f\u304f\u3055\u3093\u4f7f\u3046\u3068\u601d\u3044\u307e\u3059\u3002\u4f8b\u3048\u3070\u4ed5\u69d8\u306b\u3088\u3063\u3066\u540c\u3058\u30bf\u30a4\u30d7\u306e\u30c7\u30fc\u30bf\u3092\u30ea\u30b9\u30c8\u5316\u306b\u3057\u3066\u5b9f\u88c5\u3059\u308b\u307b\u3046\u304c\u5b9f\u88c5\u304c\u7dba\u9e97\u306b\u3067\u304d\u308b\u3057\u3001\u30bd\u30fc\u30b9\u6574\u7406\u304c\u697d\u3060\u3068\u601d\u3044\u307e\u3059\u3002\u524d\u306e\u6295\u7a3f\u3067\u3082list\u306b\u3064\u3044\u3066\u52c9\u5f37\u3057\u305f\u3053\u3068\u304c\u3042\u308b\u306e\u3067\u4e0a\u306e\u4f8b\u3092\u89e3\u6790\u304c\u3067\u304d\u308b\u3068\u601d\u3044\u307e\u3059\u3002\u305d\u3046\u3059\u308c\u3070\u4e0a\u306e\u300cnumber\u300d\u306e\u300c2\u300d\u3092\u691c\u7d22\u3059\u308b\u3088\u3046\u306b\u306f\u3069\u3046\u3057\u307e\u3057\u3087\u3046\u304b\uff1f\u4e00\u822c\u7684\u306b\u306f\u30eb\u30fc\u30d7\u3067\u5206\u5c90\u6587\u3092\u4ed8\u3051\u5165\u308c\u3066\u691c\u7d22\u3057\u307e\u3059\u3002\u4e0a\u306e\u4f8b\u306f\u30c7\u30fc\u30bf\u8907\u96d1\u5ea6\u304c\u4f4e\u3044\u306e\u3067\u7c21\u5358\u306b\u5b9f\u88c5\u304c\u3067\u304d\u307e\u3059\u304c\u3001\u30af\u30e9\u30b9\u306e\u30c7\u30fc\u30bf\u304c\u8907\u96d1\u3060\u3057\u3001\u91cf\u304c\u591a\u3044\u5834\u5408\u306f\u5b9f\u88c5\u3082\u5927\u5909\u306b\u306a\u308b\u3057\u3001\u30c7\u30fc\u30bf\u51e6\u7406\u6642\u9593\u3082\u7d50\u69cb\u304b\u304b\u308b\u3068\u601d\u3044\u307e\u3059\u3002linq\u305d\u306e\u5834\u5408\u304c\u3042\u308b\u3068\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306e\u30af\u30a8\u30ea\u307f\u305f\u3044\u306b\u7c21\u5358\u306b\u691c\u7d22\u304c\u3067\u304d\u308b\u306e\u304c\u3042\u308c\u3070\u3044\u3044\u3068\u601d\u308f\u308c\u307e\u3059\u306d\u3002\u305d\u308c\u3067\u300c.net framework3.5\u300d\u304b\u3089\u30ea\u30b9\u30c8\u3001\u30c7\u30a3\u30af\u30b7\u30e7\u30ca\u30ea\u3092sql\u30af\u30a8\u30ea\u307f\u305f\u3044\u306a\u30ad\u30fc\u30ef\u30fc\u30c9\u3067\u7c21\u5358\u306b\u691c\u7d22\u304c\u3067\u304d\u308b\u3088\u3046\u306b\u300clinq\u300d\u3068\u3044\u3046\u3053\u3068\u3092\u63d0\u4f9b\u3057\u3066\u3044\u307e\u3059\u3002\u4e0a\u306e\u4f8b\u3092\u898b\u308b\u3068\u300cgetsearch2\u300d\u306e\u30e1\u30bd\u30c3\u30c9\u306e\u4e2d\u3067sql\u30af\u30a8\u30ea\u307f\u305f\u3044\u306a\u300cfrom\u300d\u3001\u300cwhere\u300d\u3001\u300cselect\u300d\u306e\u30ad\u30fc\u30ef\u30fc\u30c9\u304c\u3042\u308a\u307e\u3059\u3002\u7d50\u679c\u306f\u300cgetsearch\u300d\u3068\u540c\u69d8\u306b\u300cnumber\u300d\u3092\u691c\u7d22\u3057\u3066\u300cdata\u300d\u306e\u5024\u3092\u8fd4\u5374\u3057\u307e\u3059\u3002\u305d\u3046\u3059\u308b\u3068\u300clinq\u300d\u306e\u30ad\u30fc\u30ef\u30fc\u30c9\u306b\u3064\u3044\u3066\u8a73\u3057\u304f\u52c9\u5f37\u3057\u307e\u3057\u3087\u3046\u3002          linq\u30ad\u30fc\u30ef\u30fc\u30c9    \u8aac\u660e              from\u301cin    \u691c\u7d22\u3059\u308b\u30ea\u30b9\u30c8\u3042\u308b\u3044\u306f\u30c7\u30a3\u30af\u30b7\u30e7\u30ca\u30ea\u3001\u30c7\u30fc\u30bf\u30c6\u30fc\u30d6\u30eb\u3092\u6307\u5b9a          where    \u30ea\u30b9\u30c8\u3092\u691c\u7d22\u3059\u308b\u6761\u4ef6          join    \uff12\u3064\u4ee5\u4e0a\u306e\u30c7\u30fc\u30bf\u30ea\u30b9\u30c8\u3092\u7d50\u5408          orderby    \u7d50\u679c\u306e\u30c7\u30fc\u30bf\u30ea\u30b9\u30c8\u306e\u6574\u5217          group    \u7d50\u679c\u306e\u30c7\u30fc\u30bf\u30ea\u30b9\u30c8\u306e\u30b0\u30eb\u30fc\u30d7\u5316          select    \u7d50\u679c\u30c7\u30fc\u30bf\u3092\u62bd\u51fa      linq\u306e\u5834\u5408\u306f\u4e0a\u306e\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u4f7f\u3063\u3066\u30ea\u30b9\u30c8\u3092\u691c\u7d22\u3092\u3057\u307e\u3059\u3002\u305d\u3057\u3066\u691c\u7d22\u3057\u305f\u5f8c\u306e\u30c7\u30fc\u30bf\u306f\u305f\u3060\u306e\u30ea\u30b9\u30c8\u3092\u8fd4\u5374\u3059\u308b\u3053\u3068\u3067\u306f\u306a\u304f\u300cienumerable\u300d\u30bf\u30a4\u30d7\u3067\u8fd4\u5374\u3057\u307e\u3059\u306d\u3002 \u300cienumerable\u300d\u306f\u300cyield\u300d\u306e\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u52c9\u5f37\u3059\u308b\u969b\u306b\u8aac\u660e\u3057\u305f\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002[c# \u30b9\u30bf\u30c7\u30a3 - 24] indexer(\u30a4\u30f3\u30c7\u30af\u30b5\u30fc)\u3068yield(\u30ea\u30d5\u30a1\u30ec\u30f3\u30b9)\u3082","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2019-07-16T20:41:27.000+09:00","dateModified":"2020-01-17T07:32:46.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/28.html"},"url":"https:\/\/www.nowonbun.com\/28.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [C#] 27. var\u30ad\u30fc\u30ef\u30fc\u30c9\u3068dynamic\u30ad\u30fc\u30ef\u30fc\u30c9","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fvar\u30ad\u30fc\u30ef\u30fc\u30c9\u3068dynamic\u30ad\u30fc\u30ef\u30fc\u30c9\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u4ee5\u524d\u306e\u6295\u7a3f\u3067\u30d7\u30ed\u30b0\u30e9\u30e0\u306estack\u30e1\u30e2\u30ea\u3068heap\u30e1\u30e2\u30ea\u306e\u95a2\u4fc2\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u305f\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002link - [c#] 11. \u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3046\u751f\u6210(new)\u3068\u30e1\u30e2\u30ea\u5272\u308a\u5f53\u3066(stack\u30e1\u30e2\u30ea\u3068heap\u30e1\u30e2\u30ea)\u305d\u3057\u3066\u30cc\u30eb(null)\u5909\u6570\u3067\u5ba3\u8a00\u3055\u308c\u3066\u3044\u308b\u30c7\u30fc\u30bf\u30bf\u30a4\u30d7\u306fheap\u306b\u751f\u6210\u3059\u308b\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u306e\u30dd\u30a4\u30f3\u30bf\u306e\u30a2\u30c9\u30ec\u30b9\u3068\u3044\u3046\u3053\u3068\u3067\u8aac\u660e\u3057\u305f\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002\u3053\u306e\u30dd\u30a4\u30f3\u30bf\u306e\u30a2\u30c9\u30ec\u30b9\u3068\u3044\u3046\u306e\u306f\u5927\u304d\u3044\u30c7\u30fc\u30bf\u304c\u3042\u308b\u3053\u3068\u3067\u306f\u306a\u304f\u3001\u666e\u901a\u306e\u6574\u6570\u306b\u306a\u3063\u3066\u3044\u308b\u30c7\u30fc\u30bf\u3067\u3059\u3002\u305d\u308c\u3067\u3001\u4e00\u3005\u306b\u30af\u30e9\u30b9\u540d\u306b\u5408\u308f\u305b\u3066\u30bd\u30fc\u30b9\u3092\u4f5c\u6210\u3059\u308b\u3053\u3068\u306f\u9762\u5012\u304f\u3055\u3044\u3053\u3068\u3067\u3059\u306d\u3002\u305d\u308c\u3067\u3001\u3053\u306e\u5909\u6570\u306e\u30c7\u30fc\u30bf\u30bf\u30a4\u30d7\u3092\u4f5c\u6210\u3057\u3084\u3059\u3044\u3088\u3046\u306b\u3059\u308b\u30ad\u30fc\u30ef\u30fc\u30c9\u304c\u3042\u308a\u307e\u3059\u304c\u3001\u305d\u308c\u304cvar\u30ad\u30fc\u30ef\u30fc\u30c9\u3067\u3059\u3002\u4e0a\u306e\u4f8b\u306e\u7d50\u679c\u3092\u307f\u308c\u3070node\u306e\u5909\u6570\u3068node1\u306e\u5909\u6570\u306e\u5dee\u7570\u306f\u30bd\u30fc\u30b9\u4e0a\u3067\u4f5c\u6210\u3059\u308b\u3068\u3053\u308d\u3067node\u306e\u30af\u30e9\u30b9\u30bf\u30a4\u30d7\u304b\u3089var\u30bf\u30a4\u30d7\u306b\u5909\u308f\u3063\u305f\u3053\u3068\u3060\u3051\u3067\u3001\u30d7\u30ed\u30b0\u30e9\u30e0\u4e0a\u3067\u5b9f\u88c5\u3059\u308b\u51e6\u7406\u306b\u95a2\u3057\u3066\u540c\u3058\u3067\u3059\u3002\u3064\u307e\u308a\u3001var\u30ad\u30fc\u30ef\u30fc\u30c9\u3068\u306f\u5909\u6570\u3067\u5ba3\u8a00\u3092\u7c21\u5358\u306b\u3059\u308b\u305f\u3081\u306e\u30ad\u30fc\u30ef\u30fc\u30c9\u3060\u3051\u3067\u3001\u6027\u80fd\u3068\u51e6\u7406\u306b\u95a2\u3057\u3066\u306f\u306a\u306b\u3082\u5f71\u97ff\u306f\u3042\u308a\u307e\u305b\u3093\u3002\u305d\u308c\u3067c#\u306e\u30bd\u30fc\u30b9\u898f\u7d04(\u30b3\u30fc\u30c7\u30a3\u30f3\u30b0\u306b\u95a2\u3059\u308b\u898f\u5247)\u306b\u5f93\u3046\u3068\u30ed\u30fc\u30ab\u30eb\u5909\u6570\u5ba3\u8a00\u306fvar\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u4f7f\u3046\u306e\u3092\u304a\u52e7\u3081\u3057\u307e\u3059\u3002\u3067\u3082\u3001\u3053\u306evar\u30ad\u30fc\u30ef\u30fc\u30c9\u306b\u306f\u4f55\u500b\u304b\u5236\u7d04\u6761\u4ef6\u304c\u3042\u308a\u307e\u3059\u3002\u6700\u521d\u306e\u5ba3\u8a00\u3059\u308b\u6642\u306bnull\u3067\u8a2d\u5b9a\u306f\u3067\u304d\u307e\u305b\u3093\u3002\u305d\u3057\u3066\u6700\u521d\u306e\u5ba3\u8a00\u3057\u305f\u30bf\u30a4\u30d7\u306f\u9014\u4e2d\u3067\u30bf\u30a4\u30d7\u5909\u66f4\u306f\u3067\u304d\u307e\u305b\u3093\u3002\u305d\u3057\u3066var\u30ad\u30fc\u30ef\u30fc\u30c9\u306f\u95a2\u6570\u306e\u30b9\u30bf\u30c3\u30af\u9818\u57df\u3060\u3051\u3001\u3064\u307e\u308a\u30ed\u30fc\u30ab\u30eb\u3060\u3051\u4f7f\u3046\u3053\u3068\u304c\u3067\u304d\u308b\u3057\u30e1\u30f3\u30d0\u30fc\u5909\u6570\u3084\u95a2\u6570\u306e\u30ea\u30bf\u30fc\u30f3\u5024\u3001\u30d1\u30e9\u30e1\u30fc\u30bf\u306f\u4f7f\u3048\u307e\u305b\u3093\u3002\u6539\u3081\u3066\u307e\u3068\u3081\u308b\u3068\u3001var\u30ad\u30fc\u30ef\u30fc\u30c9\u306f\u6700\u521d\u306e\u5ba3\u8a00\u3057\u305f\u539f\u59cb\u30c7\u30fc\u30bf\u3042\u308b\u3044\u306f\u30af\u30e9\u30b9\u30bf\u30a4\u30d7\u3067\u8a2d\u5b9a\u304c\u3067\u304d\u308b\u3057\u3001\u6b21\u306f\u8a2d\u5b9a\u3092\u5909\u308f\u308a\u307e\u305b\u3093\u3002\u306a\u306e\u3067\u3001\u5f53\u7136\u306b\u6700\u521d\u5ba3\u8a00\u3059\u308b\u6642\u306b\u30bf\u30a4\u30d7\u3092\u8a2d\u5b9a\u3059\u308b\u306e\u3067null\u306f\u4f7f\u3048\u306a\u3044\u3057\u3001\u30e1\u30f3\u30d0\u30fc\u5909\u6570\u3068\u30ea\u30bf\u30fc\u30f3\u30bf\u30a4\u30d7\u3001\u30d1\u30e9\u30e1\u30fc\u30bf\u30bf\u30a4\u30d7\u3067\u306f\u8a2d\u5b9a\u3092\u533a\u5206\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u306a\u3044\u306e\u3067\u4f7f\u3048\u307e\u305b\u3093\u3002c#\u306b\u306fvar\u30ad\u30fc\u30ef\u30fc\u30c9\u3068\u4f3c\u3066\u3044\u308bdynamic\u30ad\u30fc\u30ef\u30fc\u30c9\u304c\u3042\u308a\u307e\u3059\u3002dynamic\u30ad\u30fc\u30ef\u30fc\u30c9\u306fvar\u30ad\u30fc\u30ef\u30fc\u30c9\u3068\u4f3c\u3066\u3044\u307e\u3059\u304c\u3001\u6700\u521d\u306b\u5ba3\u8a00\u3059\u308b\u6642\u306b\u30c7\u30fc\u30bf\u30bf\u30a4\u30d7\u304c\u6c7a\u5b9a\u3059\u308b\u3053\u3068\u3067\u306f\u306a\u304f\u3001\u57fa\u672c\u30c7\u30fc\u30bf\u30bf\u30a4\u30d7\u306eobject\u3067\u8a2d\u5b9a\u304c\u3042\u308a\u307e\u3059\u3002object\u30af\u30e9\u30b9\u306b\u95a2\u3057\u3066\u7c21\u5358\u306b\u8aac\u660e\u3059\u308b\u3068c#\u3067\u306f\u30af\u30e9\u30b9\u304c\u6700\u5c0f\u5358\u4f4d\u3067\u3059\u3002c#\u3067","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2019-07-16T20:41:27.000+09:00","dateModified":"2021-09-10T21:16:32.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -36,17 +36,17 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / C#" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。今日はc#ののlinqについて勉強します。プログラムを開発するとlist（リスト),map(dictionary)などをたくさん使うと思います。例えば仕様によって同じタイプのデータをリスト化にして実装するほうが実装が綺麗にできるし、ソース整理が楽だと思います。前の投稿でもlistについて勉強したことがあるので上の例を解析ができると思います。そうすれば上の「number」の「2」を検索するようにはどうしましょうか？一般的にはループで分岐文を付け入れて検索します。上の例はデータ複雑度が低いので簡単に実装ができますが、クラスのデータが複雑だし、量が多い場合は実装も大変になるし、データ処理時間も結構かかると思います。linqその場合があるとデータベースのクエリみたいに簡単に検索ができるのがあればいいと思われますね。それで「.net framework3.5」からリスト、ディクショナリをsqlクエリみたいなキーワードで簡単に検索ができるように「linq」ということを提供しています。上の例を見ると「getsearch2」のメソッドの中でsqlクエリみたいな「from」、「where」、「select」のキーワードがあります。結果は「getsearch」と同様に「number」を検索して「data」の値を返却します。そうすると「linq」のキーワードについて詳しく勉強しましょう。          linqキーワード    説明              from〜in    検索するリストあるいはディクショナリ、データテーブルを指定          where    リストを検索する条件          join    ２つ以上のデータリストを結合          orderby    結果のデータリストの整列          group    結果のデータリストのグループ化          select    結果データを抽出      linqの場合は上のキーワードを使ってリストを検索をします。そして検索した後のデータはただのリストを返却することではなく「ienumerable」タイプで返却しますね。 「ienumerable」は「yield」のキーワードを勉強する際に説明したことがあります。[c# スタディ - 24] indexer(インデクサー)とyield(リファレンス)も]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はvarキーワードとdynamicキーワードに関する説明です。以前の投稿でプログラムのstackメモリとheapメモリの関係に関して説明したことがあります。link - [c#] 11. インスタンスう生成(new)とメモリ割り当て(stackメモリとheapメモリ)そしてヌル(null)変数で宣言されているデータタイプはheapに生成するインスタンスのポインタのアドレスということで説明したことがあります。このポインタのアドレスというのは大きいデータがあることではなく、普通の整数になっているデータです。それで、一々にクラス名に合わせてソースを作成することは面倒くさいことですね。それで、この変数のデータタイプを作成しやすいようにするキーワードがありますが、それがvarキーワードです。上の例の結果をみればnodeの変数とnode1の変数の差異はソース上で作成するところでnodeのクラスタイプからvarタイプに変わったことだけで、プログラム上で実装する処理に関して同じです。つまり、varキーワードとは変数で宣言を簡単にするためのキーワードだけで、性能と処理に関してはなにも影響はありません。それでc#のソース規約(コーディングに関する規則)に従うとローカル変数宣言はvarキーワードを使うのをお勧めします。でも、このvarキーワードには何個か制約条件があります。最初の宣言する時にnullで設定はできません。そして最初の宣言したタイプは途中でタイプ変更はできません。そしてvarキーワードは関数のスタック領域だけ、つまりローカルだけ使うことができるしメンバー変数や関数のリターン値、パラメータは使えません。改めてまとめると、varキーワードは最初の宣言した原始データあるいはクラスタイプで設定ができるし、次は設定を変わりません。なので、当然に最初宣言する時にタイプを設定するのでnullは使えないし、メンバー変数とリターンタイプ、パラメータタイプでは設定を区分することができないので使えません。c#にはvarキーワードと似ているdynamicキーワードがあります。dynamicキーワードはvarキーワードと似ていますが、最初に宣言する時にデータタイプが決定することではなく、基本データタイプのobjectで設定があります。objectクラスに関して簡単に説明するとc#ではクラスが最小単位です。c#で]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [C#] LINQ(リンク)-1" />
+<meta name="title" content="明月の開発ストーリ :: [C#] 27. varキーワードとdynamicキーワード" />
 <link rel="canonical" href="https://www.nowonbun.com/28.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [C#] LINQ(リンク)-1" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。今日はc#ののlinqについて勉強します。プログラムを開発するとlist（リスト),map(dictionary)などをたくさん使うと思います。例えば仕様によって同じタイプのデータをリスト化にして実装するほうが実装が綺麗にできるし、ソース整理が楽だと思います。前の投稿でもlistについて勉強したことがあるので上の例を解析ができると思います。そうすれば上の「number」の「2」を検索するようにはどうしましょうか？一般的にはループで分岐文を付け入れて検索します。上の例はデータ複雑度が低いので簡単に実装ができますが、クラスのデータが複雑だし、量が多い場合は実装も大変になるし、データ処理時間も結構かかると思います。linqその場合があるとデータベースのクエリみたいに簡単に検索ができるのがあればいいと思われますね。それで「.net framework3.5」からリスト、ディクショナリをsqlクエリみたいなキーワードで簡単に検索ができるように「linq」ということを提供しています。上の例を見ると「getsearch2」のメソッドの中でsqlクエリみたいな「from」、「where」、「select」のキーワードがあります。結果は「getsearch」と同様に「number」を検索して「data」の値を返却します。そうすると「linq」のキーワードについて詳しく勉強しましょう。          linqキーワード    説明              from〜in    検索するリストあるいはディクショナリ、データテーブルを指定          where    リストを検索する条件          join    ２つ以上のデータリストを結合          orderby    結果のデータリストの整列          group    結果のデータリストのグループ化          select    結果データを抽出      linqの場合は上のキーワードを使ってリストを検索をします。そして検索した後のデータはただのリストを返却することではなく「ienumerable」タイプで返却しますね。 「ienumerable」は「yield」のキーワードを勉強する際に説明したことがあります。[c# スタディ - 24] indexer(インデクサー)とyield(リファレンス)も]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [C#] 27. varキーワードとdynamicキーワード" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はvarキーワードとdynamicキーワードに関する説明です。以前の投稿でプログラムのstackメモリとheapメモリの関係に関して説明したことがあります。link - [c#] 11. インスタンスう生成(new)とメモリ割り当て(stackメモリとheapメモリ)そしてヌル(null)変数で宣言されているデータタイプはheapに生成するインスタンスのポインタのアドレスということで説明したことがあります。このポインタのアドレスというのは大きいデータがあることではなく、普通の整数になっているデータです。それで、一々にクラス名に合わせてソースを作成することは面倒くさいことですね。それで、この変数のデータタイプを作成しやすいようにするキーワードがありますが、それがvarキーワードです。上の例の結果をみればnodeの変数とnode1の変数の差異はソース上で作成するところでnodeのクラスタイプからvarタイプに変わったことだけで、プログラム上で実装する処理に関して同じです。つまり、varキーワードとは変数で宣言を簡単にするためのキーワードだけで、性能と処理に関してはなにも影響はありません。それでc#のソース規約(コーディングに関する規則)に従うとローカル変数宣言はvarキーワードを使うのをお勧めします。でも、このvarキーワードには何個か制約条件があります。最初の宣言する時にnullで設定はできません。そして最初の宣言したタイプは途中でタイプ変更はできません。そしてvarキーワードは関数のスタック領域だけ、つまりローカルだけ使うことができるしメンバー変数や関数のリターン値、パラメータは使えません。改めてまとめると、varキーワードは最初の宣言した原始データあるいはクラスタイプで設定ができるし、次は設定を変わりません。なので、当然に最初宣言する時にタイプを設定するのでnullは使えないし、メンバー変数とリターンタイプ、パラメータタイプでは設定を区分することができないので使えません。c#にはvarキーワードと似ているdynamicキーワードがあります。dynamicキーワードはvarキーワードと似ていますが、最初に宣言する時にデータタイプが決定することではなく、基本データタイプのobjectで設定があります。objectクラスに関して簡単に説明するとc#ではクラスが最小単位です。c#で]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta property="og:url" content="https://www.nowonbun.com/28.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
@@ -54,12 +54,12 @@ body{
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [C#] LINQ(リンク)-1" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今日はc#ののlinqについて勉強します。プログラムを開発するとlist（リスト),map(dictionary)などをたくさん使うと思います。例えば仕様によって同じタイプのデータをリスト化にして実装するほうが実装が綺麗にできるし、ソース整理が楽だと思います。前の投稿でもlistについて勉強したことがあるので上の例を解析ができると思います。そうすれば上の「number」の「2」を検索するようにはどうしましょうか？一般的にはループで分岐文を付け入れて検索します。上の例はデータ複雑度が低いので簡単に実装ができますが、クラスのデータが複雑だし、量が多い場合は実装も大変になるし、データ処理時間も結構かかると思います。linqその場合があるとデータベースのクエリみたいに簡単に検索ができるのがあればいいと思われますね。それで「.net framework3.5」からリスト、ディクショナリをsqlクエリみたいなキーワードで簡単に検索ができるように「linq」ということを提供しています。上の例を見ると「getsearch2」のメソッドの中でsqlクエリみたいな「from」、「where」、「select」のキーワードがあります。結果は「getsearch」と同様に「number」を検索して「data」の値を返却します。そうすると「linq」のキーワードについて詳しく勉強しましょう。          linqキーワード    説明              from〜in    検索するリストあるいはディクショナリ、データテーブルを指定          where    リストを検索する条件          join    ２つ以上のデータリストを結合          orderby    結果のデータリストの整列          group    結果のデータリストのグループ化          select    結果データを抽出      linqの場合は上のキーワードを使ってリストを検索をします。そして検索した後のデータはただのリストを返却することではなく「ienumerable」タイプで返却しますね。 「ienumerable」は「yield」のキーワードを勉強する際に説明したことがあります。[c# スタディ - 24] indexer(インデクサー)とyield(リファレンス)も]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [C#] 27. varキーワードとdynamicキーワード" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はvarキーワードとdynamicキーワードに関する説明です。以前の投稿でプログラムのstackメモリとheapメモリの関係に関して説明したことがあります。link - [c#] 11. インスタンスう生成(new)とメモリ割り当て(stackメモリとheapメモリ)そしてヌル(null)変数で宣言されているデータタイプはheapに生成するインスタンスのポインタのアドレスということで説明したことがあります。このポインタのアドレスというのは大きいデータがあることではなく、普通の整数になっているデータです。それで、一々にクラス名に合わせてソースを作成することは面倒くさいことですね。それで、この変数のデータタイプを作成しやすいようにするキーワードがありますが、それがvarキーワードです。上の例の結果をみればnodeの変数とnode1の変数の差異はソース上で作成するところでnodeのクラスタイプからvarタイプに変わったことだけで、プログラム上で実装する処理に関して同じです。つまり、varキーワードとは変数で宣言を簡単にするためのキーワードだけで、性能と処理に関してはなにも影響はありません。それでc#のソース規約(コーディングに関する規則)に従うとローカル変数宣言はvarキーワードを使うのをお勧めします。でも、このvarキーワードには何個か制約条件があります。最初の宣言する時にnullで設定はできません。そして最初の宣言したタイプは途中でタイプ変更はできません。そしてvarキーワードは関数のスタック領域だけ、つまりローカルだけ使うことができるしメンバー変数や関数のリターン値、パラメータは使えません。改めてまとめると、varキーワードは最初の宣言した原始データあるいはクラスタイプで設定ができるし、次は設定を変わりません。なので、当然に最初宣言する時にタイプを設定するのでnullは使えないし、メンバー変数とリターンタイプ、パラメータタイプでは設定を区分することができないので使えません。c#にはvarキーワードと似ているdynamicキーワードがあります。dynamicキーワードはvarキーワードと似ていますが、最初に宣言する時にデータタイプが決定することではなく、基本データタイプのobjectで設定があります。objectクラスに関して簡単に説明するとc#ではクラスが最小単位です。c#で]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [C#] LINQ(リンク)-1</title>
+<title>明月の開発ストーリ :: [C#] 27. varキーワードとdynamicキーワード</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -123,11 +123,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/28.html">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt" property="headline">[C#] LINQ(リンク)-1</h1>
+					<h1 id="titleTxt" property="headline">[C#] 27. varキーワードとdynamicキーワード</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0202">Study / C#</a>    作成日付 : <span property="datePublished">2019/07/16 20:41:27</span>   修正日付 : <span property="dateModified">2020/01/17 07:32:46</span>
+					<a href="./?category=0202">Study / C#</a>    作成日付 : <span property="datePublished">2019/07/16 20:41:27</span>   修正日付 : <span property="dateModified">2021/09/10 21:16:32</span>
 				</div>
 			</div>
 			<div class="article">
@@ -139,311 +139,237 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>今日はC#ののLINQについて勉強します。</p> 
+  <p>この投稿はvarキーワードとdynamicキーワードに関する説明です。</p> 
   <p><br></p> 
-  <p>プログラムを開発するとList（リスト),Map(Dictionary)などをたくさん使うと思います。例えば仕様によって同じタイプのデータをリスト化にして実装するほうが実装が綺麗にできるし、ソース整理が楽だと思います。</p> 
-  <pre><code class="cs" data-type="">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+  <p>以前の投稿でプログラムのStackメモリとHeapメモリの関係に関して説明したことがあります。</p> 
+  <p>link - <a href="https://www.nowonbun.com/12.html" target="_blank">[C#] 11. インスタンスう生成(new)とメモリ割り当て(StackメモリとHeapメモリ)そしてヌル(null)</a></p> 
+  <p><br></p> 
+  <p>変数で宣言されているデータタイプはHeapに生成するインスタンスのポインタのアドレスということで説明したことがあります。</p> 
+  <p>このポインタのアドレスというのは大きいデータがあることではなく、普通の整数になっているデータです。それで、一々にクラス名に合わせてソースを作成することは面倒くさいことですね。</p> 
+  <p>それで、この変数のデータタイプを作成しやすいようにするキーワードがありますが、それがvarキーワードです。</p> 
+  <pre><code class="cs" data-type="Program.cs">using System;
 
-namespace LINQEX1
+namespace Example
 {
-  class TestRecord
+  // 例クラス
+  class Node
   {
-    public TestRecord(int number, String data)
-    {
-      this.Data = data;
-    }
-    public int Number
-    {
-      get; set;
-    }
-    public String Data
+    // プロパティ
+    public int Data
     {
       get; set;
     }
   }
   class Program
   {
-    public Program()
-    {
-      //リストを宣言
-      List&lt;HTestRecord&gt; list = new List&lt;TestRecord&gt;();
-      //リストにデータを格納
-      list.Add(new TestRecord(1, "Hello"));
-      list.Add(new TestRecord(2, "World"));
-      list.Add(new TestRecord(3, "TEST"));
-      //リストを繰り返してデータを出力
-      foreach (TestRecord test in list)
-      {
-        Console.WriteLine(test.Data);
-      }
-    }
+    // 実行関数
     static void Main(string[] args)
     {
-      new Program();
-
-      Console.WriteLine("Press Any Key...");
-      Console.ReadLine();
-    }
-  }
-}
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/28/95_001.jpg" data-filename="001.jpg" style="width: 600px;"></p> 
-  <p>前の投稿でもListについて勉強したことがあるので上の例を解析ができると思います。そうすれば上の「number」の「2」を検索するようにはどうしましょうか？一般的にはループで分岐文を付け入れて検索します。</p> 
-  <pre><code class="cs" data-type="">﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LINQEX1
-{
-  class TestRecord
-  {
-    public TestRecord(int number, String data)
-    {
-     this.Number = number;
-      this.Data = data;
-    }
-    public int Number
-    {
-      get; set;
-    }
-    public String Data
-    {
-      get; set;
-    }
-  }
-  class Program
-  {
-    public Program()
-    {
-      //リストを宣言
-      List&lt;TestRecord&gt; list = new List&lt;TestRecord&gt;();
-      //リストにデータを格納
-      list.Add(new TestRecord(1, "Hello"));
-      list.Add(new TestRecord(2, "World"));
-      list.Add(new TestRecord(3, "TEST"));
-
-      //numberが「2」のデータを検索する。
-      Console.WriteLine(getSearch(2,list));
-    }
-    //一般的にループの中で分岐を付け入れて検索する。
-    public String getSearch(int number, List&lt;TestRecord&gt; list)
-    {
-      //リストを繰り返してデータを検索
-      foreach (TestRecord test in list)
-      {
-        if(number == test.Number)
-        {
-          return test.Data;
-        }
-      }
-      return null;
-    }
-    static void Main(string[] args)
-    {
-      new Program();
-
-      Console.WriteLine("Press Any Key...");
-      Console.ReadLine();
-    }
-  }
-}
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/28/96_002.jpg" data-filename="002.jpg" style="width: 600px;"></p> 
-  <p>上の例はデータ複雑度が低いので簡単に実装ができますが、クラスのデータが複雑だし、量が多い場合は実装も大変になるし、データ処理時間も結構かかると思います。</p> 
-  <p><br></p> 
-  <h2><b><span>LINQ</span></b></h2> 
-  <p>その場合があるとデータベースのクエリみたいに簡単に検索ができるのがあればいいと思われますね。それで「.Net Framework3.5」からリスト、ディクショナリをSQLクエリみたいなキーワードで簡単に検索ができるように「LINQ」ということを提供しています。</p> 
-  <pre><code class="cs" data-type="">﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LINQEX1
-{
-  class TestRecord
-  {
-    public TestRecord(int number, String data)
-    {
-      this.Number = number;
-      this.Data = data;
-    }
-    public int Number
-    {
-      get; set;
-    }
-    public String Data
-    {
-      get; set;
-    }
-  }
-  class Program
-  {
-    public Program()
-    {
-      //リストを宣言
-      List&lt;TestRecord&gt; list = new List&lt;TestRecord&gt;();
-      //リストにデータを格納
-      list.Add(new TestRecord(1, "Hello"));
-      list.Add(new TestRecord(2, "World"));
-      list.Add(new TestRecord(3, "TEST"));
-
-      //numberが「2」のデータを検索する。
-      Console.WriteLine(getSearch(2,list));
-      //numberが「3」のデータを検索する。
-      Console.WriteLine(getSearch2(3, list));
-    }
-    //一般的にループの中で分岐を付け入れて検索する。
-    public String getSearch(int number, List&lt;TestRecord&gt; list)
-    {
-      //リストを繰り返してデータを検索
-      foreach (TestRecord item in list)
-      {
-        if(number == item.Number)
-        {
-          return item.Data;
-        }
-      }
-      return null;
-    }
-    //LINQの検索する例
-    public String getSearch2(int number,List&lt;TestRecord&gt; list)
-    {
-      //LINQを利用してデータを検索
-      //from item in list データ
-      //where 条件
-      //select 抽出データ
-      IEnumerable&lt;String&gt; ret = from item in list where item.Number == number  select item.Data;
-      return ret.Single&lt;String&gt;();
-    }
-    static void Main(string[] args)
-    {
-      new Program();
-
-      Console.WriteLine("Press Any Key...");
-      Console.ReadLine();
-    }
-  }
-}
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/28/97_003.jpg" data-filename="003.jpg" style="width: 600px;"></p> 
-  <p>上の例を見ると「getSearch2」のメソッドの中でSQLクエリみたいな「from」、「where」、「select」のキーワードがあります。結果は「getSearch」と同様に「Number」を検索して「Data」の値を返却します。</p> 
-  <p><br></p> 
-  <p>そうすると「LINQ」のキーワードについて詳しく勉強しましょう。</p> 
-  <div class="table-responsive"> 
-   <table class="table table-striped table-bordered table-condensed"> 
-    <thead> 
-     <tr> 
-      <th>LINQキーワード</th> 
-      <th>説明</th> 
-     </tr> 
-    </thead> 
-    <tbody> 
-     <tr> 
-      <td>from〜in</td> 
-      <td>検索するリストあるいはディクショナリ、データテーブルを指定</td> 
-     </tr> 
-     <tr> 
-      <td>where</td> 
-      <td>リストを検索する条件</td> 
-     </tr> 
-     <tr> 
-      <td>join</td> 
-      <td>２つ以上のデータリストを結合</td> 
-     </tr> 
-     <tr> 
-      <td>orderby</td> 
-      <td>結果のデータリストの整列</td> 
-     </tr> 
-     <tr> 
-      <td>group</td> 
-      <td>結果のデータリストのグループ化</td> 
-     </tr> 
-     <tr> 
-      <td>select</td> 
-      <td>結果データを抽出</td> 
-     </tr> 
-    </tbody> 
-   </table> 
-  </div> 
-  <p>Linqの場合は上のキーワードを使ってリストを検索をします。そして検索した後のデータはただのリストを返却することではなく「IEnumerable」タイプで返却しますね。</p> 
-  <p>「IEnumerable」は「yield」のキーワードを勉強する際に説明したことがあります。</p> 
-  <p><br></p> 
-  <p><a href="https://www.nowonbun.com/25.html" target="_blank">[C# スタディ - 24] indexer(インデクサー)とyield(リファレンス)</a></p> 
-  <p><br></p> 
-  <p>もう１回説明すると「IEnumerable」は「interator」パターンと関係があるクラスです。「IEnumerable」のタイプからデータ取得方法は「IEnumerator」に変換することや、「ToList」メソッドを使ってリストタイプに返却することや、「ToArray」メソッドを使って配列で取得することや、また結果の値が１つの場合に「ToSingle」のメソッドで単一結果を取得する方法があります。</p> 
-  <pre><code class="cs" data-type="">﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LINQEX1
-{
-  class TestRecord
-  {
-    public TestRecord(int number, String data)
-    {
-      this.Number = number;
-      this.Data = data;
-    }
-    public int Number
-    {
-      get; set;
-    }
-    public String Data
-    {
-      get; set;
-    }
-  }
-  class Program
-  {
-    public Program()
-    {
-      //リストを宣言
-      List&lt;TestRecord&gt; list = new List&lt;TestRecord&gt;();
-      List&lt;TestRecord&gt; list2 = new List&lt;TestRecord&gt;();
-      //リストにデータを格納
-      list.Add(new TestRecord(1, "Hello"));
-      list.Add(new TestRecord(2, "World"));
-      list.Add(new TestRecord(3, "TEST"));
-
-      list2.Add(new TestRecord(1, "Data1"));
-      list2.Add(new TestRecord(2, "Data2"));
-      list2.Add(new TestRecord(3, "Data3"));
-
-      IEnumerable&lt;String&gt; retList = from item1 in list  //検索するデータリスト
-                      join item2 in list2 on item1.Number equals item2.Number //検索するデータリストをJoinする。
-                      where item1.Number &gt; 1  //データ抽出条件
-                      orderby item1.Number descending //データの整列
-                      select item1.Data + " " + item2.Data; //データを抽出
-      List&lt;String&gt; retlist = retList.ToList&lt;String&gt;();
-      foreach(String ret in retList)
-      {
-        Console.WriteLine(ret);
-      }
+      // Nodeタイプのnode変数にNodeインスタンスのポインタを格納する。
+      Node node = new Node();
+      // プロパティ変数の値を設定
+      node.Data = 10;
+      // コンソール出力
+      Console.WriteLine(node.Data);
       
-    }
-    static void Main(string[] args)
-    {
-      new Program();
-
-      Console.WriteLine("Press Any Key...");
+      // varタイプのnode1変数にNodeインスタンスのポインタを格納する。
+      var node1 = new Node();
+      // プロパティ変数の値を設定
+      node1.Data = 20;
+      // コンソール出力
+      Console.WriteLine(node1.Data);
+      
+      // 任意のキーを押してください
+      Console.WriteLine("Press any key...");
       Console.ReadLine();
     }
   }
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/28/98_004.jpg" data-filename="004.jpg" style="width: 600px;"></p> 
-  <p>今まで「LINQ」の基本文法について勉強しました。上の例をみると２つのリストを「Join」キーワードで結んでデータ処理しています。それをただのループで実装すると思えばソースが複雑度がかなりあがると思いますね。</p> 
-  <p>C#「LINQ」はデータをSQLクエリみたい扱う方法だけあることではないけど、上の例だけみても「LINQ」を使うと実装が簡単になることを確認できますね。</p> 
-  <p>上の形式はリンクのSQLクエリ文法ですが、次の投稿ではメソッドタイプの「LINQ」について勉強します。</p>
+  <p style="text-align:left;"><img src="./contents/28/1794_001.png" style="width: 261px;" data-filename="001.png"><br></p> 
+  <p>上の例の結果をみればnodeの変数とnode1の変数の差異はソース上で作成するところでNodeのクラスタイプからvarタイプに変わったことだけで、プログラム上で実装する処理に関して同じです。</p> 
+  <p>つまり、varキーワードとは変数で宣言を簡単にするためのキーワードだけで、性能と処理に関してはなにも影響はありません。</p> 
+  <p><br></p> 
+  <p>それでC#のソース規約(コーディングに関する規則)に従うとローカル変数宣言はvarキーワードを使うのをお勧めします。</p> 
+  <p><br></p> 
+  <p>でも、このvarキーワードには何個か制約条件があります。</p> 
+  <p>最初の宣言する時にnullで設定はできません。</p> 
+  <p style="text-align:left;"><img src="./contents/28/1793_002.png" style="width: 493px;" data-filename="002.png"><br></p> 
+  <p>そして最初の宣言したタイプは途中でタイプ変更はできません。</p> 
+  <p style="text-align:left;"><img src="./contents/28/1787_003.png" data-filename="003.png" style="width: 591px;"><br></p> 
+  <p>そしてvarキーワードは関数のスタック領域だけ、つまりローカルだけ使うことができるしメンバー変数や関数のリターン値、パラメータは使えません。</p> 
+  <p style="text-align:left;"><img src="./contents/28/1792_004.png" data-filename="004.png" style="width: 326px;"><br></p> 
+  <p>改めてまとめると、varキーワードは最初の宣言した原始データあるいはクラスタイプで設定ができるし、次は設定を変わりません。</p> 
+  <p>なので、当然に最初宣言する時にタイプを設定するのでnullは使えないし、メンバー変数とリターンタイプ、パラメータタイプでは設定を区分することができないので使えません。</p> 
+  <p><br></p> 
+  <p>C#にはvarキーワードと似ているdynamicキーワードがあります。</p> 
+  <p>dynamicキーワードはvarキーワードと似ていますが、最初に宣言する時にデータタイプが決定することではなく、基本データタイプのObjectで設定があります。</p> 
+  <p><br></p> 
+  <p>Objectクラスに関して簡単に説明するとC#ではクラスが最小単位です。</p> 
+  <p>C#ではクラスを宣言する時に別に継承を設定しなくても、基本的にObjectクラスを継承します。つまり、最上位クラスという意味です。</p> 
+  <p>Objectに関して少し複雑なので別の投稿で説明します。</p> 
+  <p><br></p> 
+  <p>また、dynamicに戻って説明すると、我々がプログラムを作成すればデバッグのエラーによりプログラムを作成できない場合があります。</p> 
+  <pre><code class="cs" data-type="Program.cs">using System;
+
+namespace Example
+{
+  // インタフェース
+  interface INode
+  {
+  }
+  // INodeインタフェースを継承するクラス
+  class Node : INode
+  {
+    // プロパティ
+    public int Data
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    // 関数でインスタンス取得する。
+    static INode GetNode()
+    {
+      // インスタンスを生成
+      return new Node();
+    }
+    // 実行関数
+    static void Main(string[] args)
+    {
+      // 変数のタイプはINodeで設定して、関数でインスタンスを取得する。
+      INode node = GetNode();
+      // NodeクラスにDataプロパティがあるので使えそうだ。
+      node.Data = 1;
+      // NodeクラスのDataプロパティ値を取得する。
+      Console.WriteLine(node.Data);
+      
+      // 任意のキーを押してください
+      Console.WriteLine("Press any key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/28/1790_005.png" data-filename="005.png" style="width: 688px;"><br></p> 
+  <p>それで、Dataを参照できないエラーが発生します。</p> 
+  <p>理由はGetNode関数でNodeインスタンスをINodeタイプに変換して返却するし、また、変数タイプもINodeなので、INodeにはDataプロパティがないのでデバッグエラーが発生します。</p> 
+  <p>まぁ。当然なことです。そうならデータタイプをINodeからvarに変わったらDataを使いそうですが、GetNode関数でINodeに変換するので、結局同じエラーが発生します。</p> 
+  <p><br></p> 
+  <p>そうなら上みたいなコードはDataを使えないですが、dynamicキーワードを使いなら可能です。</p> 
+  <pre><code class="cs" data-type="Program.cs">using System;
+
+namespace Example
+{
+  // インタフェース
+  interface INode
+  {
+  }
+  // INodeインタフェースを継承するクラス
+  class Node : INode
+  {
+    // プロパティ
+    public int Data
+    {
+      get; set;
+    }
+  }
+  class Program
+  {
+    // 関数でインスタンスを取得する。
+    static INode GetNode()
+    {
+      // インスタンスを生成
+      return new Node();
+    }
+    // 実行関数
+    static void Main(string[] args)
+    {
+      // 変数のタイプはdynamicで設定して、関数でインスタンスを取得する。
+      dynamic node = GetNode();
+      // NodeクラスのDataを参照する。
+      node.Data = 1;
+      // NodeクラスのDataプロパティ値を取得する。
+      Console.WriteLine(node.Data);
+      
+      // 任意のキーを押してください
+      Console.WriteLine("Press any key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/28/1788_006.png" data-filename="006.png" style="width: 206px;"><br></p> 
+  <p>dynamicを使うと実行できますね。dynamicキーワードは一応debug環境ではエラーが発生しません。</p> 
+  <p>その後で実行をすると実際のHeapメモリにあるインスタンスの関数と変数を探すので実行ができることです。</p> 
+  <p><br></p> 
+  <p>このdynamicキーワードが万能みたいですが、実際にはこのdynamicはReflactionの機能と関連があるキーワードなので、普通の変数よりは少し遅くなります。</p> 
+  <p>つまり、dynamicキーワードをたくさん使うと性能が遅くなる可能性があります。</p> 
+  <p><br></p> 
+  <p>そしてエラーをdebug上で発生しないので、プログラム品実と関係があります。</p> 
+  <p>プログラムを作成する時にはエラーを分からないし、実行する途中でエラーが発生することなので、一つ一つに実行とテストで問題があるかエラーが無いかを検証するべきです。</p> 
+  <pre><code class="cs" data-type="Program.cs">using System;
+
+namespace Example
+{
+  class Program
+  {
+    // 実行関数
+    static void Main(string[] args)
+    {
+      // Programのインスタンスを生成
+      dynamic p = new Program();
+      // ProgramクラスはDataプロパティ値が存在しないが、デバッグエラーが発生しない。
+      p.Data = 1;
+      
+      // 任意のキーを押してください
+      Console.WriteLine("Press any key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/28/1791_007.png" style="width: 521px;" data-filename="007.png"><br></p> 
+  <p>debugでエラーが発生せず、実行するとエラーが発生することを確認することができます。</p> 
+  <p><br></p> 
+  <p>dynamicキーワードはvarキーワードと違い、関数の返却タイプで設定できるし、メンバー変数、パラメータを設定することができます。</p> 
+  <pre><code class="cs" data-type="Program.cs">using System;
+
+namespace Example
+{
+  class Program
+  {
+    // メンバー変数
+    private static dynamic data;
+    // 関数の返却式はdynamicタイプとパラメータのdynamicタイプ
+    public static dynamic Function(dynamic param)
+    {
+      // 返却の値はString値だが。
+      return data.ToString() + " : " + param.ToString();
+    }
+    // 実行関数
+    static void Main(string[] args)
+    {
+      // メンバー変数設定
+      Program.data = "Dynamic Example";
+      // 関数実行
+      var ret = Function("test");
+      // コンソール出力
+      Console.WriteLine(ret);
+      // 任意のキーを押してください
+      Console.WriteLine("Press any key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/28/1789_008.png" data-filename="008.png" style="width: 201px;"><br></p> 
+  <p>上の例をみればメンバー変数と関数返却値、パラメータでdynamicで使うことができます。</p> 
+  <p><br></p> 
+  <p>ここまでvarキーワードとdynamicキーワードに関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
  
 </div>
 				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/27.html" target="_blank">[C#] 26. 例外処理(try ~ catch)する方法</a></div><div class="post-category"><span>次の投稿▶</span><a href="https://www.nowonbun.com/29.html" target="_blank">[C#] LINQ(リンク)-2 (メソッド式)</a></div></div>
@@ -455,7 +381,7 @@ namespace LINQEX1
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0202">Study / C#</a>」の他投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/35.html'>[C#] Attribute(アトリビュート)</a><span>2019/07/20 02:27:23</span></li><li><a href='https://www.nowonbun.com/34.html'>[C#] Reflection(リフレクション)</a><span>2019/07/20 02:22:03</span></li><li><a href='https://www.nowonbun.com/33.html'>[C#] Objectタイプ、varタイプ(匿名タイプ)、dynamicタイプ</a><span>2019/07/18 22:50:16</span></li><li><a href='https://www.nowonbun.com/32.html'>[C#] Partial Type(クラス分割)、拡張メソッド</a><span>2019/07/18 20:22:16</span></li><li><a href='https://www.nowonbun.com/31.html'>[C#] Lamda(ラムダ)</a><span>2019/07/17 23:06:42</span></li><li><a href='https://www.nowonbun.com/30.html'>[C#] LINQ(リンク)-3 (Enumerableクラス)</a><span>2019/07/17 20:57:00</span></li><li><a href='https://www.nowonbun.com/29.html'>[C#] LINQ(リンク)-2 (メソッド式)</a><span>2019/07/16 22:40:03</span></li><li><a href='https://www.nowonbun.com/28.html'>[C#] LINQ(リンク)-1</a><span>2019/07/16 20:41:27</span></li><li><a href='https://www.nowonbun.com/27.html'>[C#] 26. 例外処理(try ~ catch)する方法</a><span>2019/07/16 00:59:34</span></li><li><a href='https://www.nowonbun.com/26.html'>[C#] 25. イベント(event)キーワードを使い方</a><span>2019/07/16 00:48:03</span></li><li><a href='https://www.nowonbun.com/25.html'>[C#] 24. ラムダ式(匿名関数)とAction、Func関数を使い方、そしてクロージャ(Closure)</a><span>2019/07/16 00:36:19</span></li><li><a href='https://www.nowonbun.com/24.html'>[C#] 23. デリゲート(delegate)</a><span>2019/07/15 02:25:26</span></li><li><a href='https://www.nowonbun.com/23.html'>[C#] 22. インデクサー(indexer)を使う方法</a><span>2019/07/13 01:06:04</span></li><li><a href='https://www.nowonbun.com/22.html'>[C#] 21. C#のプロパティ(Property)</a><span>2019/07/13 00:56:20</span></li><li><a href='https://www.nowonbun.com/21.html'>[C#] 20. オブジェクト指向プログラミング(OOP)の4つの原則(カプセル化、抽象化、継承化、多相化(ポリモーフィズム))</a><span>2019/07/12 00:17:35</span></li></ul>
+					<ul><li><a href='https://www.nowonbun.com/35.html'>[C#] Attribute(アトリビュート)</a><span>2019/07/20 02:27:23</span></li><li><a href='https://www.nowonbun.com/34.html'>[C#] Reflection(リフレクション)</a><span>2019/07/20 02:22:03</span></li><li><a href='https://www.nowonbun.com/33.html'>[C#] Objectタイプ、varタイプ(匿名タイプ)、dynamicタイプ</a><span>2019/07/18 22:50:16</span></li><li><a href='https://www.nowonbun.com/32.html'>[C#] Partial Type(クラス分割)、拡張メソッド</a><span>2019/07/18 20:22:16</span></li><li><a href='https://www.nowonbun.com/31.html'>[C#] Lamda(ラムダ)</a><span>2019/07/17 23:06:42</span></li><li><a href='https://www.nowonbun.com/30.html'>[C#] LINQ(リンク)-3 (Enumerableクラス)</a><span>2019/07/17 20:57:00</span></li><li><a href='https://www.nowonbun.com/29.html'>[C#] LINQ(リンク)-2 (メソッド式)</a><span>2019/07/16 22:40:03</span></li><li><a href='https://www.nowonbun.com/28.html'>[C#] 27. varキーワードとdynamicキーワード</a><span>2019/07/16 20:41:27</span></li><li><a href='https://www.nowonbun.com/27.html'>[C#] 26. 例外処理(try ~ catch)する方法</a><span>2019/07/16 00:59:34</span></li><li><a href='https://www.nowonbun.com/26.html'>[C#] 25. イベント(event)キーワードを使い方</a><span>2019/07/16 00:48:03</span></li><li><a href='https://www.nowonbun.com/25.html'>[C#] 24. ラムダ式(匿名関数)とAction、Func関数を使い方、そしてクロージャ(Closure)</a><span>2019/07/16 00:36:19</span></li><li><a href='https://www.nowonbun.com/24.html'>[C#] 23. デリゲート(delegate)</a><span>2019/07/15 02:25:26</span></li><li><a href='https://www.nowonbun.com/23.html'>[C#] 22. インデクサー(indexer)を使う方法</a><span>2019/07/13 01:06:04</span></li><li><a href='https://www.nowonbun.com/22.html'>[C#] 21. C#のプロパティ(Property)</a><span>2019/07/13 00:56:20</span></li><li><a href='https://www.nowonbun.com/21.html'>[C#] 20. オブジェクト指向プログラミング(OOP)の4つの原則(カプセル化、抽象化、継承化、多相化(ポリモーフィズム))</a><span>2019/07/12 00:17:35</span></li></ul>
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
