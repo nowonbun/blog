@@ -26,7 +26,7 @@ body{
 	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
 }
 </style>
-<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/40.html"},"url":"https:\/\/www.nowonbun.com\/40.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [C#] Thread(\u30b9\u30ec\u30c3\u30c9)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u4eca\u65e5\u306f\u300cthread\u300d(\u30b9\u30ec\u30c3\u30c9)\u306b\u95a2\u3057\u3066\u52c9\u5f37\u3057\u307e\u3059\u3002thread(\u30b9\u30ec\u30c3\u30c9)\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u6271\u3063\u3066\u3042\u308b\u65b9\u306a\u3089\u3001\u7279\u306b\u30a2\u30d7\u30ea\u306e\u95a2\u3057\u3066\u958b\u767a\u3057\u305f\u3053\u3068\u304c\u3042\u308b\u65b9\u306a\u3089\u30b9\u30ec\u30c3\u30c9\u306b\u3064\u3044\u3066\u4e00\u56de\u4ee5\u4e0a\u306b\u805e\u3044\u305f\u3053\u3068\u304c\u3042\u308b\u3068\u601d\u3044\u307e\u3059\u3002\u30b9\u30ec\u30c3\u30c9\u3092\u5b9a\u7fa9\u3059\u308b\u3068\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u5b9f\u884c\u3059\u308b\u6700\u5c0f\u306e\u5358\u4f4d\u3068\u3057\u3066\u4e00\u3064\u306e\u30d7\u30ed\u30bb\u30b9(\u30d7\u30ed\u30b0\u30e9\u30e0)\u306e\u4e2d\u3067\u4e00\u3064\u4ee5\u4e0a\u306e\u30b9\u30ec\u30c3\u30c9\u3092\u52d5\u304b\u3059\u3053\u3068\u304c\u3067\u304d\u307e\u3057\u3066\u4e26\u5217\u51e6\u7406\u3092\u3059\u308b\u3088\u3046\u306b\u4f5c\u6210\u3059\u308b\u8981\u7d20\u3060\u3068\u601d\u3044\u307e\u3059\u3002msdn\u30ea\u30f3\u30af - thread(\u30b9\u30ec\u30c3\u30c9)\u8aac\u660e\u304c\u96e3\u3057\u3044\u3067\u3059\u304c\u3001\u4f8b\u3092\u901a\u3063\u3066\u7d9a\u304d\u307e\u3059\u3002\u4e0a\u306e\u4f8b\u3092\u898b\u308b\u3068\u6211\u3005\u306f\u300cthreadex(\u201ctest1\u201d)\u300d\u3001\u300cthreadex(\u201ctest2\u201d)\u300d\u3001\u300cthreadex(\u201ctest3\u201d)\u300d\u306e\u9806\u306b\u5b9f\u884c\u3059\u308b\u3053\u3068\u306f\u3088\u304f\u77e5\u3063\u3066\u3044\u307e\u3059\u3002\u3067\u3082\u3001\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u4f5c\u6210\u3059\u308b\u6642\u306b\u30d1\u30d5\u30a9\u30fc\u30de\u30f3\u30b9\u3068\u305f\u3081\u306b\u3042\u308b\u3044\u306f\u4ed6\u306e\u7406\u7531\u306e\u305f\u3081\u306b\u3001\u4e0a\u306e\u30e1\u30bd\u30c3\u30c9\u3092\u540c\u6642\u306b\u5b9f\u884c\u3059\u308b\u6642\u304c\u3042\u308a\u307e\u3059\u3002\u4e0a\u306e\u30bd\u30fc\u30b9\u3092\u53c2\u7167\u3057\u3066\u7d50\u679c\u3092\u898b\u308b\u3068\u300cthreadex(\u201ctest1\u201d)\u300d\u3001\u300cthreadex(\u201ctest2\u201d)\u300d\u3001\u300cthreadex(\u201ctest3\u201d)\u300d\u3092\u9806\u3067\u547c\u3073\u51fa\u3057\u307e\u3057\u305f\u304c\u3001\u51e6\u7406\u306f\u9806\u756a\u901a\u308a\u3067\u306f\u306a\u304f\u3001\u540c\u6642\u306b\u51e6\u7406\u306b\u3059\u308b\u307f\u305f\u3044\u306b\u307f\u3048\u308b\u3053\u3068\u3001\u3059\u306a\u308f\u3061\u3001\u4e26\u5217\u306b\u51e6\u7406\u3059\u308b\u3053\u3068\u3067\u898b\u3048\u307e\u3059\u3002\u30b9\u30ec\u30c3\u30c9\u3092\u547c\u3070\u308c\u305f\u5f8c\u306b\u300cstartwatchthread\u300d\u3092\u95a2\u6570\u3092\u547c\u3070\u308c\u308b\u90e8\u5206\u304c\u3042\u308a\u307e\u3059\u3002\u30b9\u30ec\u30c3\u30c9\u51e6\u7406\u306e\u4e2d\u3067\u306f\u300cprogram\u300d\u306e\u30b3\u30f3\u30b9\u30c8\u30e9\u30af\u30bf\u3082\u4e00\u3064\u306e\u30b9\u30ec\u30c3\u30c9\u306b\u306a\u308b\u305f\u3081\u3001\u300cthreadex(\u201ctest1\u201d)\u300d\u3001\u300cthreadex(\u201ctest2\u201d)\u300d\u3001\u300cthreadex(\u201ctest3\u201d)\u300d\u3092\u30b9\u30ec\u30c3\u30c9\u4e26\u5217\u51e6\u7406\u3092\u3059\u308b\u3068\u5404\u95a2\u6570\u304c\u7d42\u308f\u308b\u524d\u306b\u300cprogram\u300d\u306e\u30b3\u30f3\u30b9\u30c8\u30e9\u30af\u30bf\u304c\u7d42\u308f\u3063\u3066\u3057\u307e\u3046\u73fe\u8c61\u306b\u306a\u308b\u306f\u305a\u3067\u3059\u3002\u305d\u306e\u305f\u3081\u3001\u300cstartwatchthread\u300d\u306e\u95a2\u6570\u306f\u5404\u30b9\u30ec\u30c3\u30c9\u304c\u7d42\u308f\u308b\u6642\u307e\u3067\u5f85\u3064\u51e6\u7406\u3001\u3059\u306a\u308f\u3061\u3001\u30e1\u30a4\u30f3\u30b9\u30ec\u30c3\u30c9\u304c\u30b5\u30d6\u30b9\u30ec\u30c3\u30c9\u3092\u5f85\u3064\u51e6\u7406\u3001\u6539\u3081\u3066\u3044\u3046\u3068\u540c\u671f\u5316\u51e6\u7406\u3092\u5b9f\u88c5\u3057\u3066\u3044\u307e\u3059\u3002\u3053\u308c\u304b\u3089\u30b9\u30ec\u30c3\u30c9\u3092\u4f7f\u3046\u3053\u3068\u3067\u30d7\u30ed\u30b0\u30e9\u30e0\u306e\u30d1\u30d5\u30a9\u30fc\u30de\u30f3\u30b9\u304c\u3069\u306e\u304f\u3089\u3044\u306b\u6539\u5584\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u308b\u304b\u3092\u78ba\u8a8d\u3057\u307e\u3057\u3087\u3046\u3002\u4e0a\u306e\u30bd\u30fc\u30b9\u3092\u898b\u308b\u3068\u30b9\u30ec\u30c3\u30c9\u3092\u4f7f\u308f\u306a\u3044\u51e6\u7406\u6642\u9593(\u59cb\u3081\u306e\u4f8b)\u3068\u30b9\u30ec\u30c3\u30c9\u3092\u4f7f\u3063\u305f\u51e6\u7406\u6642\u9593(\u4e8c\u3064\u76ee\u306e\u4f8b)\u3092\u6bd4\u8f03\u3057\u3066\u307f\u308b\u3068\u7d043\u500d\u306b\u65e9\u304f\u306a\u308b\u3053\u3068\u306e\u7d50\u679c\u304c\u51fa\u307e\u3059\u3002\u30b9\u30ec\u30c3\u30c9\u3092\u4f7f\u3046\u3068\u5fc5\u305a\u30d1\u30d5\u30a9\u30fc\u30de\u30f3\u30b9\u6539\u5584\u306b\u306a\u3063\u3066\u51e6\u7406\u901f\u5ea6\u304c\u30a2\u30c3\u30d7\u3059\u308b\u3053\u3068\u3067\u306f\u306a\u3044\u3051\u308c\u3069\u3082\u3001\u4e0a\u306e\u4f8b\u306fio\u307f\u305f\u3044\u306b\u51e6\u7406\u30d1\u30d5\u30a9\u30fc\u30de\u30f3\u30b9\u3068\u95a2\u4fc2\u304c\u3042\u308b\u8981\u7d20\u306f","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2019-07-24T00:57:35.000+09:00","dateModified":"2020-01-17T07:35:16.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/40.html"},"url":"https:\/\/www.nowonbun.com\/40.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [C#] 39. lock\u30ad\u30fc\u30ef\u30fc\u30c9\u3068deadlock(\u30c7\u30c3\u30c9\u30ed\u30c3\u30af)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fc#\u306elock\u30ad\u30fc\u30ef\u30fc\u30c9\u3068deadlock(\u30c7\u30c3\u30c9\u30ed\u30c3\u30af)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u4ee5\u524d\u306e\u6295\u7a3f\u3067\u30b9\u30ec\u30c3\u30c9\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u307e\u3057\u305f\u3002link - [c#] 37. \u30b9\u30ec\u30c3\u30c9(thread)\u3092\u4f7f\u3044\u65b9\u3001thread.sleep\u95a2\u6570\u3092\u4f7f\u3044\u65b9\u30b9\u30ec\u30c3\u30c9\u3068\u306f\u30d7\u30ed\u30bb\u30b9\u306e\u4e2d\u3067\u540c\u6642\u306b\u3044\u308d\u3093\u306a\u51e6\u7406\u3092\u5b9f\u884c\u3059\u308b\u305f\u3081\u306e\u4e26\u5217\u51e6\u7406\u3068\u3044\u3046\u3053\u3068\u306b\u8aac\u660e\u3057\u307e\u3057\u305f\u3002\u305d\u308c\u306a\u3089\u3053\u306e\u4e26\u5217\u51e6\u7406\u3092\u51e6\u7406\u3059\u308b\u6642\u306b\u3001\u4e00\u3064\u306e\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3084\u5909\u6570\u306b\u5024\u3092\u51e6\u7406\u3059\u308b\u3068\u3069\u306e\u3088\u3046\u306b\u306a\u308b\u304b\u306a\uff1f\u4e0a\u306e\u7d50\u679c\u3092\u307f\u308b\u30680\u304b\u308910\u307e\u3067\u8db3\u3059\u30b9\u30ec\u30c3\u30c9\u309210\u56de\u306b\u5b9f\u884c\u3057\u307e\u3057\u305f\u3002\u306a\u306e\u3067\u30010\u304b\u308910\u307e\u3067\u8db3\u3059\u306855\u3060\u3057\u300110\u56de\u306b\u5b9f\u884c\u3057\u305f\u306e\u3067\u4e88\u60f3\u3059\u308b\u7d50\u679c\u306e\u5024\u306f550\u304c\u51fa\u529b\u3059\u308b\u3053\u3068\u304c\u6b63\u5e38\u3067\u3059\u3002\u3067\u3082\u7d50\u679c\u306f550\u3067\u306f\u306a\u304f481\u3067\u3059\u306d\u3002\u671b\u3093\u3060\u7d50\u679c\u304c\u51fa\u307e\u305b\u3093\u3067\u3057\u305f\u3002\u7406\u7531\u306fsum\u306b\u5024\u3092\u8db3\u3059\u6642\u3001sum\u306e\u5024\u304c0\u306e\u5834\u5408\u3001\u59cb\u3081\u306e\u30b9\u30ec\u30c3\u30c9\u30671\u3092\u8db3\u3057\u30661\u306b\u306a\u308b\u3057\u3001\u4e8c\u3064\u76ee\u306e\u30b9\u30ec\u30c3\u30c9\u3067\u8db3\u3059\u6642\u306b\u30011\u3092\u8db3\u3057\u30662\u304c\u306a\u308b\u3068\u4e88\u60f3\u3057\u307e\u3059\u3002\u3067\u3082\u3001thread\u3068\u3044\u3046\u306e\u306f\u4e26\u5217\u51e6\u7406\u306a\u306e\u3067\u3001\u59cb\u3081\u306e\u30b9\u30ec\u30c3\u30c9\u30670\u304b\u30891\u3092\u8db3\u3059\u6642\u3001\u4e8c\u3064\u76ee\u306e\u30b9\u30ec\u30c3\u30c9\u30671\u304b\u30892\u306b\u306a\u308b\u3053\u3068\u304c\u78ba\u304b\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002\u3064\u307e\u308a\u3001\u59cb\u3081\u304b\u30890\u304b\u30891\u3092\u8db3\u3059\u6642\u3001\u4e8c\u3064\u76ee\u306e\u30b9\u30ec\u30c3\u30c9\u30671\u3092\u8db3\u3059\u6642\u3001\u307e\u3060sum\u306e\u5024\u304c\u59cb\u3081\u306e\u30b9\u30ec\u30c3\u30c9\u30671\u306b\u306a\u308b\u524d\u306a\u306e\u3067\u3001sum\u306e\u5024\u304c0\u306e\u53ef\u80fd\u6027\u304c\u3042\u308a\u307e\u3059\u3002\u6539\u3081\u3066\u8aac\u660e\u3059\u308b\u3068\u3001\u59cb\u3081\u30b9\u30ec\u30c3\u30c9\u3001\u4e8c\u3064\u76ee\u306e\u30b9\u30ec\u30c3\u30c9\u30670\u304b\u30891\u3092\u8db3\u3059\u3053\u3068\u306b\u306a\u308a\u307e\u3059\u3002\u305d\u306e\u3088\u3046\u306b\u91cd\u306a\u308b\u51e6\u7406\u304c\u591a\u304f\u306a\u308b\u3068sum\u306e\u5024\u304c550\u307e\u3067\u5c4a\u304b\u306a\u3044\u3053\u3068\u306b\u306a\u308a\u307e\u3059\u3002\u30b9\u30ec\u30c3\u30c9\u306f\u5c11\u3057\u65e9\u3044\u51e6\u7406\u306e\u305f\u3081\u3001\u4e26\u5217\u51e6\u7406\u3092\u3057\u307e\u3059\u304c\u3001\u4e88\u60f3\u3059\u308b\u5024\u304c\u51fa\u306a\u3044\u306a\u3089\u610f\u5473\u304c\u3042\u308a\u307e\u305b\u3093\u3002\u3057\u304b\u3057\u3001\u30b9\u30ec\u30c3\u30c9\u3001\u3053\u306e\u3059\u3079\u3066\u306e\u4e26\u5217\u51e6\u7406\u3067sum\u306b\u8db3\u3059\u51e6\u7406\u3060\u3051\u30b9\u30ec\u30c3\u30c9\u3092\u3059\u3079\u3066\u540c\u671f\u5316\u3057\u305f\u3089\u3053\u306e\u554f\u984c\u304c\u89e3\u6c7a\u306b\u306a\u308a\u307e\u3059\u3002\u30af\u30e9\u30b9\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u306block\u3092\u639b\u3051\u305f\u3089lock\u639b\u3051\u305f\u9818\u57df\u3092\u4f7f\u3063\u305f\u3089\u4ed6\u306elock\u3092\u639b\u3051\u308b\u3068\u3053\u308d\u3067lock\u3092\u901a\u904e\u3059\u308b\u3053\u3068\u3092\u5f85\u3064\u3053\u3068\u306b\u306a\u308a\u307e\u3059\u3002\u3064\u307e\u308a\u3001\u4e26\u5217\u51e6\u7406\u306e\u59cb\u3081\u306e\u30b9\u30ec\u30c3\u30c9\u3067lock(node)\u3092\u901a\u904e\u3059\u308b\u3053\u3068\u306b\u306a\u308b\u3068\u4e8c\u3064\u76ee\u306e\u30b9\u30ec\u30c3\u30c9\u3067\u306e\u59cb\u3081\u306e\u30b9\u30ec\u30c3\u30c9\u306elock(node)\u306e\u30b9\u30bf\u30c3\u30af\u9818\u57df\u304c\u7d42\u4e86\u3059\u308b\u307e\u3067\u5f85\u6a5f\u3059\u308b\u3053\u3068\u306b\u306a\u308a\u307e\u3059\u3002\u305d\u3046\u306a\u3089\u59cb\u3081\u306e\u30b9\u30ec\u30c3\u30c9\u306elock(node)\u3067\u30b9\u30bf\u30c3\u30af\u304c\u7d42\u4e86\u306b\u306a\u308b\u3068\u4e8c\u3064\u76ee\u306e\u30b9\u30ec\u30c3\u30c9\u306elock(node)\u304c\u901a\u904e\u3057\u3066\u4e09\u3064\u76ee\u306e\u30b9\u30ec\u30c3\u30c9\u306elock(node)\u304c\u5f85\u6a5f\u3059\u308b\u3053\u3068\u306b\u306a\u308a\u307e\u3059\u3002\u305d\u306e\u9806\u756a\u3068\u304a\u308a\u306block(node)\u9818\u57df\u3092\u901a\u904e\u3059\u308b\u3053\u3068\u306b\u306a\u308b\u306e\u3067","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2019-07-24T00:57:35.000+09:00","dateModified":"2021-09-28T19:17:28.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
 <meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -36,17 +36,17 @@ body{
 <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
 <meta name="keywords" content="Study / C#" />
-<meta name="description" content="<![CDATA[こんにちは。明月です。今日は「thread」(スレッド)に関して勉強します。thread(スレッド)プログラムを扱ってある方なら、特にアプリの関して開発したことがある方ならスレッドについて一回以上に聞いたことがあると思います。スレッドを定義するとプログラムを実行する最小の単位として一つのプロセス(プログラム)の中で一つ以上のスレッドを動かすことができまして並列処理をするように作成する要素だと思います。msdnリンク - thread(スレッド)説明が難しいですが、例を通って続きます。上の例を見ると我々は「threadex(“test1”)」、「threadex(“test2”)」、「threadex(“test3”)」の順に実行することはよく知っています。でも、プログラムを作成する時にパフォーマンスとためにあるいは他の理由のために、上のメソッドを同時に実行する時があります。上のソースを参照して結果を見ると「threadex(“test1”)」、「threadex(“test2”)」、「threadex(“test3”)」を順で呼び出しましたが、処理は順番通りではなく、同時に処理にするみたいにみえること、すなわち、並列に処理することで見えます。スレッドを呼ばれた後に「startwatchthread」を関数を呼ばれる部分があります。スレッド処理の中では「program」のコンストラクタも一つのスレッドになるため、「threadex(“test1”)」、「threadex(“test2”)」、「threadex(“test3”)」をスレッド並列処理をすると各関数が終わる前に「program」のコンストラクタが終わってしまう現象になるはずです。そのため、「startwatchthread」の関数は各スレッドが終わる時まで待つ処理、すなわち、メインスレッドがサブスレッドを待つ処理、改めていうと同期化処理を実装しています。これからスレッドを使うことでプログラムのパフォーマンスがどのくらいに改善することができるかを確認しましょう。上のソースを見るとスレッドを使わない処理時間(始めの例)とスレッドを使った処理時間(二つ目の例)を比較してみると約3倍に早くなることの結果が出ます。スレッドを使うと必ずパフォーマンス改善になって処理速度がアップすることではないけれども、上の例はioみたいに処理パフォーマンスと関係がある要素は]]>" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はc#のlockキーワードとdeadlock(デッドロック)に関する説明です。以前の投稿でスレッドに関して説明しました。link - [c#] 37. スレッド(thread)を使い方、thread.sleep関数を使い方スレッドとはプロセスの中で同時にいろんな処理を実行するための並列処理ということに説明しました。それならこの並列処理を処理する時に、一つのインスタンスや変数に値を処理するとどのようになるかな？上の結果をみると0から10まで足すスレッドを10回に実行しました。なので、0から10まで足すと55だし、10回に実行したので予想する結果の値は550が出力することが正常です。でも結果は550ではなく481ですね。望んだ結果が出ませんでした。理由はsumに値を足す時、sumの値が0の場合、始めのスレッドで1を足して1になるし、二つ目のスレッドで足す時に、1を足して2がなると予想します。でも、threadというのは並列処理なので、始めのスレッドで0から1を足す時、二つ目のスレッドで1から2になることが確かではありません。つまり、始めから0から1を足す時、二つ目のスレッドで1を足す時、まだsumの値が始めのスレッドで1になる前なので、sumの値が0の可能性があります。改めて説明すると、始めスレッド、二つ目のスレッドで0から1を足すことになります。そのように重なる処理が多くなるとsumの値が550まで届かないことになります。スレッドは少し早い処理のため、並列処理をしますが、予想する値が出ないなら意味がありません。しかし、スレッド、このすべての並列処理でsumに足す処理だけスレッドをすべて同期化したらこの問題が解決になります。クラスインスタンスにlockを掛けたらlock掛けた領域を使ったら他のlockを掛けるところでlockを通過することを待つことになります。つまり、並列処理の始めのスレッドでlock(node)を通過することになると二つ目のスレッドでの始めのスレッドのlock(node)のスタック領域が終了するまで待機することになります。そうなら始めのスレッドのlock(node)でスタックが終了になると二つ目のスレッドのlock(node)が通過して三つ目のスレッドのlock(node)が待機することになります。その順番とおりにlock(node)領域を通過することになるので]]>" />
 <meta name="author" content="nowonbun@gmail.com" />
 <meta name="distribution" content="nowonbun@gmail.com" />
 <meta name="copyright" content="nowonbun@gmail.com" />
-<meta name="title" content="明月の開発ストーリ :: [C#] Thread(スレッド)" />
+<meta name="title" content="明月の開発ストーリ :: [C#] 39. lockキーワードとdeadlock(デッドロック)" />
 <link rel="canonical" href="https://www.nowonbun.com/40.html" />
 <meta name="robots" content="ALL" />
 
 <meta property="og:type" content="website" />
-<meta property="og:title" content="明月の開発ストーリ :: [C#] Thread(スレッド)" />
-<meta property="og:description" content="<![CDATA[こんにちは。明月です。今日は「thread」(スレッド)に関して勉強します。thread(スレッド)プログラムを扱ってある方なら、特にアプリの関して開発したことがある方ならスレッドについて一回以上に聞いたことがあると思います。スレッドを定義するとプログラムを実行する最小の単位として一つのプロセス(プログラム)の中で一つ以上のスレッドを動かすことができまして並列処理をするように作成する要素だと思います。msdnリンク - thread(スレッド)説明が難しいですが、例を通って続きます。上の例を見ると我々は「threadex(“test1”)」、「threadex(“test2”)」、「threadex(“test3”)」の順に実行することはよく知っています。でも、プログラムを作成する時にパフォーマンスとためにあるいは他の理由のために、上のメソッドを同時に実行する時があります。上のソースを参照して結果を見ると「threadex(“test1”)」、「threadex(“test2”)」、「threadex(“test3”)」を順で呼び出しましたが、処理は順番通りではなく、同時に処理にするみたいにみえること、すなわち、並列に処理することで見えます。スレッドを呼ばれた後に「startwatchthread」を関数を呼ばれる部分があります。スレッド処理の中では「program」のコンストラクタも一つのスレッドになるため、「threadex(“test1”)」、「threadex(“test2”)」、「threadex(“test3”)」をスレッド並列処理をすると各関数が終わる前に「program」のコンストラクタが終わってしまう現象になるはずです。そのため、「startwatchthread」の関数は各スレッドが終わる時まで待つ処理、すなわち、メインスレッドがサブスレッドを待つ処理、改めていうと同期化処理を実装しています。これからスレッドを使うことでプログラムのパフォーマンスがどのくらいに改善することができるかを確認しましょう。上のソースを見るとスレッドを使わない処理時間(始めの例)とスレッドを使った処理時間(二つ目の例)を比較してみると約3倍に早くなることの結果が出ます。スレッドを使うと必ずパフォーマンス改善になって処理速度がアップすることではないけれども、上の例はioみたいに処理パフォーマンスと関係がある要素は]]>" />
+<meta property="og:title" content="明月の開発ストーリ :: [C#] 39. lockキーワードとdeadlock(デッドロック)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はc#のlockキーワードとdeadlock(デッドロック)に関する説明です。以前の投稿でスレッドに関して説明しました。link - [c#] 37. スレッド(thread)を使い方、thread.sleep関数を使い方スレッドとはプロセスの中で同時にいろんな処理を実行するための並列処理ということに説明しました。それならこの並列処理を処理する時に、一つのインスタンスや変数に値を処理するとどのようになるかな？上の結果をみると0から10まで足すスレッドを10回に実行しました。なので、0から10まで足すと55だし、10回に実行したので予想する結果の値は550が出力することが正常です。でも結果は550ではなく481ですね。望んだ結果が出ませんでした。理由はsumに値を足す時、sumの値が0の場合、始めのスレッドで1を足して1になるし、二つ目のスレッドで足す時に、1を足して2がなると予想します。でも、threadというのは並列処理なので、始めのスレッドで0から1を足す時、二つ目のスレッドで1から2になることが確かではありません。つまり、始めから0から1を足す時、二つ目のスレッドで1を足す時、まだsumの値が始めのスレッドで1になる前なので、sumの値が0の可能性があります。改めて説明すると、始めスレッド、二つ目のスレッドで0から1を足すことになります。そのように重なる処理が多くなるとsumの値が550まで届かないことになります。スレッドは少し早い処理のため、並列処理をしますが、予想する値が出ないなら意味がありません。しかし、スレッド、このすべての並列処理でsumに足す処理だけスレッドをすべて同期化したらこの問題が解決になります。クラスインスタンスにlockを掛けたらlock掛けた領域を使ったら他のlockを掛けるところでlockを通過することを待つことになります。つまり、並列処理の始めのスレッドでlock(node)を通過することになると二つ目のスレッドでの始めのスレッドのlock(node)のスタック領域が終了するまで待機することになります。そうなら始めのスレッドのlock(node)でスタックが終了になると二つ目のスレッドのlock(node)が通過して三つ目のスレッドのlock(node)が待機することになります。その順番とおりにlock(node)領域を通過することになるので]]>" />
 <meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta property="og:url" content="https://www.nowonbun.com/40.html" />
 <meta property="og:site_name" content="明月の開発ストーリ" />
@@ -54,12 +54,12 @@ body{
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:site" content="@nowonbun" />
 <meta name="twitter:creator" content="@nowonbun" />
-<meta name="twitter:title" content="明月の開発ストーリ :: [C#] Thread(スレッド)" />
-<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。今日は「thread」(スレッド)に関して勉強します。thread(スレッド)プログラムを扱ってある方なら、特にアプリの関して開発したことがある方ならスレッドについて一回以上に聞いたことがあると思います。スレッドを定義するとプログラムを実行する最小の単位として一つのプロセス(プログラム)の中で一つ以上のスレッドを動かすことができまして並列処理をするように作成する要素だと思います。msdnリンク - thread(スレッド)説明が難しいですが、例を通って続きます。上の例を見ると我々は「threadex(“test1”)」、「threadex(“test2”)」、「threadex(“test3”)」の順に実行することはよく知っています。でも、プログラムを作成する時にパフォーマンスとためにあるいは他の理由のために、上のメソッドを同時に実行する時があります。上のソースを参照して結果を見ると「threadex(“test1”)」、「threadex(“test2”)」、「threadex(“test3”)」を順で呼び出しましたが、処理は順番通りではなく、同時に処理にするみたいにみえること、すなわち、並列に処理することで見えます。スレッドを呼ばれた後に「startwatchthread」を関数を呼ばれる部分があります。スレッド処理の中では「program」のコンストラクタも一つのスレッドになるため、「threadex(“test1”)」、「threadex(“test2”)」、「threadex(“test3”)」をスレッド並列処理をすると各関数が終わる前に「program」のコンストラクタが終わってしまう現象になるはずです。そのため、「startwatchthread」の関数は各スレッドが終わる時まで待つ処理、すなわち、メインスレッドがサブスレッドを待つ処理、改めていうと同期化処理を実装しています。これからスレッドを使うことでプログラムのパフォーマンスがどのくらいに改善することができるかを確認しましょう。上のソースを見るとスレッドを使わない処理時間(始めの例)とスレッドを使った処理時間(二つ目の例)を比較してみると約3倍に早くなることの結果が出ます。スレッドを使うと必ずパフォーマンス改善になって処理速度がアップすることではないけれども、上の例はioみたいに処理パフォーマンスと関係がある要素は]]>" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [C#] 39. lockキーワードとdeadlock(デッドロック)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はc#のlockキーワードとdeadlock(デッドロック)に関する説明です。以前の投稿でスレッドに関して説明しました。link - [c#] 37. スレッド(thread)を使い方、thread.sleep関数を使い方スレッドとはプロセスの中で同時にいろんな処理を実行するための並列処理ということに説明しました。それならこの並列処理を処理する時に、一つのインスタンスや変数に値を処理するとどのようになるかな？上の結果をみると0から10まで足すスレッドを10回に実行しました。なので、0から10まで足すと55だし、10回に実行したので予想する結果の値は550が出力することが正常です。でも結果は550ではなく481ですね。望んだ結果が出ませんでした。理由はsumに値を足す時、sumの値が0の場合、始めのスレッドで1を足して1になるし、二つ目のスレッドで足す時に、1を足して2がなると予想します。でも、threadというのは並列処理なので、始めのスレッドで0から1を足す時、二つ目のスレッドで1から2になることが確かではありません。つまり、始めから0から1を足す時、二つ目のスレッドで1を足す時、まだsumの値が始めのスレッドで1になる前なので、sumの値が0の可能性があります。改めて説明すると、始めスレッド、二つ目のスレッドで0から1を足すことになります。そのように重なる処理が多くなるとsumの値が550まで届かないことになります。スレッドは少し早い処理のため、並列処理をしますが、予想する値が出ないなら意味がありません。しかし、スレッド、このすべての並列処理でsumに足す処理だけスレッドをすべて同期化したらこの問題が解決になります。クラスインスタンスにlockを掛けたらlock掛けた領域を使ったら他のlockを掛けるところでlockを通過することを待つことになります。つまり、並列処理の始めのスレッドでlock(node)を通過することになると二つ目のスレッドでの始めのスレッドのlock(node)のスタック領域が終了するまで待機することになります。そうなら始めのスレッドのlock(node)でスタックが終了になると二つ目のスレッドのlock(node)が通過して三つ目のスレッドのlock(node)が待機することになります。その順番とおりにlock(node)領域を通過することになるので]]>" />
 <meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
 <meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
 
-<title>明月の開発ストーリ :: [C#] Thread(スレッド)</title>
+<title>明月の開発ストーリ :: [C#] 39. lockキーワードとdeadlock(デッドロック)</title>
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
 <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
@@ -123,11 +123,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/40.html">
 			<div class="titleArea">
 				<div class="title" id="article_title">
-					<h1 id="titleTxt" property="headline">[C#] Thread(スレッド)</h1>
+					<h1 id="titleTxt" property="headline">[C#] 39. lockキーワードとdeadlock(デッドロック)</h1>
 				</div>
 				<hr class="titileHr">
 				<div class="categoryArea">
-					<a href="./?category=0202">Study / C#</a>    作成日付 : <span property="datePublished">2019/07/24 00:57:35</span>   修正日付 : <span property="dateModified">2020/01/17 07:35:16</span>
+					<a href="./?category=0202">Study / C#</a>    作成日付 : <span property="datePublished">2019/07/24 00:57:35</span>   修正日付 : <span property="dateModified">2021/09/28 19:17:28</span>
 				</div>
 			</div>
 			<div class="article">
@@ -139,590 +139,289 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
  
   <p>こんにちは。明月です。</p> 
   <p><br></p> 
-  <p>今日は「Thread」(スレッド)に関して勉強します。</p> 
+  <p>この投稿はC#のlockキーワードとdeadlock(デッドロック)に関する説明です。</p> 
   <p><br></p> 
-  <h2><b><span>Thread(スレッド)</span></b></h2> 
-  <p>プログラムを扱ってある方なら、特にアプリの関して開発したことがある方ならスレッドについて一回以上に聞いたことがあると思います。</p> 
-  <p>スレッドを定義するとプログラムを実行する最小の単位として一つのプロセス(プログラム)の中で一つ以上のスレッドを動かすことができまして並列処理をするように作成する要素だと思います。</p> 
-  <p>MSDNリンク - <a href="//msdn.microsoft.com/ko-kr/library/system.threading.thread(v=vs.110).aspx " target="_blank">Thread(スレッド)</a></p> 
+  <p>以前の投稿でスレッドに関して説明しました。</p> 
+  <p>link - <a href="https://www.nowonbun.com/38.html" target="_blank">[C#] 37. スレッド(Thread)を使い方、Thread.Sleep関数を使い方</a></p> 
   <p><br></p> 
-  <p>説明が難しいですが、例を通って続きます。</p> 
-  <pre><code class="cs" data-type="">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+  <p>スレッドとはプロセスの中で同時にいろんな処理を実行するための並列処理ということに説明しました。それならこの並列処理を処理する時に、一つのインスタンスや変数に値を処理するとどのようになるかな？</p> 
+  <pre><code class="cs" data-type="Program.cs">using System;
 using System.Threading;
+using System.Collections.Generic;
 
-namespace ThreadExample
+namespace Example
 {
   class Program
   {
-    /// &lt;summary&gt;
-    /// コンストラクタ
-    /// &lt;/summary&gt;
-    public Program()
+    // 実行関数
+    static void Main(string[] args)
     {
-      //Test1 - 0 から Test1 - 100まで出力する。
-      ThreadEx("Test1");
-      //Test2 - 0 から Test2 - 100まで出力する。
-      ThreadEx("Test2");
-      //Test3 - 0 から Test3 - 100まで出力する。
-      ThreadEx("Test3");
-    }
-    /// &lt;summary&gt;
-    /// コンストラクタから呼ばれるメソッド
-    /// &lt;/summary&gt;
-    /// &lt;param name="name"&gt;&lt;/param&gt;
-    public void ThreadEx(String name)
-    {
-      //iが100までコンソールに出力する。
-      for (int i = 0; i &lt; 100; i++)
+      // 総合に関する変数
+      int sum = 0;
+      // ThreadPoolでJoinのためのリスト
+      var list = new List&lt;EventWaitHandle&gt;();
+      // ラムダ関数
+      var action = new Action(() =&gt;
       {
-        Console.WriteLine(String.Format("{0} - {1}", name, i));
-        Thread.Sleep(10);
-      }
-    }
-    /// &lt;summary&gt;
-    /// メインメソッド
-    /// &lt;/summary&gt;
-    /// &lt;param name="args"&gt;&lt;/param&gt;
-    static void Main(String[] args)
-    {
-      new Program();
-
-      Console.WriteLine("Press Any Key...");
-      Console.ReadLine();
-    }
-  }
-}
-</code></pre> 
-  <p>上の例を見ると我々は「ThreadEx(“Test1”)」、「ThreadEx(“Test2”)」、「ThreadEx(“Test3”)」の順に実行することはよく知っています。</p> 
-  <p style="text-align:left;"><img src="./contents/40/161_001.png" data-filename="001.png" style="width: 677px;"></p> 
-  <p>でも、プログラムを作成する時にパフォーマンスとためにあるいは他の理由のために、上のメソッドを同時に実行する時があります。</p> 
-  <pre><code class="cs" data-type="">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-
-namespace ThreadExample
-{
-  class Program
-  {
-    //メインのプロセススレッドと別のスレッドに動くので終了する前に同期化する必要があります。
-    //そのため、リストの形式で管理する。
-    LinkedList&lt;Thread&gt; threadList = new LinkedList&lt;Thread&gt;();
-    /// &lt;summary&gt;
-    /// コンストラクタ
-    /// &lt;/summary&gt;
-    public Program()
-    {
-      //スレッド追加
-      AddThread(ThreadEx, "Test1");
-      AddThread(ThreadEx, "Test2");
-      AddThread(ThreadEx, "Test3");
-
-      //メインスレッドと同期化
-      StartWatchThread();
-    }
-    /// &lt;summary&gt;
-    /// スレッド追加メソッド
-    /// &lt;/summary&gt;
-    /// &lt;param name="method"&gt;デリゲート名&lt;/param&gt;
-    /// &lt;param name="data"&gt;パラメタ値&lt;/param&gt;
-    private void AddThread(Action&lt;String&gt; method, String data)
-    {
-      //スレッドを割り当て
-      Thread _thread = new Thread(() =&gt; { method(data); });
-      //スレッドを開始
-      _thread.Start();
-      //リストにスレッド追加
-      threadList.AddFirst(_thread);
-    }
-    /// &lt;summary&gt;
-    /// スレッド同期メソッド
-    /// &lt;/summary&gt;
-    private void StartWatchThread()
-    {
-      //threadListにあるスレッドが終わらないと無限ループになります。
-      while (threadList.Count &gt; 0)
-      {
-        if (threadList.First.Value.IsAlive)
+        // EventWaitHandleインスタンス生成
+        var wait = new EventWaitHandle(false, EventResetMode.ManualReset);
+        // リストにインスタンスを追加
+        list.Add(wait);
+        // スレッドプールにスレッド追加
+        ThreadPool.QueueUserWorkItem((cb) =&gt;
         {
-          Thread.Sleep(1000);
-        }
-        else
-        {
-          //スレッドが終わるとリストから削除
-          threadList.RemoveFirst();
-        }
-      }
-      //threadListにスレッドがなくなると終わり
-    }
-    /// &lt;summary&gt;
-    /// 処理メソッド
-    /// &lt;/summary&gt;
-    /// &lt;param name="name"&gt;&lt;/param&gt;
-    public void ThreadEx(String name)
-    {
-      //iが100までコンソールに出力する。
-      for (int i = 0; i &lt; 100; i++)
-      {
-        Console.WriteLine(String.Format("{0} - {1}", name, i));
-        Thread.Sleep(10);
-      }
-    }
-    /// &lt;summary&gt;
-    /// メインメソッド
-    /// &lt;/summary&gt;
-    /// &lt;param name="args"&gt;&lt;/param&gt;
-    static void Main(String[] args)
-    {
-      new Program();
-
-      Console.WriteLine("Press Any Key...");
-      Console.ReadLine();
-    }
-  }
-}
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/40/159_002.png" data-filename="002.png" style="width: 600px;"></p> 
-  <p>上のソースを参照して結果を見ると「ThreadEx(“Test1”)」、「ThreadEx(“Test2”)」、「ThreadEx(“Test3”)」を順で呼び出しましたが、処理は順番通りではなく、同時に処理にするみたいにみえること、すなわち、並列に処理することで見えます。</p> 
-  <p>スレッドを呼ばれた後に「StartWatchThread」を関数を呼ばれる部分があります。スレッド処理の中では「Program」のコンストラクタも一つのスレッドになるため、「ThreadEx(“Test1”)」、「ThreadEx(“Test2”)」、「ThreadEx(“Test3”)」をスレッド並列処理をすると各関数が終わる前に「Program」のコンストラクタが終わってしまう現象になるはずです。</p> 
-  <p>そのため、「StartWatchThread」の関数は各スレッドが終わる時まで待つ処理、すなわち、メインスレッドがサブスレッドを待つ処理、改めていうと同期化処理を実装しています。</p> 
-  <p><br></p> 
-  <p>これからスレッドを使うことでプログラムのパフォーマンスがどのくらいに改善することができるかを確認しましょう。</p> 
-  <pre><code class="cs" data-type="">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-
-namespace ThreadExample
-{
-  class Program
-  {
-    //メインのプロセススレッドと別のスレッドに動くので終了する前に同期化する必要があります。
-    //そのため、リストの形式で管理する。
-    LinkedList&lt;Thread&gt; threadList = new LinkedList&lt;Thread&gt;();
-    /// &lt;summary&gt;
-    /// コンストラクタ
-    /// &lt;/summary&gt;
-    public Program()
-    {
-      //開始する前のtick
-      long tick = DateTime.Now.Ticks;
-      //単一のメインスレッドで順番通りに呼ばれる時
-      ThreadEx("Test1");
-      ThreadEx("Test2");
-      ThreadEx("Test3");
-      long t1 = DateTime.Now.Ticks - tick;
-
-      //開始する前のtick
-      tick = DateTime.Now.Ticks;
-      //スレッド追加
-      AddThread(ThreadEx, "Test1");
-      AddThread(ThreadEx, "Test2");
-      AddThread(ThreadEx, "Test3");
-
-      //メインスレッドと同期化
-      StartWatchThread();
-      long t2 = DateTime.Now.Ticks - tick;
-
-      //単一のスレッド時間(Ticks)
-      Console.WriteLine(t1);
-      //各スレッドで並列したときの時間(Ticks)
-
-      Console.WriteLine(t2);
-    }
-    /// &lt;summary&gt;
-    /// スレッド追加メソッド
-    /// &lt;/summary&gt;
-    /// &lt;param name="method"&gt;デリゲート名&lt;/param&gt;
-    /// &lt;param name="data"&gt;パラメタ値&lt;/param&gt;
-    private void AddThread(Action&lt;String&gt; method, String data)
-    {
-      //スレッドを割り当て
-      Thread _thread = new Thread(() =&gt; { method(data); });
-      //スレッドを開始
-      _thread.Start();
-      //リストにスレッド追加
-      threadList.AddFirst(_thread);
-    }
-    /// &lt;summary&gt;
-    /// スレッド同期メソッド
-    /// &lt;/summary&gt;
-    private void StartWatchThread()
-    {
-      //threadListにあるスレッドが終わらないと無限ループになります。
-      while (threadList.Count &gt; 0)
-      {
-        if (threadList.First.Value.IsAlive)
-        {
-          Thread.Sleep(1000);
-        }
-        else
-        {
-          //スレッドが終わるとリストから削除
-          threadList.RemoveFirst();
-        }
-      }
-      //threadListにスレッドがなくなると終わり
-    }
-    /// &lt;summary&gt;
-    /// 処理メソッド
-    /// &lt;/summary&gt;
-    /// &lt;param name="name"&gt;&lt;/param&gt;
-    public void ThreadEx(String name)
-    {
-      //iが100までコンソールに出力する。
-      for (int i = 0; i &lt; 100; i++)
-      {
-        Console.WriteLine(String.Format("{0} - {1}", name, i));
-        Thread.Sleep(10);
-      }
-    }
-    /// &lt;summary&gt;
-    /// メインメソッド
-    /// &lt;/summary&gt;
-    /// &lt;param name="args"&gt;&lt;/param&gt;
-    static void Main(String[] args)
-    {
-      new Program();
-
-      Console.WriteLine("Press Any Key...");
-      Console.ReadLine();
-    }
-  }
-}
-</code></pre> 
-  <p style="text-align:left;"><img src="./contents/40/158_003.png" data-filename="003.png" style="width: 677px;"></p> 
-  <p>上のソースを見るとスレッドを使わない処理時間(始めの例)とスレッドを使った処理時間(二つ目の例)を比較してみると約3倍に早くなることの結果が出ます。</p> 
-  <p>スレッドを使うと必ずパフォーマンス改善になって処理速度がアップすることではないけれども、上の例はIOみたいに処理パフォーマンスと関係がある要素は明確に処理時間の差が見えます。</p> 
-  <p><br></p> 
-  <p>上の例をみるとスレッドを使うことがそんなに難しくなさそうだし、簡単に使えそうですね。でも実際プロジェクトする時にスレッドを簡単につかえられないし、みんなスレッドはプログラム処理の中で一番に難しいんだと言う方がいますが、その理由は同期化のせいです。</p> 
-  <p><br></p> 
-  <h2><b><span>lock</span></b></h2> 
-  <pre><code class="cs" data-type="">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-
-namespace ThreadExample
-{
-  class Program
-  {
-    //メインのプロセススレッドと別のスレッドに動くので終了する前に同期化する必要があります。
-    //そのため、リストの形式で管理する。
-    LinkedList&lt;Thread&gt; threadList = new LinkedList&lt;Thread&gt;();
-    //スレッドのデータを合計
-    int count = 0;
-    /// &lt;summary&gt;
-    /// コンストラクタ
-    /// &lt;/summary&gt;
-    public Program()
-    {
-      //スレッド追加
-      AddThread(ThreadEx, "Test1");
-      AddThread(ThreadEx, "Test2");
-      AddThread(ThreadEx, "Test3");
-
-      StartWatchThread();
-
-      Console.WriteLine("Count - " + count);
-    }
-    /// &lt;summary&gt;
-    /// スレッド追加メソッド
-    /// &lt;/summary&gt;
-    /// &lt;param name="method"&gt;デリゲート名&lt;/param&gt;
-    /// &lt;param name="data"&gt;パラメタ値&lt;/param&gt;
-    private void AddThread(Action&lt;String&gt; method, String data)
-    {
-      //スレッドを割り当て
-      Thread _thread = new Thread(() =&gt;
-      {
-        method(data);
+          // 繰り返しの0から10まで
+          for (int i = 0; i &lt;= 10; i++)
+          {
+            // sumの値を足してsum変数に格納
+            sum += i;
+            // スレッド待機時間を1ミリ秒
+            Thread.Sleep(1);
+          }
+          // WaitHandle解除
+          wait.Set();
+        });
       });
-      //スレッドを開始
-      _thread.Start();
-      //リストにスレッド追加
-      threadList.AddFirst(_thread);
-    }
-    /// &lt;summary&gt;
-    /// スレッド同期メソッド
-    /// &lt;/summary&gt;
-    private void StartWatchThread()
-    {
-      //threadListにあるスレッドが終わらないと無限ループになります。
-      while (threadList.Count &gt; 0)
+      // 繰り返しの0から9まで
+      for (int i = 0; i &lt; 10; i++)
       {
-        if (threadList.First.Value.IsAlive)
-        {
-          Thread.Sleep(1000);
-        }
-        else
-        {
-          //スレッドが終わるとリストから削除
-          threadList.RemoveFirst();
-        }
+        // ラムダ関数実行(スレッド実行)
+        action();
       }
-      //threadListにスレッドがなくなると終わり
-    }
-    /// &lt;summary&gt;
-    /// 処理メソッド
-    /// &lt;/summary&gt;
-    /// &lt;param name="name"&gt;&lt;/param&gt;
-    public void ThreadEx(String name)
-    {
-      //iが100までコンソールに出力する。
-      for (int i = 0; i &lt; 100; i++)
-      {
-        int temp = count + i;
-        Console.WriteLine(String.Format("{0} - {1}", name, i));
-        
-        //スレッドの中で処理するたびにcount値を１ずつ増加
-        count = temp;
-      }
-    }
-    /// &lt;summary&gt;
-    /// メインメソッド
-    /// &lt;/summary&gt;
-    /// &lt;param name="args"&gt;&lt;/param&gt;
-    static void Main(String[] args)
-    {
-      new Program();
+      // listにあるEventWaitHandle関数がすべてSetが呼び出したらJoin解除
+      WaitHandle.WaitAll(list.ToArray());
+      // スレッドで足した値を出力
+      Console.WriteLine(sum);
 
-      Console.WriteLine("Press Any Key...");
+      // 任意のキーを押してください
+      Console.WriteLine("Press Any key...");
       Console.ReadLine();
     }
   }
 }
 </code></pre> 
-  <p>上の例をみるとメンバ変数に「count」を割り当て「ThreadEx」のメソッドの中で「i」の値を増加しています。それで、我々が予想するデータ値は(0 ~ 99までの合計) * 3倍になりますね。(1 ~ 100まで合計は5050(101*50) – 100 = 4950で3倍は14850)</p> 
-  <p style="text-align:left;"><img src="./contents/40/162_004.png" data-filename="004.png" style="width: 677px;"></p> 
-  <p>でも実際の結果を見ると値が「14850」ではないですね。もっと大変なことは実行するたびに値が一定値ではなく値が変わります。理由としては3つのスレッドが並列で流れているせいに発生することです。すなわち、「count」から取得値、または格納する時に3つスレッド達がお互いに影響されるためです。</p> 
-  <p>改めていうと、「ThradEx(“Test1”)」のスレッドが実行する時に「count」を取得して「temp」に格納して再格納する前に「ThradEx(“Test2”)」で取得、「ThradEx(“Test1”)」で「count」にデータを１を増加して格納しますが、「ThradEx(“Test2”)」で「count = 0」から「1」を増加したデータを上書きしたせいです。そのために、3つのスレッドに「count」値にデータを増加したいと思うと値同期化が必要です。</p> 
+  <p style="text-align:left;"><img src="./contents/40/1854_001.png" data-filename="001.png" style="width: 282px;"><br></p> 
+  <p>上の結果をみると0から10まで足すスレッドを10回に実行しました。</p> 
+  <p>なので、0から10まで足すと55だし、10回に実行したので予想する結果の値は550が出力することが正常です。</p> 
   <p><br></p> 
-  <p>そのために、3つのスレッドに「count」値にデータを増加したいと思うと値同期化が必要です。</p> 
-  <pre><code class="cs" data-type="">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+  <p>でも結果は550ではなく481ですね。望んだ結果が出ませんでした。</p> 
+  <p>理由はsumに値を足す時、sumの値が0の場合、始めのスレッドで1を足して1になるし、二つ目のスレッドで足す時に、1を足して2がなると予想します。</p> 
+  <p>でも、Threadというのは並列処理なので、始めのスレッドで0から1を足す時、二つ目のスレッドで1から2になることが確かではありません。つまり、始めから0から1を足す時、二つ目のスレッドで1を足す時、まだsumの値が始めのスレッドで1になる前なので、sumの値が0の可能性があります。</p> 
+  <p>改めて説明すると、始めスレッド、二つ目のスレッドで0から1を足すことになります。そのように重なる処理が多くなるとsumの値が550まで届かないことになります。</p> 
+  <p><br></p> 
+  <p>スレッドは少し早い処理のため、並列処理をしますが、予想する値が出ないなら意味がありません。</p> 
+  <p>しかし、スレッド、このすべての並列処理でsumに足す処理だけスレッドをすべて同期化したらこの問題が解決になります。</p> 
+  <pre><code class="cs" data-type="Program.cs">using System;
 using System.Threading;
+using System.Collections.Generic;
 
-namespace ThreadExample
+namespace Example
 {
+  // 例クラス
+  class Node
+  {
+    // Sum変数プロパティ
+    public int Sum { get; set; }
+  }
   class Program
   {
-    //メインのプロセススレッドと別のスレッドに動くので終了する前に同期化する必要があります。
-    //そのため、リストの形式で管理する。
-    LinkedList&lt;Thread&gt; threadList = new LinkedList&lt;Thread&gt;();
-    //スレッドのデータを合計
-    int count = 0;
-    /// &lt;summary&gt;
-    /// コンストラクタ
-    /// &lt;/summary&gt;
-    public Program()
+    // 実行関数
+    static void Main(string[] args)
     {
-      //スレッド追加
-      AddThread(ThreadEx, "Test1");
-      AddThread(ThreadEx, "Test2");
-      AddThread(ThreadEx, "Test3");
-
-      StartWatchThread();
-
-      Console.WriteLine("Count - " + count);
-    }
-    /// &lt;summary&gt;
-    /// スレッド追加メソッド
-    /// &lt;/summary&gt;
-    /// &lt;param name="method"&gt;デリゲート名&lt;/param&gt;
-    /// &lt;param name="data"&gt;パラメタ値&lt;/param&gt;
-    private void AddThread(Action&lt;String&gt; method, String data)
-    {
-      //スレッドを割り当て
-      Thread _thread = new Thread(() =&gt; { method(data); });
-      //スレッドを開始
-      _thread.Start();
-      //リストにスレッド追加
-      threadList.AddFirst(_thread);
-    }
-    /// &lt;summary&gt;
-    /// スレッド同期メソッド
-    /// &lt;/summary&gt;
-    private void StartWatchThread()
-    {
-      //threadListにあるスレッドが終わらないと無限ループになります。
-      while (threadList.Count &gt; 0)
+      // 総合に関するインスタンス
+      Node node = new Node();
+      // nodeインスタンスのSumの値を初期化
+      node.Sum = 0;
+      // ThreadPoolでJoinのためのリスト
+      var list = new List&lt;EventWaitHandle&gt;();
+      // ラムダ関数
+      var action = new Action(() =&gt;
       {
-        if (threadList.First.Value.IsAlive)
+        // EventWaitHandleインスタンス生成
+        var wait = new EventWaitHandle(false, EventResetMode.ManualReset);
+        // リストにインスタンスを追加
+        list.Add(wait);
+        // スレッドプールにスレッド追加
+        ThreadPool.QueueUserWorkItem((cb) =&gt;
         {
-          Thread.Sleep(1000);
-        }
-        else
-        {
-          //スレッドが終わるとリストから削除
-          threadList.RemoveFirst();
-        }
-      }
-      //threadListにスレッドがなくなると終わり
-    }
-    /// &lt;summary&gt;
-    /// 処理メソッド
-    /// &lt;/summary&gt;
-    /// &lt;param name="name"&gt;&lt;/param&gt;
-    public void ThreadEx(String name)
-    {
-      //iが100までコンソールに出力する。
-      for (int i = 0; i &lt; 100; i++)
+          // 繰り返しの0から10まで
+          for (int i = 0; i &lt;= 10; i++)
+          {
+            // nodeインスタンスにlock
+            lock (node)
+            {
+              // sumの値を足してsum変数に格納
+              node.Sum += i;
+            }
+            // スレッド待機時間を1ミリ秒
+            Thread.Sleep(1);
+          }
+          // WaitHandle解除
+          wait.Set();
+        });
+      });
+      // 繰り返しの0から9まで
+      for (int i = 0; i &lt; 10; i++)
       {
-        //ロックをして各スレッドの同期化をする
-        lock (this)
-        {
-          int temp = count + i;
-          Console.WriteLine(String.Format("{0} - {1}", name, i));
-          count = temp;
-        }
+        // ラムダ関数実行(スレッド実行)
+        action();
       }
-    }
-    /// &lt;summary&gt;
-    /// メインメソッド
-    /// &lt;/summary&gt;
-    /// &lt;param name="args"&gt;&lt;/param&gt;
-    static void Main(String[] args)
-    {
-      new Program();
+      // listにあるEventWaitHandle関数がすべてSetが呼び出したらJoin解除
+      WaitHandle.WaitAll(list.ToArray());
+      // スレッドで足した値を出力
+      Console.WriteLine(node.Sum);
 
-      Console.WriteLine("Press Any Key...");
+      // 任意のキーを押してください
+      Console.WriteLine("Press Any key...");
       Console.ReadLine();
     }
   }
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/40/160_005.png" data-filename="005.png" style="width: 677px;"></p> 
-  <p>「lock」のキーワードはオブジェクトタイプの対して(int、charタイプはlockを設定できない)「lock」が解けるまで待機するキーワードですが上の例とおりに「lock」を掛けると三つのスレッドで流れてもロックのことで順番通りに処理するので結果が「14850」になる形になります。</p> 
+  <p style="text-align:left;"><img src="./contents/40/1856_002.png" data-filename="002.png" style="width: 241px;"><br></p> 
+  <p>クラスインスタンスにlockを掛けたらlock掛けた領域を使ったら他のlockを掛けるところでlockを通過することを待つことになります。</p> 
+  <p>つまり、並列処理の始めのスレッドでlock(node)を通過することになると二つ目のスレッドでの始めのスレッドのlock(node)のスタック領域が終了するまで待機することになります。</p> 
+  <p>そうなら始めのスレッドのlock(node)でスタックが終了になると二つ目のスレッドのlock(node)が通過して三つ目のスレッドのlock(node)が待機することになります。その順番とおりにlock(node)領域を通過することになるので結論は同時に値が足すことは発生しません。</p> 
+  <p>すべてのスレッドでNodeインスタンスに関して同期化になりました。</p> 
   <p><br></p> 
-  <p>スレッド処理の中で「lock」まで勉強して同期化する方法まで勉強しましたが、スレッドが難しいというのはデッドロックのためです。</p> 
-  <p><br></p> 
-  <h2><b><span>DeadLock</span></b></h2> 
-  <p>デッドロックは二つ以上の処理フローがお互いに終わることを待ち状況になることをデッドロックといいます。</p> 
-  <pre><code class="cs" data-type="">using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+  <p>lockのキーワードは原始データタイプ、つまりint char byteみたいのデータタイプにはできずに無条件にクラスタイプのインスタンスだけにlockを掛けることができます。</p> 
+  <pre><code class="cs" data-type="Program.cs">using System;
 using System.Threading;
 
-namespace ThreadExample
+namespace Example
 {
+  // 例クラス
+  class Node
+  {
+  }
   class Program
   {
-    //メインのプロセススレッドと別のスレッドに動くので終了する前に同期化する必要があります。
-    //そのため、リストの形式で管理する。
-    LinkedList&lt;Thread&gt; threadList = new LinkedList&lt;Thread&gt;();
-    //スレッドのデータを合計
-    int count = 0;
-    int count2 = 0;
-    /// &lt;summary&gt;
-    /// コンストラクタ
-    /// &lt;/summary&gt;
-    public Program()
+    // 実行関数
+    static void Main(string[] args)
     {
-      //スレッド追加
-      AddThread(ThreadEx, "Test1");
-      AddThread(ThreadEx, "Test2");
-      AddThread(ThreadEx, "Test3");
-      
-      StartWatchThread();
-
-      Console.WriteLine("Count - "+count);
-      Console.WriteLine("Count2 - "+count2);
-    }
-    /// &lt;summary&gt;
-    /// スレッド追加メソッド
-    /// &lt;/summary&gt;
-    /// &lt;param name="method"&gt;デリゲート名&lt;/param&gt;
-    /// &lt;param name="data"&gt;パラメタ値&lt;/param&gt;
-    private void AddThread(Action&lt;String&gt; method, String data)
-    {
-      //スレッドを割り当て
-      Thread _thread = new Thread(() =&gt; { method(data); });
-      //スレッドを開始
-      _thread.Start();
-      //リストにスレッド追加
-      threadList.AddFirst(_thread);
-    }
-    /// &lt;summary&gt;
-    /// スレッド同期メソッド
-    /// &lt;/summary&gt;
-    private void StartWatchThread()
-    {
-      //threadListにあるスレッドが終わらないと無限ループになります。
-      while (threadList.Count &gt; 0)
+      // 総合に関するインスタンス
+      Node node1 = new Node();
+      Node node2 = new Node();
+      // ラムダ関数
+      var action = new Action&lt;Node, Node, string&gt;((a, b, str) =&gt;
       {
-        if (threadList.First.Value.IsAlive)
+        // スレッドプールにスレッド追加
+        ThreadPool.QueueUserWorkItem((cb) =&gt;
         {
-          Thread.Sleep(1000);
-        }
-        else
-        {
-          //スレッドが終わるとリストから削除
-          threadList.RemoveFirst();
-        }
-      }
-      //threadListにスレッドがなくなると終わり
-    }
-    /// &lt;summary&gt;
-    /// 処理メソッド
-    /// &lt;/summary&gt;
-    /// &lt;param name="name"&gt;&lt;/param&gt;
-    public void ThreadEx(String name)
-    {
-      //iが100までコンソールに出力する。
-      for (int i = 0; i &lt; 100; i++)
-      {
-        // this -&gt; threadListのロックを解除するまで待つ。
-        lock (threadList)
-        {
-          lock (this)
+          // 繰り返しの0から10まで
+          for (int i = 0; i &lt;= 10; i++)
           {
-            int temp = count + i;
-            Console.WriteLine(String.Format("{0} - {1}", name, i));
-            count = temp;
+            // nodeインスタンスにlock
+            lock (a)
+            {
+              // nodeインスタンスにlock
+              lock (b)
+              {
+                // コンソール出力
+                Console.WriteLine("lock and lock " + str + " = " + i);
+                // スレッド待機時間を1ミリ秒
+                Thread.Sleep(1);
+              }
+            }
           }
-        }
-        // threadList -&gt; thisのロックを解除するまで待つ。
-        lock (this)
-        {
-          lock (threadList)
-          {
-            int temp = count2 + i;
-            Console.WriteLine(String.Format("{0} - {1}", name, i));
-            count2 = temp;
-          }
-        }
-      }
-    }
-    /// &lt;summary&gt;
-    /// メインメソッド
-    /// &lt;/summary&gt;
-    /// &lt;param name="args"&gt;&lt;/param&gt;
-    static void Main(String[] args)
-    {
-      new Program();
+        });
+      });
+      // ラムダ関数実行(スレッド実行)
+      action(node1, node2, "Action 1");
+      action(node2, node1, "Action 2");
 
-      Console.WriteLine("Press Any Key...");
+      // 任意のキーを押してください
+      Console.WriteLine("Press Any key...");
       Console.ReadLine();
     }
   }
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="./contents/40/157_006.png" data-filename="006.png" style="width: 677px;"></p> 
-  <p>上の例をみるとわざわざにデッドロックを掛けるように実装したので上の通りに実装するかたはいないと思いますが、デッドロックを説明するためにデッドロックが発生するように実装しました。</p> 
-  <p>「ThreadEx」のメソッドをみると「threadList」のロックの下に「this」ロックがあり、次の処理は「this」のロックの下に「threadList」のロックがある状況に実装しました。</p> 
-  <p>上のプログラムを実行するみるととデッドロックに落ちます(プログラムが動かない状況)。なぜなら「threadList → this」のロックは「this」のロックが解けるまでに待つ、「this →　threadList」のロックは「threadList」のロックが解けるまでに待つ状況になるとお互いにロックが解除することを待っている状況になりまして、デッドロックになります。</p> 
-  <p>それで、わざとデッドロックが発生するように実装する方はいないと思いますが、実装ミスかスレッド計算ミスでデッドロックを発生するケースが多いですね。</p> 
-  <p>「デッドロックが発生する時に修正するといいじゃない」と簡単に思うことができますが、実際にデッドロックが発生するように実装すると一定的に発生することではなく、起きる時もあるし起きない時もあるし、ロックのブロックが大きくなればデッドロック発生部分を知らない時もあるし、流れは止まってないがリックが発生してサーバが落ちるケースもあるので、原因不明になって直すことが簡単にできない可能性があります。(サーバ落ちる問題なら、全ソースをレビューするときもあります。）</p>
+  <p style="text-align:left;"><img src="./contents/40/1855_003.png" data-filename="003.png" style="width: 292px;"><br></p> 
+  <p>上の例の結果をみればスレッドがlockにより止まりました。</p> 
+  <p>ここでlockが重ねていることが問題ではありません。状況によりlockを重ねて実装することができますが、上みたいに実装するとデッドロック(deadlock)になります。</p> 
+  <p>理由はactionの始めの呼び出しのパラメータでnode1とnode2を入れて、二つの目の呼び出しのパラメータでnode2とnode1に順番を変わって入れました。</p> 
+  <p><br></p> 
+  <p>そうなるとaction関数の始めのスレッドでnode1インスタンスにlockを掛けて、その同時に二つ目のスレッドでnode2インスタンスにlockを掛けます。</p> 
+  <p>また、始めのスレッドでnode2のlockに入ろうと思えば、二つ目のスレッドでnode2がロックに掛けているのでロックが解けるまで待ちます。</p> 
+  <p>二つ目のスレッドでnode1のlockに入ろうと思えば、始めのスレッドでnode1がロックに掛けている状況でロックが解けるまで待ちます。つまり、両方のlockがお互いのlockが解けるまで待つことのデッドロック(deadlock)になります。</p> 
+  <p><br></p> 
+  <p>デッドロックとはお互いのlockの領域でlockが掛けている状況でお互いのlockが解けるまで永遠に待つことの意味です。デッドロックになると別にエラーが発生することではなく、そのままプログラムが止まる状況ですが、問題はプログラム上でデッドロックになる部分を探すことは簡単ではありません。</p> 
+  <p>それでプログラムを作成する時、デッドロックにならないように設計を気を付けなければならないですが、一番の重要なlockを重ねないように作成することが重要です。</p> 
+  <p>当たり前にデッドロックが発生しやすいように上みたいに作成しません。</p> 
+  <pre><code class="cs" data-type="Program.cs">using System;
+using System.Threading;
+
+namespace Example
+{
+  // 例クラス
+  class Node
+  {
+  }
+  class Program
+  {
+    // Lock関数
+    static void SetTestLock(Node node1, Node node2)
+    {
+      lock (node1)
+      {
+        // Lock関数の呼び出し
+        SetTestLock(node2);
+      }
+    }
+    // Lock関数
+    static void SetTestLock(Node node)
+    {
+      lock (node)
+      {
+        // コンソール出力
+        Console.WriteLine("lock");
+        // スレッド待機時間を1ミリ秒
+        Thread.Sleep(1);
+      }
+    }
+    // 実行関数
+    static void Main(string[] args)
+    {
+      // 総合に関するインスタンス
+      Node node1 = new Node();
+      Node node2 = new Node();
+      // ラムダ関数
+      var action = new Action&lt;Node, Node&gt;((a, b) =&gt;
+      {
+        // スレッドプールにスレッド追加
+        ThreadPool.QueueUserWorkItem((cb) =&gt;
+        {
+          // 繰り返しの0から10まで
+          for (int i = 0; i &lt;= 10; i++)
+          {
+            // Lock関数呼び出す
+            SetTestLock(a, b);
+          }
+        });
+      });
+      // ラムダ関数実行(スレッド実行)
+      action(node1, node2);
+      action(node2, node1);
+
+      // 任意のキーを押してください
+      Console.WriteLine("Press Any key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/40/1853_004.png" data-filename="004.png" style="width: 194px;"><br></p> 
+  <p>lockが重ねみたいに見えないようにlockを関数に実装しました。でも、結局に処理流れはlockが重ねているのでデッドロック(deadlock)になります。</p> 
+  <p>つまり、実務でもこのみたいに作成してデッドロック(deadlock)になる場合はすごく多いです。関係ない関数で各のインスタンスにlockを掛けますが、デッドロックになる場合です。</p> 
+  <p><br></p> 
+  <p>デッドロックにならないため、何個かのルールがあります。</p> 
+  <p>まず、lockを掛けるインスタンスはできれば一つに統一にすることが良いです。実は設計上でデータの変換や使うインスタンスにlockを掛けることが良いですが、lock専用のObjectタイプのインスタンスを生成してlockを管理することが良いです。</p> 
+  <p>そしてlockの領域をできれば小さいスタックで作成する方が良いです。lockだけでは性能には影響がありませんが、lockの中で処理が遅くなると他の同期化になるlockでlockが終了するまで待機をすることになるので結論的に性能が遅くなります。</p> 
+  <p><br></p> 
+  <p>ここまでC#のlockキーワードとdeadlock(デッドロック)に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
  
 </div>
 				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/39.html" target="_blank">[C#] 38. ThreadPoolの使い方</a></div><div class="post-category"><span>次の投稿▶</span><a href="https://www.nowonbun.com/215.html" target="_blank">[C#] ソケット(Socket)通信をする方法</a></div></div>
@@ -734,7 +433,7 @@ namespace ThreadExample
 				</div>
 				<div class="other-category">
 					<div class="list-title">「<a href="./?category=0202">Study / C#</a>」の他投稿</div>
-					<ul><li><a href='https://www.nowonbun.com/215.html'>[C#] ソケット(Socket)通信をする方法</a><span>2020/05/13 17:37:13</span></li><li><a href='https://www.nowonbun.com/40.html'>[C#] Thread(スレッド)</a><span>2019/07/24 00:57:35</span></li><li><a href='https://www.nowonbun.com/39.html'>[C#] 38. ThreadPoolの使い方</a><span>2019/07/23 00:05:40</span></li><li><a href='https://www.nowonbun.com/38.html'>[C#] 37. スレッド(Thread)を使い方、Thread.Sleep関数を使い方</a><span>2019/07/22 23:45:05</span></li><li><a href='https://www.nowonbun.com/37.html'>[C#] 36. 拡張メソッドを使い方</a><span>2019/07/22 23:30:17</span></li><li><a href='https://www.nowonbun.com/36.html'>[C#] 35. 文字列クラス、StringとStringBuilderを使い方</a><span>2019/07/22 23:15:42</span></li><li><a href='https://www.nowonbun.com/35.html'>[C#] 34. 最上位クラス(Object クラス)</a><span>2019/07/20 02:27:23</span></li><li><a href='https://www.nowonbun.com/34.html'>[C#] 33. 匿名形式(Anonymous Types)を使い方</a><span>2019/07/20 02:22:03</span></li><li><a href='https://www.nowonbun.com/33.html'>[C#] 32. ジェネリックタイプ(Generic Type)を使い方</a><span>2019/07/18 22:50:16</span></li></ul>
+					<ul><li><a href='https://www.nowonbun.com/215.html'>[C#] ソケット(Socket)通信をする方法</a><span>2020/05/13 17:37:13</span></li><li><a href='https://www.nowonbun.com/40.html'>[C#] 39. lockキーワードとdeadlock(デッドロック)</a><span>2019/07/24 00:57:35</span></li><li><a href='https://www.nowonbun.com/39.html'>[C#] 38. ThreadPoolの使い方</a><span>2019/07/23 00:05:40</span></li><li><a href='https://www.nowonbun.com/38.html'>[C#] 37. スレッド(Thread)を使い方、Thread.Sleep関数を使い方</a><span>2019/07/22 23:45:05</span></li><li><a href='https://www.nowonbun.com/37.html'>[C#] 36. 拡張メソッドを使い方</a><span>2019/07/22 23:30:17</span></li><li><a href='https://www.nowonbun.com/36.html'>[C#] 35. 文字列クラス、StringとStringBuilderを使い方</a><span>2019/07/22 23:15:42</span></li><li><a href='https://www.nowonbun.com/35.html'>[C#] 34. 最上位クラス(Object クラス)</a><span>2019/07/20 02:27:23</span></li><li><a href='https://www.nowonbun.com/34.html'>[C#] 33. 匿名形式(Anonymous Types)を使い方</a><span>2019/07/20 02:22:03</span></li><li><a href='https://www.nowonbun.com/33.html'>[C#] 32. ジェネリックタイプ(Generic Type)を使い方</a><span>2019/07/18 22:50:16</span></li></ul>
 				</div>
 				<div class="recently-post">
 					<div class="list-title">最新投稿</div>
