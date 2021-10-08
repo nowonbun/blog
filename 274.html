@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/274.html"},"url":"https:\/\/www.nowonbun.com\/274.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [C#] 47. Nuget\u3092\u4f7f\u3044\u65b9(\u5916\u90e8\u30e9\u30a4\u30d6\u30e9\u30ea)\u3068\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9(MariaDB(Mysql))\u3092\u4f7f\u3044\u65b9\u3001\u305d\u3057\u3066\u30c8\u30e9\u30f3\u30b6\u30af\u30b7\u30e7\u30f3(Transaction)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fc#\u3067nuget\u3092\u4f7f\u3044\u65b9(\u5916\u90e8\u30e9\u30a4\u30d6\u30e9\u30ea)\u3068\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9(mariadb(mysql))\u3092\u4f7f\u3044\u65b9\u3001\u305d\u3057\u3066\u30c8\u30e9\u30f3\u30b6\u30af\u30b7\u30e7\u30f3(transaction)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002c#\u304c\u8a00\u8a9e\u7684\u3067\u5229\u70b9\u3060\u3068\u601d\u3046\u90e8\u5206\u306f.net framework\u4e2d\u3067\u57fa\u672c\u7684\u306a\u30e9\u30a4\u30d6\u30e9\u30ea\u304c\u3059\u3054\u304f\u591a\u304f\u542b\u3081\u3066\u3044\u307e\u3059\u3002\u305d\u306e\u4ee5\u5916\u306b\u3082visual studio\u306eide\u30c4\u30fc\u30eb\u3082\u3059\u3054\u304f\u4fbf\u5229\u3060\u3057\u3001\u540c\u3058\u88fd\u54c1\u7cfb(ms\u88fd\u54c1\u7cfb)\u306b\u95a2\u3057\u3066\u3082\u4e92\u63db\u6027\u304c\u3059\u3054\u304f\u3044\u3044\u5229\u70b9\u304c\u3042\u308a\u307e\u3059\u3002\u3067\u3082\u3001\u591a\u3044\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u542b\u3081\u3066\u3044\u308b\u3068\u601d\u3063\u3066\u3082\u3001\u5b9f\u969b\u306b\u4f7f\u3063\u3066\u3055\u308c\u308b\u3059\u3079\u3066\u306e\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u6301\u3063\u3066\u3044\u308b\u3053\u3068\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002\u4f8b\u3048\u3070\u3001\u57fa\u672c\u7684\u306bc#\u3067\u306fmssql\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306b\u95a2\u3059\u308b\u63a5\u7d9a\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u6301\u3063\u3066\u3044\u307e\u3059\u3002\u5225\u306b\u5916\u90e8\u30e9\u30a4\u30d6\u30e9\u30ea\u304c\u5fc5\u8981\u3042\u308a\u307e\u305b\u3093\u3002\u306a\u306e\u3067\u5225\u306e\u7a2e\u985e\u306e\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306e\u30e9\u30a4\u30d6\u30e9\u30ea\u306f.net framework\u3067\u3042\u308a\u307e\u305b\u3093\u3002\u3064\u307e\u308a\u3001c#\u3092\u4f7f\u3063\u305f\u3089mssql\u3092\u4f7f\u3046\u3053\u3068\u3092\u304a\u52e7\u3081\u3059\u308b\u3053\u3068\u3067\u3059\u3002\u3067\u3082\u3001\u4ed5\u69d8\u306b\u3088\u308a\u3001\u3042\u308b\u3044\u306f\u69d8\u3005\u306a\u7406\u7531\u3067\u958b\u767a\u8a00\u8a9e\u306fc#\u3067\u958b\u767a\u3057\u3066\u3082\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306foracle(\uc624\ub77c\ud074)\u3084mysql(mariadb)\u3092\u4f7f\u308f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u5834\u5408\u3082\u3042\u308a\u307e\u3059\u3002\u305d\u3046\u306a\u3089\u5916\u90e8\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u4f7f\u308f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u304c\u3001mariadb\u30db\u30fc\u30e0\u30da\u30fc\u30b8\u306b\u63a5\u7d9a\u3059\u308b\u3068c#\u30e9\u30a4\u30d6\u30e9\u30ea\u30d5\u30a1\u30a4\u30eb\u304c\u3042\u308a\u307e\u3059\u3002link - mariadb net-connectors\u3053\u306e\u3088\u3046\u306b\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u3057\u3066\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u306b\u9023\u7d50\u3057\u3066\u4f7f\u3063\u3066\u3082\u3088\u3044\u3067\u3059\u304c\u3001\u3053\u306e\u3088\u3046\u306b\u3059\u308b\u3068\u30d0\u30fc\u30b8\u30e7\u30f3\u7ba1\u7406\u3084\u914d\u5e03(deploy)\u3084\u4ed6\u4eba\u3068\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u3092\u5171\u6709\u3059\u308b\u6642\u3001\u30e9\u30a4\u30d6\u30e9\u30ea\u7ba1\u7406\u306a\u3069\u306e\u554f\u984c\u304c\u767a\u751f\u3057\u307e\u3059\u3002\u305d\u306e\u305f\u3081\u3001\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u306e\u30e9\u30a4\u30d6\u30e9\u30ea\u7ba1\u7406\u30c4\u30fc\u30eb\u304c\u3042\u308a\u307e\u3059\u304c\u3001java\u306b\u306fmaven\u304c\u3042\u308b\u307f\u305f\u3044\u306bc#\u306b\u306fnuget\u304c\u3042\u308a\u307e\u3059\u3002nuget\u306fvisual studio\u304c\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3055\u308c\u3066\u3044\u308b\u3068\u5225\u9014\u306b\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3059\u308b\u5fc5\u8981\u306f\u3042\u308a\u307e\u305b\u3093\u3002\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u3067references\u306e\u9805\u76ee\u3067\u30de\u30a6\u30b9\u306e\u53f3\u30af\u30ea\u30c3\u30af\u3057\u3066context\u30e1\u30cb\u30e5\u30fc\u3092\u307f\u308c\u3070manage nuget\u9805\u76ee\u304c\u3042\u308a\u307e\u3059\u3002browse\u30bf\u30d6\u3067\u691c\u7d22\u3059\u308c\u3070\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u304c\u3067\u304d\u308b\u30e9\u30a4\u30d6\u30e9\u30ea\u304c\u8868\u793a\u3055\u308c\u307e\u3059\u3002\u6211\u3005\u306fmariadb\u3092\u4f7f\u3063\u3066\u3044\u308b\u306e\u3067mysql.data \u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u30af\u30ea\u30c3\u30af\u3057\u3066version\u3092\u78ba\u8a8d\u3057\u3066install\u30dc\u30bf\u30f3\u3092\u62bc\u4e0b\u3057\u307e\u3059\u3002\u305d\u3046\u306a\u3089\u898f\u7d04\u304c\u8868\u793a\u3055\u308c\u308b\u3057\u3001accept\u3092\u62bc\u4e0b\u3057\u3066\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3092\u958b\u59cb\u3057\u307e\u3059\u3002\u305d\u3057\u3066\u3001re","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2021-10-08T18:58:57.000+09:00","dateModified":"2021-10-08T19:00:07.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / C#" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はc#でnugetを使い方(外部ライブラリ)とデータベース(mariadb(mysql))を使い方、そしてトランザクション(transaction)に関する説明です。c#が言語的で利点だと思う部分は.net framework中で基本的なライブラリがすごく多く含めています。その以外にもvisual studioのideツールもすごく便利だし、同じ製品系(ms製品系)に関しても互換性がすごくいい利点があります。でも、多いライブラリを含めていると思っても、実際に使ってされるすべてのライブラリを持っていることではありません。例えば、基本的にc#ではmssqlデータベースに関する接続ライブラリを持っています。別に外部ライブラリが必要ありません。なので別の種類のデータベースのライブラリは.net frameworkでありません。つまり、c#を使ったらmssqlを使うことをお勧めすることです。でも、仕様により、あるいは様々な理由で開発言語はc#で開発してもデータベースはoracle(오라클)やmysql(mariadb)を使わなければならない場合もあります。そうなら外部ライブラリを使わなければならないですが、mariadbホームページに接続するとc#ライブラリファイルがあります。link - mariadb net-connectorsこのようにライブラリをダウンロードしてプロジェクトに連結して使ってもよいですが、このようにするとバージョン管理や配布(deploy)や他人とプロジェクトを共有する時、ライブラリ管理などの問題が発生します。そのため、プロジェクトのライブラリ管理ツールがありますが、javaにはmavenがあるみたいにc#にはnugetがあります。nugetはvisual studioがインストールされていると別途にインストールする必要はありません。プロジェクトでreferencesの項目でマウスの右クリックしてcontextメニューをみればmanage nuget項目があります。browseタブで検索すればインストールができるライブラリが表示されます。我々はmariadbを使っているのでmysql.data ライブラリをクリックしてversionを確認してinstallボタンを押下します。そうなら規約が表示されるし、acceptを押下してインストールを開始します。そして、re]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [C#] 47. Nugetを使い方(外部ライブラリ)とデータベース(MariaDB(Mysql))を使い方、そしてトランザクション(Transaction)" />
+<link rel="canonical" href="https://www.nowonbun.com/274.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [C#] 47. Nugetを使い方(外部ライブラリ)とデータベース(MariaDB(Mysql))を使い方、そしてトランザクション(Transaction)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はc#でnugetを使い方(外部ライブラリ)とデータベース(mariadb(mysql))を使い方、そしてトランザクション(transaction)に関する説明です。c#が言語的で利点だと思う部分は.net framework中で基本的なライブラリがすごく多く含めています。その以外にもvisual studioのideツールもすごく便利だし、同じ製品系(ms製品系)に関しても互換性がすごくいい利点があります。でも、多いライブラリを含めていると思っても、実際に使ってされるすべてのライブラリを持っていることではありません。例えば、基本的にc#ではmssqlデータベースに関する接続ライブラリを持っています。別に外部ライブラリが必要ありません。なので別の種類のデータベースのライブラリは.net frameworkでありません。つまり、c#を使ったらmssqlを使うことをお勧めすることです。でも、仕様により、あるいは様々な理由で開発言語はc#で開発してもデータベースはoracle(오라클)やmysql(mariadb)を使わなければならない場合もあります。そうなら外部ライブラリを使わなければならないですが、mariadbホームページに接続するとc#ライブラリファイルがあります。link - mariadb net-connectorsこのようにライブラリをダウンロードしてプロジェクトに連結して使ってもよいですが、このようにするとバージョン管理や配布(deploy)や他人とプロジェクトを共有する時、ライブラリ管理などの問題が発生します。そのため、プロジェクトのライブラリ管理ツールがありますが、javaにはmavenがあるみたいにc#にはnugetがあります。nugetはvisual studioがインストールされていると別途にインストールする必要はありません。プロジェクトでreferencesの項目でマウスの右クリックしてcontextメニューをみればmanage nuget項目があります。browseタブで検索すればインストールができるライブラリが表示されます。我々はmariadbを使っているのでmysql.data ライブラリをクリックしてversionを確認してinstallボタンを押下します。そうなら規約が表示されるし、acceptを押下してインストールを開始します。そして、re]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/274.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [C#] 47. Nugetを使い方(外部ライブラリ)とデータベース(MariaDB(Mysql))を使い方、そしてトランザクション(Transaction)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はc#でnugetを使い方(外部ライブラリ)とデータベース(mariadb(mysql))を使い方、そしてトランザクション(transaction)に関する説明です。c#が言語的で利点だと思う部分は.net framework中で基本的なライブラリがすごく多く含めています。その以外にもvisual studioのideツールもすごく便利だし、同じ製品系(ms製品系)に関しても互換性がすごくいい利点があります。でも、多いライブラリを含めていると思っても、実際に使ってされるすべてのライブラリを持っていることではありません。例えば、基本的にc#ではmssqlデータベースに関する接続ライブラリを持っています。別に外部ライブラリが必要ありません。なので別の種類のデータベースのライブラリは.net frameworkでありません。つまり、c#を使ったらmssqlを使うことをお勧めすることです。でも、仕様により、あるいは様々な理由で開発言語はc#で開発してもデータベースはoracle(오라클)やmysql(mariadb)を使わなければならない場合もあります。そうなら外部ライブラリを使わなければならないですが、mariadbホームページに接続するとc#ライブラリファイルがあります。link - mariadb net-connectorsこのようにライブラリをダウンロードしてプロジェクトに連結して使ってもよいですが、このようにするとバージョン管理や配布(deploy)や他人とプロジェクトを共有する時、ライブラリ管理などの問題が発生します。そのため、プロジェクトのライブラリ管理ツールがありますが、javaにはmavenがあるみたいにc#にはnugetがあります。nugetはvisual studioがインストールされていると別途にインストールする必要はありません。プロジェクトでreferencesの項目でマウスの右クリックしてcontextメニューをみればmanage nuget項目があります。browseタブで検索すればインストールができるライブラリが表示されます。我々はmariadbを使っているのでmysql.data ライブラリをクリックしてversionを確認してinstallボタンを押下します。そうなら規約が表示されるし、acceptを押下してインストールを開始します。そして、re]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [C#] 47. Nugetを使い方(外部ライブラリ)とデータベース(MariaDB(Mysql))を使い方、そしてトランザクション(Transaction)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(90)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(27)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(4)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(13)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(181)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(47)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(56)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(4)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/274.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[C#] 47. Nugetを使い方(外部ライブラリ)とデータベース(MariaDB(Mysql))を使い方、そしてトランザクション(Transaction)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0202">Study / C#</a>    作成日付 : <span property="datePublished">2021/10/08 18:58:57</span>   修正日付 : <span property="dateModified">2021/10/08 19:00:07</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はC#でNugetを使い方(外部ライブラリ)とデータベース(MariaDB(Mysql))を使い方、そしてトランザクション(Transaction)に関する説明です。</p> 
+  <p><br></p> 
+  <p>C#が言語的で利点だと思う部分は.Net framework中で基本的なライブラリがすごく多く含めています。その以外にもVisual studioのIDEツールもすごく便利だし、同じ製品系(MS製品系)に関しても互換性がすごくいい利点があります。</p> 
+  <p>でも、多いライブラリを含めていると思っても、実際に使ってされるすべてのライブラリを持っていることではありません。</p> 
+  <p><br></p> 
+  <p>例えば、基本的にC#ではMsSQLデータベースに関する接続ライブラリを持っています。別に外部ライブラリが必要ありません。なので別の種類のデータベースのライブラリは.Net frameworkでありません。</p> 
+  <p>つまり、C#を使ったらMsSqlを使うことをお勧めすることです。でも、仕様により、あるいは様々な理由で開発言語はC#で開発してもデータベースはOracle(오라클)やMysql(MariaDB)を使わなければならない場合もあります。</p> 
+  <p><br></p> 
+  <p>そうなら外部ライブラリを使わなければならないですが、MariaDBホームページに接続するとC#ライブラリファイルがあります。</p> 
+  <p>link - <a href="https://mariadb.com/kb/en/other-net-connectors/" target="_blank">mariadb net-connectors</a></p> 
+  <p style="text-align:left;"><img src="./contents/274/1917_001.png" data-filename="001.png" style="width: 848px;"><br></p> 
+  <p>このようにライブラリをダウンロードしてプロジェクトに連結して使ってもよいですが、このようにするとバージョン管理や配布(Deploy)や他人とプロジェクトを共有する時、ライブラリ管理などの問題が発生します。</p> 
+  <p><br></p> 
+  <p>そのため、プロジェクトのライブラリ管理ツールがありますが、JavaにはmavenがあるみたいにC#にはNugetがあります。</p> 
+  <p>NugetはVisual studioがインストールされていると別途にインストールする必要はありません。</p> 
+  <p style="text-align:left;"><img src="./contents/274/1908_002.png" data-filename="002.png" style="width: 369px;"><br></p> 
+  <p>プロジェクトでReferencesの項目でマウスの右クリックしてContextメニューをみればManage Nuget項目があります。</p> 
+  <p style="text-align:left;"><img src="./contents/274/1914_003.png" data-filename="003.png" style="width: 832px;"><br></p> 
+  <p>Browseタブで検索すればインストールができるライブラリが表示されます。</p> 
+  <p>我々はMariaDBを使っているのでMySql.Data ライブラリをクリックしてVersionを確認してInstallボタンを押下します。</p> 
+  <p style="text-align:left;"><img src="./contents/274/1910_004.png" data-filename="004.png" style="width: 436px;"><br></p> 
+  <p>そうなら規約が表示されるし、Acceptを押下してインストールを開始します。</p> 
+  <p style="text-align:left;"><img src="./contents/274/1909_005.png" data-filename="005.png" style="width: 311px;"><br></p> 
+  <p>そして、Referencesの項目を開いてみるとライブラリが連結されていることを確認できます。</p> 
+  <p>もし、ライブラリが依存性されているライブラリなら(つまり、ライブラリで他のライブラリを参照しているなら)必要なライブラリも自動に連結されます。</p> 
+  <p><br></p> 
+  <p>ここで我々はMariaDBを使いますが、なぜMysqlをダウンロードするかをみると実は過去の時にMysqlを無料データベースだったんですが、Oracle社に合併されて有料化になりました。</p> 
+  <p>それで以前にMysqlを作ったチームがまた独立して無料時代のソースをフォークして無料データベースのMariaDBを作成しました。</p> 
+  <p>なので、MySqlとMariaDBは似てますが、別のデータベースです。コードベースはMySqlとMariaDBは同じなので、コネクションは同じものを使います。</p> 
+  <p><br></p> 
+  <p>MariaDBをインストールする方法は別の投稿で説明しているので参考してください。</p> 
+  <p>link - <a href="https://www.nowonbun.com/273.html" target="_blank">[Window] MariaDBをインストールする方法</a></p> 
+  <p><br></p> 
+  <p>データベースがインストールされたら、簡単なテーブルを作成してデータを入れてC#プログラムで検索してみましょう。</p> 
+  <pre><code class="sql" data-type="query.sql">-- drop table Test;
+-- テーブル作成
+create table Test(
+	idx bigint auto_increment,
+	data varchar(1024),
+	
+	primary key(idx)
+)
+-- データインサート
+insert into Test (data) values('Hello world - 1');
+insert into Test (data) values('Hello world - 2');
+insert into Test (data) values('Hello world - 3');
+insert into Test (data) values('Hello world - 4');
+insert into Test (data) values('Hello world - 5');
+insert into Test (data) values('Hello world - 6');
+insert into Test (data) values('Hello world - 7');
+insert into Test (data) values('Hello world - 8');
+insert into Test (data) values('Hello world - 9');
+insert into Test (data) values('Hello world - 10');
+insert into Test (data) values('Hello world - 11');
+insert into Test (data) values('Hello world - 12');
+-- 検索
+select * from Test;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/274/1915_006.png" data-filename="006.png" style="width: 399px;"><br></p> 
+  <p>上みたいデータベースにテーブルを作成して簡単なデータを入力しました。</p> 
+  <p><br></p> 
+  <p>このデータを利用してC#プログラムでデータを取得しましょう。</p> 
+  <pre><code class="cs" data-type="Program.cs">using System;
+using System.Collections.Generic;
+using MySql.Data.MySqlClient;
+using System.Data;
+
+namespace Example
+{
+  class Program
+  {
+    // 実行関数
+    static void Main(string[] args)
+    {
+      // SqlCommandクラスのインスタンス生成
+      var cmd = new MySqlCommand();
+      // 接続コネクションを生成する。
+      cmd.Connection = new MySqlConnection("Data Source=localhost;Database=BlogExample;SSL Mode=None;User Id=root;Password=");
+      // 検索するクエリを入れる。
+      cmd.CommandText = "select * from Test";
+      // 検索クエリタイプ、一般クエリはTextだし、プロシージャはStoredProcedureだ。
+      cmd.CommandType = CommandType.Text;
+      // 検索して格納するデータ変数
+      List&lt;List&lt;object&gt;&gt; dataList = null;
+      // 検索したテーブルのColumn変数
+      string[] fieldList = null;
+      // Close設定(スタック領域が終わったら、自動にコネクション終了)
+      using (cmd.Connection)
+      {
+        // コネクション Open
+        cmd.Connection.Open();
+        // 上のクエリを接続してSqlDataReaderを取得
+        var dr = cmd.ExecuteReader();
+        // データ変数のインスタンス生成
+        dataList = new List&lt;List&lt;object&gt;&gt;();
+        // Column変数のインスタンス生成
+        fieldList = new string[dr.FieldCount];
+        // テーブルのフィールドほど
+        for (var i = 0; i &lt; fieldList.Length; i++)
+        {
+          // フィールド名を配列に格納
+          fieldList[i] = dr.GetName(i);
+        }
+        // レコードの個数程にループ
+        while (dr.Read())
+        {
+          // レコードデータを格納する変数リストを生成
+          var entity = new List&lt;object&gt;();
+          // データ変数リストに格納
+          dataList.Add(entity);
+          // Columnのサイズ程
+          for (var i = 0; i &lt; fieldList.Length; i++)
+          {
+            // カラムのタイプを取得
+            var type = dr.GetFieldType(i);
+            // intタイプなら
+            if (type == typeof(int))
+            {
+              // intタイプで取得
+              entity.Add(dr.GetInt32(i));
+            }
+            // stringタイプなら
+            else if (type == typeof(string))
+            {
+              // stringタイプで取得
+              entity.Add(dr.GetString(i));
+            }
+            else
+            {
+              // objectタイプで取得
+              entity.Add(dr.GetValue(i));
+            }
+          }
+        }
+      }
+      // コンソールにヘッダーにColumn名を出力する。
+      foreach (var field in fieldList)
+      {
+        // コンソール出力
+        Console.Write(field);
+        // tabの二つをコンソールに出力
+        Console.Write("\t\t");
+      }
+      // 改行
+      Console.WriteLine();
+      // テーブルColumn名とデータを区分するため、コンソール出力
+      for (int i = 0; i &lt; fieldList.Length; i++)
+      {
+        // コンソール出力
+        Console.Write("-----------------");
+      }
+      // 改行
+      Console.WriteLine();
+      // データのサイズ程
+      foreach (var entity in dataList)
+      {
+        // Columnのサイズ程
+        foreach (var column in entity)
+        {
+          // コンソール出力
+          Console.Write(column);
+          // tabの二つをコンソールに出力
+          Console.Write("\t\t");
+        }
+        // 改行
+        Console.WriteLine();
+      }
+
+      // 任意のキーを押してください
+      Console.WriteLine("Press Any key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/274/1912_007.png" style="width: 276px;" data-filename="007.png"><br></p> 
+  <p>使い方はMsSQLで接続する方法と同じです。</p> 
+  <p>ExecuteReaderで結果値を受け取ってExecuteNonQueryでinsertやupdate、deleteを実行する方法です。</p> 
+  <p>link - <a href="https://www.nowonbun.com/272.html" target="_blank">[C#] 46. データベース(MSSQL)に接続する方法</a></p> 
+  <p><br></p> 
+  <p>そうなら少し知りたいことがあります。クエリくぉ実行中でエラーが発生するとどうでしょう？</p> 
+  <pre><code class="cs" data-type="Program.cs">using System;
+using MySql.Data.MySqlClient;
+using System.Data;
+
+namespace Example
+{
+  class Program
+  {
+    // 実行関数
+    static void Main(string[] args)
+    {
+      // MySqlCommandクラスのインスタンスを生成
+      var cmd = new MySqlCommand();
+      // 接続コネクションを生成する。
+      cmd.Connection = new MySqlConnection("Data Source=localhost;Database=BlogExample;User Id=root;SSL Mode=None;Password=");
+      // 検索クエリタイプ、一般クエリはTextだし、プロシージャはStoredProcedureだ。
+      cmd.CommandType = CommandType.Text;
+      // Close設定(スタック領域が終わったら、自動にコネクション終了)
+      using (cmd.Connection)
+      {
+        // コネクション Open
+        cmd.Connection.Open();
+        // データ削除クエリ
+        cmd.CommandText = "delete from Test";
+        // 実行(返却値が必要ない。)
+        cmd.ExecuteNonQuery();
+        // エラーを発生!
+        throw new Exception();
+        // テーブルにデータを追加
+        cmd.CommandText = "insert into Test (data) values(@data)";
+        // @dataパラメータにデータを入力する。
+        cmd.Parameters.Add(new MySqlParameter("@data", "Hello world - Addition"));
+        // 実行(返却値が必要ない。)
+        cmd.ExecuteNonQuery();
+      }
+
+      // 任意のキーを押してください
+      Console.WriteLine("Press Any key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/274/1916_008.png" style="width: 848px;" data-filename="008.png"><br></p> 
+  <p>わざとエラーを発生させました。でも、そのエラーがdeleteを実行してエラーを発生します。</p> 
+  <p style="text-align:left;"><img src="./contents/274/1911_009.png" data-filename="009.png" style="width: 197px;"><br></p> 
+  <p>プログラムでエラーが発生するので、プログラムで実行するすべてのクエリは実行取り消しにならなければならないのにテーブルでデータがすべて削除されました。</p> 
+  <p>実際に業務でも処理中でエラーが発生するとプログラム上で実行されたクエリが取り消ししなければならないですが、そうではなければ途中でクエリ処理が止まった不完全なデータになりました。</p> 
+  <p><br></p> 
+  <p>それでトランザクションという機能がありますが、その領域中で完全に実行が完了するとすべてクエリが実行する機能です。</p> 
+  <pre><code class="cs" data-type="Program.cs">using System;
+using MySql.Data.MySqlClient;
+using System.Data;
+
+namespace Example
+{
+  class Program
+  {
+    // 実行関数
+    static void Main(string[] args)
+    {
+      // MySqlCommandクラスのインスタンスを生成
+      var cmd = new MySqlCommand();
+      // 接続コネクションを生成する。
+      cmd.Connection = new MySqlConnection("Data Source=localhost;Database=BlogExample;User Id=root;SSL Mode=None;Password=");
+      // 検索クエリタイプ、一般クエリはTextだし、プロシージャはStoredProcedureだ。
+      cmd.CommandType = CommandType.Text;
+      // Close設定(スタック領域が終わったら、自動にコネクション終了)
+      using (cmd.Connection)
+      {
+        // コネクション Open
+        cmd.Connection.Open();
+        // トランザクション生成
+        using (var transaction = cmd.Connection.BeginTransaction())
+        {
+          try
+          {
+            // テーブルにデータを追加
+            cmd.CommandText = "insert into Test values(@data)";
+            // @dataパラメータにデータを入力する。
+            cmd.Parameters.Add(new MySqlParameter("@data", "Hello world - Addition"));
+            // 実行(返却値が必要ない。)
+            cmd.ExecuteNonQuery();
+            // エラー発生
+            throw new Exception();
+            // トランザクションコミット(トランザクション中で実行したクエリをデータベースで実行)
+            transaction.Commit();
+          }
+          catch
+          {
+            // トランザクションロールバック(トランザクション中で実行したクエリを取り消し)
+            transaction.Rollback();
+          }
+        }
+      }
+      // 任意のキーを押してください
+      Console.WriteLine("Press Any key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/274/1911_009.png" data-filename="009.png" style="width: 197px;"><br></p> 
+  <p>insertを実行しましたがトランザクションにより途中でエラーが発生すればinsert実行されないことを確認できます。</p> 
+  <p>つまり、トランザクションは中でクエリをたくさん実行したと思ってもエラーが発生すればデータベースに反映されないような機能です。</p> 
+  <p><br></p> 
+  <p>ここまでがTransaction機能ですが上みたいなソースなら何かプログラムらしくない形です。</p> 
+  <p>ここでObserverパターンでプログラムを作成してみましょう。</p> 
+  <pre><code class="cs" data-type="Program.cs">using System;
+using MySql.Data.MySqlClient;
+using System.Data;
+using System.Text;
+
+namespace Example
+{
+  class Program
+  {
+    // Transaction Observerパターン
+    static T Transaction&lt;T&gt;(MySqlCommand cmd, Func&lt;T&gt; func)
+    {
+      // トランザクション生成
+      using (var transaction = cmd.Connection.BeginTransaction())
+      {
+        try
+        {
+          // 関数実行
+          T ret = func();
+          // トランザクションコミット(トランザクション中で実行したクエリをデータベースで実行)
+          transaction.Commit();
+          // 関数の結果をリターン
+          return ret;
+        }
+        catch
+        {
+          // トランザクションロールバック(トランザクション中で実行したクエリを取り消し)
+          transaction.Rollback();
+          // classならnull、structなら基本インスタンスをリターン
+          return default(T);
+        }
+      }
+    }
+    // Transaction Observerパターン
+    static void Transaction(MySqlCommand cmd, Action action)
+    {
+      // トランザクション生成
+      using (var transaction = cmd.Connection.BeginTransaction())
+      {
+        try
+        {
+          // 関数実行
+          action();
+          // トランザクションコミット(トランザクション中で実行したクエリをデータベースで実行)
+          transaction.Commit();
+        }
+        catch
+        {
+          // トランザクションロールバック(トランザクション中で実行したクエリを取り消し)
+          transaction.Rollback();
+        }
+      }
+    }
+    // 実行関数
+    static void Main(string[] args)
+    {
+      // MySqlCommandクラスのインスタンスを生成
+      var cmd = new MySqlCommand();
+      // 接続コネクションのインスタンスを生成する。
+      cmd.Connection = new MySqlConnection("Data Source=localhost;Database=BlogExample;User Id=root;SSL Mode=None;Password=");
+      // 検索クエリタイプ、一般クエリはTextだし、プロシージャはStoredProcedureだ。
+      cmd.CommandType = CommandType.Text;
+      // Close設定(スタック領域が終わったら、自動にコネクション終了)
+      using (cmd.Connection)
+      {
+        // コネクション Open
+        cmd.Connection.Open();
+        // Transaction 実行
+        Transaction(cmd, () =&gt;
+        {
+          // テーブルにデータ追加
+          cmd.CommandText = "insert into Test (data) values(@data)";
+          // @dataパラメータにデータを入力する。
+          cmd.Parameters.Add(new MySqlParameter("@data", "Hello world - Addition"));
+          // 実行(返却値が必要ない。)
+          cmd.ExecuteNonQuery();
+        });
+        // Transaction 実行
+        var str = Transaction(cmd, () =&gt;
+        {
+          // テーブルからデータを検索
+          cmd.CommandText = "select * from Test";
+          // バッファー
+          var sb = new StringBuilder();
+          // 実行
+          using (var dr = cmd.ExecuteReader())
+          {
+            // レコード数程
+            while (dr.Read())
+            {
+              // バッファーに格納
+              sb.AppendLine($"{dr.GetValue(0)}\t{dr.GetValue(1)}");
+            }
+          }
+          // バッファーリターン
+          return sb.ToString();
+        });
+        // 結果をコンソールに出力
+        Console.WriteLine(str);
+      }
+      // 任意のキーを押してください
+      Console.WriteLine("Press Any key...");
+      Console.ReadLine();
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/274/1913_010.png" style="width: 290px;" data-filename="010.png"><br></p> 
+  <p>上の例はパターンを使ってもっとプログラムらしいなプログラムを作りました。</p> 
+  <p>C#にはORMフレームワークというEntityフレームワークがあります。直接にデータベースに接続するため、Transaction設定してOpen、Closeなどを作成する場合もありますが、上みたいにデータベースを効率的に接続するため、パターンで組み立ているフレームワークがあります。それがORM(Object reference mapping)フレームワークのEntityフレームワークがあります。 프레임워크가 있습니다.</p> 
+  <p>Entityフレームワークに関しては別の投稿で詳細に説明します。</p> 
+  <p><br></p> 
+  <p>ここまでC#でNugetを使い方(外部ライブラリ)とデータベース(MariaDB(Mysql))を使い方、そしてトランザクション(Transaction)に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/272.html" target="_blank">[C#] 46. データベース(MSSQL)に接続する方法</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=C%23>#C#</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0202">Study / C#</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/274.html'>[C#] 47. Nugetを使い方(外部ライブラリ)とデータベース(MariaDB(Mysql))を使い方、そしてトランザクション(Transaction)</a><span>2021/10/08 18:58:57</span></li><li><a href='https://www.nowonbun.com/272.html'>[C#] 46. データベース(MSSQL)に接続する方法</a><span>2021/10/07 18:39:58</span></li><li><a href='https://www.nowonbun.com/271.html'>[C#] 45. ネットワークソケット通信(Socket)を使い方</a><span>2021/10/06 19:06:25</span></li><li><a href='https://www.nowonbun.com/270.html'>[C#] 44. ファイル(FileInfo)とディレクトリ(DirectoryInfo)を扱い</a><span>2021/10/05 19:29:34</span></li><li><a href='https://www.nowonbun.com/269.html'>[C#] 43. ストリーム(Stream)とバイナリ(byte[])、エンコード(Encoding)、そしてusingを使い方とIDisposableインターフェース</a><span>2021/10/04 18:33:04</span></li><li><a href='https://www.nowonbun.com/268.html'>[C#] 42. ファイルを扱い(IO)とファイルメタデータ(FileInfo)を使い方</a><span>2021/10/01 20:10:21</span></li><li><a href='https://www.nowonbun.com/267.html'>[C#] 41. Taskクラスとasync、awaitを使い方</a><span>2021/10/01 18:59:14</span></li><li><a href='https://www.nowonbun.com/215.html'>[C#] 40. Linqを利用した並列処理(Parallel)を使い方</a><span>2020/05/13 17:37:13</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/274.html'>[C#] 47. Nugetを使い方(外部ライブラリ)とデータベース(MariaDB(Mysql))を使い方、そしてトランザクション(Transaction)</a><span>2021/10/08 18:58:57</span></li><li><a href='https://www.nowonbun.com/273.html'>[Window] MariaDBをインストールする方法</a><span>2021/10/08 18:56:05</span></li><li><a href='https://www.nowonbun.com/272.html'>[C#] 46. データベース(MSSQL)に接続する方法</a><span>2021/10/07 18:39:58</span></li><li><a href='https://www.nowonbun.com/271.html'>[C#] 45. ネットワークソケット通信(Socket)を使い方</a><span>2021/10/06 19:06:25</span></li><li><a href='https://www.nowonbun.com/270.html'>[C#] 44. ファイル(FileInfo)とディレクトリ(DirectoryInfo)を扱い</a><span>2021/10/05 19:29:34</span></li><li><a href='https://www.nowonbun.com/269.html'>[C#] 43. ストリーム(Stream)とバイナリ(byte[])、エンコード(Encoding)、そしてusingを使い方とIDisposableインターフェース</a><span>2021/10/04 18:33:04</span></li><li><a href='https://www.nowonbun.com/268.html'>[C#] 42. ファイルを扱い(IO)とファイルメタデータ(FileInfo)を使い方</a><span>2021/10/01 20:10:21</span></li><li><a href='https://www.nowonbun.com/267.html'>[C#] 41. Taskクラスとasync、awaitを使い方</a><span>2021/10/01 18:59:14</span></li><li><a href='https://www.nowonbun.com/266.html'>[Javascript ] WebのFull calendar(スケジュールカレンダー)の使い方法</a><span>2021/07/15 21:35:36</span></li><li><a href='https://www.nowonbun.com/265.html'>[Java] 56. Web serviceのサーブレット(Servlet)で初期化作業(properties設定)</a><span>2021/07/02 17:10:36</span></li><li><a href='https://www.nowonbun.com/264.html'>[Java] 55. Spring frameworkに文字化けを解決する方法(Encoding設定)</a><span>2021/06/30 16:37:16</span></li><li><a href='https://www.nowonbun.com/263.html'>[Java] 54. Spring frameworkでWeb filterを使う方法</a><span>2021/06/29 18:25:12</span></li><li><a href='https://www.nowonbun.com/262.html'>[Java] 53. ウェブサービス(Web service)でエラーページを処理する方法</a><span>2021/06/25 13:35:54</span></li><li><a href='https://www.nowonbun.com/261.html'>[Design pattern] 1-3. ファクトリメソッドパターン(Factory method pattern)</a><span>2021/06/23 19:45:37</span></li><li><a href='https://www.nowonbun.com/260.html'>[Java] WebSocketでチャット履歴をローディングする方法</a><span>2021/06/15 18:34:45</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/274.html';this.page.identifier = 'NOWONBUN00274';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
