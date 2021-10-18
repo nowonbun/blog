@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/284.html"},"url":"https:\/\/www.nowonbun.com\/284.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Project design] \u8a73\u7d30\u8a2d\u8a08(\u30a4\u30f3\u30bf\u30fc\u30d5\u30a7\u30fc\u30b9\u8a2d\u8a08\u3068\u62bd\u8c61\u5316\u4f5c\u696d)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306f\u8a73\u7d30\u8a2d\u8a08(\u30a4\u30f3\u30bf\u30fc\u30d5\u30a7\u30fc\u30b9\u8a2d\u8a08\u3068\u62bd\u8c61\u5316\u4f5c\u696d)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u4ee5\u524d\u306e\u6295\u7a3f\u3067\u57fa\u672c\u8a2d\u8a08\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u307e\u3057\u305f\u3002link - [project design] \u57fa\u672c\u8a2d\u8a08(\u753b\u9762\u8a2d\u8a08\u3068db\u8a2d\u8a08)\u57fa\u672c\u8a2d\u8a08\u3068\u3044\u3046\u306e\u306f\u7c21\u5358\u306b\u8981\u7d04\u3059\u308b\u3068\u30d7\u30ed\u30b0\u30e9\u30e0\u306e\u5168\u4f53\u7684\u306a\u69cb\u9020\u3092\u8a2d\u5b9a\u3059\u308b\u3053\u3068\u3067\u3059\u3002\u305d\u308c\u306a\u3089\u8a73\u7d30\u8a2d\u8a08\u306f\u3082\u3063\u3068\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u3069\u306e\u3088\u3046\u306b\u4f5c\u6210\u3059\u308b\u304b\u3092\u8a2d\u5b9a\u3059\u308b\u3053\u3068\u3067\u3059\u3002\u57fa\u672c\u8a2d\u8a08\u3067\u306f\u30e6\u30fc\u30ba\u30b1\u30fc\u30b9\u3084\u30a2\u30af\u30c6\u30a3\u30d6\u30c0\u30a4\u30a2\u30b0\u30e9\u30e0\u306a\u3069\u3092\u901a\u3063\u3066\u30d7\u30ed\u30b0\u30e9\u30e0\u306e\u8981\u7d20\u3088\u308a\u30e6\u30fc\u30b6\u304c\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u3069\u306e\u3088\u3046\u306b\u4f7f\u3046\u304b\u3001\u30d7\u30ed\u30b0\u30e9\u30e0\u306e\u6d41\u308c\u306f\u3069\u306e\u3088\u3046\u306b\u306a\u308b\u304b\u306e\u8aac\u660e\u3059\u308b\u3068\u601d\u3063\u305f\u3089\u8a73\u7d30\u8a2d\u8a08\u306f\u3082\u3063\u3068\u5177\u4f53\u7684\u306b\u30d7\u30ed\u30b0\u30e9\u30e0\u306e\u8a2d\u8a08\u306b\u306a\u308a\u3001\u30d7\u30ed\u30b0\u30e9\u30e0\u3089\u3057\u3044\u8a2d\u8a08\u306b\u306a\u308a\u307e\u3059\u3002\u3064\u307e\u308a\u3001uml(unified modeling language:\u7d71\u5408\u30e2\u30c7\u30ea\u30f3\u30b0\u8a00\u8a9e)\u306b\u306f\u30b7\u30fc\u30af\u30a8\u30f3\u30b9\u30c0\u30a4\u30a2\u30b0\u30e9\u30e0\u3084\u30af\u30e9\u30b9\u30c0\u30a4\u30a2\u30b0\u30e9\u30e0\u3092\u5229\u7528\u3057\u3066\u30d7\u30ed\u30b0\u30e9\u30e0\u8a2d\u8a08\u3059\u308b\u3053\u3068\u3067\u3059\u3002\u30b7\u30fc\u30af\u30a8\u30f3\u30b9\u30c0\u30a4\u30a2\u30b0\u30e9\u30e0 reference - https:\/\/en.wikipedia.org\/\u30af\u30e9\u30b9\u30c0\u30a4\u30a2\u30b0\u30e9\u30e0 reference - https:\/\/stackoverflow.com\/\u3053\u306e\u8a73\u7d30\u8a2d\u8a08\u3059\u308b\u7406\u7531\u3068\u3057\u3066\u306f\u69d8\u3005\u306a\u5de5\u7a0b\u306e\u30a4\u30f3\u30bf\u30fc\u30d5\u30a7\u30fc\u30b9\u3092\u78ba\u5b9a\u3059\u308b\u305f\u3081\u3067\u3059\u3002\u4eca\u56de\u306f\u30a6\u30a7\u30d6\u30d7\u30ed\u30b0\u30e9\u30e0\u3067\u306f\u306a\u304f\u3001c\/s(clieng-server)\u30d7\u30ed\u30b0\u30e9\u30e0\u306e\u4f8b\u3067\u8aac\u660e\u3057\u307e\u3059\u3002\u6211\u3005\u304c\u696d\u52d9c\/s\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u4f5c\u6210\u3059\u308b\u3068\u601d\u3063\u305f\u3089\u3001server\u306b\u306f\u5927\u5e45\u3067network\u30d1\u30fc\u30c8\u3001\u696d\u52d9\u30d1\u30fc\u30c8\u3001core(\u5171\u901a\u90e8\u54c1)\u3001\u305d\u306e\u4ed6\u306e\u30e6\u30fc\u30c6\u30a3\u30ea\u30c6\u30a3\u306b\u5206\u3051\u3066\u958b\u767a\u3057\u307e\u3059\u3002\u4e00\u4eba\u3067\u958b\u767a\u3059\u308b\u3068\u601d\u3048\u3070\u5225\u306b\u30d1\u30fc\u30c8\u3092\u5206\u3051\u308b\u7406\u7531\u304c\u306a\u3044\u3067\u3059\u304c\u3001\u5b9f\u8df5\u3067\u306f\u4e00\u4eba\u3067\u958b\u767a\u3059\u308b\u5834\u5408\u304c\u5c11\u306a\u3044\u306e\u3067\u5927\u5e45\u30674\u30d1\u30fc\u30c8\u3067\u5206\u3051\u3066\u958b\u767a\u3059\u308b\u3068\u601d\u3044\u307e\u3057\u3087\u3046\u3002\u8a73\u7d30\u8a2d\u8a08\u304c\u306a\u304f\u3001\u3059\u3050\u958b\u767a\u3092\u958b\u59cb\u3059\u308b\u3068\u601d\u3048\u3070\u3001\u5404\u30d1\u30fc\u30c8\u3067\u306f\u5de5\u6570(step count)\u304c\u8a2d\u5b9a\u3055\u308c\u307e\u3059\u3002\u305d\u308c\u306a\u3089\u3001\u79c1\u304c\u696d\u52d9\u30d1\u30fc\u30c8\u3092\u4f5c\u6210\u3057\u3088\u3046\u3068\u601d\u3046\u3068\u3001\u4f5c\u6210\u4e2d\u3067core\u306e\u7279\u5b9a\u306a\u30c7\u30fc\u30bf\u3092\u53d6\u5f97\u3059\u308b\u30b3\u30fc\u30c9\u3092\u4f5c\u6210\u3059\u308b\u3068\u601d\u3044\u307e\u3057\u3087\u3046\u3002\u3067\u3082\u3001core\u30d1\u30fc\u30c8\u3067\u306f\u307e\u3060\u305d\u306e\u90e8\u5206\u304c\u4f5c\u6210\u305b\u305a\u306b\u3001\u91cd\u8981\u5ea6\u304c\u4f4e\u304f\u3001\u512a\u5148\u9806\u4f4d\u3067\u96e2\u308c\u3066\u3044\u307e\u3059\u3002\u305d\u3046\u306a\u3089\u6211\u3005\u306f\u305d\u306ecore\u304c\u4f5c\u6210\u3059\u308b\u6642\u307e\u3067\u4eca\u306e\u4f5c\u696d\u304c\u6b62\u307e\u308a\u307e\u3059\u3002network\u3092\u5229\u7528\u3057\u3066client\u306b\u30c7\u30fc\u30bf\u3092\u9001\u4fe1\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u90e8\u5206\u3060\u3068network\u30d1\u30fc\u30c8\u304c\u4f5c\u6210\u3059\u308b\u6642\u307e\u3067\u5f85\u6a5f\u3059\u308b\u3079\u304d\u3067\u3059\u3002\u3082\u3063\u3068\u5927\u304d\u304f\u8003\u3048\u308b\u3068client\u30d7\u30ed\u30b0\u30e9\u30e0\u306fserver\u30d7\u30ed\u30b0\u30e9\u30e0\u304c","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2021-10-18T18:23:15.000+09:00","dateModified":"2021-10-18T18:23:59.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Project design" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿は詳細設計(インターフェース設計と抽象化作業)に関する説明です。以前の投稿で基本設計に関して説明しました。link - [project design] 基本設計(画面設計とdb設計)基本設計というのは簡単に要約するとプログラムの全体的な構造を設定することです。それなら詳細設計はもっとプログラムをどのように作成するかを設定することです。基本設計ではユーズケースやアクティブダイアグラムなどを通ってプログラムの要素よりユーザがプログラムをどのように使うか、プログラムの流れはどのようになるかの説明すると思ったら詳細設計はもっと具体的にプログラムの設計になり、プログラムらしい設計になります。つまり、uml(unified modeling language:統合モデリング言語)にはシークエンスダイアグラムやクラスダイアグラムを利用してプログラム設計することです。シークエンスダイアグラム reference - https://en.wikipedia.org/クラスダイアグラム reference - https://stackoverflow.com/この詳細設計する理由としては様々な工程のインターフェースを確定するためです。今回はウェブプログラムではなく、c/s(clieng-server)プログラムの例で説明します。我々が業務c/sプログラムを作成すると思ったら、serverには大幅でnetworkパート、業務パート、core(共通部品)、その他のユーティリティに分けて開発します。一人で開発すると思えば別にパートを分ける理由がないですが、実践では一人で開発する場合が少ないので大幅で4パートで分けて開発すると思いましょう。詳細設計がなく、すぐ開発を開始すると思えば、各パートでは工数(step count)が設定されます。それなら、私が業務パートを作成しようと思うと、作成中でcoreの特定なデータを取得するコードを作成すると思いましょう。でも、coreパートではまだその部分が作成せずに、重要度が低く、優先順位で離れています。そうなら我々はそのcoreが作成する時まで今の作業が止まります。networkを利用してclientにデータを送信しなければならない部分だとnetworkパートが作成する時まで待機するべきです。もっと大きく考えるとclientプログラムはserverプログラムが]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Project design] 詳細設計(インターフェース設計と抽象化作業)" />
+<link rel="canonical" href="https://www.nowonbun.com/284.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Project design] 詳細設計(インターフェース設計と抽象化作業)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿は詳細設計(インターフェース設計と抽象化作業)に関する説明です。以前の投稿で基本設計に関して説明しました。link - [project design] 基本設計(画面設計とdb設計)基本設計というのは簡単に要約するとプログラムの全体的な構造を設定することです。それなら詳細設計はもっとプログラムをどのように作成するかを設定することです。基本設計ではユーズケースやアクティブダイアグラムなどを通ってプログラムの要素よりユーザがプログラムをどのように使うか、プログラムの流れはどのようになるかの説明すると思ったら詳細設計はもっと具体的にプログラムの設計になり、プログラムらしい設計になります。つまり、uml(unified modeling language:統合モデリング言語)にはシークエンスダイアグラムやクラスダイアグラムを利用してプログラム設計することです。シークエンスダイアグラム reference - https://en.wikipedia.org/クラスダイアグラム reference - https://stackoverflow.com/この詳細設計する理由としては様々な工程のインターフェースを確定するためです。今回はウェブプログラムではなく、c/s(clieng-server)プログラムの例で説明します。我々が業務c/sプログラムを作成すると思ったら、serverには大幅でnetworkパート、業務パート、core(共通部品)、その他のユーティリティに分けて開発します。一人で開発すると思えば別にパートを分ける理由がないですが、実践では一人で開発する場合が少ないので大幅で4パートで分けて開発すると思いましょう。詳細設計がなく、すぐ開発を開始すると思えば、各パートでは工数(step count)が設定されます。それなら、私が業務パートを作成しようと思うと、作成中でcoreの特定なデータを取得するコードを作成すると思いましょう。でも、coreパートではまだその部分が作成せずに、重要度が低く、優先順位で離れています。そうなら我々はそのcoreが作成する時まで今の作業が止まります。networkを利用してclientにデータを送信しなければならない部分だとnetworkパートが作成する時まで待機するべきです。もっと大きく考えるとclientプログラムはserverプログラムが]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/284.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Project design] 詳細設計(インターフェース設計と抽象化作業)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿は詳細設計(インターフェース設計と抽象化作業)に関する説明です。以前の投稿で基本設計に関して説明しました。link - [project design] 基本設計(画面設計とdb設計)基本設計というのは簡単に要約するとプログラムの全体的な構造を設定することです。それなら詳細設計はもっとプログラムをどのように作成するかを設定することです。基本設計ではユーズケースやアクティブダイアグラムなどを通ってプログラムの要素よりユーザがプログラムをどのように使うか、プログラムの流れはどのようになるかの説明すると思ったら詳細設計はもっと具体的にプログラムの設計になり、プログラムらしい設計になります。つまり、uml(unified modeling language:統合モデリング言語)にはシークエンスダイアグラムやクラスダイアグラムを利用してプログラム設計することです。シークエンスダイアグラム reference - https://en.wikipedia.org/クラスダイアグラム reference - https://stackoverflow.com/この詳細設計する理由としては様々な工程のインターフェースを確定するためです。今回はウェブプログラムではなく、c/s(clieng-server)プログラムの例で説明します。我々が業務c/sプログラムを作成すると思ったら、serverには大幅でnetworkパート、業務パート、core(共通部品)、その他のユーティリティに分けて開発します。一人で開発すると思えば別にパートを分ける理由がないですが、実践では一人で開発する場合が少ないので大幅で4パートで分けて開発すると思いましょう。詳細設計がなく、すぐ開発を開始すると思えば、各パートでは工数(step count)が設定されます。それなら、私が業務パートを作成しようと思うと、作成中でcoreの特定なデータを取得するコードを作成すると思いましょう。でも、coreパートではまだその部分が作成せずに、重要度が低く、優先順位で離れています。そうなら我々はそのcoreが作成する時まで今の作業が止まります。networkを利用してclientにデータを送信しなければならない部分だとnetworkパートが作成する時まで待機するべきです。もっと大きく考えるとclientプログラムはserverプログラムが]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Project design] 詳細設計(インターフェース設計と抽象化作業)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(91)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(27)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(4)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(13)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(191)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(52)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(56)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(5)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0210" href="study_project_design.html">Project design<span class="category-item-count">(4)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/284.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Project design] 詳細設計(インターフェース設計と抽象化作業)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0210">Study / Project design</a>    作成日付 : <span property="datePublished">2021/10/18 18:23:15</span>   修正日付 : <span property="dateModified">2021/10/18 18:23:59</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿は詳細設計(インターフェース設計と抽象化作業)に関する説明です。</p> 
+  <p><br></p> 
+  <p>以前の投稿で基本設計に関して説明しました。</p> 
+  <p>link - <a href="https://www.nowonbun.com/283.html" target="_blank">[Project design] 基本設計(画面設計とDB設計)</a></p> 
+  <p><br></p> 
+  <p>基本設計というのは簡単に要約するとプログラムの全体的な構造を設定することです。それなら詳細設計はもっとプログラムをどのように作成するかを設定することです。</p> 
+  <p>基本設計ではユーズケースやアクティブダイアグラムなどを通ってプログラムの要素よりユーザがプログラムをどのように使うか、プログラムの流れはどのようになるかの説明すると思ったら詳細設計はもっと具体的にプログラムの設計になり、プログラムらしい設計になります。</p> 
+  <p>つまり、UML(Unified Modeling Language:統合モデリング言語)にはシークエンスダイアグラムやクラスダイアグラムを利用してプログラム設計することです。</p> 
+  <p style="text-align:left;"><img src="./contents/284/1954_001.png" data-filename="001.png" style="width: 340px;"><br></p> <span style="font-size:0.7em">シークエンスダイアグラム reference - <a href="https://en.wikipedia.org/wiki/Sequence_diagram" target="_blank">https://en.wikipedia.org/</a></span> 
+  <p><br></p> 
+  <p style="text-align:left;"><img src="./contents/284/1955_002.jpg" data-filename="002.jpg" style="width: 848px;"><br></p> <span style="font-size:0.7em">クラスダイアグラム reference - <a href="https://stackoverflow.com/questions/57690701/modelling-services-in-a-uml-class-diagram" target="_blank">https://stackoverflow.com/</a></span> 
+  <p><br></p> 
+  <p>この詳細設計する理由としては様々な工程のインターフェースを確定するためです。</p> 
+  <p>今回はウェブプログラムではなく、C/S(Clieng-Server)プログラムの例で説明します。</p> 
+  <p><br></p> 
+  <p>我々が業務C/Sプログラムを作成すると思ったら、Serverには大幅でNetworkパート、業務パート、Core(共通部品)、その他のユーティリティに分けて開発します。一人で開発すると思えば別にパートを分ける理由がないですが、実践では一人で開発する場合が少ないので大幅で4パートで分けて開発すると思いましょう。</p> 
+  <p>詳細設計がなく、すぐ開発を開始すると思えば、各パートでは工数(step count)が設定されます。</p> 
+  <p>それなら、私が業務パートを作成しようと思うと、作成中でCoreの特定なデータを取得するコードを作成すると思いましょう。でも、Coreパートではまだその部分が作成せずに、重要度が低く、優先順位で離れています。そうなら我々はそのCoreが作成する時まで今の作業が止まります。</p> 
+  <p>Networkを利用してClientにデータを送信しなければならない部分だとNetworkパートが作成する時まで待機するべきです。もっと大きく考えるとClientプログラムはServerプログラムが完成する時まで待機するべきです。</p> 
+  <p>普通のプロジェクトは並列で開始するので、他のパートが完成する時まで待つことはできません。</p> 
+  <p>そのため、詳細設計が必要です。</p> 
+  <p><br></p> 
+  <p>なのでウォーターフォール工程ではシークエンスダイアグラム、クラスダイアグラム、そしてもっと必要ならインターフェースダイアグラムまで必要です。でも、現実は設計図を一つ一つ全部作成する時間がありません。</p> 
+  <p>そのため、私の考えはこの部分の工程を減らすとすごく時間を短縮することが可能ではないかと思いました。でも、省略することでは上の問題な協業作業ができない問題があります。</p> 
+  <p><br></p> 
+  <p>なので、基本設計と同じ概念でコーディングが設計だと思いで、InterfaceとAbstractクラスを利用してまだ開発してないですが、インターフェースと抽象化設計で詳細設計ができるではないかと思いました。</p> 
+  <p>Interfaceは実際のコードを実装せずにこれから私が何を作成しようかと思う関数を作成します。</p> 
+  <p>そして変数が必要な部分は抽象クラスで先に設定することも良いでしょう。</p> 
+  <p><br></p> 
+  <p>このように作業すると実際にコードを作成しなくてもプロジェクト内でデバッグエラーが発生しません。もちろん、インターフェースだけで実際のインスタンスが生成することはできないので、正常に動くことはしません。</p> 
+  <p>でも、設計かつコーディングが同時に作成するので、時間をすごく短縮することができます。そしてUMLダイアグラムより直接にソースを見て判断することなので、個人的に設計可読性もよくなるでしょう。</p> 
+  <p><br></p> 
+  <p>そして、私も最近から導入して使う方法で一行のコメントです。(これは状況によりソースが逆に汚くなり、可読性が悪くなる可能性もあります。)</p> 
+  <p>一行コメントすると、コードページが設計図になります。このように作成するとOOP特性を無視して関数単位開発することもなくなるし、コーディングのステップの減らす効果もあります。</p> 
+  <p>デザインパターンでFacadeパターンを利用するとすごく綺麗なソースになった時もありました。</p> 
+  <p>この方法では人により差異があるのでお勧めではないですが、少なくとも私の場合はこの方法で成功したプロジェクトがあります。</p> 
+  <p><br></p> 
+  <p>上の方法も基本設計でHTML作成しましょうと同じく、プログラムコードを作成することができなければできない方法です。</p> 
+  <p>チームがすべて開発者になると個人的にすごく便利でした。</p> 
+  <p><br></p> 
+  <p>でも、日本ではウォーターフォール工程でプログラムを納品する時に詳細設計図を提出してくださいという依頼もあるので、依頼条件によりですね。自社SIならお勧めです。</p> 
+  <p><br></p> 
+  <p>ここまで詳細設計(インターフェース設計と抽象化作業)に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/283.html" target="_blank">[Project design] 基本設計(画面設計とDB設計)</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=projectdesign>#projectdesign</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0210">Study / Project design</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/284.html'>[Project design] 詳細設計(インターフェース設計と抽象化作業)</a><span>2021/10/18 18:23:15</span></li><li><a href='https://www.nowonbun.com/283.html'>[Project design] 基本設計(画面設計とDB設計)</a><span>2021/10/17 21:21:11</span></li><li><a href='https://www.nowonbun.com/281.html'>[Project design] 要件定義(要求事項整理)</a><span>2021/10/15 19:28:58</span></li><li><a href='https://www.nowonbun.com/279.html'>[Project design] プロジェクトを工程(ウォーターフォール　vs アジャイル)</a><span>2021/10/14 18:36:04</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/285.html'>[CentOs] ジェンキンス(Jenkins)をインストールする方法</a><span>2021/10/18 18:28:58</span></li><li><a href='https://www.nowonbun.com/284.html'>[Project design] 詳細設計(インターフェース設計と抽象化作業)</a><span>2021/10/18 18:23:15</span></li><li><a href='https://www.nowonbun.com/283.html'>[Project design] 基本設計(画面設計とDB設計)</a><span>2021/10/17 21:21:11</span></li><li><a href='https://www.nowonbun.com/282.html'>[Design pattern] 1-4. デザインパターンの抽象ファクトリーパターン(Abstract factory pattern)</a><span>2021/10/15 19:31:03</span></li><li><a href='https://www.nowonbun.com/281.html'>[Project design] 要件定義(要求事項整理)</a><span>2021/10/15 19:28:58</span></li><li><a href='https://www.nowonbun.com/280.html'>[C#] 52. Reflection機能を使い方 - Variable</a><span>2021/10/15 19:27:37</span></li><li><a href='https://www.nowonbun.com/279.html'>[Project design] プロジェクトを工程(ウォーターフォール　vs アジャイル)</a><span>2021/10/14 18:36:04</span></li><li><a href='https://www.nowonbun.com/278.html'>[C#] 51. Reflection機能を使い方 - Method</a><span>2021/10/14 18:34:21</span></li><li><a href='https://www.nowonbun.com/277.html'>[C#] 50. Reflection機能を使い方 - Class</a><span>2021/10/13 18:34:13</span></li><li><a href='https://www.nowonbun.com/276.html'>[C#] 49. Operator(演算子)のオーバーロードを使い方</a><span>2021/10/12 18:28:42</span></li><li><a href='https://www.nowonbun.com/275.html'>[C#] 48. IEnumerableとIEnumerator、そしてyieldキーワード</a><span>2021/10/11 19:49:33</span></li><li><a href='https://www.nowonbun.com/274.html'>[C#] 47. Nugetを使い方(外部ライブラリ)とデータベース(MariaDB(Mysql))を使い方、そしてトランザクション(Transaction)</a><span>2021/10/08 18:58:57</span></li><li><a href='https://www.nowonbun.com/273.html'>[Window] MariaDBをインストールする方法</a><span>2021/10/08 18:56:05</span></li><li><a href='https://www.nowonbun.com/272.html'>[C#] 46. データベース(MSSQL)に接続する方法</a><span>2021/10/07 18:39:58</span></li><li><a href='https://www.nowonbun.com/271.html'>[C#] 45. ネットワークソケット通信(Socket)を使い方</a><span>2021/10/06 19:06:25</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/284.html';this.page.identifier = 'NOWONBUN00284';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
