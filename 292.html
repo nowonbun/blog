@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/292.html"},"url":"https:\/\/www.nowonbun.com\/292.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [C#] 57. \u30b3\u30fc\u30c6\u30a3\u30f3\u30b0\u898f\u7d04","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fc#\u306e\u30b3\u30fc\u30c6\u30a3\u30f3\u30b0\u898f\u7d04\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u307e\u305a\u3001\u30b3\u30fc\u30c6\u30a3\u30f3\u30b0\u898f\u7d04\u306b\u95a2\u3057\u3066\u7c21\u5358\u306b\u8aac\u660e\u3059\u308b\u3068\u3001\u30b3\u30fc\u30c6\u30a3\u30f3\u30b0\u898f\u7d04\u306f\u6211\u3005\u304c\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u4f5c\u6210\u3059\u308b\u6642\u306b\u5b88\u3089\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u30eb\u30fc\u30eb\u3068\u8a00\u3044\u307e\u3059\u3002\u30d7\u30ed\u30b0\u30e9\u30e0\u306e\u6027\u80fd\u3068\u52b9\u7387\u6027\u3068\u306f\u95a2\u4fc2\u304c\u306a\u3044\u3057\u3001\u8907\u6570\u306e\u4eba\u3068\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u4f5c\u6210\u3059\u308b\u6642\u306b\u30bd\u30fc\u30b9\u3092\u898b\u3084\u3059\u304f\u3059\u308b\u305f\u3081\u306b\u6c7a\u3081\u305f\u30eb\u30fc\u30eb\u3067\u3059\u3002\u7c21\u5358\u306b\u4f8b\u3067\u8a71\u3059\u3068\u3001\u95a2\u6570\u547d\u540d\u6cd5\u3092\u307f\u308b\u3068\u300c\u52d5\u8a5e + \u540d\u8a5e\u300d\u306e\u578b\u3067\u666e\u901a\u306f\u300cgetdata\u300d\u540d\u3067\u4f5c\u6210\u3057\u307e\u3059\u3002\u3067\u3082\u300cdataget\u300d\u3068\u3044\u3046\u95a2\u6570\u540d\u3092\u4f5c\u6210\u3057\u3066\u3082\u30d7\u30ed\u30b0\u30e9\u30e0\u304c\u52d5\u304b\u306a\u3044\u3068\u3044\u3046\u3053\u3068\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002\u3044\u3084\u3001\u300cabcdefghijklm\u300d\u3068\u3044\u3046\u95a2\u6570\u540d\u306b\u3057\u3066\u3082\u30d7\u30ed\u30b0\u30e9\u30e0\u304c\u52d5\u304f\u3053\u3068\u3067\u306f\u4f55\u3082\u554f\u984c\u304c\u3042\u308a\u307e\u305b\u3093\u3002\u3067\u3082\u300cgetdata\u300d\u3068\u3044\u3046\u95a2\u6570\u540d\u3092\u4f5c\u6210\u3059\u308b\u3068\u95a2\u6570\u306e\u30bd\u30fc\u30b9\u3092\u898b\u306a\u304f\u3066\u3082\u3053\u306e\u95a2\u6570\u306f\u300c\u3069\u306e\u30c7\u30fc\u30bf\u3092\u53d6\u5f97\u3059\u308b\u95a2\u6570\u3060\u300d\u3060\u3068\u4e88\u60f3\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u304c\u3001\u5909\u306a\u95a2\u6570\u540d\u3067\u4f5c\u6210\u3059\u308b\u3068\u95a2\u6570\u540d\u3060\u3051\u3067\u3069\u306e\u52d5\u4f5c\u3059\u308b\u304b\u3092\u5206\u304b\u308a\u307e\u305b\u3093\u3002\u305d\u308c\u3067ms\u306b\u306fc#\u3092\u30b3\u30fc\u30c7\u30a3\u30f3\u30b0\u3059\u308b\u6642\u306b\u3001\u95a2\u6570\u547d\u540d\u6cd5\u3001\u30bd\u30fc\u30b9\u5185\u3067\u30b9\u30da\u30fc\u30b9\u898f\u5247\u306a\u3069\u306e\u30eb\u30fc\u30eb\u3092\u8a2d\u5b9a\u3057\u3066\u4f7f\u3046\u3053\u3068\u3067\u304a\u52e7\u3081\u3057\u3066\u3044\u307e\u3059\u3002\u3053\u308c\u3092\u30b3\u30fc\u30c7\u30a3\u30f3\u30b0\u898f\u7d04\u3068\u8a00\u3044\u307e\u3059\u3002link - ms\u306e\u30b3\u30fc\u30c6\u30a3\u30f3\u30b0\u6a19\u6e96\u547d\u540d\u30eb\u30fc\u30eb\u30ec\u30a4\u30a2\u30a6\u30c8\u30eb\u30fc\u30eb\u826f\u3044\u30ec\u30a4\u30a2\u30a6\u30c8\u30eb\u30fc\u30eb\u306f\u3001\u30b3\u30fc\u30c9\u306e\u69cb\u6587\u3092\u5f37\u8abf\u3057\u3066\u8aad\u307f\u3084\u3059\u304f\u4f5c\u6210\u3059\u308b\u3053\u3068\u3067\u3059\u30021. \u57fa\u672c\u30b3\u30fc\u30c9\u7de8\u96c6\u30c4\u30fc\u30eb\u306e\u8a2d\u5b9a (4\u6587\u5b57\u30a4\u30f3\u30c7\u30f3\u30c8\u3001\u30b9\u30da\u30fc\u30b9\u3067\u4fdd\u5b58\u3055\u308c\u305f\u30bf\u30d6)\u3092\u4f7f\u3044\u307e\u3057\u3087\u3046\u3002\u0026amp;nbsp;\u0026amp;nbsp;\u0026amp;nbsp;\u30b7\u30e7\u30c3\u30c8\u30ad\u30fc\u306fctrl + k + d\u3067\u3059\u3002\u0026amp;nbsp;\u0026amp;nbsp;\u0026amp;nbsp;link - https:\/\/docs.microsoft.com\/en-us\/visualstudio\/ide\/reference\/options-text-editor-csharp-formatting?view\u003dvs-20192. \u4e00\u884c\u76ee\u306b\u306f\u4e00\u3064\u306e\u30b9\u30c6\u30c3\u30d7\u3060\u3051\u4f5c\u6210\u3057\u307e\u3057\u3087\u3046\u30023. \u9023\u7d9a\u7684\u306b\u30c1\u30a7\u30a4\u30f3\u30d1\u30bf\u30fc\u30f3\u306e\u95a2\u6570\u5ba3\u8a00\u3059\u308b\u6642\u3001\u81ea\u52d5\u306b\u30a4\u30f3\u30c7\u30f3\u30c8\u304c\u3067\u304d\u306a\u3044\u306a\u3089\u3001\u30bf\u30d6\u9593\u9694\u3092\u30a4\u30f3\u30c7\u30f3\u30c8\u3057\u307e\u3057\u3087\u3046\u3002(4\u30b9\u30da\u30fc\u30b9)\u0026amp;nbsp;\u0026amp;nbsp;\u0026amp;nbsp;-\u0026amp;gt; \u7279\u306blinq\u5f0f\u306e\u5834\u5408\u306f.where .select\u306e\u9023\u7d9a\u3055\u308c\u305f\u51e6\u7406\u5f0f\u304c\u53ef\u80fd\u3067\u3059\u304c\u3001\u30e9\u30a4\u30f3\u3092\u5909\u308f\u308b\u6642\u306b\u306f\u5fc5\u305a\u30a4\u30f3\u30c7\u30f3\u30c8\u3092\u3057\u3066\u533a\u5206\u3092\u6c7a\u3081\u307e\u3057\u3087\u3046\u30024. \u30e1\u30bd\u30c3\u30c9\u306e\u5b9a\u7fa9\u3068\u30d7\u30ed\u30d1","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2021-10-21T18:57:02.000+09:00","dateModified":"2021-10-21T18:57:02.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / C#" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はc#のコーティング規約に関する説明です。まず、コーティング規約に関して簡単に説明すると、コーティング規約は我々がプログラムを作成する時に守らなければならないルールと言います。プログラムの性能と効率性とは関係がないし、複数の人とプログラムを作成する時にソースを見やすくするために決めたルールです。簡単に例で話すと、関数命名法をみると「動詞 + 名詞」の型で普通は「getdata」名で作成します。でも「dataget」という関数名を作成してもプログラムが動かないということではありません。いや、「abcdefghijklm」という関数名にしてもプログラムが動くことでは何も問題がありません。でも「getdata」という関数名を作成すると関数のソースを見なくてもこの関数は「どのデータを取得する関数だ」だと予想することができますが、変な関数名で作成すると関数名だけでどの動作するかを分かりません。それでmsにはc#をコーディングする時に、関数命名法、ソース内でスペース規則などのルールを設定して使うことでお勧めしています。これをコーディング規約と言います。link - msのコーティング標準命名ルールレイアウトルール良いレイアウトルールは、コードの構文を強調して読みやすく作成することです。1. 基本コード編集ツールの設定 (4文字インデント、スペースで保存されたタブ)を使いましょう。&amp;nbsp;&amp;nbsp;&amp;nbsp;ショットキーはctrl + k + dです。&amp;nbsp;&amp;nbsp;&amp;nbsp;link - https://docs.microsoft.com/en-us/visualstudio/ide/reference/options-text-editor-csharp-formatting?view=vs-20192. 一行目には一つのステップだけ作成しましょう。3. 連続的にチェインパターンの関数宣言する時、自動にインデントができないなら、タブ間隔をインデントしましょう。(4スペース)&amp;nbsp;&amp;nbsp;&amp;nbsp;-&amp;gt; 特にlinq式の場合は.where .selectの連続された処理式が可能ですが、ラインを変わる時には必ずインデントをして区分を決めましょう。4. メソッドの定義とプロパ]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [C#] 57. コーティング規約" />
+<link rel="canonical" href="https://www.nowonbun.com/292.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [C#] 57. コーティング規約" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はc#のコーティング規約に関する説明です。まず、コーティング規約に関して簡単に説明すると、コーティング規約は我々がプログラムを作成する時に守らなければならないルールと言います。プログラムの性能と効率性とは関係がないし、複数の人とプログラムを作成する時にソースを見やすくするために決めたルールです。簡単に例で話すと、関数命名法をみると「動詞 + 名詞」の型で普通は「getdata」名で作成します。でも「dataget」という関数名を作成してもプログラムが動かないということではありません。いや、「abcdefghijklm」という関数名にしてもプログラムが動くことでは何も問題がありません。でも「getdata」という関数名を作成すると関数のソースを見なくてもこの関数は「どのデータを取得する関数だ」だと予想することができますが、変な関数名で作成すると関数名だけでどの動作するかを分かりません。それでmsにはc#をコーディングする時に、関数命名法、ソース内でスペース規則などのルールを設定して使うことでお勧めしています。これをコーディング規約と言います。link - msのコーティング標準命名ルールレイアウトルール良いレイアウトルールは、コードの構文を強調して読みやすく作成することです。1. 基本コード編集ツールの設定 (4文字インデント、スペースで保存されたタブ)を使いましょう。&amp;nbsp;&amp;nbsp;&amp;nbsp;ショットキーはctrl + k + dです。&amp;nbsp;&amp;nbsp;&amp;nbsp;link - https://docs.microsoft.com/en-us/visualstudio/ide/reference/options-text-editor-csharp-formatting?view=vs-20192. 一行目には一つのステップだけ作成しましょう。3. 連続的にチェインパターンの関数宣言する時、自動にインデントができないなら、タブ間隔をインデントしましょう。(4スペース)&amp;nbsp;&amp;nbsp;&amp;nbsp;-&amp;gt; 特にlinq式の場合は.where .selectの連続された処理式が可能ですが、ラインを変わる時には必ずインデントをして区分を決めましょう。4. メソッドの定義とプロパ]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/292.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [C#] 57. コーティング規約" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はc#のコーティング規約に関する説明です。まず、コーティング規約に関して簡単に説明すると、コーティング規約は我々がプログラムを作成する時に守らなければならないルールと言います。プログラムの性能と効率性とは関係がないし、複数の人とプログラムを作成する時にソースを見やすくするために決めたルールです。簡単に例で話すと、関数命名法をみると「動詞 + 名詞」の型で普通は「getdata」名で作成します。でも「dataget」という関数名を作成してもプログラムが動かないということではありません。いや、「abcdefghijklm」という関数名にしてもプログラムが動くことでは何も問題がありません。でも「getdata」という関数名を作成すると関数のソースを見なくてもこの関数は「どのデータを取得する関数だ」だと予想することができますが、変な関数名で作成すると関数名だけでどの動作するかを分かりません。それでmsにはc#をコーディングする時に、関数命名法、ソース内でスペース規則などのルールを設定して使うことでお勧めしています。これをコーディング規約と言います。link - msのコーティング標準命名ルールレイアウトルール良いレイアウトルールは、コードの構文を強調して読みやすく作成することです。1. 基本コード編集ツールの設定 (4文字インデント、スペースで保存されたタブ)を使いましょう。&amp;nbsp;&amp;nbsp;&amp;nbsp;ショットキーはctrl + k + dです。&amp;nbsp;&amp;nbsp;&amp;nbsp;link - https://docs.microsoft.com/en-us/visualstudio/ide/reference/options-text-editor-csharp-formatting?view=vs-20192. 一行目には一つのステップだけ作成しましょう。3. 連続的にチェインパターンの関数宣言する時、自動にインデントができないなら、タブ間隔をインデントしましょう。(4スペース)&amp;nbsp;&amp;nbsp;&amp;nbsp;-&amp;gt; 特にlinq式の場合は.where .selectの連続された処理式が可能ですが、ラインを変わる時には必ずインデントをして区分を決めましょう。4. メソッドの定義とプロパ]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [C#] 57. コーティング規約</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(91)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(27)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(4)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(13)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(198)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(57)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(56)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(5)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0210" href="study_project_design.html">Project design<span class="category-item-count">(6)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/292.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[C#] 57. コーティング規約</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0202">Study / C#</a>    作成日付 : <span property="datePublished">2021/10/21 18:57:02</span>   修正日付 : <span property="dateModified">2021/10/21 18:57:02</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はC#のコーティング規約に関する説明です。</p> 
+  <p><br></p> 
+  <p>まず、コーティング規約に関して簡単に説明すると、コーティング規約は我々がプログラムを作成する時に守らなければならないルールと言います。プログラムの性能と効率性とは関係がないし、複数の人とプログラムを作成する時にソースを見やすくするために決めたルールです。</p> 
+  <p>簡単に例で話すと、関数命名法をみると「動詞 + 名詞」の型で普通は「GetData」名で作成します。でも「DataGet」という関数名を作成してもプログラムが動かないということではありません。いや、「abcdefghijklm」という関数名にしてもプログラムが動くことでは何も問題がありません。</p> 
+  <p>でも「GetData」という関数名を作成すると関数のソースを見なくてもこの関数は「どのデータを取得する関数だ」だと予想することができますが、変な関数名で作成すると関数名だけでどの動作するかを分かりません。</p> 
+  <p><br></p> 
+  <p>それでMSにはC#をコーディングする時に、関数命名法、ソース内でスペース規則などのルールを設定して使うことでお勧めしています。これをコーディング規約と言います。</p> 
+  <p>link - <a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions" target="_blank" rel="noopener">MSのコーティング標準</a></p> 
+  <h2><b><span>命名ルール</span></b></h2> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> <p正規化されたクラスの名前に一行目に長く表示されないようにしましょう。つまり、含めているすべてのnamespaceを設定する必要がありません。>
+    &lt; p=""&gt; 
+    <pre><code class="cs" data-type="コード命名法">// 間違い命名方法
+System.Diagnostics.PerformanceCounterCategory category = new System.Diagnostics.PerformanceCounterCategory(); 
+// 指示文はvarを使って最大に簡潔して使うし宣言文のネームスペースはusingを使って一行目のコーディング表記を短くしましょう。
+using System.Diagnostics;
+var category = new PerformanceCounterCategory();
+</code></pre> 
+   </p正規化されたクラスの名前に一行目に長く表示されないようにしましょう。つまり、含めているすべてのnamespaceを設定する必要がありません。>&lt;&gt;
+  </blockquote> 
+  <h2><b><span>レイアウトルール</span></b></h2> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <p>良いレイアウトルールは、コードの構文を強調して読みやすく作成することです。</p> 
+   <p>1. 基本コード編集ツールの設定 (4文字インデント、スペースで保存されたタブ)を使いましょう。</p> 
+   <p>&nbsp;&nbsp;&nbsp;ショットキーはCtrl + K + Dです。</p> 
+   <p style="text-align:left;"><img src="./contents/292/2013_001.png" style="width: 725px;" data-filename="001.png"><br></p> 
+   <p>&nbsp;&nbsp;&nbsp;link - <a href="https://docs.microsoft.com/en-us/visualstudio/ide/reference/options-text-editor-csharp-formatting?view=vs-2019" target="_blank" rel="noopener">https://docs.microsoft.com/en-us/visualstudio/ide/reference/options-text-editor-csharp-formatting?view=vs-2019</a></p> 
+   <p><br></p> 
+   <p>2. 一行目には一つのステップだけ作成しましょう。</p> 
+   <pre><code class="cs" data-type="コード方法">// 間違いコード方法
+if( a &gt; 0) for(int i = 0; i &lt; 10; i++) Console.WriteLine(i);
+// 正しいコード方法
+if (a &gt; 0)
+{
+  for (int i = 0; i &lt; 10; i++)
+  {
+    Console.WriteLine(i);
+  } 
+}
+</code></pre> 
+   <p><br></p> 
+   <p>3. 連続的にチェインパターンの関数宣言する時、自動にインデントができないなら、タブ間隔をインデントしましょう。(4スペース)</p> 
+   <p>&nbsp;&nbsp;&nbsp;-&gt; 特にLinq式の場合は.Where .Selectの連続された処理式が可能ですが、ラインを変わる時には必ずインデントをして区分を決めましょう。</p> 
+   <pre><code class="cs" data-type="チェインパターンの命名法">List.Where(x =&gt; x.IsCheck)
+     .Select의(x =&gt; x.Data);
+</code></pre> 
+   <p><br></p> 
+   <p>4. メソッドの定義とプロパティの正義の間には少なくても一つの空白を追加しましょう。</p> 
+   <p>&nbsp;&nbsp;&nbsp;-&gt; これが何の話かをすごく悩みました。</p> 
+   <p>たぶん、メソッドの名とパラメータ間に空白を入れてくださいという意味みたいです。</p> 
+   <pre><code class="cs" data-type="空白">public void SetData (int a)
+{
+}
+</code></pre> 
+   <p><br></p> 
+   <p>5. 括弧を使って表現式で節を明確にしましょう。</p> 
+   <p>&nbsp;&nbsp;&nbsp;-&gt; ifやforの場合に格好なしでコーディング(一行目コーディング)が可能ですが、お勧めではありません。できれば括弧を入れて確実に区分する方が良いでしょう。</p> 
+  </blockquote> 
+  <h2><b><span>コメントルール</span></b></h2> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <p>1. コードの行の末尾にコメントを入れずに、別の行にコメントを作成しましょう。</p> 
+   <pre><code class="cs" data-type="コメント表記方法">// 間違い表記方法
+if ( a == 0 ) // aが0の場合
+{
+}  
+// 正しい表記方法
+// aが0の場合
+if ( a == 0 )
+{
+}
+</code></pre> 
+   <p>2. 大文字でコメントテキストを開始します。(英語だけの事項です。)</p> 
+   <p>3. ピリオドがある説明テキストを終了します。(英語だけの事項です。)</p> 
+   <p><br></p> 
+   <p>4. コメント区分記号(//)とコメントテキスト間に一つの空白を入れましょう。</p> 
+   <pre><code class="cs" data-type="주석 표기법">//間違い表記方法
+// 正しい表記方法
+</code></pre> 
+  </blockquote> 
+  <h2><b><span>言語ルール</span></b></h2> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <p>1. 文字列データタイプ</p> 
+   <p>&nbsp;&nbsp;1-1. 出来ればstring interpolation(補間式)を使いましょう。</p> 
+   <pre><code class="cs" data-type="補間式">int data = 10;
+Console.WriteLine($"Hello world {data}");
+</code></pre> 
+   <p>link - <a href="https://www.nowonbun.com/208.html" target="_blank">[C#] Stringの補間式(interpolation)</a></p> 
+   <p><br></p> 
+   <p>&nbsp;&nbsp;1-2. 多い変数のStringオブジェクトを合併する場合にはStringBuilderを使いましょう。</p> 
+   <pre><code class="cs" data-type="StringBuilder使い方">var phrase = "lalalalalalalalalalalalalalalalalalalalalalalalalalalalalala";
+var manyPhrases = new StringBuilder();
+for (var i = 0; i &lt; 10000; i++)
+{
+  manyPhrases.Append(phrase);
+}
+</code></pre> 
+   <p><br></p> 
+   <p>2. 暗視的な変数型のタイプ</p> 
+   <p>&nbsp;&nbsp;2-1. 変数タイプが正確にあるか別の区分が必要ない場合はvarタイプを使いましょう。</p> 
+   <p>link - <a href="https://www.nowonbun.com/28.html" target="_blank">[C#] 27. varキーワードとdynamicキーワード</a></p> 
+   <p>&nbsp;&nbsp;2-2. タイプが明確ではない場合、dynamicタイプとobjectタイプの場合はvarを使いません。</p> 
+   <p>&nbsp;&nbsp;2-3. 変数名には変数の型(データタイプ)を暗視する命名はしません。</p> 
+   <pre><code class="cs" data-type="変数命名方法">// 間違い場合
+var inputInt = 10; 
+</code></pre> 
+   <p>&nbsp;&nbsp;2-4. forとforeachでは必ずvarタイプを使いましょう。</p> 
+   <pre><code class="cs" data-type="繰り返しの変数命名方法">for (var i=0 ; i&lt;100 ; i++) 
+{
+}
+foreach (var data in List)
+{
+}</code></pre> 
+   <p><br></p> 
+   <p>3. Unsigned Data Type</p> 
+   <p>&nbsp;&nbsp;&nbsp;一般的にUnsigned Typeは使いません。例にintタイプで十分に可能な値をunsigned intを使う必要はありません。</p> 
+   <p>4. 配列</p> 
+   <p>&nbsp;&nbsp;&nbsp;最大に簡潔に作成しましょう。</p> 
+   <pre><code class="cs" data-type="並列作成方法">string[] vowels1 = { "a", "e", "i", "o", "u" };
+var vowels2 = new string[] { "a", "e", "i", "o", "u" };
+</code></pre> 
+   <p><br></p> 
+   <p>5. デリゲート</p> 
+   <p>&nbsp;&nbsp;&nbsp;最大に簡潔に作成するし、クラスに依存しないように作成します。(クラスの依存関係は仕様により差異がある。)</p> 
+   <pre><code class="cs" data-type="デリゲート作成方法">using System;
+
+namespace Example
+{
+  // デリゲートはclassの外部でも作成可能
+  public delegate void Del(string message);
+
+  class Program
+  {
+    // デリゲートの例関数
+    public static void DelMethod(string str)
+    {
+      Console.WriteLine("DelMethod argument: {0}", str);
+    }
+    // 実行関数
+    static void Main(string[] args)
+    {
+      Del exampleDel2 = DelMethod;
+      Del exampleDel1 = new Del(DelMethod);
+    }
+  }
+}
+</code></pre> 
+   <p><br></p> 
+   <p>6. 例外処理</p> 
+   <p>&nbsp;&nbsp;6.1 例外処理はtry~catchを使いましょう。(別の例外処理もあるの???)</p> 
+   <p>&nbsp;&nbsp;6.2 Disposeメソッドの呼び出しコードはusingを使いましょう。</p> 
+   <pre><code class="cs" data-type="using使い方">Font font1 = new Font("Arial", 10.0f);
+try
+{
+  byte charset = font1.GdiCharSet;
+}
+finally
+{
+  if (font1 != null)
+  {
+    ((IDisposable)font1).Dispose();
+  }
+}
+// try - finally文をusingキーワードに可能
+using (Font font2 = new Font("Arial", 10.0f))
+{
+  byte charset = font2.GdiCharSet;
+}
+</code></pre> 
+   <p><br></p> 
+   <p>7. &amp;&amp;と||演算子</p> 
+   <p>&nbsp;&nbsp;性能と可読性のためにできれば&amp;と|代わりに&amp;&amp;と||を使いましょう。</p> 
+   <p>&nbsp;&nbsp;(|と||は使い方が違うではない？bit演算の場合は|が合ってるが、多分true、falseを区分するためにできれば||を使いましょうと意味みたい。いや、使い方が全然違うじゃない。。。。)</p> 
+   <pre><code class="cs" data-type="論理演算子とビット演算子">// 間違い表記方法
+if(a == 1 &amp; b == 1)
+{
+}
+// 正しい表記方法
+if(a == 1 &amp;&amp; b == 1)
+{
+}</code></pre> 
+   <p><br></p> 
+   <p>8. イベント</p> 
+   <p>&nbsp;&nbsp;後で取り除く必要がないevent handlerの場合はラムダ式をお勧めします。</p> 
+   <p>&nbsp;&nbsp;(確かにラムダ式が便利ですが、ラムダ式だけ作成すると可読性が悪くなりますが。。。)</p> 
+   <pre><code class="cs" data-type="ラムダ式">// 間違い方法
+public Form1()
+{
+  this.Click += new EventHandler(Form1_Click);
+}
+void Form1_Click(object sender, EventArgs e)
+{
+  MessageBox.Show(((MouseEventArgs)e).Location.ToString());
+}
+// 正しい方法
+public Form2()
+{
+  this.Click += (s, e) =&gt;
+  {
+    MessageBox.Show(((MouseEventArgs)e).Location.ToString());
+  }; 
+}
+</code></pre> 
+   <p><br></p> 
+   <p>9. 静的メンバー</p> 
+   <p>&nbsp;&nbsp;&nbsp;必ずクラス名を付けましょう。</p> 
+   <pre><code class="cs" data-type="정적 변수 사용법">public class Test
+{
+  public static int Data;
+  public void Print()
+  {
+    // 間違い表記方法
+    Data = 0;
+    // 正しい表記方法
+    Test.Data = 1;
+  }
+}
+</code></pre> 
+   <p><br></p> 
+   <p>10. Linq式</p> 
+   <p>&nbsp;&nbsp;10-1. 変数名を結果値(リターン値)の予測値で命名しましょう。</p> 
+   <p>&nbsp;&nbsp;10-2. select結果に匿名クラスを使う場合、属性の始めの文字ど大文字にしましょう。(プロパティ命名法)</p> 
+   <p>&nbsp;&nbsp;10-3. 結果の変数の値があいまいな場合に明確にしましょう。</p> 
+   <p>&nbsp;&nbsp;10-4. 結果の変数タイプはvarを使いましょう。</p> 
+   <p>&nbsp;&nbsp;10-5. インデントはfromに合わせましょう。</p> 
+   <p>&nbsp;&nbsp;&nbsp;&nbsp;-&gt; Linq式の方法は上の説明した内容を繰り返してするらしいです。その程に重要って意味ですね。</p> 
+  </blockquote> 
+  <h2><b><span>その以外のコードルール</span></b></h2> 
+  <blockquote style="border: 1px solid;border-left: 5px solid;"> 
+   <p>以前に私がコードルールを勉強した時とは今のコードルールは全然違いますね。私が覚えているコードルールを追加します。</p> 
+   <p><br></p> 
+   <p>1. クラスのメンバー変数は必ずprivateで作成しましょう。</p> 
+   <p>2. メンバー変数の始めの文字は小文字で名詞だけ構成します。</p> 
+   <p>3. プロパティの始め文字は大文字です。</p> 
+   <p>4. 関数は「動詞 + 名詞」の型で始め文字と節区分は必ず大文字です。例、GetData, CreateBuildExcelSheet...</p> 
+   <p>&nbsp;&nbsp;&nbsp;参考でJavaの場合は「動詞 + 名詞」の型は同じですが、始め文字は小文字、節区分は大文字です。別のルールなので参考してください。 例) getData, createBuildExcelSheet..</p> 
+   <p>6. 括弧の前は必ず改行です。</p> 
+   <p>&nbsp;&nbsp;&nbsp;参考にJavaの場合は括弧の前に開業を入れないルールです。</p> 
+   <pre><code class="cs" data-type="改行ルール">// C#の場合は
+if( a == 1)
+{
+}
+// Javaの場合は
+if ( a == 1) { 
+}
+</code></pre> 
+   <p>7. クラスはできればデコレーションパターンで作成しましょう。(interfaceから抽象クラスを継承して、クラスを継承します。)</p> 
+   <p>8. クラス名とファイル名は一致して作成します。</p> 
+   <p>9. ネームスペース名とフォルダ名は一致して作成します。</p> 
+   <p>10. goto文は使いません。</p> 
+   <p>11. if - else文よりif break, continueあるいはif return文を使いましょう。</p> 
+   <pre><code class="cs" data-type="繰り返し内の分岐ルール">// 間違い使い方
+for(var i=0; i&lt;100; i++)
+{
+  if(i%2 == 0)
+  {
+    Console.WriteLine("偶数です。");
+  }
+  else
+  {
+    Console.WriteLine("奇数です。");
+  }
+}
+// 正しい使い方
+for(var i=0; i&lt;100; i++)
+{
+  if(i%2 == 0)
+  {
+    Console.WriteLine("偶数です。");
+    continue;
+  }
+  Console.WriteLine("奇数です。");
+}
+</code></pre> 
+   <p>12. できれば一行目で一つの処理だけ作成しましょう。</p> 
+   <pre><code class="cs" data-type="一行目コード作成禁止">String data = "";
+// 間違い使い方
+Console.WriteLine((String.IsNullOrEmpty(data) ? "null" : data)?.Length);
+// 正しい使い方
+String buffer;
+int length = 0;
+if (String.IsNullOrEmpty(data))
+{
+  buffer = "null";
+}
+else
+{
+  buffer = data;
+}
+Console.WriteLine(buffer.Length);
+</code></pre> 
+  </blockquote> 
+  <p>その以外の命名ルールの場合は私が学生時代にコード標準を勉強する時の内容ですが、なぜか今はありません。なぜ無くなったかは分かりませんが、その以外の部分も実践で使っているルールなので知っているなら良いでしょう。</p> 
+  <p>上のC#のコード規約はプログラムのパフォーマンスには影響が全然ありません。ある場合もありますが、普通は可読性を挙がるために存在するルールです。</p> 
+  <p>そして実践ではプロジェクトを一人で進めることより、複数の人で作成する場合が多いので、お互いに不必要なコードの戦いやソース格納所(Git)にも不必要なステップができないようにしましょう。</p> 
+  <p><br></p> 
+  <p>もちろん、大きいプロジェクトや様々な会社が付けて作成する場合は別のコードルールがある場合がありますが、基本コードルールからもっと厳しくする場合が多いです。</p> 
+  <p>または、社内SEや学校で作成するプロジェクトや個別のプロジェクトの場合はこのコードルールを無視して作成する場合が多いです。</p> 
+  <p>それが間違いことではありませんが、ルールを合わせなければ、その程オープンAPIを使うことで制約させる可能性もありし、作成したライブラリを配布することも何か恥ずかしいですね。その後、可読性がすごく悪くなるのでコードレビューなどで誤解や問題が発生する可能性もあります。</p> 
+  <p><br></p> 
+  <p>このコードルールは些細で無視しやすい部分ですが、プロジェクトの重要度によりすごく重要な問題がなる可能性もあります。</p> 
+  <p><br></p> 
+  <p>ここまでC#のコーティング規約に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/291.html" target="_blank">[C#] 56. 値の初期化及び基本データ値(default)を設定する方法、そして原始データのnull処理、?と??の使い方</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=C%23>#C#</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0202">Study / C#</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/292.html'>[C#] 57. コーティング規約</a><span>2021/10/21 18:57:02</span></li><li><a href='https://www.nowonbun.com/291.html'>[C#] 56. 値の初期化及び基本データ値(default)を設定する方法、そして原始データのnull処理、?と??の使い方</a><span>2021/10/21 18:54:41</span></li><li><a href='https://www.nowonbun.com/290.html'>[C#] 55.namespaceとusing、そしてpartialの使い方</a><span>2021/10/21 18:51:39</span></li><li><a href='https://www.nowonbun.com/289.html'>[C#] 54. Reflection機能を使い方 - Attribute</a><span>2021/10/20 19:29:31</span></li><li><a href='https://www.nowonbun.com/287.html'>[C#] 53. Reflection機能を使い方 - Propertyとevent</a><span>2021/10/19 21:02:58</span></li><li><a href='https://www.nowonbun.com/280.html'>[C#] 52. Reflection機能を使い方 - Variable</a><span>2021/10/15 19:27:37</span></li><li><a href='https://www.nowonbun.com/278.html'>[C#] 51. Reflection機能を使い方 - Method</a><span>2021/10/14 18:34:21</span></li><li><a href='https://www.nowonbun.com/277.html'>[C#] 50. Reflection機能を使い方 - Class</a><span>2021/10/13 18:34:13</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/292.html'>[C#] 57. コーティング規約</a><span>2021/10/21 18:57:02</span></li><li><a href='https://www.nowonbun.com/291.html'>[C#] 56. 値の初期化及び基本データ値(default)を設定する方法、そして原始データのnull処理、?と??の使い方</a><span>2021/10/21 18:54:41</span></li><li><a href='https://www.nowonbun.com/290.html'>[C#] 55.namespaceとusing、そしてpartialの使い方</a><span>2021/10/21 18:51:39</span></li><li><a href='https://www.nowonbun.com/289.html'>[C#] 54. Reflection機能を使い方 - Attribute</a><span>2021/10/20 19:29:31</span></li><li><a href='https://www.nowonbun.com/288.html'>[Project design] プログラム制作(コーディング) - クラス作成方法</a><span>2021/10/20 19:28:09</span></li><li><a href='https://www.nowonbun.com/287.html'>[C#] 53. Reflection機能を使い方 - Propertyとevent</a><span>2021/10/19 21:02:58</span></li><li><a href='https://www.nowonbun.com/286.html'>[Project design] プログラム制作(コーディング) - 関数作成方法</a><span>2021/10/19 21:01:32</span></li><li><a href='https://www.nowonbun.com/285.html'>[CentOs] ジェンキンス(Jenkins)をインストールする方法</a><span>2021/10/18 18:28:58</span></li><li><a href='https://www.nowonbun.com/284.html'>[Project design] 詳細設計(インターフェース設計と抽象化作業)</a><span>2021/10/18 18:23:15</span></li><li><a href='https://www.nowonbun.com/283.html'>[Project design] 基本設計(画面設計とDB設計)</a><span>2021/10/17 21:21:11</span></li><li><a href='https://www.nowonbun.com/282.html'>[Design pattern] 1-4. デザインパターンの抽象ファクトリーパターン(Abstract factory pattern)</a><span>2021/10/15 19:31:03</span></li><li><a href='https://www.nowonbun.com/281.html'>[Project design] 要件定義(要求事項整理)</a><span>2021/10/15 19:28:58</span></li><li><a href='https://www.nowonbun.com/280.html'>[C#] 52. Reflection機能を使い方 - Variable</a><span>2021/10/15 19:27:37</span></li><li><a href='https://www.nowonbun.com/279.html'>[Project design] プロジェクトを工程(ウォーターフォール　vs アジャイル)</a><span>2021/10/14 18:36:04</span></li><li><a href='https://www.nowonbun.com/278.html'>[C#] 51. Reflection機能を使い方 - Method</a><span>2021/10/14 18:34:21</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/292.html';this.page.identifier = 'NOWONBUN00292';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
