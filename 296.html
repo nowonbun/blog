@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/296.html"},"url":"https:\/\/www.nowonbun.com\/296.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Project design] \u30d7\u30ed\u30b0\u30e9\u30e0\u7d50\u5408\u30c6\u30b9\u30c8 - IT(Integration test)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306f\u30d7\u30ed\u30b0\u30e9\u30e0\u7d50\u5408\u30c6\u30b9\u30c8 - it(integration test)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u4ee5\u524d\u306e\u6295\u7a3f\u3067\u5358\u4f53\u30c6\u30b9\u30c8(unit\u30c6\u30b9\u30c8)\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u307e\u3057\u305f\u3002link - [project design] \u30d7\u30ed\u30b0\u30e9\u30e0\u691c\u8a3c\u3068\u30c6\u30b9\u30c8 - unit\u30c6\u30b9\u30c8\u5358\u4f53\u30c6\u30b9\u30c8\u3067\u306f\u95a2\u6570\u3068\u30af\u30e9\u30b9\u5358\u4f4d\u3067\u30c6\u30b9\u30c8\u3059\u308b\u3053\u3068\u3067\u3059\u304c\u3001\u30c6\u30b9\u30c8\u306e\u56de\u6570\u304cci\u30c4\u30fc\u30eb\u3092\u5229\u7528\u3057\u3066\u76f8\u5f53\u306b\u983b\u7e41\u306b\u30c6\u30b9\u30c8\u3092\u3057\u307e\u3059\u3002\u7d50\u5408\u30c6\u30b9\u30c8\u306funit\u30c6\u30b9\u30c8\u304b\u3089\u691c\u8a3c\u3055\u308c\u305f\u95a2\u6570\u3068\u30af\u30e9\u30b9\u3092\u5168\u4f53\u7684\u306b\u5408\u308f\u305b\u3066\u4e00\u3064\u306e\u6d41\u308c\u3067\u30c6\u30b9\u30c8\u3059\u308b\u3053\u3068\u3067\u3059\u3002\u30a6\u30a7\u30d6\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u306b\u306f\u5b9f\u969b\u306b\u30a6\u30a7\u30d6\u30b5\u30fc\u30d0(\u958b\u767a\u30b5\u30fc\u30d0 - dev server)\u306b\u914d\u5e03(deploy)\u3057\u3066\u904b\u7528\u3057\u306a\u304c\u3089\u691c\u67fb\u3059\u308b\u3053\u3068\u3067\u3059\u3002\u958b\u767a\u30b5\u30fc\u30d0\u306a\u306e\u3067\u3001\u672c\u30c7\u30fc\u30bf\u3092\u6271\u3046\u3053\u3068\u3067\u306f\u306a\u304f\u3001\u304b\u3089\u507d\u30c7\u30fc\u30bf\u3092\u4f7f\u3044\u307e\u3059\u3002\u30c6\u30b9\u30c8\u306e\u7bc4\u56f2\u306f\u4e0b\u8a18\u306e\u69cb\u9020\u306b\u3088\u308a\u52d5\u304d\u307e\u3059\u3002\u7d50\u5408\u30c6\u30b9\u30c8\u306f\u8a73\u7d30\u8a2d\u8a08\u3067\u4f5c\u6210\u3057\u305f\u30b7\u30fc\u30af\u30a8\u30f3\u30b9\u3084\u30a4\u30f3\u30bf\u30fc\u30d5\u30a7\u30fc\u30b9\u3092\u78ba\u8a8d\u3059\u308b\u3053\u3068\u306a\u306e\u3067\u3001\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u306e\u4ed5\u69d8\u3092\u30c6\u30b9\u30c8\u3059\u308b\u3053\u3068\u3088\u308a\u30d7\u30ed\u30b0\u30e9\u30e0\u7684\u306a\u4e0d\u826f\u8981\u7d20\u3092\u691c\u8a3c\u3059\u308b\u3053\u3068\u3067\u3059\u3002\u4f8b\u3048\u3070\u3001\u3069\u306e\u30c7\u30fc\u30bf\u3092\u6e21\u3057\u305f\u3089null\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3059\u308b\u3068\u304b\u3001\u95a2\u6570\u306b\u3088\u308ainput\u304b\u3089output\u306f\u6b63\u89e3\u3067\u3059\u304c\u3001\u95a2\u6570\u306e\u9806\u756a\u3067\u5024\u304c\u9593\u9055\u3044\u304b((1+2)*3\u30681+(2*3)\u306e\u5dee\u7570)\u3001\u30a6\u30a7\u30d6\u753b\u9762\u304b\u3089\u6570\u5b57\u3092\u5165\u308c\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u304c\u3001\u30c6\u30ad\u30b9\u30c8\u6587\u5b57\u304c\u5165\u3063\u3066\u3044\u308b\u5834\u5408\u306b\u8868\u793a\u3059\u308b\u30a8\u30e9\u30fc\u30e1\u30c3\u30bb\u30fc\u30b8\u306a\u3069\u3092\u30c1\u30a7\u30c3\u30af\u3059\u308b\u30c6\u30b9\u30c8\u306a\u3089\u826f\u3044\u3067\u3057\u3087\u3046\u3002\u7d50\u5408\u30c6\u30b9\u30c8\u306f\u5927\u5e45\u3067\u4e8c\u3064\u306e\u30d1\u30bf\u30fc\u30f3\u3067\u5b9f\u65bd\u3057\u307e\u3059\u3002\u4e00\u3064\u306fselenium\u3068\u3044\u3046\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u4f7f\u3046\u3053\u3068\u3068\u4eba\u304c\u3044\u308d\u3044\u308d\u3092\u30af\u30ea\u30c3\u30af\u3057\u306a\u304c\u3089\u30c1\u30a7\u30c3\u30af\u3059\u308b\u3053\u3068\u3067\u3059\u3002selenium\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u5229\u7528\u3059\u308b\u306e\u306f\u30a6\u30a7\u30d6\u30b9\u30af\u30ec\u30a4\u30d4\u30f3\u30b0\u3068\u3044\u3046\u6280\u8853\u3067\u3059\u3002link - [python] selenium\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u4f7f\u3046\u65b9\u6cd5(\u81ea\u52d5\u30a6\u30a7\u30d6\u30c6\u30b9\u30c8\u3001\u30a6\u30a7\u30d6\u30b9\u30af\u30ec\u30a4\u30d4\u30f3\u30b0)selenium\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u901a\u3063\u3066\u30c6\u30b9\u30c8\u30dc\u30c3\u30c8\u3092\u4f5c\u6210\u3059\u308b\u306e\u306fjava\u3082\u3067\u304d\u308b\u3057\u3001c#\u3082\u3067\u304d\u307e\u3059\u304c\u3001\u30c6\u30b9\u30c8\u306e\u7279\u6027\u4e0a\u306b\u30b9\u30af\u30ea\u30d7\u30c8\u4fee\u6b63\u304c\u591a\u304f\u767a\u751f\u3059\u308b\u9818\u57df\u306a\u306e\u3067\u4fee\u6b63\u3059\u308b\u305f\u3073\u306b\u30d3\u30eb\u30c9\u3059\u308b\u3053\u3068\u3088\u308a\u4fee\u6b63\u3068\u5b9f\u884c\u304c\u4fbf\u5229\u306apython\u306b\u500b\u4eba\u7684\u306b\u826f\u3044\u3067\u306f\u306a\u3044\u304b\u3068\u601d\u3044\u307e\u3059\u3002selenium\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u4f7f\u3046\u3053\u3068\u306e\u5229\u70b9\u306f\u6211\u3005\u304c\u30a6\u30a7\u30d6\u30da\u30fc\u30b8\u3092\u5358\u7d14\u306a\u7e70\u308a\u8fd4\u3057\u306a\u30c6\u30b9\u30c8\u306f\u30d7\u30ed\u30b0\u30e9\u30e0\u3068\u3057\u3066\u6d41\u3059\u3053\u3068\u3067\u30c6\u30b9\u30c8\u6642\u9593\u3092\u77ed\u7e2e\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u308b\u3057\u3001\u7279\u5b9a\u306a\u90e8\u5206\u3092\u4fee\u6b63\u3057\u3066\u767a\u751f\u3059\u308b\u30ea\u30b0\u30ec\u30c3\u30b7\u30e7\u30f3\u30c6\u30b9\u30c8\u3092\u7c21\u5358\u306b\u3067\u304d\u307e\u3059\u3002\u307e\u305f\u306f\u3001\u30d6\u30e9\u30a6\u30b6\u306b\u3088\u308achrom","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2021-10-25T20:12:17.000+09:00","dateModified":"2021-10-25T20:12:17.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Project design" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はプログラム結合テスト - it(integration test)に関する説明です。以前の投稿で単体テスト(unitテスト)に関して説明しました。link - [project design] プログラム検証とテスト - unitテスト単体テストでは関数とクラス単位でテストすることですが、テストの回数がciツールを利用して相当に頻繁にテストをします。結合テストはunitテストから検証された関数とクラスを全体的に合わせて一つの流れでテストすることです。ウェブプロジェクトには実際にウェブサーバ(開発サーバ - dev server)に配布(deploy)して運用しながら検査することです。開発サーバなので、本データを扱うことではなく、から偽データを使います。テストの範囲は下記の構造により動きます。結合テストは詳細設計で作成したシークエンスやインターフェースを確認することなので、プロジェクトの仕様をテストすることよりプログラム的な不良要素を検証することです。例えば、どのデータを渡したらnullエラーが発生するとか、関数によりinputからoutputは正解ですが、関数の順番で値が間違いか((1+2)*3と1+(2*3)の差異)、ウェブ画面から数字を入れなければならないが、テキスト文字が入っている場合に表示するエラーメッセージなどをチェックするテストなら良いでしょう。結合テストは大幅で二つのパターンで実施します。一つはseleniumというライブラリを使うことと人がいろいろをクリックしながらチェックすることです。seleniumライブラリを利用するのはウェブスクレイピングという技術です。link - [python] seleniumライブラリを使う方法(自動ウェブテスト、ウェブスクレイピング)seleniumライブラリを通ってテストボットを作成するのはjavaもできるし、c#もできますが、テストの特性上にスクリプト修正が多く発生する領域なので修正するたびにビルドすることより修正と実行が便利なpythonに個人的に良いではないかと思います。seleniumライブラリを使うことの利点は我々がウェブページを単純な繰り返しなテストはプログラムとして流すことでテスト時間を短縮することができるし、特定な部分を修正して発生するリグレッションテストを簡単にできます。または、ブラウザによりchrom]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Project design] プログラム結合テスト - IT(Integration test)" />
+<link rel="canonical" href="https://www.nowonbun.com/296.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Project design] プログラム結合テスト - IT(Integration test)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はプログラム結合テスト - it(integration test)に関する説明です。以前の投稿で単体テスト(unitテスト)に関して説明しました。link - [project design] プログラム検証とテスト - unitテスト単体テストでは関数とクラス単位でテストすることですが、テストの回数がciツールを利用して相当に頻繁にテストをします。結合テストはunitテストから検証された関数とクラスを全体的に合わせて一つの流れでテストすることです。ウェブプロジェクトには実際にウェブサーバ(開発サーバ - dev server)に配布(deploy)して運用しながら検査することです。開発サーバなので、本データを扱うことではなく、から偽データを使います。テストの範囲は下記の構造により動きます。結合テストは詳細設計で作成したシークエンスやインターフェースを確認することなので、プロジェクトの仕様をテストすることよりプログラム的な不良要素を検証することです。例えば、どのデータを渡したらnullエラーが発生するとか、関数によりinputからoutputは正解ですが、関数の順番で値が間違いか((1+2)*3と1+(2*3)の差異)、ウェブ画面から数字を入れなければならないが、テキスト文字が入っている場合に表示するエラーメッセージなどをチェックするテストなら良いでしょう。結合テストは大幅で二つのパターンで実施します。一つはseleniumというライブラリを使うことと人がいろいろをクリックしながらチェックすることです。seleniumライブラリを利用するのはウェブスクレイピングという技術です。link - [python] seleniumライブラリを使う方法(自動ウェブテスト、ウェブスクレイピング)seleniumライブラリを通ってテストボットを作成するのはjavaもできるし、c#もできますが、テストの特性上にスクリプト修正が多く発生する領域なので修正するたびにビルドすることより修正と実行が便利なpythonに個人的に良いではないかと思います。seleniumライブラリを使うことの利点は我々がウェブページを単純な繰り返しなテストはプログラムとして流すことでテスト時間を短縮することができるし、特定な部分を修正して発生するリグレッションテストを簡単にできます。または、ブラウザによりchrom]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/296.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Project design] プログラム結合テスト - IT(Integration test)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はプログラム結合テスト - it(integration test)に関する説明です。以前の投稿で単体テスト(unitテスト)に関して説明しました。link - [project design] プログラム検証とテスト - unitテスト単体テストでは関数とクラス単位でテストすることですが、テストの回数がciツールを利用して相当に頻繁にテストをします。結合テストはunitテストから検証された関数とクラスを全体的に合わせて一つの流れでテストすることです。ウェブプロジェクトには実際にウェブサーバ(開発サーバ - dev server)に配布(deploy)して運用しながら検査することです。開発サーバなので、本データを扱うことではなく、から偽データを使います。テストの範囲は下記の構造により動きます。結合テストは詳細設計で作成したシークエンスやインターフェースを確認することなので、プロジェクトの仕様をテストすることよりプログラム的な不良要素を検証することです。例えば、どのデータを渡したらnullエラーが発生するとか、関数によりinputからoutputは正解ですが、関数の順番で値が間違いか((1+2)*3と1+(2*3)の差異)、ウェブ画面から数字を入れなければならないが、テキスト文字が入っている場合に表示するエラーメッセージなどをチェックするテストなら良いでしょう。結合テストは大幅で二つのパターンで実施します。一つはseleniumというライブラリを使うことと人がいろいろをクリックしながらチェックすることです。seleniumライブラリを利用するのはウェブスクレイピングという技術です。link - [python] seleniumライブラリを使う方法(自動ウェブテスト、ウェブスクレイピング)seleniumライブラリを通ってテストボットを作成するのはjavaもできるし、c#もできますが、テストの特性上にスクリプト修正が多く発生する領域なので修正するたびにビルドすることより修正と実行が便利なpythonに個人的に良いではないかと思います。seleniumライブラリを使うことの利点は我々がウェブページを単純な繰り返しなテストはプログラムとして流すことでテスト時間を短縮することができるし、特定な部分を修正して発生するリグレッションテストを簡単にできます。または、ブラウザによりchrom]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Project design] プログラム結合テスト - IT(Integration test)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(92)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(27)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(4)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(14)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(201)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(57)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(56)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(6)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0210" href="study_project_design.html">Project design<span class="category-item-count">(8)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/296.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Project design] プログラム結合テスト - IT(Integration test)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0210">Study / Project design</a>    作成日付 : <span property="datePublished">2021/10/25 20:12:17</span>   修正日付 : <span property="dateModified">2021/10/25 20:12:17</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はプログラム結合テスト - IT(Integration test)に関する説明です。</p> 
+  <p><br></p> 
+  <p>以前の投稿で単体テスト(Unitテスト)に関して説明しました。</p> 
+  <p>link - <a href="https://www.nowonbun.com/293.html" target="_blank">[Project design] プログラム検証とテスト - Unitテスト</a></p> 
+  <p><br></p> 
+  <p>単体テストでは関数とクラス単位でテストすることですが、テストの回数がCIツールを利用して相当に頻繁にテストをします。</p> 
+  <p>結合テストはUnitテストから検証された関数とクラスを全体的に合わせて一つの流れでテストすることです。ウェブプロジェクトには実際にウェブサーバ(開発サーバ - Dev server)に配布(Deploy)して運用しながら検査することです。開発サーバなので、本データを扱うことではなく、から偽データを使います。</p> 
+  <p><br></p> 
+  <p>テストの範囲は下記の構造により動きます。</p> 
+  <p style="text-align:left;"><img src="./contents/296/2014_001.png" data-filename="001.png" style="width: 848px;"><br></p> 
+  <p>結合テストは詳細設計で作成したシークエンスやインターフェースを確認することなので、プロジェクトの仕様をテストすることよりプログラム的な不良要素を検証することです。</p> 
+  <p>例えば、どのデータを渡したらnullエラーが発生するとか、関数によりInputからOutputは正解ですが、関数の順番で値が間違いか((1+2)*3と1+(2*3)の差異)、ウェブ画面から数字を入れなければならないが、テキスト文字が入っている場合に表示するエラーメッセージなどをチェックするテストなら良いでしょう。</p> 
+  <p><br></p> 
+  <p>結合テストは大幅で二つのパターンで実施します。</p> 
+  <p>一つはSeleniumというライブラリを使うことと人がいろいろをクリックしながらチェックすることです。</p> 
+  <p><br></p> 
+  <p>Seleniumライブラリを利用するのはウェブスクレイピングという技術です。</p> 
+  <p>link - <a href="https://www.nowonbun.com/295.html" target="_blank">[Python] Seleniumライブラリを使う方法(自動ウェブテスト、ウェブスクレイピング)</a></p> 
+  <p><br></p> 
+  <p>Seleniumライブラリを通ってテストボットを作成するのはJavaもできるし、C#もできますが、テストの特性上にスクリプト修正が多く発生する領域なので修正するたびにビルドすることより修正と実行が便利なPythonに個人的に良いではないかと思います。</p> 
+  <p>Seleniumライブラリを使うことの利点は我々がウェブページを単純な繰り返しなテストはプログラムとして流すことでテスト時間を短縮することができるし、特定な部分を修正して発生するリグレッションテストを簡単にできます。</p> 
+  <p>または、ブラウザによりChromeやIE、Safariなど、環境によりモバイルやパソコン、タブレットなどをテストをスクリプトで一括的にテストができます。</p> 
+  <p><br></p> 
+  <p>でも、Seleniumライブラリを通る検証が利点だけではありません。</p> 
+  <p>Seleniumライブラリを利用するのは検証プログラムを作成することになります。それもプログラムだし、そうならプロジェクトの工程になるので、設計やプログラム検証の負担があります。プログラムを作ることは必ず工程を通ることではありませんが、検証は必要なのでどのくらいは設計が必要ですね。</p> 
+  <p>つまり、我々が作ったプロジェクトを検証するプログラムですが、このプログラムがバグを発生して元のプロジェクトのバグを見つけられなかったら、最初のプロジェクトの品質にも問題になります。なので、検証プログラムを作成することもずいぶん費用が発生しますね。</p> 
+  <p><br></p> 
+  <p>そしてこのSeleniumライブラリを通ることですべてのテスト検証することではありません。</p> 
+  <p>Seleniumライブラリは結局にhtmlタグを通って結果確認ですが、デザインバグや崩れがの場合はチェックができません。</p> 
+  <p>画面サイズにより文字が見えないとかデザインが設計と差異があるかの部分は人がテストするしかありません。</p> 
+  <p><br></p> 
+  <p>最近はRPAという自動化エミュレータシステムというAIを利用するソフトウェアがありますが、これを利用すると結合テストに関する工程の時間やデザインチェックなどもできると言いますが、ソフトウェア値段が高いし、普遍化されている技術ではありません。これからどのようになるかはまだ知りません。</p> 
+  <p><br></p> 
+  <p>結合テストは納品する前のプログラム的な最終テスト段階なので工程をしっかり設定しないとすごく時間が掛かる部分です。</p> 
+  <p>次の単会はシステムテスト(ST)がありますが、その部分はプログラムに関する検証ではなく、仕様に関する検証です。つまり、お客様と仕様をお互いに確認しながら依頼させた部分と内容が合っているか検証になります。ゲームに考えるとベータサービスと同じ意味です。</p> 
+  <p>なので、できれば結合テストで発生するバグをすべて直さなければならないです。</p> 
+  <p><br></p> 
+  <p>普通、この結合テストを行うのはテスト仕様書を作成します。</p> 
+  <p>このテスト仕様書にはオブジェクトにあkンするテスト、処理テスト、セキュリティテスト、パフォーマンステスト、システムテスト、ログテストなどがあります。</p> 
+  <p>この仕様の項目はプロジェクトより全然違いますが、ウェブ環境のプロジェクトはほぼ似ているじゃないかと思います。</p> 
+  <p>オブジェクトテストはテキストボックス、チェックボックスに関するNull処理、数字だけできるオブジェクトに文字を入れる場合、文字化けなどをチェックする項目です。</p> 
+  <p>処理テストはPost Requestする場合にデータベースにデータが正しく格納されるか、データベースの内容が画面に正しく表示されるか、メッセージがちゃんと表示されるかを確認します。</p> 
+  <p>セキュリティテストはInjectに関するテストが多いですが、テキストボックスに特殊文字が入力できるかをチェックして、出来るならSql Inject、つまり、SQL構文には問題ないか、Getタイプによりあるいはスクリプトの変造によりデータフィルターはよく動いてるかのテストです。</p> 
+  <p>パフォーマンステストはブラウザから要請する場合、Response時間がどのくらいか、Post Requestが連続に発生する場合はデータベースに処理する流れ、D-Dosの対策などを確認します。</p> 
+  <p>システムテストはメールがちゃんと送信されるか、様々なシステムとソケットや規約でお互いに問題なく通信ができるかを確認します。</p> 
+  <p>ログテストはウェブ上で動作に関するログがちゃんと作成されるかに関するテストです。</p> 
+  <p>その以外のメッセージ確認テスト、エラーテスト、つまり、データベースが落ちた場合、WASサーバが落ちた場合の処理画面、エラーやバグが発生する時に表示される画面などを確認しなければならないです。</p> 
+  <p><br></p> 
+  <p>プログラムを作成すると普通は設計やコード作成する時に時間がたくさん掛かると思います。でも、個人的はIT工程がプロジェクト工程が一番重要ではないかと思います。そしてIT工程を支援するプログラムがあれば積極的に活用する部分ではないかと思います。HPのfortifyなどを利用してですね。</p> 
+  <p><br></p> 
+  <p>この結合テストが製品の品質を決定する部分なので点検する部分も多いし、人もたくさん必要です。</p> 
+  <p>その為、チームを構成すると開発者(プログラマー)が10人ならQAテスターは20人で想定しました。つまり、2倍の人力が必要です。</p> 
+  <p>でも、人力が2倍だっても値段が2倍に掛かることでもありません。もちろん、セキュリティテストやパフォーマンステストみたいな部分は専門的な技術知識も必要ですが、オブジェクトテストの場合は単純なテストなので相手的に人的費用が高くないです。</p> 
+  <p>この部分を考慮してチームを組むと限定な予算でいい品質の製品を作成することができます。</p> 
+  <p><br></p> 
+  <p>ここまでプログラム結合テスト - IT(Integration test)に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/293.html" target="_blank">[Project design] プログラム検証とテスト - Unitテスト</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=projectdesign>#projectdesign</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0210">Study / Project design</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/296.html'>[Project design] プログラム結合テスト - IT(Integration test)</a><span>2021/10/25 20:12:17</span></li><li><a href='https://www.nowonbun.com/293.html'>[Project design] プログラム検証とテスト - Unitテスト</a><span>2021/10/22 19:34:09</span></li><li><a href='https://www.nowonbun.com/288.html'>[Project design] プログラム制作(コーディング) - クラス作成方法</a><span>2021/10/20 19:28:09</span></li><li><a href='https://www.nowonbun.com/286.html'>[Project design] プログラム制作(コーディング) - 関数作成方法</a><span>2021/10/19 21:01:32</span></li><li><a href='https://www.nowonbun.com/284.html'>[Project design] 詳細設計(インターフェース設計と抽象化作業)</a><span>2021/10/18 18:23:15</span></li><li><a href='https://www.nowonbun.com/283.html'>[Project design] 基本設計(画面設計とDB設計)</a><span>2021/10/17 21:21:11</span></li><li><a href='https://www.nowonbun.com/281.html'>[Project design] 要件定義(要求事項整理)</a><span>2021/10/15 19:28:58</span></li><li><a href='https://www.nowonbun.com/279.html'>[Project design] プロジェクトを工程(ウォーターフォール　vs アジャイル)</a><span>2021/10/14 18:36:04</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/296.html'>[Project design] プログラム結合テスト - IT(Integration test)</a><span>2021/10/25 20:12:17</span></li><li><a href='https://www.nowonbun.com/295.html'>[Python] Seleniumライブラリを使う方法(自動ウェブテスト、ウェブスクレイピング)</a><span>2021/10/25 19:29:00</span></li><li><a href='https://www.nowonbun.com/294.html'>[Design pattern] 1-5. プロトタイプパターン(Prototype pattern)</a><span>2021/10/22 19:35:45</span></li><li><a href='https://www.nowonbun.com/293.html'>[Project design] プログラム検証とテスト - Unitテスト</a><span>2021/10/22 19:34:09</span></li><li><a href='https://www.nowonbun.com/292.html'>[C#] 57. コーティング規約</a><span>2021/10/21 18:57:02</span></li><li><a href='https://www.nowonbun.com/291.html'>[C#] 56. 値の初期化及び基本データ値(default)を設定する方法、そして原始データのnull処理、?と??の使い方</a><span>2021/10/21 18:54:41</span></li><li><a href='https://www.nowonbun.com/290.html'>[C#] 55.namespaceとusing、そしてpartialの使い方</a><span>2021/10/21 18:51:39</span></li><li><a href='https://www.nowonbun.com/289.html'>[C#] 54. Reflection機能を使い方 - Attribute</a><span>2021/10/20 19:29:31</span></li><li><a href='https://www.nowonbun.com/288.html'>[Project design] プログラム制作(コーディング) - クラス作成方法</a><span>2021/10/20 19:28:09</span></li><li><a href='https://www.nowonbun.com/287.html'>[C#] 53. Reflection機能を使い方 - Propertyとevent</a><span>2021/10/19 21:02:58</span></li><li><a href='https://www.nowonbun.com/286.html'>[Project design] プログラム制作(コーディング) - 関数作成方法</a><span>2021/10/19 21:01:32</span></li><li><a href='https://www.nowonbun.com/285.html'>[CentOs] ジェンキンス(Jenkins)をインストールする方法</a><span>2021/10/18 18:28:58</span></li><li><a href='https://www.nowonbun.com/284.html'>[Project design] 詳細設計(インターフェース設計と抽象化作業)</a><span>2021/10/18 18:23:15</span></li><li><a href='https://www.nowonbun.com/283.html'>[Project design] 基本設計(画面設計とDB設計)</a><span>2021/10/17 21:21:11</span></li><li><a href='https://www.nowonbun.com/282.html'>[Design pattern] 1-4. デザインパターンの抽象ファクトリーパターン(Abstract factory pattern)</a><span>2021/10/15 19:31:03</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/296.html';this.page.identifier = 'NOWONBUN00296';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
