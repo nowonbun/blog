@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/297.html"},"url":"https:\/\/www.nowonbun.com\/297.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Project design] \u30d7\u30ed\u30b0\u30e9\u30e0\u6700\u7d42\u30c6\u30b9\u30c8 - ST(System test(Standard, Scenario))","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306f\u30d7\u30ed\u30b0\u30e9\u30e0\u6700\u7d42\u30c6\u30b9\u30c8 - st(system test(standard, scenario))\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u30d7\u30ed\u30b0\u30e9\u30e0\u304c\u7d0d\u54c1\u3059\u308b\u524d\u306e\u30c6\u30b9\u30c8\u3067st\u30c6\u30b9\u30c8\u3068\u8a00\u3044\u307e\u3059\u3002\u7565\u8a9e\u304csystem test\u3068\u8a00\u3044\u307e\u3059\u304c\u3001\u4eba\u306b\u3088\u308astandard(\u30b9\u30c6\u30f3\u30c0\u30fc\u30c9:\u6a19\u6e96)\u3084scenario\u30c6\u30b9\u30c8\u3068\u3044\u3046\u4eba\u3082\u3044\u307e\u3059\u3002\u7565\u8a9e\u306e\u89e3\u6790\u3060\u3051\u9055\u3044\u307e\u3059\u304c\u3001\u307f\u3093\u306a\u8a8d\u8b58\u3059\u308b\u306e\u306f\u30c6\u30b9\u30c8\u306e\u6d41\u308c\u306f\u4f3c\u3066\u3044\u307e\u3059\u3002\u4ee5\u524d\u306b\u30c6\u30b9\u30c8\u7bc4\u56f2\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u305f\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002\u4e0a\u306e\u6d41\u308c\u3067\u30c6\u30b9\u30c8\u304c\u5b9f\u65bd\u3057\u307e\u3059\u304c\u3001\u6700\u7d42\u30c6\u30b9\u30c8\u306f\u57fa\u672c\u8a2d\u8a08\u306b\u5bfe\u3059\u308b\u30c6\u30b9\u30c8\u3067\u3059\u3002\u3064\u307e\u308a\u3001\u4ee5\u524d\u306e\u5358\u4f53\u30c6\u30b9\u30c8(ut)\u3084\u7d50\u5408\u30c6\u30b9\u30c8(it)\u306b\u306f\u30d7\u30ed\u30b0\u30e9\u30e0\u306b\u95a2\u3059\u308b\u30d0\u30b0\u3084\u64cd\u4f5c\u306b\u95a2\u3059\u308b\u30c6\u30b9\u30c8\u304c\u30e1\u30a4\u30f3\u9805\u76ee\u3060\u3068\u3001st\u306b\u306f\u30d7\u30ed\u30b0\u30e9\u30e0\u306e\u4ed5\u69d8\u306b\u3088\u308b\u30c6\u30b9\u30c8\u304c\u30e1\u30a4\u30f3\u3067\u3059\u3002\u3064\u307e\u308a\u3001\u30d7\u30ed\u30b0\u30e9\u30e0\u7684\u306a\u30d0\u30b0\u3067\u306f\u306a\u304f\u3001\u8ad6\u7406\u7684\u306a\u30d0\u30b0\u306b\u95a2\u3059\u308b\u30c6\u30b9\u30c8\u3067\u3059\u3002\u4f8b\u3048\u3070\u3001\u7279\u5b9a\u8981\u8acb\u30da\u30fc\u30b8\u3067\u751f\u6210\u3060\u308c\u305f\u30c7\u30fc\u30bf\u3092\u7279\u5b9a\u306a\u6d41\u308c\u306b\u3088\u308a\u8a08\u7b97\u3057\u3066\u6700\u7d42\u7684\u306a\u30c7\u30fc\u30bf\u304c\u8868\u793a\u3055\u308c\u308b\u3053\u3068\u304c\u6b63\u78ba\u304b\u3068\u3044\u3046\u30c6\u30b9\u30c8\u3067\u3059\u3002\u4ee5\u524d\u306e\u30c6\u30b9\u30c8\u307e\u3067\u306f\u30d7\u30ed\u30b0\u30e9\u30e0\u30c4\u30fc\u30eb\u3084\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u901a\u3063\u3066\u81ea\u52d5\u5316\u30c6\u30b9\u30c8\u3092\u3067\u304d\u308b\u3053\u3068\u306a\u3089st\u306f\u3059\u3079\u3066\u306e\u30c6\u30b9\u30c8\u30b1\u30fc\u30b9\u306f\u4eba\u304c\u5b9f\u65bd\u3057\u3066\u5024\u304c\u6b63\u78ba\u304b\u3092\u78ba\u8a8d\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u3002\u30c6\u30b9\u30c8\u306e\u65b9\u6cd5\u306b\u95a2\u3057\u3066\u306f\u30d7\u30ed\u30b0\u30e9\u30e0\u306e\u7a2e\u985e\u3084\u578b\u306b\u3088\u308a\u9055\u3044\u307e\u3059\u3002\u4f8b\u3048\u3070\u3001\u30b2\u30fc\u30e0\u306e\u5834\u5408\u306f\u666e\u901a\u306b\u30a2\u30eb\u30d5\u30a1\u30fc\u3001\u30af\u30ed\u30fc\u30ba\u30d9\u30fc\u30bf\u3001\u30aa\u30fc\u30d7\u30f3\u30d9\u30fc\u30bf\u306e\u30bf\u30a4\u30d7\u3067\u30c6\u30b9\u30c8\u304c\u884c\u3046\u5834\u5408\u304c\u591a\u3044\u3057\u3001\u4e00\u822c\u30d7\u30ed\u30b0\u30e9\u30e0\u30c4\u30fc\u30eb\u306b\u95a2\u3057\u3066\u3082unstable\u30d0\u30fc\u30b8\u30e7\u30f3\u3001stable\u30d0\u30fc\u30b8\u30e7\u30f3(\u5b89\u5b9a\u5316\u30d0\u30fc\u30b8\u30e7\u30f3)\u3092\u533a\u5206\u3057\u3066unstable\u30d0\u30fc\u30b8\u30e7\u30f3\u304c\u30c6\u30b9\u30c8\u30d0\u30fc\u30b8\u30e7\u30f3\u3001stable\u3084lts\u30d0\u30fc\u30b8\u30e7\u30f3\u304c\u6b63\u5f0f\u306a\u30d0\u30fc\u30b8\u30e7\u30f3\u306b\u306a\u308a\u307e\u3059\u3002\u305d\u3057\u3066\u30a6\u30a7\u30d6\u74b0\u5883\u306b\u306f\u30c6\u30b9\u30c8\u30d0\u30fc\u30b8\u30e7\u30f3(dev\u74b0\u5883\u30d0\u30fc\u30b8\u30e7\u30f3)\u3001\u6b63\u5f0f\u30d0\u30fc\u30b8\u30e7\u30f3(production\u30d0\u30fc\u30b8\u30e7\u30f3\u3001\u672c\u756a\u30d0\u30fc\u30b8\u30e7\u30f3)\u3067\u533a\u5206\u3057\u3066\u914d\u5e03\u3059\u308b(deploy)\u5834\u5408\u3082\u3042\u308a\u307e\u3059\u3002\u3053\u308c\u306f\u30d7\u30ed\u30b0\u30e9\u30e0\u306e\u7a2e\u985e\u3084\u30d0\u30b0\u306e\u91cd\u8981\u6027\u306b\u3088\u308a\u65b9\u6cd5\u3068\u671f\u9593\u304c\u533a\u5206\u306b\u306a\u308a\u307e\u3059\u3002st\u30c6\u30b9\u30c8\u4ed5\u69d8\u66f8\u3092\u4f5c\u6210\u3059\u308b\u6642\u306b\u306f\u30b9\u30c6\u30c3\u30d7\u6570\u3001\u3064\u307e\u308a\u3001\u30c6\u30b9\u30c8\u306e\u9805\u76ee\u6570\u306f\u666e\u901a\u306f\u30d7\u30ed\u30b0\u30e9\u30e0\u30b3\u30fc\u30c9\u30e9\u30a4\u30f3\u6570\u306e5~10%\u3092\u4f5c\u6210\u3057\u307e\u3059\u3002\u3064\u307e\u308a\u3001\u30d7\u30ed\u30b0\u30e9\u30e0\u306e\u30b3\u30fc\u30c9\u304c\u7dcf10\u4e07\u30e9\u30a4\u30f3\u3060\u3068\u30c6\u30b9\u30c8\u9805\u76ee\u30925\u5343\u4ef6\u304b\u30891\u4e07\u4ef6\u307b\u3069\u3092\u4f5c\u6210\u3057\u307e\u3059\u3002\u30c6\u30b9\u30c8\u306e\u4ed5\u69d8\u66f8\u306e\u5185\u5bb9\u306f\u57fa\u672c\u8a2d\u8a08\u306b\u3088\u308a\u8ad6\u7406\u7684\u306a\u30c7\u30fc\u30bf\u78ba\u8a8d\u306a\u306e\u3067\u3001\u5358\u7d14\u306aut\u3084it\u3067\u78ba\u8a8d\u3057\u305f\u3082\u306e\u3067\u306f\u9664\u304d\u307e\u3059\u3002\u4f8b\u3048\u3070\u3001pdf\u3084\u5e33\u7968\u3092\u51fa\u529b\u3059\u308b\u30dc\u30bf\u30f3\u3092\u62bc\u4e0b\u3059\u308b\u6642\u306b\u3061\u3083","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2021-10-26T19:10:07.000+09:00","dateModified":"2021-10-26T19:10:07.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Project design" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はプログラム最終テスト - st(system test(standard, scenario))に関する説明です。プログラムが納品する前のテストでstテストと言います。略語がsystem testと言いますが、人によりstandard(ステンダード:標準)やscenarioテストという人もいます。略語の解析だけ違いますが、みんな認識するのはテストの流れは似ています。以前にテスト範囲に関して説明したことがあります。上の流れでテストが実施しますが、最終テストは基本設計に対するテストです。つまり、以前の単体テスト(ut)や結合テスト(it)にはプログラムに関するバグや操作に関するテストがメイン項目だと、stにはプログラムの仕様によるテストがメインです。つまり、プログラム的なバグではなく、論理的なバグに関するテストです。例えば、特定要請ページで生成だれたデータを特定な流れにより計算して最終的なデータが表示されることが正確かというテストです。以前のテストまではプログラムツールやライブラリを通って自動化テストをできることならstはすべてのテストケースは人が実施して値が正確かを確認しなければならないです。テストの方法に関してはプログラムの種類や型により違います。例えば、ゲームの場合は普通にアルファー、クローズベータ、オープンベータのタイプでテストが行う場合が多いし、一般プログラムツールに関してもunstableバージョン、stableバージョン(安定化バージョン)を区分してunstableバージョンがテストバージョン、stableやltsバージョンが正式なバージョンになります。そしてウェブ環境にはテストバージョン(dev環境バージョン)、正式バージョン(productionバージョン、本番バージョン)で区分して配布する(deploy)場合もあります。これはプログラムの種類やバグの重要性により方法と期間が区分になります。stテスト仕様書を作成する時にはステップ数、つまり、テストの項目数は普通はプログラムコードライン数の5~10%を作成します。つまり、プログラムのコードが総10万ラインだとテスト項目を5千件から1万件ほどを作成します。テストの仕様書の内容は基本設計により論理的なデータ確認なので、単純なutやitで確認したものでは除きます。例えば、pdfや帳票を出力するボタンを押下する時にちゃ]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Project design] プログラム最終テスト - ST(System test(Standard, Scenario))" />
+<link rel="canonical" href="https://www.nowonbun.com/297.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Project design] プログラム最終テスト - ST(System test(Standard, Scenario))" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はプログラム最終テスト - st(system test(standard, scenario))に関する説明です。プログラムが納品する前のテストでstテストと言います。略語がsystem testと言いますが、人によりstandard(ステンダード:標準)やscenarioテストという人もいます。略語の解析だけ違いますが、みんな認識するのはテストの流れは似ています。以前にテスト範囲に関して説明したことがあります。上の流れでテストが実施しますが、最終テストは基本設計に対するテストです。つまり、以前の単体テスト(ut)や結合テスト(it)にはプログラムに関するバグや操作に関するテストがメイン項目だと、stにはプログラムの仕様によるテストがメインです。つまり、プログラム的なバグではなく、論理的なバグに関するテストです。例えば、特定要請ページで生成だれたデータを特定な流れにより計算して最終的なデータが表示されることが正確かというテストです。以前のテストまではプログラムツールやライブラリを通って自動化テストをできることならstはすべてのテストケースは人が実施して値が正確かを確認しなければならないです。テストの方法に関してはプログラムの種類や型により違います。例えば、ゲームの場合は普通にアルファー、クローズベータ、オープンベータのタイプでテストが行う場合が多いし、一般プログラムツールに関してもunstableバージョン、stableバージョン(安定化バージョン)を区分してunstableバージョンがテストバージョン、stableやltsバージョンが正式なバージョンになります。そしてウェブ環境にはテストバージョン(dev環境バージョン)、正式バージョン(productionバージョン、本番バージョン)で区分して配布する(deploy)場合もあります。これはプログラムの種類やバグの重要性により方法と期間が区分になります。stテスト仕様書を作成する時にはステップ数、つまり、テストの項目数は普通はプログラムコードライン数の5~10%を作成します。つまり、プログラムのコードが総10万ラインだとテスト項目を5千件から1万件ほどを作成します。テストの仕様書の内容は基本設計により論理的なデータ確認なので、単純なutやitで確認したものでは除きます。例えば、pdfや帳票を出力するボタンを押下する時にちゃ]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/297.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Project design] プログラム最終テスト - ST(System test(Standard, Scenario))" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はプログラム最終テスト - st(system test(standard, scenario))に関する説明です。プログラムが納品する前のテストでstテストと言います。略語がsystem testと言いますが、人によりstandard(ステンダード:標準)やscenarioテストという人もいます。略語の解析だけ違いますが、みんな認識するのはテストの流れは似ています。以前にテスト範囲に関して説明したことがあります。上の流れでテストが実施しますが、最終テストは基本設計に対するテストです。つまり、以前の単体テスト(ut)や結合テスト(it)にはプログラムに関するバグや操作に関するテストがメイン項目だと、stにはプログラムの仕様によるテストがメインです。つまり、プログラム的なバグではなく、論理的なバグに関するテストです。例えば、特定要請ページで生成だれたデータを特定な流れにより計算して最終的なデータが表示されることが正確かというテストです。以前のテストまではプログラムツールやライブラリを通って自動化テストをできることならstはすべてのテストケースは人が実施して値が正確かを確認しなければならないです。テストの方法に関してはプログラムの種類や型により違います。例えば、ゲームの場合は普通にアルファー、クローズベータ、オープンベータのタイプでテストが行う場合が多いし、一般プログラムツールに関してもunstableバージョン、stableバージョン(安定化バージョン)を区分してunstableバージョンがテストバージョン、stableやltsバージョンが正式なバージョンになります。そしてウェブ環境にはテストバージョン(dev環境バージョン)、正式バージョン(productionバージョン、本番バージョン)で区分して配布する(deploy)場合もあります。これはプログラムの種類やバグの重要性により方法と期間が区分になります。stテスト仕様書を作成する時にはステップ数、つまり、テストの項目数は普通はプログラムコードライン数の5~10%を作成します。つまり、プログラムのコードが総10万ラインだとテスト項目を5千件から1万件ほどを作成します。テストの仕様書の内容は基本設計により論理的なデータ確認なので、単純なutやitで確認したものでは除きます。例えば、pdfや帳票を出力するボタンを押下する時にちゃ]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Project design] プログラム最終テスト - ST(System test(Standard, Scenario))</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(92)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(27)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(4)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(14)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(203)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(57)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(56)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(7)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0210" href="study_project_design.html">Project design<span class="category-item-count">(9)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/297.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Project design] プログラム最終テスト - ST(System test(Standard, Scenario))</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0210">Study / Project design</a>    作成日付 : <span property="datePublished">2021/10/26 19:10:07</span>   修正日付 : <span property="dateModified">2021/10/26 19:10:07</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はプログラム最終テスト - ST(System test(Standard, Scenario))に関する説明です。</p> 
+  <p><br></p> 
+  <p>プログラムが納品する前のテストでSTテストと言います。略語がSystem testと言いますが、人によりStandard(ステンダード:標準)やScenarioテストという人もいます。</p> 
+  <p>略語の解析だけ違いますが、みんな認識するのはテストの流れは似ています。</p> 
+  <p><br></p> 
+  <p>以前にテスト範囲に関して説明したことがあります。</p> 
+  <p style="text-align:left;"><img src="./contents/296/2014_001.png" data-filename="001.png" style="width: 848px;"><br></p> 
+  <p><br></p> 
+  <p>上の流れでテストが実施しますが、最終テストは基本設計に対するテストです。</p> 
+  <p>つまり、以前の単体テスト(UT)や結合テスト(IT)にはプログラムに関するバグや操作に関するテストがメイン項目だと、STにはプログラムの仕様によるテストがメインです。つまり、プログラム的なバグではなく、論理的なバグに関するテストです。</p> 
+  <p>例えば、特定要請ページで生成だれたデータを特定な流れにより計算して最終的なデータが表示されることが正確かというテストです。</p> 
+  <p><br></p> 
+  <p>以前のテストまではプログラムツールやライブラリを通って自動化テストをできることならSTはすべてのテストケースは人が実施して値が正確かを確認しなければならないです。</p> 
+  <p>テストの方法に関してはプログラムの種類や型により違います。</p> 
+  <p>例えば、ゲームの場合は普通にアルファー、クローズベータ、オープンベータのタイプでテストが行う場合が多いし、一般プログラムツールに関してもUnstableバージョン、Stableバージョン(安定化バージョン)を区分してUnstableバージョンがテストバージョン、StableやLTSバージョンが正式なバージョンになります。</p> 
+  <p>そしてウェブ環境にはテストバージョン(Dev環境バージョン)、正式バージョン(Productionバージョン、本番バージョン)で区分して配布する(Deploy)場合もあります。これはプログラムの種類やバグの重要性により方法と期間が区分になります。</p> 
+  <p><br></p> 
+  <p>STテスト仕様書を作成する時にはステップ数、つまり、テストの項目数は普通はプログラムコードライン数の5~10%を作成します。</p> 
+  <p>つまり、プログラムのコードが総10万ラインだとテスト項目を5千件から1万件ほどを作成します。テストの仕様書の内容は基本設計により論理的なデータ確認なので、単純なUTやITで確認したものでは除きます。</p> 
+  <p>例えば、PDFや帳票を出力するボタンを押下する時にちゃんとダウンロードができるかどうかはSTの項目ではありません。STの項目はPDFにデータがちゃんと載せているかを確認することですね。</p> 
+  <p><br></p> 
+  <p>STの項目だと言えば、どの特定な権限を持っている場合、依頼ページからデータが生成されるか、別の権限を持っている場合はデータ生成ができなくなるか、あるいは権限によりデータがちゃんと見えるかとかデータ計算は仕様とおりに計算されているかの検査です。</p> 
+  <p>もちろん、IT部分と重ねている部分もあると思いますが、プログラムも結局人が使うツールなので、人が操作する時に、感じるスクリプトと動きが自然するか、パフォーマンス、データの正確度に関するテストですね。</p> 
+  <p>例えば、ウェブテーブルタグには値が正確に表示されますが、画面が見にくい表示され、人が間違って認知する確率があるかボタンを探すのが大変かの様々に関する検査です。</p> 
+  <p><br></p> 
+  <p>STはプログラムを納品する前の最終テストだからプロジェクトの権限に関しても重要です。</p> 
+  <p>プロジェクトのチームを構成する時、メインメンバーがPM(Project Manager)とシニアプログラマー(Senior Developer)と品質管理者(Quality manager)ですが、PMはプロジェクトのスケジュールと全体的な管理、シニアプログラマーは開発に関する総責任者、品質管理者はプロジェクトのテストを責任します。</p> 
+  <p>プロジェクトのサイズと構成によりその責任が違いますが、普通はプログラムのエラーや要求事項に関するエラーなら品質管理者(Quality manager)が責任する場合が多いです。(これがプログラムのタイプや比重により構成が変わる部分ですが、普通はPMとシニアプログラマー、品質管理者に分けます。)</p> 
+  <p>そのため、品質管理者がプロジェクトの中で権限が強いし、プロジェクトのSTの領域はかなり重要な部分です。</p> 
+  <p><br></p> 
+  <p>プロジェクトの特性によりSTの期間と人力が変わるし、そのため、プログラムの値段も変わる場合もたくさんあります。</p> 
+  <p>中大型のミドルウェアやOfflineプログラムの場合は配布した後でバッチや修正配布が可能な場合はSTの期間と人力の値段に下がる場合もあるので、プログラムの値段が下がる場合もあります。</p> 
+  <p>なので、Offline製品よりOnline製品がもっと安い場合もあります。でも、それがSTの値段算出によりなのでOnlineだって無条件に安いということではありません。</p> 
+  <p><br></p> 
+  <p>ほとんどのフトウェアプログラムはOfflineやOnlineでも簡単にアップデートが不可能な製品が多いです。例えば、基幹産業(鉄道、飛行機、電気、ガス)や金融、医療などのソフトウェアは一回にインストールされたらアップデートが難しいです。なのでプログラムの製造値段もすごく高いですが、テスト工程の値段もすごく高いです。</p> 
+  <p>ウェブサービスだと言っても社内SEポータルサービスが開始するとその仕様により会社の組織が構成され業務標準になる場合が多いので、間違って作成してデータが間違って格納されたら途中で修正するのが考えより簡単ではありません。</p> 
+  <p><br></p> 
+  <p>小さいプロジェクトなら普通の開発者がテストまで実施して納品する場合もありますが、その時にしっかりテストを行わなくてバグが発生する場合も多いです。</p> 
+  <p>理由はUTやITの技術的なテストが終わってSTでまたテストする項目があるかと思いがあるからですね。私も新人の時に、いや今でもたまに行うミスですね。</p> 
+  <p>その時の私の経験ではUTやITのミスで発生したバグより、STで発生したバグがもっと致命的なバグも結構あるでしょう。</p> 
+  <p>例えば、ユーザが作動するために特定なデータが溜まると思えば、間違いデータがそのままで3~4か月ごろに溜まって、後で気づけました。その後でデータを修正しようと思えば、間違いデータがもう何万件に格納されたし、様々なテーブルにレファレンスされ、修正が難しくなりました。</p> 
+  <p>普通、UTやITの技術ミスはデータがNULLや規則的なバグが多いですが、STに発生するバグはエラーが発生することもないし、不規則的な要素も多いのでデータを確認して修正するためのバッチを作成することも簡単ではありません。</p> 
+  <p><br></p> 
+  <p>STの場合は決まている方法論やテスト方法はありません。技術的な要素もないので、説明するのはここまでですね。</p> 
+  <p>STの工程を重要に思って、良い品質なプログラムを作成しましょう。</p> 
+  <p><br></p> 
+  <p>ここまでプログラム最終テスト - ST(System test(Standard, Scenario))に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/296.html" target="_blank">[Project design] プログラム結合テスト - IT(Integration test)</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=projectdesign>#projectdesign</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0210">Study / Project design</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/297.html'>[Project design] プログラム最終テスト - ST(System test(Standard, Scenario))</a><span>2021/10/26 19:10:07</span></li><li><a href='https://www.nowonbun.com/296.html'>[Project design] プログラム結合テスト - IT(Integration test)</a><span>2021/10/25 20:12:17</span></li><li><a href='https://www.nowonbun.com/293.html'>[Project design] プログラム検証とテスト - Unitテスト</a><span>2021/10/22 19:34:09</span></li><li><a href='https://www.nowonbun.com/288.html'>[Project design] プログラム制作(コーディング) - クラス作成方法</a><span>2021/10/20 19:28:09</span></li><li><a href='https://www.nowonbun.com/286.html'>[Project design] プログラム制作(コーディング) - 関数作成方法</a><span>2021/10/19 21:01:32</span></li><li><a href='https://www.nowonbun.com/284.html'>[Project design] 詳細設計(インターフェース設計と抽象化作業)</a><span>2021/10/18 18:23:15</span></li><li><a href='https://www.nowonbun.com/283.html'>[Project design] 基本設計(画面設計とDB設計)</a><span>2021/10/17 21:21:11</span></li><li><a href='https://www.nowonbun.com/281.html'>[Project design] 要件定義(要求事項整理)</a><span>2021/10/15 19:28:58</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/298.html'>[Design pattern] 2-1. アダプターパターン(Adapter pattern)</a><span>2021/10/26 19:12:40</span></li><li><a href='https://www.nowonbun.com/297.html'>[Project design] プログラム最終テスト - ST(System test(Standard, Scenario))</a><span>2021/10/26 19:10:07</span></li><li><a href='https://www.nowonbun.com/296.html'>[Project design] プログラム結合テスト - IT(Integration test)</a><span>2021/10/25 20:12:17</span></li><li><a href='https://www.nowonbun.com/295.html'>[Python] Seleniumライブラリを使う方法(自動ウェブテスト、ウェブスクレイピング)</a><span>2021/10/25 19:29:00</span></li><li><a href='https://www.nowonbun.com/294.html'>[Design pattern] 1-5. プロトタイプパターン(Prototype pattern)</a><span>2021/10/22 19:35:45</span></li><li><a href='https://www.nowonbun.com/293.html'>[Project design] プログラム検証とテスト - Unitテスト</a><span>2021/10/22 19:34:09</span></li><li><a href='https://www.nowonbun.com/292.html'>[C#] 57. コーティング規約</a><span>2021/10/21 18:57:02</span></li><li><a href='https://www.nowonbun.com/291.html'>[C#] 56. 値の初期化及び基本データ値(default)を設定する方法、そして原始データのnull処理、?と??の使い方</a><span>2021/10/21 18:54:41</span></li><li><a href='https://www.nowonbun.com/290.html'>[C#] 55.namespaceとusing、そしてpartialの使い方</a><span>2021/10/21 18:51:39</span></li><li><a href='https://www.nowonbun.com/289.html'>[C#] 54. Reflection機能を使い方 - Attribute</a><span>2021/10/20 19:29:31</span></li><li><a href='https://www.nowonbun.com/288.html'>[Project design] プログラム制作(コーディング) - クラス作成方法</a><span>2021/10/20 19:28:09</span></li><li><a href='https://www.nowonbun.com/287.html'>[C#] 53. Reflection機能を使い方 - Propertyとevent</a><span>2021/10/19 21:02:58</span></li><li><a href='https://www.nowonbun.com/286.html'>[Project design] プログラム制作(コーディング) - 関数作成方法</a><span>2021/10/19 21:01:32</span></li><li><a href='https://www.nowonbun.com/285.html'>[CentOs] ジェンキンス(Jenkins)をインストールする方法</a><span>2021/10/18 18:28:58</span></li><li><a href='https://www.nowonbun.com/284.html'>[Project design] 詳細設計(インターフェース設計と抽象化作業)</a><span>2021/10/18 18:23:15</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/297.html';this.page.identifier = 'NOWONBUN00297';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
