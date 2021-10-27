@@ -142,7 +142,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p>この投稿はデザインパターンのブリッジパターン(Bridge pattern)に関する説明です。</p> 
   <p><br></p> 
   <p>ブリッジパターンとは概念として抽象部の処理と実装部の処理を独立的に使えるような方法です。理解しやすく言えば、抽象部は、つまりインターフェースから関数に関する処理を定義すると、継承した実装部、つまり、クラスには受け取ったインスタンスにより別の結果を実装する構造です。</p> 
-  <p style="text-align:left;"><img src="" data-filename="001.jpg" style="width: 580px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/300/2051_001.jpg" data-filename="001.jpg" style="width: 580px;"><br></p> 
   <p><span style="font-size:0.7em">reference - <a href="https://en.wikipedia.org/wiki/Bridge_pattern" target="_blank">https://en.wikipedia.org/wiki/Bridge_pattern</a></span></p> 
   <pre><code class="cpp" data-type="C/C++ブリッジパターン例">#pragma once
 #include &lt;stdio.h&gt;
@@ -216,7 +216,7 @@ int main() {
   return 0;
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="" data-filename="002.png" style="width: 181px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/300/2049_002.png" data-filename="002.png" style="width: 181px;"><br></p> 
   <p>上の結果をみればBridgeのクラスにどのインスタンスを渡すことにより結果が違います。つまり、Node1インスタンスを渡すとNode1の結果がコンソールに出力するし、Node2インスタンスを渡すとNode2の結果がコンソールに出力されます。</p> 
   <p>BridgeクラスはINodeクラスの実行に関する定義を実装することでそのデータ値により結果が別々に出力されます。</p> 
   <pre><code class="java" data-type="Javaブリッジパターン例">// INodeインターフェース
@@ -275,7 +275,7 @@ public class Program {
   }
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="" data-filename="003.png" style="width: 160px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/300/2050_003.png" data-filename="003.png" style="width: 160px;"><br></p> 
   <p>Javaの例もC++と似ている構造です。ブリッジパターンはほぼ規格されたパターンかな?別の型で応用しようと思うが、良い例がないですね。</p> 
   <p>私が知らない可能性もあります。</p> 
   <pre><code class="cs" data-type="C#ブリッジパターン例">using System;
@@ -337,7 +337,7 @@ class Program
   }
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="" data-filename="004.png" style="width: 286px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/300/2048_004.png" data-filename="004.png" style="width: 286px;"><br></p> 
   <p>このブリッジパターンは我々が良く使うMVC型のフレームワークでよく見えるパターンです。</p> 
   <p>Client(Browser)から要請が来るとパラメータをModelクラスにインスタンス生成してControllerを呼び出して実際に我々が作成する実装部はControllerのExecute関数です。</p> 
   <p>抽象部分はすべてフレームワークで実行されていますね。</p> 

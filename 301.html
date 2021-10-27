@@ -147,30 +147,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p><br></p> 
   <p>それなら簡単にウィンドウフォームを作成しましょう。</p> 
   <p>Visual studioを起動してプロジェクト作成します。</p> 
-  <p style="text-align:left;"><img src="" data-filename="001.png" style="width: 368px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2065_001.png" data-filename="001.png" style="width: 368px;"><br></p> 
   <p>そうするとWindow Forms App項目が二つが出ます。</p> 
-  <p style="text-align:left;"><img src="" data-filename="002.png" style="width: 848px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2072_002.png" data-filename="002.png" style="width: 848px;"><br></p> 
   <p>一つはCore用だし、もう一つは.Net framework用です。Core用を使っても構いないですが、Window formは基本的にWindow環境で実行するプログラムなのに、Coreを選択する必要はありません。</p> 
   <p>最近に使うWindow 10には基本的に.Net frameworkがインストールされていますね。</p> 
   <p><br></p> 
   <p>そしてプロジェクト名を入力してプロジェクト作成します。</p> 
-  <p style="text-align:left;"><img src="" data-filename="003.png" style="width: 648px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2061_003.png" data-filename="003.png" style="width: 648px;"><br></p> 
   <p>それならVisual studioに基本的にWindow formが生成されています。</p> 
-  <p style="text-align:left;"><img src="" style="width: 573px;" data-filename="004.png"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2059_004.png" style="width: 573px;" data-filename="004.png"><br></p> 
   <p>そのままにF5(Starting debugging)を押下するとウィンドウにウィンドウプログラムが実行されていることを確認できます。</p> 
-  <p style="text-align:left;"><img src="" data-filename="005.png" style="width: 330px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2057_005.png" data-filename="005.png" style="width: 330px;"><br></p> 
   <p>実はここまでしてもウィンドウプログラムを一つ作ったことと同じ意味ですね。</p> 
   <p><br></p> 
   <p>ここで我々がウィンドウフォームにボタンを一つ追加しましょう。</p> 
   <p>Visual studioの隣を見るとToolboxがあることを確認できます。</p> 
-  <p style="text-align:left;"><img src="" data-filename="006.png" style="width: 255px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2071_006.png" data-filename="006.png" style="width: 255px;"><br></p> 
   <p>そこでButtonを探してフォームにマウスを押下しながら引き付けます。(Drag-and-drop)</p> 
-  <p style="text-align:left;"><img src="" data-filename="007.png" style="width: 662px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2062_007.png" data-filename="007.png" style="width: 662px;"><br></p> 
   <p>そうするとフォームにボタンが生成されたことを確認できます。</p> 
   <p><br></p> 
   <p>そうするとボタンをダブルクリックしましょう。</p> 
   <p>そうなるとソース画面に変わったことを確認できます。</p> 
-  <p style="text-align:left;"><img src="" data-filename="008.png" style="width: 458px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2064_008.png" data-filename="008.png" style="width: 458px;"><br></p> 
   <p>何かを知らないですが、button1_Clickという関数がありますね。ここでクリックする時に動作するソースを実装するらしいです。</p> 
   <pre><code class="cs" data-type="Form1.cs">using System;
 using System.Windows.Forms;
@@ -196,13 +196,13 @@ namespace WindowsFormsApp
   <p>button1_Click関数の中にMessageBox.Show("Hello world")を入力してまた、F5(Starting debugging)を押下してデバックしましょう。</p> 
   <p><br></p> 
   <p>実行するとウィンドウプログラムが実行されてその中でボタンがあることを確認できます。ボタンをクリックするとメッセージボックスにHello worldという文字があることを確認できます。</p> 
-  <p style="text-align:left;"><img src="" style="width: 263px;" data-filename="009.png"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2075_009.png" style="width: 263px;" data-filename="009.png"><br></p> 
   <p>ここまでが基本的なウィンドウプログラム作成する流れです。</p> 
   <p><br></p> 
   <p>ソースに関して少し詳細に説明します。</p> 
   <p>隣のエクスプローラーを見るとForm1.csファイルがあり、Form1.Desiner.csファイルとForm1.resxファイルがあります。</p> 
   <p>そしてProgram.csファイルがありますね。</p> 
-  <p style="text-align:left;"><img src="" style="width: 320px;" data-filename="010.png"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2068_010.png" style="width: 320px;" data-filename="010.png"><br></p> 
   <p>まず、Program.csファイルを開くと下記通りのソースがあります。</p> 
   <pre><code class="cs" data-type="Program.cs">using System;
 using System.Windows.Forms;
@@ -228,16 +228,16 @@ namespace WindowsFormsApp
 </code></pre> 
   <p>基本的に上のソース構造はConsoleで作成した構造と同じです。つまり、プログラムはMain関数で実行することです。</p> 
   <p>改めて言えば、コンソールプロジェクトでSystem.Windows.Formsライブラリを連結して上と同じソースを作成すれば同じウィンドウプログラムが実行されるという意味です。</p> 
-  <p style="text-align:left;"><img src="" style="width: 345px;" data-filename="011.png"><br></p> 
-  <p style="text-align:left;"><img src="" data-filename="012.png" style="width: 773px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2058_011.png" style="width: 345px;" data-filename="011.png"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2060_012.png" data-filename="012.png" style="width: 773px;"><br></p> 
   <p>ここでまた、知りたいのがコンソールウィンドウはないか?と思えますが、エクスプローラーでプロジェクトをマウス右クリックするとPropertiesというメニューがあります。</p> 
-  <p style="text-align:left;"><img src="" data-filename="013.png" style="width: 460px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2066_013.png" data-filename="013.png" style="width: 460px;"><br></p> 
   <p>クリックすると設定画面がでますが、そこでOutput typeの項目がWindows applicationになっています。</p> 
   <p><br></p> 
   <p>一応、配布する時にはWindows applicationに変更しなければならないですが、我々は一応開発しなければならないのでConsole Applicationに変更しましょう。</p> 
-  <p style="text-align:left;"><img src="" data-filename="014.png" style="width: 779px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2063_014.png" data-filename="014.png" style="width: 779px;"><br></p> 
   <p>また、F5(Starting debugging)を押下してデバックするとConsoleウィンドウが出ることを確認できます。</p> 
-  <p style="text-align:left;"><img src="" data-filename="015.png" style="width: 300px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2056_015.png" data-filename="015.png" style="width: 300px;"><br></p> 
   <p>また、ソースに戻って、Program.csファイルにはnew Form1()でインスタンスを生成してApplication.Runで実行することを確認できます。</p> 
   <p>このApplication.Runは後でまた説明します。</p> 
   <p><br></p> 
@@ -245,7 +245,7 @@ namespace WindowsFormsApp
   <p>多分、Form1.csファイルをクリックするとデザインウィンドウが表示されますね。</p> 
   <p><br></p> 
   <p>それでマウス右クリックしてView Codeでソースを見ましょう。</p> 
-  <p style="text-align:left;"><img src="" data-filename="016.png" style="width: 523px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2067_016.png" data-filename="016.png" style="width: 523px;"><br></p> 
   <p>先に、我々がボタンをクリックすると実行するソースがありますね。確実に構造はForm1のクラスだし、Formクラスを継承しました。</p> 
   <p>コンストラクタではInitializeComponent関数が実行され、button1_Clickという関数があり、クリックすると実行しますね。これだけ見ると実はプログラムが理解できません。すべて自動に処理するか？プログラムでは自動っていうのはありません。すべての動作には理由があります。</p> 
   <p><br></p> 
@@ -333,7 +333,7 @@ namespace WindowsFormsApp
   <p>Reference - <a href="https://www.nowonbun.com/26.html" target="_blank">[C#] 25. イベント(event)キーワードを使い方</a></p> 
   <p><br></p> 
   <p>そうするとWindowの属性を変更するならForm.Designer.csで修正するべきか?</p> 
-  <p style="text-align:left;"><img src="" data-filename="021.png" style="width: 520px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2070_021.png" data-filename="021.png" style="width: 520px;"><br></p> 
   <p>Visual studioは親切にデザイン画面の右下のプロパティ設定をみると属性を設定する項目があります。下に属性説明までありますね。</p> 
   <p><br></p> 
   <p>ほとんどFormの構造は分かりました。一応、Form1はFormクラスを継承しました。</p> 
@@ -378,12 +378,12 @@ namespace WindowsFormsApp
   }
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="" style="width: 349px;" data-filename="017.png"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2069_017.png" style="width: 349px;" data-filename="017.png"><br></p> 
   <p>プログラムを実行してボタンを押下するとコンソールウィンドウでi値が出力されていることを確認できます。でもウィンドウを操作しようと思えば動けません。少し時間が流れると応答なしでプログラムが凍っていることを確認できます。</p> 
   <p>つまり、単一スレッドで関数などで上みたいにインタラプトを掛けるとプログラムが止まってしまいます。そうするとウィンドウプログラムでは時間が掛かる作業をすればダメかな?それはウィンドウスレッドを利用すれば良いですが、それは別の投稿で説明します。</p> 
   <p><br></p> 
   <p>また、ウィンドウの説明に戻って、ウィンドウは単一スレッドで無限ループをします。そうすると、上みたいなクリックやイベント処理が発生する時、どの流れで発生するかというとウィンドウメッセージキューがあります。(キューアルゴリズムのFILO構造です。)</p> 
-  <p style="text-align:left;"><img src="" data-filename="018.png" style="width: 771px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2073_018.png" data-filename="018.png" style="width: 771px;"><br></p> 
   <p><span style="font-size:0.7em">Reference - <a href="https://www.researchgate.net/figure/Window-based-messaging-process-The-function-prototype-of-PostThreadMessage-is-BOOL_fig3_339679677" target="_blank">https://www.researchgate.net</a></span></p> 
   <p>説明が難しいですが、上のイメージ通りにウィンドウが動いています。システムでウィンドウ生成!するとシステムからウィンドウにメッセージを送信します。例えば、描画して!、どの関数を実行!してというメッセージですね。</p> 
   <p>そうすると我々のプログラムではメッセージを受け取ってどの位置にありますとか実行しましたとかの返却メッセージをシステムに送信するとシステムからモニターにウィンドウを描画することです。</p> 
@@ -412,11 +412,11 @@ namespace WindowsFormsApp
   }
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="" style="width: 337px;" data-filename="019.png"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2074_019.png" style="width: 337px;" data-filename="019.png"><br></p> 
   <p>WndProcという関数をFormクラスから再定義してConsoleにメッセージを出力すると何かのデータが連続に出力することを確認できます。</p> 
   <p>これがメッセージ番号ですが、実はC#ではメッセージキューを直接にコントロールする必要がありません。</p> 
   <p>なので、この識別コードに関する値がC#には定義されてありませんが、C++(MFC)には定義されています。</p> 
-  <p style="text-align:left;"><img src="" data-filename="020.png" style="width: 481px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/301/2076_020.png" data-filename="020.png" style="width: 481px;"><br></p> 
   <p>上の識別コードでシステムからウィンドウフォームに連続にメッセージを送信するとウィンドウにはそのメッセージを受け取って処理することです。</p> 
   <p><br></p> 
   <p>実はC#にはWndProc関数まで再定義して使うことはありません。</p> 
