@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/301.html"},"url":"https:\/\/www.nowonbun.com\/301.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [C#] 58. \u30a6\u30a3\u30f3\u30c9\u30a6\u30d5\u30a9\u30fc\u30e0(Window form)\u3092\u4f5c\u6210\u3059\u308b\u65b9\u6cd5\u3001\u305d\u3057\u3066\u30a6\u30a3\u30f3\u30c9\u30a6\u30e1\u30c3\u30bb\u30fc\u30b8\u3068\u30ad\u30e5\u30fc","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fc#\u3067\u30a6\u30a3\u30f3\u30c9\u30a6\u30d5\u30a9\u30fc\u30e0(window form)\u3092\u4f5c\u6210\u3059\u308b\u65b9\u6cd5\u3001\u305d\u3057\u3066\u30a6\u30a3\u30f3\u30c9\u30a6\u30e1\u30c3\u30bb\u30fc\u30b8\u3068\u30ad\u30e5\u30fc\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002c#\u3068\u3044\u3046\u8a00\u8a9e\u306fms\u793e\u3067\u958b\u767a\u3057\u305f\u8a00\u8a9e\u3067window os\u306b\u74b0\u5883\u3067\u7279\u5316\u3055\u308c\u3066\u3044\u307e\u3059\u3002\u3064\u307e\u308a\u3001c#\u8a00\u8a9e\u3067\u6211\u3005\u304c\u3088\u304f\u4f7f\u3046\u30a6\u30a3\u30f3\u30c9\u30a6\u74b0\u5883\u3067\u30a6\u30a3\u30f3\u30c9\u30a6\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u958b\u767a\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002java\u3084\u305d\u306e\u4ee5\u5916\u306epython\u306a\u3069\u3092\u901a\u3063\u3066\u30a6\u30a3\u30f3\u30c9\u30a6\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u4f5c\u308c\u306a\u3044\u3068\u3044\u3046\u3053\u3068\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u304c\u3001\u3067\u3082\u3001\u30a6\u30a3\u30f3\u30c9\u30a6\u304cms\u793e\u306e\u88fd\u54c1\u306a\u306e\u3067c#\u304b\u3089window api\u3092\u4f7f\u3046\u306e\u304c\u3082\u3063\u3068\u3057\u3084\u3059\u3044\u3067\u3059\u3002\u5b9f\u306f\u3001c#\u8a00\u8a9e\u3092\u52c9\u5f37\u3059\u308b\u3053\u3068\u306f\u30a6\u30a3\u30f3\u30c9\u30a6\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u4f5c\u308b\u305f\u3081\u3068\u3044\u3046\u306e\u3082\u9593\u9055\u3063\u3066\u3042\u308a\u307e\u305b\u3093\u3002\u6700\u8fd1\u3001\u30b2\u30fc\u30e0\u30a8\u30f3\u30b8\u30f3\u3067\u3088\u304f\u4f7f\u3046unity\u3082\u57fa\u672c\u7684\u306b\u4f7f\u3046\u8a00\u8a9e\u3082c#\u3067\u3059\u3002\u305d\u308c\u306a\u3089\u7c21\u5358\u306b\u30a6\u30a3\u30f3\u30c9\u30a6\u30d5\u30a9\u30fc\u30e0\u3092\u4f5c\u6210\u3057\u307e\u3057\u3087\u3046\u3002visual studio\u3092\u8d77\u52d5\u3057\u3066\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u4f5c\u6210\u3057\u307e\u3059\u3002\u305d\u3046\u3059\u308b\u3068window forms app\u9805\u76ee\u304c\u4e8c\u3064\u304c\u51fa\u307e\u3059\u3002\u4e00\u3064\u306fcore\u7528\u3060\u3057\u3001\u3082\u3046\u4e00\u3064\u306f.net framework\u7528\u3067\u3059\u3002core\u7528\u3092\u4f7f\u3063\u3066\u3082\u69cb\u3044\u306a\u3044\u3067\u3059\u304c\u3001window form\u306f\u57fa\u672c\u7684\u306bwindow\u74b0\u5883\u3067\u5b9f\u884c\u3059\u308b\u30d7\u30ed\u30b0\u30e9\u30e0\u306a\u306e\u306b\u3001core\u3092\u9078\u629e\u3059\u308b\u5fc5\u8981\u306f\u3042\u308a\u307e\u305b\u3093\u3002\u6700\u8fd1\u306b\u4f7f\u3046window 10\u306b\u306f\u57fa\u672c\u7684\u306b.net framework\u304c\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3055\u308c\u3066\u3044\u307e\u3059\u306d\u3002\u305d\u3057\u3066\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u540d\u3092\u5165\u529b\u3057\u3066\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u4f5c\u6210\u3057\u307e\u3059\u3002\u305d\u308c\u306a\u3089visual studio\u306b\u57fa\u672c\u7684\u306bwindow form\u304c\u751f\u6210\u3055\u308c\u3066\u3044\u307e\u3059\u3002\u305d\u306e\u307e\u307e\u306bf5(starting debugging)\u3092\u62bc\u4e0b\u3059\u308b\u3068\u30a6\u30a3\u30f3\u30c9\u30a6\u306b\u30a6\u30a3\u30f3\u30c9\u30a6\u30d7\u30ed\u30b0\u30e9\u30e0\u304c\u5b9f\u884c\u3055\u308c\u3066\u3044\u308b\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002\u5b9f\u306f\u3053\u3053\u307e\u3067\u3057\u3066\u3082\u30a6\u30a3\u30f3\u30c9\u30a6\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u4e00\u3064\u4f5c\u3063\u305f\u3053\u3068\u3068\u540c\u3058\u610f\u5473\u3067\u3059\u306d\u3002\u3053\u3053\u3067\u6211\u3005\u304c\u30a6\u30a3\u30f3\u30c9\u30a6\u30d5\u30a9\u30fc\u30e0\u306b\u30dc\u30bf\u30f3\u3092\u4e00\u3064\u8ffd\u52a0\u3057\u307e\u3057\u3087\u3046\u3002visual studio\u306e\u96a3\u3092\u898b\u308b\u3068toolbox\u304c\u3042\u308b\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002\u305d\u3053\u3067button\u3092\u63a2\u3057\u3066\u30d5\u30a9\u30fc\u30e0\u306b\u30de\u30a6\u30b9\u3092\u62bc\u4e0b\u3057\u306a\u304c\u3089\u5f15\u304d\u4ed8\u3051\u307e\u3059\u3002(drag-and-drop)\u305d\u3046\u3059\u308b\u3068\u30d5\u30a9\u30fc\u30e0\u306b\u30dc\u30bf\u30f3\u304c\u751f\u6210\u3055\u308c\u305f\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002\u305d\u3046\u3059\u308b\u3068\u30dc\u30bf\u30f3\u3092\u30c0\u30d6\u30eb\u30af\u30ea\u30c3\u30af\u3057\u307e\u3057\u3087\u3046\u3002\u305d\u3046\u306a\u308b\u3068\u30bd\u30fc\u30b9\u753b\u9762\u306b\u5909\u308f\u3063\u305f\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002\u4f55\u304b\u3092\u77e5\u3089\u306a\u3044\u3067\u3059\u304c\u3001button1_click\u3068\u3044\u3046\u95a2\u6570\u304c\u3042\u308a\u307e\u3059\u306d\u3002\u3053\u3053\u3067\u30af\u30ea\u30c3\u30af\u3059\u308b\u6642\u306b\u52d5\u4f5c\u3059\u308b\u30bd\u30fc\u30b9\u3092\u5b9f\u88c5\u3059\u308b\u3089\u3057\u3044\u3067\u3059\u3002but","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2021-10-27T20:35:44.000+09:00","dateModified":"2021-10-27T20:35:44.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / C#" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はc#でウィンドウフォーム(window form)を作成する方法、そしてウィンドウメッセージとキューに関する説明です。c#という言語はms社で開発した言語でwindow osに環境で特化されています。つまり、c#言語で我々がよく使うウィンドウ環境でウィンドウプログラムを開発することができます。javaやその以外のpythonなどを通ってウィンドウプログラムを作れないということではありませんが、でも、ウィンドウがms社の製品なのでc#からwindow apiを使うのがもっとしやすいです。実は、c#言語を勉強することはウィンドウプログラムを作るためというのも間違ってありません。最近、ゲームエンジンでよく使うunityも基本的に使う言語もc#です。それなら簡単にウィンドウフォームを作成しましょう。visual studioを起動してプロジェクト作成します。そうするとwindow forms app項目が二つが出ます。一つはcore用だし、もう一つは.net framework用です。core用を使っても構いないですが、window formは基本的にwindow環境で実行するプログラムなのに、coreを選択する必要はありません。最近に使うwindow 10には基本的に.net frameworkがインストールされていますね。そしてプロジェクト名を入力してプロジェクト作成します。それならvisual studioに基本的にwindow formが生成されています。そのままにf5(starting debugging)を押下するとウィンドウにウィンドウプログラムが実行されていることを確認できます。実はここまでしてもウィンドウプログラムを一つ作ったことと同じ意味ですね。ここで我々がウィンドウフォームにボタンを一つ追加しましょう。visual studioの隣を見るとtoolboxがあることを確認できます。そこでbuttonを探してフォームにマウスを押下しながら引き付けます。(drag-and-drop)そうするとフォームにボタンが生成されたことを確認できます。そうするとボタンをダブルクリックしましょう。そうなるとソース画面に変わったことを確認できます。何かを知らないですが、button1_clickという関数がありますね。ここでクリックする時に動作するソースを実装するらしいです。but]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [C#] 58. ウィンドウフォーム(Window form)を作成する方法、そしてウィンドウメッセージとキュー" />
+<link rel="canonical" href="https://www.nowonbun.com/301.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [C#] 58. ウィンドウフォーム(Window form)を作成する方法、そしてウィンドウメッセージとキュー" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はc#でウィンドウフォーム(window form)を作成する方法、そしてウィンドウメッセージとキューに関する説明です。c#という言語はms社で開発した言語でwindow osに環境で特化されています。つまり、c#言語で我々がよく使うウィンドウ環境でウィンドウプログラムを開発することができます。javaやその以外のpythonなどを通ってウィンドウプログラムを作れないということではありませんが、でも、ウィンドウがms社の製品なのでc#からwindow apiを使うのがもっとしやすいです。実は、c#言語を勉強することはウィンドウプログラムを作るためというのも間違ってありません。最近、ゲームエンジンでよく使うunityも基本的に使う言語もc#です。それなら簡単にウィンドウフォームを作成しましょう。visual studioを起動してプロジェクト作成します。そうするとwindow forms app項目が二つが出ます。一つはcore用だし、もう一つは.net framework用です。core用を使っても構いないですが、window formは基本的にwindow環境で実行するプログラムなのに、coreを選択する必要はありません。最近に使うwindow 10には基本的に.net frameworkがインストールされていますね。そしてプロジェクト名を入力してプロジェクト作成します。それならvisual studioに基本的にwindow formが生成されています。そのままにf5(starting debugging)を押下するとウィンドウにウィンドウプログラムが実行されていることを確認できます。実はここまでしてもウィンドウプログラムを一つ作ったことと同じ意味ですね。ここで我々がウィンドウフォームにボタンを一つ追加しましょう。visual studioの隣を見るとtoolboxがあることを確認できます。そこでbuttonを探してフォームにマウスを押下しながら引き付けます。(drag-and-drop)そうするとフォームにボタンが生成されたことを確認できます。そうするとボタンをダブルクリックしましょう。そうなるとソース画面に変わったことを確認できます。何かを知らないですが、button1_clickという関数がありますね。ここでクリックする時に動作するソースを実装するらしいです。but]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/301.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [C#] 58. ウィンドウフォーム(Window form)を作成する方法、そしてウィンドウメッセージとキュー" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はc#でウィンドウフォーム(window form)を作成する方法、そしてウィンドウメッセージとキューに関する説明です。c#という言語はms社で開発した言語でwindow osに環境で特化されています。つまり、c#言語で我々がよく使うウィンドウ環境でウィンドウプログラムを開発することができます。javaやその以外のpythonなどを通ってウィンドウプログラムを作れないということではありませんが、でも、ウィンドウがms社の製品なのでc#からwindow apiを使うのがもっとしやすいです。実は、c#言語を勉強することはウィンドウプログラムを作るためというのも間違ってありません。最近、ゲームエンジンでよく使うunityも基本的に使う言語もc#です。それなら簡単にウィンドウフォームを作成しましょう。visual studioを起動してプロジェクト作成します。そうするとwindow forms app項目が二つが出ます。一つはcore用だし、もう一つは.net framework用です。core用を使っても構いないですが、window formは基本的にwindow環境で実行するプログラムなのに、coreを選択する必要はありません。最近に使うwindow 10には基本的に.net frameworkがインストールされていますね。そしてプロジェクト名を入力してプロジェクト作成します。それならvisual studioに基本的にwindow formが生成されています。そのままにf5(starting debugging)を押下するとウィンドウにウィンドウプログラムが実行されていることを確認できます。実はここまでしてもウィンドウプログラムを一つ作ったことと同じ意味ですね。ここで我々がウィンドウフォームにボタンを一つ追加しましょう。visual studioの隣を見るとtoolboxがあることを確認できます。そこでbuttonを探してフォームにマウスを押下しながら引き付けます。(drag-and-drop)そうするとフォームにボタンが生成されたことを確認できます。そうするとボタンをダブルクリックしましょう。そうなるとソース画面に変わったことを確認できます。何かを知らないですが、button1_clickという関数がありますね。ここでクリックする時に動作するソースを実装するらしいです。but]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [C#] 58. ウィンドウフォーム(Window form)を作成する方法、そしてウィンドウメッセージとキュー</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(92)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(27)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(4)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(14)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(206)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(58)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(56)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(9)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0210" href="study_project_design.html">Project design<span class="category-item-count">(9)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/301.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[C#] 58. ウィンドウフォーム(Window form)を作成する方法、そしてウィンドウメッセージとキュー</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0202">Study / C#</a>    作成日付 : <span property="datePublished">2021/10/27 20:35:44</span>   修正日付 : <span property="dateModified">2021/10/27 20:35:44</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はC#でウィンドウフォーム(Window form)を作成する方法、そしてウィンドウメッセージとキューに関する説明です。</p> 
+  <p><br></p> 
+  <p>C#という言語はMS社で開発した言語でWindow OSに環境で特化されています。つまり、C#言語で我々がよく使うウィンドウ環境でウィンドウプログラムを開発することができます。</p> 
+  <p>Javaやその以外のpythonなどを通ってウィンドウプログラムを作れないということではありませんが、でも、ウィンドウがMS社の製品なのでC#からWindow APIを使うのがもっとしやすいです。</p> 
+  <p>実は、C#言語を勉強することはウィンドウプログラムを作るためというのも間違ってありません。最近、ゲームエンジンでよく使うUnityも基本的に使う言語もC#です。</p> 
+  <p><br></p> 
+  <p>それなら簡単にウィンドウフォームを作成しましょう。</p> 
+  <p>Visual studioを起動してプロジェクト作成します。</p> 
+  <p style="text-align:left;"><img src="" data-filename="001.png" style="width: 368px;"><br></p> 
+  <p>そうするとWindow Forms App項目が二つが出ます。</p> 
+  <p style="text-align:left;"><img src="" data-filename="002.png" style="width: 848px;"><br></p> 
+  <p>一つはCore用だし、もう一つは.Net framework用です。Core用を使っても構いないですが、Window formは基本的にWindow環境で実行するプログラムなのに、Coreを選択する必要はありません。</p> 
+  <p>最近に使うWindow 10には基本的に.Net frameworkがインストールされていますね。</p> 
+  <p><br></p> 
+  <p>そしてプロジェクト名を入力してプロジェクト作成します。</p> 
+  <p style="text-align:left;"><img src="" data-filename="003.png" style="width: 648px;"><br></p> 
+  <p>それならVisual studioに基本的にWindow formが生成されています。</p> 
+  <p style="text-align:left;"><img src="" style="width: 573px;" data-filename="004.png"><br></p> 
+  <p>そのままにF5(Starting debugging)を押下するとウィンドウにウィンドウプログラムが実行されていることを確認できます。</p> 
+  <p style="text-align:left;"><img src="" data-filename="005.png" style="width: 330px;"><br></p> 
+  <p>実はここまでしてもウィンドウプログラムを一つ作ったことと同じ意味ですね。</p> 
+  <p><br></p> 
+  <p>ここで我々がウィンドウフォームにボタンを一つ追加しましょう。</p> 
+  <p>Visual studioの隣を見るとToolboxがあることを確認できます。</p> 
+  <p style="text-align:left;"><img src="" data-filename="006.png" style="width: 255px;"><br></p> 
+  <p>そこでButtonを探してフォームにマウスを押下しながら引き付けます。(Drag-and-drop)</p> 
+  <p style="text-align:left;"><img src="" data-filename="007.png" style="width: 662px;"><br></p> 
+  <p>そうするとフォームにボタンが生成されたことを確認できます。</p> 
+  <p><br></p> 
+  <p>そうするとボタンをダブルクリックしましょう。</p> 
+  <p>そうなるとソース画面に変わったことを確認できます。</p> 
+  <p style="text-align:left;"><img src="" data-filename="008.png" style="width: 458px;"><br></p> 
+  <p>何かを知らないですが、button1_Clickという関数がありますね。ここでクリックする時に動作するソースを実装するらしいです。</p> 
+  <pre><code class="cs" data-type="Form1.cs">using System;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp
+{
+  public partial class Form1 : Form
+  {
+    // フォームコンストラクタ
+    public Form1()
+    {
+      InitializeComponent();
+    }
+    // ボタンクリックイベント
+    private void button1_Click(object sender, EventArgs e)
+    {
+      // メッセージボックス
+      MessageBox.Show("Hello world");
+    }
+  }
+}
+</code></pre> 
+  <p>button1_Click関数の中にMessageBox.Show("Hello world")を入力してまた、F5(Starting debugging)を押下してデバックしましょう。</p> 
+  <p><br></p> 
+  <p>実行するとウィンドウプログラムが実行されてその中でボタンがあることを確認できます。ボタンをクリックするとメッセージボックスにHello worldという文字があることを確認できます。</p> 
+  <p style="text-align:left;"><img src="" style="width: 263px;" data-filename="009.png"><br></p> 
+  <p>ここまでが基本的なウィンドウプログラム作成する流れです。</p> 
+  <p><br></p> 
+  <p>ソースに関して少し詳細に説明します。</p> 
+  <p>隣のエクスプローラーを見るとForm1.csファイルがあり、Form1.Desiner.csファイルとForm1.resxファイルがあります。</p> 
+  <p>そしてProgram.csファイルがありますね。</p> 
+  <p style="text-align:left;"><img src="" style="width: 320px;" data-filename="010.png"><br></p> 
+  <p>まず、Program.csファイルを開くと下記通りのソースがあります。</p> 
+  <pre><code class="cs" data-type="Program.cs">using System;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp
+{
+  static class Program
+  {
+    // 単一スレッドアパートメント(Single-threaded apartment)のアノテーション設定
+    [STAThread]
+    // 実行関数
+    static void Main()
+    {
+      // これはVisualスタイルの設定すること、つまり、設定しないと昔の雰囲気のウィンドウプログラムが生成
+      Application.EnableVisualStyles();
+      // これはTextレンダリングに関する設定だが、文字の間隔設定とその他などの設定、Defaultはfalseに設定
+      Application.SetCompatibleTextRenderingDefault(false);
+      // ウィンドウプログラムのメッセージを実行する関数
+      Application.Run(new Form1());
+    }
+  }
+}
+</code></pre> 
+  <p>基本的に上のソース構造はConsoleで作成した構造と同じです。つまり、プログラムはMain関数で実行することです。</p> 
+  <p>改めて言えば、コンソールプロジェクトでSystem.Windows.Formsライブラリを連結して上と同じソースを作成すれば同じウィンドウプログラムが実行されるという意味です。</p> 
+  <p style="text-align:left;"><img src="" style="width: 345px;" data-filename="011.png"><br></p> 
+  <p style="text-align:left;"><img src="" data-filename="012.png" style="width: 773px;"><br></p> 
+  <p>ここでまた、知りたいのがコンソールウィンドウはないか?と思えますが、エクスプローラーでプロジェクトをマウス右クリックするとPropertiesというメニューがあります。</p> 
+  <p style="text-align:left;"><img src="" data-filename="013.png" style="width: 460px;"><br></p> 
+  <p>クリックすると設定画面がでますが、そこでOutput typeの項目がWindows applicationになっています。</p> 
+  <p><br></p> 
+  <p>一応、配布する時にはWindows applicationに変更しなければならないですが、我々は一応開発しなければならないのでConsole Applicationに変更しましょう。</p> 
+  <p style="text-align:left;"><img src="" data-filename="014.png" style="width: 779px;"><br></p> 
+  <p>また、F5(Starting debugging)を押下してデバックするとConsoleウィンドウが出ることを確認できます。</p> 
+  <p style="text-align:left;"><img src="" data-filename="015.png" style="width: 300px;"><br></p> 
+  <p>また、ソースに戻って、Program.csファイルにはnew Form1()でインスタンスを生成してApplication.Runで実行することを確認できます。</p> 
+  <p>このApplication.Runは後でまた説明します。</p> 
+  <p><br></p> 
+  <p>new Form1でインスタンスが生成されたからForm1.csを確認するべきですね。</p> 
+  <p>多分、Form1.csファイルをクリックするとデザインウィンドウが表示されますね。</p> 
+  <p><br></p> 
+  <p>それでマウス右クリックしてView Codeでソースを見ましょう。</p> 
+  <p style="text-align:left;"><img src="" data-filename="016.png" style="width: 523px;"><br></p> 
+  <p>先に、我々がボタンをクリックすると実行するソースがありますね。確実に構造はForm1のクラスだし、Formクラスを継承しました。</p> 
+  <p>コンストラクタではInitializeComponent関数が実行され、button1_Clickという関数があり、クリックすると実行しますね。これだけ見ると実はプログラムが理解できません。すべて自動に処理するか？プログラムでは自動っていうのはありません。すべての動作には理由があります。</p> 
+  <p><br></p> 
+  <p>そうするとForm1.Desiner.csファイルを見ましょう。</p> 
+  <pre><code class="cs" data-type="Form1.Designer.cs">namespace WindowsFormsApp
+{
+  partial class Form1
+  {
+    /// &lt;summary&gt;
+    /// Required designer variable.
+    /// &lt;/summary&gt;
+    private System.ComponentModel.IContainer components = null;
+
+    /// &lt;summary&gt;
+    /// Clean up any resources being used.
+    /// &lt;/summary&gt;
+    /// &lt;param name="disposing"&gt;true if managed resources should be disposed; otherwise, false.&lt;/param&gt;
+    // フォームが消える時に発生する関数(再定義関数)
+    protected override void Dispose(bool disposing)
+    {
+      if (disposing &amp;&amp; (components != null))
+      {
+        components.Dispose();
+      }
+      base.Dispose(disposing);
+    }
+
+    #region Windows Form Designer generated code
+
+    /// &lt;summary&gt;
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// &lt;/summary&gt;
+    // コンストラクタから呼び出す関数
+    private void InitializeComponent()
+    {
+      // ボタンインスタンス生成
+      this.button1 = new System.Windows.Forms.Button();
+      // フォームレイアウト設定
+      this.SuspendLayout();
+      // 
+      // button1
+      // 
+      // ボタン位置設定
+      this.button1.Location = new System.Drawing.Point(24, 26);
+      // ボタン名
+      this.button1.Name = "button1";
+      // ボタンサイズ
+      this.button1.Size = new System.Drawing.Size(75, 23);
+      // ボタンタブのインデクス
+      this.button1.TabIndex = 0;
+      // ボタンの中のText
+      this.button1.Text = "button1";
+      // ボタンの色設定(基本ウィンドウ色)
+      this.button1.UseVisualStyleBackColor = true;
+      // イベント追加
+      this.button1.Click += new System.EventHandler(this.button1_Click);
+      // 
+      // Form1
+      // 
+      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      // フォームサイズ設定
+      this.ClientSize = new System.Drawing.Size(253, 186);
+      // フォームにコントロールを追加
+      this.Controls.Add(this.button1);
+      // フォーム名
+      this.Name = "Form1";
+      // フォーム、ヘッダーのText
+      this.Text = "Form1";
+      // フォームレイアウト設定
+      this.ResumeLayout(false);
+    }
+    #endregion
+    // button1メンバー変数
+    private System.Windows.Forms.Button button1;
+  }
+}
+</code></pre> 
+  <p>Form1クラスがpartialで分割されています。</p> 
+  <p>Reference - <a href="https://www.nowonbun.com/290.html" target="_blank">[C#] 55.namespaceとusing、そしてpartialの使い方</a></p> 
+  <p>そしてbutton1クラスがメンバー変数にあり、InitializeComponent関数の中でインスタンスを生成しますね。</p> 
+  <p>そして様々な複雑な設定は一応無視して、this.button1.Clickという関数を見ると、イベントを追加する関数ですね。</p> 
+  <p>つまり、Form1.csファイルの中である関数はbuttonでクリックすると発生するイベント関数でしだ。</p> 
+  <p>Reference - <a href="https://www.nowonbun.com/26.html" target="_blank">[C#] 25. イベント(event)キーワードを使い方</a></p> 
+  <p><br></p> 
+  <p>そうするとWindowの属性を変更するならForm.Designer.csで修正するべきか?</p> 
+  <p style="text-align:left;"><img src="" data-filename="021.png" style="width: 520px;"><br></p> 
+  <p>Visual studioは親切にデザイン画面の右下のプロパティ設定をみると属性を設定する項目があります。下に属性説明までありますね。</p> 
+  <p><br></p> 
+  <p>ほとんどFormの構造は分かりました。一応、Form1はFormクラスを継承しました。</p> 
+  <p>つまり、Formから基本的にウィンドウフォームを描画するし、様々な設定そしますが、我々が設定を変更する部分は継承して再定義する型でプログラムが構成されています。</p> 
+  <p><br></p> 
+  <p>そうするとWindowとはどの方法でプログラムが動くかを説明します。</p> 
+  <p>Windowは基本的にスレッド環境で無限ループ中です。一番比較しやすい例がフリップブックがあります。</p> 
+  <p>フリップブックとは我々が子供時代に、教科書の最初の章に絵を描き、第2章に少し動く絵を描き、第3章にさらに動く絵を描いて、最後に本をめくるとまるで絵が動くように見えるものがあります。</p> 
+  <p>Windowも同じく、スレッドで連続的に画面に描くことです。それが1秒で20章なら20フレーム(20FPS)、40章なら40フレーム(FPS)で表現することです。ウィンドウフォームは我々がFPSを設定することではありませんが、その仕組みで画面に描画されることです。</p> 
+  <p><br></p> 
+  <p>連続に画面に描画することは分かるが、そうするとボタンクリックのイベントや処理は別のスレッドで実行されることか？違います。</p> 
+  <p>複数のスレッドを使うことになると同期化の問題が発生します。各スレッドでどの時点でデータを受け取るかに関する問題でしょう。</p> 
+  <p>link - <a href="https://www.nowonbun.com/40.html" target="_blank">[C#] 39. lockキーワードとdeadlock(デッドロック)</a></p> 
+  <p><br></p> 
+  <p>同期化の問題が発生するためウィンドウは基本的に単一スレッドで無限ループを実行されています。</p> 
+  <p>例えば、button1_ClickでMessageBox.Show()を使いましたが、今回はforを使って0から1000までThread.Sleepを入れて実行しましょう。</p> 
+  <pre><code class="cs" data-type="Form1.cs">using System;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp
+{
+  public partial class Form1 : Form
+  {
+    // コンストラクタ
+    public Form1()
+    {
+      // 初期化
+      InitializeComponent();
+    }
+    // ボタンクリックイベント
+    private void button1_Click(object sender, EventArgs e)
+    {
+      // 繰り返し
+      for(var i = 0; i &lt; 1000; i++)
+      {
+        // コントロールに出力
+        Console.WriteLine(i);
+        // 1秒待機
+        System.Threading.Thread.Sleep(1000);
+      }
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="" style="width: 349px;" data-filename="017.png"><br></p> 
+  <p>プログラムを実行してボタンを押下するとコンソールウィンドウでi値が出力されていることを確認できます。でもウィンドウを操作しようと思えば動けません。少し時間が流れると応答なしでプログラムが凍っていることを確認できます。</p> 
+  <p>つまり、単一スレッドで関数などで上みたいにインタラプトを掛けるとプログラムが止まってしまいます。そうするとウィンドウプログラムでは時間が掛かる作業をすればダメかな?それはウィンドウスレッドを利用すれば良いですが、それは別の投稿で説明します。</p> 
+  <p><br></p> 
+  <p>また、ウィンドウの説明に戻って、ウィンドウは単一スレッドで無限ループをします。そうすると、上みたいなクリックやイベント処理が発生する時、どの流れで発生するかというとウィンドウメッセージキューがあります。(キューアルゴリズムのFILO構造です。)</p> 
+  <p style="text-align:left;"><img src="" data-filename="018.png" style="width: 771px;"><br></p> 
+  <p><span style="font-size:0.7em">Reference - <a href="https://www.researchgate.net/figure/Window-based-messaging-process-The-function-prototype-of-PostThreadMessage-is-BOOL_fig3_339679677" target="_blank">https://www.researchgate.net</a></span></p> 
+  <p>説明が難しいですが、上のイメージ通りにウィンドウが動いています。システムでウィンドウ生成!するとシステムからウィンドウにメッセージを送信します。例えば、描画して!、どの関数を実行!してというメッセージですね。</p> 
+  <p>そうすると我々のプログラムではメッセージを受け取ってどの位置にありますとか実行しましたとかの返却メッセージをシステムに送信するとシステムからモニターにウィンドウを描画することです。</p> 
+  <pre><code class="cs" data-type="Form1.cs">using System;
+using System.Windows.Forms;
+
+namespace WindowsFormsApp
+{
+  public partial class Form1 : Form
+  {
+    // コンストラクタ
+    public Form1()
+    {
+      // 初期化
+      InitializeComponent();
+    }
+    // ボタンクリックイベント
+    private void button1_Click(object sender, EventArgs e) { }
+    // メッセージキュー関数の再定義
+    protected override void WndProc(ref Message m)
+    {
+      base.WndProc(ref m);
+      // コントロールに出力
+      Console.WriteLine("0x{0:X4}", m.Msg);
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="" style="width: 337px;" data-filename="019.png"><br></p> 
+  <p>WndProcという関数をFormクラスから再定義してConsoleにメッセージを出力すると何かのデータが連続に出力することを確認できます。</p> 
+  <p>これがメッセージ番号ですが、実はC#ではメッセージキューを直接にコントロールする必要がありません。</p> 
+  <p>なので、この識別コードに関する値がC#には定義されてありませんが、C++(MFC)には定義されています。</p> 
+  <p style="text-align:left;"><img src="" data-filename="020.png" style="width: 481px;"><br></p> 
+  <p>上の識別コードでシステムからウィンドウフォームに連続にメッセージを送信するとウィンドウにはそのメッセージを受け取って処理することです。</p> 
+  <p><br></p> 
+  <p>実はC#にはWndProc関数まで再定義して使うことはありません。</p> 
+  <p>私も実践ではWindowプログラムプロジェクトを一回だけやりましたが、その時には私がC#をよく知らなかったので、WndProc関数に様々な処理を付けて開発した記憶がありますね。C#にはほぼすべてのメッセージがイベントあるいはvirtualで再定義できるようにクラスが作成されています。</p> 
+  <p>個人的な経験ではC++(MFC)はその機能がありません。なので、イベントや特定処理をmessageで処理した記憶がありますね。Window messageは一つのプログラムだけ使うことではなく、システム全体に運用することなので、たまに、messageでインスタンスのアドレスやデータを間違って送ると、受け取る側でデータが受け取れなくてオブジェクトを探した記憶があります。</p> 
+  <p>どの時は別のプログラムにデータを間違って送ってプログラムが可笑しくなる可能性もあります。参考に以前にスタークラフトやディアブロでゲームマップハッキングツールがこのWindow messageを利用してプログラムの中の値を変造することです。特定値が更新するとマップがすべて見えることかなど</p> 
+  <p>C++(MFC)に比べたらC#は革命的にウィンドウ開発がしやすくなりました。たぶん、この部分せいでC++(MFC)がC#より相手的に難しいと言うらしいですね。</p> 
+  <p><br></p> 
+  <p>ここまでC#でウィンドウフォーム(Window form)を作成する方法、そしてウィンドウメッセージとキューに関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/292.html" target="_blank">[C#] 57. コーティング規約</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=windowform>#windowform</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0202">Study / C#</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/301.html'>[C#] 58. ウィンドウフォーム(Window form)を作成する方法、そしてウィンドウメッセージとキュー</a><span>2021/10/27 20:35:44</span></li><li><a href='https://www.nowonbun.com/292.html'>[C#] 57. コーティング規約</a><span>2021/10/21 18:57:02</span></li><li><a href='https://www.nowonbun.com/291.html'>[C#] 56. 値の初期化及び基本データ値(default)を設定する方法、そして原始データのnull処理、?と??の使い方</a><span>2021/10/21 18:54:41</span></li><li><a href='https://www.nowonbun.com/290.html'>[C#] 55.namespaceとusing、そしてpartialの使い方</a><span>2021/10/21 18:51:39</span></li><li><a href='https://www.nowonbun.com/289.html'>[C#] 54. Reflection機能を使い方 - Attribute</a><span>2021/10/20 19:29:31</span></li><li><a href='https://www.nowonbun.com/287.html'>[C#] 53. Reflection機能を使い方 - Propertyとevent</a><span>2021/10/19 21:02:58</span></li><li><a href='https://www.nowonbun.com/280.html'>[C#] 52. Reflection機能を使い方 - Variable</a><span>2021/10/15 19:27:37</span></li><li><a href='https://www.nowonbun.com/278.html'>[C#] 51. Reflection機能を使い方 - Method</a><span>2021/10/14 18:34:21</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/301.html'>[C#] 58. ウィンドウフォーム(Window form)を作成する方法、そしてウィンドウメッセージとキュー</a><span>2021/10/27 20:35:44</span></li><li><a href='https://www.nowonbun.com/300.html'>[Design pattern] 2-3. ブリッジパターン(Bridge pattern)</a><span>2021/10/27 20:32:21</span></li><li><a href='https://www.nowonbun.com/299.html'>[Design patten] 2-2. コンポジットパターン(Composite pattern)</a><span>2021/10/27 20:30:54</span></li><li><a href='https://www.nowonbun.com/298.html'>[Design pattern] 2-1. アダプターパターン(Adapter pattern)</a><span>2021/10/26 19:12:40</span></li><li><a href='https://www.nowonbun.com/297.html'>[Project design] プログラム最終テスト - ST(System test(Standard, Scenario))</a><span>2021/10/26 19:10:07</span></li><li><a href='https://www.nowonbun.com/296.html'>[Project design] プログラム結合テスト - IT(Integration test)</a><span>2021/10/25 20:12:17</span></li><li><a href='https://www.nowonbun.com/295.html'>[Python] Seleniumライブラリを使う方法(自動ウェブテスト、ウェブスクレイピング)</a><span>2021/10/25 19:29:00</span></li><li><a href='https://www.nowonbun.com/294.html'>[Design pattern] 1-5. プロトタイプパターン(Prototype pattern)</a><span>2021/10/22 19:35:45</span></li><li><a href='https://www.nowonbun.com/293.html'>[Project design] プログラム検証とテスト - Unitテスト</a><span>2021/10/22 19:34:09</span></li><li><a href='https://www.nowonbun.com/292.html'>[C#] 57. コーティング規約</a><span>2021/10/21 18:57:02</span></li><li><a href='https://www.nowonbun.com/291.html'>[C#] 56. 値の初期化及び基本データ値(default)を設定する方法、そして原始データのnull処理、?と??の使い方</a><span>2021/10/21 18:54:41</span></li><li><a href='https://www.nowonbun.com/290.html'>[C#] 55.namespaceとusing、そしてpartialの使い方</a><span>2021/10/21 18:51:39</span></li><li><a href='https://www.nowonbun.com/289.html'>[C#] 54. Reflection機能を使い方 - Attribute</a><span>2021/10/20 19:29:31</span></li><li><a href='https://www.nowonbun.com/288.html'>[Project design] プログラム制作(コーディング) - クラス作成方法</a><span>2021/10/20 19:28:09</span></li><li><a href='https://www.nowonbun.com/287.html'>[C#] 53. Reflection機能を使い方 - Propertyとevent</a><span>2021/10/19 21:02:58</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/301.html';this.page.identifier = 'NOWONBUN00301';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
