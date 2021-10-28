@@ -143,7 +143,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p><br></p> 
   <p>アダプターパターンからは構造パターンです。構造パターンとは様々なクラスやオブジェクトを組み合わせてもっと大きい構造を作るパターンです。以前の生成パターンはnewキーワードを利用してインスタンスを生成する型がメインだったら、構造パターンはクラスやオブジェクトの構造をどのように構成するかをメインに考えるパターンです。</p> 
   <p>アダプターパターンはインターフェースに連結されてない他のクラスを同じインターフェースの型に変換することが目標です。</p> 
-  <p style="text-align:left;"><img src="" data-filename="001.jpg" style="width: 640px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/298/2035_001.jpg" data-filename="001.jpg" style="width: 640px;"><br></p> 
   <p><span style="font-size:0.7em">Reference - <a href="https://en.wikipedia.org/wiki/Adapter_pattern" target="_blank">https://en.wikipedia.org/wiki/Adapter_pattern</a></span></p> 
   <pre><code class="cpp" data-type="C/C++アダプターパターン例">#pragma once
 #include &lt;stdio.h&gt;
@@ -217,7 +217,7 @@ int main() {
   return 0;
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="" data-filename="002.png" style="width: 258px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/298/2032_002.png" data-filename="002.png" style="width: 258px;"><br></p> 
   <p>上の例をみれば私がmain関数でINodeインターフェースタイプのインスタンスをvectorを使って格納するため、宣言しました。</p> 
   <p>でも、Node2クラスはINodeインターフェースを継承したクラスではないので、INodeインターフェースグループに格納することができません。クラス構造は似てますが。。。</p> 
   <p>Node2をINodeから継承したら簡単に解決するかも知れませんが、状況によりNode2クラスを修正したらダメなら上みたいにAdapterクラスを作成してNode2クラスをINodeインターフェースから継承したらしく使えます。</p> 
@@ -279,7 +279,7 @@ public class Program {
   }
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="" style="width: 177px;" data-filename="003.png"><br></p> 
+  <p style="text-align:left;"><img src="./contents/298/2034_003.png" style="width: 177px;" data-filename="003.png"><br></p> 
   <p>Adapterパターンが必ずクラスだけ使うことではありません。上みたいにInterfaceアダプタークラスを作成してINodeAnotherから継承したクラスはINodeインタフェースを化粧したアダプタークラスに変換することが可能です。</p> 
   <pre><code class="cs" data-type="C#アダプターパターン例">using System;
 using System.Collections.Generic;
@@ -342,7 +342,7 @@ class Program
   }
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="" data-filename="004.png" style="width: 193px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/298/2033_004.png" data-filename="004.png" style="width: 193px;"><br></p> 
   <p>アダプターパターンは基本的にコンストラクタでタイプを変更しようと思うクラスのインスタンスを受け取って新しいクラスで包むことです。</p> 
   <p>でも、必ずコンストラクタでインスタンスを受け取ることではなく、上みたいに継承を利用してアダプターパターンを実装することができます。</p> 
   <p><br></p> 
