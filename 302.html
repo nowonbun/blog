@@ -142,7 +142,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <p>この投稿はデザインパターンのデコレーターパターン(Decorator pattern)に関する説明です。</p> 
   <p><br></p> 
   <p>デコレーターという英語の意味では飾るという意味です。その意味でデコレーターパターンはインターフェースから継承したクラスの機能を拡張するためのパターンだと言えます。</p> 
-  <p style="text-align:left;"><img src="" data-filename="001.png" style="width: 400px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/302/2098_001.png" data-filename="001.png" style="width: 400px;"><br></p> 
   <p><span style="font-size:0.7em">Reference - <a href="https://en.wikipedia.org/wiki/Decorator_pattern" target="_blank">https://en.wikipedia.org/wiki/Decorator_pattern</a></span></p> 
   <pre><code class="cpp" data-type="C/C++ デコレーターパターン例">#pragma once
 #define _CRT_SECURE_NO_WARNINGS
@@ -241,7 +241,7 @@ int main() {
   return 0;
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="" data-filename="002.png" style="width: 251px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/302/2099_002.png" data-filename="002.png" style="width: 251px;"><br></p> 
   <p>上の例をみると始めのNodeクラスからは単純なNode-&gt;print()の出力だけあるでしょう。</p> 
   <p>でも、NodeTimeDecoratorのデコレーターを追加して、NodeLogDecoratorのデコレーターを追加しました。</p> 
   <p>結果はNodeLogDecoratorのprintが呼び出してNodeTimeDecoratorのprintが呼び出して、最終的にNodeクラスのprintが呼び出されました。</p> 
@@ -304,7 +304,7 @@ public class Program {
   }
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="" style="width: 408px;" data-filename="003.png"><br></p> 
+  <p style="text-align:left;"><img src="./contents/302/2100_003.png" style="width: 408px;" data-filename="003.png"><br></p> 
   <p>デコレーター構造は抽象クラスからインターフェースを継承してコンストラクタには継承したインターフェースを継承したインスタンスを受け取ります。</p> 
   <p>そしてデコレーター抽象クラスを継承したクラスにはインターフェースの定義により作成してメンバー変数にある継承したインターフェースのインスタンスを実行します。</p> 
   <p>そうならデコレータークラスはINodeを継承したすべてのインスタンスの抽象化された関数にデータを追加することができます。</p> 
@@ -436,7 +436,7 @@ class Program
   }
 }
 </code></pre> 
-  <p style="text-align:left;"><img src="" data-filename="004.png" style="width: 160px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/302/2101_004.png" data-filename="004.png" style="width: 160px;"><br></p> 
   <p>上の例はデコレーターパターンでファクトリーメソッドパターンを追加したことです。</p> 
   <p>GetNodeFactory関数でCalTypeタイプのパラメータの結果により取得するインスタンス種類が違いますね。</p> 
   <p><br></p> 
