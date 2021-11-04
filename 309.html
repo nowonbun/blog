@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/309.html"},"url":"https:\/\/www.nowonbun.com\/309.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Design pattern] 3-2. \u8cac\u4efb\u306e\u9023\u9396\u30d1\u30bf\u30fc\u30f3(Chain of responsibility pattern)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306f\u30c7\u30b6\u30a4\u30f3\u30d1\u30bf\u30fc\u30f3\u306e\u8cac\u4efb\u306e\u9023\u9396\u30d1\u30bf\u30fc\u30f3(chain of responsibility pattern)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u8cac\u4efb\u306e\u9023\u9396\u30d1\u30bf\u30fc\u30f3\u3068\u306f\u30af\u30e9\u30b9\u9593\u306b\u9023\u7d50\u30ea\u30b9\u30c8\u30a2\u30eb\u30b4\u30ea\u30ba\u30e0\u3092\u639b\u3051\u3066\u3001\u7279\u5b9a\u306a\u95a2\u6570\u3092\u5b9f\u884c\u3059\u308b\u3068\u9023\u9396\u7684\u306b\u5b9f\u884c\u3059\u308b\u30d1\u30bf\u30fc\u30f3\u3068\u3044\u3046\u3053\u3068\u3067\u3059\u3002reference - https:\/\/en.wikipedia.org\/wiki\/chain-of-responsibility_pattern\u3053\u308c\u304c\u3059\u3054\u304f\u3088\u304f\u4f7f\u3046\u30d1\u30bf\u30fc\u30f3\u3067\u306f\u306a\u3044\u3067\u3059\u304c\u3001\u30ed\u30b0\u51e6\u7406\u3084\u4e00\u3064\u306e\u51e6\u7406\u3067\u69d8\u3005\u306a\u7d50\u679c\u3092\u540c\u6642\u306b\u4f5c\u6210\u3059\u308b\u6642\u306b\u4f7f\u3046\u30d1\u30bf\u30fc\u30f3\u3067\u3059\u3002\u30bd\u30fc\u30b9\u30b3\u30fc\u30c9\u3092\u4f5c\u6210\u3057\u305f\u3089\u5b8c\u5168\u306b\u9023\u7d50\u30ea\u30b9\u30c8\u306e\u30a2\u30eb\u30b4\u30ea\u30ba\u30e0\u306b\u306a\u308a\u307e\u3057\u305f\u3002\u9023\u7d50\u30ea\u30b9\u30c8\u306e\u30a2\u30eb\u30b4\u30ea\u30ba\u30e0\u3092\u3088\u304f\u77e5\u3063\u3066\u3044\u308b\u65b9\u306f\u3088\u304f\u76ee\u306b\u5165\u308c\u308b\u3068\u601d\u3044\u307e\u3059\u304c\u3001\u30a2\u30eb\u30b4\u30ea\u30ba\u30e0\u306e\u5206\u91ce\u304c\u5f31\u3044\u65b9\u306f\u3059\u3054\u304f\u8907\u96d1\u306b\u898b\u3048\u308b\u53ef\u80fd\u6027\u304c\u3042\u308a\u307e\u3059\u306d\u3002\u5185\u5bb9\u306f\u79c1\u304cloggermanager\u306bconsolelogger\u3068filelogger\u306e\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u683c\u7d0d\u3057\u307e\u3057\u305f\u3002\u305d\u3057\u3066write\u95a2\u6570\u3092\u547c\u3073\u51fa\u3057\u305f\u3089\u9806\u756a\u3068\u304a\u308a\u306b\u30b3\u30f3\u30bd\u30fc\u30eb\u306b\u51fa\u529b\u3055\u308c\u307e\u3059\u306d\u3002\u3064\u307e\u308a\u3001setlogger\u306e\u95a2\u6570\u3067\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u683c\u7d0d\u3057\u305f\u6570\u7a0b\u3001write\u95a2\u6570\u3067\u9023\u9396\u7684\u306b\u51fa\u529b\u3059\u308b\u30d1\u30bf\u30fc\u30f3\u3067\u3059\u3002java\u306b\u306f\u9023\u7d50\u30ea\u30b9\u30c8\u306elinkedlist\u30af\u30e9\u30b9\u304c\u3042\u308a\u307e\u3059\u3002\u3064\u307e\u308a\u3001java\u306b\u306f\u9023\u7d50\u30ea\u30b9\u30c8\u304c\u5b9f\u88c5\u3055\u308c\u3066\u3044\u308b\u306e\u3067\u305d\u308c\u3092\u4f7f\u3063\u305f\u3089\u826f\u3044\u3067\u3057\u3087\u3046\u3002\u3082\u3061\u308d\u3093\u3001\u5fc5\u305alinkedlist\u3092\u4f7f\u3046\u5fc5\u8981\u306a\u304f\u3001arraylist\u3067\u3082\u69cb\u3044\u307e\u305b\u3093\u3002\u3064\u307e\u308a\u3001\u8cac\u4efb\u306e\u9023\u9396\u30d1\u30bf\u30fc\u30f3(chain of responsibility pattern)\u306f\u30dd\u30a4\u30f3\u30bf\u30fc\u3067\u9023\u7d50\u3059\u308b\u3068\u8a00\u3044\u307e\u3059\u304c\u3001c\/c++\u306b\u3082vector\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u3092\u4f7f\u3063\u3066\u3082\u5b9f\u88c5\u3059\u308b\u3053\u3068\u3067\u306f\u554f\u984c\u306a\u3044\u3067\u3057\u3087\u3046\u3002loggermanager\u3068\u3044\u3046\u30af\u30e9\u30b9\u304c\u5fc5\u8981\u306a\u304f\u3001logger\u30af\u30e9\u30b9\u306b\u6b21\u306e\u30dd\u30a4\u30f3\u30bf\u3092\u9023\u7d50\u3057\u3066\u6700\u521d\u306b\u751f\u6210\u3055\u308c\u305f\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u306e\u95a2\u6570\u3092\u547c\u3073\u51fa\u3059\u3068\u9023\u9396\u7684\u306b\u5b9f\u884c\u3059\u308b\u65b9\u6cd5\u3082\u3042\u308a\u307e\u3059\u3002\u8cac\u4efb\u306e\u9023\u9396\u30d1\u30bf\u30fc\u30f3\u306f\u30af\u30e9\u30b9\u306e\u7d50\u5408\u5ea6\u3092\u5f31\u304f\u3057\u3066\u69d8\u3005\u306a\u5fdc\u7528\u306b\u304b\u306a\u308a\u826f\u3044\u30d1\u30bf\u30fc\u30f3\u3067\u3059\u304c\u3001\u4ee5\u5916\u306b\u4f7f\u7528\u983b\u5ea6\u304c\u4f4e\u3044\u30d1\u30bf\u30fc\u30f3\u3067\u3059\u3002\u9069\u5fdc\u3059\u308b\u4ed5\u69d8\u304c\u591a\u304f\u306a\u3044\u304b\u3089\u3067\u306f\u306a\u3044\u304b\u306a\u3002\u307b\u3068\u3093\u3069\u30d5\u30a1\u30b5\u30fc\u30c9\u30d1\u30bf\u30fc\u30f3\u3068\u30b9\u30c8\u30e9\u30c6\u30b8\u30fc\u30d1\u30bf\u30fc\u30f3\u3067\u89e3\u6c7a\u3055\u308c\u308b\u4ed5\u69d8\u304c\u591a\u3044\u304b\u3089\u304b\u306a\u3053\u3053\u307e\u3067\u30c7\u30b6\u30a4\u30f3\u30d1\u30bf\u30fc\u30f3\u306e\u8cac\u4efb\u306e\u9023\u9396\u30d1\u30bf\u30fc\u30f3(chain of responsibility pattern)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3057\u305f\u3002\u3054\u4e0d\u660e\u306a\u3068\u3053\u308d\u3084\u9593\u9055\u3044\u3068\u3053\u308d\u304c","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2021-11-04T19:27:58.000+09:00","dateModified":"2021-11-04T19:28:32.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Design pattern" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はデザインパターンの責任の連鎖パターン(chain of responsibility pattern)に関する説明です。責任の連鎖パターンとはクラス間に連結リストアルゴリズムを掛けて、特定な関数を実行すると連鎖的に実行するパターンということです。reference - https://en.wikipedia.org/wiki/chain-of-responsibility_patternこれがすごくよく使うパターンではないですが、ログ処理や一つの処理で様々な結果を同時に作成する時に使うパターンです。ソースコードを作成したら完全に連結リストのアルゴリズムになりました。連結リストのアルゴリズムをよく知っている方はよく目に入れると思いますが、アルゴリズムの分野が弱い方はすごく複雑に見える可能性がありますね。内容は私がloggermanagerにconsoleloggerとfileloggerのインスタンスを格納しました。そしてwrite関数を呼び出したら順番とおりにコンソールに出力されますね。つまり、setloggerの関数でインスタンスを格納した数程、write関数で連鎖的に出力するパターンです。javaには連結リストのlinkedlistクラスがあります。つまり、javaには連結リストが実装されているのでそれを使ったら良いでしょう。もちろん、必ずlinkedlistを使う必要なく、arraylistでも構いません。つまり、責任の連鎖パターン(chain of responsibility pattern)はポインターで連結すると言いますが、c/c++にもvectorオブジェクトを使っても実装することでは問題ないでしょう。loggermanagerというクラスが必要なく、loggerクラスに次のポインタを連結して最初に生成されたインスタンスの関数を呼び出すと連鎖的に実行する方法もあります。責任の連鎖パターンはクラスの結合度を弱くして様々な応用にかなり良いパターンですが、以外に使用頻度が低いパターンです。適応する仕様が多くないからではないかな。ほとんどファサードパターンとストラテジーパターンで解決される仕様が多いからかなここまでデザインパターンの責任の連鎖パターン(chain of responsibility pattern)に関する説明でした。ご不明なところや間違いところが]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Design pattern] 3-2. 責任の連鎖パターン(Chain of responsibility pattern)" />
+<link rel="canonical" href="https://www.nowonbun.com/309.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Design pattern] 3-2. 責任の連鎖パターン(Chain of responsibility pattern)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はデザインパターンの責任の連鎖パターン(chain of responsibility pattern)に関する説明です。責任の連鎖パターンとはクラス間に連結リストアルゴリズムを掛けて、特定な関数を実行すると連鎖的に実行するパターンということです。reference - https://en.wikipedia.org/wiki/chain-of-responsibility_patternこれがすごくよく使うパターンではないですが、ログ処理や一つの処理で様々な結果を同時に作成する時に使うパターンです。ソースコードを作成したら完全に連結リストのアルゴリズムになりました。連結リストのアルゴリズムをよく知っている方はよく目に入れると思いますが、アルゴリズムの分野が弱い方はすごく複雑に見える可能性がありますね。内容は私がloggermanagerにconsoleloggerとfileloggerのインスタンスを格納しました。そしてwrite関数を呼び出したら順番とおりにコンソールに出力されますね。つまり、setloggerの関数でインスタンスを格納した数程、write関数で連鎖的に出力するパターンです。javaには連結リストのlinkedlistクラスがあります。つまり、javaには連結リストが実装されているのでそれを使ったら良いでしょう。もちろん、必ずlinkedlistを使う必要なく、arraylistでも構いません。つまり、責任の連鎖パターン(chain of responsibility pattern)はポインターで連結すると言いますが、c/c++にもvectorオブジェクトを使っても実装することでは問題ないでしょう。loggermanagerというクラスが必要なく、loggerクラスに次のポインタを連結して最初に生成されたインスタンスの関数を呼び出すと連鎖的に実行する方法もあります。責任の連鎖パターンはクラスの結合度を弱くして様々な応用にかなり良いパターンですが、以外に使用頻度が低いパターンです。適応する仕様が多くないからではないかな。ほとんどファサードパターンとストラテジーパターンで解決される仕様が多いからかなここまでデザインパターンの責任の連鎖パターン(chain of responsibility pattern)に関する説明でした。ご不明なところや間違いところが]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/309.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Design pattern] 3-2. 責任の連鎖パターン(Chain of responsibility pattern)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はデザインパターンの責任の連鎖パターン(chain of responsibility pattern)に関する説明です。責任の連鎖パターンとはクラス間に連結リストアルゴリズムを掛けて、特定な関数を実行すると連鎖的に実行するパターンということです。reference - https://en.wikipedia.org/wiki/chain-of-responsibility_patternこれがすごくよく使うパターンではないですが、ログ処理や一つの処理で様々な結果を同時に作成する時に使うパターンです。ソースコードを作成したら完全に連結リストのアルゴリズムになりました。連結リストのアルゴリズムをよく知っている方はよく目に入れると思いますが、アルゴリズムの分野が弱い方はすごく複雑に見える可能性がありますね。内容は私がloggermanagerにconsoleloggerとfileloggerのインスタンスを格納しました。そしてwrite関数を呼び出したら順番とおりにコンソールに出力されますね。つまり、setloggerの関数でインスタンスを格納した数程、write関数で連鎖的に出力するパターンです。javaには連結リストのlinkedlistクラスがあります。つまり、javaには連結リストが実装されているのでそれを使ったら良いでしょう。もちろん、必ずlinkedlistを使う必要なく、arraylistでも構いません。つまり、責任の連鎖パターン(chain of responsibility pattern)はポインターで連結すると言いますが、c/c++にもvectorオブジェクトを使っても実装することでは問題ないでしょう。loggermanagerというクラスが必要なく、loggerクラスに次のポインタを連結して最初に生成されたインスタンスの関数を呼び出すと連鎖的に実行する方法もあります。責任の連鎖パターンはクラスの結合度を弱くして様々な応用にかなり良いパターンですが、以外に使用頻度が低いパターンです。適応する仕様が多くないからではないかな。ほとんどファサードパターンとストラテジーパターンで解決される仕様が多いからかなここまでデザインパターンの責任の連鎖パターン(chain of responsibility pattern)に関する説明でした。ご不明なところや間違いところが]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Design pattern] 3-2. 責任の連鎖パターン(Chain of responsibility pattern)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(92)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(27)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(4)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(14)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(215)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(61)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(56)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(15)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0210" href="study_project_design.html">Project design<span class="category-item-count">(9)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/309.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Design pattern] 3-2. 責任の連鎖パターン(Chain of responsibility pattern)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0208">Study / Design pattern</a>    作成日付 : <span property="datePublished">2021/11/04 19:27:58</span>   修正日付 : <span property="dateModified">2021/11/04 19:28:32</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はデザインパターンの責任の連鎖パターン(Chain of responsibility pattern)に関する説明です。</p> 
+  <p><br></p> 
+  <p>責任の連鎖パターンとはクラス間に連結リストアルゴリズムを掛けて、特定な関数を実行すると連鎖的に実行するパターンということです。</p> 
+  <p style="text-align:left;"><img src="./contents/309/2135_001.jpg" data-filename="001.jpg" style="width: 700px;"><br></p> 
+  <p><span style="font-size:0.7em">Reference - <a href="https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern" target="_blank">https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern</a></span></p> 
+  <p>これがすごくよく使うパターンではないですが、ログ処理や一つの処理で様々な結果を同時に作成する時に使うパターンです。</p> 
+  <pre><code class="cpp" data-type="C/C++責任の連鎖パターン例">#pragma once
+#include &lt;stdio.h&gt;
+#include &lt;iostream&gt;
+using namespace std;
+// Loggerインターフェース
+class ILogger {
+public:
+  // 抽象関数
+  virtual void write(const char* message) = 0;
+  ~ILogger() {}
+};
+// LoggerManagerクラス
+class LoggerManager : public ILogger {
+private:
+  // 内部連結リストを作るためのインラインクラス
+  class Pointer {
+  public:
+    // Loggerオブジェクト変数
+    ILogger* logger;
+    // 次のポインタ変数
+    Pointer* next = nullptr;
+    // デストラクタ
+    ~Pointer() {
+      // loggerをメモリから削除
+      delete logger;
+    }
+  };
+  // 連結リストポインタ変数
+  Pointer* first = nullptr;
+  Pointer* end = nullptr;
+public:
+  // ログ作成関数(再定義)
+  virtual void write(const char* message) {
+    // 連結リストの頭ポインタ
+    Pointer* n = first;
+    // 連結リスト順番でループ
+    while (n != nullptr) {
+      // 登録されたLoggerにwrite関数を呼び出す
+      n-&gt;logger-&gt;write(message);
+      // 次のポインタに移動
+      n = n-&gt;next;
+    }
+  }
+  // Logger設定
+  void setLogger(ILogger* logger) {
+    // ポインタインスタンス生成
+    Pointer* p = new Pointer();
+    // Logger設定
+    p-&gt;logger = logger;
+    // もしリストのオブジェクトが0個ならfirstに格納
+    if (first == nullptr) {
+      first = p;
+      end = p;
+      return;
+    }
+    // オブジェクトが0個ではなかったら、リストを連結
+    end-&gt;next = p;
+    end = p;
+  }
+  // デストラクタ
+  ~LoggerManager() {
+    // リストの頭オブジェクト
+    Pointer* d = first;
+    // 連結リスト順番でループ
+    while (d != nullptr) {
+      // swap
+      Pointer* b = d-&gt;next;
+      // ポインタ削除
+      delete d;
+      // swap
+      d = b;
+    }
+  }
+};
+// ConsoleLoggerクラス
+class ConsoleLogger : public ILogger {
+public:
+  // ログ作成(関数再定義)
+  virtual void write(const char* message) {
+    // コンソールに出力
+    cout &lt;&lt; "ConsoleLogger - " &lt;&lt; message &lt;&lt; endl;
+  }
+};
+// FileLoggerクラス
+class FileLogger : public ILogger {
+public:
+  // ログ作成(関数再定義)
+  virtual void write(const char* message) {
+    // コンソールに出力
+    cout &lt;&lt; "FileLogger - " &lt;&lt; message &lt;&lt; endl;
+  }
+};
+
+// 実行関数
+int main() {
+  // LoggerManagerインスタンス生成
+  LoggerManager manager;
+  // ConsoleLoggerインスタンス追加
+  manager.setLogger(new ConsoleLogger());
+  // FileLoggerインスタンス追加
+  manager.setLogger(new FileLogger());
+  // ログ作成
+  manager.write("hello world");
+
+  return 0;
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/309/2136_002.png" data-filename="002.png" style="width: 302px;"><br></p> 
+  <p>ソースコードを作成したら完全に連結リストのアルゴリズムになりました。連結リストのアルゴリズムをよく知っている方はよく目に入れると思いますが、アルゴリズムの分野が弱い方はすごく複雑に見える可能性がありますね。</p> 
+  <p>内容は私がLoggerManagerにConsoleLoggerとFileLoggerのインスタンスを格納しました。そしてwrite関数を呼び出したら順番とおりにコンソールに出力されますね。</p> 
+  <p>つまり、setLoggerの関数でインスタンスを格納した数程、write関数で連鎖的に出力するパターンです。</p> 
+  <pre><code class="java" data-type="Java責任の連鎖パターン例">import java.util.LinkedList;
+import java.util.List;
+// Loggerインターフェース
+interface ILogger {
+  // 抽象関数
+  void write(String msg);
+}
+// LoggerManagerクラス
+class LoggerManager implements ILogger {
+  // 連結リスト変数
+  private List&lt;ILogger&gt; loggers = new LinkedList&lt;&gt;();
+  // Logger設定
+  public void setLogger(ILogger logger) {
+    // Logger追加
+    loggers.add(logger);
+  }
+  // ログ作成関数(再定義)
+  public void write(String msg) {
+    // listに追加されたLogger
+    for (var l : loggers) {
+      // write関数を呼び出す。
+      l.write(msg);
+    }
+  }
+}
+// ConsoleLoggerクラス
+class ConsoleLogger implements ILogger {
+  // ログ作成(関数再定義)
+  public void write(String msg) {
+    // コンソールに出力
+    System.out.println("ConsoleLogger - " + msg);
+  }
+}
+// FileLoggerクラス
+class FileLogger implements ILogger {
+  // ログ作成(関数再定義)
+  public void write(String msg) {
+    // コンソールに出力
+    System.out.println("FileLogger - " + msg);
+  }
+}
+// 実行関数クラス
+public class Program {
+  // 実行関数
+  public static void main(String[] args) {
+    // LoggerManagerインスタンス生成
+    var manager = new LoggerManager();
+    // ConsoleLoggerインスタンス追加
+    manager.setLogger(new ConsoleLogger());
+    // FileLoggerインスタンス追加
+    manager.setLogger(new FileLogger());
+    // ログ作成
+    manager.write("hello world");
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/309/2137_003.png" data-filename="003.png" style="width: 227px;"><br></p> 
+  <p>Javaには連結リストのLinkedListクラスがあります。つまり、Javaには連結リストが実装されているのでそれを使ったら良いでしょう。</p> 
+  <p>もちろん、必ずLinkedListを使う必要なく、ArrayListでも構いません。つまり、責任の連鎖パターン(Chain of responsibility pattern)はポインターで連結すると言いますが、C/C++にもvectorオブジェクトを使っても実装することでは問題ないでしょう。</p> 
+  <pre><code class="cs" data-type="C#責任の連鎖パターン例">using System;
+// Logger抽象クラス
+abstract class ALogger
+{
+  // 次のLoggerポインタプロパティ
+  protected ALogger Next
+  {
+    get; private set;
+  }
+  // 次のポインタのLogger設定
+  public ALogger SetNextLogger(ALogger logger)
+  {
+    // プロパティにインスタンス設定
+    Next = logger;
+    // インスタンスリターン
+    return logger;
+  }
+  // 次のインスタンスにWrite関数を呼び出す。
+  public virtual void Write(string data)
+  {
+    // 次のポインタがnullではなければ
+    if (Next != null)
+    {
+      // Write関数を呼び出す
+      Next.Write(data);
+    }
+  }
+}
+// ConsoleLoggerクラス
+class ConsoleLogger : ALogger
+{
+  // 関数再定義
+  public override void Write(string data)
+  {
+    // コンソールに出力
+    Console.WriteLine("ConsoleLogger - " + data);
+    // 次のポインタインスタンスの関数を呼び出す
+    base.Write(data);
+  }
+}
+// FileLoggerクラス
+class FileLogger : ALogger
+{
+  // 関数再定義
+  public override void Write(string data)
+  {
+    // コンソールに出力
+    Console.WriteLine("FileLogger - " + data);
+    // 次のポインタインスタンスの関数を呼び出す
+    base.Write(data);
+  }
+}
+// MailLoggerクラス
+class MailLogger : ALogger
+{
+  // 関数再定義
+  public override void Write(string data)
+  {
+    // コンソールに出力
+    Console.WriteLine("MailLogger - " + data);
+    // 次のポインタインスタンスの関数を呼び出す
+    base.Write(data);
+  }
+}
+
+
+// 実行クラス
+class Program
+{
+  // 実行関数
+  static void Main(string[] args)
+  {
+    // ConsoleLoggerインスタンス生成
+    var logger = new ConsoleLogger();
+    // SetNextLogger関数で順番とおりにFileLoggerインスタンスとMailLoggerインスタンス追加
+    logger.SetNextLogger(new FileLogger())
+          .SetNextLogger(new MailLogger());
+    // ログ作成
+    logger.Write("Hello world");
+    // 任意のキーを押してください
+    Console.WriteLine("Press Any key...");
+    Console.ReadLine();
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/309/2138_004.png" style="width: 308px;" data-filename="004.png"><br></p> 
+  <p>LoggerManagerというクラスが必要なく、Loggerクラスに次のポインタを連結して最初に生成されたインスタンスの関数を呼び出すと連鎖的に実行する方法もあります。</p> 
+  <p><br></p> 
+  <p>責任の連鎖パターンはクラスの結合度を弱くして様々な応用にかなり良いパターンですが、以外に使用頻度が低いパターンです。適応する仕様が多くないからではないかな。</p> 
+  <p>ほとんどファサードパターンとストラテジーパターンで解決される仕様が多いからかな</p> 
+  <p><br></p> 
+  <p>ここまでデザインパターンの責任の連鎖パターン(Chain of responsibility pattern)に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/308.html" target="_blank">[Design pattern] 3-1. ストラテジーパターン(Strategy pattern)</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=designpattern>#designpattern</a>,<a href=./search.html?query=chainofresponsibility>#chainofresponsibility</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0208">Study / Design pattern</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/309.html'>[Design pattern] 3-2. 責任の連鎖パターン(Chain of responsibility pattern)</a><span>2021/11/04 19:27:58</span></li><li><a href='https://www.nowonbun.com/308.html'>[Design pattern] 3-1. ストラテジーパターン(Strategy pattern)</a><span>2021/11/03 18:38:52</span></li><li><a href='https://www.nowonbun.com/306.html'>[Design pattern] 2-7. ファサードパターン(Facade pattern)</a><span>2021/11/02 19:32:31</span></li><li><a href='https://www.nowonbun.com/305.html'>[Design pattern] 2-6. プロキシパターン(Proxy pattern)</a><span>2021/11/01 19:42:44</span></li><li><a href='https://www.nowonbun.com/304.html'>[Design pattern] 2-5. フライウェイトパターン(Flyweight pattern)</a><span>2021/10/29 19:48:27</span></li><li><a href='https://www.nowonbun.com/302.html'>[Design pattern] 2-4. デコレーターパターン(Decorator pattern)</a><span>2021/10/28 20:11:13</span></li><li><a href='https://www.nowonbun.com/300.html'>[Design pattern] 2-3. ブリッジパターン(Bridge pattern)</a><span>2021/10/27 20:32:21</span></li><li><a href='https://www.nowonbun.com/299.html'>[Design pattern] 2-2. コンポジットパターン(Composite pattern)</a><span>2021/10/27 20:30:54</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/310.html'>[C#] 61. ウィンドウフォーム(Window form)でスレッド(Thread)を使い方、クロススレッド問題解決</a><span>2021/11/04 19:29:51</span></li><li><a href='https://www.nowonbun.com/309.html'>[Design pattern] 3-2. 責任の連鎖パターン(Chain of responsibility pattern)</a><span>2021/11/04 19:27:58</span></li><li><a href='https://www.nowonbun.com/308.html'>[Design pattern] 3-1. ストラテジーパターン(Strategy pattern)</a><span>2021/11/03 18:38:52</span></li><li><a href='https://www.nowonbun.com/307.html'>[C#] 60. ウィンドウフォーム(Window form)のイベント設定する方法</a><span>2021/11/02 21:18:08</span></li><li><a href='https://www.nowonbun.com/306.html'>[Design pattern] 2-7. ファサードパターン(Facade pattern)</a><span>2021/11/02 19:32:31</span></li><li><a href='https://www.nowonbun.com/305.html'>[Design pattern] 2-6. プロキシパターン(Proxy pattern)</a><span>2021/11/01 19:42:44</span></li><li><a href='https://www.nowonbun.com/304.html'>[Design pattern] 2-5. フライウェイトパターン(Flyweight pattern)</a><span>2021/10/29 19:48:27</span></li><li><a href='https://www.nowonbun.com/303.html'>[C#] 59. ウィンドウフォーム(Window form)にコントロール(Control)を使い方法</a><span>2021/10/29 19:45:43</span></li><li><a href='https://www.nowonbun.com/302.html'>[Design pattern] 2-4. デコレーターパターン(Decorator pattern)</a><span>2021/10/28 20:11:13</span></li><li><a href='https://www.nowonbun.com/301.html'>[C#] 58. ウィンドウフォーム(Window form)を作成する方法、そしてウィンドウメッセージとキュー</a><span>2021/10/27 20:35:44</span></li><li><a href='https://www.nowonbun.com/300.html'>[Design pattern] 2-3. ブリッジパターン(Bridge pattern)</a><span>2021/10/27 20:32:21</span></li><li><a href='https://www.nowonbun.com/299.html'>[Design pattern] 2-2. コンポジットパターン(Composite pattern)</a><span>2021/10/27 20:30:54</span></li><li><a href='https://www.nowonbun.com/298.html'>[Design pattern] 2-1. アダプターパターン(Adapter pattern)</a><span>2021/10/26 19:12:40</span></li><li><a href='https://www.nowonbun.com/297.html'>[Project design] プログラム最終テスト - ST(System test(Standard, Scenario))</a><span>2021/10/26 19:10:07</span></li><li><a href='https://www.nowonbun.com/296.html'>[Project design] プログラム結合テスト - IT(Integration test)</a><span>2021/10/25 20:12:17</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/309.html';this.page.identifier = 'NOWONBUN00309';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>

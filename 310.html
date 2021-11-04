@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/310.html"},"url":"https:\/\/www.nowonbun.com\/310.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [C#] 61. \u30a6\u30a3\u30f3\u30c9\u30a6\u30d5\u30a9\u30fc\u30e0(Window form)\u3067\u30b9\u30ec\u30c3\u30c9(Thread)\u3092\u4f7f\u3044\u65b9\u3001\u30af\u30ed\u30b9\u30b9\u30ec\u30c3\u30c9\u554f\u984c\u89e3\u6c7a","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fc#\u306e\u30a6\u30a3\u30f3\u30c9\u30a6\u30d5\u30a9\u30fc\u30e0(window form)\u3067\u30b9\u30ec\u30c3\u30c9(thread)\u3092\u4f7f\u3044\u65b9\u3001\u30af\u30ed\u30b9\u30b9\u30ec\u30c3\u30c9\u554f\u984c\u89e3\u6c7a\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u4ee5\u524d\u306e\u6295\u7a3f\u3067c#\u306e\u30b9\u30ec\u30c3\u30c9\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u305f\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002link - [c#] 37. \u30b9\u30ec\u30c3\u30c9(thread)\u3092\u4f7f\u3044\u65b9\u3001thread.sleep\u95a2\u6570\u3092\u4f7f\u3044\u65b9\u30b9\u30ec\u30c3\u30c9\u306f\u30d7\u30ed\u30b0\u30e9\u30e0\u5185\u3067\u4e26\u5217\u51e6\u7406\u3059\u308b\u3053\u3068\u306e\u610f\u5473\u3067\u3059\u3002\u307e\u305a\u30a6\u30a3\u30f3\u30c9\u30a6\u306f\u30b7\u30f3\u30b0\u30eb\u30b9\u30ec\u30c3\u30c9\u306e\u7121\u9650\u30eb\u30fc\u30d7\u3067\u52d5\u3044\u3066\u3044\u307e\u3059\u3002\u3067\u3082\u3001\u6211\u3005\u304c\u30dc\u30bf\u30f3\u306e\u30af\u30ea\u30c3\u30af\u30a4\u30d9\u30f3\u30c8\u3067\u30eb\u30fc\u30d7\u3092\u5b9f\u884c\u3059\u308b\u30ed\u30b8\u30c3\u30af\u3092\u4f5c\u308a\u307e\u3057\u3087\u3046\u3002\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u5b9f\u884c\u3057\u3066\u30dc\u30bf\u30f3\u3092\u62bc\u4e0b\u3059\u308b\u3068\u30eb\u30fc\u30d7\u304c\u7d42\u308f\u308b\u307e\u3067\u30a6\u30a3\u30f3\u30c9\u30a6\u30d5\u30a9\u30fc\u30e0\u306f\u52d5\u304d\u307e\u305b\u3093\u3002\u6642\u9593\u304c\u6d41\u308c\u305f\u3089\u5fdc\u7b54\u306a\u3057\u306b\u306a\u3063\u3066\u30d7\u30ed\u30b0\u30e9\u30e0\u304c\u51cd\u3063\u3066\u3044\u308b\u6642\u3082\u3042\u308a\u307e\u3059\u3002\u3064\u307e\u308a\u3001\u30a6\u30a3\u30f3\u30c9\u30a6\u306f\u30b7\u30f3\u30b0\u30eb\u30b9\u30ec\u30c3\u30c9\u72b6\u6cc1\u306a\u306e\u3067\u305d\u306e\u95a2\u6570\u306e\u30b9\u30bf\u30c3\u30af\u306b\u639b\u3051\u308b\u3068\u51e6\u7406\u304c\u7d42\u308f\u308b\u307e\u3067\u52d5\u304d\u307e\u305b\u3093\u3002\u305d\u3046\u3059\u308b\u3068\u30dc\u30bf\u30f3\u3092\u62bc\u4e0b\u3059\u308b\u6642\u3001\u8907\u96d1\u306a\u51e6\u7406\u3092\u3059\u308b\u3068\u601d\u3048\u3070\u3069\u306e\u3088\u3046\u306b\u51e6\u7406\u3059\u308b\u3067\u3057\u3087\u3046?\u30b9\u30ec\u30c3\u30c9\u3092\u5229\u7528\u3059\u308c\u3070\u826f\u3044\u3067\u3057\u3087\u3046\u3002\u30dc\u30bf\u30f3\u3092\u30af\u30ea\u30c3\u30af\u3057\u3066\u30b3\u30f3\u30bd\u30fc\u30eb\u306b1\u305a\u3064\u306b\u51fa\u529b\u3057\u3066\u3082\u30a6\u30a3\u30f3\u30c9\u30a6\u304c\u51cd\u3089\u306a\u3044\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002\u305d\u3046\u3059\u308b\u3068\u4eca\u56de\u306f\u30b3\u30f3\u30bd\u30fc\u30eb\u306b\u51fa\u529b\u3059\u308b\u3053\u3068\u3067\u306f\u306a\u304f\u3001\u30a6\u30a3\u30f3\u30c9\u30a6\u306e\u30b3\u30f3\u30c8\u30ed\u30fc\u30eb\u3067\u51fa\u529b\u3059\u308b\u3088\u3046\u306b\u4f5c\u6210\u3057\u307e\u3057\u3087\u3046\u3002\u30dc\u30bf\u30f3\u3092\u30af\u30ea\u30c3\u30af\u3059\u308b\u3068\u3059\u3050\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3059\u3002\u7406\u7531\u306fwindow\u3067\u52d5\u3044\u3066\u3044\u308b\u30b9\u30ec\u30c3\u30c9\u3068\u30b9\u30ec\u30c3\u30c9\u30d7\u30fc\u30eb\u3067\u52d5\u3044\u3066\u3044\u308b\u30b9\u30ec\u30c3\u30c9\u304c\u540c\u671f\u5316\u3055\u308c\u3066\u306a\u3044\u304b\u3089\u3067\u3059\u3002\u30b9\u30ec\u30c3\u30c9\u9593\u306b\u540c\u671f\u5316\u3057\u3088\u3046\u3068\u601d\u3048\u3070\u3001\u304a\u4e92\u3044\u306block\u3092\u8a2d\u5b9a\u3057\u3066\u540c\u671f\u5316\u3059\u308c\u3070\u3088\u3044\u306e\u306b\u3001\u30a6\u30a3\u30f3\u30c9\u30a6\u30e1\u30c3\u30bb\u30fc\u30b8\u3092\u52d5\u3044\u3066\u3044\u308b\u30b9\u30ec\u30c3\u30c9\u306block\u3092\u639b\u3051\u308b\u65b9\u6cd5\u304c\u3042\u308a\u307e\u305b\u3093\u3002\u3053\u308c\u3092c#\u30a6\u30a3\u30f3\u30c9\u30a6\u958b\u767a\u3067\u306f\u30af\u30ed\u30b9\u30b9\u30ec\u30c3\u30c9\u554f\u984c\u3068\u8a00\u3044\u307e\u3059\u3002\u3053\u308c\u3092\u89e3\u6c7a\u3059\u308b\u65b9\u6cd5\u304c\u5404\u30b3\u30f3\u30c8\u30ed\u30fc\u30eb\u306b\u3042\u308binvoke\u95a2\u6570\u3092\u5229\u7528\u3057\u3066visitor\u30d1\u30bf\u30fc\u30f3\u3001\u3064\u307e\u308a\u30b3\u30fc\u30eb\u30d0\u30c3\u30af\u95a2\u6570\u3068\u3044\u3046\u65b9\u6cd5\u3067\u51e6\u7406\u304c\u3067\u304d\u307e\u3059\u3002\u30bd\u30fc\u30b9\u4e0a\u306bstatic util\u30af\u30e9\u30b9\u3092\u4f5c\u6210\u3057\u3066control\u30af\u30e9\u30b9\u306e\u62e1\u5f35\u95a2\u6570\u3092\u4f5c\u6210\u3057\u307e\u3057\u305f\u3002\u305d\u3057\u3066\u30b9\u30ec\u30c3\u30c9\u30d7\u30fc\u30eb\u306e\u4e2d\u3067label1\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u306binvokecontrol\u95a2\u6570\u3092\u547c\u3073\u51fa\u3057\u3066\u30e9\u30e0\u30c0\u5f0f\u3067\u30b3\u30fc\u30eb\u30d0\u30c3\u30af\u95a2\u6570\u3092\u4f5c\u6210\u3057\u307e\u3057\u305f\u3002\u30dc\u30bf\u30f3\u3092\u30af\u30ea\u30c3\u30af\u3059\u308b\u3068label\u306b\u6570\u5b57\u304c1\u79d2\u5358\u4f4d\u3067\u66f4\u65b0\u3059\u308b\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002\u3053\u3053\u307e\u3067c#\u306e\u30a6\u30a3\u30f3\u30c9\u30a6\u30d5\u30a9\u30fc\u30e0(window form)\u3067\u30b9\u30ec\u30c3\u30c9(thread)\u3092\u4f7f\u3044\u65b9\u3001\u30af\u30ed\u30b9\u30b9\u30ec\u30c3\u30c9\u554f\u984c\u89e3\u6c7a\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3057\u305f\u3002\u3054\u4e0d\u660e\u306a\u3068\u3053\u308d\u3084","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2021-11-04T19:29:51.000+09:00","dateModified":"2021-11-04T19:30:43.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / C#" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はc#のウィンドウフォーム(window form)でスレッド(thread)を使い方、クロススレッド問題解決に関する説明です。以前の投稿でc#のスレッドに関して説明したことがあります。link - [c#] 37. スレッド(thread)を使い方、thread.sleep関数を使い方スレッドはプログラム内で並列処理することの意味です。まずウィンドウはシングルスレッドの無限ループで動いています。でも、我々がボタンのクリックイベントでループを実行するロジックを作りましょう。プログラムを実行してボタンを押下するとループが終わるまでウィンドウフォームは動きません。時間が流れたら応答なしになってプログラムが凍っている時もあります。つまり、ウィンドウはシングルスレッド状況なのでその関数のスタックに掛けると処理が終わるまで動きません。そうするとボタンを押下する時、複雑な処理をすると思えばどのように処理するでしょう?スレッドを利用すれば良いでしょう。ボタンをクリックしてコンソールに1ずつに出力してもウィンドウが凍らないことを確認できます。そうすると今回はコンソールに出力することではなく、ウィンドウのコントロールで出力するように作成しましょう。ボタンをクリックするとすぐエラーが発生します。理由はwindowで動いているスレッドとスレッドプールで動いているスレッドが同期化されてないからです。スレッド間に同期化しようと思えば、お互いにlockを設定して同期化すればよいのに、ウィンドウメッセージを動いているスレッドにlockを掛ける方法がありません。これをc#ウィンドウ開発ではクロススレッド問題と言います。これを解決する方法が各コントロールにあるinvoke関数を利用してvisitorパターン、つまりコールバック関数という方法で処理ができます。ソース上にstatic utilクラスを作成してcontrolクラスの拡張関数を作成しました。そしてスレッドプールの中でlabel1インスタンスにinvokecontrol関数を呼び出してラムダ式でコールバック関数を作成しました。ボタンをクリックするとlabelに数字が1秒単位で更新することを確認できます。ここまでc#のウィンドウフォーム(window form)でスレッド(thread)を使い方、クロススレッド問題解決に関する説明でした。ご不明なところや]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [C#] 61. ウィンドウフォーム(Window form)でスレッド(Thread)を使い方、クロススレッド問題解決" />
+<link rel="canonical" href="https://www.nowonbun.com/310.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [C#] 61. ウィンドウフォーム(Window form)でスレッド(Thread)を使い方、クロススレッド問題解決" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はc#のウィンドウフォーム(window form)でスレッド(thread)を使い方、クロススレッド問題解決に関する説明です。以前の投稿でc#のスレッドに関して説明したことがあります。link - [c#] 37. スレッド(thread)を使い方、thread.sleep関数を使い方スレッドはプログラム内で並列処理することの意味です。まずウィンドウはシングルスレッドの無限ループで動いています。でも、我々がボタンのクリックイベントでループを実行するロジックを作りましょう。プログラムを実行してボタンを押下するとループが終わるまでウィンドウフォームは動きません。時間が流れたら応答なしになってプログラムが凍っている時もあります。つまり、ウィンドウはシングルスレッド状況なのでその関数のスタックに掛けると処理が終わるまで動きません。そうするとボタンを押下する時、複雑な処理をすると思えばどのように処理するでしょう?スレッドを利用すれば良いでしょう。ボタンをクリックしてコンソールに1ずつに出力してもウィンドウが凍らないことを確認できます。そうすると今回はコンソールに出力することではなく、ウィンドウのコントロールで出力するように作成しましょう。ボタンをクリックするとすぐエラーが発生します。理由はwindowで動いているスレッドとスレッドプールで動いているスレッドが同期化されてないからです。スレッド間に同期化しようと思えば、お互いにlockを設定して同期化すればよいのに、ウィンドウメッセージを動いているスレッドにlockを掛ける方法がありません。これをc#ウィンドウ開発ではクロススレッド問題と言います。これを解決する方法が各コントロールにあるinvoke関数を利用してvisitorパターン、つまりコールバック関数という方法で処理ができます。ソース上にstatic utilクラスを作成してcontrolクラスの拡張関数を作成しました。そしてスレッドプールの中でlabel1インスタンスにinvokecontrol関数を呼び出してラムダ式でコールバック関数を作成しました。ボタンをクリックするとlabelに数字が1秒単位で更新することを確認できます。ここまでc#のウィンドウフォーム(window form)でスレッド(thread)を使い方、クロススレッド問題解決に関する説明でした。ご不明なところや]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/310.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [C#] 61. ウィンドウフォーム(Window form)でスレッド(Thread)を使い方、クロススレッド問題解決" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はc#のウィンドウフォーム(window form)でスレッド(thread)を使い方、クロススレッド問題解決に関する説明です。以前の投稿でc#のスレッドに関して説明したことがあります。link - [c#] 37. スレッド(thread)を使い方、thread.sleep関数を使い方スレッドはプログラム内で並列処理することの意味です。まずウィンドウはシングルスレッドの無限ループで動いています。でも、我々がボタンのクリックイベントでループを実行するロジックを作りましょう。プログラムを実行してボタンを押下するとループが終わるまでウィンドウフォームは動きません。時間が流れたら応答なしになってプログラムが凍っている時もあります。つまり、ウィンドウはシングルスレッド状況なのでその関数のスタックに掛けると処理が終わるまで動きません。そうするとボタンを押下する時、複雑な処理をすると思えばどのように処理するでしょう?スレッドを利用すれば良いでしょう。ボタンをクリックしてコンソールに1ずつに出力してもウィンドウが凍らないことを確認できます。そうすると今回はコンソールに出力することではなく、ウィンドウのコントロールで出力するように作成しましょう。ボタンをクリックするとすぐエラーが発生します。理由はwindowで動いているスレッドとスレッドプールで動いているスレッドが同期化されてないからです。スレッド間に同期化しようと思えば、お互いにlockを設定して同期化すればよいのに、ウィンドウメッセージを動いているスレッドにlockを掛ける方法がありません。これをc#ウィンドウ開発ではクロススレッド問題と言います。これを解決する方法が各コントロールにあるinvoke関数を利用してvisitorパターン、つまりコールバック関数という方法で処理ができます。ソース上にstatic utilクラスを作成してcontrolクラスの拡張関数を作成しました。そしてスレッドプールの中でlabel1インスタンスにinvokecontrol関数を呼び出してラムダ式でコールバック関数を作成しました。ボタンをクリックするとlabelに数字が1秒単位で更新することを確認できます。ここまでc#のウィンドウフォーム(window form)でスレッド(thread)を使い方、クロススレッド問題解決に関する説明でした。ご不明なところや]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [C#] 61. ウィンドウフォーム(Window form)でスレッド(Thread)を使い方、クロススレッド問題解決</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(92)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(27)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(4)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(14)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(0)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(215)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(61)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(56)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(15)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0210" href="study_project_design.html">Project design<span class="category-item-count">(9)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/310.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[C#] 61. ウィンドウフォーム(Window form)でスレッド(Thread)を使い方、クロススレッド問題解決</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0202">Study / C#</a>    作成日付 : <span property="datePublished">2021/11/04 19:29:51</span>   修正日付 : <span property="dateModified">2021/11/04 19:30:43</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はC#のウィンドウフォーム(Window form)でスレッド(Thread)を使い方、クロススレッド問題解決に関する説明です。</p> 
+  <p><br></p> 
+  <p>以前の投稿でC#のスレッドに関して説明したことがあります。</p> 
+  <p>link - <a href="https://www.nowonbun.com/38.html" target="_blank">[C#] 37. スレッド(Thread)を使い方、Thread.Sleep関数を使い方</a></p> 
+  <p><br></p> 
+  <p>スレッドはプログラム内で並列処理することの意味です。まずウィンドウはシングルスレッドの無限ループで動いています。</p> 
+  <p>でも、我々がボタンのクリックイベントでループを実行するロジックを作りましょう。</p> 
+  <pre><code class="cs" data-type="Form1.cs">using System;
+using System.Windows.Forms;
+using System.Threading;
+
+namespace WindowsFormsApp
+{
+  // Formクラスを継承
+  public partial class Form1 : Form
+  {
+    // メンバー変数ボタン
+    private Button button1 = null;
+    // コントロールクラスの初期設定関数
+    private T setInitControl&lt;T&gt;(T ctl, string name, int point) where T : Control
+    {
+      // 位置設定
+      button.Location = new System.Drawing.Point(27, point);
+      // コントロールの名設定
+      button.Name = name;
+      // コントロールのサイズ設定
+      button.Size = new System.Drawing.Size(75, 23);
+      // タブのIndex設定
+      ctl.TabIndex = 0;
+      // リターン
+      return ctl;
+    }
+    // コンストラクタ
+    public Form1()
+    {
+      // 初期化
+      InitializeComponent();
+      // ボタンインスタンス生成後、初期設定
+      this.button1 = setInitControl(new Button(), "Button1", 40);
+      // ボタンのText設定
+      this.button1.Text = "Button";
+      // フォームにControl追加
+      this.Controls.Add(button1);
+      // イベント追加(ラムダ式で追加)
+      this.button1.Click += (sender, e) =&gt;
+      {
+        // 0から9999までループ
+        for (int i = 0; i &lt; 10000; i++)
+        {
+          // コンソールに出力
+          Console.WriteLine(i);
+          // スレッド待機1秒
+          Thread.Sleep(1000);
+        }
+      };
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/310/2139_001.png" data-filename="001.png" style="width: 362px;"><br></p> 
+  <p>プログラムを実行してボタンを押下するとループが終わるまでウィンドウフォームは動きません。時間が流れたら応答なしになってプログラムが凍っている時もあります。</p> 
+  <p>つまり、ウィンドウはシングルスレッド状況なのでその関数のスタックに掛けると処理が終わるまで動きません。</p> 
+  <p><br></p> 
+  <p>そうするとボタンを押下する時、複雑な処理をすると思えばどのように処理するでしょう?スレッドを利用すれば良いでしょう。</p> 
+  <pre><code class="cs" data-type="Form1.cs">using System;
+using System.Windows.Forms;
+using System.Threading;
+
+namespace WindowsFormsApp
+{
+  // Formクラスを継承
+  public partial class Form1 : Form
+  {
+    // メンバー変数ボタン
+    private Button button1 = null;
+    // コントロールクラスの初期設定関数
+    private T setInitControl&lt;T&gt;(T ctl, string name, int point) where T : Control
+    {
+      // 位置設定
+      button.Location = new System.Drawing.Point(27, point);
+      // コントロールの名設定
+      button.Name = name;
+      // コントロールのサイズ設定
+      button.Size = new System.Drawing.Size(75, 23);
+      // タブのIndex設定
+      ctl.TabIndex = 0;
+      // リターン
+      return ctl;
+    }
+    // コンストラクタ
+    public Form1()
+    {
+      // 初期化
+      InitializeComponent();
+      // ボタンインスタンス生成後、初期設定
+      this.button1 = setInitControl(new Button(), "Button1", 40);
+      // ボタンのText設定
+      this.button1.Text = "Button";
+      // フォームにControl追加
+      this.Controls.Add(button1);
+      // イベント追加(ラムダ式で追加)
+      this.button1.Click += (sender, e) =&gt;
+      {
+        // スレッドプール生成
+        ThreadPool.QueueUserWorkItem((_) =&gt;
+        {
+          // 0から9999までループ
+          for (int i = 0; i &lt; 10000; i++)
+          {
+            // コンソールに出力
+            Console.WriteLine(i);
+            // スレッド待機1秒
+            Thread.Sleep(1000);
+          }
+        });
+      };
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/310/2140_002.gif" style="width: 619px;" data-filename="002.gif"><br></p> 
+  <p>ボタンをクリックしてコンソールに1ずつに出力してもウィンドウが凍らないことを確認できます。</p> 
+  <p>そうすると今回はコンソールに出力することではなく、ウィンドウのコントロールで出力するように作成しましょう。</p> 
+  <pre><code class="cs" data-type="Form1.cs">using System;
+using System.Windows.Forms;
+using System.Threading;
+
+namespace WindowsFormsApp
+{
+  // Formクラスを継承
+  public partial class Form1 : Form
+  {
+    // メンバー変数ボタン
+    private Button button1 = null;
+    private Label label1 = null;
+    // コントロールクラスの初期設定関数
+    private T setInitControl&lt;T&gt;(T ctl, string name, int point) where T : Control
+    {
+      // 位置設定
+      button.Location = new System.Drawing.Point(27, point);
+      // コントロールの名設定
+      button.Name = name;
+      // コントロールのサイズ設定
+      button.Size = new System.Drawing.Size(75, 23);
+      // タブのIndex設定
+      ctl.TabIndex = 0;
+      // リターン
+      return ctl;
+    }
+    // コンストラクタ
+    public Form1()
+    {
+      // 初期化
+      InitializeComponent();
+      // ボタンインスタンス生成後、初期設定
+      this.button1 = setInitControl(new Button(), "Button1", 80);
+      // ラベルインスタンス生成後、初期設定
+      this.label1 = setInitControl(new Label(), "Label1", 40);
+      // ボタンのText設定
+      this.button1.Text = "Button";
+      // フォームにControl追加
+      this.Controls.Add(button1);
+      this.Controls.Add(label1);
+      // イベント追加(ラムダ式で追加)
+      this.button1.Click += (sender, e) =&gt;
+      {
+        // スレッドプール生成
+        ThreadPool.QueueUserWorkItem((_) =&gt;
+        {
+          // 0から9999までループ
+          for (int i = 0; i &lt; 10000; i++)
+          {
+            // Labelのテキスト設定
+            this.label1.Text = $"{i}";
+            // スレッド待機1秒
+            Thread.Sleep(1000);
+          }
+        });
+      };
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/310/2141_003.png" style="width: 691px;" data-filename="003.png"><br></p> 
+  <p>ボタンをクリックするとすぐエラーが発生します。</p> 
+  <p>理由はWindowで動いているスレッドとスレッドプールで動いているスレッドが同期化されてないからです。</p> 
+  <p>スレッド間に同期化しようと思えば、お互いにlockを設定して同期化すればよいのに、ウィンドウメッセージを動いているスレッドにlockを掛ける方法がありません。</p> 
+  <p>これをC#ウィンドウ開発ではクロススレッド問題と言います。</p> 
+  <p><br></p> 
+  <p>これを解決する方法が各コントロールにあるInvoke関数を利用してvisitorパターン、つまりコールバック関数という方法で処理ができます。</p> 
+  <pre><code class="cs" data-type="Form1.cs">using System;
+using System.Windows.Forms;
+using System.Threading;
+
+namespace WindowsFormsApp
+{
+  // 拡張関数ためのクラス
+  public static class Util
+  {
+    // 拡張関数
+    public static void InvokeControl(this Control ctl, Action func)
+    {
+      // Thread ID比較
+      if (ctl.InvokeRequired)
+      {
+        // デリゲート関数で実行
+        ctl.Invoke(func);
+      }
+      else
+      {
+        // Thread IDが同じならそのまま実行(同じスレッドという意味)
+        func();
+      }
+    }
+  }
+  // Formクラスを継承
+  public partial class Form1 : Form
+  {
+    // メンバー変数ボタン
+    private Button button1 = null;
+    private Label label1 = null;
+    // コントロールクラスの初期設定関数
+    private T setInitControl&lt;T&gt;(T ctl, string name, int point) where T : Control
+    {
+      // 位置設定
+      button.Location = new System.Drawing.Point(27, point);
+      // コントロールの名設定
+      button.Name = name;
+      // コントロールのサイズ設定
+      button.Size = new System.Drawing.Size(75, 23);
+      // タブのIndex設定
+      ctl.TabIndex = 0;
+      // リターン
+      return ctl;
+    }
+    // コンストラクタ
+    public Form1()
+    {
+      // 初期化
+      InitializeComponent();
+      // ボタンインスタンス生成後、初期設定
+      this.button1 = setInitControl(new Button(), "Button1", 80);
+      // ラベルインスタンス生成後、初期設定
+      this.label1 = setInitControl(new Label(), "Label1", 40);
+      // ボタンのText設定
+      this.button1.Text = "Button";
+      // フォームにControl追加
+      this.Controls.Add(button1);
+      this.Controls.Add(label1);
+      // イベント追加(ラムダ式で追加)
+      this.button1.Click += (sender, e) =&gt;
+      {
+        // スレッドプール生成
+        ThreadPool.QueueUserWorkItem((_) =&gt;
+        {
+          // 0から9999までループ
+          for (int i = 0; i &lt; 10000; i++)
+          {
+            // デリゲート関数を通ってウィンドウスレッドから下記の関数を呼び出すことにする。
+            this.label1.InvokeControl(() =&gt;
+            {
+              // Labelのテキスト設定
+              this.label1.Text = $"{i}";
+            });
+            // スレッド待機1秒
+            Thread.Sleep(1000);
+          }
+        });
+      };
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/310/2142_004.png" data-filename="004.png" style="width: 264px;"><br></p> 
+  <p>ソース上にstatic Utilクラスを作成してControlクラスの拡張関数を作成しました。そしてスレッドプールの中でlabel1インスタンスにInvokeControl関数を呼び出してラムダ式でコールバック関数を作成しました。</p> 
+  <p>ボタンをクリックするとLabelに数字が1秒単位で更新することを確認できます。</p> 
+  <p><br></p> 
+  <p>ここまでC#のウィンドウフォーム(Window form)でスレッド(Thread)を使い方、クロススレッド問題解決に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/307.html" target="_blank">[C#] 60. ウィンドウフォーム(Window form)のイベント設定する方法</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=C%23>#C#</a>,<a href=./search.html?query=window>#window</a>,<a href=./search.html?query=thread>#thread</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0202">Study / C#</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/310.html'>[C#] 61. ウィンドウフォーム(Window form)でスレッド(Thread)を使い方、クロススレッド問題解決</a><span>2021/11/04 19:29:51</span></li><li><a href='https://www.nowonbun.com/307.html'>[C#] 60. ウィンドウフォーム(Window form)のイベント設定する方法</a><span>2021/11/02 21:18:08</span></li><li><a href='https://www.nowonbun.com/303.html'>[C#] 59. ウィンドウフォーム(Window form)にコントロール(Control)を使い方法</a><span>2021/10/29 19:45:43</span></li><li><a href='https://www.nowonbun.com/301.html'>[C#] 58. ウィンドウフォーム(Window form)を作成する方法、そしてウィンドウメッセージとキュー</a><span>2021/10/27 20:35:44</span></li><li><a href='https://www.nowonbun.com/292.html'>[C#] 57. コーティング規約</a><span>2021/10/21 18:57:02</span></li><li><a href='https://www.nowonbun.com/291.html'>[C#] 56. 値の初期化及び基本データ値(default)を設定する方法、そして原始データのnull処理、?と??の使い方</a><span>2021/10/21 18:54:41</span></li><li><a href='https://www.nowonbun.com/290.html'>[C#] 55.namespaceとusing、そしてpartialの使い方</a><span>2021/10/21 18:51:39</span></li><li><a href='https://www.nowonbun.com/289.html'>[C#] 54. Reflection機能を使い方 - Attribute</a><span>2021/10/20 19:29:31</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/310.html'>[C#] 61. ウィンドウフォーム(Window form)でスレッド(Thread)を使い方、クロススレッド問題解決</a><span>2021/11/04 19:29:51</span></li><li><a href='https://www.nowonbun.com/309.html'>[Design pattern] 3-2. 責任の連鎖パターン(Chain of responsibility pattern)</a><span>2021/11/04 19:27:58</span></li><li><a href='https://www.nowonbun.com/308.html'>[Design pattern] 3-1. ストラテジーパターン(Strategy pattern)</a><span>2021/11/03 18:38:52</span></li><li><a href='https://www.nowonbun.com/307.html'>[C#] 60. ウィンドウフォーム(Window form)のイベント設定する方法</a><span>2021/11/02 21:18:08</span></li><li><a href='https://www.nowonbun.com/306.html'>[Design pattern] 2-7. ファサードパターン(Facade pattern)</a><span>2021/11/02 19:32:31</span></li><li><a href='https://www.nowonbun.com/305.html'>[Design pattern] 2-6. プロキシパターン(Proxy pattern)</a><span>2021/11/01 19:42:44</span></li><li><a href='https://www.nowonbun.com/304.html'>[Design pattern] 2-5. フライウェイトパターン(Flyweight pattern)</a><span>2021/10/29 19:48:27</span></li><li><a href='https://www.nowonbun.com/303.html'>[C#] 59. ウィンドウフォーム(Window form)にコントロール(Control)を使い方法</a><span>2021/10/29 19:45:43</span></li><li><a href='https://www.nowonbun.com/302.html'>[Design pattern] 2-4. デコレーターパターン(Decorator pattern)</a><span>2021/10/28 20:11:13</span></li><li><a href='https://www.nowonbun.com/301.html'>[C#] 58. ウィンドウフォーム(Window form)を作成する方法、そしてウィンドウメッセージとキュー</a><span>2021/10/27 20:35:44</span></li><li><a href='https://www.nowonbun.com/300.html'>[Design pattern] 2-3. ブリッジパターン(Bridge pattern)</a><span>2021/10/27 20:32:21</span></li><li><a href='https://www.nowonbun.com/299.html'>[Design pattern] 2-2. コンポジットパターン(Composite pattern)</a><span>2021/10/27 20:30:54</span></li><li><a href='https://www.nowonbun.com/298.html'>[Design pattern] 2-1. アダプターパターン(Adapter pattern)</a><span>2021/10/26 19:12:40</span></li><li><a href='https://www.nowonbun.com/297.html'>[Project design] プログラム最終テスト - ST(System test(Standard, Scenario))</a><span>2021/10/26 19:10:07</span></li><li><a href='https://www.nowonbun.com/296.html'>[Project design] プログラム結合テスト - IT(Integration test)</a><span>2021/10/25 20:12:17</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/310.html';this.page.identifier = 'NOWONBUN00310';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
