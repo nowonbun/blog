@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/313.html"},"url":"https:\/\/www.nowonbun.com\/313.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Window] apache-tomcat\u3067\u30ed\u30fc\u30c9\u30d0\u30e9\u30f3\u30b7\u30f3\u30b0(Load balancing)\u3059\u308b\u65b9\u6cd5\u3068\u30bb\u30c3\u30b7\u30e7\u30f3\u30af\u30e9\u30b9\u30bf\u30ea\u30f3\u30b0\uff08\u30bb\u30c3\u30b7\u30e7\u30f3\u5171\u6709\uff09","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u0026amp;nbsp;\u3053\u306e\u6295\u7a3f\u306fapache-tomcat\u3067\u30ed\u30fc\u30c9\u30d0\u30e9\u30f3\u30b7\u30f3\u30b0(load balancing)\u3059\u308b\u65b9\u6cd5\u3068\u30bb\u30c3\u30b7\u30e7\u30f3\u30af\u30e9\u30b9\u30bf\u30ea\u30f3\u30b0\uff08\u30bb\u30c3\u30b7\u30e7\u30f3\u5171\u6709\uff09\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u0026amp;nbsp;\u4ee5\u524d\u306e\u6295\u7a3f\u3067\u79c1\u304capache\u3068tomcat\u3092\u9023\u643a\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u305f\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002link - [centos] apache\u3068tomcat\u306e\u9023\u643a\u0026amp;nbsp;\u305d\u306e\u6642\u306b\u306fapache-tomcat\u306e1:1\u306e\u9023\u643a\u3060\u3063\u305f\u3093\u3067\u3059\u304c\u3001\u4eca\u56de\u306fapache\u304b\u3089\u6570\u591a\u304f\u306etomcat\u3092\u9023\u7d50\u3057\u3066\u30c8\u30e9\u30d5\u30a3\u30c3\u30af\u3092\u5206\u6563\u3059\u308b\u65b9\u6cd5\u3067\u3059\u3002\u904b\u7528\u4e2d\u3067\u30a6\u30a7\u30d6\u30b5\u30a4\u30c8\u3067\u63a5\u7d9a\u8005\u304c\u591a\u304f\u306a\u308b\u3068\u59cb\u3081\u306b\u69cb\u6210\u3059\u308b\u3053\u3068\u304capache-tomcat\u3068\u306e\u5206\u6563\u3067\u3059\u3002\u52d5\u7684\u306a\u30a6\u30a7\u30d6\u30b5\u30a4\u30c8\u306a\u3089\u4ee5\u5916\u306b\u3053\u306eweb servlet\u3067\u51e6\u7406\u30c8\u30e9\u30d5\u30a3\u30c3\u30af\u304c\u591a\u304f\u306a\u308a\u307e\u3059\u3002\u306a\u305c\u306a\u3089servlet\u3067\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u63a5\u7d9a\u3082\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3057\u3001\u69d8\u3005\u306a\u8a2d\u5b9a\u30d5\u30a1\u30a4\u30eb\u3092\u8aad\u307f\u8fbc\u3057\u3001\u8907\u96d1\u306a\u4ed5\u69d8\u3060\u3063\u305f\u3089servlet\u3067\u51e6\u7406\u3059\u308b\u3053\u3068\u304c\u591a\u304f\u306a\u308a\u307e\u3059\u3002\u3053\u308c\u3092\u6570\u591a\u304f\u306e\u30b5\u30fc\u30d0\u3067\u904b\u7528\u3057\u3066apache\u3067\u30c8\u30e9\u30d5\u30a3\u30c3\u30af\u3092\u96c6\u307e\u3063\u3066\u30ed\u30fc\u30c9\u30d0\u30e9\u30f3\u30b7\u30f3\u30b0\u3001\u3064\u307e\u308a\u3001\u30c8\u30e9\u30d5\u30a3\u30c3\u30af\u306b\u5408\u308f\u305b\u3066servlet\u3092\u5206\u6563\u3057\u3066\u30b5\u30a4\u30c8\u304c\u30c8\u30e9\u30d5\u30a3\u30c3\u30af\u306b\u3088\u308a\u9045\u304f\u306a\u308b\u3053\u3068\u3092\u5c11\u3057\u3067\u3082\u6539\u5584\u3059\u308b\u3053\u3068\u3067\u306f\u306a\u3044\u304b\u3068\u601d\u3044\u307e\u3059\u3002apache\u6bb5\u968e\u3067\u306e\u30c8\u30e9\u30d5\u30a3\u30c3\u30af\u304c\u591a\u304f\u306a\u308b\u3068dns\u6bb5\u968e\u3067apache\u5206\u6563\u3059\u308b\u3079\u304d\u3067\u3059\u306d\u3002\u79c1\u3082\u305d\u3053\u307e\u3067\u306e\u4f5c\u696d\u3092\u3057\u305f\u3053\u3068\u304c\u306a\u3044\u306e\u3067\u3001\u6b63\u78ba\u306b\u8a00\u3046\u3053\u3068\u306f\u96e3\u3057\u3044\u3067\u3059\u3002\u0026amp;nbsp;apache\u3067mod_jk\u3092\u9023\u643a\u3059\u308b\u305f\u3081\u306b\u306fworkers.properties\u3092\u4fee\u6b63\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u3002httpd.conf\u306b\u306fworker list\u3092\u8a2d\u5b9a\u3059\u308c\u3070\u826f\u3044\u3067\u3057\u3087\u3046\u3002\u4e0a\u306e\u4f8b\u3092\u307f\u308c\u3070jkmanager\u3092\u5225\u9014\u306b\u8a2d\u5b9a\u3057\u307e\u3057\u305f\u3002jkmanager\u306fapache - tomcat\u3092\u9023\u7d50\u3059\u308b\u6642\u306b\u30ed\u30fc\u30c9\u30d0\u30e9\u30f3\u30b7\u30f3\u30b0\u306e\u72b6\u614b\u3092\u78ba\u8a8d\u3067\u304d\u308b\u30da\u30fc\u30b8\u3067\u3059\u3002apache-tomcat\u3067\u6570\u591a\u304f\u306e\u30b5\u30fc\u30d0\u3092\u7ba1\u7406\u3059\u308b\u6642\u3001\u3057\u3063\u304b\u308a\u9023\u643a\u3055\u308c\u3066\u3044\u308b\u304b\u3092\u78ba\u8a8d\u3059\u308b\u30da\u30fc\u30b8\u3067\u3059\u3002\u3082\u3057\u3001\u4e00\u3064\u306etomcat\u304c\u554f\u984c\u306b\u306a\u308b\u3068\u72b6\u614b\u30da\u30fc\u30b8\u3067\u305d\u306e\u7d50\u679c\u3092\u77e5\u3089\u305b\u3066\u304f\u308c\u307e\u3059\u3002\u3053\u3053\u307e\u3067\u8a2d\u5b9a\u3059\u3063\u308c\u3070\u30ed\u30fc\u30c9\u30d0\u30e9\u30f3\u30b7\u30f3\u30b0\u8a2d\u5b9a\u306f\u5b8c\u4e86\u3067\u3059\u3002\u3067\u3082\u5b9f\u969b\u306b\u30a6\u30a7\u30d6\u30b5\u30fc\u30d0\u3092\u904b\u7528\u3059\u308c\u3070\u30ed\u30fc\u30c9\u30d0\u30e9\u30f3\u30b7\u30f3\u30b0\u3060\u3051\u8a2d\u5b9a\u3059\u308b\u5834\u5408\u306b\u30bb\u30c3\u30b7\u30e7\u30f3\u5171\u6709\u304c\u3057\u306a\u304b\u3063\u305f\u306e\u3067\u3001\u5909\u306a\u73fe\u8c61\u304c\u767a\u751f\u3057\u307e\u3059\u3002\u3002\u4ee3\u8868\u7684\u306b\u6025\u306b\u30ed\u30b0\u30a2\u30a6\u30c8\u3055\u308c\u308b\u5834\u5408\u304c\u3042\u308a\u307e\u3059\u3002\u306a\u305c","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2021-11-05T16:58:45.000+09:00","dateModified":"2021-11-05T17:00:24.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Devlopment note / Window" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。&amp;nbsp;この投稿はapache-tomcatでロードバランシング(load balancing)する方法とセッションクラスタリング（セッション共有）に関する説明です。&amp;nbsp;以前の投稿で私がapacheとtomcatを連携する方法に関して説明したことがあります。link - [centos] apacheとtomcatの連携&amp;nbsp;その時にはapache-tomcatの1:1の連携だったんですが、今回はapacheから数多くのtomcatを連結してトラフィックを分散する方法です。運用中でウェブサイトで接続者が多くなると始めに構成することがapache-tomcatとの分散です。動的なウェブサイトなら以外にこのweb servletで処理トラフィックが多くなります。なぜならservletでデータベース接続もしなければならないし、様々な設定ファイルを読み込し、複雑な仕様だったらservletで処理することが多くなります。これを数多くのサーバで運用してapacheでトラフィックを集まってロードバランシング、つまり、トラフィックに合わせてservletを分散してサイトがトラフィックにより遅くなることを少しでも改善することではないかと思います。apache段階でのトラフィックが多くなるとdns段階でapache分散するべきですね。私もそこまでの作業をしたことがないので、正確に言うことは難しいです。&amp;nbsp;apacheでmod_jkを連携するためにはworkers.propertiesを修正しなければならないです。httpd.confにはworker listを設定すれば良いでしょう。上の例をみればjkmanagerを別途に設定しました。jkmanagerはapache - tomcatを連結する時にロードバランシングの状態を確認できるページです。apache-tomcatで数多くのサーバを管理する時、しっかり連携されているかを確認するページです。もし、一つのtomcatが問題になると状態ページでその結果を知らせてくれます。ここまで設定すっればロードバランシング設定は完了です。でも実際にウェブサーバを運用すればロードバランシングだけ設定する場合にセッション共有がしなかったので、変な現象が発生します。。代表的に急にログアウトされる場合があります。なぜ]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Window] apache-tomcatでロードバランシング(Load balancing)する方法とセッションクラスタリング（セッション共有）" />
+<link rel="canonical" href="https://www.nowonbun.com/313.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Window] apache-tomcatでロードバランシング(Load balancing)する方法とセッションクラスタリング（セッション共有）" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。&amp;nbsp;この投稿はapache-tomcatでロードバランシング(load balancing)する方法とセッションクラスタリング（セッション共有）に関する説明です。&amp;nbsp;以前の投稿で私がapacheとtomcatを連携する方法に関して説明したことがあります。link - [centos] apacheとtomcatの連携&amp;nbsp;その時にはapache-tomcatの1:1の連携だったんですが、今回はapacheから数多くのtomcatを連結してトラフィックを分散する方法です。運用中でウェブサイトで接続者が多くなると始めに構成することがapache-tomcatとの分散です。動的なウェブサイトなら以外にこのweb servletで処理トラフィックが多くなります。なぜならservletでデータベース接続もしなければならないし、様々な設定ファイルを読み込し、複雑な仕様だったらservletで処理することが多くなります。これを数多くのサーバで運用してapacheでトラフィックを集まってロードバランシング、つまり、トラフィックに合わせてservletを分散してサイトがトラフィックにより遅くなることを少しでも改善することではないかと思います。apache段階でのトラフィックが多くなるとdns段階でapache分散するべきですね。私もそこまでの作業をしたことがないので、正確に言うことは難しいです。&amp;nbsp;apacheでmod_jkを連携するためにはworkers.propertiesを修正しなければならないです。httpd.confにはworker listを設定すれば良いでしょう。上の例をみればjkmanagerを別途に設定しました。jkmanagerはapache - tomcatを連結する時にロードバランシングの状態を確認できるページです。apache-tomcatで数多くのサーバを管理する時、しっかり連携されているかを確認するページです。もし、一つのtomcatが問題になると状態ページでその結果を知らせてくれます。ここまで設定すっればロードバランシング設定は完了です。でも実際にウェブサーバを運用すればロードバランシングだけ設定する場合にセッション共有がしなかったので、変な現象が発生します。。代表的に急にログアウトされる場合があります。なぜ]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/313.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Window] apache-tomcatでロードバランシング(Load balancing)する方法とセッションクラスタリング（セッション共有）" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。&amp;nbsp;この投稿はapache-tomcatでロードバランシング(load balancing)する方法とセッションクラスタリング（セッション共有）に関する説明です。&amp;nbsp;以前の投稿で私がapacheとtomcatを連携する方法に関して説明したことがあります。link - [centos] apacheとtomcatの連携&amp;nbsp;その時にはapache-tomcatの1:1の連携だったんですが、今回はapacheから数多くのtomcatを連結してトラフィックを分散する方法です。運用中でウェブサイトで接続者が多くなると始めに構成することがapache-tomcatとの分散です。動的なウェブサイトなら以外にこのweb servletで処理トラフィックが多くなります。なぜならservletでデータベース接続もしなければならないし、様々な設定ファイルを読み込し、複雑な仕様だったらservletで処理することが多くなります。これを数多くのサーバで運用してapacheでトラフィックを集まってロードバランシング、つまり、トラフィックに合わせてservletを分散してサイトがトラフィックにより遅くなることを少しでも改善することではないかと思います。apache段階でのトラフィックが多くなるとdns段階でapache分散するべきですね。私もそこまでの作業をしたことがないので、正確に言うことは難しいです。&amp;nbsp;apacheでmod_jkを連携するためにはworkers.propertiesを修正しなければならないです。httpd.confにはworker listを設定すれば良いでしょう。上の例をみればjkmanagerを別途に設定しました。jkmanagerはapache - tomcatを連結する時にロードバランシングの状態を確認できるページです。apache-tomcatで数多くのサーバを管理する時、しっかり連携されているかを確認するページです。もし、一つのtomcatが問題になると状態ページでその結果を知らせてくれます。ここまで設定すっればロードバランシング設定は完了です。でも実際にウェブサーバを運用すればロードバランシングだけ設定する場合にセッション共有がしなかったので、変な現象が発生します。。代表的に急にログアウトされる場合があります。なぜ]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Window] apache-tomcatでロードバランシング(Load balancing)する方法とセッションクラスタリング（セッション共有）</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(95)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(27)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(6)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(14)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(216)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(61)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(56)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(16)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0210" href="study_project_design.html">Project design<span class="category-item-count">(9)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/313.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Window] apache-tomcatでロードバランシング(Load balancing)する方法とセッションクラスタリング（セッション共有）</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0105">Devlopment note / Window</a>    作成日付 : <span property="datePublished">2021/11/05 16:58:45</span>   修正日付 : <span property="dateModified">2021/11/05 17:00:24</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p>&nbsp;</p> 
+  <p>この投稿はapache-tomcatでロードバランシング(Load balancing)する方法とセッションクラスタリング（セッション共有）に関する説明です。</p> 
+  <p>&nbsp;</p> 
+  <p>以前の投稿で私がapacheとtomcatを連携する方法に関して説明したことがあります。</p> 
+  <p>link - <a href="https://www.nowonbun.com/102.html" target="_blank">[CentOS] ApacheとTomcatの連携</a></p> 
+  <p>&nbsp;</p> 
+  <p>その時にはapache-tomcatの1:1の連携だったんですが、今回はapacheから数多くのtomcatを連結してトラフィックを分散する方法です。運用中でウェブサイトで接続者が多くなると始めに構成することがapache-tomcatとの分散です。</p> 
+  <p>動的なウェブサイトなら以外にこのweb servletで処理トラフィックが多くなります。なぜならservletでデータベース接続もしなければならないし、様々な設定ファイルを読み込し、複雑な仕様だったらservletで処理することが多くなります。</p> 
+  <p>これを数多くのサーバで運用してapacheでトラフィックを集まってロードバランシング、つまり、トラフィックに合わせてservletを分散してサイトがトラフィックにより遅くなることを少しでも改善することではないかと思います。</p> 
+  <p>apache段階でのトラフィックが多くなるとDNS段階でapache分散するべきですね。私もそこまでの作業をしたことがないので、正確に言うことは難しいです。</p> 
+  <p>&nbsp;</p> 
+  <p>apacheでmod_jkを連携するためにはworkers.propertiesを修正しなければならないです。</p> 
+  <pre><code class="language-properties" data-type="workers.properties"># workリスト
+worker.list=router,jkstatus
+# apacheに連携されたmod_jkに関する状態(ロードバランシング表示)
+worker.jkstatus.type=status
+# type lbはロードバランシングという意味だ。
+worker.router.type=lb
+# 同一なsessionIDの場合、一つのtomcatにだけ継続的に管理するべきな場合
+worker.router.sticky_session=true
+# ロードバランシングリスト
+worker.router.balance_workers=worker1,worker2	
+# 1番目のロードバランシングのトムキャット
+worker.worker1.type=ajp13
+worker.worker1.host=localhost
+worker.worker1.port=8109
+# 処理割り当て比率、つまり、2番目に1で設定したので1:1比率でロードバランシングになる。
+worker.worker1.lbfactor=1	
+# 2番目のロードバランシングのトムキャット
+worker.worker2.type=ajp13
+worker.worker2.host=localhost
+worker.worker2.port=8209
+worker.worker2.lbfactor=1
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/313/2158_001.png" data-filename="001.png" style="width: 602px;"><br></p> 
+  <p>httpd.confにはworker listを設定すれば良いでしょう。</p> 
+  <pre><code class="language-apache" data-type="httpd.conf">LoadModule jk_module modules/mod_jk.so
+&lt;IfModule mod_jk.c&gt;	
+  JkWorkersFile conf/workers.properties
+  JkLogFile logs/mod_jk.log
+  JkLogLevel info
+  JkLogStampFormat "[%y %m %d %H:%M:%S] "
+&lt;/IfModule&gt;
+&lt;VirtualHost *:80&gt;
+&lt;!-- ロードバランシングするrouter設定 --&gt;
+JkMount /* router
+&lt;!-- mod_jk状態ページ --&gt;
+JkMount /jkmanager/* jkstatus
+ServerName localhost
+&lt;/VirtualHost&gt;
+&lt;!-- 状態ページには127.0.0.1で接続する場合だけ許す。 --&gt;
+&lt;Location /jkmanager/&gt;
+  JkMount statusmanager
+  Require ip 127.0.0.1
+&lt;/Location&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/313/2159_002.png" style="width: 597px;" data-filename="002.png"><br></p> 
+  <p>上の例をみればjkmanagerを別途に設定しました。jkmanagerはapache - tomcatを連結する時にロードバランシングの状態を確認できるページです。apache-tomcatで数多くのサーバを管理する時、しっかり連携されているかを確認するページです。</p> 
+  <p>もし、一つのtomcatが問題になると状態ページでその結果を知らせてくれます。</p> 
+  <p>ここまで設定すっればロードバランシング設定は完了です。でも実際にウェブサーバを運用すればロードバランシングだけ設定する場合にセッション共有がしなかったので、変な現象が発生します。。代表的に急にログアウトされる場合があります。</p> 
+  <p>なぜならtomcat1でログインしました。tomcat1にはログイン情報をsessionに入れ、session確認でログイン可否をチェックします。</p> 
+  <p>でも、tomcat2にはログインセッションがないので、tomcat1からtomcat2に変更されたらセッションが違いのでログアウトされる現象になります。</p> 
+  <p>&nbsp;</p> 
+  <p>それでtomcat1とtomcat2のセッションを共有しなければならないですが、それをセッションクラスタリングと言います。</p> 
+  <p>tomcatの以前のバージョンにはセッションクラスタリング設定がかなり複雑だったんです。でも、私はtomcat 9で確認しましたが、Clusterがコメントされていることを解除することだけでセッションクラスタリングが開始します。</p> 
+  <pre><code class="language-xml" data-type="server.xml">...
+&lt;Cluster className="org.apache.catalina.ha.tcp.SimpleTcpCluster"/&gt;
+...
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/313/2160_003.png" style="width: 846px;" data-filename="003.png"><br></p> 
+  <p>そして各、web.xmlにタグ要素を一つ追加しましょう。</p> 
+  <pre><code class="language-xml" data-type="">...
+&lt;distributable/&gt;
+...
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/313/2161_004.png" data-filename="004.png" style="width: 430px;"><br></p> 
+  <p>私はテストのため、tomcat1のindexファイルにはserver1と表示するし、tomcat2のindexファイルにはserver2と表示しました。</p> 
+  <pre><code class="language-java" data-type="">import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+ 
+@WebServlet("/Index")
+public class Index extends HttpServlet {
+  private static final long serialVersionUID = 1L;
+ 
+  public Index() {
+    // TODO Auto-generated constructor stub
+  }
+ 
+  protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    HttpSession s = request.getSession();
+    // query stringでsessionという値を受け取る。
+    String session = request.getParameter("session");
+    // sessionがnullならそのままに追加
+    if (session != null &amp;&amp; session.length() &gt; 0) {
+      // sessionパラメータがclearならセッションをクリア
+      if ("clear".equals(session)) {
+        s.setAttribute("session", null);
+      } else {
+        // sessionパラメータをセッションに格納
+        s.setAttribute("session", session);
+      }
+    }
+    response.getWriter().append("Server1\r\n");
+ 
+    Object obj = s.getAttribute("session");
+    // sessionというキーがセッションが存在すれば画面に表示する。
+    if (obj != null) {
+      response.getWriter().append(obj.toString());
+    }
+  }
+  // POSTタイプはGETタイプと同じ処理
+  protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    doGet(request, response);
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/313/2162_005.png" style="width: 339px;" data-filename="005.png"><br></p> 
+  <p style="text-align:left;"><img src="./contents/313/2163_006.png" style="width: 348px;" data-filename="006.png"><br></p> 
+  <p>私が様々なブラウザで接続するとserver1という場合もあるし、server2という場合もあります。apacheでトラフィックによりtomcatを分散して呼び出します。</p> 
+  <p>参考に私がtomcat1は8180でweb portを起動してtomcat2は8280ポートでweb portを起動しました。</p> 
+  <p style="text-align:left;"><img src="./contents/313/2164_007.png" data-filename="007.png" style="width: 452px;"><br></p> 
+  <p>server1でsessionをtestの値で格納しましたが、server2でもsession値があることを確認できます。</p> 
+  <p style="text-align:left;"><img src="./contents/313/2165_008.png" style="width: 848px;" data-filename="008.png"><br></p> 
+  <p>ログでもセッションクラスタリングが動いていることを確認できます。</p> 
+  <p>そして先に設定したmod_jk状態ページを確認しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/313/2166_009.png" style="width: 848px;" data-filename="009.png"><br></p> 
+  <p>こんなにajp13でtomcatが二つが付いていることを確認できます。</p> 
+  <p>&nbsp;</p> 
+  <p>ここで私がtomcat2サーバを停止しました。また、mod_jkをみればworker2がIDLEになったことを確認できます。IDLEならサーバが落ちたっていう意味ではないですが、応答なしという意味ですね。</p> 
+  <p style="text-align:left;"><img src="./contents/313/2167_010.png" data-filename="010.png" style="width: 848px;"><br></p> 
+  <p>また、tomcat2を起動すればしっかり作動します。</p> 
+  <p style="text-align:left;"><img src="./contents/313/2168_011.png" data-filename="011.png" style="width: 848px;"><br></p> 
+  <p>この意味はどの側でサーバが問題になって接続できない状況になっても、残りサーバがしっかり作動するとサイトはいつでも正常作動するので、サービス運用上でも安定性を保証できます。</p> 
+  <p>apache2 2台 - tomcat 2台で運用するとサーバダウンの問題はほぼないでしょう。</p> 
+  <p>Reference - <a href="https://tomcat.apache.org/connectors-doc/common_howto/loadbalancers.html" target="_blank">https://tomcat.apache.org/connectors-doc/common_howto/loadbalancers.html</a></p> 
+  <p>Reference - <a href="https://tomcat.apache.org/connectors-doc/common_howto/workers.html" target="_blank">https://tomcat.apache.org/connectors-doc/common_howto/workers.html</a></p> 
+  <p>&nbsp;</p> 
+  <p>ここまでapache-tomcatでロードバランシング(Load balancing)する方法とセッションクラスタリング（セッション共有）に関する説明でした。</p> 
+  <p>&nbsp;</p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/312.html" target="_blank">[Window] Apacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=apache>#apache</a>,<a href=./search.html?query=tomcat>#tomcat</a>,<a href=./search.html?query=loadbalancing>#loadbalancing</a>,<a href=./search.html?query=sessionclustering>#sessionclustering</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0105">Devlopment note / Window</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/313.html'>[Window] apache-tomcatでロードバランシング(Load balancing)する方法とセッションクラスタリング（セッション共有）</a><span>2021/11/05 16:58:45</span></li><li><a href='https://www.nowonbun.com/312.html'>[Window] Apacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法</a><span>2021/11/05 16:55:05</span></li><li><a href='https://www.nowonbun.com/273.html'>[Window] MariaDBをインストールする方法</a><span>2021/10/08 18:56:05</span></li><li><a href='https://www.nowonbun.com/187.html'>[Window] WindowでFTPサーバを構築する方法</a><span>2020/03/19 03:27:22</span></li><li><a href='https://www.nowonbun.com/93.html'>[Window] Apacheをインストール方法、サービスに登録する方法。</a><span>2019/10/18 07:36:51</span></li><li><a href='https://www.nowonbun.com/1.html'>[Window] WindowでExplorerのContext menuを修正する方法。</a><span>2019/07/01 01:42:41</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/314.html'>[Design pattern] 3-3. コマンドパターン(Command pattern)</a><span>2021/11/05 17:01:42</span></li><li><a href='https://www.nowonbun.com/313.html'>[Window] apache-tomcatでロードバランシング(Load balancing)する方法とセッションクラスタリング（セッション共有）</a><span>2021/11/05 16:58:45</span></li><li><a href='https://www.nowonbun.com/312.html'>[Window] Apacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法</a><span>2021/11/05 16:55:05</span></li><li><a href='https://www.nowonbun.com/311.html'>[PHP] Apache環境の同じホスト中でPHPとJava(Servlet)を同時に起動、運用する方法</a><span>2021/11/05 16:52:04</span></li><li><a href='https://www.nowonbun.com/310.html'>[C#] 61. ウィンドウフォーム(Window form)でスレッド(Thread)を使い方、クロススレッド問題解決</a><span>2021/11/04 19:29:51</span></li><li><a href='https://www.nowonbun.com/309.html'>[Design pattern] 3-2. 責任の連鎖パターン(Chain of responsibility pattern)</a><span>2021/11/04 19:27:58</span></li><li><a href='https://www.nowonbun.com/308.html'>[Design pattern] 3-1. ストラテジーパターン(Strategy pattern)</a><span>2021/11/03 18:38:52</span></li><li><a href='https://www.nowonbun.com/307.html'>[C#] 60. ウィンドウフォーム(Window form)のイベント設定する方法</a><span>2021/11/02 21:18:08</span></li><li><a href='https://www.nowonbun.com/306.html'>[Design pattern] 2-7. ファサードパターン(Facade pattern)</a><span>2021/11/02 19:32:31</span></li><li><a href='https://www.nowonbun.com/305.html'>[Design pattern] 2-6. プロキシパターン(Proxy pattern)</a><span>2021/11/01 19:42:44</span></li><li><a href='https://www.nowonbun.com/304.html'>[Design pattern] 2-5. フライウェイトパターン(Flyweight pattern)</a><span>2021/10/29 19:48:27</span></li><li><a href='https://www.nowonbun.com/303.html'>[C#] 59. ウィンドウフォーム(Window form)にコントロール(Control)を使い方法</a><span>2021/10/29 19:45:43</span></li><li><a href='https://www.nowonbun.com/302.html'>[Design pattern] 2-4. デコレーターパターン(Decorator pattern)</a><span>2021/10/28 20:11:13</span></li><li><a href='https://www.nowonbun.com/301.html'>[C#] 58. ウィンドウフォーム(Window form)を作成する方法、そしてウィンドウメッセージとキュー</a><span>2021/10/27 20:35:44</span></li><li><a href='https://www.nowonbun.com/300.html'>[Design pattern] 2-3. ブリッジパターン(Bridge pattern)</a><span>2021/10/27 20:32:21</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/313.html';this.page.identifier = 'NOWONBUN00313';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>

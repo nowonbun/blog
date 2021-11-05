@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/312.html"},"url":"https:\/\/www.nowonbun.com\/312.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Window] Apache\u3067mod_jk\u3068mod_proxy\u306e\u5dee\u7570\u3001apache\u3067tomcat\u306ewebsocket\u306e\u30d7\u30ed\u30ad\u30b7\u30d5\u30a9\u30fc\u30ef\u30fc\u30c9\u3059\u308b\u65b9\u6cd5","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u0026amp;nbsp;\u3053\u306e\u6295\u7a3f\u306fapache\u3067mod_jk\u3068mod_proxy\u306e\u5dee\u7570\u3001apache\u3067tomcat\u306ewebsocket\u306e\u30d7\u30ed\u30ad\u30b7\u30d5\u30a9\u30fc\u30ef\u30fc\u30c9\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u0026amp;nbsp;\u4ee5\u524d\u306btomcat\u3068apache\u3092\u9023\u643a\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u305f\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002link - [centos] apache\u3068tomcat\u306e\u9023\u643alink - [php] apache\u74b0\u5883\u306e\u540c\u3058\u30db\u30b9\u30c8\u4e2d\u3067php\u3068java(servlet)\u3092\u540c\u6642\u306b\u8d77\u52d5\u3001\u904b\u7528\u3059\u308b\u65b9\u6cd5\u0026amp;nbsp;\u4e0a\u306e\u30ea\u30f3\u30af\u3092\u898b\u308b\u3068apache\u3068tomcat\u3092\u9023\u643a\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3057\u3066mod_jk\u3092\u5229\u7528\u3059\u308b\u65b9\u6cd5\u304c\u3042\u308b\u3057\u3001mod_proxy\u3092\u5229\u7528\u3059\u308b\u65b9\u6cd5\u304c\u3042\u308a\u307e\u3059\u3002\u59cb\u3081\u306e\u30ea\u30f3\u30af\u306fmod_jk\u3067apache\u3068tomcat\u3092\u9023\u643a\u3059\u308b\u65b9\u6cd5\u3067\u8aac\u660e\u3057\u305f\u3057\u3001\u4e8c\u3064\u76ee\u306fmod_proxy\u3067apache\u3068tomcat\u3092\u9023\u643a\u3057\u3066complex language\u3092\u4f7f\u3046\u65b9\u6cd5\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u307e\u3057\u305f\u3002\u0026amp;nbsp;\u4e8c\u3064\u306e\u9023\u643a\u65b9\u6cd5\u306b\u95a2\u3057\u3066\u5404\u306e\u7279\u5fb4\u304c\u3042\u308a\u307e\u3059\u304c\u3001mod_jk\u3067\u9023\u643a\u3059\u308b\u65b9\u304capache\u3068tomcat\u3092\u5b8c\u5168\u306b\u9023\u7d50\u3059\u308b\u3053\u3068\u3067\u3059\u3002\u3064\u307e\u308a\u3001\u4eee\u60f3\u30c7\u30a3\u30ec\u30af\u30c8\u30ea\u3092\u4f5c\u6210\u3059\u308b\u306a\u3089apache\u3060\u3051\u8a2d\u5b9a\u3059\u308b\u3053\u3068\u3067\u306f\u306a\u304f\u3001tomcat\u306b\u3082\u8a2d\u5b9a\u3092\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u3002\u3082\u3061\u308d\u3093\u3001apache\u306b\u3082\u4eee\u60f3\u30c7\u30a3\u30ec\u30af\u30c8\u30ea\u3092\u8a2d\u5b9a\u3059\u308b\u3053\u3068\u304c\u53ef\u80fd\u3067\u3059\u304c\u3001\u69d8\u3005\u306a\u554f\u984c\u304c\u767a\u751f\u3059\u308b\u53ef\u80fd\u6027\u304c\u3042\u308a\u307e\u3059\u3002mod_jk\u3067\u9023\u643a\u3057\u305fvirtualhost\u3067\u3059\u304c\u3001\u3053\u3053\u3067\u79c1\u304c\u300cjkmount \/* websocketex\u300d\u3092\u300cjkmount\u3000\/java\/* websocketex\u300d\u306b\u8a2d\u5b9a\u3092\u5909\u308f\u308b\u3068\u300clocalhost\/java\u300d\u3084\u300clocalhost:8009\/\u300d\u3092\u30d5\u30a9\u30fc\u30ef\u30fc\u30c9\u3059\u308b\u3053\u3068\u3067\u306f\u306a\u304f\u3001\u300clocalhost:8009\/java\u300d\u3092\u6307\u3059\u3053\u3068\u306b\u306a\u308a\u307e\u3059\u3002\u3064\u307e\u308a\u3001tomcat\u306b\u3082\u4eee\u60f3\u30c7\u30a3\u30ec\u30af\u30c8\u30ea\u3092\u5408\u308f\u305b\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u3002\u3053\u306e\u3088\u3046\u306b\u8a2d\u5b9a\u3059\u308b\u3068\u304b\u306a\u308a\u8907\u96d1\u306b\u306a\u308a\u307e\u3059\u3002\u306a\u305c\u306a\u3089\u30eb\u30fc\u30c8\u306f\u4eee\u60f3\u30c7\u30a3\u30ec\u30af\u30c8\u30ea\u306b\u4f7f\u3046\u3053\u3068\u304c\u3067\u304d\u306a\u304f\u306a\u3063\u305f\u304b\u3089\u3067\u3059\u3002\u3067\u3082\u3001complex language\u306b\u306f\u30eb\u30fc\u30c8(\/)\u3092php\u3067\u4f7f\u3063\u3066\u300cproxypass \/java ajp:\/\/localhost:8009\/\u300d\u3092\u4f7f\u3046\u5834\u5408\u306f\u300clocalhost\/java\u300d\u304c\u300clocalhost:8009\/\u300d\u306b\u30d5\u30a9\u30fc\u30ef\u30fc\u30c9\u3059\u308b\u3053\u3068\u306b\u306a\u308a\u307e\u3059\u3002\u3064\u307e\u308a\u3001tomcat","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2021-11-05T16:55:05.000+09:00","dateModified":"2021-11-05T16:56:55.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Devlopment note / Window" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。&amp;nbsp;この投稿はapacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法に関する説明です。&amp;nbsp;以前にtomcatとapacheを連携する方法に関して説明したことがあります。link - [centos] apacheとtomcatの連携link - [php] apache環境の同じホスト中でphpとjava(servlet)を同時に起動、運用する方法&amp;nbsp;上のリンクを見るとapacheとtomcatを連携する方法に関してmod_jkを利用する方法があるし、mod_proxyを利用する方法があります。始めのリンクはmod_jkでapacheとtomcatを連携する方法で説明したし、二つ目はmod_proxyでapacheとtomcatを連携してcomplex languageを使う方法に関して説明しました。&amp;nbsp;二つの連携方法に関して各の特徴がありますが、mod_jkで連携する方がapacheとtomcatを完全に連結することです。つまり、仮想ディレクトリを作成するならapacheだけ設定することではなく、tomcatにも設定をしなければならないです。もちろん、apacheにも仮想ディレクトリを設定することが可能ですが、様々な問題が発生する可能性があります。mod_jkで連携したvirtualhostですが、ここで私が「jkmount /* websocketex」を「jkmount　/java/* websocketex」に設定を変わると「localhost/java」や「localhost:8009/」をフォーワードすることではなく、「localhost:8009/java」を指すことになります。つまり、tomcatにも仮想ディレクトリを合わせなければならないです。このように設定するとかなり複雑になります。なぜならルートは仮想ディレクトリに使うことができなくなったからです。でも、complex languageにはルート(/)をphpで使って「proxypass /java ajp://localhost:8009/」を使う場合は「localhost/java」が「localhost:8009/」にフォーワードすることになります。つまり、tomcat]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Window] Apacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法" />
+<link rel="canonical" href="https://www.nowonbun.com/312.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Window] Apacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。&amp;nbsp;この投稿はapacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法に関する説明です。&amp;nbsp;以前にtomcatとapacheを連携する方法に関して説明したことがあります。link - [centos] apacheとtomcatの連携link - [php] apache環境の同じホスト中でphpとjava(servlet)を同時に起動、運用する方法&amp;nbsp;上のリンクを見るとapacheとtomcatを連携する方法に関してmod_jkを利用する方法があるし、mod_proxyを利用する方法があります。始めのリンクはmod_jkでapacheとtomcatを連携する方法で説明したし、二つ目はmod_proxyでapacheとtomcatを連携してcomplex languageを使う方法に関して説明しました。&amp;nbsp;二つの連携方法に関して各の特徴がありますが、mod_jkで連携する方がapacheとtomcatを完全に連結することです。つまり、仮想ディレクトリを作成するならapacheだけ設定することではなく、tomcatにも設定をしなければならないです。もちろん、apacheにも仮想ディレクトリを設定することが可能ですが、様々な問題が発生する可能性があります。mod_jkで連携したvirtualhostですが、ここで私が「jkmount /* websocketex」を「jkmount　/java/* websocketex」に設定を変わると「localhost/java」や「localhost:8009/」をフォーワードすることではなく、「localhost:8009/java」を指すことになります。つまり、tomcatにも仮想ディレクトリを合わせなければならないです。このように設定するとかなり複雑になります。なぜならルートは仮想ディレクトリに使うことができなくなったからです。でも、complex languageにはルート(/)をphpで使って「proxypass /java ajp://localhost:8009/」を使う場合は「localhost/java」が「localhost:8009/」にフォーワードすることになります。つまり、tomcat]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/312.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Window] Apacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。&amp;nbsp;この投稿はapacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法に関する説明です。&amp;nbsp;以前にtomcatとapacheを連携する方法に関して説明したことがあります。link - [centos] apacheとtomcatの連携link - [php] apache環境の同じホスト中でphpとjava(servlet)を同時に起動、運用する方法&amp;nbsp;上のリンクを見るとapacheとtomcatを連携する方法に関してmod_jkを利用する方法があるし、mod_proxyを利用する方法があります。始めのリンクはmod_jkでapacheとtomcatを連携する方法で説明したし、二つ目はmod_proxyでapacheとtomcatを連携してcomplex languageを使う方法に関して説明しました。&amp;nbsp;二つの連携方法に関して各の特徴がありますが、mod_jkで連携する方がapacheとtomcatを完全に連結することです。つまり、仮想ディレクトリを作成するならapacheだけ設定することではなく、tomcatにも設定をしなければならないです。もちろん、apacheにも仮想ディレクトリを設定することが可能ですが、様々な問題が発生する可能性があります。mod_jkで連携したvirtualhostですが、ここで私が「jkmount /* websocketex」を「jkmount　/java/* websocketex」に設定を変わると「localhost/java」や「localhost:8009/」をフォーワードすることではなく、「localhost:8009/java」を指すことになります。つまり、tomcatにも仮想ディレクトリを合わせなければならないです。このように設定するとかなり複雑になります。なぜならルートは仮想ディレクトリに使うことができなくなったからです。でも、complex languageにはルート(/)をphpで使って「proxypass /java ajp://localhost:8009/」を使う場合は「localhost/java」が「localhost:8009/」にフォーワードすることになります。つまり、tomcat]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Window] Apacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(95)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(27)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(6)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(14)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(216)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(61)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(56)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(16)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0210" href="study_project_design.html">Project design<span class="category-item-count">(9)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/312.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Window] Apacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0105">Devlopment note / Window</a>    作成日付 : <span property="datePublished">2021/11/05 16:55:05</span>   修正日付 : <span property="dateModified">2021/11/05 16:56:55</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p>&nbsp;</p> 
+  <p>この投稿はApacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法に関する説明です。</p> 
+  <p>&nbsp;</p> 
+  <p>以前にTomcatとapacheを連携する方法に関して説明したことがあります。</p> 
+  <p>link - <a href="https://www.nowonbun.com/102.html" target="_blank">[CentOS] ApacheとTomcatの連携</a></p> 
+  <p>link - <a href="https://www.nowonbun.com/311.html" target="_blank">[PHP] Apache環境の同じホスト中でPHPとJava(Servlet)を同時に起動、運用する方法</a></p> 
+  <p>&nbsp;</p> 
+  <p>上のリンクを見るとapacheとtomcatを連携する方法に関してmod_jkを利用する方法があるし、mod_proxyを利用する方法があります。</p> 
+  <p>始めのリンクはmod_jkでapacheとtomcatを連携する方法で説明したし、二つ目はmod_proxyでapacheとtomcatを連携してcomplex languageを使う方法に関して説明しました。</p> 
+  <p>&nbsp;</p> 
+  <p>二つの連携方法に関して各の特徴がありますが、mod_jkで連携する方がapacheとtomcatを完全に連結することです。</p> 
+  <p>つまり、仮想ディレクトリを作成するならapacheだけ設定することではなく、tomcatにも設定をしなければならないです。もちろん、apacheにも仮想ディレクトリを設定することが可能ですが、様々な問題が発生する可能性があります。</p> 
+  <pre><code class="language-apache" data-type="httpd.conf">&lt;VirtualHost *:80&gt;
+  # ルート(/)を基づいてtomcatと連携した。
+  JkMount /* WebSocketEx
+  ServerName localhost
+&lt;/VirtualHost&gt;
+</code></pre> 
+  <pre><code class="language-properties" data-type="workers.properties">worker.list=WebSocketEx
+ 
+worker.WebSocketEx.port=8009
+worker.WebSocketEx.host=localhost
+worker.WebSocketEx.type=ajp13
+worker.WebSocketEx.lbfactor=1
+</code></pre> 
+  <p>mod_jkで連携したVirtualHostですが、ここで私が「JkMount /* WebSocketEx」を「JkMount　/java/* WebSocketEx」に設定を変わると「localhost/java」や「localhost:8009/」をフォーワードすることではなく、「localhost:8009/java」を指すことになります。</p> 
+  <p>つまり、tomcatにも仮想ディレクトリを合わせなければならないです。このように設定するとかなり複雑になります。なぜならルートは仮想ディレクトリに使うことができなくなったからです。</p> 
+  <pre><code class="language-apache" data-type="httpd.conf">&lt;VirtualHost *:80&gt;
+  ServerName localhost
+  ProxyRequests Off
+  ProxyPreserveHost On
+  ## javaと連結するajpアドレス
+  ProxyPass /java  ajp://localhost:8009/
+  ProxyPassReverse /java  ajp://localhost:8009/
+&lt;/VirtualHost&gt;
+</code></pre> 
+  <p>でも、complex languageにはルート(/)をphpで使って「ProxyPass /java ajp://localhost:8009/」を使う場合は「localhost/java」が「localhost:8009/」にフォーワードすることになります。</p> 
+  <p>つまり、tomcatのajpアドレスだけ合わせるとその以外にtomcatには別の仮想ディレクトリ設定が必要がないです。</p> 
+  <p>&nbsp;</p> 
+  <p>そうするとここでmod_jkよりtomcat設定変更が必要ないmod_proxyを連結する方が便利ではないかと思います。</p> 
+  <p>(mod_proxyはapacheの基本モジュールだし、mod_jkの場合はconnectorをダウンロードするべきな面倒もあります。)</p> 
+  <p>&nbsp;</p> 
+  <p>でも、mod_jkの場合はapacheとtomcat間の2進パケット転送サイズが64kbだし、mod_proxyは8kbです。つまり、性能側ではmod_jkがmod_proxyより圧倒的によいし、ロードバランシングすることも柔軟して適用することが可能です。</p> 
+  <p>(ajpはapacheとtomcat間の2進パケットですが、結局にapacheとtomcat間に内部通信を利用して送受信することです。)</p> 
+  <p>link - <a href="https://javafatihk.blogspot.com/2014/11/modjk-modproxy-and-modproxyajp.html" target="_blank">http://javafatihk.blogspot.com/2014/11/modjk-modproxy-and-modproxyajp.html</a></p> 
+  <p>&nbsp;</p> 
+  <p>一つのサーバには様々な言語の特性を使うためにmod_proxyが良いと思いますが、トラフィックが多い数多いサーバや性能が考慮することならmod_jkを使うことが良いでしょう。(トラフィックが多いウェブサービスなら1kb差異は大きい差異です。)</p> 
+  <p>でも、そのように認知したことはapache 2.2の時代の話です。現在はapacheのバージョンが2.4で以前より良く改善したと聞きました。(最近は性能差異が大きくないと言いますね。そうするとmod_proxyが便利だから選択肢の余地がないけど。。。)</p> 
+  <p>link - <a href="https://cwiki.apache.org/confluence/display/TOMCAT/Connectors" target="_blank">https://cwiki.apache.org/confluence/display/TOMCAT/Connectors</a></p> 
+  <p>&nbsp;</p> 
+  <p>そうするとapacheとtomcat間にwebsocketを連結しましょう。</p> 
+  <p>実はこれを説明するためにmod_jkとmod_proxyの特性が必要です。</p> 
+  <p>&nbsp;</p> 
+  <p>websocketはウェブサーバとブラウザ間に同じhttpプロトコールを利用することですが、ウェブの場合は非同期(要請応答した後、ソケット接続が切り捨てる。)、WebSocketは同期(接続した後にも連結を保持)のソケット通信方式です。</p> 
+  <p>apacheとtomcat間のajpプロトコールは同期通信方式ではありません。なので別に連結する方法が必要です。</p> 
+  <p>&nbsp;</p> 
+  <p>まず、トムキャット側のJavaソースは以前にWebSocketに関して説明したことがあるので、ソースをそのままに使います。</p> 
+  <p>link - <a href="https://www.nowonbun.com/168.html" target="_blank">[Java] WebSocket (ウェブソケット)</a></p> 
+  <pre><code class="java" data-type="websocket.java">import javax.websocket.OnClose;
+import javax.websocket.OnError;
+import javax.websocket.OnMessage;
+import javax.websocket.OnOpen;
+import javax.websocket.server.ServerEndpoint;
+ 
+// WebSocketのホストアドレス設定
+@ServerEndpoint("/websocket")
+public class Websocket {
+  // WebSocket serverにブラウザ(client)が接続すれば呼ばれる関数。
+  @OnOpen
+  public void handleOpen() {
+    // コンソールにメッセージを出力する。
+    System.out.println("client is now connected...");
+  }
+  // WebSocket serverにブラウザ(client)がメッセージを転送すれば呼ばれる関数。
+  @OnMessage
+  public String handleMessage(String message) {
+    // コンソールに受け取ったメッセージを出力する。
+    System.out.println("receive from client : " + message);
+    // クライアントに転送するようなエコメッセージを作成する。
+    String replymessage = "echo "+ message;
+    // コンソールにエコメッセージを出力する。
+    System.out.println("send to client : " + replymessage);
+    // ブラウザにエコメッセージを転送する。
+    return replymessage;
+  }
+  // WebSocket serverにブラウザ(client)が切断すれば呼ばれる関数。
+  @OnClose
+  public void handleClose() {
+    // コンソールにメッセージを出力する。
+    System.out.println("client is now disconnected...");
+  }
+  // WebSocket serverにブラウザ(client)がエラーが発生すれば呼ばれる関数。
+  @OnError
+  public void handleError(Throwable t) {
+    // コンソールにエラーメッセージを表示する。
+    t.printStackTrace();
+  }
+}
+</code></pre> 
+  <pre><code class="html" data-type="index.jsp">&lt;%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;Web Socket Example&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;form&gt;
+      &lt;!-- 送信メッセージを作成するテキストボックス --&gt;
+      &lt;input id="textMessage" type="text"&gt;
+      &lt;!-- メッセージを送信するボタン --&gt;
+      &lt;input onclick="sendMessage()" value="Send" type="button"&gt;
+      &lt;!-- WebSocket終了(切断)するボタン --&gt;
+      &lt;input onclick="disconnect()" value="Disconnect" type="button"&gt;
+    &lt;/form&gt;
+    &lt;br /&gt;
+    &lt;!-- コンソール役をするテキストアリア、受信メッセージも表示する。 --&gt;
+    &lt;textarea id="messageTextArea" rows="10" cols="50"&gt;&lt;/textarea&gt;
+    &lt;script type="text/javascript"&gt;
+      // 「WebSocketEx」はプロジェクト名
+      // 「websocket」ホスト名
+      // WebSocketオブジェクト生成(接続開始)
+      //　var webSocket = new WebSocket("ws://localhost:8080/WebSocketEx/websocket");
+      // apacheに接続するためには8080ではなく80(apacheで設定したポート)に接続する。
+      var webSocket = new WebSocket("ws://localhost/WebSocketEx/websocket");
+      // コンソールのテキストアリア
+      var messageTextArea = document.getElementById("messageTextArea");
+      // WebSocketが接続成功になれば呼ばれる関数。
+      webSocket.onopen = function(message) {
+        // コンソールにメッセージ出力
+        messageTextArea.value += "Server connect...\n";
+      };
+      // WebSocketが切断なれば呼ばれる関数。
+      webSocket.onclose = function(message) {
+        // コンソールにメッセージ出力
+        messageTextArea.value += "Server Disconnect...\n";
+      };
+      // WebSocketからエラーが発生する時に呼ばれる関数。
+      webSocket.onerror = function(message) {
+        // コンソールにメッセージ出力
+        messageTextArea.value += "error...\n";
+      };
+      // WebSocketからメッセージを受け取ったら呼ばれる関数。
+      webSocket.onmessage = function(message) {
+        // コンソールにメッセージ出力
+        messageTextArea.value += "Recieve From Server =&gt; "+message.data+"\n";
+      };
+     // Sendボタンを押下すると呼ばれる関数。
+    function sendMessage() {
+      // 送信メッセージを作成するテキストボックスのオブジェクトを取得する。
+      var message = document.getElementById("textMessage");
+      // コンソールにメッセージを出力
+      messageTextArea.value += "Send to Server =&gt; "+message.value+"\n";
+      // WebSocketにメッセージを送信する。
+      webSocket.send(message.value);
+      // 送信メッセージを作成するテクストボックスを初期化する。
+      message.value = "";
+    }
+    // Disconnectボタンを押下すると呼ばれる関数。
+    function disconnect() {
+      // WebSocket切断
+      webSocket.close();
+    }
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p>私はtomcatを基本ポートでhttpは8080、ajpは8009で設定しました。apacheの場合は80で設定しました。</p> 
+  <p>ウェブソケットで接続するアドレスはapacheを通ってtomcatに接続しなければならないので80ポートで接続します。</p> 
+  <p>&nbsp;</p> 
+  <p>また、apacheの設定に戻りましょう。</p> 
+  <p>ここではmod_jkで設定するつもりですが、以前の投稿はWindowだはなく、CentOSでmod_jkを連携する方法に関して説明しました。</p> 
+  <p>(参考でmod_proxyを使う人がいらっしゃるとwebsocketは設定はmod_jkとmod_proxyが設定が同じなので、mod_jk設定は飛び越えて下のwebsocket設定部分から見ると良いでしょう。(link - <a href="#apache_websocket_flag">apache websocket設定</a>)</p> 
+  <p>&nbsp;</p> 
+  <p>今回はWindowで設定をします。</p> 
+  <p>Windowバージョンのmod_jkは別にコンパイルする必要なく、apacheloungeからダウンロードが可能です。</p> 
+  <p>link - <a href="https://www.apachelounge.com/download/" target="_blank">https://www.apachelounge.com/download/</a></p> 
+  <p style="text-align:left;"><img src="./contents/312/2150_001.png" data-filename="001.png" style="width: 811px;"><br></p> 
+  <p>ダウンロードしたら圧縮ファイルの中でmod_jk.soファイルがありますが、apacheのmodulesフォルダにコピーしましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/312/2151_002.png" data-filename="002.png" style="width: 270px;"><br></p> 
+  <p>その後からはCentOSと設定が同じです。</p> 
+  <p>link - <a href="https://www.nowonbun.com/102.html" target="_blank">[CentOS] ApacheとTomcatの連携</a></p> 
+  <pre><code class="language-apache" data-type="httpd.conf">LoadModule jk_module modules/mod_jk.so
+&lt;IfModule mod_jk.c&gt;	
+  JkWorkersFile conf/workers.properties
+  JkLogFile logs/mod_jk.log
+  JkLogLevel info
+  JkLogStampFormat "[%y %m %d %H:%M:%S]"
+&lt;/IfModule&gt;
+&lt;VirtualHost *:80&gt;
+  JkMount /* WebSocketEx
+  ServerName localhost
+&lt;/VirtualHost&gt;
+</code></pre> 
+  <pre><code class="language-properties" data-type="wokers.properties">worker.list=WebSocketEx
+ 	
+worker.WebSocketEx.port=8009	
+worker.WebSocketEx.host=localhost
+worker.WebSocketEx.type=ajp13	
+worker.WebSocketEx.lbfactor=1
+</code></pre> 
+  <p>このように設定してapacheとトムキャット(eclipseでのデバッグ環境)で起動します。</p> 
+  <p>&nbsp;</p> 
+  <p>そうしてウェブ環境をみるとwebsocketが接続ができません。</p> 
+  <p style="text-align:left;"><img src="./contents/312/2152_003.png" style="width: 524px;" data-filename="003.png"><br></p> 
+  <p>eclipseでコンソールログを見てもエラーが発生しています。</p> 
+  <p style="text-align:left;"><img src="./contents/312/2153_004.png" style="width: 785px;" data-filename="004.png"><br></p> 
+  <div id="apache_websocket_flag">
+   &nbsp;
+  </div> 
+  <p>「java.lang.UnsupportedOperationException: HTTP upgrade is not supported by this protocol」エラーが発生しました。実はこの問題で設定が必要です。</p> 
+  <p>&nbsp;</p> 
+  <p>ここで上で説明したとおりにapacheでwebsocket設定を追加しなければならないです。</p> 
+  <p>httpd.confからmod_proxy.soとmod_proxy_wstunnel.soのコメントを解除しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/312/2154_005.png" data-filename="005.png" style="width: 775px;"><br></p> 
+  <p>そして一番下の部分でwebsocketアドレスを入力します。</p> 
+  <pre><code class="language-apache" data-type="httpd.conf">&lt;LocationMatch "/WebSocketEx/websocket"&gt;
+  ProxyPass ws://localhost:8080/WebSocketEx/websocket retry=0
+&lt;/LocationMatch&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/312/2155_006.png" data-filename="006.png" style="width: 695px;"><br></p> 
+  <p>そしてapacheを再起動してブラウザに接続するとwebsocketが接続されることを確認できます。</p> 
+  <p style="text-align:left;"><img src="./contents/312/2156_007.png" data-filename="007.png" style="width: 507px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/312/2157_008.png" style="width: 726px;" data-filename="008.png"><br></p> 
+  <p>link - <a href="https://community.bitnami.com/t/tomcat-8-websockets/39477" target="_blank">https://community.bitnami.com/t/tomcat-8-websockets/39477</a></p> 
+  <p>&nbsp;</p> 
+  <p>ここまでApacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法に関する説明でした。</p> 
+  <p>&nbsp;</p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/273.html" target="_blank">[Window] MariaDBをインストールする方法</a></div><div class="post-category"><span>次の投稿▶</span><a href="https://www.nowonbun.com/313.html" target="_blank">[Window] apache-tomcatでロードバランシング(Load balancing)する方法とセッションクラスタリング（セッション共有）</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=window>#window</a>,<a href=./search.html?query=apache>#apache</a>,<a href=./search.html?query=mod_jk>#mod_jk</a>,<a href=./search.html?query=mod_proxy>#mod_proxy</a>,<a href=./search.html?query=tomcat>#tomcat</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0105">Devlopment note / Window</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/313.html'>[Window] apache-tomcatでロードバランシング(Load balancing)する方法とセッションクラスタリング（セッション共有）</a><span>2021/11/05 16:58:45</span></li><li><a href='https://www.nowonbun.com/312.html'>[Window] Apacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法</a><span>2021/11/05 16:55:05</span></li><li><a href='https://www.nowonbun.com/273.html'>[Window] MariaDBをインストールする方法</a><span>2021/10/08 18:56:05</span></li><li><a href='https://www.nowonbun.com/187.html'>[Window] WindowでFTPサーバを構築する方法</a><span>2020/03/19 03:27:22</span></li><li><a href='https://www.nowonbun.com/93.html'>[Window] Apacheをインストール方法、サービスに登録する方法。</a><span>2019/10/18 07:36:51</span></li><li><a href='https://www.nowonbun.com/1.html'>[Window] WindowでExplorerのContext menuを修正する方法。</a><span>2019/07/01 01:42:41</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/314.html'>[Design pattern] 3-3. コマンドパターン(Command pattern)</a><span>2021/11/05 17:01:42</span></li><li><a href='https://www.nowonbun.com/313.html'>[Window] apache-tomcatでロードバランシング(Load balancing)する方法とセッションクラスタリング（セッション共有）</a><span>2021/11/05 16:58:45</span></li><li><a href='https://www.nowonbun.com/312.html'>[Window] Apacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法</a><span>2021/11/05 16:55:05</span></li><li><a href='https://www.nowonbun.com/311.html'>[PHP] Apache環境の同じホスト中でPHPとJava(Servlet)を同時に起動、運用する方法</a><span>2021/11/05 16:52:04</span></li><li><a href='https://www.nowonbun.com/310.html'>[C#] 61. ウィンドウフォーム(Window form)でスレッド(Thread)を使い方、クロススレッド問題解決</a><span>2021/11/04 19:29:51</span></li><li><a href='https://www.nowonbun.com/309.html'>[Design pattern] 3-2. 責任の連鎖パターン(Chain of responsibility pattern)</a><span>2021/11/04 19:27:58</span></li><li><a href='https://www.nowonbun.com/308.html'>[Design pattern] 3-1. ストラテジーパターン(Strategy pattern)</a><span>2021/11/03 18:38:52</span></li><li><a href='https://www.nowonbun.com/307.html'>[C#] 60. ウィンドウフォーム(Window form)のイベント設定する方法</a><span>2021/11/02 21:18:08</span></li><li><a href='https://www.nowonbun.com/306.html'>[Design pattern] 2-7. ファサードパターン(Facade pattern)</a><span>2021/11/02 19:32:31</span></li><li><a href='https://www.nowonbun.com/305.html'>[Design pattern] 2-6. プロキシパターン(Proxy pattern)</a><span>2021/11/01 19:42:44</span></li><li><a href='https://www.nowonbun.com/304.html'>[Design pattern] 2-5. フライウェイトパターン(Flyweight pattern)</a><span>2021/10/29 19:48:27</span></li><li><a href='https://www.nowonbun.com/303.html'>[C#] 59. ウィンドウフォーム(Window form)にコントロール(Control)を使い方法</a><span>2021/10/29 19:45:43</span></li><li><a href='https://www.nowonbun.com/302.html'>[Design pattern] 2-4. デコレーターパターン(Decorator pattern)</a><span>2021/10/28 20:11:13</span></li><li><a href='https://www.nowonbun.com/301.html'>[C#] 58. ウィンドウフォーム(Window form)を作成する方法、そしてウィンドウメッセージとキュー</a><span>2021/10/27 20:35:44</span></li><li><a href='https://www.nowonbun.com/300.html'>[Design pattern] 2-3. ブリッジパターン(Bridge pattern)</a><span>2021/10/27 20:32:21</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/312.html';this.page.identifier = 'NOWONBUN00312';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
