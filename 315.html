@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/315.html"},"url":"https:\/\/www.nowonbun.com\/315.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [CentOS] Linux\u74b0\u5883(CentOS)\u3067Cassandra(NoSQL DB)\u3092\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3059\u308b\u65b9\u6cd5(DBeaver\u30d6\u30e9\u30a6\u30b6\u3067NoSQL\u4f7f\u3044\u65b9)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u0026amp;nbsp;\u3053\u306e\u6295\u7a3f\u306flinux\u74b0\u5883(centos)\u3067cassandra(nosql db)\u3092\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3059\u308b\u65b9\u6cd5(dbeaver\u30d6\u30e9\u30a6\u30b6\u3067nosql\u4f7f\u3044\u65b9)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u0026amp;nbsp;\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u4f5c\u6210\u3059\u308b\u3068\u4e3b\u306b\u4f7f\u3046\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306frdbms(\u95a2\u4fc2\u578b\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9)\u3060\u3068\u601d\u3044\u307e\u3059\u3002rdbms\u3060\u3068\u3044\u3046\u3068\u4f55\u306e\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u3068\u601d\u308f\u308c\u307e\u3059\u304c\u3001\u30aa\u30e9\u30af\u30eb\u3084ms sql server, mysql, mariadb, postgres\u306a\u3069\u306e\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306e\u610f\u5473\u3067\u3059\u3002\u3053\u306erdbms\u306f\u591a\u3044\u5229\u70b9\u304c\u3042\u308a\u307e\u3059\u3001\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u304c\u3057\u3084\u3059\u3044\u3057\u3001\u30af\u30a8\u30ea\u691c\u7d22\u3082\u65e9\u3044\u3057\u3001\u7ba1\u7406\u3082\u3057\u3084\u3059\u3044\u3057\u3001\u7b49\u3005\u306e\u3059\u3054\u304f\u826f\u3044\u5229\u70b9\u304c\u3042\u308a\u307e\u3059\u304c\u3001\u6b20\u70b9\u306f\u62e1\u5f35\u6027\u3068\u30c7\u30fc\u30bf\u91cf\u306b\u5bfe\u3059\u308b\u6027\u80fd\u304c\u3042\u308a\u307e\u3059\u3002\u6700\u8fd1\u306f\u30b5\u30fc\u30d0\u306e\u6027\u80fd\u306f\u904e\u53bb\u306b\u6bd4\u3079\u3066\u975e\u5e38\u306b\u3088\u304f\u306a\u308a\u307e\u3057\u3066\u3001\u5927\u5bb9\u91cf\u306e\u30c7\u30fc\u30bf\u3082rdbms\u3067\u51e6\u7406\u304c\u3067\u304d\u308b\u3088\u3046\u306b\u306a\u308a\u307e\u3057\u305f\u304c\u3001\u3067\u3082\u3001\u3044\u3064\u304b\u306f\u30c7\u30fc\u30bf\u91cf\u306b\u6bd4\u3079\u3066\u6027\u80fd\u304c\u9650\u754c\u306b\u5c4a\u304d\u307e\u3059\u3002\u8efd\u304f\u306brdbms\u306f\u4e00\u3064\u306e\u30b5\u30fc\u30d0\u3067\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3059\u308b\u306e\u3067\u30b5\u30fc\u30d0\u306e\u30cf\u30fc\u30c9\u30a6\u30a7\u30a2\u306e\u5bb9\u91cf\u306e\u9650\u754c\u306b\u5c4a\u304d\u307e\u3059\u3002\u305d\u306e\u3053\u3068\u3067rdbms\u3092\u62e1\u5f35\u3059\u308b\u3068\u601d\u3048\u3070\u3001\u305d\u306e\u3053\u3068\u304c\u7c21\u5358\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002\u30af\u30e9\u30b9\u30bf\u30ea\u30f3\u30b0\u3059\u308b\u306e\u306f\u4e00\u822c\u7684\u306b\u8a2d\u5b9a\u3059\u308b\u3053\u3068\u3082\u96e3\u3057\u3044\u3057\u3001\u7ba1\u7406\u3059\u308b\u3053\u3068\u3067\u3082\u7c21\u5358\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002\u3053\u306e\u6b20\u70b9\u3092\u89e3\u6c7a\u3059\u308b\u306e\u304cnosql\u3067\u3059\u3002\u0026amp;nbsp;\u3053\u306enosql\u306frdbms\u306e\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306b\u6163\u308c\u3066\u3044\u308b\u65b9\u304c\u4f7f\u3046\u306e\u306f\u3059\u3054\u304f\u4e0d\u4fbf\u3067\u3059\u306d\u3002join\u3082\u3067\u304d\u306a\u3044\u3057\u3001\u69d8\u3005\u306a\u5236\u7d04\u3082\u591a\u3044\u3067\u3059\u3002\u3067\u3082\u3001\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u91cf\u306b\u5bfe\u3059\u308b\u6027\u80fd\u3067\u3082\u554f\u984c\u306a\u3044\u3057\u3001\u62e1\u5f35\u6027\u3082\u3059\u3054\u304f\u3044\u3044\u3053\u3068\u306a\u306e\u3067\u5927\u5bb9\u91cf\u306e\u30c7\u30fc\u30bf\u3092\u6271\u3046\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u306a\u3089nosql\u3092\u4f7f\u3046\u3053\u3068\u3082\u60aa\u304f\u306a\u3044\u3067\u3057\u3087\u3046\u3002nosql\u3068rdbms\u306b\u95a2\u3059\u308b\u5dee\u7570\u3068\u8aac\u660e\u306f\u5225\u306e\u6295\u7a3f\u3067\u8a73\u7d30\u306b\u8aac\u660e\u3057\u307e\u3059\u3002\u0026amp;nbsp;nosql\u3082\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u7a2e\u985e\u304c\u591a\u3044\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u3067\u306fapache\u8ca1\u56e3\u306enosql\u306ecassandra\u3092\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3057\u307e\u3057\u3087\u3046\u3002\u307e\u305a\u3001nosql\u3092\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3059\u308b\u305f\u3081\u306b\u306fjava 1.8\u4ee5\u4e0a\u3068python 2.x\u3067\u3059\u3002java\u3092\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3057\u3066\u306f\u4ee5\u524d\u306e\u6295\u7a3f\u3067\u8aac\u660e\u3057\u305f\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002link - [centos] java \u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u0026amp;nbsp;python\u306e\u5834\u5408\u306f3.x\u304c\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3055\u308c\u305f\u3089cqlsh\u304c\u5b9f\u884c\u3055\u308c\u307e\u305b\u3093\u3002\u305d\u306e\u305f\u3081\u30012.x\u304c\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3055\u308c\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u3002\u79c1\u306fpython2\u304c\u3082\u3046\u30a4\u30f3","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2021-11-12T17:33:58.000+09:00","dateModified":"2021-11-12T17:36:39.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Devlopment note / Linux" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。&amp;nbsp;この投稿はlinux環境(centos)でcassandra(nosql db)をインストールする方法(dbeaverブラウザでnosql使い方)に関する説明です。&amp;nbsp;プログラムを作成すると主に使うデータベースはrdbms(関係型データベース)だと思います。rdbmsだというと何のデータベースと思われますが、オラクルやms sql server, mysql, mariadb, postgresなどのデータベースの意味です。このrdbmsは多い利点があります、インストールがしやすいし、クエリ検索も早いし、管理もしやすいし、等々のすごく良い利点がありますが、欠点は拡張性とデータ量に対する性能があります。最近はサーバの性能は過去に比べて非常によくなりまして、大容量のデータもrdbmsで処理ができるようになりましたが、でも、いつかはデータ量に比べて性能が限界に届きます。軽くにrdbmsは一つのサーバでインストールするのでサーバのハードウェアの容量の限界に届きます。そのことでrdbmsを拡張すると思えば、そのことが簡単ではありません。クラスタリングするのは一般的に設定することも難しいし、管理することでも簡単ではありません。この欠点を解決するのがnosqlです。&amp;nbsp;このnosqlはrdbmsのデータベースに慣れている方が使うのはすごく不便ですね。joinもできないし、様々な制約も多いです。でも、データベース量に対する性能でも問題ないし、拡張性もすごくいいことなので大容量のデータを扱うプロジェクトならnosqlを使うことも悪くないでしょう。nosqlとrdbmsに関する差異と説明は別の投稿で詳細に説明します。&amp;nbsp;nosqlもデータベース種類が多いです。この投稿ではapache財団のnosqlのcassandraをインストールしましょう。まず、nosqlをインストールするためにはjava 1.8以上とpython 2.xです。javaをインストールする方法に関しては以前の投稿で説明したことがあります。link - [centos] java インストール&amp;nbsp;pythonの場合は3.xがインストールされたらcqlshが実行されません。そのため、2.xがインストールされなければならないです。私はpython2がもうイン]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [CentOS] Linux環境(CentOS)でCassandra(NoSQL DB)をインストールする方法(DBeaverブラウザでNoSQL使い方)" />
+<link rel="canonical" href="https://www.nowonbun.com/315.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [CentOS] Linux環境(CentOS)でCassandra(NoSQL DB)をインストールする方法(DBeaverブラウザでNoSQL使い方)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。&amp;nbsp;この投稿はlinux環境(centos)でcassandra(nosql db)をインストールする方法(dbeaverブラウザでnosql使い方)に関する説明です。&amp;nbsp;プログラムを作成すると主に使うデータベースはrdbms(関係型データベース)だと思います。rdbmsだというと何のデータベースと思われますが、オラクルやms sql server, mysql, mariadb, postgresなどのデータベースの意味です。このrdbmsは多い利点があります、インストールがしやすいし、クエリ検索も早いし、管理もしやすいし、等々のすごく良い利点がありますが、欠点は拡張性とデータ量に対する性能があります。最近はサーバの性能は過去に比べて非常によくなりまして、大容量のデータもrdbmsで処理ができるようになりましたが、でも、いつかはデータ量に比べて性能が限界に届きます。軽くにrdbmsは一つのサーバでインストールするのでサーバのハードウェアの容量の限界に届きます。そのことでrdbmsを拡張すると思えば、そのことが簡単ではありません。クラスタリングするのは一般的に設定することも難しいし、管理することでも簡単ではありません。この欠点を解決するのがnosqlです。&amp;nbsp;このnosqlはrdbmsのデータベースに慣れている方が使うのはすごく不便ですね。joinもできないし、様々な制約も多いです。でも、データベース量に対する性能でも問題ないし、拡張性もすごくいいことなので大容量のデータを扱うプロジェクトならnosqlを使うことも悪くないでしょう。nosqlとrdbmsに関する差異と説明は別の投稿で詳細に説明します。&amp;nbsp;nosqlもデータベース種類が多いです。この投稿ではapache財団のnosqlのcassandraをインストールしましょう。まず、nosqlをインストールするためにはjava 1.8以上とpython 2.xです。javaをインストールする方法に関しては以前の投稿で説明したことがあります。link - [centos] java インストール&amp;nbsp;pythonの場合は3.xがインストールされたらcqlshが実行されません。そのため、2.xがインストールされなければならないです。私はpython2がもうイン]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/315.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CentOS] Linux環境(CentOS)でCassandra(NoSQL DB)をインストールする方法(DBeaverブラウザでNoSQL使い方)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。&amp;nbsp;この投稿はlinux環境(centos)でcassandra(nosql db)をインストールする方法(dbeaverブラウザでnosql使い方)に関する説明です。&amp;nbsp;プログラムを作成すると主に使うデータベースはrdbms(関係型データベース)だと思います。rdbmsだというと何のデータベースと思われますが、オラクルやms sql server, mysql, mariadb, postgresなどのデータベースの意味です。このrdbmsは多い利点があります、インストールがしやすいし、クエリ検索も早いし、管理もしやすいし、等々のすごく良い利点がありますが、欠点は拡張性とデータ量に対する性能があります。最近はサーバの性能は過去に比べて非常によくなりまして、大容量のデータもrdbmsで処理ができるようになりましたが、でも、いつかはデータ量に比べて性能が限界に届きます。軽くにrdbmsは一つのサーバでインストールするのでサーバのハードウェアの容量の限界に届きます。そのことでrdbmsを拡張すると思えば、そのことが簡単ではありません。クラスタリングするのは一般的に設定することも難しいし、管理することでも簡単ではありません。この欠点を解決するのがnosqlです。&amp;nbsp;このnosqlはrdbmsのデータベースに慣れている方が使うのはすごく不便ですね。joinもできないし、様々な制約も多いです。でも、データベース量に対する性能でも問題ないし、拡張性もすごくいいことなので大容量のデータを扱うプロジェクトならnosqlを使うことも悪くないでしょう。nosqlとrdbmsに関する差異と説明は別の投稿で詳細に説明します。&amp;nbsp;nosqlもデータベース種類が多いです。この投稿ではapache財団のnosqlのcassandraをインストールしましょう。まず、nosqlをインストールするためにはjava 1.8以上とpython 2.xです。javaをインストールする方法に関しては以前の投稿で説明したことがあります。link - [centos] java インストール&amp;nbsp;pythonの場合は3.xがインストールされたらcqlshが実行されません。そのため、2.xがインストールされなければならないです。私はpython2がもうイン]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [CentOS] Linux環境(CentOS)でCassandra(NoSQL DB)をインストールする方法(DBeaverブラウザでNoSQL使い方)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(96)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(27)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(6)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(23)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(14)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(216)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(61)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(56)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(16)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0210" href="study_project_design.html">Project design<span class="category-item-count">(9)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/315.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[CentOS] Linux環境(CentOS)でCassandra(NoSQL DB)をインストールする方法(DBeaverブラウザでNoSQL使い方)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0106">Devlopment note / Linux</a>    作成日付 : <span property="datePublished">2021/11/12 17:33:58</span>   修正日付 : <span property="dateModified">2021/11/12 17:36:39</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p>&nbsp;</p> 
+  <p>この投稿はLinux環境(CentOS)でCassandra(NoSQL DB)をインストールする方法(DBeaverブラウザでNoSQL使い方)に関する説明です。</p> 
+  <p>&nbsp;</p> 
+  <p>プログラムを作成すると主に使うデータベースはRDBMS(関係型データベース)だと思います。RDBMSだというと何のデータベースと思われますが、オラクルやMS sql server, mysql, MariaDB, Postgresなどのデータベースの意味です。</p> 
+  <p>このRDBMSは多い利点があります、インストールがしやすいし、クエリ検索も早いし、管理もしやすいし、等々のすごく良い利点がありますが、欠点は拡張性とデータ量に対する性能があります。</p> 
+  <p>最近はサーバの性能は過去に比べて非常によくなりまして、大容量のデータもRDBMSで処理ができるようになりましたが、でも、いつかはデータ量に比べて性能が限界に届きます。軽くにRDBMSは一つのサーバでインストールするのでサーバのハードウェアの容量の限界に届きます。</p> 
+  <p>そのことでRDBMSを拡張すると思えば、そのことが簡単ではありません。クラスタリングするのは一般的に設定することも難しいし、管理することでも簡単ではありません。この欠点を解決するのがNoSQLです。</p> 
+  <p>&nbsp;</p> 
+  <p>このNoSQLはRDBMSのデータベースに慣れている方が使うのはすごく不便ですね。Joinもできないし、様々な制約も多いです。</p> 
+  <p>でも、データベース量に対する性能でも問題ないし、拡張性もすごくいいことなので大容量のデータを扱うプロジェクトならNoSQLを使うことも悪くないでしょう。</p> 
+  <p>NoSQLとRDBMSに関する差異と説明は別の投稿で詳細に説明します。</p> 
+  <p>&nbsp;</p> 
+  <p>NoSQLもデータベース種類が多いです。この投稿ではapache財団のNoSQLのCassandraをインストールしましょう。</p> 
+  <p>まず、NoSQLをインストールするためにはJava 1.8以上とPython 2.xです。</p> 
+  <p>Javaをインストールする方法に関しては以前の投稿で説明したことがあります。</p> 
+  <p>link - <a href="https://www.nowonbun.com/100.html" target="_blank">[CentOS] Java インストール</a></p> 
+  <p>&nbsp;</p> 
+  <p>Pythonの場合は3.xがインストールされたらcqlshが実行されません。そのため、2.Xがインストールされなければならないです。</p> 
+  <pre><code class="language-shell" data-type="python install">sudo yum -y install python2
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/315/2173_001.png" data-filename="001.png" style="width: 717px;"><br></p> 
+  <p>私はpython2がもうインストールされています。</p> 
+  <p>&nbsp;</p> 
+  <p>これからCassandraをインストールするためにyum repositoryに追加しましょう。</p> 
+  <p>link - <a href="https://cassandra.apache.org/download/" target="_blank">https://cassandra.apache.org/download/</a></p> 
+  <pre><code class="language-shell" data-type="repo">vim /etc/yum.repos.d/cassandra.repo
+</code></pre> 
+  <pre><code class="language-ini" data-type="cassandra.repo">[cassandra]
+name=Apache Cassandra
+baseurl=https://downloads.apache.org/cassandra/redhat/311x/
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://www.apache.org/dist/cassandra/KEYS
+</code></pre> 
+  <p>ここでbaseurlにバージョン別で追加することができますが、40xはまだ、alphaバージョンなので311xバージョンでインストールします。(参考にCassandraはバージョン別で使い方が少し違います。)</p> 
+  <p style="text-align:left;"><img src="./contents/315/2174_002.png" style="width: 551px;" data-filename="002.png"><br></p> 
+  <p>上のrepoを作成してyumを利用してインストールしましょう。</p> 
+  <pre><code class="language-shell" data-type="install">yum -y install cassandra
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/315/2175_003.png" style="width: 681px;" data-filename="003.png"><br></p> 
+  <p>インストールが完了しました。多分、インストールすることで10分も掛からないと思います。</p> 
+  <p>参考 - インストールディレクトリ /var/lib/cassandra (もし、後で削除する時にここも一緒に削除しなければならないです。yumだけでは完全に削除ができません。)</p> 
+  <p>&nbsp;</p> 
+  <p>そしてCassandraを実行する前に様々な環境設定を修正しなければならないです。</p> 
+  <p>まず、起動する時に設定環境設定です。</p> 
+  <pre><code class="language-shell" data-type="edit">vim /etc/systemd/system/cassandra.service
+</code></pre> 
+  <pre><code class="language-ini" data-type="cassandra.service">[Unit]
+Description=Apache Cassandra
+After=network.target	
+[Service]
+PIDFile=/var/run/cassandra/cassandra.pid
+User=cassandra
+Group=cassandra
+ExecStart=/usr/sbin/cassandra -f -p /var/run/cassandra/cassandra.pid
+Restart=always	
+[Install]
+WantedBy=multi-user.target
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/315/2176_004.png" data-filename="004.png" style="width: 577px;"><br></p> 
+  <p>そしてcassandraの環境設定です。</p> 
+  <pre><code class="language-shell" data-type="conf">vim /etc/cassandra/conf/cassandra.yaml
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/315/2177_005.png" style="width: 536px;" data-filename="005.png"><br></p> 
+  <p>ファイルの真ん中ごろにauthenticatorがあります。</p> 
+  <p>現在は認証がパスワード無しで接続が可能になり、すべてのユーザが接続することになっています。</p> 
+  <p>これをPasswordAuthenticatorに修正します。パスワード接続する認証と意味です。</p> 
+  <p style="text-align:left;"><img src="./contents/315/2178_006.png" data-filename="006.png" style="width: 359px;"><br></p> 
+  <p>今回は設定はリモート接続を可能にする設定です。</p> 
+  <p>&nbsp;</p> 
+  <p>初期設定はlocalhostに設定して、broadcast_rpc_addressがコメントになっています。</p> 
+  <p style="text-align:left;"><img src="./contents/315/2179_007.png" style="width: 321px;" data-filename="007.png"><br></p> 
+  <p>この部分のrpc_addressを0.0.0.0に設定してbroadcast_rpc_addressのコメントを解除して1.2.3.4に設定します。</p> 
+  <p style="text-align:left;"><img src="./contents/315/2180_008.png" data-filename="008.png" style="width: 272px;"><br></p> 
+  <p>Cassandraの設定は完了しました。Cassandraを起動しましょう。</p> 
+  <pre><code class="language-shell" data-type="start">sudo systemctl daemon-reload
+sudo systemctl start cassandra.service
+sudo systemctl enable cassandra
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/315/2181_009.png" data-filename="009.png" style="width: 848px;"><br></p> 
+  <p>systemctl status cassandra.serviceのコマンドでactiveになっているかを確認してnodetool statusで現在にCassandraの状態を確認できます。</p> 
+  <p>ここまで問題なかったらインストールが完了したことです。</p> 
+  <p>&nbsp;</p> 
+  <p>これからデータベース(Keyspace)を作成してユーザを追加しましょう。</p> 
+  <p>初期ユーザとパスワードはcassandra//cassandraです。</p> 
+  <pre><code class="language-shell" data-type="cqlsh">cqlsh -u cassandra -p cassandra
+</code></pre> 
+  <p>まず、ユーザを作成します。そしてcassandraのIDを削除します。初期IDがあるとセキュリティで問題になりますね。</p> 
+  <pre><code class="language-pgsql" data-type="cassandra.sql">-- ユーザ追加、SUPERUSER権限追加
+CREATE USER nowonbun WITH PASSWORD 'a12345' SUPERUSER;
+-- パスワード変更と権限解除
+ALTER USER cassandra WITH PASSWORD 'a12345' NOSUPERUSER;
+-- ユーザ削除
+DROP USER cassandra
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/315/2182_010.png" data-filename="010.png" style="width: 688px;"><br></p> 
+  <p>参考に接続中の状態ならユーザを削除できません。それでユーザ生成した後に接続終了して生成したIDでログインした後cassandraユーザを削除します。</p> 
+  <p>&nbsp;</p> 
+  <p>これからデータベース(Keyspace)を削除します。NoSQLはデータベース(スキーマ)をKeyspaceと言います。</p> 
+  <pre><code class="language-pgsql" data-type="cassandra.sql">-- 一つのData Centerを利用(サーバを1台に運用)
+CREATE KEYSPACE Test WITH REPLICATION = {'class' : 'SimpleStrategy', 'replication_factor' : 3};
+-- 二つ以上のData Centerを利用する場合の設定(サーバを2台以上に運用)
+CREATE KEYSPACE Test WITH REPLICATION = {'class' : 'NetworkTopologyStrategy', 'datacenter1' : 1};
+</code></pre> 
+  <p>一応、テストでインストールすることなのでSimpleStrategyで作成します。</p> 
+  <p style="text-align:left;"><img src="./contents/315/2183_011.png" data-filename="011.png" style="width: 848px;"><br></p> 
+  <p>ここまでカサンドラのインストールと設定は終わりました。</p> 
+  <p>&nbsp;</p> 
+  <p>これからはQuery browserで接続して使う方法です。</p> 
+  <p>NoSQLを使うことで大変なことの一つが良いQuery browser(クエリ探索機)がないことです。私の場合は以前にはsql developerやA5M2をよく使いまいs田が、このNoSQLのためDBeaverに変わりました。</p> 
+  <p>変わった理由はNoSQLのブラウザ機能を支援することですね。</p> 
+  <p>link - <a href="https://www.nowonbun.com/255.html" target="_blank">[Tools] Dbeaver(無料Sql queryブラウザツール)</a></p> 
+  <p>&nbsp;</p> 
+  <p>でも、DBeaverを実行するとNosql connectionはありません。ドライバを追加しなければならないです。</p> 
+  <p style="text-align:left;"><img src="./contents/315/2184_012.png" data-filename="012.png" style="width: 602px;"><br></p> 
+  <p>私の場合はもう追加されていますが、始めに使う方ならないと思います。DatabaseのメニュータブからDriver Managerでnewを追加しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/315/2185_013.png" data-filename="013.png" style="width: 422px;"><br></p> 
+  <p>Driver Nameは適当に作成して、Class NameとUrl Templateは下記とおりに作成します。</p> 
+  <pre><code class="language-properties" data-type="configure"># Class Name
+org.apache.cassandra2.cql.jdbc.CassandraDriver
+# Url Template
+jdbc:cassandra://{host}[:{port}]/{database}
+</code></pre> 
+  <p>そしてポートは9042で設定します。9042はカサンドラの基本ポートです。</p> 
+  <p style="text-align:left;"><img src="./contents/315/2186_014.png" data-filename="014.png" style="width: 675px;"><br></p> 
+  <p>そしてAdd Artifactをクリックしてドライバを設定します。</p> 
+  <p>link - <a href="https://mvnrepository.com/artifact/com.github.adejanovski/cassandra-jdbc-wrapper/3.1.0" target="_blank">https://mvnrepository.com/artifact/com.github.adejanovski/cassandra-jdbc-wrapper/3.1.0</a></p> 
+  <p style="text-align:left;"><img src="./contents/315/2187_015.png" data-filename="015.png" style="width: 458px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/315/2188_016.png" data-filename="016.png" style="width: 316px;"><br></p> 
+  <p>Driverを追加してConnectionを追加すると我々が追加したCassandraがあります。</p> 
+  <p style="text-align:left;"><img src="./contents/315/2189_017.png" style="width: 600px;" data-filename="017.png"><br></p> 
+  <p>そして我々がインストールしたCassandraの情報で設定します。</p> 
+  <p style="text-align:left;"><img src="./contents/315/2190_018.png" data-filename="018.png" style="width: 600px;"><br></p> 
+  <p>Tset Connectionを実行しましょう。(Driver Download画面に出るとそのままにインストールしたら良いでしょう。)</p> 
+  <p style="text-align:left;"><img src="./contents/315/2191_019.png" data-filename="019.png" style="width: 598px;"><br></p> 
+  <p>そしてテーブルを一つ生成してテストをしましょう。</p> 
+  <pre><code class="language-pgsql" data-type="cassandra.sql">-- Ketspace設定
+use test;
+-- テーブル生成
+create table test(
+	idx bigint,
+	contents text,
+	primary key(idx)
+);
+-- データ入力
+insert into test.test (idx,contents) values(1, 'hello world');
+-- 検索
+select * from test.test;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/315/2192_020.png" style="width: 546px;" data-filename="020.png"><br></p> 
+  <p style="text-align:left;"><img src="./contents/315/2193_021.png" style="width: 413px;" data-filename="021.png"><br></p> 
+  <p>Cassandraが実行していることとブラウザから接続してデータを取得することまでできることが確認できます。</p> 
+  <p>&nbsp;</p> 
+  <p>ここまでLinux環境(CentOS)でCassandra(NoSQL DB)をインストールする方法(DBeaverブラウザでNoSQL使い方)に関する説明でした。</p> 
+  <p>&nbsp;</p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/285.html" target="_blank">[CentOs] ジェンキンス(Jenkins)をインストールする方法</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=CentOS>#CentOS</a>,<a href=./search.html?query=Cassandra>#Cassandra</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0106">Devlopment note / Linux</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/315.html'>[CentOS] Linux環境(CentOS)でCassandra(NoSQL DB)をインストールする方法(DBeaverブラウザでNoSQL使い方)</a><span>2021/11/12 17:33:58</span></li><li><a href='https://www.nowonbun.com/285.html'>[CentOs] ジェンキンス(Jenkins)をインストールする方法</a><span>2021/10/18 18:28:58</span></li><li><a href='https://www.nowonbun.com/114.html'>[Ubuntu] PHPをインストール、Composer設定する方法</a><span>2019/11/13 07:32:21</span></li><li><a href='https://www.nowonbun.com/113.html'>[Ubuntu] テーマ(Arc)を変更する方法(tweak)</a><span>2019/11/12 07:32:13</span></li><li><a href='https://www.nowonbun.com/112.html'>[Ubuntu] Apache2をインストールする方法</a><span>2019/11/11 07:28:28</span></li><li><a href='https://www.nowonbun.com/111.html'>[Ubuntu] 「acquire the dpkg frontend lock」のエラーを解決方法</a><span>2019/11/10 22:19:34</span></li><li><a href='https://www.nowonbun.com/110.html'>[Ubuntu] JavaインストールとEclipseをインストールする方法</a><span>2019/11/08 07:29:55</span></li><li><a href='https://www.nowonbun.com/109.html'>[Ubuntu] MariaDB(Mysql)をインストールする方法</a><span>2019/11/07 07:50:58</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/315.html'>[CentOS] Linux環境(CentOS)でCassandra(NoSQL DB)をインストールする方法(DBeaverブラウザでNoSQL使い方)</a><span>2021/11/12 17:33:58</span></li><li><a href='https://www.nowonbun.com/314.html'>[Design pattern] 3-3. コマンドパターン(Command pattern)</a><span>2021/11/05 17:01:42</span></li><li><a href='https://www.nowonbun.com/313.html'>[Window] apache-tomcatでロードバランシング(Load balancing)する方法とセッションクラスタリング（セッション共有）</a><span>2021/11/05 16:58:45</span></li><li><a href='https://www.nowonbun.com/312.html'>[Window] Apacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法</a><span>2021/11/05 16:55:05</span></li><li><a href='https://www.nowonbun.com/311.html'>[PHP] Apache環境の同じホスト中でPHPとJava(Servlet)を同時に起動、運用する方法</a><span>2021/11/05 16:52:04</span></li><li><a href='https://www.nowonbun.com/310.html'>[C#] 61. ウィンドウフォーム(Window form)でスレッド(Thread)を使い方、クロススレッド問題解決</a><span>2021/11/04 19:29:51</span></li><li><a href='https://www.nowonbun.com/309.html'>[Design pattern] 3-2. 責任の連鎖パターン(Chain of responsibility pattern)</a><span>2021/11/04 19:27:58</span></li><li><a href='https://www.nowonbun.com/308.html'>[Design pattern] 3-1. ストラテジーパターン(Strategy pattern)</a><span>2021/11/03 18:38:52</span></li><li><a href='https://www.nowonbun.com/307.html'>[C#] 60. ウィンドウフォーム(Window form)のイベント設定する方法</a><span>2021/11/02 21:18:08</span></li><li><a href='https://www.nowonbun.com/306.html'>[Design pattern] 2-7. ファサードパターン(Facade pattern)</a><span>2021/11/02 19:32:31</span></li><li><a href='https://www.nowonbun.com/305.html'>[Design pattern] 2-6. プロキシパターン(Proxy pattern)</a><span>2021/11/01 19:42:44</span></li><li><a href='https://www.nowonbun.com/304.html'>[Design pattern] 2-5. フライウェイトパターン(Flyweight pattern)</a><span>2021/10/29 19:48:27</span></li><li><a href='https://www.nowonbun.com/303.html'>[C#] 59. ウィンドウフォーム(Window form)にコントロール(Control)を使い方法</a><span>2021/10/29 19:45:43</span></li><li><a href='https://www.nowonbun.com/302.html'>[Design pattern] 2-4. デコレーターパターン(Decorator pattern)</a><span>2021/10/28 20:11:13</span></li><li><a href='https://www.nowonbun.com/301.html'>[C#] 58. ウィンドウフォーム(Window form)を作成する方法、そしてウィンドウメッセージとキュー</a><span>2021/10/27 20:35:44</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/315.html';this.page.identifier = 'NOWONBUN00315';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
