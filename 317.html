@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/317.html"},"url":"https:\/\/www.nowonbun.com\/317.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Design pattern] 3-5. \u30e1\u30e1\u30f3\u30c8\u30d1\u30bf\u30fc\u30f3(Memento pattern)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306f\u30c7\u30b6\u30a4\u30f3\u30d1\u30bf\u30fc\u30f3\u306e\u30e1\u30e1\u30f3\u30c8\u30d1\u30bf\u30fc\u30f3(memento pattern)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u30e1\u30e1\u30f3\u30c8\u30d1\u30bf\u30fc\u30f3\u306f\u30af\u30e9\u30b9\u306e\u73fe\u5728\u306e\u72b6\u6cc1\u3092\u5225\u306b\u30af\u30e9\u30b9\u306b\u683c\u7d0d\u3059\u308b\u30d1\u30bf\u30fc\u30f3\u3067\u3059\u3002\u30af\u30e9\u30b9\u306e\u30c7\u30fc\u30bf\u3092\u683c\u7d0d\u3059\u308b\u578b\u3067\u306f\u30e1\u30e1\u30f3\u30c8\u30d1\u30bf\u30fc\u30f3\u3067\u306f\u306a\u304f\u3001\u30af\u30e9\u30b9\u306e\u30b3\u30d4\u30fc(\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u306e\u30b3\u30d4\u30fc)\u3067\u73fe\u5728\u72b6\u6cc1\u3092\u683c\u7d0d\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u3002\u3067\u3082\u3001\u305d\u306e\u3088\u3046\u306b\u3059\u308b\u3068\u73fe\u5728\u306e\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u3067\u306f\u306a\u304f\u3001\u65b0\u3057\u3044\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u3092\u751f\u6210\u3059\u308b\u3053\u3068\u3067\u3001\u3082\u3057\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u4e2d\u3067\u30ea\u30bd\u30fc\u30b9(io\u3084socket)\u3092\u4f7f\u3063\u3066\u3044\u308b\u5834\u5408\u306f\u65b0\u3057\u3044\u30b3\u30cd\u30af\u30b7\u30e7\u30f3\u3092\u751f\u6210\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u554f\u984c\u3082\u3042\u308a\u307e\u3059\u3002\u3064\u307e\u308a\u3001\u30e1\u30e1\u30f3\u30c8\u30d1\u30bf\u30fc\u30f3\u306f\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u306e\u30aa\u30d6\u30b8\u30a7\u30af\u30c8\u306f\u5909\u308f\u3089\u305a\u3001\u4e2d\u306e\u5024\u3060\u3051\u66f4\u65b0\u3057\u3066\u3001\u72b6\u614b\u3092\u5fa9\u65e7\u3059\u308b\u5f79\u5272\u3092\u3059\u308b\u30d1\u30bf\u30fc\u30f3\u304c\u30e1\u30e1\u30f3\u30c8\u30d1\u30bf\u30fc\u30f3\u3067\u3059\u3002reference - https:\/\/en.wikipedia.org\/wiki\/memento_pattern\u4e0a\u306e\u4f8b\u3067node\u30af\u30e9\u30b9\u306e\u72b6\u614b\u3092\u683c\u7d0d\u3059\u308bmemento\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u53d6\u5f97\u3057\u307e\u3057\u305f\u3002\u3053\u306ememento\u30af\u30e9\u30b9\u3067\u8a72\u5f53\u306a\u30af\u30e9\u30b9\u3092\u30d5\u30a1\u30a4\u30eb\u306b\u66f8\u304d\u51fa\u3057\u3059\u308b\u3057\u3001\u307e\u305f\u3001\u30d5\u30a1\u30a4\u30eb\u304b\u3089\u8aad\u307f\u8fbc\u3093\u3067node\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u306b\u66f4\u65b0\u3059\u308b\u3068\u30c7\u30fc\u30bf\u304c\u4ee5\u524d\u30c7\u30fc\u30bf\u306b\u5fa9\u65e7\u3059\u308b\u3053\u3068\u3092\u78ba\u8a8d\u3067\u304d\u307e\u3059\u3002\u4f8b\u3048\u3070\u3001\u30b2\u30fc\u30e0\u306e\u4e2d\u3067\u30d5\u30a1\u30a4\u30eb\u306b\u30bb\u30fc\u30d6\u3057\u3066\u307e\u305f\u30d5\u30a1\u30a4\u30eb\u304b\u3089\u8aad\u307f\u8fbc\u3093\u3067\u73fe\u5728\u306e\u72b6\u614b\u3092\u5fa9\u65e7\u3059\u308b\u3053\u3068\u3068\u540c\u3058\u6d41\u308c\u306e\u30d1\u30bf\u30fc\u30f3\u3067\u3059\u3002c\/c++\u3067\u4f5c\u6210\u3057\u305f\u30bd\u30fc\u30b9\u306e\u69cb\u9020\u3068\u4f3c\u3066\u3044\u307e\u3059\u3002\u305f\u3060\u3001memeno\u30af\u30e9\u30b9\u3092node\u30af\u30e9\u30b9\u306e\u30a4\u30f3\u30e9\u30a4\u30f3\u3067\u4f5c\u6210\u3057\u307e\u3057\u305f\u3002\u3064\u307e\u308a\u3001memento\u30af\u30e9\u30b9\u306e\u4ed5\u69d8\u306f\u72b6\u614b\u3092\u683c\u7d0d\u3059\u308b\u5f79\u5272\u304c\u3042\u308b\u306e\u3067\u3001node\u30af\u30e9\u30b9\u306e\u4ee5\u5916\u3067\u306f\u30c7\u30fc\u30bf\u8a2d\u5b9a\u304c\u3067\u304d\u306a\u3044\u3088\u3046\u306b\u3059\u308b\u3053\u3068\u304c\u57fa\u672c\u30eb\u30fc\u30eb\u3067\u3059\u3002\u30e1\u30e1\u30f3\u30c8\u306e\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u306e\u5024\u3092\u5916\u90e8\u3067\u8a2d\u5b9a\u3059\u308b\u3053\u3068\u304c\u53ef\u80fd\u306b\u3059\u308b\u3068\u3001\u305d\u308c\u306f\u30e1\u30e1\u30f3\u30c8\u306e\u30d1\u30bf\u30fc\u30f3\u3067\u306f\u306a\u304f\u3001\u5358\u7d14\u306a\u30d1\u30e9\u30e1\u30fc\u30bf\u3092\u3084\u308a\u53d6\u308a\u306e\u30af\u30e9\u30b9\u306e\u5f79\u5272\u306b\u306a\u308b\u3053\u3068\u3067\u3059\u3002c#\u3082java\u3068\u4f3c\u3066\u3044\u308b\u69cb\u9020\u306a\u30bd\u30fc\u30b9\u3067\u3059\u3002memento\u30af\u30e9\u30b9\u304cnode\u30af\u30e9\u30b9\u306b\u30a4\u30f3\u30e9\u30a4\u30f3\u3067\u8a2d\u5b9a\u3057\u3066\u3001node\u30af\u30e9\u30b9\u306e\u5916\u90e8\u3067\u306f\u8a2d\u5b9a\u3067\u304d\u306a\u3044\u3088\u3046\u306b\u4f5c\u6210\u3057\u307e\u3057\u305f\u3002\u3067\u3082\u3001c#\u306f\u30a4\u30f3\u30e9\u30a4\u30f3\u30af\u30e9\u30b9\u3067\u3082\u3001public\u3067\u306f\u306a\u3051\u308c\u3070\u30a2\u30af\u30bb\u30b9\u304c\u3067\u304d\u306a\u3044\u306e\u3067\u3001reflection\u306e\u6a5f\u80fd\u3092\u5229\u7528\u3057\u3066\u76f4\u63a5\u306bprivate\u5909\u6570\u3092\u8a2d\u5b9a\u3067\u304d\u308b\u3088\u3046\u306b\u4f5c\u6210\u3057\u307e\u3057\u305f\u3002\u3053\u3053\u307e\u3067\u30c7\u30b6\u30a4\u30f3\u30d1\u30bf\u30fc\u30f3\u306e\u30e1\u30e1\u30f3\u30c8\u30d1\u30bf\u30fc\u30f3(memento pattern)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3057\u305f\u3002\u3054\u4e0d\u660e\u306a\u3068\u3053\u308d\u3084\u9593\u9055\u3044\u3068","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2021-11-16T20:01:36.000+09:00","dateModified":"2021-11-16T20:02:25.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Design pattern" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はデザインパターンのメメントパターン(memento pattern)に関する説明です。メメントパターンはクラスの現在の状況を別にクラスに格納するパターンです。クラスのデータを格納する型ではメメントパターンではなく、クラスのコピー(インスタンスのコピー)で現在状況を格納することができます。でも、そのようにすると現在のインスタンスオブジェクトではなく、新しいインスタンスオブジェクトを生成することで、もしオブジェクト中でリソース(ioやsocket)を使っている場合は新しいコネクションを生成しなければならない問題もあります。つまり、メメントパターンはインスタンスのオブジェクトは変わらず、中の値だけ更新して、状態を復旧する役割をするパターンがメメントパターンです。reference - https://en.wikipedia.org/wiki/memento_pattern上の例でnodeクラスの状態を格納するmementoインスタンスを取得しました。このmementoクラスで該当なクラスをファイルに書き出しするし、また、ファイルから読み込んでnodeインスタンスに更新するとデータが以前データに復旧することを確認できます。例えば、ゲームの中でファイルにセーブしてまたファイルから読み込んで現在の状態を復旧することと同じ流れのパターンです。c/c++で作成したソースの構造と似ています。ただ、memenoクラスをnodeクラスのインラインで作成しました。つまり、mementoクラスの仕様は状態を格納する役割があるので、nodeクラスの以外ではデータ設定ができないようにすることが基本ルールです。メメントのインスタンスの値を外部で設定することが可能にすると、それはメメントのパターンではなく、単純なパラメータをやり取りのクラスの役割になることです。c#もjavaと似ている構造なソースです。mementoクラスがnodeクラスにインラインで設定して、nodeクラスの外部では設定できないように作成しました。でも、c#はインラインクラスでも、publicではなければアクセスができないので、reflectionの機能を利用して直接にprivate変数を設定できるように作成しました。ここまでデザインパターンのメメントパターン(memento pattern)に関する説明でした。ご不明なところや間違いと]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Design pattern] 3-5. メメントパターン(Memento pattern)" />
+<link rel="canonical" href="https://www.nowonbun.com/317.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Design pattern] 3-5. メメントパターン(Memento pattern)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はデザインパターンのメメントパターン(memento pattern)に関する説明です。メメントパターンはクラスの現在の状況を別にクラスに格納するパターンです。クラスのデータを格納する型ではメメントパターンではなく、クラスのコピー(インスタンスのコピー)で現在状況を格納することができます。でも、そのようにすると現在のインスタンスオブジェクトではなく、新しいインスタンスオブジェクトを生成することで、もしオブジェクト中でリソース(ioやsocket)を使っている場合は新しいコネクションを生成しなければならない問題もあります。つまり、メメントパターンはインスタンスのオブジェクトは変わらず、中の値だけ更新して、状態を復旧する役割をするパターンがメメントパターンです。reference - https://en.wikipedia.org/wiki/memento_pattern上の例でnodeクラスの状態を格納するmementoインスタンスを取得しました。このmementoクラスで該当なクラスをファイルに書き出しするし、また、ファイルから読み込んでnodeインスタンスに更新するとデータが以前データに復旧することを確認できます。例えば、ゲームの中でファイルにセーブしてまたファイルから読み込んで現在の状態を復旧することと同じ流れのパターンです。c/c++で作成したソースの構造と似ています。ただ、memenoクラスをnodeクラスのインラインで作成しました。つまり、mementoクラスの仕様は状態を格納する役割があるので、nodeクラスの以外ではデータ設定ができないようにすることが基本ルールです。メメントのインスタンスの値を外部で設定することが可能にすると、それはメメントのパターンではなく、単純なパラメータをやり取りのクラスの役割になることです。c#もjavaと似ている構造なソースです。mementoクラスがnodeクラスにインラインで設定して、nodeクラスの外部では設定できないように作成しました。でも、c#はインラインクラスでも、publicではなければアクセスができないので、reflectionの機能を利用して直接にprivate変数を設定できるように作成しました。ここまでデザインパターンのメメントパターン(memento pattern)に関する説明でした。ご不明なところや間違いと]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/317.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Design pattern] 3-5. メメントパターン(Memento pattern)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はデザインパターンのメメントパターン(memento pattern)に関する説明です。メメントパターンはクラスの現在の状況を別にクラスに格納するパターンです。クラスのデータを格納する型ではメメントパターンではなく、クラスのコピー(インスタンスのコピー)で現在状況を格納することができます。でも、そのようにすると現在のインスタンスオブジェクトではなく、新しいインスタンスオブジェクトを生成することで、もしオブジェクト中でリソース(ioやsocket)を使っている場合は新しいコネクションを生成しなければならない問題もあります。つまり、メメントパターンはインスタンスのオブジェクトは変わらず、中の値だけ更新して、状態を復旧する役割をするパターンがメメントパターンです。reference - https://en.wikipedia.org/wiki/memento_pattern上の例でnodeクラスの状態を格納するmementoインスタンスを取得しました。このmementoクラスで該当なクラスをファイルに書き出しするし、また、ファイルから読み込んでnodeインスタンスに更新するとデータが以前データに復旧することを確認できます。例えば、ゲームの中でファイルにセーブしてまたファイルから読み込んで現在の状態を復旧することと同じ流れのパターンです。c/c++で作成したソースの構造と似ています。ただ、memenoクラスをnodeクラスのインラインで作成しました。つまり、mementoクラスの仕様は状態を格納する役割があるので、nodeクラスの以外ではデータ設定ができないようにすることが基本ルールです。メメントのインスタンスの値を外部で設定することが可能にすると、それはメメントのパターンではなく、単純なパラメータをやり取りのクラスの役割になることです。c#もjavaと似ている構造なソースです。mementoクラスがnodeクラスにインラインで設定して、nodeクラスの外部では設定できないように作成しました。でも、c#はインラインクラスでも、publicではなければアクセスができないので、reflectionの機能を利用して直接にprivate変数を設定できるように作成しました。ここまでデザインパターンのメメントパターン(memento pattern)に関する説明でした。ご不明なところや間違いと]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Design pattern] 3-5. メメントパターン(Memento pattern)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(96)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(27)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(6)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(23)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(14)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(218)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(61)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(56)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(18)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0210" href="study_project_design.html">Project design<span class="category-item-count">(9)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/317.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Design pattern] 3-5. メメントパターン(Memento pattern)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0208">Study / Design pattern</a>    作成日付 : <span property="datePublished">2021/11/16 20:01:36</span>   修正日付 : <span property="dateModified">2021/11/16 20:02:25</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はデザインパターンのメメントパターン(Memento pattern)に関する説明です。</p> 
+  <p><br></p> 
+  <p>メメントパターンはクラスの現在の状況を別にクラスに格納するパターンです。</p> 
+  <p>クラスのデータを格納する型ではメメントパターンではなく、クラスのコピー(インスタンスのコピー)で現在状況を格納することができます。でも、そのようにすると現在のインスタンスオブジェクトではなく、新しいインスタンスオブジェクトを生成することで、もしオブジェクト中でリソース(IOやSocket)を使っている場合は新しいコネクションを生成しなければならない問題もあります。</p> 
+  <p>つまり、メメントパターンはインスタンスのオブジェクトは変わらず、中の値だけ更新して、状態を復旧する役割をするパターンがメメントパターンです。</p> 
+  <p style="text-align:left;"><img src="./contents/317/2198_001.jpg" style="width: 680px;" data-filename="001.jpg"><br></p> <span style="font-size:0.7em">Reference - <a href="https://en.wikipedia.org/wiki/Memento_pattern" target="_blank">https://en.wikipedia.org/wiki/Memento_pattern</a></span> 
+  <pre><code class="cpp" data-type="C/C++メメントパターンの例">#pragma once
+#define _CRT_SECURE_NO_DEPRECATE
+#include &lt;stdio.h&gt;
+#include &lt;iostream&gt;
+using namespace std;
+// メメントパターンクラス
+class Memento {
+private:
+  // Nodeクラスで使うメンバー変数
+  int data;
+  int state;
+public:
+  // コンストラクタ
+  Memento(int data, int state) {
+    this-&gt;data = data;
+    this-&gt;state = state;
+  }
+  // data値を取得
+  int getData() {
+    return this-&gt;data;
+  }
+  // state値を取得
+  int getState() {
+    return this-&gt;state;
+  }
+};
+// Nodeクラス
+class Node {
+private:
+  // メンバー変数
+  int data;
+  int state;
+public:
+  // dataメンバー変数を設定する関数
+  void setData(int data) {
+    this-&gt;data = data;
+  }
+  // stateメンバー変数を設定する関数
+  void setState(int state) {
+    this-&gt;state = state;
+  }
+  // メメントパターンクラスでメンバー変数を更新
+  void setMemento(Memento* memento) {
+    this-&gt;data = memento-&gt;getData();
+    this-&gt;state = memento-&gt;getState();
+  }
+  // 現在の状態をメメントインスタンスでリターン
+  Memento* getMemento() {
+    return new Memento(this-&gt;data, this-&gt;state);
+  }
+  // 出力関数
+  void print() {
+    // コンソールに出力
+    cout &lt;&lt; "data - " &lt;&lt; this-&gt;data &lt;&lt; "  state - " &lt;&lt; this-&gt;state &lt;&lt; endl;
+  }
+};
+// mementoデータをファイルに書き出し関数
+void writeMemento(Memento* memento) {
+  // ファイルリソースポインタ取得、パラメータのwは書き出す。(リソース取得)
+  FILE* fp = fopen("d:\\work\\memento.dat", "w");
+  // ポインタがnullならプログラムを終了する。
+  if (fp == NULL) {
+    cout &lt;&lt; "File open failed" &lt;&lt; endl;
+    return;
+  }
+  // データをファイルに書き出す。
+  fwrite(memento, 1, sizeof(Memento), fp);
+  // ファイルを閉める。(リソース返却)
+  fclose(fp);
+}
+// mementoデータをファイルから読み込む関数
+Memento* readMemento() {
+  // インスタンス生成
+  Memento* memento = (Memento*)malloc(sizeof(Memento));
+  // ファイルリソースポインタ取得、パラメータのrは読み込む。(リソース取得)
+  FILE* fp = fopen("d:\\work\\memento.dat", "r");
+  // ポインタがnullならプログラムを終了する。
+  if (fp == NULL) {
+    cout &lt;&lt; "File open failed" &lt;&lt; endl;
+    return nullptr;
+  }
+  // データを読み込む。
+  fread(memento, 1, sizeof(Memento), fp);
+  // ファイルを閉める。(リソース返却)
+  fclose(fp);
+  // リターン
+  return memento;
+}
+// 実行関数
+int main()
+{
+  // Nodeインスタンス生成
+  Node node;
+  // データ設定
+  node.setData(10);
+  node.setState(1);
+  // コンソールに出力
+  node.print();
+  // メメントインスタンス取得
+  Memento* memento = node.getMemento();
+  // ファイルに書き出し。
+  writeMemento(memento);
+  // メモリ解除
+  delete memento;
+  // データ再設定
+  node.setData(11);
+  node.setState(2);
+  // コンソールに出力
+  node.print();
+  // ファイルからメメントデータを取得
+  memento = readMemento();
+  // Nodeインスタンスにデータ再設定
+  node.setMemento(memento);
+  // コンソールに出力
+  node.print();
+  // メモリ解除
+  delete memento;
+
+  return 0;
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/317/2199_002.png" data-filename="002.png" style="width: 271px;"><br></p> 
+  <p>上の例でNodeクラスの状態を格納するMementoインスタンスを取得しました。</p> 
+  <p>このMementoクラスで該当なクラスをファイルに書き出しするし、また、ファイルから読み込んでNodeインスタンスに更新するとデータが以前データに復旧することを確認できます。</p> 
+  <p>例えば、ゲームの中でファイルにセーブしてまたファイルから読み込んで現在の状態を復旧することと同じ流れのパターンです。</p> 
+  <pre><code class="java" data-type="Javaメメントパターンの例">import java.io.*;
+
+// Nodeクラス
+class Node implements Serializable {
+  // 直列化ID
+  private static final long serialVersionUID = 1L;
+
+  // Mementoクラス
+  class Memento implements Serializable {
+    // 直列化ID
+    private static final long serialVersionUID = 1L;
+    // Nodeクラスから格納するデータ変数
+    private int data;
+    private int state;
+  }
+
+  // メンバー変数
+  private int data;
+  private int state;
+
+  // dataのset関数
+  public void setData(int data) {
+    this.data = data;
+  }
+
+  // stateのset関数
+  public void setState(int state) {
+    this.state = state;
+  }
+
+  // メメントのインスタンス取得関数
+  public Serializable getMenent() {
+    // インスタンス生成
+    Memento memento = new Memento();
+    // 格納するデータ設定
+    memento.data = data;
+    memento.state = state;
+    // リターン
+    return memento;
+  }
+
+  // メメントのインスタンスで状態を復旧
+  public void setMement(Serializable memento) {
+    // クラスがMementoクラスタイプではなければ、処理中断
+    if (memento.getClass() != Memento.class) {
+      // コンソールに出力
+      System.out.println("The class type does not match.");
+      return;
+    }
+    // データタイプのキャスト
+    Memento memento1 = (Memento) memento;
+    // Nodeクラスにデータを更新
+    this.data = memento1.data;
+    this.state = memento1.state;
+  }
+
+  // 出力関数
+  public void print() {
+    // コンソールに出力
+    System.out.println("data - " + this.data + " state - " + this.state);
+  }
+}
+
+public class Program {
+  // メメントのインスタンスをファイルに格納する関数
+  private static void writeFile(Serializable serialize) {
+    // ファイル設定
+    File file = new File("d:/work/memento.dat");
+    // ファイルが存在すれば削除
+    if (file.exists()) {
+      // 削除
+      file.delete();
+    }
+    // 直列化
+    try (ByteArrayOutputStream baos = new ByteArrayOutputStream()) {
+      try (ObjectOutputStream oos = new ObjectOutputStream(baos)) {
+        oos.writeObject(serialize);
+        // メメントのインスタンスをbyte配列で変換
+        byte[] data = baos.toByteArray();
+        // ファイルのストリームを利用して変換したdataをファイルに書き出しする。
+        try (FileOutputStream stream = new FileOutputStream(file)) {
+          // 書き出し
+          stream.write(data, 0, data.length);
+        }
+      }
+    } catch (Throwable e) {
+      // 例外処理
+      throw new RuntimeException(e);
+    }
+  }
+  // メメントのインスタンスをファイルから読み込む関数
+  private static Serializable readFile() {
+    // ファイル設定
+    File file = new File("d:/work/memento.dat");
+    // ファイルが存在しなければ
+    if (!file.exists()) {
+      // 例外処理
+      throw new RuntimeException(new FileNotFoundException());
+    }
+    // 逆直列化
+    try (FileInputStream stream = new FileInputStream(file)) {
+      byte[] data = new byte[(int) file.length()];
+      // ファイルからバイナリを読み込む。
+      stream.read(data, 0, data.length);
+      try (ByteArrayInputStream bais = new ByteArrayInputStream(data)) {
+        try (ObjectInputStream ois = new ObjectInputStream(bais)) {
+          // byte配列のデータをメメントインスタンスに変換
+          return (Serializable) ois.readObject();
+        }
+      }
+    } catch (Throwable e) {
+      // 例外処理
+      throw new RuntimeException(e);
+    }
+  }
+  // 実行関数
+  public static void main(String[] args) {
+    // Nodeインスタンス生成
+    Node node = new Node();
+    // メンバー変数を設定
+    node.setData(10);
+    node.setState(1);
+    // コンソールに出力
+    node.print();
+    // メメントのインスタンスを取得
+    var memento = node.getMenent();
+    // ファイルに格納
+    writeFile(memento);
+    // メンバー変数を再設定
+    node.setData(11);
+    node.setState(2);
+    // コンソールに出力
+    node.print();
+    // ファイルからメメントのインスタンスを生成
+    memento = readFile();
+    // インスタンスの値を再設定
+    node.setMement(memento);
+    // コンソールに出力
+    node.print();
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/317/2200_003.png" data-filename="003.png" style="width: 185px;"><br></p> 
+  <p>C/C++で作成したソースの構造と似ています。ただ、MemenoクラスをNodeクラスのインラインで作成しました。</p> 
+  <p>つまり、Mementoクラスの仕様は状態を格納する役割があるので、Nodeクラスの以外ではデータ設定ができないようにすることが基本ルールです。</p> 
+  <p>メメントのインスタンスの値を外部で設定することが可能にすると、それはメメントのパターンではなく、単純なパラメータをやり取りのクラスの役割になることです。</p> 
+  <pre><code class="cs" data-type="C#メメントパターンの例">using System;
+using System.Reflection;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+
+// Nodeクラス
+class Node
+{
+  // Reflectionためのタイプ設定
+  private Type reflectionMemento = typeof(Memento);
+  // メンバー変数
+  public int Data { get; set; }
+  public int State { get; set; }
+  // メメントパターンクラス (ファイルに直列化するためのアトリビュート設定)
+  [Serializable]
+  class Memento
+  {
+    // メンバー変数
+    private int data;
+    private int state;
+  }
+  // 出力関数
+  public void Print()
+  {
+    // コンソールに出力
+    Console.WriteLine("Data - " + Data + " State - " + State);
+  }
+  // メメントのインスタンスを取得する関数
+  public object GetMemento()
+  {
+    // インスタンス生成
+    Memento memento = new Memento();
+    // メンバー変数がprivateで設定されているので、アクセスするためにはReflection機能を利用する。 変数設定
+    reflectionMemento.GetField("data", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(memento, this.Data);
+    reflectionMemento.GetField("state", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(memento, this.State);
+    // インスタンスリターン
+    return memento;
+  }
+  // メメントのインスタンスでメンバー変数を設定する関数
+  public void SetMemento(Object obj)
+  {
+    // パラメータがMementoクラスではなければ、例外処理
+    if (obj.GetType() != reflectionMemento)
+    {
+      // 例外処理
+      throw new Exception("The class type does not match.");
+    }
+    // メンバー変数がprivateで設定されているので、アクセスするためにはReflection機能を利用する。 変数の値を取得
+    this.Data = (int)reflectionMemento.GetField("data", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(obj);
+    this.State = (int)reflectionMemento.GetField("state", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(obj);
+  }
+}
+class Program
+{
+  // メメントのインスタンスをファイルに書き出す関数
+  static void writeMemento(object memento)
+  {
+    // 直列化クラス
+    var formatter = new BinaryFormatter();
+    // 直列化するデータをファイルに書き出す。
+    using (FileStream stream = new FileStream("d:\\work\\memento.dat", FileMode.Create, FileAccess.Write))
+    {
+      // 直列化
+      formatter.Serialize(stream, memento);
+    }
+  }
+  // メメントのインスタンスをファイルから読み込む関数
+  static object readMemento()
+  {
+    // 直列化クラス
+    var formatter = new BinaryFormatter();
+    // ファイルから直列化データを読み込む。
+    using (FileStream stream = new FileStream("d:\\work\\memento.dat", FileMode.Open, FileAccess.Read))
+    {
+      // 逆直列化
+      return formatter.Deserialize(stream);
+    }
+  }
+  // 実行関数
+  static void Main(string[] args)
+  {
+    // インスタンス生成
+    Node node = new Node();
+    // メンバー変数設定
+    node.Data = 10;
+    node.State = 1;
+    // 出力関数
+    node.Print();
+    // メメントのインスタンスを取得
+    object memento = node.GetMemento();
+    // メメントのインスタンスをファイルに書き出す。
+    writeMemento(memento);
+    // Nodeインスタンスのメンバー変数を更新
+    node.Data = 11;
+    node.State = 2;
+    // 出力関数
+    node.Print();
+    // メメントのインスタンスをファイルから読み込む。
+    memento = readMemento();
+    // Nodeインスタンスにメメントのインスタンスでデータ再設定
+    node.SetMemento(memento);
+    // 出力関数
+    node.Print();
+    // 任意のキーを押してください
+    Console.WriteLine("Press any key...");
+    Console.ReadKey();
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/317/2201_004.png" data-filename="004.png" style="width: 233px;"><br></p> 
+  <p>C#もJavaと似ている構造なソースです。MementoクラスがNodeクラスにインラインで設定して、Nodeクラスの外部では設定できないように作成しました。</p> 
+  <p>でも、C#はインラインクラスでも、publicではなければアクセスができないので、Reflectionの機能を利用して直接にprivate変数を設定できるように作成しました。</p> 
+  <p><br></p> 
+  <p>ここまでデザインパターンのメメントパターン(Memento pattern)に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/316.html" target="_blank">[Design pattern] 3-4. イテレータパターン(Iterator pattern)</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=designpattern>#designpattern</a>,<a href=./search.html?query=mementopattern>#mementopattern</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0208">Study / Design pattern</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/317.html'>[Design pattern] 3-5. メメントパターン(Memento pattern)</a><span>2021/11/16 20:01:36</span></li><li><a href='https://www.nowonbun.com/316.html'>[Design pattern] 3-4. イテレータパターン(Iterator pattern)</a><span>2021/11/15 19:31:28</span></li><li><a href='https://www.nowonbun.com/314.html'>[Design pattern] 3-3. コマンドパターン(Command pattern)</a><span>2021/11/05 17:01:42</span></li><li><a href='https://www.nowonbun.com/309.html'>[Design pattern] 3-2. 責任の連鎖パターン(Chain of responsibility pattern)</a><span>2021/11/04 19:27:58</span></li><li><a href='https://www.nowonbun.com/308.html'>[Design pattern] 3-1. ストラテジーパターン(Strategy pattern)</a><span>2021/11/03 18:38:52</span></li><li><a href='https://www.nowonbun.com/306.html'>[Design pattern] 2-7. ファサードパターン(Facade pattern)</a><span>2021/11/02 19:32:31</span></li><li><a href='https://www.nowonbun.com/305.html'>[Design pattern] 2-6. プロキシパターン(Proxy pattern)</a><span>2021/11/01 19:42:44</span></li><li><a href='https://www.nowonbun.com/304.html'>[Design pattern] 2-5. フライウェイトパターン(Flyweight pattern)</a><span>2021/10/29 19:48:27</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/317.html'>[Design pattern] 3-5. メメントパターン(Memento pattern)</a><span>2021/11/16 20:01:36</span></li><li><a href='https://www.nowonbun.com/316.html'>[Design pattern] 3-4. イテレータパターン(Iterator pattern)</a><span>2021/11/15 19:31:28</span></li><li><a href='https://www.nowonbun.com/315.html'>[CentOS] Linux環境(CentOS)でCassandra(NoSQL DB)をインストールする方法(DBeaverブラウザでNoSQL使い方)</a><span>2021/11/12 17:33:58</span></li><li><a href='https://www.nowonbun.com/314.html'>[Design pattern] 3-3. コマンドパターン(Command pattern)</a><span>2021/11/05 17:01:42</span></li><li><a href='https://www.nowonbun.com/313.html'>[Window] apache-tomcatでロードバランシング(Load balancing)する方法とセッションクラスタリング（セッション共有）</a><span>2021/11/05 16:58:45</span></li><li><a href='https://www.nowonbun.com/312.html'>[Window] Apacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法</a><span>2021/11/05 16:55:05</span></li><li><a href='https://www.nowonbun.com/311.html'>[PHP] Apache環境の同じホスト中でPHPとJava(Servlet)を同時に起動、運用する方法</a><span>2021/11/05 16:52:04</span></li><li><a href='https://www.nowonbun.com/310.html'>[C#] 61. ウィンドウフォーム(Window form)でスレッド(Thread)を使い方、クロススレッド問題解決</a><span>2021/11/04 19:29:51</span></li><li><a href='https://www.nowonbun.com/309.html'>[Design pattern] 3-2. 責任の連鎖パターン(Chain of responsibility pattern)</a><span>2021/11/04 19:27:58</span></li><li><a href='https://www.nowonbun.com/308.html'>[Design pattern] 3-1. ストラテジーパターン(Strategy pattern)</a><span>2021/11/03 18:38:52</span></li><li><a href='https://www.nowonbun.com/307.html'>[C#] 60. ウィンドウフォーム(Window form)のイベント設定する方法</a><span>2021/11/02 21:18:08</span></li><li><a href='https://www.nowonbun.com/306.html'>[Design pattern] 2-7. ファサードパターン(Facade pattern)</a><span>2021/11/02 19:32:31</span></li><li><a href='https://www.nowonbun.com/305.html'>[Design pattern] 2-6. プロキシパターン(Proxy pattern)</a><span>2021/11/01 19:42:44</span></li><li><a href='https://www.nowonbun.com/304.html'>[Design pattern] 2-5. フライウェイトパターン(Flyweight pattern)</a><span>2021/10/29 19:48:27</span></li><li><a href='https://www.nowonbun.com/303.html'>[C#] 59. ウィンドウフォーム(Window form)にコントロール(Control)を使い方法</a><span>2021/10/29 19:45:43</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/317.html';this.page.identifier = 'NOWONBUN00317';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
