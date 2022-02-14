@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/319.html"},"url":"https:\/\/www.nowonbun.com\/319.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [CentOS] Redis\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u3092\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3059\u308b\u65b9\u6cd5\u3068\u30b3\u30de\u30f3\u30c9\u3092\u4f7f\u3044\u65b9","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fcentos\u3067redis\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u3092\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3059\u308b\u65b9\u6cd5\u3068\u30b3\u30de\u30f3\u30c9\u3092\u4f7f\u3044\u65b9\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002redis\u3068\u306frdb\u30bf\u30a4\u30d7\u3068\u306f\u5225\u306enosql\u30bf\u30a4\u30d7\u306e\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u3067\u3059\u3002\u3064\u307e\u308a\u3001sql\u3067\u30c7\u30fc\u30bf\u3092\u5165\u529b\u3001\u53d6\u5f97\u3059\u308b\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u3067\u306f\u306a\u304f\u3001\u7279\u5b9a\u306aapi\u3092\u901a\u3063\u3066\u6271\u3046\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u3067\u3059\u3002\u69cb\u9020\u306fkey - value\u306e\u69cb\u9020\u3067\u3001inmemory\u69cb\u9020\u306b\u306a\u3063\u3066\u3044\u308b\u306e\u3067\u30c7\u30fc\u30bf\u633f\u5165\u304c\u65e9\u3044\u3057\u3001\u691c\u7d22\u304c\u65e9\u304f\u306a\u308b\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306b\u306a\u308a\u307e\u3059\u3002redis\u306b\u95a2\u3059\u308b\u5b9a\u7fa9\u3084\u5185\u5bb9\u306f\u30b0\u30fc\u30b0\u30eb\u3092\u5229\u7528\u3057\u3066\u8abf\u67fb\u3059\u308b\u3068\u69d8\u3005\u306a\u6b63\u78ba\u306a\u5b9a\u7fa9\u3068\u8aac\u660e\u304c\u3042\u308a\u307e\u3059\u3002\u79c1\u304c\u5c11\u3057\u7406\u89e3\u3057\u3084\u3059\u304f\u8aac\u660e\u3059\u308b\u3068\u305f\u3060share memory\u3001\u3064\u307e\u308a\u3001\u30e1\u30e2\u30ea\u3092\u5171\u6709\u3059\u308b\u30b7\u30b9\u30c6\u30e0\u3060\u3068\u601d\u3044\u307e\u3059\u3002\u666e\u901a\u306b\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u8d77\u52d5\u3059\u308b\u3068\u30d7\u30ed\u30b0\u30e9\u30e0\u4e2d\u306e\u5909\u6570\u306a\u3069\u3092\u901a\u3063\u3066\u30e1\u30e2\u30ea\u306b\u30c7\u30fc\u30bf\u3092\u5272\u308a\u5f53\u3066\u3057\u307e\u3059\u3002\u305d\u306e\u30e1\u30e2\u30ea\u306b\u5272\u308a\u5f53\u3066\u3057\u305f\u30c7\u30fc\u30bf\u306fos\u306e\u30d7\u30ed\u30bb\u30b9\u30e1\u30e2\u30ea\u4fdd\u8b77\u6a5f\u80fd\u3067\u5225\u306e\u30d7\u30ed\u30b0\u30e9\u30e0\u3067\u8a72\u5f53\u306a\u30e1\u30e2\u30ea\u306b\u30a2\u30af\u30bb\u30b9\u304c\u3067\u304d\u307e\u305b\u3093\u3002\u3064\u307e\u308a\u3001a\u30d7\u30ed\u30b0\u30e9\u30e0\u3068b\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u5b9f\u884c\u3057\u3066\u3001b\u30d7\u30ed\u30b0\u30e9\u30e0\u3067\u5272\u308a\u5f53\u3066\u305f\u30af\u30e9\u30b9\u306e\u30c7\u30fc\u30bf\u3092a\u30d7\u30ed\u30b0\u30e9\u30e0\u3067\u4f7f\u3044\u305f\u3044\u3068\u601d\u3048\u3070\u3001\u30bd\u30b1\u30c3\u30c8\u901a\u4fe1\u3092\u901a\u3063\u3066\u30c7\u30fc\u30bf\u3092\u5171\u6709\u3057\u307e\u3059\u3002\u4e00\u822c\u7684\u306a\u65b9\u6cd5\u3067\u3059\u3002\u3082\u3057\u304b\u3057\u3066\u3001\u3053\u3053\u3067\u30d7\u30ed\u30b0\u30e9\u30e0\u304c\u4e00\u3064\u3092\u8ffd\u52a0\u3059\u308b\u3068\u30e1\u30e2\u30ea\u5171\u6709\u306e\u6d41\u308c\u304c\u8907\u96d1\u306b\u306a\u308a\u307e\u3059\u3002b\u30d7\u30ed\u30b0\u30e9\u30e0\u3067\u751f\u6210\u3055\u308c\u305f\u30e1\u30e2\u30ea\u30c7\u30fc\u30bf\u3092a\u30d7\u30ed\u30b0\u30e9\u30e0\u3067\u4fee\u6b63\u3057\u307e\u3059\u3002\u305d\u306e\u5f8c\u3001b\u30d7\u30ed\u30b0\u30e9\u30e0\u306fc\u30d7\u30ed\u30b0\u30e9\u30e0\u306b\u5024\u304c\u66f4\u65b0\u3055\u308c\u305f\u3053\u3068\u3092\u901a\u5831\u3057\u307e\u3059\u3002\u307e\u305f\u3001\u3053\u3053\u3067\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u4e00\u3064\u3092\u8ffd\u52a0\u3057\u307e\u3059\u3002\u3064\u307e\u308a\u3001\u30d7\u30ed\u30b0\u30e9\u30e0\u304c\u5897\u3048\u308b\u307b\u3069\u6d41\u308c\u304c\u3082\u3063\u3068\u8907\u96d1\u306b\u306a\u308a\u307e\u3059\u3002\u3082\u3061\u308d\u3093\u3001file io\u3067\u5171\u6709\u3059\u308b\u3053\u3068\u304c\u3067\u304d\u307e\u3059\u304c\u3001\u305d\u308c\u306a\u3089io\u306econnection\u306e\u6d41\u308c\u306b\u95a2\u3057\u3066\u8003\u3048\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u3002\u3064\u307e\u308a\u3001\u30d5\u30a1\u30a4\u30eb\u306b\u30c7\u30fc\u30bf\u3092\u66f8\u304d\u8fbc\u307f\u3059\u308b\u5f79\u3067connection\u3092\u7e4b\u3044\u3067\u308b\u306a\u3089\u5225\u306e\u30d7\u30ed\u30b0\u30e9\u30e0\u3067\u306f\u30d5\u30a1\u30a4\u30eb\u4fee\u6b63\u304c\u4e0d\u53ef\u80fd\u3067\u3059\u3002\u69d8\u3005\u306a\u4e0d\u4fbf\u306a\u6d41\u308c\u3068\u898f\u7d04\u304c\u3067\u304d\u307e\u3059\u306d\u3002\u305d\u3046\u3059\u308b\u3068\u4e00\u756a\u3057\u3084\u3059\u304f\u89e3\u6c7a\u3059\u308b\u65b9\u6cd5\u306fmap\u69cb\u9020\u306b\u306a\u308b\u30e1\u30e2\u30ea\u3068\u30bd\u30b1\u30c3\u30c8\u901a\u4fe1\u3067set\u3001get\u3067map\u30e1\u30e2\u30ea\u306b\u30a2\u30af\u30bb\u30b9\u304c\u53ef\u80fd\u306a\u30d7\u30ed\u30b0\u30e9\u30e0\u304c\u3042\u308c\u3070\u826f\u3044\u3067\u3059\u3002\u305d\u306e\u30d7\u30ed\u30b0\u30e9\u30e0\u304credis\u3067\u3059\u3002redis\u30d7\u30ed\u30b0\u30e9\u30e0\u306fjava\u3067\u306fmap\u3001c#\u3067\u306fdictionary\u69cb\u9020\u306e\u5909\u6570\u4e00\u3064\u3068\u30bd\u30b1\u30c3\u30c8\u3092\u901a\u3063\u3066\u5916\u90e8\u3067\u30c7\u30fc\u30bf\u3092\u683c\u7d0d\u3001\u53d6\u5f97\u3059\u308b\u3053\u3068\u304c\u53ef\u80fd\u306a\u30d7\u30ed\u30b0\u30e9\u30e0\u3067\u3059\u3002centos\u3067\u306f\u7c21\u5358\u306byum\u3067\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u304c\u53ef\u80fd\u3067\u3059\u3002\u305d\u3057\u3066\u74b0\u5883\u8a2d\u5b9a\u306f\u300c\/etc\/redis.con","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2022-02-14T18:33:07.000+09:00","dateModified":"2022-02-14T18:33:07.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Devlopment note / Linux" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はcentosでredisデータベースをインストールする方法とコマンドを使い方に関する説明です。redisとはrdbタイプとは別のnosqlタイプのデータベースです。つまり、sqlでデータを入力、取得するデータベースではなく、特定なapiを通って扱うデータベースです。構造はkey - valueの構造で、inmemory構造になっているのでデータ挿入が早いし、検索が早くなるデータベースになります。redisに関する定義や内容はグーグルを利用して調査すると様々な正確な定義と説明があります。私が少し理解しやすく説明するとただshare memory、つまり、メモリを共有するシステムだと思います。普通にプログラムを起動するとプログラム中の変数などを通ってメモリにデータを割り当てします。そのメモリに割り当てしたデータはosのプロセスメモリ保護機能で別のプログラムで該当なメモリにアクセスができません。つまり、aプログラムとbプログラムを実行して、bプログラムで割り当てたクラスのデータをaプログラムで使いたいと思えば、ソケット通信を通ってデータを共有します。一般的な方法です。もしかして、ここでプログラムが一つを追加するとメモリ共有の流れが複雑になります。bプログラムで生成されたメモリデータをaプログラムで修正します。その後、bプログラムはcプログラムに値が更新されたことを通報します。また、ここでプログラムを一つを追加します。つまり、プログラムが増えるほど流れがもっと複雑になります。もちろん、file ioで共有することができますが、それならioのconnectionの流れに関して考えなければならないです。つまり、ファイルにデータを書き込みする役でconnectionを繋いでるなら別のプログラムではファイル修正が不可能です。様々な不便な流れと規約ができますね。そうすると一番しやすく解決する方法はmap構造になるメモリとソケット通信でset、getでmapメモリにアクセスが可能なプログラムがあれば良いです。そのプログラムがredisです。redisプログラムはjavaではmap、c#ではdictionary構造の変数一つとソケットを通って外部でデータを格納、取得することが可能なプログラムです。centosでは簡単にyumでインストールが可能です。そして環境設定は「/etc/redis.con]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [CentOS] Redisデータベースをインストールする方法とコマンドを使い方" />
+<link rel="canonical" href="https://www.nowonbun.com/319.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [CentOS] Redisデータベースをインストールする方法とコマンドを使い方" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はcentosでredisデータベースをインストールする方法とコマンドを使い方に関する説明です。redisとはrdbタイプとは別のnosqlタイプのデータベースです。つまり、sqlでデータを入力、取得するデータベースではなく、特定なapiを通って扱うデータベースです。構造はkey - valueの構造で、inmemory構造になっているのでデータ挿入が早いし、検索が早くなるデータベースになります。redisに関する定義や内容はグーグルを利用して調査すると様々な正確な定義と説明があります。私が少し理解しやすく説明するとただshare memory、つまり、メモリを共有するシステムだと思います。普通にプログラムを起動するとプログラム中の変数などを通ってメモリにデータを割り当てします。そのメモリに割り当てしたデータはosのプロセスメモリ保護機能で別のプログラムで該当なメモリにアクセスができません。つまり、aプログラムとbプログラムを実行して、bプログラムで割り当てたクラスのデータをaプログラムで使いたいと思えば、ソケット通信を通ってデータを共有します。一般的な方法です。もしかして、ここでプログラムが一つを追加するとメモリ共有の流れが複雑になります。bプログラムで生成されたメモリデータをaプログラムで修正します。その後、bプログラムはcプログラムに値が更新されたことを通報します。また、ここでプログラムを一つを追加します。つまり、プログラムが増えるほど流れがもっと複雑になります。もちろん、file ioで共有することができますが、それならioのconnectionの流れに関して考えなければならないです。つまり、ファイルにデータを書き込みする役でconnectionを繋いでるなら別のプログラムではファイル修正が不可能です。様々な不便な流れと規約ができますね。そうすると一番しやすく解決する方法はmap構造になるメモリとソケット通信でset、getでmapメモリにアクセスが可能なプログラムがあれば良いです。そのプログラムがredisです。redisプログラムはjavaではmap、c#ではdictionary構造の変数一つとソケットを通って外部でデータを格納、取得することが可能なプログラムです。centosでは簡単にyumでインストールが可能です。そして環境設定は「/etc/redis.con]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/319.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [CentOS] Redisデータベースをインストールする方法とコマンドを使い方" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はcentosでredisデータベースをインストールする方法とコマンドを使い方に関する説明です。redisとはrdbタイプとは別のnosqlタイプのデータベースです。つまり、sqlでデータを入力、取得するデータベースではなく、特定なapiを通って扱うデータベースです。構造はkey - valueの構造で、inmemory構造になっているのでデータ挿入が早いし、検索が早くなるデータベースになります。redisに関する定義や内容はグーグルを利用して調査すると様々な正確な定義と説明があります。私が少し理解しやすく説明するとただshare memory、つまり、メモリを共有するシステムだと思います。普通にプログラムを起動するとプログラム中の変数などを通ってメモリにデータを割り当てします。そのメモリに割り当てしたデータはosのプロセスメモリ保護機能で別のプログラムで該当なメモリにアクセスができません。つまり、aプログラムとbプログラムを実行して、bプログラムで割り当てたクラスのデータをaプログラムで使いたいと思えば、ソケット通信を通ってデータを共有します。一般的な方法です。もしかして、ここでプログラムが一つを追加するとメモリ共有の流れが複雑になります。bプログラムで生成されたメモリデータをaプログラムで修正します。その後、bプログラムはcプログラムに値が更新されたことを通報します。また、ここでプログラムを一つを追加します。つまり、プログラムが増えるほど流れがもっと複雑になります。もちろん、file ioで共有することができますが、それならioのconnectionの流れに関して考えなければならないです。つまり、ファイルにデータを書き込みする役でconnectionを繋いでるなら別のプログラムではファイル修正が不可能です。様々な不便な流れと規約ができますね。そうすると一番しやすく解決する方法はmap構造になるメモリとソケット通信でset、getでmapメモリにアクセスが可能なプログラムがあれば良いです。そのプログラムがredisです。redisプログラムはjavaではmap、c#ではdictionary構造の変数一つとソケットを通って外部でデータを格納、取得することが可能なプログラムです。centosでは簡単にyumでインストールが可能です。そして環境設定は「/etc/redis.con]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [CentOS] Redisデータベースをインストールする方法とコマンドを使い方</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(97)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(25)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(27)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(6)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(24)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(14)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(219)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(61)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(56)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(19)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0210" href="study_project_design.html">Project design<span class="category-item-count">(9)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/319.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[CentOS] Redisデータベースをインストールする方法とコマンドを使い方</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0106">Devlopment note / Linux</a>    作成日付 : <span property="datePublished">2022/02/14 18:33:07</span>   修正日付 : <span property="dateModified">2022/02/14 18:33:07</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はCentOSでRedisデータベースをインストールする方法とコマンドを使い方に関する説明です。</p> 
+  <p><br></p> 
+  <p>RedisとはRDBタイプとは別のNoSQLタイプのデータベースです。つまり、SQLでデータを入力、取得するデータベースではなく、特定なAPIを通って扱うデータベースです。</p> 
+  <p>構造はKey - Valueの構造で、InMemory構造になっているのでデータ挿入が早いし、検索が早くなるデータベースになります。</p> 
+  <p><br></p> 
+  <p>Redisに関する定義や内容はグーグルを利用して調査すると様々な正確な定義と説明があります。</p> 
+  <p>私が少し理解しやすく説明するとただShare Memory、つまり、メモリを共有するシステムだと思います。</p> 
+  <p><br></p> 
+  <p>普通にプログラムを起動するとプログラム中の変数などを通ってメモリにデータを割り当てします。そのメモリに割り当てしたデータはOSのプロセスメモリ保護機能で別のプログラムで該当なメモリにアクセスができません。</p> 
+  <p>つまり、AプログラムとBプログラムを実行して、Bプログラムで割り当てたクラスのデータをAプログラムで使いたいと思えば、ソケット通信を通ってデータを共有します。一般的な方法です。</p> 
+  <p>もしかして、ここでプログラムが一つを追加するとメモリ共有の流れが複雑になります。Bプログラムで生成されたメモリデータをAプログラムで修正します。その後、BプログラムはCプログラムに値が更新されたことを通報します。</p> 
+  <p>また、ここでプログラムを一つを追加します。つまり、プログラムが増えるほど流れがもっと複雑になります。</p> 
+  <p><br></p> 
+  <p>もちろん、File IOで共有することができますが、それならIOのConnectionの流れに関して考えなければならないです。つまり、ファイルにデータを書き込みする役でConnectionを繋いでるなら別のプログラムではファイル修正が不可能です。</p> 
+  <p>様々な不便な流れと規約ができますね。</p> 
+  <p><br></p> 
+  <p>そうすると一番しやすく解決する方法はMap構造になるメモリとソケット通信でSet、GetでMapメモリにアクセスが可能なプログラムがあれば良いです。そのプログラムがRedisです。</p> 
+  <p>RedisプログラムはJavaではMap、C#ではDictionary構造の変数一つとソケットを通って外部でデータを格納、取得することが可能なプログラムです。</p> 
+  <p><br></p> 
+  <p>CentOSでは簡単にyumでインストールが可能です。</p> 
+  <pre><code class="language-shell" data-type=""># Redis インストール
+yum install redis
+</code></pre> 
+  <p style="text-align:left;"><img src="" style="width: 848px;" data-filename="001.png"><br></p> 
+  <pre><code class="language-shell" data-type=""># Redis 実行
+systemctl start redis
+# Redis 起動登録
+systemctl enable redis
+</code></pre> 
+  <p style="text-align:left;"><img src="" data-filename="002.png" style="width: 848px;"><br></p> 
+  <pre><code class="language-shell" data-type=""># バージョン確認
+redis-server --version
+</code></pre> 
+  <p style="text-align:left;"><img src="" data-filename="003.png" style="width: 848px;"><br></p> 
+  <p>そして環境設定は「/etc/redis.conf」のパスにあります。環境設定に関しては下記で詳細に説明します。</p> 
+  <p>一応、yumで簡単にインストールができますが、バージョンが低いですね。。 redisのホームページでは6.2バージョンがありますが、yumでは3.xバージョンですね。</p> 
+  <p><br></p> 
+  <p>そうするとホームページでダウンロードしてインストールしましょう。</p> 
+  <p>参照 - <a href="https://redis.io/download" target="_blank">https://redis.io/download</a></p> 
+  <p><br></p> 
+  <p>そしてリンクアドレスをコピーしましょう。</p> 
+  <p style="text-align:left;"><img src="" data-filename="004.png" style="width: 454px;"><br></p> 
+  <p>そしてwgetでダウンロードします。</p> 
+  <p style="text-align:left;"><img src="" data-filename="005.png" style="width: 848px;"><br></p> 
+  <p>そして圧縮を解凍してビルとしましょう。</p> 
+  <pre><code class="language-shell" data-type="">tar xzf redis-6.2.6.tar.gz
+cd redis-6.2.6
+make install
+</code></pre> 
+  <p style="text-align:left;"><img src="" data-filename="006.png" style="width: 460px;"><br></p> 
+  <p>インストールが完了しました。</p> 
+  <p><br></p> 
+  <p>先にサービスの登録ファイルを作成しましょう。</p> 
+  <pre><code class="language-shell" data-type="">vim /etc/systemd/system/redis.service
+</code></pre> 
+  <pre><code class="language-shell" data-type="redis.service">[Unit]
+Description=Redis
+
+[Service]
+User=root
+Group=root
+ExecStart=/home/redis/redis-6.2.6/src/redis-server /home/redis/redis-6.2.6/redis.conf
+ExecStop=/home/redis/redis-6.2.6/src/redis-cli shutdown
+</code></pre> 
+  <p style="text-align:left;"><img src="" data-filename="007.png" style="width: 706px;"><br></p> 
+  <p>これからRedisを実行しましょう。</p> 
+  <pre><code class="language-shell" data-type=""># 実行
+systemctl start redis.service
+# 停止
+systemctl stop redis.service
+</code></pre> 
+  <p>実行してsrcフォルドのredis-cliを実行しましょう。</p> 
+  <p style="text-align:left;"><img src="" data-filename="008.png" style="width: 303px;"><br></p> 
+  <p>ここまでの画面が表示するとインストールが完了し、実行されることです。</p> 
+  <p><br></p> 
+  <p>これからRedisコマンドでデータを格納、取得しましょう。</p> 
+  <h2><b><span>Redisコマンド</span></b></h2> 
+  <p>Redisで使えるコマンドはすごく多いです。</p> 
+  <p>参照 - <a href="https://redis.io/commands" target="_blank">https://redis.io/commands</a></p> 
+  <p>でも、よく使うコマンドは多くないです。よく使うコマンドだけ整理します。</p> 
+  <div class="table-responsive"> 
+   <table class="table table-striped table-bordered table-condensed"> 
+    <thead> 
+     <tr style="background-color:#DAD7D7"> 
+      <th style="white-space: nowrap;">コマンド</th> 
+      <th>説明</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td>set [key] [value]</td> 
+      <td>keyの値をキーでデータを格納する。</td> 
+     </tr> 
+     <tr> 
+      <td>get [key]</td> 
+      <td>keyの値をキーでデータを取得する。</td> 
+     </tr> 
+     <tr> 
+      <td>rename [key] [newkey]</td> 
+      <td>keyの値を変更する。</td> 
+     </tr> 
+     <tr> 
+      <td>keys [pattern]</td> 
+      <td>keyを検索する。「*を入れるとすべてキーを取得する。」</td> 
+     </tr> 
+     <tr> 
+      <td>exists [key]</td> 
+      <td>keyが存在するかを確認する。</td> 
+     </tr> 
+     <tr> 
+      <td>del [key]</td> 
+      <td>keyの値をキーでデータを削除する。</td> 
+     </tr> 
+     <tr> 
+      <td>flushall</td> 
+      <td>すべてキーを削除する。</td> 
+     </tr> 
+     <tr> 
+      <td>append [key] [value]</td> 
+      <td>keyの値をキーでデータの値を追加する。</td> 
+     </tr> 
+     <tr> 
+      <td>setex [key] [seconds] [value]</td> 
+      <td>keyの値をキーでデータの満了時間を設定する。</td> 
+     </tr> 
+     <tr> 
+      <td>ttl [key]</td> 
+      <td>keyの値をキーでデータの満了時間を確認する。-1の場合、満了時間が設定しないこと。</td> 
+     </tr> 
+     <tr> 
+      <td>save</td> 
+      <td>現在、Redisのデータの状態をバックアップする。ファイル名はconfigで設定する。</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <p style="text-align:left;"><img src="" data-filename="009.png" style="width: 288px;"><br></p> 
+  <h2><b><span>Redis環境設定</span></b></h2> 
+  <p>Redisの環境設定はバージョンより差異があります。確認してから設定しなければならないです。</p> 
+  <p>参照 - <a href="https://redis.io/topics/config" target="_blank">https://redis.io/topics/config</a></p> 
+  <p>詳細的な設定だけバージョンより違いますが、よく使うポート設定とbind設定は似ているから確認すれば良いです。</p> 
+  <div class="table-responsive"> 
+   <table class="table table-striped table-bordered table-condensed"> 
+    <thead> 
+     <tr style="background-color:#DAD7D7"> 
+      <th style="white-space: nowrap;">環境設定</th> 
+      <th>説明</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td>bind [ip] ...</td> 
+      <td>許可するip設定<br> 例) bind 192.168.0.100 192.168.0.100 (該当なipだけ許可) <br> 例) bind 127.0.0.1 -::1 (ローカルだけ許可) <br> 例) bind * -::* (すべてip許可)</td> 
+     </tr> 
+     <tr> 
+      <td>protected-mode [boolean]</td> 
+      <td>保護モードが活性化しているとローカルだけ接続を許す。</td> 
+     </tr> 
+     <tr> 
+      <td>port [number]</td> 
+      <td>ポート設定</td> 
+     </tr> 
+     <tr> 
+      <td>dir [direcotry path]</td> 
+      <td>作業のディレクトリ設定</td> 
+     </tr> 
+     <tr> 
+      <td>dbfilename [filename]</td> 
+      <td>バックアップファイル名を設定</td> 
+     </tr> 
+     <tr> 
+      <td>save [seconds][changes]</td> 
+      <td>指定された時間の間にキーが指定された個数ほど更新するとバックアップ <br> # save 900 1 (900秒(15分)間で少なくとも一つ以上のキーが更新すると格納する。)</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <p style="text-align:left;"><img src="" data-filename="010.png" style="width: 641px;"><br></p> 
+  <p>Redisに関しては4~5年前から知っていましたが、活用する部分では必要性を感じ無かったんですが、1~2年前からウェブサーバーのセッションクラスタリングで性能が良いって聞いて後からずっと使っているデータベースです。</p> 
+  <p>セッションクラスタリングだけではなく、様々なシステムでシェアーメモリとして使うことが思ったより使いやすいしインストールも簡単なので最近はよく使うことになりました。</p> 
+  <p><br></p> 
+  <p>もちろん、プログラム間でデータをやり取りする時には直接なソケット通信が性格ですが、同じサーバーで複数のプログラムを起動するかマイクロサービス、つまり一つのドメインで様々なサーバーで分割してプログラムを作成する時にかなり便利に使えます。</p> 
+  <p><br></p> 
+  <p>ここまでCentOSでRedisデータベースをインストールする方法とコマンドを使い方に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/315.html" target="_blank">[CentOS] Linux環境(CentOS)でCassandra(NoSQL DB)をインストールする方法(DBeaverブラウザでNoSQL使い方)</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=centos>#centos</a>,<a href=./search.html?query=redis>#redis</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0106">Devlopment note / Linux</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/319.html'>[CentOS] Redisデータベースをインストールする方法とコマンドを使い方</a><span>2022/02/14 18:33:07</span></li><li><a href='https://www.nowonbun.com/315.html'>[CentOS] Linux環境(CentOS)でCassandra(NoSQL DB)をインストールする方法(DBeaverブラウザでNoSQL使い方)</a><span>2021/11/12 17:33:58</span></li><li><a href='https://www.nowonbun.com/285.html'>[CentOs] ジェンキンス(Jenkins)をインストールする方法</a><span>2021/10/18 18:28:58</span></li><li><a href='https://www.nowonbun.com/114.html'>[Ubuntu] PHPをインストール、Composer設定する方法</a><span>2019/11/13 07:32:21</span></li><li><a href='https://www.nowonbun.com/113.html'>[Ubuntu] テーマ(Arc)を変更する方法(tweak)</a><span>2019/11/12 07:32:13</span></li><li><a href='https://www.nowonbun.com/112.html'>[Ubuntu] Apache2をインストールする方法</a><span>2019/11/11 07:28:28</span></li><li><a href='https://www.nowonbun.com/111.html'>[Ubuntu] 「acquire the dpkg frontend lock」のエラーを解決方法</a><span>2019/11/10 22:19:34</span></li><li><a href='https://www.nowonbun.com/110.html'>[Ubuntu] JavaインストールとEclipseをインストールする方法</a><span>2019/11/08 07:29:55</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/319.html'>[CentOS] Redisデータベースをインストールする方法とコマンドを使い方</a><span>2022/02/14 18:33:07</span></li><li><a href='https://www.nowonbun.com/318.html'>[Design pattern] 3-6. ステートパターン(State pattern)</a><span>2021/11/17 20:04:47</span></li><li><a href='https://www.nowonbun.com/317.html'>[Design pattern] 3-5. メメントパターン(Memento pattern)</a><span>2021/11/16 20:01:36</span></li><li><a href='https://www.nowonbun.com/316.html'>[Design pattern] 3-4. イテレータパターン(Iterator pattern)</a><span>2021/11/15 19:31:28</span></li><li><a href='https://www.nowonbun.com/315.html'>[CentOS] Linux環境(CentOS)でCassandra(NoSQL DB)をインストールする方法(DBeaverブラウザでNoSQL使い方)</a><span>2021/11/12 17:33:58</span></li><li><a href='https://www.nowonbun.com/314.html'>[Design pattern] 3-3. コマンドパターン(Command pattern)</a><span>2021/11/05 17:01:42</span></li><li><a href='https://www.nowonbun.com/313.html'>[Window] apache-tomcatでロードバランシング(Load balancing)する方法とセッションクラスタリング（セッション共有）</a><span>2021/11/05 16:58:45</span></li><li><a href='https://www.nowonbun.com/312.html'>[Window] Apacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法</a><span>2021/11/05 16:55:05</span></li><li><a href='https://www.nowonbun.com/311.html'>[PHP] Apache環境の同じホスト中でPHPとJava(Servlet)を同時に起動、運用する方法</a><span>2021/11/05 16:52:04</span></li><li><a href='https://www.nowonbun.com/310.html'>[C#] 61. ウィンドウフォーム(Window form)でスレッド(Thread)を使い方、クロススレッド問題解決</a><span>2021/11/04 19:29:51</span></li><li><a href='https://www.nowonbun.com/309.html'>[Design pattern] 3-2. 責任の連鎖パターン(Chain of responsibility pattern)</a><span>2021/11/04 19:27:58</span></li><li><a href='https://www.nowonbun.com/308.html'>[Design pattern] 3-1. ストラテジーパターン(Strategy pattern)</a><span>2021/11/03 18:38:52</span></li><li><a href='https://www.nowonbun.com/307.html'>[C#] 60. ウィンドウフォーム(Window form)のイベント設定する方法</a><span>2021/11/02 21:18:08</span></li><li><a href='https://www.nowonbun.com/306.html'>[Design pattern] 2-7. ファサードパターン(Facade pattern)</a><span>2021/11/02 19:32:31</span></li><li><a href='https://www.nowonbun.com/305.html'>[Design pattern] 2-6. プロキシパターン(Proxy pattern)</a><span>2021/11/01 19:42:44</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/319.html';this.page.identifier = 'NOWONBUN00319';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
