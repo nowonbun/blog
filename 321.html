@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/321.html"},"url":"https:\/\/www.nowonbun.com\/321.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] Redis\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u3092\u63a5\u7d9a\u3057\u3066\u4f7f\u3044\u65b9(Jedis\u30e9\u30a4\u30d6\u30e9\u30ea)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fjava\u3067redis\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u3092\u63a5\u7d9a\u3057\u3066\u4f7f\u3044\u65b9(jedis\u30e9\u30a4\u30d6\u30e9\u30ea)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002redis\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306frdb\u7a2e\u985e\u3067\u306f\u306a\u304f\u3001nosql\u7a2e\u985e\u306ekey-value\u30bf\u30a4\u30d7\u306e\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u3067\u3059\u3002\u7c21\u5358\u306b\u5171\u6709\u30e1\u30e2\u30ea\u306e\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u3067\u3059\u3002\u4ee5\u524d\u306e\u6295\u7a3f\u3067linux\u74b0\u5883\u306b\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u53ca\u3073\u4f7f\u3044\u65b9\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u305f\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002\u30ea\u30f3\u30af - [centos] redis\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u3092\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3059\u308b\u65b9\u6cd5\u3068\u30b3\u30de\u30f3\u30c9\u3092\u4f7f\u3044\u65b9\u305d\u306eredis\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u3092java\u3067\u4f7f\u3063\u3066\u307f\u307e\u3057\u3087\u3046\u3002java\u3067redis\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u3092\u4f7f\u3046\u305f\u3081\u306bmaven\u3092\u901a\u3063\u3066jedis\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u3002\u30ea\u30dd\u30b8\u30c8\u30ea - https:\/\/mvnrepository.com\/artifact\/redis.clients\/jedis\/4.1.1\u5148\u306b\u57fa\u672c\u7684\u306bredis\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306b\u5024\u3092\u683c\u7d0d\u3057\u3066\u53d6\u5f97\u3059\u308b\u30b3\u30fc\u30c9\u4f5c\u6210\u3057\u307e\u3057\u3087\u3046\u3002\u4e0a\u306e\u30bd\u30fc\u30b9\u306b\u306ftest\u30ad\u30fc\u3067hello world\u5024\u3092\u683c\u7d0d\u3057\u307e\u3057\u305f\u3002\u305d\u3057\u3066test1\u3067\u6e80\u4e86\u6642\u959360\u79d2\u306ehello world expire\u5024\u3092\u683c\u7d0d\u3057\u307e\u3057\u305f\u3002\u305d\u3057\u3066test\u3068test1\u306e\u30ad\u30fc\u3067\u30c7\u30fc\u30bf\u3092\u53d6\u5f97\u3059\u308b\u3068\u4e0a\u3067\u683c\u7d0d\u3057\u305fhello world\u5024\u304c\u51fa\u529b\u3057\u307e\u3059\u3002\u95a2\u9023\u95a2\u6570\u306b\u95a2\u3057\u3066\u306fapi\u30c9\u30ad\u30e5\u30e1\u30f3\u30c8\u3092\u53c2\u7167\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u30ea\u30f3\u30af - https:\/\/javadoc.io\/doc\/redis.clients\/jedis\/latest\/index.html\u4e0a\u306e\u30bd\u30fc\u30b9\u306f\u5358\u7d14\u306bkey\u30ad\u30fc\u3092\u5229\u7528\u3057\u3066\u30c7\u30fc\u30bf\u3092\u683c\u7d0d\u3057\u3066\u53d6\u5f97\u3059\u308b\u51e6\u7406\u3067\u3059\u3002\u305d\u3046\u3059\u308b\u3068\u5b9f\u8df5\u3067\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u4f5c\u6210\u3059\u308b\u6642\u306b\u3088\u304f\u4f7f\u308f\u308c\u308b\u30b3\u30fc\u30c9\u3092\u4f5c\u6210\u3057\u3066\u898b\u307e\u3057\u3087\u3046\u3002node\u30af\u30e9\u30b9\u306e\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092\u751f\u6210\u3057\u3066\u30b7\u30ea\u30a2\u30eb\u5316\u3057\u3066byte\u30bf\u30a4\u30d7\u3067\u5909\u63db\u3057\u307e\u3057\u305f\u3002\u305d\u3057\u3066byte\u30bf\u30a4\u30d7\u3067\u5909\u63db\u3059\u308b\u5024\u3092redis\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306b\u5165\u529b\u3057\u307e\u3057\u305f\u3002\u307e\u305f\u3001\u683c\u7d0d\u3057\u305f\u30c7\u30fc\u30bf\u3092\u53d6\u5f97\u3057\u307e\u3057\u3087\u3046\u3002redis\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u3067node\u30ad\u30fc\u306b\u306a\u3063\u3066\u3044\u308bbyte\u5024\u3092\u53d6\u5f97\u3057\u3066\u9006\u76f4\u5217\u5316\u3057\u3066node\u30af\u30e9\u30b9\u306b\u5909\u63db\u3057\u307e\u3059\u3002print\u95a2\u6570\u3092\u547c\u3073\u51fa\u3059\u3068\u5165\u529b\u3057\u305fhello world\u5024\u3092\u51fa\u529b\u3057\u307e\u3059\u3002\u30b7\u30ea\u30a2\u30eb\u5316\u3059\u308b\u3068\u540c\u3058java\u8a00\u8a9e\u306e\u30d7\u30ed\u30b0\u30e9\u30e0\u3067\u306f\u554f\u984c\u3042\u308a\u307e\u305b\u3093\u304c\u3001\u5225\u306e\u8a00\u8a9e\u306e\u30d7\u30ed\u30b0\u30e9\u30e0\u3067\u306f\u4f7f\u3048\u307e\u305b\u3093\u3002\u305d\u308c\u3067json\u306estring\u30bf\u30a4\u30d7\u306b\u5909\u63db\u3057\u3066\u4f7f\u3044\u307e\u3057\u3087\u3046\u3002node\u30a4\u30f3\u30b9\u30bf\u30f3\u30b9\u3092gson\u30e9\u30a4\u30d6\u30e9\u30ea\u5229\u7528\u3057\u3066json\u30bf\u30a4\u30d7\u306estring\u30c7\u30fc\u30bf\u306b","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2022-02-16T18:13:17.000+09:00","dateModified":"2022-02-16T18:14:39.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Devlopment note / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はjavaでredisデータベースを接続して使い方(jedisライブラリ)に関する説明です。redisデータベースはrdb種類ではなく、nosql種類のkey-valueタイプのデータベースです。簡単に共有メモリのデータベースです。以前の投稿でlinux環境にインストール及び使い方に関して説明したことがあります。リンク - [centos] redisデータベースをインストールする方法とコマンドを使い方そのredisデータベースをjavaで使ってみましょう。javaでredisデータベースを使うためにmavenを通ってjedisライブラリをインストールしなければならないです。リポジトリ - https://mvnrepository.com/artifact/redis.clients/jedis/4.1.1先に基本的にredisデータベースに値を格納して取得するコード作成しましょう。上のソースにはtestキーでhello world値を格納しました。そしてtest1で満了時間60秒のhello world expire値を格納しました。そしてtestとtest1のキーでデータを取得すると上で格納したhello world値が出力します。関連関数に関してはapiドキュメントを参照してください。リンク - https://javadoc.io/doc/redis.clients/jedis/latest/index.html上のソースは単純にkeyキーを利用してデータを格納して取得する処理です。そうすると実践でプログラムを作成する時によく使われるコードを作成して見ましょう。nodeクラスのインスタンスを生成してシリアル化してbyteタイプで変換しました。そしてbyteタイプで変換する値をredisデータベースに入力しました。また、格納したデータを取得しましょう。redisデータベースでnodeキーになっているbyte値を取得して逆直列化してnodeクラスに変換します。print関数を呼び出すと入力したhello world値を出力します。シリアル化すると同じjava言語のプログラムでは問題ありませんが、別の言語のプログラムでは使えません。それでjsonのstringタイプに変換して使いましょう。nodeインスタンスをgsonライブラリ利用してjsonタイプのstringデータに]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java] Redisデータベースを接続して使い方(Jedisライブラリ)" />
+<link rel="canonical" href="https://www.nowonbun.com/321.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java] Redisデータベースを接続して使い方(Jedisライブラリ)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaでredisデータベースを接続して使い方(jedisライブラリ)に関する説明です。redisデータベースはrdb種類ではなく、nosql種類のkey-valueタイプのデータベースです。簡単に共有メモリのデータベースです。以前の投稿でlinux環境にインストール及び使い方に関して説明したことがあります。リンク - [centos] redisデータベースをインストールする方法とコマンドを使い方そのredisデータベースをjavaで使ってみましょう。javaでredisデータベースを使うためにmavenを通ってjedisライブラリをインストールしなければならないです。リポジトリ - https://mvnrepository.com/artifact/redis.clients/jedis/4.1.1先に基本的にredisデータベースに値を格納して取得するコード作成しましょう。上のソースにはtestキーでhello world値を格納しました。そしてtest1で満了時間60秒のhello world expire値を格納しました。そしてtestとtest1のキーでデータを取得すると上で格納したhello world値が出力します。関連関数に関してはapiドキュメントを参照してください。リンク - https://javadoc.io/doc/redis.clients/jedis/latest/index.html上のソースは単純にkeyキーを利用してデータを格納して取得する処理です。そうすると実践でプログラムを作成する時によく使われるコードを作成して見ましょう。nodeクラスのインスタンスを生成してシリアル化してbyteタイプで変換しました。そしてbyteタイプで変換する値をredisデータベースに入力しました。また、格納したデータを取得しましょう。redisデータベースでnodeキーになっているbyte値を取得して逆直列化してnodeクラスに変換します。print関数を呼び出すと入力したhello world値を出力します。シリアル化すると同じjava言語のプログラムでは問題ありませんが、別の言語のプログラムでは使えません。それでjsonのstringタイプに変換して使いましょう。nodeインスタンスをgsonライブラリ利用してjsonタイプのstringデータに]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/321.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java] Redisデータベースを接続して使い方(Jedisライブラリ)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaでredisデータベースを接続して使い方(jedisライブラリ)に関する説明です。redisデータベースはrdb種類ではなく、nosql種類のkey-valueタイプのデータベースです。簡単に共有メモリのデータベースです。以前の投稿でlinux環境にインストール及び使い方に関して説明したことがあります。リンク - [centos] redisデータベースをインストールする方法とコマンドを使い方そのredisデータベースをjavaで使ってみましょう。javaでredisデータベースを使うためにmavenを通ってjedisライブラリをインストールしなければならないです。リポジトリ - https://mvnrepository.com/artifact/redis.clients/jedis/4.1.1先に基本的にredisデータベースに値を格納して取得するコード作成しましょう。上のソースにはtestキーでhello world値を格納しました。そしてtest1で満了時間60秒のhello world expire値を格納しました。そしてtestとtest1のキーでデータを取得すると上で格納したhello world値が出力します。関連関数に関してはapiドキュメントを参照してください。リンク - https://javadoc.io/doc/redis.clients/jedis/latest/index.html上のソースは単純にkeyキーを利用してデータを格納して取得する処理です。そうすると実践でプログラムを作成する時によく使われるコードを作成して見ましょう。nodeクラスのインスタンスを生成してシリアル化してbyteタイプで変換しました。そしてbyteタイプで変換する値をredisデータベースに入力しました。また、格納したデータを取得しましょう。redisデータベースでnodeキーになっているbyte値を取得して逆直列化してnodeクラスに変換します。print関数を呼び出すと入力したhello world値を出力します。シリアル化すると同じjava言語のプログラムでは問題ありませんが、別の言語のプログラムでは使えません。それでjsonのstringタイプに変換して使いましょう。nodeインスタンスをgsonライブラリ利用してjsonタイプのstringデータに]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Java] Redisデータベースを接続して使い方(Jedisライブラリ)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(99)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(26)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(28)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(6)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(24)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(14)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(219)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(61)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(56)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(19)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0210" href="study_project_design.html">Project design<span class="category-item-count">(9)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/321.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Java] Redisデータベースを接続して使い方(Jedisライブラリ)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0103">Devlopment note / Java</a>    作成日付 : <span property="datePublished">2022/02/16 18:13:17</span>   修正日付 : <span property="dateModified">2022/02/16 18:14:39</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はJavaでRedisデータベースを接続して使い方(Jedisライブラリ)に関する説明です。</p> 
+  <p><br></p> 
+  <p>RedisデータベースはRDB種類ではなく、NoSQL種類のKey-Valueタイプのデータベースです。簡単に共有メモリのデータベースです。</p> 
+  <p>以前の投稿でLinux環境にインストール及び使い方に関して説明したことがあります。</p> 
+  <p>リンク - <a href="https://www.nowonbun.com/319.html" target="_blank">[CentOS] Redisデータベースをインストールする方法とコマンドを使い方</a></p> 
+  <p><br></p> 
+  <p>そのRedisデータベースをJavaで使ってみましょう。</p> 
+  <p>JavaでRedisデータベースを使うためにMavenを通ってJedisライブラリをインストールしなければならないです。</p> 
+  <pre><code class="language-xml" data-type="pom.xml">&lt;!-- https://mvnrepository.com/artifact/redis.clients/jedis --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;redis.clients&lt;/groupId&gt;
+    &lt;artifactId&gt;jedis&lt;/artifactId&gt;
+    &lt;version&gt;4.1.1&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/321/2236_001.png" data-filename="001.png" style="width: 658px;"><br></p> 
+  <p>リポジトリ - <a href="https://mvnrepository.com/artifact/redis.clients/jedis/4.1.1" target="_blank">https://mvnrepository.com/artifact/redis.clients/jedis/4.1.1</a></p> 
+  <p style="text-align:left;"><img src="./contents/321/2237_002.png" style="width: 494px;" data-filename="002.png"><br></p> 
+  <p>先に基本的にRedisデータベースに値を格納して取得するコード作成しましょう。</p> 
+  <pre><code class="language-java" data-type="Program.java">import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.Protocol;
+
+public class Program {
+  // 実行関数
+  public static void main(String... args) {
+    // redis接続する。
+    try (var pool = new JedisPool("192.168.1.200", Protocol.DEFAULT_PORT)) {
+      // Resource取得する。(これがPoolのインスタンスを生成する時に接続するか、Resource取得する時に接続するかの明確な説明がない)
+      try (var jedis = pool.getResource()) {
+        // testキーでhello world値を格納する。
+        jedis.set("test", "hello world");
+        // test1キーでhello world expire値を格納する(満了時間60秒)
+        jedis.setex("test1", 60, "hello world expire");
+
+        // testキーで値を取得する。
+        var data = jedis.get("test");
+        // コンソール出力
+        System.out.println(data);
+        // test1キーで値を取得する。
+        data = jedis.get("test1");
+        // コンソール出力
+        System.out.println(data);
+      }
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/321/2238_003.png" data-filename="003.png" style="width: 185px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/321/2239_004.png" style="width: 262px;" data-filename="004.png"><br></p> 
+  <p>上のソースにはtestキーでhello world値を格納しました。そしてtest1で満了時間60秒のhello world expire値を格納しました。</p> 
+  <p>そしてtestとtest1のキーでデータを取得すると上で格納したhello world値が出力します。</p> 
+  <p><br></p> 
+  <p>関連関数に関してはAPIドキュメントを参照してください。</p> 
+  <p>リンク - <a href="https://javadoc.io/doc/redis.clients/jedis/latest/index.html" target="_blank">https://javadoc.io/doc/redis.clients/jedis/latest/index.html</a></p> 
+  <p><br></p> 
+  <p>上のソースは単純にkeyキーを利用してデータを格納して取得する処理です。</p> 
+  <p>そうすると実践でプログラムを作成する時によく使われるコードを作成して見ましょう。</p> 
+  <pre><code class="language-java" data-type="Program.java">import java.io.ByteArrayOutputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.Protocol;
+
+// Nodeクラス
+class Node implements Serializable {
+  // Serializableインターフェースを継承するとserialVersionUIDを設定しなければならない。
+  private static final long serialVersionUID = 1L;
+  // メンバー変数
+  private String data;
+  // メンバー変数のsetter 
+  public void setData(String data) {
+    // メンバー変数設定
+    this.data = data;
+  }
+  // 出力関数
+  public void print() {
+    // コンソール出力
+    System.out.println("data = " + data);
+  }
+}
+
+public class Program {
+  // Nodeクラスをシリアル化してbyteタイプに変換
+  static byte[] convertToStringFromClass(Node node) {
+    // シリアル化
+    try (var baos = new ByteArrayOutputStream()) {
+      try (var oos = new ObjectOutputStream(baos)) {
+        // 変換
+        oos.writeObject(node);
+        // Nodeクラスをbyte配列に変換
+        return baos.toByteArray();
+      }
+    } catch (Throwable e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  // 実行関数
+  public static void main(String... args) {
+    // redis接続する。
+    try (var pool = new JedisPool("192.168.1.200", Protocol.DEFAULT_PORT)) {
+      // Resource取得する。(これがPoolのインスタンスを生成する時に接続するか、Resource取得する時に接続するかの明確な説明がない)
+      try (var jedis = pool.getResource()) {
+        // インスタンス生成
+        var node = new Node();
+        // データ設定
+        node.setData("Hello world");
+        
+        // Redisデータベースにnodeキーで設定
+        jedis.set("node".getBytes(), convertToStringFromClass(node));
+      }
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/321/2240_005.png" data-filename="005.png" style="width: 848px;"><br></p> 
+  <p>Nodeクラスのインスタンスを生成してシリアル化してbyteタイプで変換しました。そしてbyteタイプで変換する値をRedisデータベースに入力しました。</p> 
+  <p>また、格納したデータを取得しましょう。</p> 
+  <pre><code class="language-java" data-type="Program.java">import java.io.ByteArrayInputStream;
+import java.io.ObjectInputStream;
+import java.io.Serializable;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.Protocol;
+
+// Nodeクラス
+class Node implements Serializable {
+  // Serializableインターフェースを継承するとserialVersionUIDを設定しなければならない。
+  private static final long serialVersionUID = 1L;
+  // メンバー変数
+  private String data;
+  // メンバー変数のsetter 
+  public void setData(String data) {
+    // メンバー変数設定
+    this.data = data;
+  }
+  // 出力関数
+  public void print() {
+    // コンソール出力
+    System.out.println("data = " + data);
+  }
+}
+
+public class Program {
+  // データを逆直列化してNodeクラスで変換
+  static Node convertToClassFromString(byte[] binary) {
+    // 逆直列化
+    try (var bais = new ByteArrayInputStream(binary)) {
+      try (var ois = new ObjectInputStream(bais)) {
+        // byte配列のデータをNodeのクラスで変換する。
+        return (Node) ois.readObject();
+      }
+    } catch (Throwable e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  // 実行関数
+  public static void main(String... args) {
+    // redis接続する。
+    try (var pool = new JedisPool("192.168.1.200", Protocol.DEFAULT_PORT)) {
+      // Resource取得する。(これがPoolのインスタンスを生成する時に接続するか、Resource取得する時に接続するかの明確な説明がない)
+      try (var jedis = pool.getResource()) {
+        // Redisデータベースにnodeキーで取得する。
+        var binary = jedis.get("node".getBytes());
+        // byteタイプをnodeクラスで変換
+        var node = convertToClassFromString(binary);
+        // print関数実行
+        node.print();
+      }
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/321/2241_006.png" data-filename="006.png" style="width: 158px;"><br></p> 
+  <p>Redisデータベースでnodeキーになっているbyte値を取得して逆直列化してNodeクラスに変換します。</p> 
+  <p>print関数を呼び出すと入力したHello world値を出力します。</p> 
+  <p><br></p> 
+  <p>シリアル化すると同じJava言語のプログラムでは問題ありませんが、別の言語のプログラムでは使えません。それでJsonのStringタイプに変換して使いましょう。</p> 
+  <pre><code class="language-java" data-type="Program.java">import java.io.Serializable;
+import com.google.gson.Gson;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.Protocol;
+
+// Nodeクラス
+class Node implements Serializable {
+  // Serializableインターフェースを継承するとserialVersionUIDを設定しなければならない。
+  private static final long serialVersionUID = 1L;
+  // メンバー変数
+  private String data;
+  // メンバー変数のsetter 
+  public void setData(String data) {
+    // メンバー変数設定
+    this.data = data;
+  }
+  // 出力関数
+  public void print() {
+    // コンソール出力
+    System.out.println("data = " + data);
+  }
+}
+
+public class Program {
+  // 実行関数
+  public static void main(String... args) {
+    Gson gson = new Gson();
+    // redis接続する。 접속한다.
+    try (var pool = new JedisPool("192.168.1.200", Protocol.DEFAULT_PORT)) {
+      // Resource取得する。(これがPoolのインスタンスを生成する時に接続するか、Resource取得する時に接続するかの明確な説明がない)
+      try (var jedis = pool.getResource()) {
+        // インスタンスを生成
+        var node = new Node();
+        // データ設定
+        node.setData("Hello world");
+        // nodeインスタンスをjsonタイプのstringに変換
+        var json = gson.toJson(node);
+        // Redisデータベースにnodeキーで設定
+        jedis.set("node", json);
+      }
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/321/2242_007.png" data-filename="007.png" style="width: 256px;"><br></p> 
+  <p>NodeインスタンスをGsonライブラリ利用してJsonタイプのStringデータに変換しました。その後でStringデータをRedisに格納しました。</p> 
+  <pre><code class="language-java" data-type="Program.cs">import java.io.Serializable;
+import com.google.gson.Gson;
+import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.Protocol;
+
+// Nodeクラス
+class Node implements Serializable {
+  // Serializableインターフェースを継承するとserialVersionUIDを設定しなければならない。
+  private static final long serialVersionUID = 1L;
+  // メンバー変数
+  private String data;
+  // メンバー変数のsetter 
+  public void setData(String data) {
+    // メンバー変数設定
+    this.data = data;
+  }
+  // 出力関数
+  public void print() {
+    // コンソール出力
+    System.out.println("data = " + data);
+  }
+}
+
+public class Program {
+  // 実行関数
+  public static void main(String... args) {
+    Gson gson = new Gson();
+    // redis接続する。
+    try (var pool = new JedisPool("192.168.1.200", Protocol.DEFAULT_PORT)) {
+      // Resource取得する。(これがPoolのインスタンスを生成する時に接続するか、Resource取得する時に接続するかの明確な説明がない)
+      try (var jedis = pool.getResource()) {
+        // Redisデータベースからnodeキーでデータを取得する。
+        var data = jedis.get("node");
+        // jsonのStringタイプのデータをnodeに変換
+        var node = gson.fromJson(data, Node.class);
+        // print関数実行
+        node.print();
+      }
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/321/2243_008.png" data-filename="008.png" style="width: 173px;"><br></p> 
+  <p>Redisデータベースにnodeキーでjsonのstringタイプのデータを取得します。</p> 
+  <p>そしてデータをGsonライブラリ利用してNodeクラスで変換します。そしてprint関数を呼び出すと入力したHello world値が出力しました。</p> 
+  <p><br></p> 
+  <p>次はRedisで使えるListとMap、SortedSetのデータタイプです。</p> 
+  <pre><code class="language-java" data-type="Program.cs">import redis.clients.jedis.JedisPool;
+import redis.clients.jedis.Protocol;
+
+public class Program {
+  // 実行関数
+  public static void main(String... args) {
+    // redis接続する。
+    try (var pool = new JedisPool("192.168.1.200", Protocol.DEFAULT_PORT)) {
+      // Resource取得する。(これがPoolのインスタンスを生成する時に接続するか、Resource取得する時に接続するかの明確な説明がない)
+      try (var jedis = pool.getResource()) {
+        // Listタイプの右からPush
+        jedis.rpush("list", "1");
+        // Listタイプの左からPush
+        jedis.lpush("list", "2");
+        // 2, 1
+        // コンソール出力
+        System.out.println(jedis.lpop("list"));
+        System.out.println(jedis.lpop("list"));
+        // 改行
+        System.out.println();
+
+        // Hashタイプのkey-value値を入力
+        jedis.hset("map", "a", "1");
+        jedis.hset("map", "b", "2");
+        jedis.hset("map", "c", "3");
+
+        // 改行
+        System.out.println(jedis.hget("map", "b"));
+        // 改行
+        System.out.println();
+        // SortedSetタイプの値を入力
+        jedis.zadd("SortedSet", 1, "aaa");
+        jedis.zadd("SortedSet", 0, "bbb");
+        // sortして出力
+        for (var sort : jedis.zscan("SortedSet", "").getResult()) {
+          // コンソール出力
+          System.out.println(sort.getElement());
+        }
+      }
+    }
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/321/2244_009.png" style="width: 175px;" data-filename="009.png"><br></p> 
+  <p>上はRedisでlistとmap、SortedSetで使えるタイプです。</p> 
+  <p><br></p> 
+  <p>実は私はよく使わないタイプです。</p> 
+  <p>Redisプログラムのアルゴリズムが悪く思わないですが、Redisデータベースの性能に関するボトルネックやアルゴリズムの性能がC#の基本ListやDictionaryよりもっと良いと思わないので、可能ならデータをそのままに取得してプログラム内で処理することをよく使います。</p> 
+  <p>私がまだ、Redisの経験が多くないので正確に分かりないですね。</p> 
+  <p><br></p> 
+  <p>ここまでJavaでRedisデータベースを接続して使い方(Jedisライブラリ)に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/260.html" target="_blank">[Java] WebSocketでチャット履歴をローディングする方法</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=java>#java</a>,<a href=./search.html?query=jedis>#jedis</a>,<a href=./search.html?query=redis>#redis</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0103">Devlopment note / Java</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/321.html'>[Java] Redisデータベースを接続して使い方(Jedisライブラリ)</a><span>2022/02/16 18:13:17</span></li><li><a href='https://www.nowonbun.com/260.html'>[Java] WebSocketでチャット履歴をローディングする方法</a><span>2021/06/15 18:34:45</span></li><li><a href='https://www.nowonbun.com/259.html'>[Java] WebSocketを利用してユーザ(サイト運用者)が他のユーザとチャットする方法</a><span>2021/06/15 17:20:08</span></li><li><a href='https://www.nowonbun.com/219.html'>[Java] HttpConnectionを利用してウェブページを取得する方法</a><span>2020/05/20 23:53:24</span></li><li><a href='https://www.nowonbun.com/218.html'>[Java] Jsoupを利用してXMLファイル(HTML)を扱う方法</a><span>2020/05/19 19:32:21</span></li><li><a href='https://www.nowonbun.com/191.html'>[Java] 日付フォーマット(SimpleDateFormat)を使う方法</a><span>2020/03/25 00:36:53</span></li><li><a href='https://www.nowonbun.com/190.html'>[Java] サーブレット(Servlet)の環境でファイルアップロード(プログレスバーでファイルアップロード状態を表示する方法)する方法</a><span>2020/03/24 00:48:21</span></li><li><a href='https://www.nowonbun.com/189.html'>[Java] Spring環境でファイルアップロード(プログレスバーでファイルアップロード状態を表示する方法)する方法</a><span>2020/03/22 23:15:12</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/321.html'>[Java] Redisデータベースを接続して使い方(Jedisライブラリ)</a><span>2022/02/16 18:13:17</span></li><li><a href='https://www.nowonbun.com/320.html'>[C#] Redisのデータベースを接続して使い方</a><span>2022/02/15 18:46:09</span></li><li><a href='https://www.nowonbun.com/319.html'>[CentOS] Redisデータベースをインストールする方法とコマンドを使い方</a><span>2022/02/14 18:33:07</span></li><li><a href='https://www.nowonbun.com/318.html'>[Design pattern] 3-6. ステートパターン(State pattern)</a><span>2021/11/17 20:04:47</span></li><li><a href='https://www.nowonbun.com/317.html'>[Design pattern] 3-5. メメントパターン(Memento pattern)</a><span>2021/11/16 20:01:36</span></li><li><a href='https://www.nowonbun.com/316.html'>[Design pattern] 3-4. イテレータパターン(Iterator pattern)</a><span>2021/11/15 19:31:28</span></li><li><a href='https://www.nowonbun.com/315.html'>[CentOS] Linux環境(CentOS)でCassandra(NoSQL DB)をインストールする方法(DBeaverブラウザでNoSQL使い方)</a><span>2021/11/12 17:33:58</span></li><li><a href='https://www.nowonbun.com/314.html'>[Design pattern] 3-3. コマンドパターン(Command pattern)</a><span>2021/11/05 17:01:42</span></li><li><a href='https://www.nowonbun.com/313.html'>[Window] apache-tomcatでロードバランシング(Load balancing)する方法とセッションクラスタリング（セッション共有）</a><span>2021/11/05 16:58:45</span></li><li><a href='https://www.nowonbun.com/312.html'>[Window] Apacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法</a><span>2021/11/05 16:55:05</span></li><li><a href='https://www.nowonbun.com/311.html'>[PHP] Apache環境の同じホスト中でPHPとJava(Servlet)を同時に起動、運用する方法</a><span>2021/11/05 16:52:04</span></li><li><a href='https://www.nowonbun.com/310.html'>[C#] 61. ウィンドウフォーム(Window form)でスレッド(Thread)を使い方、クロススレッド問題解決</a><span>2021/11/04 19:29:51</span></li><li><a href='https://www.nowonbun.com/309.html'>[Design pattern] 3-2. 責任の連鎖パターン(Chain of responsibility pattern)</a><span>2021/11/04 19:27:58</span></li><li><a href='https://www.nowonbun.com/308.html'>[Design pattern] 3-1. ストラテジーパターン(Strategy pattern)</a><span>2021/11/03 18:38:52</span></li><li><a href='https://www.nowonbun.com/307.html'>[C#] 60. ウィンドウフォーム(Window form)のイベント設定する方法</a><span>2021/11/02 21:18:08</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/321.html';this.page.identifier = 'NOWONBUN00321';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
