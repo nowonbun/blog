@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/323.html"},"url":"https:\/\/www.nowonbun.com\/323.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] 57. Eclipse\u3067Spring boot\u3092\u8a2d\u5b9a\u3059\u308b\u65b9\u6cd5","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306feclipse\u3067spring boot\u3092\u8a2d\u5b9a\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u6700\u8fd1\u3001\u79c1\u304c\u8272\u3005\u306e\u30a4\u30c3\u30b7\u30e5\u30fc\u3067\u30d5\u30ec\u30fc\u30e0\u30ef\u30fc\u30af\u3092spring web framework\u304b\u3089spring boot\u306b\u4e57\u308a\u63db\u3048\u307e\u3057\u305f\u3002spring boot\u304c\u697d\u3060\u3068\u3044\u3046\u306e\u306f\u4ee5\u524d\u304b\u3089\u77e5\u3063\u3066\u307e\u3057\u305f\u304c\u3002\u3002\u500b\u4eba\u7684\u306b\u4f55\u304b\u304c\u81ea\u52d5\u306b\u8a2d\u5b9a\u3055\u308c\u308b\u3053\u3068\u3092\u597d\u304d\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002\u7406\u7531\u306f\u69d8\u3005\u304c\u3042\u308a\u307e\u3059\u304c\u3001\u305d\u306e\u4e2d\u3067\u554f\u984c\u304c\u767a\u751f\u3059\u308b\u6642\u306b\u3002\u3002\u4f55\u51e6\u3067\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u305f\u304b\u660e\u78ba\u306b\u5206\u304b\u308a\u306b\u304f\u3044\u3053\u3068\u304c\u4e00\u756a\u306e\u7406\u7531\u3067\u3059\u306d\u3002\u305d\u306e\u305f\u3081\u3001\u79c1\u306f\u4e00\u304b\u3089\u3059\u3079\u3066\u3092\u8a2d\u5b9a\u3057\u3066\u4f5c\u6210\u3059\u308b\u3053\u3068\u3092\u597d\u304d\u3067\u3059\u3002(\u300c\u30d7\u30ed\u30b0\u30e9\u30e0\u306f\u81ea\u52d5\u306b\u51e6\u7406\u3059\u308b\u3053\u3068\u306f\u7d76\u5bfe\u306a\u3044! \u4f55\u51e6\u304b\u3067\u51e6\u7406\u3059\u308b\u306f\u305a\u3060\u300d\u3068\u3044\u3046\u50be\u5411\u3067\u3059\u3002\u3064\u307e\u308a\u3001\u30d0\u30b0\u3082\u4f55\u51e6\u304b\u3067\u9593\u9055\u3063\u3066\u51e6\u7406\u3057\u305f\u306e\u3067\u767a\u751f\u3059\u308b\u306f\u305a\u3060\u3068\u601d\u3044\u3067\u3059\u3002)\u3067\u3082\u3001\u4e00\u3064\u4e00\u3064\u8a2d\u5b9a\u3057\u3066\u4f5c\u6210\u3059\u308b\u3053\u3068\u304c\u5229\u70b9\u3060\u3051\u3042\u308b\u3053\u3068\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002\u751f\u7523\u6027\u304c\u60aa\u3044\u3057\u8a2d\u5b9a\u3059\u308b\u3053\u3068\u304c\u591a\u3059\u304e\u308b\u306e\u3067\u7ba1\u7406\u304c\u5927\u5909\u306b\u306a\u308b\u3053\u3068\u304c\u5927\u554f\u984c\u3067\u3059\u306d\u3002\u305d\u308c\u3067\u5b89\u5b9a\u6027\u304c100%\u306b\u78ba\u4fdd\u3057\u3066\u306a\u3044\u30e9\u30a4\u30d6\u30e9\u30ea\u306f\u4f7f\u308f\u306a\u3044\u3067\u3059\u3002\u7279\u306b\u30aa\u30d7\u30fc\u30f3\u30e9\u30a4\u30d6\u30e9\u30ea\u3002\u3002(\u6614\u306e\u4eba\u3002\u3002\u304a\u3058\u3061\u3083\u3093\u3002\u3002(\u7b11))\u79c1\u3082\u751f\u7523\u6027\u3082\u51c4\u304f\u91cd\u8981\u3060\u3068\u601d\u3044\u307e\u3059\u3002\u3067\u3082\u30d0\u30b0\u304c\u767a\u751f\u3057\u3066\u3001\u305d\u306e\u30d0\u30b0\u3092\u628a\u63e1\u3059\u308b\u3053\u3068\u304c\u5927\u5909\u3060\u3057\u3001\u56de\u907f\u304c\u96e3\u3057\u3044\u306a\u3089\u3002\u4f7f\u308f\u306a\u3044\u65b9\u304c\u826f\u3044\u3068\u601d\u3063\u3066\u4eca\u307e\u3067spring boot\u3092\u4f7f\u308f\u306a\u304b\u3063\u305f\u3093\u3067\u3059\u306d\u3002\u3067\u3082\u3001\u6700\u8fd1\u500b\u4eba\u30a4\u30c3\u30b7\u30e5\u30fc\u3067\u3002\u3002spring boot framework\u3092\u4e3b\u306b\u4f7f\u3063\u305f\u4eba\u304c\u4ee5\u524d\u3088\u308a\u5897\u3048\u305f\u3057\u3001\u9006\u306bweb framework\u3092\u4f7f\u3046\u4eba\u304c\u5c11\u306a\u304f\u306a\u3063\u3066\u3002\u3002\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u3092\u4e00\u4eba\u3067\u3084\u308b\u3053\u3068\u3067\u3082\u306a\u3044\u3057\u3002\u3002\u4e00\u4eba\u3067spring boot\u3092\u4f7f\u308f\u306a\u3044\u3068\u3044\u3046\u3053\u3068\u3082\u3067\u304d\u306a\u3044\u306e\u3067\u3001spring boot\u3092\u4f7f\u3046\u3053\u3068\u306b\u3057\u307e\u3057\u305f\u3002\u3067\u3082\u3002\u3002\u51c4\u304f\u826f\u3044\u3067\u3059\u306d\u3002\u3002spring boot\u3002\u3002\u51c4\u304f\u697d\u3067\u3059\u306d\u3002\u4f55\u3067\u4eca\u307e\u3067\u4f7f\u308f\u306a\u304b\u3063\u305f\u3093\u3060\u308d\u3046\u3068\u601d\u3046\u307b\u3069\u306b\u5b89\u5b9a\u6027\u3082\u826f\u3044\u3057\u697d\u3067\u3059\u306d\u3002\u7279\u306b\u3001\u914d\u5e03\u524d\u7565\u3084\u30d3\u30eb\u30c9\u5de5\u7a0b\u3092\u8a2d\u5b9a\u3059\u308b\u3053\u3068\u3067\u51c4\u304f\u697d\u3067\u3059\u306d\u3002\u3002\u305f\u3060\u3001\u4e00\u3064\u306e\u30b5\u30fc\u30d0\u30fc\u306b\u30a6\u30a7\u30d6\u30a2\u30d7\u30ea\u30b1\u30fc\u30b7\u30e7\u30f3\u306e\u30c8\u30e0\u30ad\u30e3\u30c3\u30c8\u304c\u591a\u304f\u306a\u308b\u554f\u984c\u306f\u3042\u308a\u307e\u3059\u306d\u3002\u3053\u308c\u3082\u8a2d\u5b9a\u3092\u51fa\u6765\u308b\u304b\u3068\u77e5\u308a\u307e\u305b\u3093\u3002\u307e\u3060\u3001\u79c1\u3082\u77e5\u3089\u306a\u3044\u90e8\u5206\u304c\u591a\u3044\u3067\u3059\u3002\u305d\u308c\u3067\u4eca\u307e\u3067web framework\u3067\u8a2d\u5b9a\u3057\u305f\u90e8\u5206\u3092spring boot\u306b\u306f\u3069\u306e\u3088\u3046\u306bs\u3063\u3066\u3044\u3059\u308b\u304b\u3001\u958b\u767a\u74b0\u5883\u3092\u8a2d\u5b9a\u3059\u308b\u304b\u3092\u8aac\u660e\u3057\u307e\u3059\u3002intellij\u306fultimate\u30d0\u30fc\u30b8\u30e7\u30f3\u3092\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3059\u308b\u3068spring boot\u30e9\u30a4\u30d6\u30e9\u30ea\u3082\u81ea\u52d5\u306b\u30a4\u30f3","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2022-02-22T19:04:49.000+09:00","dateModified":"2022-02-22T19:06:57.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はeclipseでspring bootを設定する方法に関する説明です。最近、私が色々のイッシューでフレームワークをspring web frameworkからspring bootに乗り換えました。spring bootが楽だというのは以前から知ってましたが。。個人的に何かが自動に設定されることを好きではありません。理由は様々がありますが、その中で問題が発生する時に。。何処でエラーが発生したか明確に分かりにくいことが一番の理由ですね。そのため、私は一からすべてを設定して作成することを好きです。(「プログラムは自動に処理することは絶対ない! 何処かで処理するはずだ」という傾向です。つまり、バグも何処かで間違って処理したので発生するはずだと思いです。)でも、一つ一つ設定して作成することが利点だけあることではありません。生産性が悪いし設定することが多すぎるので管理が大変になることが大問題ですね。それで安定性が100%に確保してないライブラリは使わないです。特にオプーンライブラリ。。(昔の人。。おじちゃん。。(笑))私も生産性も凄く重要だと思います。でもバグが発生して、そのバグを把握することが大変だし、回避が難しいなら。使わない方が良いと思って今までspring bootを使わなかったんですね。でも、最近個人イッシューで。。spring boot frameworkを主に使った人が以前より増えたし、逆にweb frameworkを使う人が少なくなって。。プロジェクトを一人でやることでもないし。。一人でspring bootを使わないということもできないので、spring bootを使うことにしました。でも。。凄く良いですね。。spring boot。。凄く楽ですね。何で今まで使わなかったんだろうと思うほどに安定性も良いし楽ですね。特に、配布前略やビルド工程を設定することで凄く楽ですね。。ただ、一つのサーバーにウェブアプリケーションのトムキャットが多くなる問題はありますね。これも設定を出来るかと知りません。まだ、私も知らない部分が多いです。それで今までweb frameworkで設定した部分をspring bootにはどのようにsっていするか、開発環境を設定するかを説明します。intellijはultimateバージョンをインストールするとspring bootライブラリも自動にイン]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java] 57. EclipseでSpring bootを設定する方法" />
+<link rel="canonical" href="https://www.nowonbun.com/323.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java] 57. EclipseでSpring bootを設定する方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はeclipseでspring bootを設定する方法に関する説明です。最近、私が色々のイッシューでフレームワークをspring web frameworkからspring bootに乗り換えました。spring bootが楽だというのは以前から知ってましたが。。個人的に何かが自動に設定されることを好きではありません。理由は様々がありますが、その中で問題が発生する時に。。何処でエラーが発生したか明確に分かりにくいことが一番の理由ですね。そのため、私は一からすべてを設定して作成することを好きです。(「プログラムは自動に処理することは絶対ない! 何処かで処理するはずだ」という傾向です。つまり、バグも何処かで間違って処理したので発生するはずだと思いです。)でも、一つ一つ設定して作成することが利点だけあることではありません。生産性が悪いし設定することが多すぎるので管理が大変になることが大問題ですね。それで安定性が100%に確保してないライブラリは使わないです。特にオプーンライブラリ。。(昔の人。。おじちゃん。。(笑))私も生産性も凄く重要だと思います。でもバグが発生して、そのバグを把握することが大変だし、回避が難しいなら。使わない方が良いと思って今までspring bootを使わなかったんですね。でも、最近個人イッシューで。。spring boot frameworkを主に使った人が以前より増えたし、逆にweb frameworkを使う人が少なくなって。。プロジェクトを一人でやることでもないし。。一人でspring bootを使わないということもできないので、spring bootを使うことにしました。でも。。凄く良いですね。。spring boot。。凄く楽ですね。何で今まで使わなかったんだろうと思うほどに安定性も良いし楽ですね。特に、配布前略やビルド工程を設定することで凄く楽ですね。。ただ、一つのサーバーにウェブアプリケーションのトムキャットが多くなる問題はありますね。これも設定を出来るかと知りません。まだ、私も知らない部分が多いです。それで今までweb frameworkで設定した部分をspring bootにはどのようにsっていするか、開発環境を設定するかを説明します。intellijはultimateバージョンをインストールするとspring bootライブラリも自動にイン]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/323.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java] 57. EclipseでSpring bootを設定する方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はeclipseでspring bootを設定する方法に関する説明です。最近、私が色々のイッシューでフレームワークをspring web frameworkからspring bootに乗り換えました。spring bootが楽だというのは以前から知ってましたが。。個人的に何かが自動に設定されることを好きではありません。理由は様々がありますが、その中で問題が発生する時に。。何処でエラーが発生したか明確に分かりにくいことが一番の理由ですね。そのため、私は一からすべてを設定して作成することを好きです。(「プログラムは自動に処理することは絶対ない! 何処かで処理するはずだ」という傾向です。つまり、バグも何処かで間違って処理したので発生するはずだと思いです。)でも、一つ一つ設定して作成することが利点だけあることではありません。生産性が悪いし設定することが多すぎるので管理が大変になることが大問題ですね。それで安定性が100%に確保してないライブラリは使わないです。特にオプーンライブラリ。。(昔の人。。おじちゃん。。(笑))私も生産性も凄く重要だと思います。でもバグが発生して、そのバグを把握することが大変だし、回避が難しいなら。使わない方が良いと思って今までspring bootを使わなかったんですね。でも、最近個人イッシューで。。spring boot frameworkを主に使った人が以前より増えたし、逆にweb frameworkを使う人が少なくなって。。プロジェクトを一人でやることでもないし。。一人でspring bootを使わないということもできないので、spring bootを使うことにしました。でも。。凄く良いですね。。spring boot。。凄く楽ですね。何で今まで使わなかったんだろうと思うほどに安定性も良いし楽ですね。特に、配布前略やビルド工程を設定することで凄く楽ですね。。ただ、一つのサーバーにウェブアプリケーションのトムキャットが多くなる問題はありますね。これも設定を出来るかと知りません。まだ、私も知らない部分が多いです。それで今までweb frameworkで設定した部分をspring bootにはどのようにsっていするか、開発環境を設定するかを説明します。intellijはultimateバージョンをインストールするとspring bootライブラリも自動にイン]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Java] 57. EclipseでSpring bootを設定する方法</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(100)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(26)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(28)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(6)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(24)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(15)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(220)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(61)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(57)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(19)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0210" href="study_project_design.html">Project design<span class="category-item-count">(9)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/323.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Java] 57. EclipseでSpring bootを設定する方法</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0203">Study / Java</a>    作成日付 : <span property="datePublished">2022/02/22 19:04:49</span>   修正日付 : <span property="dateModified">2022/02/22 19:06:57</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はEclipseでSpring bootを設定する方法に関する説明です。</p> 
+  <p>最近、私が色々のイッシューでフレームワークをSpring Web frameworkからSpring bootに乗り換えました。Spring bootが楽だというのは以前から知ってましたが。。</p> 
+  <p>個人的に何かが自動に設定されることを好きではありません。</p> 
+  <p><br></p> 
+  <p>理由は様々がありますが、その中で問題が発生する時に。。何処でエラーが発生したか明確に分かりにくいことが一番の理由ですね。そのため、私は一からすべてを設定して作成することを好きです。(「プログラムは自動に処理することは絶対ない! 何処かで処理するはずだ」という傾向です。つまり、バグも何処かで間違って処理したので発生するはずだと思いです。)</p> 
+  <p>でも、一つ一つ設定して作成することが利点だけあることではありません。生産性が悪いし設定することが多すぎるので管理が大変になることが大問題ですね。それで安定性が100%に確保してないライブラリは使わないです。特にオプーンライブラリ。。(昔の人。。おじちゃん。。(笑))</p> 
+  <p><br></p> 
+  <p>私も生産性も凄く重要だと思います。でもバグが発生して、そのバグを把握することが大変だし、回避が難しいなら。使わない方が良いと思って今までSpring bootを使わなかったんですね。</p> 
+  <p>でも、最近個人イッシューで。。Spring boot frameworkを主に使った人が以前より増えたし、逆にWeb frameworkを使う人が少なくなって。。プロジェクトを一人でやることでもないし。。</p> 
+  <p>一人でSpring bootを使わないということもできないので、Spring bootを使うことにしました。</p> 
+  <p><br></p> 
+  <p>でも。。凄く良いですね。。Spring boot。。凄く楽ですね。何で今まで使わなかったんだろうと思うほどに安定性も良いし楽ですね。</p> 
+  <p>特に、配布前略やビルド工程を設定することで凄く楽ですね。。ただ、一つのサーバーにウェブアプリケーションのトムキャットが多くなる問題はありますね。これも設定を出来るかと知りません。まだ、私も知らない部分が多いです。</p> 
+  <p><br></p> 
+  <p>それで今までWeb frameworkで設定した部分をSpring bootにはどのようにsっていするか、開発環境を設定するかを説明します。</p> 
+  <p>IntelliJはUltimateバージョンをインストールするとSpring bootライブラリも自動にインストールします。IntelliJは楽だし、良いですが、有料なので、家にはEclipseを使うべきです。</p> 
+  <p><br></p> 
+  <p>まず、Eclipseをインストールしなければならないですが、これは以前の方法と同じです。</p> 
+  <p>リンク - <a href="https://www.nowonbun.com/41.html" target="_blank">[Java] 1. Javaとは？、Javaインストール、Eclipseインストール</a></p> 
+  <p>Eclipseダウンロードリンク - <a href="https://www.eclipse.org/downloads/packages/" target="_blank">https://www.eclipse.org/downloads/packages/</a></p> 
+  <p style="text-align:left;"><img src="./contents/323/2252_001.png" style="width: 848px;" data-filename="001.png"><br></p> 
+  <p>適当なところで圧縮を解凍します。私はd:\eclipseフォルドにインストールしました。</p> 
+  <p style="text-align:left;"><img src="./contents/323/2253_002.png" data-filename="002.png" style="width: 407px;"><br></p> 
+  <p>イクリプスを実行してプロジェクト生成ウィザードを実行するとまだ、Spring bootを生成する領域がありません。</p> 
+  <p style="text-align:left;"><img src="./contents/323/2254_003.png" data-filename="003.png" style="width: 511px;"><br></p> 
+  <p>Help -&gt; Eclipse MarketPlaceを選択しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/323/2255_004.png" style="width: 320px;" data-filename="004.png"><br></p> 
+  <p>そして検索テキストで「sts」で検索しましょう。</p> 
+  <p><br></p> 
+  <p>そうしたらSpring tools 4が検索されますが、インストールしましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/323/2256_005.png" style="width: 517px;" data-filename="005.png"><br></p> 
+  <p style="text-align:left;"><img src="./contents/323/2257_006.png" style="width: 478px;" data-filename="006.png"><br></p> 
+  <p>右下のツールバーを見るとインストール状況が見えますが、インストール完了するまで待ちましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/323/2258_007.png" data-filename="007.png" style="width: 653px;"><br></p> 
+  <p>インストール完了するとEclipseが再起動します。</p> 
+  <p><br></p> 
+  <p>そしてまた、プロジェクト生成ウィザードを開くとSpring bootカテゴリーが生成されたことを確認できます。</p> 
+  <p style="text-align:left;"><img src="./contents/323/2259_008.png" style="width: 511px;" data-filename="008.png"><br></p> 
+  <p>Spring Starter Projectを選択してプロジェクトを生成しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/323/2260_009.png" data-filename="009.png" style="width: 553px;"><br></p> 
+  <p>プロジェクト名と基本パッケージ設定、Mavenで使うGroupとバージョン設定をしてNextを押下しましょう。</p> 
+  <p><br></p> 
+  <p>Spring bootは始めに生成する時に基本Dependenciesを設定することができますが、ウェブ環境ならSpring Boot DevTools、Thymeleaf、Spring Webを設定しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/323/2261_010.png" data-filename="010.png" style="width: 553px;"><br></p> 
+  <p>Spring Boot DevToolsは開発する時に良いライブラリだし、Spring WebはWeb Frameworkライブラリです。</p> 
+  <p>DevToolsをチェックしなくても開発することでは問題ないですが、なかればデバッグ中でソース修正するとテンプレートキャッシング設定やトムキャット再起動などの不便なところがあるので設定するほうがよいでしょう。後でリリーズ(Production deploy)する時にpom.xmlから除いたら良いです。</p> 
+  <p>Spring Webは既存おWeb Frameworkです。差異は以前にはxmlでWeb frameworkを設定しなければならないことが多かったんですが、Spring bootからはapplication.propertiesですべての設定が統合されているので設定が楽になりました。</p> 
+  <p>Thymeleafはテンプレートフレームワークです。私はSpring bootを使う前にはJSTL(JSP)をよく使いましたが、Spring boot空はThymeleafテンプレートフレームワークがお勧めですね。</p> 
+  <p>性能に関しては個人的に様々にテストをしましたが、別に差異を感じられませんでした。可読性はJSPよりThymeleafが綺麗な感じでした。でもThymeleafは構造が普通ではないので。。Thymeleafの文法では別に説明します。</p> 
+  <p><br></p> 
+  <p>最後にFinishを押下してプロジェクトを生成しましょう。</p> 
+  <p><br></p> 
+  <p>プロジェクトを生成した後に何分を待ってたらプロジェクトが生成されますが、下記通りの構造になります。</p> 
+  <p style="text-align:left;"><img src="./contents/323/2262_011.png" style="width: 299px;" data-filename="011.png"><br></p> 
+  <p>まず、設定する部分がapplication.propertiesです。</p> 
+  <pre><code class="language-properties" data-type="application.properties"># サーバーポート設定
+server.port=8081
+# thymeleaf ファイル設定
+spring.thymeleaf.prefix=classpath:templates/
+spring.thymeleaf.check-template-location=true
+# thymeleaf ファイル拡張子
+spring.thymeleaf.suffix=.html
+spring.thymeleaf.mode=HTML5
+# thymeleaf キャッシュモード
+spring.thymeleaf.cache=false
+</code></pre> 
+  <p>そして基本的にControllerクラスを生成する時は@SpringBootApplicationアノテーションとmain関数があるクラスと同じパッケージあるいは下位パッケージにControllerを設定することができます。</p> 
+  <p>私は下位パッケージを生成してHomeControllerを生成しました。</p> 
+  <pre><code class="java" data-type="HomeController.java">package com.example.demo.Controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+// コントローラーアノテーション
+@Controller
+public class HomeController {
+  // マッピングアドレス
+  @RequestMapping(value = {"/", "/index.html"})
+  public String index(Model model) {
+    // テンプレートに渡すデータ
+    model.addAttribute("data", "hello world");
+    // テンプレートファイル名
+    return "Home/index";
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/323/2263_012.png" data-filename="012.png" style="width: 332px;"><br></p> 
+  <p>同じパッケージではないところで設定したいなら、@SpringBootApplicationアノテーションにscanBasePackages値を設定したら良いでしょう。</p> 
+  <p style="text-align:left;"><img src="./contents/323/2264_013.png" data-filename="013.png" style="width: 570px;"><br></p> 
+  <p>今回はコントローラーに呼び出すThymeleafテンプレートを設定しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/323/2265_014.png" style="width: 330px;" data-filename="014.png"><br></p> 
+  <p>index関数ではHome/indexファイルを呼び出したので、Homeフォルダー下のindex.htmlファイルを生成します。</p> 
+  <pre><code class="html" data-type="index.html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Insert title here&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;!-- コントローラーで受け取ったデータを出力 --&gt;
+  &lt;span th:text="${data}"&gt;message&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre> 
+  <p>テンプレートファイルまで生成したらこれから実行しましょう。</p> 
+  <p><br></p> 
+  <p>実行する方法はProject Explorerのプロジェクトでマウス右クリックするかmain関数があるところでマウス右クリックするとRun asあるいはDebug asのSpring boot Appメニューがありましてクリックすると実行できます。</p> 
+  <p style="text-align:left;"><img src="./contents/323/2266_015.png" style="width: 628px;" data-filename="015.png"><br></p> 
+  <p style="text-align:left;"><img src="./contents/323/2267_016.png" data-filename="016.png" style="width: 781px;"><br></p> 
+  <p>実行すると上のログが発生しますが、application.propertiesで設定したポートに接続すると正常に実行することを確認できます。</p> 
+  <p style="text-align:left;"><img src="./contents/323/2268_017.png" style="width: 406px;" data-filename="017.png"><br></p> 
+  <p>ここまでがSpring bootの基本的の設定です。</p> 
+  <p>これからJPAもWeb Frameworkと設定が違うのでまた、設定をしなければならないですし、Apache連結などもまた確認しなければならないですね。</p> 
+  <p>Thymeleaf文法も整理が必要だし、始めテンプレートウィザードを見ると基本的に支援するライブラリが多いらしいですが、一つ一つ確認しなければならないですね。</p> 
+  <p><br></p> 
+  <p>ここまでEclipseでSpring bootを設定する方法に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/265.html" target="_blank">[Java] 56. Web serviceのサーブレット(Servlet)で初期化作業(properties設定)</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=java>#java</a>,<a href=./search.html?query=springboot>#springboot</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0203">Study / Java</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/323.html'>[Java] 57. EclipseでSpring bootを設定する方法</a><span>2022/02/22 19:04:49</span></li><li><a href='https://www.nowonbun.com/265.html'>[Java] 56. Web serviceのサーブレット(Servlet)で初期化作業(properties設定)</a><span>2021/07/02 17:10:36</span></li><li><a href='https://www.nowonbun.com/264.html'>[Java] 55. Spring frameworkに文字化けを解決する方法(Encoding設定)</a><span>2021/06/30 16:37:16</span></li><li><a href='https://www.nowonbun.com/263.html'>[Java] 54. Spring frameworkでWeb filterを使う方法</a><span>2021/06/29 18:25:12</span></li><li><a href='https://www.nowonbun.com/262.html'>[Java] 53. ウェブサービス(Web service)でエラーページを処理する方法</a><span>2021/06/25 13:35:54</span></li><li><a href='https://www.nowonbun.com/92.html'>[Java] 52. SpringフレームワークでDAOをFactory method Patternを利用して依存性注入する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Java] 51. SpringフレームワークでJPAを使い方(依存性注入@Autowired)</a><span>2019/10/16 07:32:55</span></li><li><a href='https://www.nowonbun.com/90.html'>[Java] 50. JPAプロジェクトでDAOクラスを作成する方法</a><span>2019/10/15 20:12:35</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/323.html'>[Java] 57. EclipseでSpring bootを設定する方法</a><span>2022/02/22 19:04:49</span></li><li><a href='https://www.nowonbun.com/322.html'>[Python] Redisデータベースに接続して使い方</a><span>2022/02/21 18:23:49</span></li><li><a href='https://www.nowonbun.com/321.html'>[Java] Redisデータベースを接続して使い方(Jedisライブラリ)</a><span>2022/02/16 18:13:17</span></li><li><a href='https://www.nowonbun.com/320.html'>[C#] Redisのデータベースを接続して使い方</a><span>2022/02/15 18:46:09</span></li><li><a href='https://www.nowonbun.com/319.html'>[CentOS] Redisデータベースをインストールする方法とコマンドを使い方</a><span>2022/02/14 18:33:07</span></li><li><a href='https://www.nowonbun.com/318.html'>[Design pattern] 3-6. ステートパターン(State pattern)</a><span>2021/11/17 20:04:47</span></li><li><a href='https://www.nowonbun.com/317.html'>[Design pattern] 3-5. メメントパターン(Memento pattern)</a><span>2021/11/16 20:01:36</span></li><li><a href='https://www.nowonbun.com/316.html'>[Design pattern] 3-4. イテレータパターン(Iterator pattern)</a><span>2021/11/15 19:31:28</span></li><li><a href='https://www.nowonbun.com/315.html'>[CentOS] Linux環境(CentOS)でCassandra(NoSQL DB)をインストールする方法(DBeaverブラウザでNoSQL使い方)</a><span>2021/11/12 17:33:58</span></li><li><a href='https://www.nowonbun.com/314.html'>[Design pattern] 3-3. コマンドパターン(Command pattern)</a><span>2021/11/05 17:01:42</span></li><li><a href='https://www.nowonbun.com/313.html'>[Window] apache-tomcatでロードバランシング(Load balancing)する方法とセッションクラスタリング（セッション共有）</a><span>2021/11/05 16:58:45</span></li><li><a href='https://www.nowonbun.com/312.html'>[Window] Apacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法</a><span>2021/11/05 16:55:05</span></li><li><a href='https://www.nowonbun.com/311.html'>[PHP] Apache環境の同じホスト中でPHPとJava(Servlet)を同時に起動、運用する方法</a><span>2021/11/05 16:52:04</span></li><li><a href='https://www.nowonbun.com/310.html'>[C#] 61. ウィンドウフォーム(Window form)でスレッド(Thread)を使い方、クロススレッド問題解決</a><span>2021/11/04 19:29:51</span></li><li><a href='https://www.nowonbun.com/309.html'>[Design pattern] 3-2. 責任の連鎖パターン(Chain of responsibility pattern)</a><span>2021/11/04 19:27:58</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/323.html';this.page.identifier = 'NOWONBUN00323';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
