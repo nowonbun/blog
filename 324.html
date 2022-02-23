@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/324.html"},"url":"https:\/\/www.nowonbun.com\/324.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] 58. Eclipse\u3067Spring boot\u306eJPA\u3092\u8a2d\u5b9a\u3059\u308b\u65b9\u6cd5","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306feclipse\u3067spring boot\u306ejpa\u3092\u8a2d\u5b9a\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002spring web framework\u74b0\u5883\u3067jpa\u3092\u8a2d\u5b9a\u3059\u308b\u65b9\u6cd5\u306b\u95a2\u3057\u3066\u8aac\u660e\u3057\u305f\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002\u30ea\u30f3\u30af - [java] 45. jpa\u3092\u8a2d\u5b9a\u3059\u308b\u65b9\u6cd5\u57fa\u672c\u7684\u306e\u8a2d\u5b9a\u306fspring web framework\u74b0\u5883\u3067\u8a2d\u5b9a\u3059\u308b\u3053\u3068\u3068\u540c\u3058\u3067\u3059\u3002\u5dee\u7570\u304c\u3042\u308c\u3070spring web framework\ub294 persistence.xml\u3067\u63a5\u7d9a\u74b0\u5883\u3092\u8a2d\u5b9a\u3057\u3066spring boot\u306fapplication.properties\u3067\u8a2d\u5b9a\u3059\u308b\u3053\u3068\u306b\u306a\u308a\u307e\u3059\u3002spring boot\u306f\u74b0\u5883\u8a2d\u5b9a\u30d5\u30a1\u30a4\u30eb\u304c\u4e00\u3064\u306b\u7d71\u5408\u3059\u308b\u3053\u3068\u306b\u306a\u308b\u306e\u3067\u7ba1\u7406\u3057\u3084\u3059\u3044\u3067\u3059\u306d\u3002\u307e\u305a\u3001jpa\u3092\u9023\u7d50\u3059\u308b\u305f\u3081\u306b\u30ed\u30fc\u30ab\u30eb\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306b\u30c6\u30b9\u30c8\u30c6\u30fc\u30d6\u30eb\u3092\u4f5c\u6210\u3057\u307e\u3057\u3087\u3046\u3002\u305d\u3057\u3066\u30c6\u30fc\u30d6\u30eb\u306b\u30c6\u30b9\u30c8\u30c7\u30fc\u30bf\u3092\u683c\u7d0d\u3057\u307e\u3059\u3002\u3053\u308c\u304b\u3089\u4e0a\u306e\u30c7\u30fc\u30bf\u3092spring boot\u3092\u5229\u7528\u3057\u3066\u753b\u9762\u306b\u8868\u793a\u3057\u307e\u3057\u3087\u3046\u3002\u4e00\u5fdc\u3001\u4ee5\u524d\u306e\u6295\u7a3f\u3067\u4f5c\u6210\u3057\u305f\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u3067jpa\u3092\u8ffd\u52a0\u3057\u307e\u3057\u3087\u3046\u3002\u30ea\u30f3\u30af - [java] 57. eclipse\u3067spring boot\u3092\u8a2d\u5b9a\u3059\u308b\u65b9\u6cd5\u307e\u305a\u3001\u30a6\u30a3\u30b6\u30fc\u30c9\u3092\u5b9f\u884c\u3057\u3066jpa\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u8ffd\u52a0\u3057\u307e\u3057\u3087\u3046\u3002\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u3067\u30de\u30a6\u30b9\u53f3\u30af\u30ea\u30c3\u30af\u3057\u3066spring\uc758 add starter\u3092\u5b9f\u884c\u3057\u307e\u3057\u3087\u3046\u3002\u305d\u3057\u3066\u3053\u308c\u304ceclipse\u306e\u30d0\u30b0\u304b\u3069\u3046\u304b\u77e5\u3089\u306a\u3044\u3067\u3059\u304c\u3001\u65e2\u5b58\u306b\u9078\u629e\u3057\u305f\u3082\u306e\u304c\u9078\u629e\u3055\u308c\u3066\u3044\u307e\u305b\u3093\u3002\u305d\u308c\u3067\u9078\u629e\u305b\u305a\u306bfinish\u3092\u62bc\u4e0b\u3059\u308b\u3068\u65e2\u5b58\u306b\u8a2d\u5b9a\u3057\u305f\u30e9\u30a4\u30d6\u30e9\u30ea\u304c\u89e3\u9664\u3059\u308b\u72b6\u6cc1\u306b\u306a\u308a\u307e\u3059\u3002\u306a\u306e\u3067\u3001\u4ee5\u524d\u306b\u8a2d\u5b9a\u3057\u305f\u3082\u306e\u3082\u30c1\u30a7\u30c3\u30af\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u3002(\u30d0\u30b0\u3089\u3057\u3044\u3002\u3002\u3002)jpa\u3092\u4f7f\u3046\u305f\u3081\u306b\u306fjdbc api\u3001spring data jdbc\u3001spring data jpa\u3001mariadb driver\u3092\u8ffd\u52a0\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u3002next\u30dc\u30bf\u30f3\u3092\u62bc\u4e0b\u3059\u308b\u3068\u30bd\u30fc\u30b9\u6bd4\u8f03\u753b\u9762\u304c\u8868\u793a\u3057\u307e\u3059\u3002\u3053\u3053\u3067pom.xml\u3060\u3051\u66f4\u65b0\u3059\u308b\u3053\u3068\u3092\u30c1\u30a7\u30c3\u30af\u3057\u3066finish\u30dc\u30bf\u30f3\u3092\u62bc\u4e0b\u3059\u308b\u3068maven\u30a2\u30c3\u30d7\u30c7\u30fc\u30c8\u3057\u307e\u3059\u3002\u30a6\u30a3\u30b6\u30fc\u30c9\u3092\u4f7f\u308f\u306a\u304f\u3066pom.xml\u3092\u76f4\u63a5\u306b\u4fee\u6b63\u3059\u308b\u65b9\u6cd5\u3082\u3042\u308a\u307e\u3059\u3002\u5b9f\u306f\u30a6\u30a3\u30b6\u30fc\u30c9\u3092\u4f7f\u3046\u3053\u3068\u3088\u308a\u76f4\u63a5\u306b\u74b0\u5883\u8a2d\u5b9a\u3059\u308b\u307b\u3046\u304c\u6b63\u78ba\u306a\u306e\u3067\u3001\u76f4\u63a5\u306bpom.xml\u3092\u8a2d\u5b9a\u3059\u308b\u65b9\u6cd5\u3092\u304a\u52e7\u3081\u3067\u3059\u3002\u305d\u3057\u3066eclipse\u3067jpa\u3092\u4f7f\u308f\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u306e\u3067\u3001jpa\u30e2\u30fc\u30c9\u306b\u5909\u66f4\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u3002eclipse\u306fspring boo","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2022-02-23T18:11:10.000+09:00","dateModified":"2022-02-23T18:13:04.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はeclipseでspring bootのjpaを設定する方法に関する説明です。spring web framework環境でjpaを設定する方法に関して説明したことがあります。リンク - [java] 45. jpaを設定する方法基本的の設定はspring web framework環境で設定することと同じです。差異があればspring web framework는 persistence.xmlで接続環境を設定してspring bootはapplication.propertiesで設定することになります。spring bootは環境設定ファイルが一つに統合することになるので管理しやすいですね。まず、jpaを連結するためにローカルデータベースにテストテーブルを作成しましょう。そしてテーブルにテストデータを格納します。これから上のデータをspring bootを利用して画面に表示しましょう。一応、以前の投稿で作成したプロジェクトでjpaを追加しましょう。リンク - [java] 57. eclipseでspring bootを設定する方法まず、ウィザードを実行してjpaライブラリを追加しましょう。プロジェクトでマウス右クリックしてspring의 add starterを実行しましょう。そしてこれがeclipseのバグかどうか知らないですが、既存に選択したものが選択されていません。それで選択せずにfinishを押下すると既存に設定したライブラリが解除する状況になります。なので、以前に設定したものもチェックしなければならないです。(バグらしい。。。)jpaを使うためにはjdbc api、spring data jdbc、spring data jpa、mariadb driverを追加しなければならないです。nextボタンを押下するとソース比較画面が表示します。ここでpom.xmlだけ更新することをチェックしてfinishボタンを押下するとmavenアップデートします。ウィザードを使わなくてpom.xmlを直接に修正する方法もあります。実はウィザードを使うことより直接に環境設定するほうが正確なので、直接にpom.xmlを設定する方法をお勧めです。そしてeclipseでjpaを使わなければならないので、jpaモードに変更しなければならないです。eclipseはspring boo]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java] 58. EclipseでSpring bootのJPAを設定する方法" />
+<link rel="canonical" href="https://www.nowonbun.com/324.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java] 58. EclipseでSpring bootのJPAを設定する方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はeclipseでspring bootのjpaを設定する方法に関する説明です。spring web framework環境でjpaを設定する方法に関して説明したことがあります。リンク - [java] 45. jpaを設定する方法基本的の設定はspring web framework環境で設定することと同じです。差異があればspring web framework는 persistence.xmlで接続環境を設定してspring bootはapplication.propertiesで設定することになります。spring bootは環境設定ファイルが一つに統合することになるので管理しやすいですね。まず、jpaを連結するためにローカルデータベースにテストテーブルを作成しましょう。そしてテーブルにテストデータを格納します。これから上のデータをspring bootを利用して画面に表示しましょう。一応、以前の投稿で作成したプロジェクトでjpaを追加しましょう。リンク - [java] 57. eclipseでspring bootを設定する方法まず、ウィザードを実行してjpaライブラリを追加しましょう。プロジェクトでマウス右クリックしてspring의 add starterを実行しましょう。そしてこれがeclipseのバグかどうか知らないですが、既存に選択したものが選択されていません。それで選択せずにfinishを押下すると既存に設定したライブラリが解除する状況になります。なので、以前に設定したものもチェックしなければならないです。(バグらしい。。。)jpaを使うためにはjdbc api、spring data jdbc、spring data jpa、mariadb driverを追加しなければならないです。nextボタンを押下するとソース比較画面が表示します。ここでpom.xmlだけ更新することをチェックしてfinishボタンを押下するとmavenアップデートします。ウィザードを使わなくてpom.xmlを直接に修正する方法もあります。実はウィザードを使うことより直接に環境設定するほうが正確なので、直接にpom.xmlを設定する方法をお勧めです。そしてeclipseでjpaを使わなければならないので、jpaモードに変更しなければならないです。eclipseはspring boo]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/324.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java] 58. EclipseでSpring bootのJPAを設定する方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はeclipseでspring bootのjpaを設定する方法に関する説明です。spring web framework環境でjpaを設定する方法に関して説明したことがあります。リンク - [java] 45. jpaを設定する方法基本的の設定はspring web framework環境で設定することと同じです。差異があればspring web framework는 persistence.xmlで接続環境を設定してspring bootはapplication.propertiesで設定することになります。spring bootは環境設定ファイルが一つに統合することになるので管理しやすいですね。まず、jpaを連結するためにローカルデータベースにテストテーブルを作成しましょう。そしてテーブルにテストデータを格納します。これから上のデータをspring bootを利用して画面に表示しましょう。一応、以前の投稿で作成したプロジェクトでjpaを追加しましょう。リンク - [java] 57. eclipseでspring bootを設定する方法まず、ウィザードを実行してjpaライブラリを追加しましょう。プロジェクトでマウス右クリックしてspring의 add starterを実行しましょう。そしてこれがeclipseのバグかどうか知らないですが、既存に選択したものが選択されていません。それで選択せずにfinishを押下すると既存に設定したライブラリが解除する状況になります。なので、以前に設定したものもチェックしなければならないです。(バグらしい。。。)jpaを使うためにはjdbc api、spring data jdbc、spring data jpa、mariadb driverを追加しなければならないです。nextボタンを押下するとソース比較画面が表示します。ここでpom.xmlだけ更新することをチェックしてfinishボタンを押下するとmavenアップデートします。ウィザードを使わなくてpom.xmlを直接に修正する方法もあります。実はウィザードを使うことより直接に環境設定するほうが正確なので、直接にpom.xmlを設定する方法をお勧めです。そしてeclipseでjpaを使わなければならないので、jpaモードに変更しなければならないです。eclipseはspring boo]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Java] 58. EclipseでSpring bootのJPAを設定する方法</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(100)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(26)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(28)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(6)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(24)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(15)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(221)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(61)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(58)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(19)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0210" href="study_project_design.html">Project design<span class="category-item-count">(9)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/324.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Java] 58. EclipseでSpring bootのJPAを設定する方法</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0203">Study / Java</a>    作成日付 : <span property="datePublished">2022/02/23 18:11:10</span>   修正日付 : <span property="dateModified">2022/02/23 18:13:04</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はEclipseでSpring bootのJPAを設定する方法に関する説明です。</p> 
+  <p><br></p> 
+  <p>Spring Web Framework環境でJPAを設定する方法に関して説明したことがあります。</p> 
+  <p>リンク - <a href="https://www.nowonbun.com/85.html" target="_blank">[Java] 45. JPAを設定する方法</a></p> 
+  <p><br></p> 
+  <p>基本的の設定はSpring Web Framework環境で設定することと同じです。差異があればSpring Web Framework는 persistence.xmlで接続環境を設定してSpring bootはapplication.propertiesで設定することになります。</p> 
+  <p>Spring bootは環境設定ファイルが一つに統合することになるので管理しやすいですね。</p> 
+  <p><br></p> 
+  <p>まず、JPAを連結するためにローカルデータベースにテストテーブルを作成しましょう。</p> 
+  <pre><code class="language-sql" data-type="DDL.sql">-- testデータベースに接続
+use test;
+-- 以前のテーブルが有れば削除
+-- drop table info;
+-- drop table user;
+-- userテーブル生成
+create table user(
+  id varchar(255) not null,
+  name nvarchar(255) not null,
+  
+  primary key(id) -- キー設定
+);
+-- infoテーブル生成
+create table info(
+  idx int not null auto_increment, -- 自動増加
+  id varchar(255) not null,
+  age int not null,
+  
+  primary key(idx), -- キー設定
+  foreign key(id) references user(id) -- idはuserのidで連結
+);
+</code></pre> 
+  <p>そしてテーブルにテストデータを格納します。</p> 
+  <pre><code class="language-sql" data-type="test.sql">-- userテーブルにデータを挿入
+insert into user (id, name) values('nowonbun', 'Hello');
+-- infoテーブルにデータを挿入
+insert into info(id, age) values('nowonbun', 20);
+</code></pre> 
+  <p>これから上のデータをSpring bootを利用して画面に表示しましょう。</p> 
+  <p><br></p> 
+  <p>一応、以前の投稿で作成したプロジェクトでJPAを追加しましょう。</p> 
+  <p>リンク - <a href="https://www.nowonbun.com/323.html" target="_blank">[Java] 57. EclipseでSpring bootを設定する方法</a></p> 
+  <p><br></p> 
+  <p>まず、ウィザードを実行してJPAライブラリを追加しましょう。</p> 
+  <p>プロジェクトでマウス右クリックしてSpring의 Add Starterを実行しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/324/2269_001.png" style="width: 536px;" data-filename="001.png"><br></p> 
+  <p>そしてこれがeclipseのバグかどうか知らないですが、既存に選択したものが選択されていません。それで選択せずにFinishを押下すると既存に設定したライブラリが解除する状況になります。</p> 
+  <p>なので、以前に設定したものもチェックしなければならないです。(バグらしい。。。)</p> 
+  <p style="text-align:left;"><img src="./contents/324/2270_002.png" style="width: 666px;" data-filename="002.png"><br></p> 
+  <p>JPAを使うためにはJDBC API、Spring Data JDBC、Spring Data JPA、MariaDB Driverを追加しなければならないです。</p> 
+  <p style="text-align:left;"><img src="./contents/324/2271_003.png" style="width: 553px;" data-filename="003.png"><br></p> 
+  <p>Nextボタンを押下するとソース比較画面が表示します。ここでpom.xmlだけ更新することをチェックしてFinishボタンを押下するとmavenアップデートします。</p> 
+  <pre><code class="language-xml" data-type="pom.xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+  &lt;parent&gt;
+    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-boot-starter-parent&lt;/artifactId&gt;
+    &lt;version&gt;2.6.3&lt;/version&gt;
+    &lt;relativePath/&gt; &lt;!-- lookup parent from repository --&gt;
+  &lt;/parent&gt;
+  &lt;groupId&gt;com.example&lt;/groupId&gt;
+  &lt;artifactId&gt;SpringBootTest&lt;/artifactId&gt;
+  &lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+  &lt;name&gt;SpringBootTest&lt;/name&gt;
+  &lt;description&gt;Demo project for Spring Boot&lt;/description&gt;
+  &lt;properties&gt;
+    &lt;java.version&gt;11&lt;/java.version&gt;
+  &lt;/properties&gt;
+  &lt;dependencies&gt;
+    &lt;!-- thymeleafライブラリ --&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-boot-starter-thymeleaf&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!-- Spring bootライブラリ --&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!-- JUnitライブラリ --&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-boot-starter-test&lt;/artifactId&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+    &lt;!-- devtoolsライブラリ --&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;
+      &lt;scope&gt;runtime&lt;/scope&gt;
+      &lt;optional&gt;true&lt;/optional&gt;
+    &lt;/dependency&gt;
+    &lt;!-- data-jdbcライブラリ --&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-boot-starter-data-jdbc&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!-- data-jpaライブラリ --&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-boot-starter-data-jpa&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!-- jdbcライブラリ --&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-boot-starter-jdbc&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;!-- mariadb-java-clientライブラリ --&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.mariadb.jdbc&lt;/groupId&gt;
+      &lt;artifactId&gt;mariadb-java-client&lt;/artifactId&gt;
+      &lt;scope&gt;runtime&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+
+  &lt;build&gt;
+    &lt;plugins&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+      &lt;/plugin&gt;
+    &lt;/plugins&gt;
+  &lt;/build&gt;
+
+&lt;/project&gt;
+</code></pre> 
+  <p>ウィザードを使わなくてpom.xmlを直接に修正する方法もあります。実はウィザードを使うことより直接に環境設定するほうが正確なので、直接にpom.xmlを設定する方法をお勧めです。</p> 
+  <p><br></p> 
+  <p>そしてEclipseでJPAを使わなければならないので、JPAモードに変更しなければならないです。</p> 
+  <p style="text-align:left;"><img src="./contents/324/2272_004.png" style="width: 657px;" data-filename="004.png"><br></p> 
+  <p style="text-align:left;"><img src="./contents/324/2273_005.png" style="width: 585px;" data-filename="005.png"><br></p> 
+  <p>eclipseはSpring boot基準ではなく、Web framework基準で設定されています。なのでeclipse設定を少し変わらなければならないです。</p> 
+  <p>まず、ソースの中でMETA-INF/persistence.xmlファイルを消しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/324/2274_006.png" data-filename="006.png" style="width: 325px;"><br></p> 
+  <p>そうするとeclipseでMETA-INF/persistence.xmlファイルがないということにエラー表示されます。</p> 
+  <p style="text-align:left;"><img src="./contents/324/2275_007.png" data-filename="007.png" style="width: 848px;"><br></p> 
+  <p>Window -&gt; PreferencesタブでJava Persistence -&gt; JPA -&gt; Errors/WarningsのProject -&gt; No persistence.xml file found in projectをignoreに変更します。</p> 
+  <p style="text-align:left;"><img src="./contents/324/2276_008.png" style="width: 848px;" data-filename="008.png"><br></p> 
+  <p>エラーメッセージが無くなりました。</p> 
+  <p><br></p> 
+  <p>そしてこれからデータベースからEntityを作成しましょう。プロジェクトでマウス右クリックします。</p> 
+  <p style="text-align:left;"><img src="./contents/324/2277_009.png" data-filename="009.png" style="width: 688px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/324/2278_010.png" style="width: 552px;" data-filename="010.png"><br></p> 
+  <p>クラスを生成するとmodel.entityクラスが作成されることを確認できます。</p> 
+  <p style="text-align:left;"><img src="./contents/324/2279_011.png" data-filename="011.png" style="width: 324px;"><br></p> 
+  <p>これをSpringBootTestApplicationクラスの下位パッケージに移動します。以前のController見たいにscanBasePackagesを合わせなかったらエラーが発生します。やはりscanBasePackagesを設定すると別のパッケージに設定することができます。</p> 
+  <p><br></p> 
+  <p>これからapplication.propertiesで接続情報を設定しましょう。</p> 
+  <pre><code class="language-properties" data-type="application.properties"># サーバーポート設定
+server.port=8081
+# thymeleaf ファイル設定
+spring.thymeleaf.prefix=classpath:templates/
+spring.thymeleaf.check-template-location=true
+# thymeleaf ファイル拡張子
+spring.thymeleaf.suffix=.html
+spring.thymeleaf.mode=HTML5
+# thymeleaf キャッシュモード
+spring.thymeleaf.cache=false
+# データベース接続情報
+spring.datasource.url=jdbc:mysql://localhost:3306/test?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8&amp;serverTimezone=Asia/Seoul
+# ID
+spring.datasource.username=root
+# パスワード
+spring.datasource.password=****
+# ドライブクラス
+spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
+# クエリログ表示可否
+spring.jpa.show-sql=true
+# コンソール表示可否
+spring.h2.console.enabled=true
+</code></pre> 
+  <p>データベース接続を設定したらレポジトリインターフェースを生成して画面に出力しましょう。</p> 
+  <pre><code class="java" data-type="UserRepository.java">package com.example.demo.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.example.demo.model.User;
+// インターフェース
+public interface UserRepository extends JpaRepository&lt;User, String&gt; {}
+</code></pre> 
+  <p>Spring bootにはtransactionを設定しなくてもRepositoryを通ってデータを取得することができます。</p> 
+  <p>レポジトリインターフェースを生成すると、既存のControllerのHomeControllerに依存性追加(@Autowired)をします。</p> 
+  <pre><code class="java" data-type="HomeController.java">package com.example.demo.Controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import com.example.demo.repository.UserRepository;
+
+// コントローラーアノテーション
+@Controller
+public class HomeController {
+  // レポジトリ依存性注入
+  @Autowired
+  private UserRepository userRepository;
+  // マッピングアドレス
+  @RequestMapping(value = { "/", "/index.html" })
+  public String index(Model model) {
+    // レポジトリからidを通ってUserデータを取得する。
+    var user = userRepository.findById("nowonbun").get();
+    // テンプレートに渡すデータ
+    model.addAttribute("data", user.getName());
+    // テンプレートファイル名
+    return "Home/index";
+  }
+}
+</code></pre> 
+  <p>rootページが呼び出したらuserRepositoryからnowonbunのキーでデータを取得することができます。そしてThymeleafテンプレートにnameデータを表示します。</p> 
+  <p>下記みたいなプロジェクト構造になりますね。</p> 
+  <p style="text-align:left;"><img src="./contents/324/2280_012.png" style="width: 330px;" data-filename="012.png"><br></p> 
+  <p>それならプロジェクトを実行すると下記みたいに結果が表示されます。</p> 
+  <p style="text-align:left;"><img src="./contents/324/2281_013.png" style="width: 422px;" data-filename="013.png"><br></p> 
+  <p>userテーブルのnowonbunのレコードのname値がHelloなので正常にデータベースからデータを取得して出力した結果です。</p> 
+  <p><br></p> 
+  <p>設定方法が違うことだけで、Entityを扱う方法は以前のWeb frameworkと同じです。</p> 
+  <p>リンク - <a href="https://www.nowonbun.com/86.html" target="_blank">[Java] 46. JPAのEntityクラスの基本設定(@GeneratedValue、 @ManyToMany)</a></p> 
+  <p>リンク - <a href="https://www.nowonbun.com/87.html" target="_blank">[Java] 47. JPAのEntityクラスのリファレンス設定(cascade, fetch)</a></p> 
+  <p><br></p> 
+  <p>既存のWeb Frameworkには私がDaoを生成してFactoryDaoを利用してトランザクションを管理しました。</p> 
+  <p>Spring bootにはRepositoryインターフェースを作成して依存性注入されたインスタンスで自動にトランザクションを管理しますね。実は自動という表現しますが、これがcommit rollbackをどのように管理しなければならないかエラーが発生する時にどのようにrollbackをしなければならないかに関して不明確です。</p> 
+  <p>それでSpring bootにもEntityManagerを取得してトランザクションを直接に管理する方法があります。次の投稿ではSpring bootでDaoとFactory、実際的にトランザクション管理する方法に関して説明します。</p> 
+  <p><br></p> 
+  <p>ここまでEclipseでSpring bootのJPAを設定する方法に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/323.html" target="_blank">[Java] 57. EclipseでSpring bootを設定する方法</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=java>#java</a>,<a href=./search.html?query=jpa>#jpa</a>,<a href=./search.html?query=springboot>#springboot</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0203">Study / Java</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/324.html'>[Java] 58. EclipseでSpring bootのJPAを設定する方法</a><span>2022/02/23 18:11:10</span></li><li><a href='https://www.nowonbun.com/323.html'>[Java] 57. EclipseでSpring bootを設定する方法</a><span>2022/02/22 19:04:49</span></li><li><a href='https://www.nowonbun.com/265.html'>[Java] 56. Web serviceのサーブレット(Servlet)で初期化作業(properties設定)</a><span>2021/07/02 17:10:36</span></li><li><a href='https://www.nowonbun.com/264.html'>[Java] 55. Spring frameworkに文字化けを解決する方法(Encoding設定)</a><span>2021/06/30 16:37:16</span></li><li><a href='https://www.nowonbun.com/263.html'>[Java] 54. Spring frameworkでWeb filterを使う方法</a><span>2021/06/29 18:25:12</span></li><li><a href='https://www.nowonbun.com/262.html'>[Java] 53. ウェブサービス(Web service)でエラーページを処理する方法</a><span>2021/06/25 13:35:54</span></li><li><a href='https://www.nowonbun.com/92.html'>[Java] 52. SpringフレームワークでDAOをFactory method Patternを利用して依存性注入する方法</a><span>2019/10/17 07:15:48</span></li><li><a href='https://www.nowonbun.com/91.html'>[Java] 51. SpringフレームワークでJPAを使い方(依存性注入@Autowired)</a><span>2019/10/16 07:32:55</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/324.html'>[Java] 58. EclipseでSpring bootのJPAを設定する方法</a><span>2022/02/23 18:11:10</span></li><li><a href='https://www.nowonbun.com/323.html'>[Java] 57. EclipseでSpring bootを設定する方法</a><span>2022/02/22 19:04:49</span></li><li><a href='https://www.nowonbun.com/322.html'>[Python] Redisデータベースに接続して使い方</a><span>2022/02/21 18:23:49</span></li><li><a href='https://www.nowonbun.com/321.html'>[Java] Redisデータベースを接続して使い方(Jedisライブラリ)</a><span>2022/02/16 18:13:17</span></li><li><a href='https://www.nowonbun.com/320.html'>[C#] Redisのデータベースを接続して使い方</a><span>2022/02/15 18:46:09</span></li><li><a href='https://www.nowonbun.com/319.html'>[CentOS] Redisデータベースをインストールする方法とコマンドを使い方</a><span>2022/02/14 18:33:07</span></li><li><a href='https://www.nowonbun.com/318.html'>[Design pattern] 3-6. ステートパターン(State pattern)</a><span>2021/11/17 20:04:47</span></li><li><a href='https://www.nowonbun.com/317.html'>[Design pattern] 3-5. メメントパターン(Memento pattern)</a><span>2021/11/16 20:01:36</span></li><li><a href='https://www.nowonbun.com/316.html'>[Design pattern] 3-4. イテレータパターン(Iterator pattern)</a><span>2021/11/15 19:31:28</span></li><li><a href='https://www.nowonbun.com/315.html'>[CentOS] Linux環境(CentOS)でCassandra(NoSQL DB)をインストールする方法(DBeaverブラウザでNoSQL使い方)</a><span>2021/11/12 17:33:58</span></li><li><a href='https://www.nowonbun.com/314.html'>[Design pattern] 3-3. コマンドパターン(Command pattern)</a><span>2021/11/05 17:01:42</span></li><li><a href='https://www.nowonbun.com/313.html'>[Window] apache-tomcatでロードバランシング(Load balancing)する方法とセッションクラスタリング（セッション共有）</a><span>2021/11/05 16:58:45</span></li><li><a href='https://www.nowonbun.com/312.html'>[Window] Apacheでmod_jkとmod_proxyの差異、apacheでtomcatのwebsocketのプロキシフォーワードする方法</a><span>2021/11/05 16:55:05</span></li><li><a href='https://www.nowonbun.com/311.html'>[PHP] Apache環境の同じホスト中でPHPとJava(Servlet)を同時に起動、運用する方法</a><span>2021/11/05 16:52:04</span></li><li><a href='https://www.nowonbun.com/310.html'>[C#] 61. ウィンドウフォーム(Window form)でスレッド(Thread)を使い方、クロススレッド問題解決</a><span>2021/11/04 19:29:51</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/324.html';this.page.identifier = 'NOWONBUN00324';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
