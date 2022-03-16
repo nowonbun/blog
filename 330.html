@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/330.html"},"url":"https:\/\/www.nowonbun.com\/330.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] 63. Spring boot\u3067cron\u30b9\u30b1\u30b8\u30e5\u30fc\u30e9\u3068Component\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fjava\u306espring boot\u3067cron\u30b9\u30b1\u30b8\u30e5\u30fc\u30e9\u3068component\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u79c1\u304c\u4ee5\u524d\u306bweb framework\u3067cron\u30b9\u30b1\u30b8\u30e5\u30fc\u30e9\u3092\u4f7f\u3063\u305f\u3053\u3068\u304c\u3042\u308a\u307e\u3059\u3002\u30ea\u30f3\u30af - [java] jsp\u306espring\u74b0\u5883\u3067scheduler\u306ecron\u3092\u4f7f\u3046\u65b9\u6cd5\u6211\u3005\u304c\u30a6\u30a7\u30d6\u30b5\u30fc\u30d0\u30fc\u3092\u904b\u7528\u3057\u305f\u3089\u30d6\u30e9\u30a6\u30b6(browser)\u304b\u3089\u8981\u8acb\u306b\u3088\u308a\u5b9f\u884c\u51e6\u7406\u3059\u308b\u3053\u3068\u3067\u306f\u306a\u304f\u3001\u6c7a\u3081\u3066\u3044\u308b\u6642\u9593\u306b\u30d7\u30ed\u30b0\u30e9\u30e0\u5185\u90e8\u306e\u30ad\u30e3\u30c3\u30b7\u30e5\u7ba1\u7406\u3068\u304b\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306e\u30c7\u30fc\u30bf\u7ba1\u7406\u306a\u3069\u69d8\u3005\u306a\u51e6\u7406\u3092\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u6642\u304c\u3042\u308a\u307e\u3059\u3002\u3082\u3061\u308d\u3093\u3001window\u30b5\u30fc\u30d0\u30fc\u306a\u3089\u30a6\u30a3\u30f3\u30c9\u30a6\u30b9\u30b1\u30b8\u30e5\u30fc\u30e9\u304c\u3042\u308b\u3057linux\u30b5\u30fc\u30d0\u306a\u3089crontab\u30b9\u30b1\u30b8\u30e5\u30fc\u30e9\u304c\u3042\u308a\u307e\u3059\u3002\u30a6\u30a7\u30d6\u30b5\u30fc\u30d0\u30fc\u3068\u72ec\u7acb\u3067\u30b9\u30b1\u30b8\u30e5\u30fc\u30e9\u3092\u904b\u7528\u3057\u3066\u4f7f\u3063\u3066\u3082\u3088\u308d\u3057\u3044\u3067\u3059\u304c\u3001\u30b7\u30b9\u30c6\u30e0\u5185\u90e8\u3067\u904b\u7528\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u6642\u304c\u3042\u308a\u307e\u3059\u3002cron\u30b9\u30b1\u30b8\u30e5\u30fc\u30e9\u3092\u30d7\u30ed\u30b0\u30e9\u30e0\u4e2d\u3067\u5b9f\u88c5\u3057\u305f\u3089\u4e00\u3064\u306e\u554f\u984c\u70b9\u304c\u3042\u308a\u307e\u3059\u3002\u4f8b\u3048\u3070\u3001\u6c7a\u307e\u3063\u3066\u308b\u6642\u9593\u306b\u30e1\u30fc\u30eb\u3092\u8ee2\u9001\u3059\u308b\u30ed\u30b8\u30c3\u30af\u304c\u3042\u308a\u3001\u305d\u308c\u3092\u30d7\u30ed\u30b0\u30e9\u30e0\u306ecron\u30b9\u30b1\u30b8\u30e5\u30fc\u30e9\u306b\u3088\u308a\u5b9f\u88c5\u3057\u307e\u3057\u305f\u3002\u305d\u3057\u3066\u5076\u7136\u306b\u3053\u306e\u30a6\u30a7\u30d6\u30b5\u30fc\u30d0\u30fc\u304c\u30ed\u30fc\u30c9\u30d0\u30e9\u30f3\u30b7\u30f3\u30b0\u3067\u5206\u6563\u51e6\u7406\u306b\u306a\u3063\u3066\u3044\u307e\u3059\u3002\u305d\u3046\u3059\u308b\u3068\u30b9\u30b1\u30b8\u30e5\u30fc\u30e9\u306b\u3088\u308a\u69d8\u3005\u3067\u91cd\u8907\u5b9f\u884c\u306b\u306a\u308a\u307e\u3059\u3002\u305d\u306e\u305f\u3081\u3001cron\u30b9\u30b1\u30b8\u30e5\u30fc\u30e9\u3092\u4f5c\u6210\u3059\u308b\u6642\u306b\u306f\u3044\u3064\u3082\u3053\u306e\u90e8\u5206\u3092\u8003\u3048\u3066\u5b9f\u88c5\u3057\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3067\u3059\u3002(\u79c1\u304c\u3053\u306e\u30d0\u30ab\u2015\u306a\u7d4c\u9a13\u3092\u6301\u3063\u3066\u3044\u308b\u3053\u3068\u3067\u306f\u306a\u3044\u3067\u3059\u3002)spring boot\u3067cron\u30b9\u30b1\u30b8\u30e5\u30fc\u30e9\u3092\u4f7f\u3046\u306e\u306f\u51c4\u304f\u7c21\u5358\u3067\u3059\u3002\u5225\u306bpom.xml\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u8ffd\u52a0\u3059\u308b\u5fc5\u8981\u3082\u3042\u308a\u307e\u305b\u3093\u3002\u3053\u306e\u90e8\u5206\u306f\u4ee5\u524d\u306eweb framework\u3088\u308a\u51c4\u304f\u697d\u3067\u3059\u306d\u3002spring boot\u3092\u5b9f\u884c\u3059\u308bmain\u95a2\u6570\u304c\u3042\u308b\u30af\u30e9\u30b9\u306b@enablescheduling\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u3092\u8ffd\u52a0\u3059\u308b\u3053\u3068\u3067\u3067\u304d\u307e\u3059\u3002\u4e0a\u307f\u305f\u3044\u306b\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u3060\u3051\u8ffd\u52a0\u3059\u308b\u3068cron\u30b9\u30b1\u30b8\u30e5\u30fc\u30e9\u3092\u4f7f\u3044\u307e\u3057\u3087\u3046\u3002\u305d\u3046\u3059\u308b\u3068\u3053\u308c\u304b\u3089cron\u30b9\u30b1\u30b8\u30e5\u30fc\u30e9\u3092\u4f7f\u3046\u305f\u3081\u306bbean\u3092\u8ffd\u52a0\u3057\u307e\u3057\u3087\u3046\u3002\u3053\u3053\u3067@component\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u3092\u8ffd\u52a0\u3057\u3066spring bean\u306b\u767b\u9332\u3057\u307e\u3057\u3087\u3046\u3002\u305d\u3057\u3066\u30b9\u30b1\u30b8\u30e5\u30fc\u30ea\u30f3\u30b0\u3059\u308b\u95a2\u6570\u306b@scheduled\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u3092\u8ffd\u52a0\u3057\u3066\u6587\u6cd5\u3092\u5229\u7528\u3057\u3066\u30b9\u30b1\u30b8\u30e5\u30fc\u30eb\u3092\u8a2d\u5b9a\u3057\u307e\u3057\u3087\u3046\u3002\u3053\u3053\u3067\u306f\u79c1\u304c10\u79d2\u5358\u4f4d\u3067\u5b9f\u884c\u3059\u308b\u3053\u3068\u306b\u8a2d\u5b9a\u3057\u307e\u3057\u305f\u3002\u3053\u3053\u3067scheduled\u30a2\u30ce\u30c6\u30fc\u30b7\u30e7\u30f3\u306b\u8a2d\u5b9a\u3059\u308bcron\u6587\u6cd5\u304c\u3042\u308a\u307e\u3059\u3002\u3053\u306e\u90e8","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2022-03-16T18:57:30.000+09:00","dateModified":"2022-03-16T18:59:03.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はjavaのspring bootでcronスケジューラとcomponentアノテーションに関する説明です。私が以前にweb frameworkでcronスケジューラを使ったことがあります。リンク - [java] jspのspring環境でschedulerのcronを使う方法我々がウェブサーバーを運用したらブラウザ(browser)から要請により実行処理することではなく、決めている時間にプログラム内部のキャッシュ管理とかデータベースのデータ管理など様々な処理をしなければならない時があります。もちろん、windowサーバーならウィンドウスケジューラがあるしlinuxサーバならcrontabスケジューラがあります。ウェブサーバーと独立でスケジューラを運用して使ってもよろしいですが、システム内部で運用しなければならない時があります。cronスケジューラをプログラム中で実装したら一つの問題点があります。例えば、決まってる時間にメールを転送するロジックがあり、それをプログラムのcronスケジューラにより実装しました。そして偶然にこのウェブサーバーがロードバランシングで分散処理になっています。そうするとスケジューラにより様々で重複実行になります。そのため、cronスケジューラを作成する時にはいつもこの部分を考えて実装しなければならないです。(私がこのバカ―な経験を持っていることではないです。)spring bootでcronスケジューラを使うのは凄く簡単です。別にpom.xmlライブラリを追加する必要もありません。この部分は以前のweb frameworkより凄く楽ですね。spring bootを実行するmain関数があるクラスに@enableschedulingアノテーションを追加することでできます。上みたいにアノテーションだけ追加するとcronスケジューラを使いましょう。そうするとこれからcronスケジューラを使うためにbeanを追加しましょう。ここで@componentアノテーションを追加してspring beanに登録しましょう。そしてスケジューリングする関数に@scheduledアノテーションを追加して文法を利用してスケジュールを設定しましょう。ここでは私が10秒単位で実行することに設定しました。ここでscheduledアノテーションに設定するcron文法があります。この部]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java] 63. Spring bootでcronスケジューラとComponentアノテーション" />
+<link rel="canonical" href="https://www.nowonbun.com/330.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java] 63. Spring bootでcronスケジューラとComponentアノテーション" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaのspring bootでcronスケジューラとcomponentアノテーションに関する説明です。私が以前にweb frameworkでcronスケジューラを使ったことがあります。リンク - [java] jspのspring環境でschedulerのcronを使う方法我々がウェブサーバーを運用したらブラウザ(browser)から要請により実行処理することではなく、決めている時間にプログラム内部のキャッシュ管理とかデータベースのデータ管理など様々な処理をしなければならない時があります。もちろん、windowサーバーならウィンドウスケジューラがあるしlinuxサーバならcrontabスケジューラがあります。ウェブサーバーと独立でスケジューラを運用して使ってもよろしいですが、システム内部で運用しなければならない時があります。cronスケジューラをプログラム中で実装したら一つの問題点があります。例えば、決まってる時間にメールを転送するロジックがあり、それをプログラムのcronスケジューラにより実装しました。そして偶然にこのウェブサーバーがロードバランシングで分散処理になっています。そうするとスケジューラにより様々で重複実行になります。そのため、cronスケジューラを作成する時にはいつもこの部分を考えて実装しなければならないです。(私がこのバカ―な経験を持っていることではないです。)spring bootでcronスケジューラを使うのは凄く簡単です。別にpom.xmlライブラリを追加する必要もありません。この部分は以前のweb frameworkより凄く楽ですね。spring bootを実行するmain関数があるクラスに@enableschedulingアノテーションを追加することでできます。上みたいにアノテーションだけ追加するとcronスケジューラを使いましょう。そうするとこれからcronスケジューラを使うためにbeanを追加しましょう。ここで@componentアノテーションを追加してspring beanに登録しましょう。そしてスケジューリングする関数に@scheduledアノテーションを追加して文法を利用してスケジュールを設定しましょう。ここでは私が10秒単位で実行することに設定しました。ここでscheduledアノテーションに設定するcron文法があります。この部]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/330.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java] 63. Spring bootでcronスケジューラとComponentアノテーション" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はjavaのspring bootでcronスケジューラとcomponentアノテーションに関する説明です。私が以前にweb frameworkでcronスケジューラを使ったことがあります。リンク - [java] jspのspring環境でschedulerのcronを使う方法我々がウェブサーバーを運用したらブラウザ(browser)から要請により実行処理することではなく、決めている時間にプログラム内部のキャッシュ管理とかデータベースのデータ管理など様々な処理をしなければならない時があります。もちろん、windowサーバーならウィンドウスケジューラがあるしlinuxサーバならcrontabスケジューラがあります。ウェブサーバーと独立でスケジューラを運用して使ってもよろしいですが、システム内部で運用しなければならない時があります。cronスケジューラをプログラム中で実装したら一つの問題点があります。例えば、決まってる時間にメールを転送するロジックがあり、それをプログラムのcronスケジューラにより実装しました。そして偶然にこのウェブサーバーがロードバランシングで分散処理になっています。そうするとスケジューラにより様々で重複実行になります。そのため、cronスケジューラを作成する時にはいつもこの部分を考えて実装しなければならないです。(私がこのバカ―な経験を持っていることではないです。)spring bootでcronスケジューラを使うのは凄く簡単です。別にpom.xmlライブラリを追加する必要もありません。この部分は以前のweb frameworkより凄く楽ですね。spring bootを実行するmain関数があるクラスに@enableschedulingアノテーションを追加することでできます。上みたいにアノテーションだけ追加するとcronスケジューラを使いましょう。そうするとこれからcronスケジューラを使うためにbeanを追加しましょう。ここで@componentアノテーションを追加してspring beanに登録しましょう。そしてスケジューリングする関数に@scheduledアノテーションを追加して文法を利用してスケジュールを設定しましょう。ここでは私が10秒単位で実行することに設定しました。ここでscheduledアノテーションに設定するcron文法があります。この部]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Java] 63. Spring bootでcronスケジューラとComponentアノテーション</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(101)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(26)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(29)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(6)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(24)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(15)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(226)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(61)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(63)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(22)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(19)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0210" href="study_project_design.html">Project design<span class="category-item-count">(9)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/330.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Java] 63. Spring bootでcronスケジューラとComponentアノテーション</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0203">Study / Java</a>    作成日付 : <span property="datePublished">2022/03/16 18:57:30</span>   修正日付 : <span property="dateModified">2022/03/16 18:59:03</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はJavaのSpring bootでcronスケジューラとComponentアノテーションに関する説明です。</p> 
+  <p><br></p> 
+  <p>私が以前にWeb Frameworkでcronスケジューラを使ったことがあります。</p> 
+  <p>リンク - <a href="https://www.nowonbun.com/186.html" target="_blank">[Java] JSPのSpring環境でschedulerのcronを使う方法</a></p> 
+  <p><br></p> 
+  <p>我々がウェブサーバーを運用したらブラウザ(Browser)から要請により実行処理することではなく、決めている時間にプログラム内部のキャッシュ管理とかデータベースのデータ管理など様々な処理をしなければならない時があります。</p> 
+  <p>もちろん、WindowサーバーならウィンドウスケジューラがあるしLinuxサーバならcrontabスケジューラがあります。ウェブサーバーと独立でスケジューラを運用して使ってもよろしいですが、システム内部で運用しなければならない時があります。</p> 
+  <p><br></p> 
+  <p>cronスケジューラをプログラム中で実装したら一つの問題点があります。</p> 
+  <p>例えば、決まってる時間にメールを転送するロジックがあり、それをプログラムのcronスケジューラにより実装しました。そして偶然にこのウェブサーバーがロードバランシングで分散処理になっています。</p> 
+  <p>そうするとスケジューラにより様々で重複実行になります。そのため、cronスケジューラを作成する時にはいつもこの部分を考えて実装しなければならないです。(私がこのバカ―な経験を持っていることではないです。)</p> 
+  <p><br></p> 
+  <p>Spring bootでcronスケジューラを使うのは凄く簡単です。別にpom.xmlライブラリを追加する必要もありません。</p> 
+  <p>この部分は以前のWeb frameworkより凄く楽ですね。</p> 
+  <p><br></p> 
+  <p>Spring bootを実行するmain関数があるクラスに@EnableSchedulingアノテーションを追加することでできます。</p> 
+  <pre><code class="java" data-type="SpringBootTestApplication.java">package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
+
+// パッケージベース設定
+@SpringBootApplication(scanBasePackages = "com.example.demo.*") 
+// Redisにセッションを共有する。
+@EnableRedisHttpSession 
+// cronスケジューラを使うように設定
+@EnableScheduling   
+public class SpringBootTestApplication {
+  // main実行関数
+  public static void main(String[] args) {
+    SpringApplication.run(SpringBootTestApplication.class, args);
+  }
+}
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/330/2326_001.png" style="width: 503px;" data-filename="001.png"><br></p> 
+  <p>上みたいにアノテーションだけ追加するとcronスケジューラを使いましょう。</p> 
+  <p><br></p> 
+  <p>そうするとこれからcronスケジューラを使うためにbeanを追加しましょう。</p> 
+  <pre><code class="java" data-type="SchedulerTest.java">package com.example.demo.scheduler;
+
+import java.util.Date;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Component;
+import com.example.demo.dao.UserDao;
+
+// @Componentアノテーション
+@Component 
+public class SchedulerTest {
+  // DI依存性注入
+  @Autowired 
+  // FactoryDaoから取得
+  @Qualifier("UserDao") 
+  private UserDao userdao;
+  
+  // cronスケジューラを設定
+  @Scheduled(cron = "0/10 * * * * *")
+  public void test() {
+    // コンソール出力
+    System.out.println(new Date());
+    // コンソール出力
+    System.out.println(userdao.selectById("nowonbun").getName());
+  }
+}
+</code></pre> 
+  <p>ここで@Componentアノテーションを追加してSpring Beanに登録しましょう。</p> 
+  <p>そしてスケジューリングする関数に@Scheduledアノテーションを追加して文法を利用してスケジュールを設定しましょう。</p> 
+  <p><br></p> 
+  <p>ここでは私が10秒単位で実行することに設定しました。</p> 
+  <p style="text-align:left;"><img src="./contents/330/2327_002.png" style="width: 702px;" data-filename="002.png"><br></p> 
+  <p>ここでScheduledアノテーションに設定するcron文法があります。</p> 
+  <p>この部分は以前に説明したことがありますが、また整理してみましょう。</p> 
+  <p>リンク - <a href="https://www.nowonbun.com/186.html" target="_blank">[Java] JSPのSpring環境でschedulerのcronを使う方法</a></p> 
+  <p><br></p> 
+  <p>まず文法はスペースで区切りで総７個単位があるし、最後の一つは省略ができます。</p> 
+  <pre><code class="language-properties" data-type="cron">*  *  *  *  *  *  *
+秒 分 時 日 月 曜日 年(省略可能 - 省略時には毎年の意味)
+</code></pre> 
+  <p>まず、上の例はあすとアスタリスクマーク(*)をしましたが、この意味は毎秒、毎分を意味します。つまり、上は毎秒で実行するという意味です。</p> 
+  <p>アスタリスクマークではなく、普通は数字を使いますが、単位ではなく指定時間になります。</p> 
+  <p>つまり、「1 1 1 1 1 *」の意味は1月1日1時1分1秒に実行する意味です。6番目は曜日ですが、 「1 1 1 1 1 1」の意味は1月1日1時1分1秒の日曜にに実行するという意味ですが、1月1日が日曜日ではなければ実行しません。</p> 
+  <p>参考に曜日は1が日曜日から2は月曜日、3は火曜日。。。順で7は土曜日の意味を持っています。</p> 
+  <p>ここで我々は複数の時間を設定することができますが、コンマ(,)の区切りで設定します。「1,11 * * * * *」は毎分1秒と11秒に実行するという意味です。</p> 
+  <p>また、指定時間ではなく、単位時間で設定したい時もありますね。つまり、10秒単位、5分単位で処理したいです。その場合は0/単位時間を入れたらできますが、「0/10 * * * * *」は10秒単位になります。</p> 
+  <p><br></p> 
+  <p>その以外の特殊表現式もあります。</p> 
+  <div class="table-responsive"> 
+   <table class="table table-striped table-bordered table-condensed"> 
+    <thead> 
+     <tr style="background-color:#DAD7D7"> 
+      <th style="white-space: nowrap;">表現式</th> 
+      <th>説明</th> 
+     </tr> 
+    </thead> 
+    <tbody> 
+     <tr> 
+      <td style="white-space: nowrap;">*</td> 
+      <td>ALLの意味で毎秒、毎分、毎時、毎日、毎月、毎年</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">?</td> 
+      <td>日、曜日だけで使えることで条件なしという意味</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">/</td> 
+      <td>サイクルの繰り返しの意味</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">-</td> 
+      <td>範囲の意味</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">L</td> 
+      <td>日、曜日だけで使えることで最後の日の意味</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">W</td> 
+      <td>日だけで使えることで指定された近い平日</td> 
+     </tr> 
+     <tr> 
+      <td style="white-space: nowrap;">#</td> 
+      <td>曜日だけで使えることで週#曜日という意味</td> 
+     </tr> 
+    </tbody> 
+   </table> 
+  </div> 
+  <p>特殊表現式で「L,W,#」がありますが、「L」は最後の日の意味を持っています。日と曜日だけで使えます。日で「L」を使うと月の最後の日、曜日の場合は土曜日になります。</p> 
+  <p>Wは日だけで使えますが、近い平日という意味です。10Wの場合は10日が土曜日なら9日、日曜日なら11日に実行する表現式です。</p> 
+  <p>#は曜日に使える表現式です。2#2なら二つ目の週の月曜日に実行する意味です。</p> 
+  <p><br></p> 
+  <p>cronライブラリを使う時、私はComponentアノテーションを設定してSpring Beanを登録しました。</p> 
+  <p>参考でSpringにはBeanというアノテーションもあります。</p> 
+  <p>まず、Componentというのはクラスに付けるアノテーションですが、SpringでDI依存性注入するため、使うクラスという意味です。(scan-auto-detection、dependency injection)</p> 
+  <p>つまり、Singletonパターンで使うデータ形式のデータではなく、Controllerタイプに使うクラスを設定することです。</p> 
+  <p>条件としてはパラメータがないコンストラクタが存在しなければならないし、そのコンストラクタのアクセス修飾子は別に何でも関係ないです。つまり、コンストラクタを作成してないか、作成してもパラメータがないコンストラクタが必ず必要です。</p> 
+  <p style="text-align:left;"><img src="./contents/330/2328_003.png" style="width: 358px;" data-filename="003.png"><br></p> 
+  <p>つまり、このように作成すれば下記みたいにエラーが発生します。</p> 
+  <p style="text-align:left;"><img src="./contents/330/2329_004.png" data-filename="004.png" style="width: 848px;"><br></p> 
+  <p>ここでBeanアノテーションはComponentと似ています。でも、Beanアノテーションは関数に付けます。</p> 
+  <p>関数はメモリに割り当てる意味がないのに、付けることが意味があるかと思いますが。</p> 
+  <p><br></p> 
+  <p>AutowiredによりBeanで登録したことを呼び出したら関数が実行した結果がリターンすることになります。でも、これがAutowiredで呼び出すたびにBeanが設定された関数が呼び出すことではなく、Singletonの概念と似ていることでサーバーが起動する時に、一回に関数を呼び出してその結果をメモリに割り当てします。</p> 
+  <p>そしてAutowiredで呼び出すたびにメモリに割り当ているインスタンスを持ち込んで使う構造になります。</p> 
+  <p>これの注意点は返却値が同じインスタンスタイプならエラーが発生する可能性があります。クラス名の場合は同じく作成することができないですが、関数でリターン値は可能性があるから依存性注入でインスタンスを受け取る立場ではどのことを受け取るかのエラーが発生します。</p> 
+  <p style="text-align:left;"><img src="./contents/330/2330_005.png" data-filename="005.png" style="width: 848px;"><br></p> 
+  <p>このようにエラーが発生します。つまり、一つのタイプだけBean登録するかBeanにnameを付けてDI側では@Qualifierアノテーションで区分することができます。</p> 
+  <p style="text-align:left;"><img src="./contents/330/2331_006.png" data-filename="006.png" style="width: 380px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/330/2332_007.png" data-filename="007.png" style="width: 202px;"><br></p> 
+  <p>なので私はBeanアノテーションは始めからnameを設定しておきます。もちろん、nameはString値なので、nameデータ値が重なるとエラーが発生します。</p> 
+  <p><br></p> 
+  <p>ここでまた他の部分が疑問になりますが、Repositoryアノテーション、Controllerアノテーション、Serviceアノテーションです。</p> 
+  <p>Repositoryアノテーション、Controllerアノテーション、ServiceアノテーションもComponentアノテーションと似てますが、scan-auto-detectionとdependency injectionを使いますが、Componentアノテーションとどの差異があるかな?</p> 
+  <p><br></p> 
+  <p>簡単に思えば、Repositoryアノテーション、Controllerアノテーション、ServiceアノテーションがComponentアノテーションを継承したアノテーションだと思えば良いでしょう。実際に継承したことではなくて、概念的にそうです。</p> 
+  <p>つまり、上のスケジューラに私がComponentアノテーションを使って@Scheduledアノテーションでcronスケジューラを使いました。</p> 
+  <p><br></p> 
+  <p>そこでComponentアノテーションの代わりにRepositoryアノテーション、Controllerアノテーション、Serviceアノテーションを使ったらどうでしょう？作動します。何のエラーが発生せずに作動します。</p> 
+  <p>ControllerはComponent機能+要請マッピングが可能な機能があります。つまり、RequestMappingアノテーションを使えるアノテーションということです。</p> 
+  <p>なので、ComponentアノテーションがあるクラスにRepositoryアノテーション、Controllerアノテーション、Serviceアノテーションを代わりに使っても問題ないですが、Repositoryアノテーション、Controllerアノテーション、Serviceアノテーションを使うアノテーションにComponentアノテーションや別のアノテーションを使ったらエラーが発生するでしょう。</p> 
+  <p>ControllerアノテーションはRequestMappingを使うアノテーションだと思えばRepositoryアノテーションとは何の差異があるでしょう?</p> 
+  <p><br></p> 
+  <p>これが私も正確な意味をよく分かりませんが、JPAを使う時、特定なエラー、つまりデバック中でエラーを取れない要素(RuntimException)がありますが、こんなエラーを追加する機能だと言いますね。</p> 
+  <p>リンク - <a href="https://www.baeldung.com/spring-component-repository-service" target="_blank">https://www.baeldung.com/spring-component-repository-service</a></p> 
+  <p>実は私もこれが何の意味か分からなくて様々なテストをしましたが、まだ明確な差異を分かりません。</p> 
+  <p><br></p> 
+  <p>Serviceアノテーションは現在にはComponentアノテーションと差異がないアノテーションだと言いますね。</p> 
+  <p><br></p> 
+  <p>つまり、我々がComponentアノテーションを使っても良いですが、業務的にRepositoryアノテーション、Controllerアノテーション、Serviceアノテーションで区分して使うでしょう。Componentアノテーションだけならプロジェクトが大きくなると少し迷う要素がありますね。</p> 
+  <p>ControllerアノテーションはRequestMapping用で使うし、我々が機能的な関数などを作成する時にはServiceアノテーション、データと関係あるものはRepositoryアノテーションを使う方が良い思います。</p> 
+  <p><br></p> 
+  <p>ここまでJavaのSpring bootでcronスケジューラとComponentアノテーションに関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/329.html" target="_blank">[Java] 62. Spring bootでWeb-Filterを設定する方法(Spring Security)</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=spring>#spring</a>,<a href=./search.html?query=cron>#cron</a>,<a href=./search.html?query=component>#component</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0203">Study / Java</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/330.html'>[Java] 63. Spring bootでcronスケジューラとComponentアノテーション</a><span>2022/03/16 18:57:30</span></li><li><a href='https://www.nowonbun.com/329.html'>[Java] 62. Spring bootでWeb-Filterを設定する方法(Spring Security)</a><span>2022/03/15 22:16:37</span></li><li><a href='https://www.nowonbun.com/327.html'>[Java] 61. Spring bootでRedisデータベースを利用してセッションクラスタリング設定する方法</a><span>2022/03/01 18:20:52</span></li><li><a href='https://www.nowonbun.com/326.html'>[Java] 60. Spring bootでApacheの連結とロードバランシングを設定する方法</a><span>2022/02/28 18:45:48</span></li><li><a href='https://www.nowonbun.com/325.html'>[Java] 59. Spring bootのJPAでEntityManagerを使い方</a><span>2022/02/25 18:27:48</span></li><li><a href='https://www.nowonbun.com/324.html'>[Java] 58. EclipseでSpring bootのJPAを設定する方法</a><span>2022/02/23 18:11:10</span></li><li><a href='https://www.nowonbun.com/323.html'>[Java] 57. EclipseでSpring bootを設定する方法</a><span>2022/02/22 19:04:49</span></li><li><a href='https://www.nowonbun.com/265.html'>[Java] 56. Web serviceのサーブレット(Servlet)で初期化作業(properties設定)</a><span>2021/07/02 17:10:36</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/330.html'>[Java] 63. Spring bootでcronスケジューラとComponentアノテーション</a><span>2022/03/16 18:57:30</span></li><li><a href='https://www.nowonbun.com/329.html'>[Java] 62. Spring bootでWeb-Filterを設定する方法(Spring Security)</a><span>2022/03/15 22:16:37</span></li><li><a href='https://www.nowonbun.com/328.html'>[Java] JWT(Json Web Token)を発行、確認する方法</a><span>2022/03/14 19:12:58</span></li><li><a href='https://www.nowonbun.com/327.html'>[Java] 61. Spring bootでRedisデータベースを利用してセッションクラスタリング設定する方法</a><span>2022/03/01 18:20:52</span></li><li><a href='https://www.nowonbun.com/326.html'>[Java] 60. Spring bootでApacheの連結とロードバランシングを設定する方法</a><span>2022/02/28 18:45:48</span></li><li><a href='https://www.nowonbun.com/325.html'>[Java] 59. Spring bootのJPAでEntityManagerを使い方</a><span>2022/02/25 18:27:48</span></li><li><a href='https://www.nowonbun.com/324.html'>[Java] 58. EclipseでSpring bootのJPAを設定する方法</a><span>2022/02/23 18:11:10</span></li><li><a href='https://www.nowonbun.com/323.html'>[Java] 57. EclipseでSpring bootを設定する方法</a><span>2022/02/22 19:04:49</span></li><li><a href='https://www.nowonbun.com/322.html'>[Python] Redisデータベースに接続して使い方</a><span>2022/02/21 18:23:49</span></li><li><a href='https://www.nowonbun.com/321.html'>[Java] Redisデータベースを接続して使い方(Jedisライブラリ)</a><span>2022/02/16 18:13:17</span></li><li><a href='https://www.nowonbun.com/320.html'>[C#] Redisのデータベースを接続して使い方</a><span>2022/02/15 18:46:09</span></li><li><a href='https://www.nowonbun.com/319.html'>[CentOS] Redisデータベースをインストールする方法とコマンドを使い方</a><span>2022/02/14 18:33:07</span></li><li><a href='https://www.nowonbun.com/318.html'>[Design pattern] 3-6. ステートパターン(State pattern)</a><span>2021/11/17 20:04:47</span></li><li><a href='https://www.nowonbun.com/317.html'>[Design pattern] 3-5. メメントパターン(Memento pattern)</a><span>2021/11/16 20:01:36</span></li><li><a href='https://www.nowonbun.com/316.html'>[Design pattern] 3-4. イテレータパターン(Iterator pattern)</a><span>2021/11/15 19:31:28</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/330.html';this.page.identifier = 'NOWONBUN00330';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
