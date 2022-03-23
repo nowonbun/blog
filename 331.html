@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/331.html"},"url":"https:\/\/www.nowonbun.com\/331.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Javascript] Node.js\u3092\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3057\u3066React\u3092\u4f7f\u3046\u65b9\u6cd5","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fnode.js\u3092\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3057\u3066react\u3092\u4f7f\u3046\u65b9\u6cd5\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u79c1\u304c\u30a2\u30eb\u30d0\u30a4\u30c8\u3084\u52c9\u5f37\u3057\u305f\u6642\u671f\u3092\u9664\u3044\u3066\u3001\u5b66\u6821\u3092\u5352\u696d\u3057\u3066\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u958b\u767a\u3057\u305f\u7d4c\u9a13\u304c\u7d0414\u5e74\u304b\u308915\u5e74\u9593\u306b\u306a\u308a\u307e\u3059\u3002\u59cb\u3081\u304b\u3089\u300c\u30a6\u30a7\u30d6\u958b\u767a\u3057\u3088\u3046\u300d\u3068\u601d\u3063\u3066\u304b\u3089\u3084\u3063\u305f\u3053\u3068\u3067\u306f\u306a\u304fcs(client server)\u30d7\u30ed\u30b0\u30e9\u30e0\u304b\u3089\u7d44\u307f\u8fbc\u307f\u958b\u767a\u306a\u3069\u306e\u69d8\u3005\u306a\u5206\u91ce\u3067\u3055\u307e\u3088\u3046\u3057\u305f\u5f8c\u3001\u7d50\u5c40\u306b\u9700\u8981\u304c\u591a\u3044\u306e\u30a6\u30a7\u30d6\u958b\u767a\u8005\u306b\u306a\u308a\u307e\u3057\u305f\u3002\u30a6\u30a7\u30d6\u3068\u3044\u3046\u306e\u306f\u521d\u671f\u306b\u306f\u305d\u3093\u306a\u306b\u96e3\u3057\u3044\u3068\u601d\u308f\u306a\u304b\u3063\u305f\u3067\u3059\u304c\u3001\u3069\u306e\u5206\u91ce\u3067\u3082\u540c\u3058\u3067\u3059\u304c\u3001\u77e5\u308b\u6df1\u3055\u304c\u6df1\u304f\u306a\u308b\u307b\u3069\u77e5\u308b\u3079\u304d\u306a\u898f\u7d04\u3082\u591a\u3044\u3057\u3001\u6bce\u65e5\u306b\u51fa\u308b\u30e9\u30a4\u30d6\u30e9\u30ea\u3068\u30d5\u30ec\u30fc\u30e0\u30ef\u30fc\u30af\u306a\u3069\u3092\u5b66\u3070\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3053\u3068\u304c\u51c4\u304f\u591a\u3044\u3067\u3059\u306d\u3002\u5b9f\u306f\u305d\u308c\u304c\u30a6\u30a7\u30d6\u958b\u767a\u306e\u9762\u767d\u3055\u304b\u3082\u77e5\u308c\u307e\u305b\u3093\u3002\u4eba\u306b\u3088\u308a\u958b\u767a\u306e\u4fa1\u5024\u89b3\u304c\u9055\u3044\u307e\u3059\u304c\u3001\u79c1\u306e\u5834\u5408\u306f\u65b0\u3057\u3044\u30e9\u30a4\u30d6\u30e9\u30ea\u3068\u30d5\u30ec\u30fc\u30e0\u30ef\u30fc\u30af\u3092\u65e9\u304f\u5b66\u3093\u3067\u4f7f\u3046\u30b9\u30bf\u30a4\u30eb\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002\u7406\u7531\u306f\u69d8\u3005\u304c\u3042\u308a\u307e\u3059\u304c\u3001\u5b89\u5b9a\u6027\u306e\u7406\u7531\u3067\u3059\u306d\u3002java\u306e\u5834\u5408\u306f\u59cb\u3081java servlet\u74b0\u5883\u304b\u3089\u59cb\u307e\u3063\u3066struts(\u30b9\u30c8\u30e9\u30c3\u30c4)\u3001spring web framework\u3001spring boot\u307e\u3067\u4f7f\u3044\u307e\u3057\u305f\u3002\u4ee5\u524d\u306b\u306fjava servlet\u3092\u304b\u306a\u308a\u9577\u3044\u6642\u9593\u3067\u4f7f\u3044\u307e\u3057\u305f\u304c\u3001\u30d5\u30ec\u30fc\u30e0\u30ef\u30fc\u30af\u306e\u5fc5\u8981\u6027\u3092\u611f\u3058\u3066\u3001struts(\u30b9\u30c8\u30e9\u30c3\u30c4)\u3092\u4f7f\u3063\u305f\u6642\u304c\u3042\u308a\u307e\u3057\u305f\u3002\u59cb\u3081\u306b\u306fservlet\u3088\u308a\u65e9\u3044\u958b\u767a\u3068\u7279\u5225\u306a\u6982\u5ff5\u3067\u826f\u3044\u3068\u601d\u3044\u307e\u3057\u305f\u304c\u3001struts\u304c\u601d\u3063\u305f\u3088\u308a\u554f\u984c\u304c\u591a\u304b\u3063\u305f\u3093\u3067\u3059\u3002struct\u306e\u554f\u984c\u306a\u3089\u4ee3\u8868\u7684\u306a\u3053\u3068\u304c\u30bb\u30ad\u30e5\u30ea\u30c6\u30a3\u30a4\u30c3\u30b7\u30e5\u30fc\u3067\u3059\u306d\u3002\u4eca\u3067\u3082\u7406\u89e3\u3067\u304d\u306a\u3044\u3053\u3068\u304cservlet\u306b\u3082\u3067\u304d\u308binjection\u554f\u984c\u304cstruts\u306b\u306f\u306a\u305c\u3067\u304d\u306a\u3044\u304b\u306a\u3002\u3002\u305d\u308c\u3067\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u3068\u95a2\u4fc2\u306a\u3044\u56de\u907f\u30b3\u30fc\u30c9\u3082\u305f\u304f\u3055\u3093\u4f5c\u308b\u3057\u3001\u3069\u306e\u5834\u5408\u306f\u30d5\u30ec\u30fc\u30e0\u30ef\u30fc\u30af\u306e\u30e9\u30a4\u30d6\u30e9\u30ea\u306e\u307b\u307c\u3092\u7d99\u627f\u3057\u3066\u518d\u5b9a\u7fa9\u3057\u305f\u6642\u3082\u3042\u308a\u307e\u3057\u305f\u306d\u3002\u305d\u306e\u7d4c\u9a13\u304c\u3042\u308b\u306e\u3067\u3001\u30d5\u30ec\u30fc\u30e0\u30ef\u30fc\u30af\u3068\u30e9\u30a4\u30d6\u30e9\u30ea\u3092\u4f7f\u3044\u3053\u3068\u304c\u53b3\u3057\u304f\u306a\u308a\u307e\u3057\u305f\u3002\u30d5\u30ec\u30fc\u30e0\u30ef\u30fc\u30af\u3068\u3044\u3046\u306e\u306f\u4f7f\u3063\u305f\u3089\u9014\u4e2d\u3067\u5909\u308f\u308b\u3053\u3068\u304c\u305a\u3044\u3076\u3093\u96e3\u3057\u3044\u3067\u3057\u3087\u3046\u3002\u3064\u307e\u308a\u3001\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u3067struts\u3092\u4f7f\u3044\u306a\u304c\u3089spring\u304c\u826f\u3044\u3068\u601d\u3063\u3066\u30d5\u30ec\u30fc\u30e0\u30ef\u30fc\u30af\u3092\u7c21\u5358\u306b\u5909\u66f4\u3067\u304d\u308b\u3053\u3068\u304c\u3042\u308a\u307e\u305b\u3093\u3002\u666e\u901a\u306f\u521d\u3081\u304b\u3089\u3084\u308a\u76f4\u3057\u3059\u308b\u30b1\u30fc\u30b9\u304c\u591a\u3044\u3067\u3059\u3002\u306a\u306e\u3067\u3001spring web framework\u304c\u30c8\u30ec\u30f3\u30c9\u306b\u306a\u308b\u6642\u306b\u3082\u76f8\u5f53\u306bjava servlet\u3092\u4f7f\u3063\u3066\u79c1\u306e\u30d5\u30ec\u30fc\u30e0\u30ef\u30fc\u30af(?)\u3092\u69cb\u7bc9\u3057\u3066\u4f7f\u3044\u307e\u3057\u305f\u3002\u7d4c\u6b74\u306e","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2022-03-23T18:01:34.000+09:00","dateModified":"2022-03-23T18:03:14.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Javascript, Jquery, Css" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はnode.jsをインストールしてreactを使う方法に関する説明です。私がアルバイトや勉強した時期を除いて、学校を卒業してプログラムを開発した経験が約14年から15年間になります。始めから「ウェブ開発しよう」と思ってからやったことではなくcs(client server)プログラムから組み込み開発などの様々な分野でさまようした後、結局に需要が多いのウェブ開発者になりました。ウェブというのは初期にはそんなに難しいと思わなかったですが、どの分野でも同じですが、知る深さが深くなるほど知るべきな規約も多いし、毎日に出るライブラリとフレームワークなどを学ばなければならないことが凄く多いですね。実はそれがウェブ開発の面白さかも知れません。人により開発の価値観が違いますが、私の場合は新しいライブラリとフレームワークを早く学んで使うスタイルではありません。理由は様々がありますが、安定性の理由ですね。javaの場合は始めjava servlet環境から始まってstruts(ストラッツ)、spring web framework、spring bootまで使いました。以前にはjava servletをかなり長い時間で使いましたが、フレームワークの必要性を感じて、struts(ストラッツ)を使った時がありました。始めにはservletより早い開発と特別な概念で良いと思いましたが、strutsが思ったより問題が多かったんです。structの問題なら代表的なことがセキュリティイッシューですね。今でも理解できないことがservletにもできるinjection問題がstrutsにはなぜできないかな。。それでプロジェクトと関係ない回避コードもたくさん作るし、どの場合はフレームワークのライブラリのほぼを継承して再定義した時もありましたね。その経験があるので、フレームワークとライブラリを使いことが厳しくなりました。フレームワークというのは使ったら途中で変わることがずいぶん難しいでしょう。つまり、プロジェクトでstrutsを使いながらspringが良いと思ってフレームワークを簡単に変更できることがありません。普通は初めからやり直しするケースが多いです。なので、spring web frameworkがトレンドになる時にも相当にjava servletを使って私のフレームワーク(?)を構築して使いました。経歴の]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Javascript] Node.jsをインストールしてReactを使う方法" />
+<link rel="canonical" href="https://www.nowonbun.com/331.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Javascript] Node.jsをインストールしてReactを使う方法" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はnode.jsをインストールしてreactを使う方法に関する説明です。私がアルバイトや勉強した時期を除いて、学校を卒業してプログラムを開発した経験が約14年から15年間になります。始めから「ウェブ開発しよう」と思ってからやったことではなくcs(client server)プログラムから組み込み開発などの様々な分野でさまようした後、結局に需要が多いのウェブ開発者になりました。ウェブというのは初期にはそんなに難しいと思わなかったですが、どの分野でも同じですが、知る深さが深くなるほど知るべきな規約も多いし、毎日に出るライブラリとフレームワークなどを学ばなければならないことが凄く多いですね。実はそれがウェブ開発の面白さかも知れません。人により開発の価値観が違いますが、私の場合は新しいライブラリとフレームワークを早く学んで使うスタイルではありません。理由は様々がありますが、安定性の理由ですね。javaの場合は始めjava servlet環境から始まってstruts(ストラッツ)、spring web framework、spring bootまで使いました。以前にはjava servletをかなり長い時間で使いましたが、フレームワークの必要性を感じて、struts(ストラッツ)を使った時がありました。始めにはservletより早い開発と特別な概念で良いと思いましたが、strutsが思ったより問題が多かったんです。structの問題なら代表的なことがセキュリティイッシューですね。今でも理解できないことがservletにもできるinjection問題がstrutsにはなぜできないかな。。それでプロジェクトと関係ない回避コードもたくさん作るし、どの場合はフレームワークのライブラリのほぼを継承して再定義した時もありましたね。その経験があるので、フレームワークとライブラリを使いことが厳しくなりました。フレームワークというのは使ったら途中で変わることがずいぶん難しいでしょう。つまり、プロジェクトでstrutsを使いながらspringが良いと思ってフレームワークを簡単に変更できることがありません。普通は初めからやり直しするケースが多いです。なので、spring web frameworkがトレンドになる時にも相当にjava servletを使って私のフレームワーク(?)を構築して使いました。経歴の]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/331.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Javascript] Node.jsをインストールしてReactを使う方法" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はnode.jsをインストールしてreactを使う方法に関する説明です。私がアルバイトや勉強した時期を除いて、学校を卒業してプログラムを開発した経験が約14年から15年間になります。始めから「ウェブ開発しよう」と思ってからやったことではなくcs(client server)プログラムから組み込み開発などの様々な分野でさまようした後、結局に需要が多いのウェブ開発者になりました。ウェブというのは初期にはそんなに難しいと思わなかったですが、どの分野でも同じですが、知る深さが深くなるほど知るべきな規約も多いし、毎日に出るライブラリとフレームワークなどを学ばなければならないことが凄く多いですね。実はそれがウェブ開発の面白さかも知れません。人により開発の価値観が違いますが、私の場合は新しいライブラリとフレームワークを早く学んで使うスタイルではありません。理由は様々がありますが、安定性の理由ですね。javaの場合は始めjava servlet環境から始まってstruts(ストラッツ)、spring web framework、spring bootまで使いました。以前にはjava servletをかなり長い時間で使いましたが、フレームワークの必要性を感じて、struts(ストラッツ)を使った時がありました。始めにはservletより早い開発と特別な概念で良いと思いましたが、strutsが思ったより問題が多かったんです。structの問題なら代表的なことがセキュリティイッシューですね。今でも理解できないことがservletにもできるinjection問題がstrutsにはなぜできないかな。。それでプロジェクトと関係ない回避コードもたくさん作るし、どの場合はフレームワークのライブラリのほぼを継承して再定義した時もありましたね。その経験があるので、フレームワークとライブラリを使いことが厳しくなりました。フレームワークというのは使ったら途中で変わることがずいぶん難しいでしょう。つまり、プロジェクトでstrutsを使いながらspringが良いと思ってフレームワークを簡単に変更できることがありません。普通は初めからやり直しするケースが多いです。なので、spring web frameworkがトレンドになる時にも相当にjava servletを使って私のフレームワーク(?)を構築して使いました。経歴の]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Javascript] Node.jsをインストールしてReactを使う方法</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(101)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(26)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(29)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(6)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(24)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(15)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(227)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(61)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(63)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(23)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(19)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0210" href="study_project_design.html">Project design<span class="category-item-count">(9)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/331.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Javascript] Node.jsをインストールしてReactを使う方法</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0204">Study / Javascript, Jquery, Css</a>    作成日付 : <span property="datePublished">2022/03/23 18:01:34</span>   修正日付 : <span property="dateModified">2022/03/23 18:03:14</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はNode.jsをインストールしてReactを使う方法に関する説明です。</p> 
+  <p><br></p> 
+  <p>私がアルバイトや勉強した時期を除いて、学校を卒業してプログラムを開発した経験が約14年から15年間になります。</p> 
+  <p>始めから「ウェブ開発しよう」と思ってからやったことではなくCS(Client Server)プログラムから組み込み開発などの様々な分野でさまようした後、結局に需要が多いのウェブ開発者になりました。</p> 
+  <p>ウェブというのは初期にはそんなに難しいと思わなかったですが、どの分野でも同じですが、知る深さが深くなるほど知るべきな規約も多いし、毎日に出るライブラリとフレームワークなどを学ばなければならないことが凄く多いですね。実はそれがウェブ開発の面白さかも知れません。</p> 
+  <p><br></p> 
+  <p>人により開発の価値観が違いますが、私の場合は新しいライブラリとフレームワークを早く学んで使うスタイルではありません。理由は様々がありますが、安定性の理由ですね。</p> 
+  <p>Javaの場合は始めJava servlet環境から始まってstruts(ストラッツ)、Spring web framework、Spring bootまで使いました。</p> 
+  <p><br></p> 
+  <p>以前にはJava servletをかなり長い時間で使いましたが、フレームワークの必要性を感じて、struts(ストラッツ)を使った時がありました。始めにはservletより早い開発と特別な概念で良いと思いましたが、strutsが思ったより問題が多かったんです。structの問題なら代表的なことがセキュリティイッシューですね。</p> 
+  <p>今でも理解できないことがservletにもできるInjection問題がstrutsにはなぜできないかな。。それでプロジェクトと関係ない回避コードもたくさん作るし、どの場合はフレームワークのライブラリのほぼを継承して再定義した時もありましたね。</p> 
+  <p><br></p> 
+  <p>その経験があるので、フレームワークとライブラリを使いことが厳しくなりました。フレームワークというのは使ったら途中で変わることがずいぶん難しいでしょう。つまり、プロジェクトでstrutsを使いながらspringが良いと思ってフレームワークを簡単に変更できることがありません。普通は初めからやり直しするケースが多いです。</p> 
+  <p>なので、Spring web frameworkがトレンドになる時にも相当にJava servletを使って私のフレームワーク(?)を構築して使いました。</p> 
+  <p><br></p> 
+  <p>経歴の半ばまで多いチーム員とプロジェクトをやることより3~4人でやることが多いので、その方法が問題になるか大変な時が無かったんです。ただ、必要なら私が説明するし作ったら良いからです。</p> 
+  <p>チーム員が多くなるし、様々なシステムと共に使う場合(Microservices Architecture)が出来てから大勢の人達と共有が可能なフレームワークを使う必要性を感じてSpring Web frameworkからSpring bootまで使うことになりました。</p> 
+  <p>今、思えばSpringは凄く良い概念で良いframeworkだと思います、思いより単純な概念でセキュリティイッシューの影響も少ないです。初めからSpringを使ったらどうでしょうと思う時もありました。</p> 
+  <p><br></p> 
+  <p>それと似ている状況でJavascriptもずいぶん長い時間でバニラバージョンを使うしJqueryのSizzleエンジンが楽なのでJqueryも相当の時間で使いました。</p> 
+  <p>それでES6(2015)バージョンでSizzleの概念がJavascriptのバニラバージョンでも含まれてJqueryを使う理由も無くなりましたね。でも、まだ多いライブラリがJqueryを依存しているし、作らさせたのでずっと使いましたが、最近多いライブラリがJqueryの除きを始まりました。</p> 
+  <p>そして最近の多いフロントエンド開発者がJqueryを悪い評価する方も多くなりました。代表的にJqueryが凄く遅いということですが、私はJqueryが遅いと感じたことがないですが。。。</p> 
+  <p>決定的に私はBootscript5からJqueryを除くという話でショックを受け取って、これからはJqueryを外して新しいJavascriptフレームワークを使わなければならないと思いました。</p> 
+  <p><br></p> 
+  <p>その間に最近フロントエンドの開発スタイルはSPA(Single page application)だし、それを効果的に支援するフレームワークを探す中でReactを見つけて使いました。Reactの感じはまだかなり良いと思うフレームワークです。</p> 
+  <p>実は以前にAngularを使った時がありますが、Angularは概念は難しかったんです。もちろん、頑張って学んだら使えると思いますが、既存のJavascript(Typescript)のスタイルで作成してもNGだし、Angularだけの規約を合わせて作成しなければならない様々な難しいことがありました。</p> 
+  <p>Angularを好きで専門にする方も多いので悪く評価がしません。ただ、私とは合わなかったんです。もしかして分からないですね。将来にはAngularを使うかも。。</p> 
+  <p>それで今は一応、Reactを選択して始まります。</p> 
+  <p><br></p> 
+  <p>Reactを始まる前に知るべきなことがNode.jsとTypescriptです。</p> 
+  <p>実はJavasciprtというのはウェブ専用スクリプト言語です。それで私がスクリプト言語を学ぶ時にローカルはファイソン、ウェブサーバーはPHP、ウェブクライアントはジャバスクリプトで区分して使いました。なのでジャバスクリプトを誰でもローカルで使うと思わなかったんですね。</p> 
+  <p>それをグーグルはローカルで使いたかったかも知りません。それをサーバー言語に使えるようなライブラリがNode.jsです。もっと複雑な履歴がありますが、それは重要ではないので、ただローカルで使うジャバスクリプトだと思えば良いでしょう。</p> 
+  <p><br></p> 
+  <p>Reactはウェブブラウザで動くフレームワークですが、なぜNode.jsが必要かな?というなぜができます。</p> 
+  <p>今は業務がフロントエンド、サーバーサイドということに完全に区別になっています。私がウェブ開発した時代にはフロントエンド開発者やウェブデザイナーがCSSやHtml、Javascriptで作ってもサーバーサイド開発者がそれをサーバー環境に合わせてパーシング作業をしなければならなかったんです。</p> 
+  <p>またはフロントエンド開発者が自分の혹은PCに同じサーバープログラムをインストールしてその上で作業することか。。完璧な分離が出来ませんでした。</p> 
+  <p><br></p> 
+  <p>今はNode.jsでフロントエンド開発者のためのウェブサーバーを構築して、proxy設定でサーバーサイドを連結して使います。そして最終的に配布する時だけNode.jsでビルドしたファイルをサーバーサイドの開発コードに入れて最終コンパイルにするとプロジェクトが完成になるでしょう。</p> 
+  <p>もちろん、プールスタックならサーバーサイドやフロントエンドを同時に開発することができるので、Node.jsが要らないかも知りませんが、ただIDEで開発することよりNode.jsを利用するとフロントエンドは凄く楽でしょう。</p> 
+  <p><br></p> 
+  <p>Node.jsをインストールする方法はただ、インストールファイルをダウンロードして実行すれば良いです。</p> 
+  <p>リンク - <a href="https://nodejs.org/ja/" target="_blank">https://nodejs.org/ja/ </a> </p>
+  <p style="text-align:left;"><img src="./contents/331/2333_001-1.png" data-filename="001-1.png" style="width: 848px;"><br></p> 
+  <p>最新バージョンが良いですが、私は安定化になったLTSバージョンを選択するので、LTSバージョンをインストールしましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/331/2334_002.png" data-filename="002.png" style="width: 492px;"><br></p> 
+  <p>始めはローディング時間がかかりますが、１分ごろ待つならインストール画面が出ます。</p> 
+  <p>そして適当な場所でインストールしたら良いでしょう。</p> 
+  <p style="text-align:left;"><img src="./contents/331/2335_003.png" data-filename="003.png" style="width: 495px;"><br></p> 
+  <p>そしてインストールが完了しました。</p> 
+  <p style="text-align:left;"><img src="./contents/331/2336_004.png" style="width: 495px;" data-filename="004.png"><br></p> 
+  <p>これから適当なところでJavascriptを作成してウェブサーバーを立ち上げましょう。</p> 
+  <pre><code class="javascript" data-type="index.js">const http = require('http');
+
+http.createServer((req, res) =&gt; {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+}).listen(3000);
+</code></pre> 
+  <p>コンソールにnode index.jsのコマンドでサーバーを起動しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/331/2337_005.png" data-filename="005.png" style="width: 440px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/331/2338_006.png" style="width: 423px;" data-filename="006.png"><br></p> 
+  <p>ブラウザにhello worldが見えますね。ここまでプロジェクトの開発準備は終わりました。</p> 
+  <p>参考にフロントエンドの場合は開発IDEをVisual studio codeで使います。</p> 
+  <p><br></p> 
+  <p>これでReactのフレームワークを使いましょう。</p> 
+  <p>フロントエンドを開発すると思っても上みたいにサーバーソースをすべて作成する必要がありません。フロントエンドのプロジェクトは基本的に作成されている形があります。</p> 
+  <p>Reactの場合も同じです。コンソールに下記のコマンドで作成しましょう。</p> 
+  <pre><code class="shell" data-type="">npx create-react-app my-app --template typescript
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/331/2339_007.png" data-filename="007.png" style="width: 848px;"><br></p> 
+  <p>最後にHappy hacking!が出たらインストールが完了したことです。私も始めHacking!という言葉でビックリしましたが、楽しいプログラミングという意味だと言います。詳細のは私もよく分かりません。ただ、問題ありません。</p> 
+  <p><br></p> 
+  <p>上でmy-appのオプションを設定したので、my-appで生成されました。</p> 
+  <p style="text-align:left;"><img src="./contents/331/2340_008.png" data-filename="008.png" style="width: 163px;"><br></p> 
+  <p>my-appからサーバーを起動しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/331/2341_009.png" data-filename="009.png" style="width: 848px;"><br></p> 
+  <p>コンソールに上みたいなログが出たら実行されました。その後、ブラウザにhttp://localhost:3000で接続します。</p> 
+  <p style="text-align:left;"><img src="./contents/331/2342_010.png" data-filename="010.png" style="width: 568px;"><br></p> 
+  <p>上みたいな画面が表示されたら設定が完了されたことです。</p> 
+  <p></p> 
+  <p>これからディレクトリを確認すると下記の構造になっています。</p> 
+  <p style="text-align:left;"><img src="./contents/331/2343_011.png" data-filename="011.png" style="width: 294px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/331/2344_012.png" data-filename="012.png" style="width: 643px;"><br></p> 
+  <p>確かにJavascriptでウェブフロントエンドを開発すると説明しましたが、Javascript(.js)ファイルはないでしょう。</p> 
+  <p><br></p> 
+  <p>この投稿ですべてを説明するのは難しくて、Typescriptに関して簡単に説明します。</p> 
+  <p>Javascriptはスクリプト言語なので、コードにエラーがあるとその部分が実行する前には分かりません。</p> 
+  <pre><code class="javascript" data-type="ex.js">function func() {
+  function test(val) {
+    console.log(val.data);
+  }
+  test();
+}
+</code></pre> 
+  <p>上のソースはfunc関数を呼び出す前にはエラーが発生しません。つまり、人がミスで間違って作成しても実行は問題なくできるということです。</p> 
+  <p>そのことでソースがサービスにデプロイされて、どの時点でユーザが実行してエラーが発生したらそれがバグです。</p> 
+  <p><br></p> 
+  <p>それで我々はJavascriptも機械的な検査で文法で問題があるかを事前に知る必要があります。</p> 
+  <p>그것이 Typescript입니다. </p> 
+  <p><br></p> 
+  <p>TypescriptはJavascriptと文法が違います。多い差異があることではなく、変数にデータタイプを明示することか上みたいにパラメータが必要な関数でパラメータ無しで呼び出すエラーを探す役割をします。</p> 
+  <p>つまり、Typescriptで少し厳しい文法で作成して多いバグをなくしてJavascriptファイルをOutputする機能になります。</p> 
+  <p><br></p> 
+  <p>私は上でReactの基本フレームワークをダウンロードする時、--template typescriptと言うオプションを付けました。それでtypescript形式で生成されました。</p> 
+  <p>もしかしてtypescriptタイプが要らないなら--template typescriptを省略するとjsファイルでReactが生成されます。</p> 
+  <p><br></p> 
+  <p>上のプロジェクトをBuildしましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/331/2345_013.png" data-filename="013.png" style="width: 534px;"><br></p> 
+  <p>そうすると最終結果はjsファイルで作成されるでしょう。</p> 
+  <p style="text-align:left;"><img src="./contents/331/2346_014.png" data-filename="014.png" style="width: 297px;"><br></p> 
+  <p>そのファイルをサーバーサイドにコピーするとReactフレームワークを使えます。</p> 
+  <p><br></p> 
+  <p>ここでは私がNode.jsをインストールしてReactフレームワークをダウンロードして実行する方法まで説明しました。</p> 
+  <p>次の投稿ではTypescriptとReactに関してもっと詳細に説明します。</p> 
+  <p><br></p> 
+  <p>ここまでNode.jsをインストールしてReactを使う方法に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/136.html" target="_blank">[CSS] ブラウザから開発する方法 (developer mode)</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=java>#java</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0204">Study / Javascript, Jquery, Css</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/331.html'>[Javascript] Node.jsをインストールしてReactを使う方法</a><span>2022/03/23 18:01:34</span></li><li><a href='https://www.nowonbun.com/136.html'>[CSS] ブラウザから開発する方法 (developer mode)</a><span>2019/12/25 07:54:31</span></li><li><a href='https://www.nowonbun.com/135.html'>[CSS] 色スタイル、グラデーション</a><span>2019/12/24 07:37:22</span></li><li><a href='https://www.nowonbun.com/134.html'>[CSS] アニメーション (animation)</a><span>2019/12/20 20:51:38</span></li><li><a href='https://www.nowonbun.com/133.html'>[CSS] トランスフォーム (transform)</a><span>2019/12/19 13:00:26</span></li><li><a href='https://www.nowonbun.com/132.html'>[CSS] トランジション(transition)</a><span>2019/12/18 20:33:57</span></li><li><a href='https://www.nowonbun.com/131.html'>[CSS] Columnスタイル</a><span>2019/12/17 19:52:56</span></li><li><a href='https://www.nowonbun.com/130.html'>[CSS] 整列スタイル (float)</a><span>2019/12/17 00:08:54</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/331.html'>[Javascript] Node.jsをインストールしてReactを使う方法</a><span>2022/03/23 18:01:34</span></li><li><a href='https://www.nowonbun.com/330.html'>[Java] 63. Spring bootでcronスケジューラとComponentアノテーション</a><span>2022/03/16 18:57:30</span></li><li><a href='https://www.nowonbun.com/329.html'>[Java] 62. Spring bootでWeb-Filterを設定する方法(Spring Security)</a><span>2022/03/15 22:16:37</span></li><li><a href='https://www.nowonbun.com/328.html'>[Java] JWT(Json Web Token)を発行、確認する方法</a><span>2022/03/14 19:12:58</span></li><li><a href='https://www.nowonbun.com/327.html'>[Java] 61. Spring bootでRedisデータベースを利用してセッションクラスタリング設定する方法</a><span>2022/03/01 18:20:52</span></li><li><a href='https://www.nowonbun.com/326.html'>[Java] 60. Spring bootでApacheの連結とロードバランシングを設定する方法</a><span>2022/02/28 18:45:48</span></li><li><a href='https://www.nowonbun.com/325.html'>[Java] 59. Spring bootのJPAでEntityManagerを使い方</a><span>2022/02/25 18:27:48</span></li><li><a href='https://www.nowonbun.com/324.html'>[Java] 58. EclipseでSpring bootのJPAを設定する方法</a><span>2022/02/23 18:11:10</span></li><li><a href='https://www.nowonbun.com/323.html'>[Java] 57. EclipseでSpring bootを設定する方法</a><span>2022/02/22 19:04:49</span></li><li><a href='https://www.nowonbun.com/322.html'>[Python] Redisデータベースに接続して使い方</a><span>2022/02/21 18:23:49</span></li><li><a href='https://www.nowonbun.com/321.html'>[Java] Redisデータベースを接続して使い方(Jedisライブラリ)</a><span>2022/02/16 18:13:17</span></li><li><a href='https://www.nowonbun.com/320.html'>[C#] Redisのデータベースを接続して使い方</a><span>2022/02/15 18:46:09</span></li><li><a href='https://www.nowonbun.com/319.html'>[CentOS] Redisデータベースをインストールする方法とコマンドを使い方</a><span>2022/02/14 18:33:07</span></li><li><a href='https://www.nowonbun.com/318.html'>[Design pattern] 3-6. ステートパターン(State pattern)</a><span>2021/11/17 20:04:47</span></li><li><a href='https://www.nowonbun.com/317.html'>[Design pattern] 3-5. メメントパターン(Memento pattern)</a><span>2021/11/16 20:01:36</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/331.html';this.page.identifier = 'NOWONBUN00331';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
