@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-3459002797096743",
+          enable_page_level_ads: true
+     });
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZM8CKQ');</script>
+<!-- End Google Tag Manager -->
+<style type="text/css">
+@font-face { 
+	font-family: 'Noto Sans JP';
+	src: url('https://nowonbun.github.io/nowonbunfont/NotoSansJP-Regular.otf?version=1') format('opentype');
+	font-style:normal;
+	font-weight:normal;
+}
+body{
+	font-family: 'Noto Sans JP', 'Arial',sans-serif!important;
+}
+</style>
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"BlogPosting","image":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"},"mainEntityOfPage":{"@id":"https:\/\/www.nowonbun.com\/332.html"},"url":"https:\/\/www.nowonbun.com\/332.html","headline":"\u660e\u6708\u306e\u958b\u767a\u30b9\u30c8\u30fc\u30ea :: [Java] 64.Spring boot\u3068React\u3092\u9023\u7d50\u3059\u308b\u65b9\u6cd5(Build\u3059\u308b\u65b9\u6cd5)","description":"\u3053\u3093\u306b\u3061\u306f\u3002\u660e\u6708\u3067\u3059\u3002\u3053\u306e\u6295\u7a3f\u306fspring boot\u3068react\u3092\u9023\u7d50\u3059\u308b\u65b9\u6cd5(build\u3059\u308b\u65b9\u6cd5)\u306b\u95a2\u3059\u308b\u8aac\u660e\u3067\u3059\u3002\u6700\u8fd1\u306e\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u306e\u30c8\u30ec\u30f3\u30c9\u306f\u30d5\u30ed\u30f3\u30c8\u30a8\u30f3\u30c9\u3068\u30b5\u30fc\u30d0\u30fc\u30b5\u30a4\u30c9\u306e\u533a\u5206\u3057\u3066\u4f5c\u696d\u3057\u307e\u3059\u3002\u5b9f\u306f\u3053\u306e\u3088\u3046\u306b\u5272\u308a\u632f\u3063\u3066\u4f5c\u696d\u3059\u308b\u3053\u3068\u306f\u305a\u3044\u3076\u3093\u524d\u304b\u3089\u306e\u30c8\u30ec\u30f3\u30c9\u306a\u3093\u3067\u3059\u304c\u3001\u79c1\u304c\u9045\u3044\u611f\u3058\u304c\u3042\u308a\u307e\u3059\u306d\u3002\u79c1\u306f\u6700\u8fd1\u307e\u3067javascript\u3068jquery\u3092\u4f7f\u3063\u3066\u753b\u9762\u3068\u30d7\u30ed\u30b0\u30e9\u30e0\u3092\u4f5c\u6210\u3057\u307e\u3057\u305f\u3002\u30d7\u30ed\u30b8\u30a7\u30af\u30c8\u3092\u4e00\u4eba\u3067\u3084\u3063\u305f\u3053\u3068\u3067\u306f\u306a\u3044\u3067\u3059\u304c\u3001\u3053\u306e\u72b6\u6cc1\u3092\u305d\u3093\u306a\u306b\u60aa\u3044\u3068\u306f\u601d\u308f\u306a\u304b\u3063\u305f\u3093\u3067\u3059\u3002jquery\u3067\u3082\u5341\u5206\u306bspa(single page application)\u3092\u5b9f\u88c5\u3067\u304d\u308b\u3057\u3001\u79c1\u306e\u611f\u3058\u3067\u306fjquery\u3067\u30b7\u30b9\u30c6\u30e0\u304c\u9045\u3044\u3068\u3082\u601d\u308f\u306a\u304b\u3063\u305f\u3093\u3067\u3059\u3002\u3057\u304b\u3057\u3001jquery\u304b\u3089react\u306b\u5909\u308f\u3089\u306a\u3051\u308c\u3070\u306a\u3089\u306a\u3044\u3068\u601d\u3063\u305f\u3053\u3068\u304c\u3001\u4e00\u3064\u76ee\u306f\u30e9\u30a4\u30d6\u30e9\u30ea\u304c\u3082\u3046jquery\u3092\u4f9d\u5b58\u3057\u306a\u3044\u3001\u4f7f\u308f\u306a\u3044\u3053\u3068\u3067\u3059\u3002\u305d\u3046\u3059\u308b\u3068jquery\u3092\u4f7f\u3046\u5fc5\u8981\u304c\u3042\u308b\u304b\u3068\u601d\u3044\u304b\u3089\u3067\u3059\u3002\u305d\u306e\u540c\u6642\u306b\u6570\u591a\u304f\u306e\u30e9\u30a4\u30d6\u30e9\u30ea\u304cangular\u3001vue\u3001react\u3092\u652f\u63f4\u3059\u308b\u3057\u3001\u305d\u306e\u4e2d\u3067react\u3092\u9078\u629e\u3057\u305f\u7406\u7531\u306f\u5358\u7d14\u306b\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u304c\u591a\u3044\u3057\u3001\u5927\u52e2\u306e\u4eba\u304c\u4f7f\u3046\u30d5\u30ec\u30fc\u30e0\u30ef\u30fc\u30af\u3060\u3068\u601d\u3063\u3066\u9078\u629e\u3057\u307e\u3057\u305f\u3002\u4ee5\u524d\u306b\u306f\u753b\u9762\u3092\u4f5c\u6210\u3059\u308b\u6642\u306f\u305f\u3060eclipse\u304b\u3089html\u3092\u4f5c\u6210\u3057\u3001css\u3001js\u3092\u4f5c\u6210\u3057\u307e\u3057\u305f\u304c\u3001react\u306e\u5834\u5408\u306feclipse\u304b\u3089\u4f5c\u6210\u3059\u308b\u3053\u3068\u304c\u7c21\u5358\u3067\u306f\u3042\u308a\u307e\u305b\u3093\u3002\u306a\u306e\u3067react\u306fnode.js\u3092\u4f7f\u3063\u3066visual studio code\u3067\u958b\u767a\u3057\u3066spring boot\u306fintellij\u3084eclipse\u3067\u958b\u767a\u3057\u307e\u3059\u3002\u5404\u3001\u5225\u306eide\u30c4\u30fc\u30eb\u3067\u958b\u767a\u3059\u308c\u3070\u6700\u7d42\u7684\u306bbuild\u3057\u305f\u3089\u7d50\u679c\u7269\u304c\u5225\u306b\u751f\u6210\u3055\u308c\u308b\u306e\u3067\u3001\u4e00\u3064\u306b\u5408\u308f\u305b\u308b\u4f5c\u696d\u304c\u5fc5\u8981\u3067\u3057\u3087\u3046\u3002eclipse\u3067spring boot\u306e\u958b\u767a\u74b0\u5883\u3092\u8a2d\u5b9a\u3059\u308b\u65b9\u6cd5\u306f\u4ee5\u524d\u306b\u8aac\u660e\u3057\u307e\u3057\u305f\u3002\u30ea\u30f3\u30af - [java] 57. eclipse\u3067spring boot\u3092\u8a2d\u5b9a\u3059\u308b\u65b9\u6cd5\u305d\u3057\u3066react\u3092visual studio code\u3067\u958b\u767a\u74b0\u5883\u3092\u8a2d\u5b9a\u3059\u308b\u65b9\u6cd5\u3082\u8aac\u660e\u3057\u307e\u3057\u305f\u3002\u30ea\u30f3\u30af - [javascript] node.js\u3092\u30a4\u30f3\u30b9\u30c8\u30fc\u30eb\u3057\u3066react\u3092\u4f7f\u3046\u65b9\u6cd5\u305d\u308c\u306a\u3089\u4e00\u65e6\u3001\u4e8c\u3064\u306e\u958b\u767a\u74b0\u5883\u3092\u9023\u7d50\u3059\u308b\u65b9\u6cd5\u306f\u51c4\u304f\u7c21\u5358\u3067\u3059\u3002react\u306epackage.json\u30d5\u30a1\u30a4\u30eb\u306bspring boot\u306e\u30a2\u30c9\u30ec\u30b9\u3092\u9023\u7d50\u3059\u308c\u3070\u826f\u3044\u3067\u3057\u3087\u3046\u3002\u79c1\u306feclipse\u304b\u3089spring boot\u306e\u30dd\u30fc\u30c8\u30928","author":{"@type":"Person","name":"nowonbun@gmail.com"},"datePublished":"2022-03-25T21:02:18.000+09:00","dateModified":"2022-03-25T21:04:05.000+09:00","publisher":{"@type":"Organization","name":"nowonbun@gmail.com","logo":{"@type":"ImageObject","url":"https:\/\/www.nowonbun.com\/img\/nowonbuntistory1.png","width":"783px","height":"657px"}}}</script>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta name="theme-color" content="#29343a" />
+<link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+<meta name="keywords" content="Study / Java" />
+<meta name="description" content="<![CDATA[こんにちは。明月です。この投稿はspring bootとreactを連結する方法(buildする方法)に関する説明です。最近のプロジェクトのトレンドはフロントエンドとサーバーサイドの区分して作業します。実はこのように割り振って作業することはずいぶん前からのトレンドなんですが、私が遅い感じがありますね。私は最近までjavascriptとjqueryを使って画面とプログラムを作成しました。プロジェクトを一人でやったことではないですが、この状況をそんなに悪いとは思わなかったんです。jqueryでも十分にspa(single page application)を実装できるし、私の感じではjqueryでシステムが遅いとも思わなかったんです。しかし、jqueryからreactに変わらなければならないと思ったことが、一つ目はライブラリがもうjqueryを依存しない、使わないことです。そうするとjqueryを使う必要があるかと思いからです。その同時に数多くのライブラリがangular、vue、reactを支援するし、その中でreactを選択した理由は単純にダウンロードが多いし、大勢の人が使うフレームワークだと思って選択しました。以前には画面を作成する時はただeclipseからhtmlを作成し、css、jsを作成しましたが、reactの場合はeclipseから作成することが簡単ではありません。なのでreactはnode.jsを使ってvisual studio codeで開発してspring bootはintellijやeclipseで開発します。各、別のideツールで開発すれば最終的にbuildしたら結果物が別に生成されるので、一つに合わせる作業が必要でしょう。eclipseでspring bootの開発環境を設定する方法は以前に説明しました。リンク - [java] 57. eclipseでspring bootを設定する方法そしてreactをvisual studio codeで開発環境を設定する方法も説明しました。リンク - [javascript] node.jsをインストールしてreactを使う方法それなら一旦、二つの開発環境を連結する方法は凄く簡単です。reactのpackage.jsonファイルにspring bootのアドレスを連結すれば良いでしょう。私はeclipseからspring bootのポートを8]]>" />
+<meta name="author" content="nowonbun@gmail.com" />
+<meta name="distribution" content="nowonbun@gmail.com" />
+<meta name="copyright" content="nowonbun@gmail.com" />
+<meta name="title" content="明月の開発ストーリ :: [Java] 64.Spring bootとReactを連結する方法(Buildする方法)" />
+<link rel="canonical" href="https://www.nowonbun.com/332.html" />
+<meta name="robots" content="ALL" />
+
+<meta property="og:type" content="website" />
+<meta property="og:title" content="明月の開発ストーリ :: [Java] 64.Spring bootとReactを連結する方法(Buildする方法)" />
+<meta property="og:description" content="<![CDATA[こんにちは。明月です。この投稿はspring bootとreactを連結する方法(buildする方法)に関する説明です。最近のプロジェクトのトレンドはフロントエンドとサーバーサイドの区分して作業します。実はこのように割り振って作業することはずいぶん前からのトレンドなんですが、私が遅い感じがありますね。私は最近までjavascriptとjqueryを使って画面とプログラムを作成しました。プロジェクトを一人でやったことではないですが、この状況をそんなに悪いとは思わなかったんです。jqueryでも十分にspa(single page application)を実装できるし、私の感じではjqueryでシステムが遅いとも思わなかったんです。しかし、jqueryからreactに変わらなければならないと思ったことが、一つ目はライブラリがもうjqueryを依存しない、使わないことです。そうするとjqueryを使う必要があるかと思いからです。その同時に数多くのライブラリがangular、vue、reactを支援するし、その中でreactを選択した理由は単純にダウンロードが多いし、大勢の人が使うフレームワークだと思って選択しました。以前には画面を作成する時はただeclipseからhtmlを作成し、css、jsを作成しましたが、reactの場合はeclipseから作成することが簡単ではありません。なのでreactはnode.jsを使ってvisual studio codeで開発してspring bootはintellijやeclipseで開発します。各、別のideツールで開発すれば最終的にbuildしたら結果物が別に生成されるので、一つに合わせる作業が必要でしょう。eclipseでspring bootの開発環境を設定する方法は以前に説明しました。リンク - [java] 57. eclipseでspring bootを設定する方法そしてreactをvisual studio codeで開発環境を設定する方法も説明しました。リンク - [javascript] node.jsをインストールしてreactを使う方法それなら一旦、二つの開発環境を連結する方法は凄く簡単です。reactのpackage.jsonファイルにspring bootのアドレスを連結すれば良いでしょう。私はeclipseからspring bootのポートを8]]>" />
+<meta property="og:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta property="og:url" content="https://www.nowonbun.com/332.html" />
+<meta property="og:site_name" content="明月の開発ストーリ" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@nowonbun" />
+<meta name="twitter:creator" content="@nowonbun" />
+<meta name="twitter:title" content="明月の開発ストーリ :: [Java] 64.Spring bootとReactを連結する方法(Buildする方法)" />
+<meta name="twitter:description" content="<![CDATA[こんにちは。明月です。この投稿はspring bootとreactを連結する方法(buildする方法)に関する説明です。最近のプロジェクトのトレンドはフロントエンドとサーバーサイドの区分して作業します。実はこのように割り振って作業することはずいぶん前からのトレンドなんですが、私が遅い感じがありますね。私は最近までjavascriptとjqueryを使って画面とプログラムを作成しました。プロジェクトを一人でやったことではないですが、この状況をそんなに悪いとは思わなかったんです。jqueryでも十分にspa(single page application)を実装できるし、私の感じではjqueryでシステムが遅いとも思わなかったんです。しかし、jqueryからreactに変わらなければならないと思ったことが、一つ目はライブラリがもうjqueryを依存しない、使わないことです。そうするとjqueryを使う必要があるかと思いからです。その同時に数多くのライブラリがangular、vue、reactを支援するし、その中でreactを選択した理由は単純にダウンロードが多いし、大勢の人が使うフレームワークだと思って選択しました。以前には画面を作成する時はただeclipseからhtmlを作成し、css、jsを作成しましたが、reactの場合はeclipseから作成することが簡単ではありません。なのでreactはnode.jsを使ってvisual studio codeで開発してspring bootはintellijやeclipseで開発します。各、別のideツールで開発すれば最終的にbuildしたら結果物が別に生成されるので、一つに合わせる作業が必要でしょう。eclipseでspring bootの開発環境を設定する方法は以前に説明しました。リンク - [java] 57. eclipseでspring bootを設定する方法そしてreactをvisual studio codeで開発環境を設定する方法も説明しました。リンク - [javascript] node.jsをインストールしてreactを使う方法それなら一旦、二つの開発環境を連結する方法は凄く簡単です。reactのpackage.jsonファイルにspring bootのアドレスを連結すれば良いでしょう。私はeclipseからspring bootのポートを8]]>" />
+<meta property="twitter:image" content="https://www.nowonbun.com/img/nowonbuntistory1.png" />
+<meta name="google-site-verification" content="qJOjK0jRyJPKYHFBllVB-mrqZ9_-2Q_3DJxZZvKckFA" />
+
+<title>明月の開発ストーリ :: [Java] 64.Spring bootとReactを連結する方法(Buildする方法)</title>
+<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.css" />
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/rainbow.min.css">
+<!--link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css" /-->
+<link rel="stylesheet" type="text/css" href="./css/highlight.init.css" />
+<link rel="stylesheet" type="text/css" href="./css/loader.css" />
+<link rel="stylesheet" type="text/css" href="./css/common.css" />
+<link rel="stylesheet" type="text/css" href="./css/post.css" />
+
+<script src="//code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" src="./js/common.js"></script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZM8CKQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+	<div class="loader off"></div>
+	<section class="loader-layout off"></section>
+	<nav class="navbar navbar-expand-lg nav-costom">
+		<button class="menu-toggle" type="button">MENU</button>
+		<a class="navbar-brand navbar-brand-flex-left" href="./" style="color: #000;">明月の開発ストーリ</a>
+	</nav>
+	<aside class="leftside">
+		<h5 class="side-header">
+			<img src="https://t1.daumcdn.net/cfile/tistory/1935C94C505D9F8B13">明月の開発ストーリ
+		</h5>
+		<div class="side-menu bs-glyphicons">
+			<ul class="bs-glyphicons-list">
+				<li onclick="location.href='./';"><span class="fa fa-home" aria-hidden="true" title="Home"></span> <span>Home</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li><span class="fa fa-minus" aria-hidden="true" title="..."></span><span>...</span></li>
+				<li class="menu-close"><span class="fa fa-times" aria-hidden="true" title="Close"></span> <span>Close</span></li>
+				<li class="menu-close-off"><span class="fa fa-minus" aria-hidden="true" title="..."></span> <span>...</span></li>
+			</ul>
+		</div>
+		<div class="form-inline my-0 search-custom side-search" style="padding: 5px;">
+			<input class="form-control mr-2 search-text" type="search" placeholder="Search" aria-label="Search" style="width: 65%">
+			<button class="btn btn-outline-success my-0 search-btn" type="submit">Search</button>
+		</div>
+		<div class="side-list">
+			<ul class="side-nav"><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Devlopment note<span class="category-item-count">(101)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0101" href="dev_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0102" href="dev_csharp.html">C#<span class="category-item-count">(26)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0103" href="dev_java.html">Java<span class="category-item-count">(29)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0104" href="dev_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0105" href="dev_window.html">Window<span class="category-item-count">(6)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0106" href="dev_linux.html">Linux<span class="category-item-count">(24)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0107" href="dev_etc.html">Etc.<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0108" href="dev_python.html">Python<span class="category-item-count">(15)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0109" href="dev_php.html">PHP<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Study<span class="category-item-count">(228)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0201" href="study_clanguage.html">C, C++, MFC<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0202" href="study_csharp.html">C#<span class="category-item-count">(61)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0203" href="study_java.html">Java<span class="category-item-count">(64)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0204" href="study_javascript.html">Javascript, Jquery, Css<span class="category-item-count">(23)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0205" href="study_php.html">PHP<span class="category-item-count">(31)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0206" href="study_python.html">Python<span class="category-item-count">(21)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0207" href="study_database.html">Database<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0208" href="study_design_pattern.html">Design pattern<span class="category-item-count">(19)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0209" href="study_algorithm.html">Algorithm<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0210" href="study_project_design.html">Project design<span class="category-item-count">(9)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" href="javascript:void(0)">Open source<span class="category-item-count">(3)</span><span class="fa fa-chevron-up pull-right"></span></a><ul class="sub_category_list"><li class=""><a class="link_sub_item category-item" data-code="0301" href="opensource_bootstrap.html">Bootstrap<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0302" href="opensource_tools.html">Tools<span class="category-item-count">(1)</span></a></li><li class=""><a class="link_sub_item category-item" data-code="0303" href="optionsource_javascript.html">Javascript, Jquery, CSS<span class="category-item-count">(1)</span></a></li></ul></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0400" href="project.html">Project<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0500" href="experience.html">Experience<span class="category-item-count">(0)</span></a></li><li class=""><a class="link_item link-item-collapse category-item" data-code="0600" href="other.html">Other<span class="category-item-count">(0)</span></a></li>
+			</ul>
+		</div>
+	</aside>
+	<section class="menu-back-layout menu-close off"></section>
+	<div class="container-fluid main-container">
+		<!-- 메인 -->
+		<article class="entry post" vocab="http://schema.org/" typeof="BlogPosting" resource="https://www.nowonbun.com/332.html">
+			<div class="titleArea">
+				<div class="title" id="article_title">
+					<h1 id="titleTxt" property="headline">[Java] 64.Spring bootとReactを連結する方法(Buildする方法)</h1>
+				</div>
+				<hr class="titileHr">
+				<div class="categoryArea">
+					<a href="./?category=0203">Study / Java</a>    作成日付 : <span property="datePublished">2022/03/25 21:02:18</span>   修正日付 : <span property="dateModified">2022/03/25 21:04:05</span>
+				</div>
+			</div>
+			<div class="article">
+				<!-- 일본 반응형 1 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="5014274916"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="tt_article_useless_p_margin" id="article_contents" property="description">
+ 
+ 
+  <p>こんにちは。明月です。</p> 
+  <p><br></p> 
+  <p>この投稿はSpring bootとReactを連結する方法(Buildする方法)に関する説明です。</p> 
+  <p><br></p> 
+  <p>最近のプロジェクトのトレンドはフロントエンドとサーバーサイドの区分して作業します。実はこのように割り振って作業することはずいぶん前からのトレンドなんですが、私が遅い感じがありますね。私は最近までJavascriptとJqueryを使って画面とプログラムを作成しました。</p> 
+  <p>プロジェクトを一人でやったことではないですが、この状況をそんなに悪いとは思わなかったんです。Jqueryでも十分にSPA(Single page application)を実装できるし、私の感じではJqueryでシステムが遅いとも思わなかったんです。</p> 
+  <p><br></p> 
+  <p>しかし、JqueryからReactに変わらなければならないと思ったことが、一つ目はライブラリがもうJqueryを依存しない、使わないことです。そうするとJqueryを使う必要があるかと思いからです。</p> 
+  <p>その同時に数多くのライブラリがAngular、Vue、Reactを支援するし、その中でReactを選択した理由は単純にダウンロードが多いし、大勢の人が使うフレームワークだと思って選択しました。</p> 
+  <p><br></p> 
+  <p>以前には画面を作成する時はただeclipseからhtmlを作成し、css、jsを作成しましたが、Reactの場合はeclipseから作成することが簡単ではありません。</p> 
+  <p>なのでReactはNode.jsを使ってVisual studio codeで開発してSpring bootはIntellijやeclipseで開発します。</p> 
+  <p>各、別のIDEツールで開発すれば最終的にbuildしたら結果物が別に生成されるので、一つに合わせる作業が必要でしょう。</p> 
+  <p><br></p> 
+  <p>eclipseでSpring bootの開発環境を設定する方法は以前に説明しました。</p> 
+  <p>リンク - <a href="https://www.nowonbun.com/323.html" target="_blank">[Java] 57. EclipseでSpring bootを設定する方法</a></p> 
+  <p><br></p> 
+  <p>そしてReactをVisual studio codeで開発環境を設定する方法も説明しました。</p> 
+  <p>リンク - <a href="https://www.nowonbun.com/331.html" target="_blank">[Javascript] Node.jsをインストールしてReactを使う方法</a></p> 
+  <p><br></p> 
+  <p>それなら一旦、二つの開発環境を連結する方法は凄く簡単です。</p> 
+  <p>Reactのpackage.jsonファイルにSpring bootのアドレスを連結すれば良いでしょう。</p> 
+  <p style="text-align:left;"><img src="./contents/332/2347_001.png" data-filename="001.png" style="width: 355px;"><br></p> 
+  <p style="text-align:left;"><img src="./contents/332/2348_002.png" data-filename="002.png" style="width: 211px;"><br></p> 
+  <p>私はeclipseからSpring bootのポートを8081で設定して、ReactからProxyを8081に接続することに合わせました。</p> 
+  <p><br></p> 
+  <p>そしてeclipseから下記とおりなデータを取得する関数を作成しましょう。</p> 
+  <pre><code class="java" data-type="AjaxController.java">package com.example.demo.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+// コントローラのアトリビュート
+@Controller
+public class AjaxController {
+  // 要請マッピングアトリビュート
+  @RequestMapping(value = "/data/hello.json")
+  // Stringのデータ
+  @ResponseBody
+  public String helloworld(Model model) {
+    // 結果はhello world
+    return "hello world";
+  }
+}
+</code></pre> 
+  <pre><code class="language-javascript" data-type="App.tsx">import React, { useEffect, useState } from 'react';
+
+// ajax関数
+const ajax = (url: string, method = "GET", data: object | null, success: ((req: XMLHttpRequest) =&gt; void) | undefined | null = null, error: ((req: XMLHttpRequest) =&gt; void) | undefined | null = null, sync = true): void =&gt; {
+  // XMLHttpRequestオブジェクト
+  let xhr = new XMLHttpRequest();
+  // バッファー変数
+  let json = "";
+  // 非同期の状態の更新イベント
+  xhr.onreadystatechange = (e) =&gt; {
+    // XMLHttpRequestオブジェクト
+    let req = e.target as XMLHttpRequest;
+    // nullなら処理しない
+    if (req == null) {
+      return;
+    }
+    // 非同期処理が完了すれば(Code state - 4)
+    if (req.readyState === XMLHttpRequest.DONE) {
+      // http status 200なら(正常要請なら)
+      if (req.status === 200) {
+        // success関数の呼び出す。
+        if (success !== null &amp;&amp; success !== undefined) {
+          success.call(this, req);
+        }
+      } else {
+        // error関数の呼び出す。
+        if (error !== null &amp;&amp; error !== undefined) {
+          error.call(this, req);
+        }
+      }
+    }
+  }
+  // data値がnullではなければ
+  if (data != null) {
+    // jsonタイプに変更
+    json = JSON.stringify(data);
+  }
+  // XMLHttpRequest基本設定
+  xhr.open(method, url, sync);
+  // XMLHttpRequestヘッダー設定
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.setRequestHeader('Cache-Control', 'no-cache');
+  // 非同期通信開始
+  xhr.send(json);
+};
+// React開始関数
+function App() {
+  // message状態処理
+  const [message, setMessage] = useState("");
+  useEffect(() =&gt; {
+    // 非同期処理
+    ajax("/data/hello.json", "GET", null, (msg) =&gt; {
+      // 状態更新
+      setMessage(msg.responseText);
+    }, null, false);
+  }, []);
+  // 画面表示
+  return (
+    &lt;&gt;
+      {message}
+    &lt;/&gt;
+  );
+}
+
+export default App;
+</code></pre> 
+  <p style="text-align:left;"><img src="./contents/332/2349_003.png" style="width: 788px;" data-filename="003.png"><br></p> 
+  <p style="text-align:left;"><img src="./contents/332/2350_004.png" data-filename="004.png" style="width: 418px;"><br></p> 
+  <p>Spring bootとreactが連結されたことを確認できます。</p> 
+  <p><br></p> 
+  <p>私の場合はフロントエンドとサーバーサイドを一緒に開発するので、一つのローカルで作業しますが、もし、複数の人と割り振りされてうるならその仕様に合わせる開発サーバーにproxyを連結すれば良いです。</p> 
+  <p><br></p> 
+  <p>ここまでが開発環境でbuild設定を合わせます。</p> 
+  <p>buildはまずフロントエンドのReactソースをビルドします。　そうするとhtmlとcss、jsを生成します。それをSpring bootのstaticフォルダーに格納してSpring bootをビルドします。</p> 
+  <p>私の話はしやすいですが、実際に設定することは簡単ではなかったんです。それでグーグルを参照しました。</p> 
+  <p>リンク - <a href="https://github.com/eirslett/frontend-maven-plugin/issues/872" target="_blank">https://github.com/eirslett/frontend-maven-plugin/issues/872</a></p> 
+  <p>リンク - <a href="https://github.com/eirslett/frontend-maven-plugin" target="_blank">https://github.com/eirslett/frontend-maven-plugin</a></p> 
+  <p><br></p> 
+  <p>それならSpring bootのpom.xmlの設定を確認しましょう。</p> 
+  <pre><code class="xml" data-type="pom.xml">&lt;!-- プロパティ設定 --&gt;
+&lt;properties&gt;
+  &lt;java.version&gt;11&lt;/java.version&gt;
+  &lt;frontend-src-dir&gt;${project.basedir}/../my-app&lt;/frontend-src-dir&gt;
+  &lt;frontend-maven-plugin.version&gt;1.12.1&lt;/frontend-maven-plugin.version&gt;
+&lt;/properties&gt;
+&lt;build&gt;
+  &lt;plugins&gt;
+    &lt;!-- Spring bootをjarで実行するためのビルドパッケージ --&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+      &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+    &lt;/plugin&gt;
+    &lt;!-- Reactをビルドするためのパッケージ --&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;com.github.eirslett&lt;/groupId&gt;
+      &lt;artifactId&gt;frontend-maven-plugin&lt;/artifactId&gt;
+      &lt;version&gt;${frontend-maven-plugin.version}&lt;/version&gt;
+      &lt;!-- バージョン設定はbuildをする環境のnodejsとnpmバージョン設定 --&gt;
+      &lt;configuration&gt;
+        &lt;nodeVersion&gt;v16.14.2&lt;/nodeVersion&gt;
+        &lt;npmVersion&gt;8.5.0&lt;/npmVersion&gt;
+        &lt;workingDirectory&gt;${frontend-src-dir}&lt;/workingDirectory&gt;
+        &lt;installDirectory&gt;${project.build.directory}&lt;/installDirectory&gt;
+      &lt;/configuration&gt;
+      &lt;!-- 実行コマンド --&gt;
+      &lt;executions&gt;
+        &lt;execution&gt;
+          &lt;id&gt;install-frontend-tools&lt;/id&gt;
+          &lt;goals&gt;
+            &lt;goal&gt;install-node-and-npm&lt;/goal&gt;
+          &lt;/goals&gt;
+        &lt;/execution&gt;
+        &lt;!-- npmパッケージのダウンロードおよびインストール --&gt;
+        &lt;execution&gt;
+          &lt;id&gt;npm install&lt;/id&gt;
+          &lt;goals&gt;
+            &lt;goal&gt;npm&lt;/goal&gt;
+          &lt;/goals&gt;
+          &lt;configuration&gt;
+            &lt;arguments&gt;install&lt;/arguments&gt;
+          &lt;/configuration&gt;
+        &lt;/execution&gt;
+        &lt;!-- npmビルド --&gt;
+        &lt;execution&gt;
+          &lt;id&gt;npm run build&lt;/id&gt;
+          &lt;goals&gt;
+            &lt;goal&gt;npm&lt;/goal&gt;
+          &lt;/goals&gt;
+          &lt;configuration&gt;
+            &lt;arguments&gt;run build&lt;/arguments&gt;
+          &lt;/configuration&gt;
+        &lt;/execution&gt;
+      &lt;/executions&gt;
+    &lt;/plugin&gt;
+    &lt;!-- ReactがビルドされたフォルダーからSpring bootプロジェクトにコピーするパッケージ --&gt;
+    &lt;plugin&gt;
+      &lt;artifactId&gt;maven-resources-plugin&lt;/artifactId&gt;
+      &lt;executions&gt;
+        &lt;execution&gt;
+          &lt;id&gt;position-react-build&lt;/id&gt;
+          &lt;goals&gt;
+            &lt;goal&gt;copy-resources&lt;/goal&gt;
+          &lt;/goals&gt;
+          &lt;phase&gt;prepare-package&lt;/phase&gt;
+          &lt;configuration&gt;
+            &lt;!-- Spring boot의 htmlファイルパス --&gt;
+            &lt;outputDirectory&gt;${project.build.outputDirectory}/static&lt;/outputDirectory&gt;
+            &lt;resources&gt;
+              &lt;resource&gt;
+                &lt;directory&gt;${frontend-src-dir}/build&lt;/directory&gt;
+                &lt;filtering&gt;false&lt;/filtering&gt;
+              &lt;/resource&gt;
+            &lt;/resources&gt;
+          &lt;/configuration&gt;
+        &lt;/execution&gt;
+      &lt;/executions&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre> 
+  <p>上でNode.jsとnpmのバージョンを実行する環境で合わせなければならないです。</p> 
+  <p>コンソールからnpm versionコマンドで確認することができます。</p> 
+  <p style="text-align:left;"><img src="./contents/332/2351_005.png" data-filename="005.png" style="width: 232px;"><br></p> 
+  <p>設定は完了しました。</p> 
+  <p><br></p> 
+  <p>これからビルドしましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/332/2352_006.png" style="width: 790px;" data-filename="006.png"><br></p> 
+  <p>ログにReactがビルドすることを確認できますね。</p> 
+  <p style="text-align:left;"><img src="./contents/332/2353_007.png" data-filename="007.png" style="width: 805px;"><br></p> 
+  <p>buildが完了しました。それならtargetフォルダーにjarファイルが生成されたことを確認できます。</p> 
+  <p><br></p> 
+  <p>まず、ウィンドウから圧縮内容を確認しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/332/2354_008.png" data-filename="008.png" style="width: 539px;"><br></p> 
+  <p>jarファイル中でReactのhtmlとjs、cssが作成されてファイルがあることを確認できるでしょう。</p> 
+  <p>それならjarファイルを実行しましょう。</p> 
+  <p style="text-align:left;"><img src="./contents/332/2355_009.png" data-filename="009.png" style="width: 745px;"><br></p> 
+  <p>実行は問題なしでできます。</p> 
+  <p style="text-align:left;"><img src="./contents/332/2356_010.png" data-filename="010.png" style="width: 399px;"><br></p> 
+  <p>画面も問題ないで実行できます。</p> 
+  <p><br></p> 
+  <p>これからReactとSpring bootを設定する開発環境設定は完了しました。</p> 
+  <p><br></p> 
+  <p>ここまでSpring bootとReactを連結する方法(Buildする方法)に関する説明でした。</p> 
+  <p><br></p> 
+  <p>ご不明なところや間違いところがあればコメントしてください。</p>
+ 
+</div>
+				<div class="pre-post-category"><div class="pre-category"><span>◀前の投稿</span><a href="https://www.nowonbun.com/330.html" target="_blank">[Java] 63. Spring bootでcronスケジューラとComponentアノテーション</a></div></div>
+				<!-- 일본 반응형 2 -->
+				<ins class="adsbygoogle adsens_responsive" style="display:inline-block" data-ad-client="ca-pub-3459002797096743" data-ad-slot="6401161168"></ins>
+				<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+				<div class="list-meta ie-dotum">
+					<span class="timeago ff-h dt-published tag-column" id="article_tag"> <a href=./search.html?query=java>#java</a>,<a href=./search.html?query=react>#react</a>,<a href=./search.html?query=springboot>#springboot</a> </span>
+				</div>
+				<div class="other-category">
+					<div class="list-title">「<a href="./?category=0203">Study / Java</a>」の他投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/332.html'>[Java] 64.Spring bootとReactを連結する方法(Buildする方法)</a><span>2022/03/25 21:02:18</span></li><li><a href='https://www.nowonbun.com/330.html'>[Java] 63. Spring bootでcronスケジューラとComponentアノテーション</a><span>2022/03/16 18:57:30</span></li><li><a href='https://www.nowonbun.com/329.html'>[Java] 62. Spring bootでWeb-Filterを設定する方法(Spring Security)</a><span>2022/03/15 22:16:37</span></li><li><a href='https://www.nowonbun.com/327.html'>[Java] 61. Spring bootでRedisデータベースを利用してセッションクラスタリング設定する方法</a><span>2022/03/01 18:20:52</span></li><li><a href='https://www.nowonbun.com/326.html'>[Java] 60. Spring bootでApacheの連結とロードバランシングを設定する方法</a><span>2022/02/28 18:45:48</span></li><li><a href='https://www.nowonbun.com/325.html'>[Java] 59. Spring bootのJPAでEntityManagerを使い方</a><span>2022/02/25 18:27:48</span></li><li><a href='https://www.nowonbun.com/324.html'>[Java] 58. EclipseでSpring bootのJPAを設定する方法</a><span>2022/02/23 18:11:10</span></li><li><a href='https://www.nowonbun.com/323.html'>[Java] 57. EclipseでSpring bootを設定する方法</a><span>2022/02/22 19:04:49</span></li></ul>
+				</div>
+				<div class="recently-post">
+					<div class="list-title">最新投稿</div>
+					<ul><li><a href='https://www.nowonbun.com/332.html'>[Java] 64.Spring bootとReactを連結する方法(Buildする方法)</a><span>2022/03/25 21:02:18</span></li><li><a href='https://www.nowonbun.com/331.html'>[Javascript] Node.jsをインストールしてReactを使う方法</a><span>2022/03/23 18:01:34</span></li><li><a href='https://www.nowonbun.com/330.html'>[Java] 63. Spring bootでcronスケジューラとComponentアノテーション</a><span>2022/03/16 18:57:30</span></li><li><a href='https://www.nowonbun.com/329.html'>[Java] 62. Spring bootでWeb-Filterを設定する方法(Spring Security)</a><span>2022/03/15 22:16:37</span></li><li><a href='https://www.nowonbun.com/328.html'>[Java] JWT(Json Web Token)を発行、確認する方法</a><span>2022/03/14 19:12:58</span></li><li><a href='https://www.nowonbun.com/327.html'>[Java] 61. Spring bootでRedisデータベースを利用してセッションクラスタリング設定する方法</a><span>2022/03/01 18:20:52</span></li><li><a href='https://www.nowonbun.com/326.html'>[Java] 60. Spring bootでApacheの連結とロードバランシングを設定する方法</a><span>2022/02/28 18:45:48</span></li><li><a href='https://www.nowonbun.com/325.html'>[Java] 59. Spring bootのJPAでEntityManagerを使い方</a><span>2022/02/25 18:27:48</span></li><li><a href='https://www.nowonbun.com/324.html'>[Java] 58. EclipseでSpring bootのJPAを設定する方法</a><span>2022/02/23 18:11:10</span></li><li><a href='https://www.nowonbun.com/323.html'>[Java] 57. EclipseでSpring bootを設定する方法</a><span>2022/02/22 19:04:49</span></li><li><a href='https://www.nowonbun.com/322.html'>[Python] Redisデータベースに接続して使い方</a><span>2022/02/21 18:23:49</span></li><li><a href='https://www.nowonbun.com/321.html'>[Java] Redisデータベースを接続して使い方(Jedisライブラリ)</a><span>2022/02/16 18:13:17</span></li><li><a href='https://www.nowonbun.com/320.html'>[C#] Redisのデータベースを接続して使い方</a><span>2022/02/15 18:46:09</span></li><li><a href='https://www.nowonbun.com/319.html'>[CentOS] Redisデータベースをインストールする方法とコマンドを使い方</a><span>2022/02/14 18:33:07</span></li><li><a href='https://www.nowonbun.com/318.html'>[Design pattern] 3-6. ステートパターン(State pattern)</a><span>2021/11/17 20:04:47</span></li></ul>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript" src="./js/postscreen.js"></script>
+		<div id="disqus_thread"></div>
+		<script>var disqus_config = function () {this.page.url = 'https://www.nowonbun.com/332.html';this.page.identifier = 'NOWONBUN00332';};(function() {var d = document, s = d.createElement('script');s.src = 'https://ming-yue-nokai-fa-sutori.disqus.com/embed.js';s.setAttribute('data-timestamp', +new Date());(d.head || d.body).appendChild(s);})();</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	</div>
+	<footer>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-bottom">
+			<p>Copyright © 2019 www.nowonbun.com<br />(Email : <a href="mailto:nowonbun@gmail.com" target="_blank">nowonbun@gmail.com</a>)</p>
+		</div>
+	</footer>
+	<div id="ImgModal" class="modal">
+		<span class="close img-type">×</span> <img class="modal-content">
+	</div>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+	<script src="./js/highlightjs-line-numbers.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<script>hljs.initLineNumbersOnLoad();</script>
+</body>
+</html>
