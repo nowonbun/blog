@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>雨晴キャンプ場 - ゴールデンウィーク下書き</title>
+  <title>ゴールデンウィーク旅行日程</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -46,7 +46,7 @@
     img { display: block; width: 100%; }
 
     .page {
-      width: min(calc(100% - 28px), var(--max));
+      width: min(calc(100% - 28px), 1080px);
       margin: 0 auto;
       padding: 22px 0 72px;
     }
@@ -119,9 +119,9 @@
 
     .hero {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1fr;
       gap: 18px;
-      margin-bottom: 22px;
+      margin-bottom: 26px;
     }
 
     .hero-copy,
@@ -131,9 +131,10 @@
     }
 
     .hero-copy {
-      padding: 34px;
+      padding: clamp(28px, 5vw, 54px);
       position: relative;
-      min-height: 440px;
+      min-height: auto;
+      text-align: center;
     }
 
     .eyebrow {
@@ -161,7 +162,7 @@
       color: var(--sub);
       font-size: 17px;
       max-width: 56ch;
-      margin-bottom: 18px;
+      margin: 0 auto 18px;
     }
 
     .tag-row,
@@ -172,6 +173,10 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+    }
+
+    .tag-row {
+      justify-content: center;
     }
 
     .tag,
@@ -185,11 +190,13 @@
     }
 
     .hero-note {
-      margin-top: 18px;
+      margin: 18px auto 0;
       padding: 16px 18px;
       border-radius: var(--radius-md);
       background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(247,251,255,0.92));
       border: 1px solid rgba(29,95,140,0.10);
+      max-width: 760px;
+      text-align: left;
     }
 
     .hero-note strong {
@@ -237,15 +244,13 @@
     }
 
     .layout {
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 22px;
+      display: block;
     }
 
     .section {
       border-radius: var(--radius-xl);
-      padding: 28px;
-      margin-bottom: 22px;
+      padding: clamp(22px, 3vw, 34px);
+      margin-bottom: 24px;
     }
 
     .section-title {
@@ -284,6 +289,44 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
+    #overview .info-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    #overview .info-card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .card-actions {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .card-actions .chip {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: 38px;
+      padding: 8px 10px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    #shopping .info-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
+    #tourism .info-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: stretch;
+    }
+
     .info-card,
     .check-card,
     .plan-card,
@@ -291,6 +334,7 @@
     .source-card {
       border-radius: var(--radius-lg);
       padding: 18px;
+      height: 100%;
     }
 
     .info-card .label {
@@ -347,12 +391,13 @@
     }
 
     .plan-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .plan-card {
       position: relative;
       overflow: hidden;
+      border-top: 4px solid rgba(29,95,140,0.18);
     }
 
     .time-badge {
@@ -383,9 +428,7 @@
     .list li + li { margin-top: 6px; }
 
     .aside-stack {
-      display: grid;
-      gap: 22px;
-      align-content: start;
+      display: block;
     }
 
     .source-list a {
@@ -401,6 +444,10 @@
       color: var(--primary);
     }
 
+    #packing .check-card {
+      max-width: none;
+    }
+
     footer {
       margin-top: 30px;
       color: var(--sub);
@@ -413,7 +460,12 @@
       .layout,
       .gallery-grid,
       .info-grid,
-      .check-grid {
+      .check-grid,
+      .plan-grid,
+      #overview .info-grid,
+      #shopping .info-grid,
+      #tourism .info-grid,
+      .card-actions {
         grid-template-columns: 1fr;
       }
 
@@ -442,239 +494,271 @@
       <div class="top-nav-inner">
         <div class="brand">
           <div class="brand-mark">GW</div>
-          <div>ゴールデンウィーク キャンプ下書き</div>
+          <div>ゴールデンウィーク旅行日程</div>
         </div>
         <div class="chips">
-          <a class="chip" href="#overview">概要</a>
-          <a class="chip" href="#mood">ムードボード</a>
-          <a class="chip" href="#plan">日程案</a>
-          <a class="chip" href="#check">チェック</a>
-          <a class="chip" href="#sources">出典</a>
+          <a class="chip" href="#overview">全体日程</a>
+          <a class="chip" href="#plan">日別予定</a>
+          <a class="chip" href="#shopping">買い出し</a>
+          <a class="chip" href="#tourism">周辺観光</a>
+          <a class="chip" href="#packing">持ち物</a>
         </div>
       </div>
     </nav>
 
     <section class="hero">
       <div class="hero-copy glass">
-        <div class="eyebrow">TOYAMA COAST · GOLDEN WEEK · DRAFT v1</div>
-        <h1>Amaharashi<br />Camping Ground</h1>
+        <div class="eyebrow">GOLDEN WEEK · MAY 2-5 · TRAVEL PLAN</div>
+        <h1>Golden Week<br />Trip Schedule</h1>
         <p class="lead">
-          海のすぐ前という雰囲気を生かした、ゴールデンウィーク向けのキャンプ下書きです。
-          既存の `GSS-Campping.html` のトーンを残しつつ、より爽やかな海岸・ロードトリップのムードと、画像中心の構成で組み直しました。
+          5月2日から5月5日までの旅行日程を、宿泊先と移動の流れがすぐ見える形で整理しました。
+          キャンプ場の説明は入れず、日ごとの予定確認に集中できる構成です。
         </p>
         <div class="tag-row">
-          <span class="tag">海辺キャンプのムード</span>
-          <span class="tag">風景中心の下書き</span>
-          <span class="tag">1泊2日想定</span>
-          <span class="tag">イメージ画像使用</span>
+          <span class="tag">5月2日 出発</span>
+          <span class="tag">2泊キャンプ</span>
+          <span class="tag">1泊別荘</span>
+          <span class="tag">5月5日 帰宅</span>
         </div>
         <div class="hero-note">
-          <strong>下書き基準</strong>
-          実際の予約・運営情報は公式ページを基準に再確認する必要があります。
-          特にゴールデンウィークは日本の祝日シーズンのため、当日受付と混雑の可能性を優先して確認する流れで構成しています。
+          <strong>日程メモ</strong>
+          宿泊先の詳細説明ではなく、いつ・どこに泊まるかを先に確認するための下書きです。
+          出発時間、チェックイン時間、買い出し場所はあとで追記する前提です。
         </div>
       </div>
 
-      <div class="hero-visual">
-        <div class="visual-main glass">
-          <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1400&q=80" alt="海岸風景のイメージ画像" />
-          <div class="visual-overlay">
-            <strong>Sea + Pine + Open Sky</strong>
-            <div>雨晴海岸の雰囲気に合わせたメインムードカット</div>
-          </div>
-        </div>
-        <div class="visual-grid">
-          <div class="visual-sub glass">
-            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80" alt="山とアウトドアのムード画像" />
-          </div>
-          <div class="visual-sub glass">
-            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="あたたかい旅のムード画像" />
-          </div>
-        </div>
-      </div>
     </section>
 
     <div class="layout">
       <main>
         <section id="overview" class="section">
           <div class="section-title">
-            <h2>1. スポット概要</h2>
-            <span class="section-kicker">official based</span>
+            <h2>1. 全体日程</h2>
+            <span class="section-kicker">overview</span>
           </div>
           <div class="info-grid">
             <article class="info-card">
-              <span class="label">spot</span>
-              <strong>雨晴キャンプ場 / Amaharashi Camping Ground</strong>
-              <div class="muted">富山県高岡市の海沿いにあるキャンプ場</div>
+              <span class="label">5月2日</span>
+              <strong>キャンプファームいなかの風</strong>
+              <div class="muted">キャンプ泊</div>
+              <div class="card-actions">
+                <a class="chip" href="https://www.google.com/maps/search/?api=1&query=%E3%82%AD%E3%83%A3%E3%83%B3%E3%83%97%E3%83%95%E3%82%A1%E3%83%BC%E3%83%A0%E3%81%84%E3%81%AA%E3%81%8B%E3%81%AE%E9%A2%A8" target="_blank" rel="noreferrer">Google Map</a>
+                <a class="chip" href="https://inakanokaze.com/" target="_blank" rel="noreferrer">公式サイト</a>
+                <a class="chip" href="https://www.nap-camp.com/nagano/12252/" target="_blank" rel="noreferrer">予約確認</a>
+              </div>
             </article>
             <article class="info-card">
-              <span class="label">mood</span>
-              <strong>海の目の前 + 松林 + 開放的な景色</strong>
-              <div class="muted">海辺の散歩と景色を楽しむ流れを中心に構成</div>
+              <span class="label">5月3日</span>
+              <strong>Amaharashi Camping Ground</strong>
+              <div class="muted">キャンプ泊</div>
+              <div class="card-actions">
+                <a class="chip" href="https://www.google.com/maps/search/?api=1&query=Amaharashi%20Camping%20Ground" target="_blank" rel="noreferrer">Google Map</a>
+                <a class="chip" href="https://www.city.takaoka.toyama.jp/soshiki/keikammidorika/2/3/1/2215.html" target="_blank" rel="noreferrer">公式サイト</a>
+                <a class="chip" href="https://www.city.takaoka.toyama.jp/soshiki/keikammidorika/2/3/1/2215.html" target="_blank" rel="noreferrer">受付確認</a>
+              </div>
             </article>
             <article class="info-card">
-              <span class="label">season</span>
-              <strong>4月1日 ～ 11月30日</strong>
-              <div class="muted">12月1日 ～ 3月31日は閉鎖</div>
+              <span class="label">5月4日</span>
+              <strong>別荘</strong>
+              <div class="muted">別荘泊 · 36°43'05.8"N 138°07'13.3"E</div>
+              <div class="card-actions">
+                <a class="chip" href="https://www.google.com/maps/search/?api=1&query=36.718278%2C138.120361" target="_blank" rel="noreferrer">Google Map</a>
+              </div>
             </article>
             <article class="info-card">
-              <span class="label">access</span>
-              <strong>駅から徒歩アクセス可 / 車移動もしやすい</strong>
-              <div class="muted">JR雨晴駅から徒歩約15分、JR高岡駅から車で約30分</div>
+              <span class="label">5月5日</span>
+              <strong>帰宅</strong>
+              <div class="muted">片付け後、家に戻る</div>
             </article>
           </div>
           <div class="note">
-            <strong>ポイント</strong>
-            公式案内ベースでは、このキャンプ場の強みは海岸景観です。
-            そのため今回は「雰囲気のよい海辺キャンプ + 気軽な1泊」という方向で組みました。
-          </div>
-        </section>
-
-        <section id="mood" class="section">
-          <div class="section-title">
-            <h2>2. ムードボード</h2>
-            <span class="section-kicker">draft images</span>
-          </div>
-          <div class="gallery-grid">
-            <article class="gallery-card">
-              <img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1200&q=80" alt="キャンプチェアと夕暮れのムード" />
-              <div class="gallery-copy">
-                <strong>夕景ムード</strong>
-                <div class="muted">到着後にゆっくり景色を見るシーン向け</div>
-              </div>
-            </article>
-            <article class="gallery-card">
-              <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" alt="静かな自然風景の画像" />
-              <div class="gallery-copy">
-                <strong>静かな自然カット</strong>
-                <div class="muted">海辺風景カードの代わりに置いたイメージカット</div>
-              </div>
-            </article>
-            <article class="gallery-card">
-              <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1200&q=80" alt="ドライブ旅行のムード画像" />
-              <div class="gallery-copy">
-                <strong>ロードトリップムード</strong>
-                <div class="muted">ゴールデンウィークの移動感を出すカット</div>
-              </div>
-            </article>
-          </div>
-          <div class="note warning">
-            <strong>画像メモ</strong>
-            現在の画像は現地実写ではなく、下書き用のイメージ画像です。
-            次の段階で希望があれば「実際の雨晴海岸・キャンプ場写真中心バージョン」に差し替えできます。
+            <strong>進め方</strong>
+            まず宿泊順を固定し、移動時間・買い出し・食事・チェックイン時間は次の更新で追加します。
           </div>
         </section>
 
         <section id="plan" class="section">
           <div class="section-title">
-            <h2>3. ゴールデンウィーク 1泊2日プラン案</h2>
-            <span class="section-kicker">soft plan</span>
+            <h2>2. 日別予定</h2>
+            <span class="section-kicker">daily schedule</span>
           </div>
           <div class="plan-grid">
             <article class="plan-card">
-              <div class="time-badge">DAY 1 · 午後到着想定</div>
-              <strong>移動 → 現地チェック → 海岸散歩 → 夕方キャンプムード</strong>
+              <div class="time-badge">5月2日 · DAY 1</div>
+              <strong>家を出発 → キャンプファームいなかの風で宿泊</strong>
               <ul class="list">
-                <li>昼食後に移動して、早朝出発の負担を減らす</li>
-                <li>祝日利用条件なら当日受付を先に確認</li>
-                <li>サイトを確保してから海岸散歩で景色を見る</li>
-                <li>夕景の写真、軽いコーヒーやおやつ、夕食準備</li>
-                <li>夜は風と体感温度を見て装備を調整</li>
+                <li>出発時間を決める</li>
+                <li>途中の休憩・買い出し候補を確認する</li>
+                <li>到着後は設営、夕食、翌日の移動準備を行う</li>
               </ul>
             </article>
             <article class="plan-card">
-              <div class="time-badge">DAY 2 · 朝の景色中心</div>
-              <strong>朝の海を見る → ブランチ → 片付け → 近場ドライブ</strong>
+              <div class="time-badge">5月3日 · DAY 2</div>
+              <strong>キャンプファームいなかの風 → Amaharashi Camping Groundで宿泊</strong>
               <ul class="list">
-                <li>少し早起きして海側の空気を先に楽しむ</li>
-                <li>軽いブランチのあと撤収準備</li>
-                <li>ごみ持ち帰り前提で片付け動線を単純化</li>
-                <li>チェック後に雨晴海岸の写真スポットへ少し立ち寄る</li>
+                <li>朝食後に撤収する</li>
+                <li>移動前に燃料・食材・飲み物を確認する</li>
+                <li>到着後は設営、夕食、翌日の別荘移動準備を行う</li>
               </ul>
             </article>
+            <article class="plan-card">
+              <div class="time-badge">5月4日 · DAY 3</div>
+              <strong>Amaharashi Camping Ground → 別荘で宿泊</strong>
+              <ul class="list">
+                <li>朝に撤収する</li>
+                <li>別荘に向かう前に必要な買い出しを済ませる</li>
+                <li>到着後は荷物整理、洗濯物確認、ゆっくり過ごす</li>
+              </ul>
+            </article>
+            <article class="plan-card">
+              <div class="time-badge">5月5日 · DAY 4</div>
+              <strong>別荘 → 家に戻る</strong>
+              <ul class="list">
+                <li>朝に荷物をまとめる</li>
+                <li>忘れ物、ゴミ、車内の荷物を確認する</li>
+                <li>渋滞を見ながら帰宅時間を調整する</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section id="shopping" class="section">
+          <div class="section-title">
+            <h2>3. 買い出し・薪メモ</h2>
+            <span class="section-kicker">nearby stores</span>
+          </div>
+          <div class="info-grid">
+            <article class="info-card">
+              <span class="label">5月2日 / キャンプファームいなかの風</span>
+              <strong>スーパー</strong>
+              <div class="muted">TSURUYA 赤穂店、道の駅 田切の里、A・コープ 七久保店を候補にする。</div>
+              <strong>薪・炭</strong>
+              <div class="muted">キャンプ場売店で薪・木炭を購入できる。外で買う場合はDCM駒ヶ根店を候補にする。</div>
+              <div class="source-list" style="margin-top:12px;">
+                <a href="https://www.google.com/maps/search/?api=1&query=TSURUYA%20%E8%B5%A4%E7%A9%82%E5%BA%97" target="_blank" rel="noreferrer">TSURUYA 赤穂店</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E9%81%93%E3%81%AE%E9%A7%85%20%E7%94%B0%E5%88%87%E3%81%AE%E9%87%8C" target="_blank" rel="noreferrer">道の駅 田切の里</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=A%E3%83%BB%E3%82%B3%E3%83%BC%E3%83%97%20%E4%B8%83%E4%B9%85%E4%BF%9D%E5%BA%97" target="_blank" rel="noreferrer">A・コープ 七久保店</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=DCM%20%E9%A7%92%E3%83%B6%E6%A0%B9%E5%BA%97" target="_blank" rel="noreferrer">DCM駒ヶ根店</a>
+              </div>
+            </article>
+
+            <article class="info-card">
+              <span class="label">5月3日 / Amaharashi Camping Ground</span>
+              <strong>スーパー</strong>
+              <div class="muted">大阪屋ショップ 氷見店、アルビス氷見店を候補にする。</div>
+              <strong>薪・炭</strong>
+              <div class="muted">DCM氷見店、コメリハード＆グリーン伏木店を候補にする。薪の在庫は当日確認。</div>
+              <div class="source-list" style="margin-top:12px;">
+                <a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%98%AA%E5%B1%8B%E3%82%B7%E3%83%A7%E3%83%83%E3%83%97%20%E6%B0%B7%E8%A6%8B%E5%BA%97" target="_blank" rel="noreferrer">大阪屋ショップ 氷見店</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E3%82%A2%E3%83%AB%E3%83%93%E3%82%B9%20%E6%B0%B7%E8%A6%8B%E5%BA%97" target="_blank" rel="noreferrer">アルビス氷見店</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=DCM%20%E6%B0%B7%E8%A6%8B%E5%BA%97" target="_blank" rel="noreferrer">DCM氷見店</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E3%82%B3%E3%83%A1%E3%83%AA%20%E4%BC%8F%E6%9C%A8%E5%BA%97" target="_blank" rel="noreferrer">コメリ伏木店</a>
+              </div>
+            </article>
+
+            <article class="info-card">
+              <span class="label">5月4日 / 別荘</span>
+              <strong>スーパー</strong>
+              <div class="muted">道の駅 FARMUS 木島平、業務スーパーみゆき野店、ツルヤ飯山店、ベイシア飯山店を候補にする。</div>
+              <strong>薪・炭</strong>
+              <div class="muted">薪の香り 木島平本店兼無人販売所、薪の香り 飯山無人販売所、コメリ木島平店、DCM飯山静間店を候補にする。</div>
+              <div class="source-list" style="margin-top:12px;">
+                <a href="https://www.google.com/maps/search/?api=1&query=%E9%81%93%E3%81%AE%E9%A7%85%20FARMUS%20%E6%9C%A8%E5%B3%B6%E5%B9%B3" target="_blank" rel="noreferrer">道の駅 FARMUS 木島平</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E6%A5%AD%E5%8B%99%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%20%E3%81%BF%E3%82%86%E3%81%8D%E9%87%8E%E5%BA%97" target="_blank" rel="noreferrer">業務スーパーみゆき野店</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E3%83%84%E3%83%AB%E3%83%A4%20%E9%A3%AF%E5%B1%B1%E5%BA%97" target="_blank" rel="noreferrer">ツルヤ飯山店</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E8%96%AA%E3%81%AE%E9%A6%99%E3%82%8A%20%E6%9C%A8%E5%B3%B6%E5%B9%B3" target="_blank" rel="noreferrer">薪の香り 木島平</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E8%96%AA%E3%81%AE%E9%A6%99%E3%82%8A%20%E9%A3%AF%E5%B1%B1%E7%84%A1%E4%BA%BA%E8%B2%A9%E5%A3%B2%E6%89%80" target="_blank" rel="noreferrer">薪の香り 飯山</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E3%82%B3%E3%83%A1%E3%83%AA%20%E6%9C%A8%E5%B3%B6%E5%B9%B3%E5%BA%97" target="_blank" rel="noreferrer">コメリ木島平店</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=DCM%20%E9%A3%AF%E5%B1%B1%E9%9D%99%E9%96%93%E5%BA%97" target="_blank" rel="noreferrer">DCM飯山静間店</a>
+              </div>
+            </article>
+          </div>
+          <div class="note warning">
+            <strong>確認メモ</strong>
+            営業時間と薪の在庫は変わるため、出発当日に地図アプリまたは店舗ページで再確認します。
+          </div>
+        </section>
+
+        <section id="tourism" class="section">
+          <div class="section-title">
+            <h2>4. 周辺観光メモ</h2>
+            <span class="section-kicker">sightseeing</span>
+          </div>
+          <div class="info-grid">
+            <article class="info-card">
+              <span class="label">5月2日 / キャンプファームいなかの風 周辺</span>
+              <strong>ゆっくり寄れる候補</strong>
+              <ul class="list">
+                <li>千人塚公園：中央アルプスと湖の景色を見ながら散歩。</li>
+                <li>道の駅 田切の里：買い出しと休憩を兼ねやすい。</li>
+                <li>露天こぶしの湯：キャンプ前後の日帰り温泉候補。</li>
+              </ul>
+              <strong>時間があれば</strong>
+              <ul class="list">
+                <li>千畳敷カール：バスとロープウェイ利用。半日枠で考える。</li>
+                <li>光前寺・駒ヶ根高原：移動途中に組み込みやすい散策候補。</li>
+              </ul>
+              <div class="source-list" style="margin-top:12px;">
+                <a href="https://www.google.com/maps/search/?api=1&query=%E5%8D%83%E4%BA%BA%E5%A1%9A%E5%85%AC%E5%9C%92" target="_blank" rel="noreferrer">千人塚公園</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E9%81%93%E3%81%AE%E9%A7%85%20%E7%94%B0%E5%88%87%E3%81%AE%E9%87%8C" target="_blank" rel="noreferrer">道の駅 田切の里</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E9%9C%B2%E5%A4%A9%20%E3%81%93%E3%81%B6%E3%81%97%E3%81%AE%E6%B9%AF" target="_blank" rel="noreferrer">こぶしの湯</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E5%8D%83%E7%95%B3%E6%95%B7%E3%82%AB%E3%83%BC%E3%83%AB" target="_blank" rel="noreferrer">千畳敷カール</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E5%85%89%E5%89%8D%E5%AF%BA%20%E9%A7%92%E3%83%B6%E6%A0%B9" target="_blank" rel="noreferrer">光前寺</a>
+              </div>
+            </article>
+
+            <article class="info-card">
+              <span class="label">5月3日 / Amaharashi Camping Ground 周辺</span>
+              <strong>近場で寄れる候補</strong>
+              <ul class="list">
+                <li>雨晴海岸・義経岩：海岸散歩と写真向け。</li>
+                <li>道の駅 雨晴：展望デッキ、カフェ、休憩候補。</li>
+                <li>氷見漁港場外市場 ひみ番屋街：食事とお土産候補。</li>
+              </ul>
+              <strong>少し足を伸ばすなら</strong>
+              <ul class="list">
+                <li>高岡大仏：高岡市街に寄る場合の短時間観光。</li>
+                <li>瑞龍寺：歴史散策を入れたい場合の候補。</li>
+              </ul>
+              <div class="source-list" style="margin-top:12px;">
+                <a href="https://www.google.com/maps/search/?api=1&query=%E9%9B%A8%E6%99%B4%E6%B5%B7%E5%B2%B8" target="_blank" rel="noreferrer">雨晴海岸</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E9%81%93%E3%81%AE%E9%A7%85%20%E9%9B%A8%E6%99%B4" target="_blank" rel="noreferrer">道の駅 雨晴</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E3%81%B2%E3%81%BF%E7%95%AA%E5%B1%8B%E8%A1%97" target="_blank" rel="noreferrer">ひみ番屋街</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E5%B2%A1%E5%A4%A7%E4%BB%8F" target="_blank" rel="noreferrer">高岡大仏</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=%E7%91%9E%E9%BE%8D%E5%AF%BA%20%E9%AB%98%E5%B2%A1" target="_blank" rel="noreferrer">瑞龍寺</a>
+              </div>
+            </article>
+          </div>
+          <div class="note warning">
+            <strong>観光メモ</strong>
+            千畳敷カールは天候とロープウェイ運行状況の影響を受けるため、当日朝に運行情報を確認します。
+            雨晴海岸側は天気が良ければ海越しの立山連峰を優先します。
           </div>
         </section>
       </main>
 
       <aside class="aside-stack">
-        <section id="check" class="section">
-          <div class="section-title">
-            <h2>4. 先に確認すること</h2>
-            <span class="section-kicker">priority</span>
-          </div>
-          <div class="check-grid">
-            <article class="check-card warn">
-              <strong>ゴールデンウィーク = 祝日シーズン</strong>
-              <div class="muted">
-                公式案内では、金・土・日・祝日と7〜8月の利用時は
-                利用当日に WaveLunch で受付が必要です。
-              </div>
-            </article>
-            <article class="check-card ok">
-              <strong>営業期間はシーズン内</strong>
-              <div class="muted">
-                4月1日〜11月30日営業なので、ゴールデンウィークは営業期間内です。
-              </div>
-            </article>
-            <article class="check-card warn">
-              <strong>ごみ捨て場なし</strong>
-              <div class="muted">
-                公式案内どおり、ごみは必ず持ち帰る前提で準備が必要です。
-              </div>
-            </article>
-            <article class="check-card ok">
-              <strong>基本設備あり</strong>
-              <div class="muted">
-                トイレ、冷水シャワー、炊事場の案内が確認できます。
-              </div>
-            </article>
-          </div>
-          <div class="note warning">
-            <strong>料金メモ</strong>
-            公式案内では、金・土・日・祝日および7〜8月は
-            管理協力費が1グループ1日1,000円 / 1泊2,000円です。
-          </div>
-        </section>
-
-        <section class="section">
+        <section id="packing" class="section">
           <div class="section-title">
             <h2>5. 持ち物メモ</h2>
             <span class="section-kicker">packing</span>
           </div>
           <div class="check-card">
-            <strong>軽めに始める構成</strong>
+            <strong>日程別に分けて準備</strong>
             <ul class="list">
-              <li>防風アウター、ブランケット、夜用の防寒アイテム</li>
-              <li>簡単な調理道具、水、コーヒー/ティーセット</li>
-              <li>照明、モバイルバッテリー、ランタン</li>
-              <li>ごみ袋は多めに</li>
-              <li>海岸散歩用の歩きやすい靴</li>
+              <li>5月2日・5月3日用のキャンプ道具</li>
+              <li>5月4日別荘用の着替えと室内用品</li>
+              <li>食材、飲み物、保冷用品</li>
+              <li>充電器、モバイルバッテリー、照明</li>
+              <li>ゴミ袋、タオル、雨具、防寒具</li>
             </ul>
-          </div>
-        </section>
-
-        <section id="sources" class="section">
-          <div class="section-title">
-            <h2>6. 出典</h2>
-            <span class="section-kicker">evidence</span>
-          </div>
-          <div class="source-card">
-            <strong>参照基準</strong>
-            <div class="source-list">
-              <a href="https://www.city.takaoka.toyama.jp/soshiki/keikammidorika/2/3/1/2215.html" target="_blank" rel="noreferrer">高岡市公式キャンプ場案内</a>
-              <a href="https://www.info-toyama.com/attractions/21080" target="_blank" rel="noreferrer">富山観光公式案内</a>
-              <a href="D:/work/sketch/여행/GSS-Campping.html">既存レイアウト参考ファイル</a>
-            </div>
-            <p class="muted" style="margin-top:14px;">
-              このページは旅行下書き用です。実運営情報は出発直前に公式ページで再確認が必要です。
-            </p>
           </div>
         </section>
       </aside>
     </div>
 
     <footer>
-      Draft updated for Amaharashi Gold Week planning · image-based mockup
+      Draft updated for Golden Week travel schedule · May 2-5
     </footer>
   </div>
 </body>
