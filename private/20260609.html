@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오오아라이 6/13 여행 플랜</title>
+  <style>
+    :root {
+      --bg: #eef6fb;
+      --paper: #ffffff;
+      --ink: #172033;
+      --muted: #64748b;
+      --line: #dce7f3;
+      --primary: #0077b6;
+      --primary-soft: #e0f2fe;
+      --accent: #ff8a3d;
+      --accent-soft: #fff3e8;
+      --ok: #138a53;
+      --ok-soft: #e8f7ef;
+      --shadow: 0 18px 40px rgba(15, 23, 42, 0.13), 0 5px 16px rgba(15, 23, 42, 0.08);
+      --shadow-soft: 0 12px 26px rgba(15, 23, 42, 0.10), 0 3px 12px rgba(15, 23, 42, 0.05);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(0, 119, 182, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(255, 138, 61, 0.16), transparent 26%),
+        linear-gradient(180deg, #f7fbff 0%, var(--bg) 55%, #e7f0f8 100%);
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", "Roboto", sans-serif;
+      line-height: 1.72;
+      transition: background .25s ease, color .25s ease;
+    }
+
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 70px; }
+    .mb-0 { margin-bottom: 0; }
+    .mt-2 { margin-top: 0.5rem; }
+    .mt-3 { margin-top: 1rem; }
+    .top-nav {
+      position: sticky;
+      top: 12px;
+      z-index: 1000;
+      padding: 12px 14px;
+      margin-bottom: 18px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+    }
+    .top-nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .nav-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .nav-chip, .badge-link, .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: #35506b;
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 9px 20px rgba(15, 23, 42, 0.08);
+      transition: transform .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
+    }
+    .nav-chip:hover, .badge-link:hover, .pill:hover { transform: translateY(-1px); text-decoration: none; color: var(--primary); background: var(--primary-soft); border-color: #b9def7; }
+    .mode-toggle, .fab-top, .tab-btn {
+      border: 0;
+      cursor: pointer;
+      font-weight: 900;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .mode-toggle {
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary), #00a6d6);
+      color: #fff;
+      box-shadow: 0 14px 28px rgba(0, 119, 182, 0.28);
+    }
+    .mode-toggle:hover, .fab-top:hover, .tab-btn:hover { transform: translateY(-1px); }
+
+    .cardish {
+      border: 1px solid rgba(220, 231, 243, 0.82);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 22px;
+      padding: 34px;
+      margin-bottom: 22px;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::after {
+      content: "海";
+      position: absolute;
+      right: 28px;
+      bottom: -44px;
+      color: rgba(0, 119, 182, 0.08);
+      font-size: 160px;
+      font-weight: 900;
+      line-height: 1;
+      pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .04em;
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { font-size: clamp(34px, 4vw, 54px); line-height: 1.08; margin-bottom: 14px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 18px; }
+    .lead { color: var(--muted); font-size: 17px; margin-bottom: 18px; }
+    .badge-row, .quick-list, .tag-list, .source-list, .meta { display: flex; flex-wrap: wrap; gap: 9px; }
+    .pill { background: linear-gradient(180deg, #fff, #f5fbff); }
+    .hero-side { display: grid; gap: 14px; align-content: start; position: relative; z-index: 1; }
+    .mini-panel, .info-item, .plan-card, .timeline-item, .todo-box, .food-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+      box-shadow: var(--shadow-soft);
+    }
+    .mini-panel { padding: 18px; }
+    .mini-panel h3 { margin-bottom: 10px; }
+    .grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 22px; }
+    .section { padding: 26px; margin-bottom: 22px; }
+    .section-title { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .section-title h2 { margin-bottom: 0; position: relative; }
+    .section-title h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -7px;
+      width: 56px;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), #48cae4);
+    }
+    .section-title .pill { background: var(--accent-soft); color: #b45309; border-color: #fed7aa; }
+    .info-table { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 14px; }
+    .info-item { padding: 16px; }
+    .label { display: block; margin-bottom: 6px; color: var(--muted); font-size: 12px; font-weight: 900; letter-spacing: .06em; text-transform: uppercase; }
+    .value { font-weight: 800; }
+    .quote {
+      margin: 16px 0;
+      padding: 18px 20px;
+      border-left: 5px solid var(--primary);
+      border-radius: 0 18px 18px 0;
+      background: #f1f8ff;
+      color: #29435f;
+    }
+    .plan-grid, .food-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .plan-card, .food-card { padding: 16px; position: relative; overflow: hidden; }
+    .plan-card::before, .food-card::before {
+      content: "✦";
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      color: rgba(0, 119, 182, 0.22);
+      font-size: 20px;
+    }
+    .muted { color: var(--muted); }
+    .timeline { display: grid; gap: 12px; }
+    .timeline-item { padding: 15px; }
+    .timeline-item.active { border-color: var(--ok); background: var(--ok-soft); box-shadow: inset 0 0 0 1px rgba(19, 138, 83, .20), var(--shadow-soft); }
+    .timeline-time { display: inline-flex; margin-bottom: 7px; padding: 5px 10px; border-radius: 999px; background: var(--primary-soft); color: var(--primary); font-size: 12px; font-weight: 900; }
+    .calendar-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
+    .tab-btn { padding: 10px 14px; border-radius: 999px; background: #fff; color: #35506b; border: 1px solid var(--line); box-shadow: var(--shadow-soft); }
+    .tab-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .todo-box { padding: 18px; border-left: 5px solid var(--accent); background: linear-gradient(180deg, #fffaf5, #fff1e3); }
+    .todo-box ul { margin-bottom: 0; padding-left: 20px; }
+    .todo-box li + li { margin-top: 6px; }
+    .current-status { margin-bottom: 14px; padding: 14px 16px; border: 1px solid #bae6cd; border-radius: 16px; background: var(--ok-soft); color: #14532d; font-weight: 800; }
+    .source-list a { text-decoration: none; border-bottom: 1px dashed rgba(0, 119, 182, .45); }
+    footer { margin-top: 30px; color: var(--muted); font-size: 14px; }
+    .fab-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), #00a6d6);
+      color: #fff;
+      box-shadow: 0 18px 38px rgba(0, 119, 182, .30);
+      z-index: 1001;
+    }
+
+    body.dark-mode {
+      --bg: #0b1220;
+      --paper: #111827;
+      --ink: #e5edf7;
+      --muted: #9fb0c5;
+      --line: #253247;
+      --primary: #80d6ff;
+      --primary-soft: #102a3b;
+      --accent-soft: #2b1e13;
+      --ok-soft: #10271d;
+      background:
+        radial-gradient(circle at top left, rgba(128, 214, 255, .12), transparent 30%),
+        radial-gradient(circle at top right, rgba(255, 138, 61, .12), transparent 26%),
+        linear-gradient(180deg, #07111f 0%, #0b1220 55%, #111827 100%);
+    }
+    body.dark-mode .top-nav, body.dark-mode .cardish, body.dark-mode .mini-panel, body.dark-mode .info-item, body.dark-mode .plan-card, body.dark-mode .timeline-item, body.dark-mode .todo-box, body.dark-mode .food-card { background: rgba(17, 24, 39, .95); border-color: var(--line); color: var(--ink); }
+    body.dark-mode .nav-chip, body.dark-mode .badge-link, body.dark-mode .pill, body.dark-mode .tab-btn { background: #172236; color: #dce9ff; border-color: #2b3951; }
+    body.dark-mode .quote { background: #101f33; color: #dce9ff; }
+    body.dark-mode .current-status { background: #10271d; border-color: #255b41; color: #bbf7d0; }
+    body.dark-mode .tab-btn.active, body.dark-mode .mode-toggle, body.dark-mode .fab-top { color: #fff; background: linear-gradient(135deg, #0284c7, #06b6d4); }
+
+    @media (max-width: 860px) {
+      .wrap { width: min(100% - 20px, 1120px); }
+      .hero, .grid, .info-table, .plan-grid, .food-grid { grid-template-columns: 1fr; }
+      .hero { padding: 22px; }
+      .section { padding: 20px; }
+      .top-nav { top: 8px; padding: 10px; }
+      .nav-chips { width: 100%; flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; }
+      .nav-chip { white-space: nowrap; }
+      .mode-toggle { width: 100%; }
+      .section-title { flex-direction: column; align-items: flex-start; }
+      .fab-top { right: 14px; bottom: 14px; width: 48px; height: 48px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="top-nav" aria-label="여행 페이지 네비게이션">
+      <div class="top-nav-inner">
+        <div class="nav-chips">
+          <a class="nav-chip" href="#intro">📌 개요</a>
+          <a class="nav-chip" href="#route">🗺️ 코스</a>
+          <a class="nav-chip" href="#schedule">🗓️ 일정</a>
+          <a class="nav-chip" href="#food">🍣 밥</a>
+          <a class="nav-chip" href="#check">✅ 체크</a>
+        </div>
+        <button id="themeToggle" class="mode-toggle" type="button">🌙 다크모드</button>
+      </div>
+    </nav>
+
+    <header class="hero cardish">
+      <div>
+        <div class="eyebrow">OARAI FRIEND TRIP · 2026-06-13 SAT</div>
+        <h1>오오아라이<br />캠핑 가는 날</h1>
+        <p class="lead">2026년 6월 13일 토요일 기준 당일치기 초안. 해안 산책, 수족관, 신사, 해산물 식사까지 무리 없이 이어지는 느슨한 플랜입니다.</p>
+        <div class="badge-row">
+          <span class="pill">📍 이바라키현 오오아라이</span>
+          <span class="pill">🌊 바다·신사·수족관</span>
+          <span class="pill">👥 친구 2명 기준</span>
+          <span class="pill">🧭 비 오면 실내 코스 우선</span>
+        </div>
+      </div>
+      <aside class="hero-side">
+        <div class="mini-panel">
+          <h3>바로 확인</h3>
+          <div class="meta">
+            <span class="pill">목적지: 大洗</span>
+            <span class="pill">일자: 2026-06-13</span>
+            <span class="pill">메인 무드: 바다 산책</span>
+            <span class="pill">예산: 식사·입장료 별도</span>
+          </div>
+        </div>
+        <div class="mini-panel">
+          <h3>빠른 링크</h3>
+          <div class="quick-list">
+            <a class="badge-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E6%B4%97%E9%A7%85" target="_blank" rel="noreferrer noopener">Google Maps: 大洗駅</a>
+            <a class="badge-link" href="https://www.oarai-info.jp/" target="_blank" rel="noreferrer noopener">대洗관광협회</a>
+            <a class="badge-link" href="https://www.aquaworld-oarai.com/" target="_blank" rel="noreferrer noopener">아쿠아월드</a>
+            <a class="badge-link" href="https://www.oarai-isosakijinja.net/" target="_blank" rel="noreferrer noopener">大洗磯前神社</a>
+          </div>
+        </div>
+        <div class="mini-panel">
+          <h3>결정해야 할 것</h3>
+          <p class="muted mb-0">차로 갈지, 전철+海遊号 순환버스로 갈지만 정하면 나머지는 현장에서 조정 가능한 구성입니다.</p>
+        </div>
+      </aside>
+    </header>
+
+    <div class="grid">
+      <main>
+        <section id="intro" class="section cardish">
+          <div class="section-title">
+            <h2>1. 장소 소개</h2>
+            <span class="pill">바다 중심</span>
+          </div>
+          <p>오오아라이는 태평양 쪽 해안 분위기, 수족관, 신사, 항구 해산물을 한 번에 묶기 좋은 여행지입니다. 이번 페이지는 친구와 여유 있게 움직이는 <strong>실행용 메모</strong>로 쓰기 쉽게 구성했습니다.</p>
+          <div class="quote">한 줄 컨셉: “아침엔 신사와 바다, 낮엔 수족관 또는 타워, 저녁은 항구 쪽 해산물로 마무리.”</div>
+          <div class="info-table">
+            <div class="info-item"><span class="label">추천 무드</span><span class="value">사진, 바다 산책, 수족관, 해산물</span></div>
+            <div class="info-item"><span class="label">동행</span><span class="value">친구 2명 기준, 역할 분담형</span></div>
+            <div class="info-item"><span class="label">우천 대안</span><span class="value">아쿠아월드 → 마린타워 → 카페/식사</span></div>
+            <div class="info-item"><span class="label">주의</span><span class="value">운영시간·요금·주차는 출발 전 재확인</span></div>
+          </div>
+        </section>
+
+        <section id="route" class="section cardish">
+          <div class="section-title">
+            <h2>2. 추천 코스</h2>
+            <span class="pill">느슨한 순서</span>
+          </div>
+          <div class="plan-grid">
+            <article class="plan-card">
+              <h3>🌅 大洗磯前神社 · 神磯の鳥居</h3>
+              <p>해안 바위 위의 토리이가 상징적인 장소. 파도가 강하면 가까이 내려가지 말고 안전한 위치에서 사진만 찍기.</p>
+              <a class="badge-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E6%B4%97%E7%A3%AF%E5%89%8D%E7%A5%9E%E7%A4%BE" target="_blank" rel="noreferrer noopener">지도 열기</a>
+            </article>
+            <article class="plan-card">
+              <h3>🐟 アクアワールド茨城県大洗水族館</h3>
+              <p>비가 오거나 더우면 우선순위를 올릴 실내 메인 코스. 프로그램 시간표는 당일 공식 페이지에서 확인.</p>
+              <a class="badge-link" href="https://www.aquaworld-oarai.com/guide/" target="_blank" rel="noreferrer noopener">영업 안내</a>
+            </article>
+            <article class="plan-card">
+              <h3>🗼 大洗マリンタワー</h3>
+              <p>짧게 들러서 전망 보고 쉬기 좋은 포인트. 항구 쪽 이동 동선과 같이 묶기 좋습니다.</p>
+              <a class="badge-link" href="https://www.oarai-mt.jp/" target="_blank" rel="noreferrer noopener">공식 사이트</a>
+            </article>
+            <article class="plan-card">
+              <h3>🛍️ うみまちテラス</h3>
+              <p>오오아라이역 옆 관광안내소. 렌탈/짐 보관/관광 정보 확인용 첫 정류장으로 적합합니다.</p>
+              <a class="badge-link" href="https://www.oarai-info.jp/umimachi/" target="_blank" rel="noreferrer noopener">안내 보기</a>
+            </article>
+          </div>
+        </section>
+
+        <section id="schedule" class="section cardish">
+          <div class="section-title">
+            <h2>3. 일정 캘린더</h2>
+            <span class="pill">시간 연동</span>
+          </div>
+          <div class="calendar-tabs">
+            <button class="tab-btn active" data-filter="all" type="button">전체</button>
+            <button class="tab-btn" data-filter="move" type="button">이동</button>
+            <button class="tab-btn" data-filter="sea" type="button">바다</button>
+            <button class="tab-btn" data-filter="indoor" type="button">실내</button>
+          </div>
+          <div id="scheduleCards" class="timeline"></div>
+        </section>
+
+        <section id="food" class="section cardish">
+          <div class="section-title">
+            <h2>4. 밥·간식 후보</h2>
+            <span class="pill">항구 쪽</span>
+          </div>
+          <div class="food-grid">
+            <article class="food-card">
+              <h3>🍣 大洗海鮮市場</h3>
+              <p>항구 앞 해산물 시장 후보. 계절·혼잡에 따라 운영이 달라질 수 있으니 당일 확인.</p>
+              <a class="badge-link" href="https://www.oarai-info.jp/spot/postid_3099/" target="_blank" rel="noreferrer noopener">관광협회 정보</a>
+            </article>
+            <article class="food-card">
+              <h3>☕ 카페·가벼운 간식</h3>
+              <p>마린타워·역 주변에서 쉬는 시간을 확보. 오래 걷는 날은 식사 사이에 음료 타임을 넣기.</p>
+              <a class="badge-link" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E6%B4%97+%E3%82%AB%E3%83%95%E3%82%A7" target="_blank" rel="noreferrer noopener">카페 검색</a>
+            </article>
+          </div>
+          <div class="todo-box mt-3">
+            <strong>가볍게 챙길 간식</strong>
+            <div class="tag-list mt-2">
+              <span class="pill">물</span>
+              <span class="pill">보조배터리</span>
+              <span class="pill">소금/젤리</span>
+              <span class="pill">차 안 간식</span>
+              <span class="pill">쓰레기봉투</span>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <aside id="check">
+        <section class="section cardish">
+          <div class="section-title">
+            <h2>지금 해야 할 일정</h2>
+          </div>
+          <div id="currentStatus" class="current-status">현재 시각 기준으로 일정을 계산하는 중...</div>
+          <div id="sideTimeline" class="timeline"></div>
+        </section>
+
+        <section class="section cardish">
+          <div class="section-title">
+            <h2>친구랑 역할 분담</h2>
+          </div>
+          <div class="todo-box">
+            <ul>
+              <li>한 명: 교통·주차·막차 확인</li>
+              <li>한 명: 식사 후보·예약 가능 여부 확인</li>
+              <li>둘 다: 우산/선크림/보조배터리 확인</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section cardish">
+          <div class="section-title">
+            <h2>출발 전 체크</h2>
+          </div>
+          <div class="todo-box">
+            <ul>
+              <li>아쿠아월드 영업시간·프로그램 시간표 확인</li>
+              <li>마린타워 임시휴관 여부 확인</li>
+              <li>대洗 해안 파도·강풍이면 바다 가까이 접근 금지</li>
+              <li>차량이면 주차장 후보 2개 이상 저장</li>
+              <li>전철이면 海遊号 순환버스 시간 확인</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section cardish">
+          <div class="section-title">
+            <h2>사용한 근거</h2>
+          </div>
+          <div class="source-list">
+            <a href="https://www.oarai-info.jp/spot_tag/main_spot/" target="_blank" rel="noreferrer noopener">대洗관광협회 관광 스팟</a>
+            <a href="https://www.oarai-info.jp/access/" target="_blank" rel="noreferrer noopener">대洗관광협회 접근</a>
+            <a href="https://www.aquaworld-oarai.com/guide/" target="_blank" rel="noreferrer noopener">아쿠아월드 영업 안내</a>
+            <a href="https://www.oarai-isosakijinja.net/keidai/kamiiso/" target="_blank" rel="noreferrer noopener">神磯の鳥居</a>
+            <a href="https://www.oarai-mt.jp/" target="_blank" rel="noreferrer noopener">大洗マリンタワー</a>
+            <a href="https://www.oarai-info.jp/spot/postid_3099/" target="_blank" rel="noreferrer noopener">大洗海鮮市場</a>
+          </div>
+        </section>
+      </aside>
+    </div>
+
+    <footer>
+      샘플 레이아웃 참고: GSS-camping.html 스타일 구성(히어로, 섹션 카드, 일정, 사이드 체크리스트)을 오오아라이 여행용으로 재작성했습니다. 운영 정보는 출발 전 공식 페이지에서 다시 확인하세요.
+    </footer>
+  </div>
+
+  <button id="topButton" class="fab-top" type="button" aria-label="맨 위로 이동">↑</button>
+
+  <script>
+    const schedule = [
+      { start: "2026-06-13T08:30:00+09:00", end: "2026-06-13T10:30:00+09:00", title: "출발 · 이동", body: "차량/전철 중 선택한 루트로 오오아라이 이동. 중간에 물과 간식 확보.", type: "move" },
+      { start: "2026-06-13T10:30:00+09:00", end: "2026-06-13T11:30:00+09:00", title: "大洗磯前神社 · 神磯の鳥居", body: "바다 사진과 산책. 파도 강하면 안전거리 유지.", type: "sea" },
+      { start: "2026-06-13T11:45:00+09:00", end: "2026-06-13T13:00:00+09:00", title: "점심 · 해산물 후보", body: "대洗해산시장 또는 항구 주변 식사. 대기 길면 카페 먼저.", type: "sea" },
+      { start: "2026-06-13T13:20:00+09:00", end: "2026-06-13T15:30:00+09:00", title: "아쿠아월드 또는 마린타워", body: "날씨 좋으면 전망, 비 오면 수족관 중심으로 조정.", type: "indoor" },
+      { start: "2026-06-13T15:45:00+09:00", end: "2026-06-13T17:00:00+09:00", title: "산책 · 기념품 · 카페", body: "우미마치테라스/역 주변에서 쉬면서 귀가 준비.", type: "move" },
+      { start: "2026-06-13T17:00:00+09:00", end: "2026-06-13T19:30:00+09:00", title: "귀가", body: "주말 귀가 혼잡을 고려해 여유 있게 출발.", type: "move" }
+    ];
+
+    const cards = document.getElementById("scheduleCards");
+    const sideTimeline = document.getElementById("sideTimeline");
+    const currentStatus = document.getElementById("currentStatus");
+    const themeToggle = document.getElementById("themeToggle");
+    const topButton = document.getElementById("topButton");
+    const tabButtons = document.querySelectorAll(".tab-btn");
+
+    function formatTime(value) {
+      return new Intl.DateTimeFormat("ko-KR", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "Asia/Tokyo" }).format(new Date(value));
+    }
+
+    function isActive(item, now) {
+      return now >= new Date(item.start) && now < new Date(item.end);
+    }
+
+    function createItem(item, now) {
+      const article = document.createElement("article");
+      article.className = `timeline-item${isActive(item, now) ? " active" : ""}`;
+      article.dataset.type = item.type;
+      article.innerHTML = `
+        <span class="timeline-time">${formatTime(item.start)} - ${formatTime(item.end)}</span>
+        <h3>${item.title}</h3>
+        <p class="mb-0 muted">${item.body}</p>
+      `;
+      return article;
+    }
+
+    function render(filter = "all") {
+      const now = new Date();
+      const selected = filter === "all" ? schedule : schedule.filter(item => item.type === filter);
+      cards.innerHTML = "";
+      selected.forEach(item => cards.appendChild(createItem(item, now)));
+
+      sideTimeline.innerHTML = "";
+      schedule.slice(0, 4).forEach(item => sideTimeline.appendChild(createItem(item, now)));
+
+      const first = new Date(schedule[0].start);
+      const last = new Date(schedule[schedule.length - 1].end);
+      const active = schedule.find(item => isActive(item, now));
+      if (now < first) {
+        currentStatus.textContent = "여행 전입니다. 출발 전 운영시간, 교통, 날씨만 다시 확인하세요.";
+      } else if (active) {
+        currentStatus.textContent = `지금은 “${active.title}” 시간대입니다.`;
+      } else if (now >= last) {
+        currentStatus.textContent = "일정 종료 후입니다. 사진 정리와 영수증 정산만 남았습니다.";
+      } else {
+        currentStatus.textContent = "현재는 일정 사이 여유 시간입니다. 다음 이동 전에 물과 배터리를 확인하세요.";
+      }
+    }
+
+    tabButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        tabButtons.forEach(btn => btn.classList.remove("active"));
+        button.classList.add("active");
+        render(button.dataset.filter);
+      });
+    });
+
+    const savedTheme = localStorage.getItem("oaraiTripTheme");
+    if (savedTheme === "dark" || (!savedTheme && window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.body.classList.add("dark-mode");
+      themeToggle.textContent = "☀️ 라이트모드";
+    }
+
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+      const dark = document.body.classList.contains("dark-mode");
+      localStorage.setItem("oaraiTripTheme", dark ? "dark" : "light");
+      themeToggle.textContent = dark ? "☀️ 라이트모드" : "🌙 다크모드";
+    });
+
+    topButton.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+    render();
+    setInterval(() => {
+      const activeTab = document.querySelector(".tab-btn.active");
+      render(activeTab ? activeTab.dataset.filter : "all");
+    }, 60000);
+  </script>
+</body>
+</html>
